@@ -1,0 +1,41 @@
+<!-- Main navigational element -->
+
+<nav role="navigation" class="horizontal" id="nav_pri">
+    <ul>
+        <li>
+            <a href="{{ url('home') }}" {% if craft.request.firstSegment == '' %}class="active"{% endif %}>
+                Home
+            </a>
+        </li>
+        <li>
+            <a href="{{ url('blog') }}" {% if craft.request.firstSegment == 'blog' %}class="active"{% endif %}>
+                Blog
+            </a>
+        </li>
+        <li>
+            <a href="{{ url('recordings') }}" {% if craft.request.firstSegment == 'recordings' %}class="active"{% endif %}>
+                Recordings
+            </a>
+        </li>
+        <li>
+            <a href="{{ url('equipment') }}" {% if craft.request.firstSegment == 'equipment' %}class="active"{% endif %}>
+                Equipment
+            </a>
+        </li>
+        <li>
+            <a href="{{ url('gallery') }}" {% if craft.request.firstSegment == 'gallery' %}class="active"{% endif %}>
+                Gallery
+            </a>
+        </li>
+        <li>
+            <a href="{{ url('news') }}" {% if craft.request.firstSegment == 'news' %}class="active"{% endif %}>
+                News
+            </a>
+        </li>
+        <li>
+            <a href="{{ url('equipment') }}" {% if craft.request.firstSegment == 'contact-and-about' %}class="active"{% endif %}>
+                Contact &amp; About
+            </a>
+        </li>
+    </ul>
+</nav>

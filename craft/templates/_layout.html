@@ -1,73 +1,94 @@
-{#
- # Layout template
- # ---------------
- #
- # This template defines your site’s global layout. It can be
- # “extended” by other templates to fill in the gaps.
- #
- # See Twig’s Template Inheritance documentation for more details:
- # http://twig.sensiolabs.org/doc/templates.html#template-inheritance
- #}
-
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
-<head>
-	<meta charset="utf-8" />
-	<title>{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}</title>
-	<link rel="home" href="{{ siteUrl }}" />
+<html lang="en" class="no-js">
+    <head>
+        <meta charset="utf-8" />
 
-	<style type="text/css">
-		body { margin: 50px; font-family: sans-serif; background: #fff; }
-		#container { margin: 0 auto; width: 700px;
-			-webkit-box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-			        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-		}
+        <!-- META -->
+            <meta charset="utf-8" />
+            <meta name="author" content="Simon Campbell" />
+            <meta name="description" content="The blog of the musician and producer Simon Campbell" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <title>{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}</title>
 
-		#header, #footer { color: #fff; background: #da5a47; }
-		#header a, #footer a { color: #fff; }
-		#header { border-radius: 7px 7px 0 0; padding: 25px; }
-		#header:after { content: '.'; display: block; height: 0; clear: both; visibility: hidden; }
-		#header a { text-decoration: none; }
-		#header h1 { float: left; margin: 0; font-weight: normal; font-size: 30px; line-height: 1; }
-		#header nav { display: block; float: right; }
-		#header nav ul { margin: 0; list-style-type: none; }
-		#header nav ul li { float: left; margin-left: 20px; }
-		#header nav ul li a { display: block; margin-top: 4px; line-height: 22px; }
-		#header nav ul li a:hover,
-		#header nav ul li a.active { border-bottom: 2px solid #fff; }
-		#header nav ul li a.active { cursor: default; }
 
-		#content { padding: 25px 0px 25px 25px; background: #fff; }
-		#content h1 { margin-top: 0; font-size: 35px; font-weight: bold; }
-		#content a { color: #da5a47; text-decoration: none; }
-		#content a:hover { text-decoration: underline; }
+        <link rel="home" href="{{ siteUrl }}" />
+        <!-- <link rel="author" href="ADD SIMON’S GOOGLE+ STUFF HERE" -->
 
-		#footer { border-radius: 0 0 7px 7px; padding: 15px; font-size: 12px; text-align: center; }
-	</style>
-</head>
 
-<body>
-	<div id="container">
-		<header id="header">
-			<h1><a href="{{ siteUrl }}">{{ siteName }}</a></h1>
+        <!-- ICONS -->
 
-			<nav>
-				<ul>
-					<li><a href="{{ url('news') }}" {% if craft.request.firstSegment == 'news' %}class="active"{% endif %}>News</a></li>
-				</ul>
-			</nav>
-		</header>
+        <!-- RSS -->
 
-		<main id="content" role="main">
-			{% block content %}
-				<p>If you see me, you haven’t set your <code>{% verbatim %}{% block content %}…{% endblock %}{% endverbatim %}</code> yet.</p>
-				<p>See Twig’s <a href="http://twig.sensiolabs.org/doc/templates.html#template-inheritance">Template Inheritance</a> documentation for an explanation.</p>
-			{% endblock %}
-		</main>
+        <!-- CSS -->
+            <link rel="stylesheet" media="all" type="text/css" href="{{ siteUrl }}/public/static/css/screen.css" />
+            <link rel="stylesheet" media="print" type="text/css" href="{{ siteUrl }}/public/static/css/print.css" />
 
-		<footer id="footer">
-			Copyright {{ now.year }} {{ craft.request.serverName | ucfirst }}. All rights reserved  •  Built with <a href="http://buildwithcraft.com">Craft</a>
-		</footer>
-	</div>
-</body>
+        <!-- FONTS -->
+
+        <!-- MODERNIZR -->
+    </head>
+
+    <body class="{% block body_class %}{% endblock %}">
+
+            <div id="header" role="banner">
+                <h1>Simon Campbell</h1>
+            </div>
+
+            {% include '_navigation/_banner-nav.html' %}
+
+
+        <div class="main-wrapper" role="main">
+
+            {% block content %}
+
+                <p>If you see me, you haven’t set your <code>{% verbatim %}{% block content %}…{% endblock %}{% endverbatim %}</code> yet.</p>
+                <p>See Twig’s <a href="http://twig.sensiolabs.org/doc/templates.html#template-inheritance">Template Inheritance</a> documentation for an explanation.</p>
+
+            {% endblock %}
+
+        </div><!-- // .main-wrapper -->
+
+
+        <footer role="contentinfo">
+
+            <section>
+                <h3>About</h3>
+                <p>Simon is a musician and producer of Supertone Records. His musical journies over the years have led him to many exciting adventures. <a href="/about">Read more &raquo;</a></p>
+            </section>
+
+            <section>
+                <h3>Newsletter</h3>
+                <fieldset>
+                    <label for="id_newsletter">Sign up for the newsletter below and get the latest updates on tour info, merch sales and album releases.</label>
+                    <input type="email" placeholder="Your email">
+                    <button type="submit">Subscribe</button>
+                </fieldset>
+            </section>
+
+            <section>
+                <h3>Around the web</h3>
+                <nav>
+                    <ul>
+                        <li><a href="http://twitter.com/SimonCampbell"></a>Twitter</li>
+                        <li><a href="http://www.youtube.com/user/simonjcampbell"></a>Youtube</li>
+                        <li><a href="http://viemo.com/simoncampbell"></a>Vimeo</li>
+                        <li><a href="https://www.facebook.com/Simon.Campbell.Musician"></a>Facebook</li>
+                    </ul>
+                </nav>
+            </section>
+
+            <section class="">
+
+                <ul class="horizontal-">
+                    <li><a href="#">Privacy policy </a></li>
+                    <li>Supertone Records &copy; {{ "now"|date("Y") }}</li>
+                </ul>
+
+                <a href="#">Back to top</a>
+            </section>
+        </footer>
+
+        <!-- JAVASCRIPT -->
+
+    </body>
 </html>

@@ -1,9 +1,13 @@
-<!-- Main navigational element -->
+{#
+ # Main navigational block used everywhere
+ # -------------------
+ #
+ #}
 
 <nav role="navigation" id="nav_pri">
     <ul class="horizontal-list">
         <li>
-            <a href="{{ url('home') }}" {% if craft.request.firstSegment == '' %}class="active"{% endif %}>
+            <a href="{{ url('') }}" {% if craft.request.firstSegment == '' %}class="active"{% endif %}>
                 Home
             </a>
         </li>
@@ -33,7 +37,7 @@
             </a>
         </li>
         <li>
-            <a href="{{ url('equipment') }}" {% if craft.request.firstSegment == 'contact-and-about' %}class="active"{% endif %}>
+            <a href="{{ url('contact-and-about') }}" {% if craft.request.firstSegment == 'contact-and-about' %}class="active"{% endif %}>
                 Contact &amp; About
             </a>
         </li>

@@ -31,10 +31,15 @@
     <body class="{% block body_class %}{% endblock %}">
 
             <div id="header" role="banner">
-                <h1>Simon Campbell</h1>
-            </div>
+                {% if request.path == index %}
+                    <h1>Simon Campbell</h1>
+                {% else %}
+                    <p><a href="/">Simon Campbell</a></p>
+                {% endif %}
 
-            {% include '_navigation/_banner-nav.html' %}
+
+                {% include '_navigation/_banner-nav.html' %}
+            </div>
 
 
         <div class="main-wrapper" role="main">

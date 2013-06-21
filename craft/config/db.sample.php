@@ -12,12 +12,12 @@ return array(
 /**
  * The database server name or IP address. Usually 'localhost' or '127.0.0.1'.
  */
-'server' => '',
+'server' => '127.0.0.1',
 
 /**
  * The database username to connect with.
  */
-'user' => '',
+'user' => 'root',
 
 /**
  * The database password to connect with.
@@ -27,7 +27,7 @@ return array(
 /**
  * The name of the database to select.
  */
-'database' => '',
+'database' => 'simon_campbell',
 
 /**
  * The prefix to use when naming tables. This can be no more than 5 characters.

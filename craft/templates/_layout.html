@@ -26,8 +26,10 @@
         <!-- MODERNIZR -->
     </head>
 
+
     <body class="{% block body_class %}{% endblock %}">
 
+        <!--  BRANDING -->
         <div id="header" role="banner">
             {% if url == "" %}
                 <h1>Simon Campbell</h1>
@@ -39,20 +41,24 @@
         </div>
 
 
-        <div class="main-wrapper" role="main">
-
-            {% block content %}
-
-                <p>If you see me, you haven’t set your <code>{% verbatim %}{% block content %}…{% endblock %}{% endverbatim %}</code> yet.</p>
-                <p>See Twig’s <a href="http://twig.sensiolabs.org/doc/templates.html#template-inheritance">Template Inheritance</a> documentation for an explanation.</p>
-
-            {% endblock %}
-
-        </div><!-- // .main-wrapper -->
+        <!--  MAIN CONTENT AREA -->
+        {% block content_main %}
+            <div class="main-wrapper" role="main">
+            </div><!-- // .wrapper__main -->
+        {% endblock %}
 
 
+
+        <!--  SUPPLEMENTARY CONTENT AREA -->
+        {% block content_side%}
+            <div class="side-wrapper">
+            </div><!-- // .wrapper__side -->
+        {% endblock %}
+
+
+
+        <!--  FOOTER -->
         <footer role="contentinfo">
-
             <section>
                 <h3>About</h3>
                 <p>Simon is a musician and producer of Supertone Records. His musical journies over the years have led him to many exciting adventures. <a href="/about">Read more &raquo;</a></p>

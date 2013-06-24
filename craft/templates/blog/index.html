@@ -1,6 +1,123 @@
+{#
+ # BLOG
+ # Index Listing Template
+ # -------------------
+ #
+ #}
+
+
 {% extends "_layout" %}
 
-{% block content %}
-	<h1>Blog</h1>
+{% block content_main %}
+
+    <header>
+        <h1>Blog</h1>
+        <h2>This is an alternative headline that is not optional</h2>
+    </header>
+
+    <div class="main-wrapper">
+        <ul class="item_list--blog">
+            <li class="item_list__item">
+                <article>
+                    <!-- OPTIONAL BLOG POST IMAGE -->
+                    <figure>
+                        <img src="http://placekitten.com/500/300">
+                    </figure>
+
+                    <header>
+                        <h3><a href="URL!">Title of a blog post</a></h3>
+                        <time datetime="2013-06-24">24th June 2013</time>
+                        <p>Posted in <a href="URL!" class="article-tag">Life</a>, <a href="URL!" class="article-tag">Health</a></p>
+                    </header>
+                    <p>In my younger and more vulnerable years my father gave me some advice that I’ve been turning over in my mind ever since. “Whenever you feel like criticizing any one,” he told me, “just remember that all the people in this world haven’t had the advantages that you’ve had.” He didn’t say any more, but we’ve always been unusually communicative in a reserved way. <a href="URL!">Read more &raquo;</a></p>
+                </article>
+            </li>
+            <li class="item_list__item">
+                <article>
+                    <header>
+                        <h3><a href="URL!">Title of a blog post</a></h3>
+                        <time datetime="2013-06-24">24th June 2013</time>
+                        <p>Posted in <a href="URL!" class="article-tag">Life</a>, <a href="URL!" class="article-tag">Health</a></p>
+                    </header>
+                    <p>In my younger and more vulnerable years my father gave me some advice that I’ve been turning over in my mind ever since. “Whenever you feel like criticizing any one,” he told me, “just remember that all the people in this world haven’t had the advantages that you’ve had.” He didn’t say any more, but we’ve always been unusually communicative in a reserved way. <a href="URL!">Read more &raquo;</a></p>
+                </article>
+            </li>
+            <li class="item_list__item">
+                <article>
+                    <header>
+                        <h3><a href="URL!">Title of a blog post</a></h3>
+                        <time datetime="2013-06-24">24th June 2013</time>
+                        <p>Posted in <a href="URL!">Life</a>, <a href="URL!">Health</a></p>
+                    </header>
+                    <p>In my younger and more vulnerable years my father gave me some advice that I’ve been turning over in my mind ever since. “Whenever you feel like criticizing any one,” he told me, “just remember that all the people in this world haven’t had the advantages that you’ve had.” He didn’t say any more, but we’ve always been unusually communicative in a reserved way. <a href="URL!">Read more &raquo;</a></p>
+                </article>
+            </li>
+        </ul>
+
+        <a href="URL!" class="btn btn--primary btn--arrow-left">Older entries</a>
+
+    </div><!-- // end.main-wrapper -->
 
 {% endblock %}
+
+
+{% block content_side %}
+
+    <div class="side-wrapper">
+
+        <ul class="item_list--side">
+
+            <li class="item_list__item">
+
+                <h3>Search the blog</h3>
+
+                <form id="search-form" action="/search-results/">
+                    <label for="q" id="search-label" class="screen-reader">Search</label>
+                    <input aria-labelledby="search-label" id="q" type="search" name="q" class="search-field" placeholder="Search terms..." value="">
+                    <input type="submit" value="Search" class="btn btn--search">
+                </form>
+
+            </li>
+
+            <li class="item_list__item">
+
+                <h3>Categories</h3>
+
+                <ul class="category-links">
+                    <li class="cur category-links__link"><a href="URL!">All</a></li>
+                    <li class="category-links__link"><a href="URL!">Life</a></li>
+                    <li class="category-links__link"><a href="URL!">Diving</a></li>
+                    <li class="category-links__link"><a href="URL!">Travel</a></li>
+                    <li class="category-links__link"><a href="URL!">People</a></li>
+                    <li class="category-links__link"><a href="URL!">Music</a></li>
+                </ul>
+
+            </li>
+
+            <li class="item_list__item">
+
+                <h3>Subscribe via RSS</h3>
+
+                <a href="URL!" class="icon-text"><i class="icon-text__icon">RSS</i> Get regular updates from the blog</a>
+
+            </li>
+
+        </ul>
+
+    </div><!-- // end.side-wrapper -->
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

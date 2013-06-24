@@ -1,1 +1,203 @@
-detail.html
+{#
+ # BLOG
+ # Detail Template
+ # -------------------
+ #
+ #}
+
+
+{% extends "_layout" %}
+
+{% block content_main %}
+
+    <header>
+        <h1>White Van Man</h1>
+        <h2>This is an alternative headline that is entirely optional</h2>
+
+        <aside class="meta-info-block">
+            <time datetime="2013-06-24">24th June 2013</time>
+            <p>Posted in <a href="URL!" class="article-tag">Life</a>, <a href="URL!" class="article-tags">Health</a></p>
+        </aside>
+    </header>
+
+    <div class="main-wrapper main-wrapper__article">
+
+        <figure class="hero-image">
+            <img alt="" src="http://placehold.it/500x303/0eafff/ffffff.png">
+        </figure>
+
+        <p class="lede">Vans of one type or another have always been a part of my life. My first band, Whitefire, used to have a very unreliable Ford Transit which, for a reason that is buried in the mists of time, we painted orange. Over the years I have hired or borrowed hundreds of the bloody things.</p>
+
+        <p>A couple of years ago I resumed my journey as a professional musician and foolishly bought a Peugeot Teepee which just managed to fit my ever expanding guitar rig and PA. The poor thing just couldn’t cope and have to say did nothing for my credibility.</p>
+
+        <p>It was at this point that I decided to buy a van. Having owned quite a few Volkswagen cars, I thought it would be a great idea to try a VW Transporter. I called Guy at <a href="URL!">the excellent Lancashire Van Centre</a> and gave him the spec: short wheelbase, upgraded sound-system & GPS, boarded out in the back and of course, painted black.</p>
+
+        <p>He came back saying all this was cool, but black would be a special order with a three month lead time. Now, I don’t know about you, but once a decision has been made it has to happen quickly, so I asked if he had anything in stock. He told me of a great deal on a pre-registered van, so asked him to mail me a picture; it arrived – the van was white!</p>
+
+        <blockquote class="quote quote__regular">
+            “White van man” is a stereotype found in the United Kingdom of the driving of smaller-sized commercial vans, perceived as selfish, inconsiderate, or aggressive.
+        </blockquote>
+
+        <p>Now white van man was given a terrible reputation by late 90’s articles in the Sun and quite honestly I didn’t want to be tarred with the White Van brush or anonomised. It however made great financial sense, so I bit the bullet and went ahead.</p>
+
+        <p>When it arrived I took it for a spin and something very strange happened. People gave way for me, kept their distance and treated me like a king of the road.</p>
+
+        <p>The ‘back stage’ area of the TT is notoriously difficult to get into. I turn up in the van and was just waved straight through, no questions just a slight glimpse of fear on the eye.</p>
+
+        <p>Park anywhere, stick the hazards on and you are above the law: you could be delivering frozen chips or repairing someones boiler. Cut someone up at a roundabout, pull in from the wrong lane, slam the brakes on at anytime. The road is your domain, you are invincible.</p>
+
+        <p>The mystery of what lies inside and the fact that the driver may potentially be a very nasty and aggressive individual turns even the most fierce police officer or traffic warden into over-ripe Camembert; smelly but very soft.</p>
+
+        <p>The general public may curse, swear and wave their fists, but you stop, open the door and they instantly evaporate.</p>
+
+        <p>So the upshot is I will never now be without a white van. White is clearly the new black…</p>
+
+        <ul class="nav nav--social">
+            <li>
+                <a href="URL!" class="icon-text">
+                    <i class="icon-text__icon icon--facebook"></i>Like on Facebook
+                </a>
+            </li>
+            <li>
+                <a href="URL!" class="icon-text">
+                    <i class="icon-text__icon icon--twitter"></i>Share on Twitter
+                </a>
+            </li>
+        </ul>
+    </div><!-- //end.main-wrapper -->
+
+{% endblock %}
+
+
+{% block content_side %}
+
+    <div class="main-wrapper">
+        <h2 class="meta-info-block"><span class="comment-count">3</span> Comments</h2>
+
+        <ul class="item-list item-list__comments">
+            <li class="item-list__comment-item">
+                <img class="item-list__comment-item__avatar" src="http://placehold.it/50x50/0eafff/ffffff.png">
+                <header>
+                    <h3><a href="URL!">Jack Nicholson</a></h3>
+                    <time datetime="2013-06-24">24th June 2013</time>
+                </header>
+                <p>Brilliant!</p>
+
+                <p>Always my choice as well (apart from the lemon yellow Toyota Hi-Ace (which was (thankfully) stolen from Glastonbury) and a day-glo orange LWB semi hi-top Tranny (which turned out to have false plates on it))&hellip;</p>
+            </li>
+            <li class="item-list__comment-item">
+                <img class="item-list__comment-item__avatar" src="http://placehold.it/50x50/0eafff/ffffff.png">
+                <header>
+                    <h3><a href="URL!">Jack Nicholson</a></h3>
+                    <time datetime="2013-06-24">24th June 2013</time>
+                </header>
+                <p>Brilliant!</p>
+
+                <p>Always my choice as well (apart from the lemon yellow Toyota Hi-Ace (which was (thankfully) stolen from Glastonbury) and a day-glo orange LWB semi hi-top Tranny (which turned out to have false plates on it))&hellip;</p>
+            </li>
+            <li class="item-list__comment-item">
+                <img class="item-list__comment-item__avatar" src="http://placehold.it/50x50/0eafff/ffffff.png">
+                <header>
+                    <h3><a href="URL!">Jack Nicholson</a></h3>
+                    <time datetime="2013-06-24">24th June 2013</time>
+                </header>
+                <p>Brilliant!</p>
+
+                <p>Always my choice as well (apart from the lemon yellow Toyota Hi-Ace (which was (thankfully) stolen from Glastonbury) and a day-glo orange LWB semi hi-top Tranny (which turned out to have false plates on it))&hellip;</p>
+            </li>
+        </ul>
+
+
+        <div class="form-block form-block--comments">
+
+            <label for="comment" class="h3-size">Leave a comment</label>
+            <textarea name="comment" id="comment" cols="100" rows="10" placeholder="What did ya think of the blog post? What are your thoughts?"></textarea>
+
+            <label for="author" class="screen-reader">Name*</label>
+            <input placeholder="Name (required)" required="" type="text" name="author" id="author" value="" class="infoput">
+
+            <label for="email" class="screen-reader">Email</label>
+            <input placeholder="Email (required)" required="" type="email" name="email" id="email" value="" class="infoput">
+
+            <label for="url" class="screen-reader">Website</label>
+            <input placeholder="Website (optional)" type="url" name="url" id="url" value="" class="infoput">
+
+            <input name="submit" id="submit" class="btn btn--submit" value="Post comment">
+
+
+        </div>
+
+    </div><!-- //end.main-wrapper -->
+
+
+    <div class="side-wrapper side-wrapper--island">
+        <ul>
+            <li>
+                <header class="meta-info-block">
+                    <h3>Live Shows</h3>
+                    <a href="URL!">View all upcoming shows &raquo;</a>
+                </header>
+
+                <dl class="shows-list">
+
+                    <dt class="shows-list meta-size">
+                        <time datetime="2013-06-24">24th June 2013</time>
+                    </dt>
+                    <dd>
+                        <h5 class="base-text-size"><a href="URL!">Borderline</a></h5>
+                        <p>The Pavilion, Jumping Juniper, 77 Road Street</p>
+                    </dd>
+
+                    <dt class="meta-size">
+                        <time datetime="2013-06-24">24th June 2013</time>
+                    </dt>
+                    <dd>
+                        <h5 class="base-text-size"><a href="URL!">Borderline</a></h5>
+                        <p>The Pavilion, Jumping Juniper, 77 Road Street</p>
+                    </dd>
+
+                    <dt class="meta-size">
+                        <time datetime="2013-06-24">24th June 2013</time>
+                    </dt>
+                    <dd>
+                        <h5 class="base-text-size"><a href="URL!">Borderline</a></h5>
+                        <p>The Pavilion, Jumping Juniper, 77 Road Street</p>
+                    </dd>
+
+                </dl>
+            </li>
+
+            <li>
+                <header class="meta-info-block">
+                    <h3>Thirty Six</h3>
+                </header>
+
+                <figure>
+                    <img src="http://placehold.it/150x150/0eafff/ffffff.png"/>
+                </figure>
+
+                <p>Well this is it, Simon’s first solo album in thirty six years of spanking the plank. It’s not blues, it’s not rock, it’s not folk; it is an eclectic mix that will take you on his very personal musical journey.</p>
+
+                <a class="btn btn--music" href="URL!">Listen now</a>
+            </li>
+        </ul>
+
+    </div><!-- //end.side-wrapper -->
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

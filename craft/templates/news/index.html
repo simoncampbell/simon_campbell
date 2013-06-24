@@ -5,17 +5,20 @@
  #
  #}
 
+
 {% extends "_layout" %}
 
-{% block content %}
-	<h1>News</h1>
+{% block content_main %}
+	<header>
+		<h1>News</h1>
+	</header>
 
 	{% for entry in craft.entries.section('news').find() %}
 		<article>
 			<h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
 			<p>Posted on {{ entry.postDate.format('F d, Y') }}</p>
 			{{ entry.body.page(1) }}
-			<p><a href="{{ entry.url }}">Continue reading</a></p>
+			<p><a href="{{ entry.url }}">Read more &raquo;</a></p>
 		</article>
 	{% endfor %}
 {% endblock %}

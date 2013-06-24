@@ -1,1 +1,36 @@
-detail.html
+{% extends "_layout" %}
+
+{% block content_main %}
+    {% for image in entry.largeImage %}
+        <figure>
+            <img src="{{image.url}}">
+        </figure>
+    {% endfor %}
+
+	<header>
+		<h1>{{entry.title}}</h1>
+
+		{% if entry.heading__sec %}
+			<h2>{{entry.heading__sec}}</h2>
+		{% endif %}
+	</header>
+
+	<p class="lede">{{entry.shortExtract}}</p>
+
+	{{entry.body}}
+{% endblock %}
+
+{% block content_side %}
+
+	{% for item in entry.sellerBlock %}
+		<h4>Add this gear to your collection</h4>
+		<dl class="seller-block">
+			<dt>
+				<a href="{{item.sellerURL}}">{{item.sellerName}}:</a>
+			</dt>
+			<dd>
+				${{item.sellerPrice}}
+			</dd>
+		</dl>
+	{% endfor %}
+{% endblock %}

@@ -16,42 +16,33 @@
     </header>
 
     <div class="main-wrapper">
-        <ul class="item_list--blog">
-            <li class="item_list__item">
-                <article>
-                    <!-- OPTIONAL BLOG POST IMAGE -->
-                    <figure>
-                        <img src="http://placekitten.com/500/300">
-                    </figure>
+        <ul class="item_list">
 
-                    <header>
-                        <h3><a href="URL!">Title of a blog post</a></h3>
-                        <time datetime="2013-06-24">24th June 2013</time>
-                        <p>Posted in <a href="URL!" class="article-tag">Life</a>, <a href="URL!" class="article-tag">Health</a></p>
-                    </header>
-                    <p>In my younger and more vulnerable years my father gave me some advice that I’ve been turning over in my mind ever since. “Whenever you feel like criticizing any one,” he told me, “just remember that all the people in this world haven’t had the advantages that you’ve had.” He didn’t say any more, but we’ve always been unusually communicative in a reserved way. <a href="URL!">Read more &raquo;</a></p>
-                </article>
-            </li>
-            <li class="item_list__item">
-                <article>
-                    <header>
-                        <h3><a href="URL!">Title of a blog post</a></h3>
-                        <time datetime="2013-06-24">24th June 2013</time>
-                        <p>Posted in <a href="URL!" class="article-tag">Life</a>, <a href="URL!" class="article-tag">Health</a></p>
-                    </header>
-                    <p>In my younger and more vulnerable years my father gave me some advice that I’ve been turning over in my mind ever since. “Whenever you feel like criticizing any one,” he told me, “just remember that all the people in this world haven’t had the advantages that you’ve had.” He didn’t say any more, but we’ve always been unusually communicative in a reserved way. <a href="URL!">Read more &raquo;</a></p>
-                </article>
-            </li>
-            <li class="item_list__item">
-                <article>
-                    <header>
-                        <h3><a href="URL!">Title of a blog post</a></h3>
-                        <time datetime="2013-06-24">24th June 2013</time>
-                        <p>Posted in <a href="URL!">Life</a>, <a href="URL!">Health</a></p>
-                    </header>
-                    <p>In my younger and more vulnerable years my father gave me some advice that I’ve been turning over in my mind ever since. “Whenever you feel like criticizing any one,” he told me, “just remember that all the people in this world haven’t had the advantages that you’ve had.” He didn’t say any more, but we’ve always been unusually communicative in a reserved way. <a href="URL!">Read more &raquo;</a></p>
-                </article>
-            </li>
+            {% for post in craft.entries.find({section:'Blog', limit:'10'})  %}
+                <li class="item_list__item">
+                    <article>
+                        <!-- OPTIONAL BLOG POST IMAGE -->
+                        {% for image in post.blog__image %}
+                            <figure>
+                                <a href="{{post.url}}">
+                                    <img src="{{image.url}}">
+                                </a>
+                            </figure>
+                        {% endfor %}
+
+                        <header>
+                            <h3><a href="{{post.url}}">{{ post.title }}</a></h3>
+
+                            <time datetime="{{post.postDate|date("Y-m-d")}}">{{post.postDate|date("jS F Y")}}</time>
+
+                            <p>Posted in <a href="URL!" class="icon icon--tag">Life</a>, <a href="URL!" class="icon icon--tag">Health</a></p>
+                        </header>
+
+                        <p>{{ post.shortExtract }}. <a href="{{post.url}}">Read more &raquo;</a></p>
+
+                    </article>
+                </li>
+            {% endfor %}
         </ul>
 
         <a href="URL!" class="btn btn--primary btn--arrow-left">Older entries</a>

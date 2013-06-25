@@ -6,8 +6,117 @@
  #}
 
 
-{% extends 'layout' %}
+{% extends '_layout.html' %}
 
-{% block content %}
-	<h1>Gallery – Album</h1>
+{% block content_main %}
+
+	<header class="title">
+		<h1>Gallery</h1>
+	</header>
+
+	<div class="main-wrapper">
+
+    	 <h3>Album name</h3>
+    	 <p class="lede">This is my collection of photo albms detailing my extensive travels across the world of music and of life. This was a particularly joyous time because I had my old Saab 2130. Good times.</p>
+
+
+    	 <ul class="carousel">
+    	 	<li class="carousel__item">
+    	 		<figure>
+					<img src="http://placehold.it/500x350/0eafff/ffffff.png">
+					<figcaption>
+						<h4>Photo name</h4>
+						<p>Producer, engineer and bass player of the new album ‘Broken Hearted’ at Wavelength Studio, Doncaster</p>
+						<nav class="carousel__item__nav">
+							<ul>
+								<li><a href="URL">Previous</a></li>
+								<li><a href="URL">Next</a></li>
+							</ul>
+						</nav>
+						<div class="meta carousel__item__meta">
+							<time>Saturday 14th 2013</time>
+							<p class="js-only"><a href="" class="copy-url">Copy link to this image</a></p>
+						</div>
+					</figcaption>
+    	 		</figure>
+    	 	</li>
+    	 	<li class="carousel__item">
+    	 		<figure>
+					<img src="http://placehold.it/500x350/0eafff/ffffff.png">
+					<figcaption>
+						<h4>Photo name</h4>
+						<p>Producer, engineer and bass player of the new album ‘Broken Hearted’ at Wavelength Studio, Doncaster</p>
+						<nav class="carousel__item__nav">
+							<ul>
+								<li><a href="URL">Previous</a></li>
+								<li><a href="URL">Next</a></li>
+							</ul>
+						</nav>
+						<div class="meta carousel__item__meta">
+							<time>Saturday 14th 2013</time>
+							<p class="js-only"><a href="" class="copy-url">Copy link to this image</a></p>
+						</div>
+					</figcaption>
+    	 		</figure>
+    	 	</li>
+    	 	<li class="carousel__item">
+    	 		<figure>
+					<img src="http://placehold.it/500x350/0eafff/ffffff.png">
+					<figcaption>
+						<h4>Photo name</h4>
+						<p>Producer, engineer and bass player of the new album ‘Broken Hearted’ at Wavelength Studio, Doncaster</p>
+						<nav class="carousel__item__nav">
+							<ul>
+								<li><a href="URL">Previous</a></li>
+								<li><a href="URL">Next</a></li>
+							</ul>
+						</nav>
+						<div class="meta carousel__item__meta">
+							<time>Saturday 14th 2013</time>
+							<p class="js-only"><a href="" class="copy-url">Copy link to this image</a></p>
+						</div>
+					</figcaption>
+    	 		</figure>
+    	 	</li>
+    	 </ul>
+
+    </div><!-- //end.main-wrapper -->
+
+{% endblock %}
+
+
+
+
+{% block content_side %}
+
+	<div class="main-wrapper main-wrapper--full">
+
+		<h2>Other albums</h2>
+
+		<ul class="list-block">
+
+			<li class="list-block__item">
+				<a href=""><img src="http://placehold.it/300x200/0eafff/ffffff.png"></a>
+				<h4><a href="URL">Sightings</a></h4>
+			</li>
+
+			<li class="list-block__item">
+				<a href=""><img src="http://placehold.it/300x200/0eafff/ffffff.png"></a>
+				<h4><a href="URL">Manchester 1986</a></h4>
+			</li>
+
+			<li class="list-block__item">
+				<a href=""><img src="http://placehold.it/300x200/0eafff/ffffff.png"></a>
+				<h4><a href="URL">Bristol 2013</a></h4>
+			</li>
+
+			<li class="list-block__item">
+				<a href=""><img src="http://placehold.it/300x200/0eafff/ffffff.png"></a>
+				<h4><a href="URL">Bristol 2013</a></h4>
+			</li>
+
+		</ul>
+
+	</div><!-- //end.main-wrapper -->
+
 {% endblock %}

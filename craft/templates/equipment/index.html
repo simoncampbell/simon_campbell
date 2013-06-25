@@ -1,3 +1,10 @@
+{#
+ # EQUIPMENT
+ # Index listing template
+ # -------------------
+ #
+ #}
+
 {% extends "_layout" %}
 
 {% block content_main %}
@@ -8,13 +15,17 @@
 
 
 	<div class="main-wrapper">
+
 		<ul class="item_list">
 
             {% for post in craft.entries.find({section:'Equipment', limit:'10'})  %}
+
                 <li class="item_list__item">
+
                     <article>
+
                         <!-- OPTIONAL BLOG POST IMAGE -->
-                        {% for image in post.blog__image %}
+                        {% for image in post.largeImage %}
                             <figure>
                                 <a href="{{post.url}}">
                                     <img src="{{image.url}}">
@@ -27,7 +38,7 @@
 
                             <time datetime="{{post.postDate|date("Y-m-d")}}">{{post.postDate|date("jS F Y")}}</time>
 
-                            <p>Posted in <a href="URL!" class="icon icon--tag">Life</a>, <a href="URL!" class="icon icon--tag">Health</a></p>
+                            <p>Posted in <a href="/equipment/{{post.equipmentCategory|lower}}">{{post.equipmentCategory}}</a></p>
                         </header>
 
                         <p>{{ post.shortExtract }}. <a href="{{post.url}}">Read more &raquo;</a></p>
@@ -35,37 +46,55 @@
                     </article>
                 </li>
             {% endfor %}
+
         </ul>
 
-
-
-
-		<ul class="item-list--equipment">
-			<li class="item-list--equipment__item">
-				<figure>
-					<img alt="" src="http://www.ckmusictuition.co.uk/Portals/6/Images/b-c-rich-platinum-beast-guitar-black.jpg"/>
-				</figure>
-
-				<div class="hgroup">
-					<h3><a href="URL!">Guitars</a></h3>
-					<span class="meta">1 articles</span>
-				</div>
-
-				<p>From the young age of sixteen I thought guitar was the best thing in the world. With these tiny strings of metal you could make people feel anything.</p>
-			</li>
-			<li class="item-list--equipment__item">
-				<figure>
-					<img alt="" src="http://www.ckmusictuition.co.uk/Portals/6/Images/b-c-rich-platinum-beast-guitar-black.jpg"/>
-				</figure>
-
-				<div class="hgroup">
-					<h3><a href="URL!">Synths</a></h3>
-					<span class="meta">201 articles</span>
-				</div>
-
-				<p>From the young age of sixteen I thought guitar was the best thing in the world. With these tiny strings of metal you could make people feel anything.</p>
-			</li>
-		</ul>
 	</div>
 
+
+	<ul class="grid-list divide-4">
+		<li>
+			<a href="URL!"><img src="URL!"/></a>
+
+			<div class="hgroup">
+				<h2><a href="URL">Electric Guitars</a></h2>
+				<span class="meta">210 articles</span>
+			</div>
+			<p>Since the early age of sixteen I’ve been collecting electrics and trying to find the perfect tool for the perfect time.</p>
+		</li>
+		<li>
+			<a href="URL!"><img src="URL!"/></a>
+			<div class="hgroup">
+				<h2><a href="URL">Synthesizers</a></h2>
+				<span class="meta">210 articles</span>
+			</div>
+			<p>Since the early age of sixteen I’ve been collecting electrics and trying to find the perfect tool for the perfect time.</p>
+		</li>
+		<li>
+			<a href="URL!"><img src="URL!"/></a>
+
+			<div class="hgroup">
+				<h2><a href="URL">Drums</a></h2>
+				<span class="meta">210 articles</span>
+			</div>
+			<p>Since the early age of sixteen I’ve been collecting electrics and trying to find the perfect tool for the perfect time.</p>
+		</li>
+		<li>
+			<a href="URL!"><img src="URL!"/></a>
+			<div class="hgroup">
+				<h2><a href="URL">Acoustic Guitars</a></h2>
+				<span class="meta">210 articles</span>
+			</div>
+			<p>Since the early age of sixteen I’ve been collecting electrics and trying to find the perfect tool for the perfect time.</p>
+		</li>
+		<li>
+			<a href="URL!"><img src="URL!"/></a>
+			<div class="hgroup">
+				<h2><a href="URL">Basses</a></h2>
+				<span class="meta">210 articles</span>
+			</div>
+			<p>Since the early age of sixteen I’ve been collecting electrics and trying to find the perfect tool for the perfect time.</p>
+		</li>
+	</ul>
 {% endblock %}
+

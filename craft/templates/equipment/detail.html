@@ -8,6 +8,8 @@
 {% extends "_layout" %}
 
 {% block content_main %}
+
+    <!-- LARGE ARTISINAL IMAGE -->
     {% for image in entry.largeImage %}
         <figure>
             <img src="{{image.url}}">
@@ -31,8 +33,6 @@
 
         <p class="lede">{{entry.shortExtract}}</p>
 
-        <!-- INSTRUMENT IMAGE -->
-
         {{entry.body}}
 
     </div>
@@ -40,6 +40,14 @@
 
     <div class="side-wrapper side-wrapper--rev">
         <ul>
+            <li>
+                <!-- INSTRUMENT IMAGE -->
+                {% for image in entry.equipmentImage %}
+                    <figure>
+                        <img src="{{image.url}}">
+                    </figure>
+                {% endfor %}
+            </li>
             <li>
                 <h4>Manufactured by</h4>
                 {% for make in entry.makerBlock %}

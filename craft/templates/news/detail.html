@@ -7,10 +7,63 @@
 
 {% extends "_layout" %}
 
-{% block content %}
+{% block content_main %}
+
+	<header>
+		<h1>News</h1>
+		<h2>This is an alternative headline that is not optional</h2>
+	</header>
+
 	<article>
-		<h1>{{ entry.title }}</h1>
-		<p>Posted on {{ entry.postDate.format('F d, Y') }}</p>
-		{{ entry.body }}
+
+		<div class="main-wrapper" role="main">
+			<article>
+				{% for image in entry.standardImage %}
+					<figure>
+						<img src="{{image.url}}"/>
+						<p>{{news.caption}}</p>
+					</figure>
+				{% endfor %}
+			</article>
+
+
+			<h1>{{ entry.title }}</h1>
+			<p>Posted on {{ entry.postDate.format('F d, Y') }}</p>
+			{{ entry.body }}
+		</div><!-- //end.main-wrapper -->
 	</article>
+
+{% endblock %}
+
+
+
+{% block content_side %}
+
+    <div class="side-wrapper side-wrapper--island">
+
+        <ul class="item_list--side">
+            <li class="item_list__item">
+                <h3>Categories</h3>
+
+                <ul class="category-links">
+                    <li class="cur category-links__link"><a href="URL!">All</a></li>
+                    <li class="category-links__link"><a href="URL!">Life</a></li>
+                    <li class="category-links__link"><a href="URL!">Diving</a></li>
+                    <li class="category-links__link"><a href="URL!">Travel</a></li>
+                    <li class="category-links__link"><a href="URL!">People</a></li>
+                    <li class="category-links__link"><a href="URL!">Music</a></li>
+                </ul>
+            </li>
+
+            <li class="item_list__item">
+                <h3>Subscribe via RSS</h3>
+
+                <a href="URL!" class="icon-text"><i class="icon-text__icon icon__rss"></i> Get regular updates and news from the label</a>
+            </li>
+        </ul>
+
+        {% include 'components/_side-bar.html' %}
+
+    </div><!-- // end.side-wrapper -->
+
 {% endblock %}

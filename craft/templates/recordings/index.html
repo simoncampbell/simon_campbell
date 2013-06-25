@@ -7,9 +7,75 @@
 {% extends "_layout" %}
 
 {% block content_main %}
-	<header>
-		<h1>Recordings</h1>
-		<h2>Albums, merch and other stuff</h2>
-	</header>
+
+    <header>
+        <h1>Recordings</h1>
+        <h2>Albums, merch and other stuff</h2>
+    </header>
+
+
+    <div class="main-wrapper">
+
+        <p class="lede">Here are a collection of the tracks I’ve worked on, as well as some related goodies from the store. From good ol’ rock n’ roll to blues and grass, these records take in a broad cross section of genres that brings everything together to make something a little bit fresher.</p>
+
+        <section>
+            <h3><abbr title="extended play">EP</abbr>s &amp; <abbr title="long play">LP</abbr>s</h3>
+
+            <ul class="item-list">
+
+                <li class="item-list__item">
+
+                    <img alt="" src="http://placehold.it/100x100/0eafff/ffffff.png">
+
+                    <h3><a href="URL!">Thirty Six</a></h3>
+
+                    <aside class="meta">
+                        <time datetime="{{entry.postDate|date("Y")}}">{{entry.postDate|date("Y")}}</time>
+                    </aside>
+
+                    <p>In my younger and more vulnerable years my father gave me some advice that I’ve been turning over in my mind ever since. “Whenever you feel like criticizing any one,” he told me, “just remember that all the people in this world haven’t had the advantages that you’ve had."</p>
+                </li>
+
+                <li class="item-list__item">
+
+                    <img alt="" src="http://placehold.it/100x100/0eafff/ffffff.png">
+
+                    <h3><a href="URL!">Another test album</a></h3>
+
+                    <aside class="meta">
+                        <time datetime="{{entry.postDate|date("Y")}}">{{entry.postDate|date("Y")}}</time>
+                    </aside>
+
+                    <p>In my younger and more vulnerable years my father gave me some advice that I’ve been turning over in my mind ever since. “Whenever you feel like criticizing any one,” he told me, “just remember that all the people in this world haven’t had the advantages that you’ve had."</p>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>Merch</h3>
+
+            <ul class="item_list">
+                <li class"item_list__item">
+                    <img alt="" src="http://placehold.it/100x100/0eafff/ffffff.png">
+                    <h3>Lauch poster</h3>
+                </li>
+
+                <li class"item_list__item">
+                    <img alt="" src="http://placehold.it/100x100/0eafff/ffffff.png">
+                    <h3>Thirty six t-shirts</h3>
+                </li>
+            </ul>
+        </section>
+    </div>
+
+{% endblock %}
+
+
+
+{% block content_side %}
+
+    <div class="side-wrapper side-wrapper--island">
+        {% include 'components/_side-bar.html' %}
+    </div>
 
 {% endblock %}

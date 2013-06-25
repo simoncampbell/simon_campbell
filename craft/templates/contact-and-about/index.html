@@ -6,8 +6,62 @@
 
 {% extends "_layout" %}
 
-{% block content %}
-	<h1>Contact and about</h1>
+
+{% block content_main %}
+
+
+    <!-- BIG IMAGE -->
+    {% for image in contactAbout.largeImage %}
+        <figure>
+            <img src="{{image.url}}">
+        </figure>
+    {% endfor %}
+
+
+    <!-- CONTENT -->
+    <div class="main-wrapper">
+        <header>
+            <h1>{{contactAbout.heading}}</h1>
+            <h2>{{contactAbout.heading__sec}}</h2>
+        </header>
+
+        <p class="lede">{{contactAbout.shortExtract}}</p>
+
+        {{contactAbout.bio}}
+
+    </div>
+
+{% endblock %}
+
+
+
+{% block content_side %}
+
+    <div class="side-wrapper">
+        <h2>Contact</h2>
+
+        <ul class="item-list">
+            <li class="item-list__item">
+                <h3>Bookings</h3>
+                <p>For booking details please contact:
+                    {% for person in contactAbout.bookingContactInfo %}
+                        <a href="{{person.bookingsURL}}">{{person.bookingsPerson}}</a> at Supertone Records</p>
+                    {% endfor %}
+            </li>
+
+            <li class="item-list__item">
+                <h3>Get in touch</h3>
+                {% include 'components/_forms/_contact-form.html' %}
+            </li>
+
+            <li class="item-list__item">
+                <h3>Media downloads</h3>
+
+                <p></p>
+            </li>
+        </ul>
+
+    </div>
 
 {% endblock %}
 

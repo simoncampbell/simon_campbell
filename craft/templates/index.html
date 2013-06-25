@@ -9,12 +9,98 @@
 
 {% extends "_layout" %}
 
-{% block content %}
+{% block content_main %}
+    <div class="main-wrapper">
 
-	{{ homepage.body }}
+    <!-- FEATURED POST -->
+        <section>
+            <article>
+                <figure>
+                    <a href="URL">
+                        <img alt="" src="http://placehold.it/716x316/0eafff/ffffff.png">
+                    </a>
+                </figure>
+                <header>
+                    <h2><a href="URL">Feautured album or blog post of some sort</a></h2>
+                    <div class="meta">
+                        <time>27th July 2013</time>
+                        <p>Blog post</p>
+                    </div>
+                </header>
+                <p>In my younger and more vulnerable years my father gave me some advice that I’ve been turning over in my mind ever since. “Whenever you feel like criticizing any one,” he told me, “just remember that all the people in this world haven’t had the advantages that you’ve had.” <a href="URL">Read more &raquo;</a></p>
+            </article>
+        </section>
 
-	<!-- {% for entry in craft.entries.section('news').limit(5).find() %}
-			<li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
-		 {% endfor %} -->
+        <section>
+            <article>
+                <header>
+                    <h3><a href="URL">The TC Analogue 3a</a></h3>
+                    <div class="meta">
+                        <time>27th July 2013</time>
+                        <p>Blog post</p>
+                    </div>
+                </header>
+                <p>In my younger and more vulnerable years my father gave me some advice that I’ve been turning over in my mind ever since. “Whenever you feel like criticizing any one,” he told me, “just remember that all the people in this world haven’t had the advantages that you’ve had.”</p>
+            </article>
+
+            <article>
+                <header>
+                    <h3><a href="URL">The TC Analogue 3a</a></h3>
+                    <div class="meta">
+                        <time>27th July 2013</time>
+                        <p>Blog post</p>
+                    </div>
+                </header>
+                <p>In my younger and more vulnerable years my father gave me some advice that I’ve been turning over in my mind ever since. “Whenever you feel like criticizing any one,” he told me, “just remember that all the people in this world haven’t had the advantages that you’ve had.”</p>
+            </article>
+
+        </section>
+
+        <section class="island">
+            {% include 'components/_live-shows.html' %}
+        </section>
+
+    </div><!-- //end.main-wrapper -->
 
 {% endblock %}
+
+
+
+{% block content_side %}
+
+    <div class="side-wrapper side-wrapper--rev">
+
+        <h3>Latest news updates</h3>
+
+        <ul class="">
+            {% for news in craft.entries.find({section:'News', limit:'3'}) %}
+                <li>
+                    <h4><a href="{{news.url}}">{{news.title}}</a></h4>
+                    <time datetime="{{news.postDate|date("Y-m-d")}}">{{news.postDate|date("jS F Y")}}</time>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+
+    <div class="main-wrapper main-wrapper--rev">
+
+        <h3>Recent blog posts</h3>
+
+        <ul class="">
+            {% for post in craft.entries.find({section:'Blog', limit:'3'}) %}
+                <li>
+                    <h4><a href="{{post.url}}">{{post.title}}</a></h4>
+                    <p>{{post.shortExtract}}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
+
+
+
+
+
+
+

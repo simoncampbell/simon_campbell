@@ -14,57 +14,81 @@
         </figure>
     {% endfor %}
 
-	<header>
-		<h1>{{entry.title}}</h1>
+    <header>
+        <h1>{{entry.title}}</h1>
 
-		{% if entry.heading__sec %}
-			<h2>{{entry.heading__sec}}</h2>
-		{% endif %}
+        {% if entry.heading__sec %}
+            <h2>{{entry.heading__sec}}</h2>
+        {% endif %}
 
-	</header>
+        <aside class="meta-info-block">
+            <time datetime="{{entry.postDate|date("Y-m-d")}}">{{entry.postDate|date("jS F Y")}}</time>
+            <p>Posted in <a href="URL!" class="article-tag">{{entry.equipmentCategory}}</a></p>
+        </aside>
+    </header>
 
-	<p class="lede">{{entry.shortExtract}}</p>
+    <div class="main-wrapper main-wrapper--rev">
 
-	{{entry.body}}
+        <p class="lede">{{entry.shortExtract}}</p>
+
+        <!-- INSTRUMENT IMAGE -->
+
+        {{entry.body}}
+
+    </div>
+
+
+    <div class="side-wrapper side-wrapper--rev">
+        <ul>
+            <li>
+                <h4>Manufactured by</h4>
+                {% for make in entry.makerBlock %}
+                    <p>
+                        <a href="{{ make.makerUrl }}">
+                            {{ make.makerTitle }}
+                        </a>
+                    </p>
+                {% endfor %} <!-- //end.makerBlock -->
+            </li>
+
+            <li>
+                <h4>Add this gear to your collection</h4>
+
+                {% for item in entry.sellerBlock %}
+                    <dl class="seller-block">
+                        <dt>
+                            <a href="{{item.sellerURL}}">{{item.sellerName}}:</a>
+                        </dt>
+                        <dd>
+                            £{{item.sellerPrice}}
+                        </dd>
+                    </dl>
+
+                {% endfor %}
+            </li>
+
+            <li>
+                <h4>Similar instruments</h4>
+                <ul class="">
+                    <li><a href="URL!">Gibson E2234</a></li>
+                    <li><a href="URL!">Ibanez S13</a></li>
+                    <li><a href="URL!">Yamaha E series</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div><!-- //end.side-wrapper -->
 
 {% endblock %}
 
 
 
 {% block content_side %}
-<!-- EQUIPMENT META INFO -->
+    <div class="main-wrapper">
+        {% include 'components/_equipment/_category-list.html'%}
+    </div>
 
-	<ul>
-		<li>
-			<h4>Manufactured by</h4>
-			{% for make in entry.makerBlock %}
-
-				<p>
-					<a href="{{ make.makerUrl }}">
-						{{ make.makerTitle }}
-					</a>
-				</p>
-
-			{% endfor %} <!-- //end.makerBlock -->
-		</li>
-
-
-
-		<li>
-			<h4>Add this gear to your collection</h4>
-
-			{% for item in entry.sellerBlock %}
-				<dl class="seller-block">
-					<dt>
-						<a href="{{item.sellerURL}}">{{item.sellerName}}:</a>
-					</dt>
-					<dd>
-						£{{item.sellerPrice}}
-					</dd>
-				</dl>
-
-			{% endfor %}
-		</li>
-	</ul>
-
+    <div class="side-wrapper side-wrapper--island">
+        {% include 'components/_side-bar.html' %}
+    </div>
 {% endblock %}
+

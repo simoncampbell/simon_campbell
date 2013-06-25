@@ -16,10 +16,10 @@
     </header>
 
     <div class="main-wrapper">
-        <ul class="item_list">
+        <ul class="item-list">
 
-            {% for post in craft.entries.find({section:'Blog', limit:'10'})  %}
-                <li class="item_list__item">
+            {% for post in craft.entries.find({section:'Blog', limit:'10'}) %}
+                <li class="item-list__item">
                     <article>
                         <!-- OPTIONAL BLOG POST IMAGE -->
                         {% for image in post.blog__image %}

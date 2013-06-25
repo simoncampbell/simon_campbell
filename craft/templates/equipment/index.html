@@ -8,15 +8,15 @@
 {% extends "_layout" %}
 
 {% block content_main %}
-	<header>
-		<h1>Equipment &amp; Gear</h1>
-		<h2>This is a secondary headline that is not optional</h2>
-	</header>
+    <header>
+        <h1>Equipment &amp; Gear</h1>
+        <h2>This is a secondary headline that is not optional</h2>
+    </header>
 
 
-	<div class="main-wrapper">
+    <div class="main-wrapper main-wrapper--rev" role="main">
 
-		<ul class="item_list">
+        <ul class="item_list">
 
             {% for post in craft.entries.find({section:'Equipment', limit:'10'})  %}
 
@@ -48,53 +48,19 @@
             {% endfor %}
 
         </ul>
+    </div>
 
-	</div>
+    <div class="side-wrapper side-wrapper--rev side-wrapper--island">
+        {% include 'components/_side-bar.html' %}
+    </div>
 
 
-	<ul class="grid-list divide-4">
-		<li>
-			<a href="URL!"><img src="URL!"/></a>
+{% endblock %}
 
-			<div class="hgroup">
-				<h2><a href="URL">Electric Guitars</a></h2>
-				<span class="meta">210 articles</span>
-			</div>
-			<p>Since the early age of sixteen I’ve been collecting electrics and trying to find the perfect tool for the perfect time.</p>
-		</li>
-		<li>
-			<a href="URL!"><img src="URL!"/></a>
-			<div class="hgroup">
-				<h2><a href="URL">Synthesizers</a></h2>
-				<span class="meta">210 articles</span>
-			</div>
-			<p>Since the early age of sixteen I’ve been collecting electrics and trying to find the perfect tool for the perfect time.</p>
-		</li>
-		<li>
-			<a href="URL!"><img src="URL!"/></a>
 
-			<div class="hgroup">
-				<h2><a href="URL">Drums</a></h2>
-				<span class="meta">210 articles</span>
-			</div>
-			<p>Since the early age of sixteen I’ve been collecting electrics and trying to find the perfect tool for the perfect time.</p>
-		</li>
-		<li>
-			<a href="URL!"><img src="URL!"/></a>
-			<div class="hgroup">
-				<h2><a href="URL">Acoustic Guitars</a></h2>
-				<span class="meta">210 articles</span>
-			</div>
-			<p>Since the early age of sixteen I’ve been collecting electrics and trying to find the perfect tool for the perfect time.</p>
-		</li>
-		<li>
-			<a href="URL!"><img src="URL!"/></a>
-			<div class="hgroup">
-				<h2><a href="URL">Basses</a></h2>
-				<span class="meta">210 articles</span>
-			</div>
-			<p>Since the early age of sixteen I’ve been collecting electrics and trying to find the perfect tool for the perfect time.</p>
-		</li>
-	</ul>
+{% block content_side %}
+    <div class="main-wrapper main-wrapper--full">
+        {% include 'components/_equipment/_category-list.html' %}
+    </div>
 {% endblock %}
 

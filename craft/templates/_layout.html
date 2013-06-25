@@ -8,7 +8,7 @@
             <meta name="author" content="Simon Campbell" />
             <meta name="description" content="Simon Campbell is a guitar player, song writer and producer." />
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-            <title>{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}</title>
+            <title>Simon Campbell – {% if title is defined %}{{ title }} - {% endif %}{{ siteName }}</title>
 
 
         <link rel="home" href="{{ siteUrl }}" />
@@ -50,7 +50,7 @@
 
 
         <!--  SUPPLEMENTARY CONTENT AREA -->
-        {% block content_side%}
+        {% block content_side %}
             <div class="side-wrapper">
             </div><!-- // .wrapper__side -->
         {% endblock %}

@@ -1,3 +1,10 @@
+{#
+ # EQUIPMENT
+ # Detail Template
+ # -------------------
+ #
+ #}
+
 {% extends "_layout" %}
 
 {% block content_main %}
@@ -13,24 +20,51 @@
 		{% if entry.heading__sec %}
 			<h2>{{entry.heading__sec}}</h2>
 		{% endif %}
+
 	</header>
 
 	<p class="lede">{{entry.shortExtract}}</p>
 
 	{{entry.body}}
+
 {% endblock %}
 
-{% block content_side %}
 
-	{% for item in entry.sellerBlock %}
-		<h4>Add this gear to your collection</h4>
-		<dl class="seller-block">
-			<dt>
-				<a href="{{item.sellerURL}}">{{item.sellerName}}:</a>
-			</dt>
-			<dd>
-				${{item.sellerPrice}}
-			</dd>
-		</dl>
-	{% endfor %}
+
+{% block content_side %}
+<!-- EQUIPMENT META INFO -->
+
+	<ul>
+		<li>
+			<h4>Manufactured by</h4>
+			{% for make in entry.makerBlock %}
+
+				<p>
+					<a href="{{ make.makerUrl }}">
+						{{ make.makerTitle }}
+					</a>
+				</p>
+
+			{% endfor %} <!-- //end.makerBlock -->
+		</li>
+
+
+
+		<li>
+			<h4>Add this gear to your collection</h4>
+
+			{% for item in entry.sellerBlock %}
+				<dl class="seller-block">
+					<dt>
+						<a href="{{item.sellerURL}}">{{item.sellerName}}:</a>
+					</dt>
+					<dd>
+						£{{item.sellerPrice}}
+					</dd>
+				</dl>
+
+			{% endfor %}
+		</li>
+	</ul>
+
 {% endblock %}

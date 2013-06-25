@@ -9,16 +9,70 @@
 {% extends "_layout" %}
 
 {% block content_main %}
-	<header>
-		<h1>News</h1>
-	</header>
 
-	{% for entry in craft.entries.section('news').find() %}
-		<article>
-			<h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
-			<p>Posted on {{ entry.postDate.format('F d, Y') }}</p>
-			{{ entry.body.page(1) }}
-			<p><a href="{{ entry.url }}">Read more &raquo;</a></p>
-		</article>
-	{% endfor %}
+    <header>
+        <h1>News</h1>
+        <h2>This is an alternative headline that is not optional</h2>
+    </header>
+
+
+    <div class="main-wrapper">
+
+        <ul class="item-list">
+            {% for news in craft.entries.find({section:'News',limit:'15' }) %}
+                <li class="item-list__item">
+                    <article>
+                        {% for image in news.standardImage %}
+                            <figure>
+                                <img src="{{image.url}}"/>
+                                <p>{{news.caption}}</p>
+                            </figure>
+                        {% endfor %}
+
+                        <h3><a href="{{ news.url }}">{{ news.title }}</a></h3>
+
+                        <time datetime="{{news.postDate|date("Y-m-d")}}">{{news.postDate|date("jS F Y")}}</time>
+
+                        <p>Posted in <a href="URL!" class="icon icon--tag">Life</a>, <a href="URL!" class="icon icon--tag">Health</a></p>
+
+                        {{ news.body }}
+                    </article>
+                </li>
+            {% endfor %}
+        </ul>
+
+    </div>
+
+{% endblock %}
+
+
+{% block content_side %}
+
+    <div class="side-wrapper side-wrapper--island">
+
+        <ul class="item_list--side">
+            <li class="item_list__item">
+                <h3>Categories</h3>
+
+                <ul class="category-links">
+                    <li class="cur category-links__link"><a href="URL!">All</a></li>
+                    <li class="category-links__link"><a href="URL!">Life</a></li>
+                    <li class="category-links__link"><a href="URL!">Diving</a></li>
+                    <li class="category-links__link"><a href="URL!">Travel</a></li>
+                    <li class="category-links__link"><a href="URL!">People</a></li>
+                    <li class="category-links__link"><a href="URL!">Music</a></li>
+                </ul>
+            </li>
+
+            <li class="item_list__item">
+                <h3>Subscribe via RSS</h3>
+
+                <a href="URL!" class="icon-text"><i class="icon-text__icon">RSS</i> Get regular updates from the blog</a>
+            </li>
+        </ul>
+
+        {% include 'components/_side-bar.html' %}
+
+    </div><!-- // end.side-wrapper -->
+
 {% endblock %}

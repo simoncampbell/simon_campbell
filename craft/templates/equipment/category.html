@@ -1,1 +1,110 @@
-category.html
+{#
+ # EQUIPMENT
+ # Category Template e.g. 'Guitars'
+ # -------------------------------
+ #
+ #}
+
+
+{% extends "_layout" %}
+
+{% block content_main %}
+
+    <header>
+        <p class="section-title">Equipment and Gear</p>
+        <h1>Guitars</h1>
+    </header>
+
+    <div class="main-wrapper" role="main">
+
+         <ul class="item-list">
+
+            <li class="item-list__item">
+                <article>
+                    <!-- REQUIRED EQUIPMENT IMAGE -->
+                    <figure>
+                        <a href="{{post.url}}">
+                            <img alt="" src="http://placehold.it/500x300/0eafff/ffffff.png">
+                            <img src="{{image.url}}">
+                        </a>
+                    </figure>
+
+                    <header>
+                        <h3><a href="URL!">TC Electronic 2290</a></h3>
+
+                        <time datetime="DATETIME">24th June 2013</time>
+                    </header>
+
+                    <p>In my younger and more vulnerable years my father gave me some advice that I’ve been turning over in my mind ever since. “Whenever you feel like criticizing any one,” he told me, “just remember that all the people in this world haven’t had the advantages that you’ve had.” <a href="{{post.url}}">Read more &raquo;</a></p>
+                </article>
+            </li>
+
+            <li class="item-list__item">
+                <article>
+                    <!-- REQUIRED EQUIPMENT IMAGE -->
+                    <figure>
+                        <a href="{{post.url}}">
+                            <img alt="" src="http://placehold.it/500x300/0eafff/ffffff.png">
+                            <img src="{{image.url}}">
+                        </a>
+                    </figure>
+
+                    <header>
+                        <h3><a href="URL!">TC Electronic 2290</a></h3>
+
+                        <time datetime="DATETIME">24th June 2013</time>
+                    </header>
+
+                    <p>In my younger and more vulnerable years my father gave me some advice that I’ve been turning over in my mind ever since. “Whenever you feel like criticizing any one,” he told me, “just remember that all the people in this world haven’t had the advantages that you’ve had.” <a href="{{post.url}}">Read more &raquo;</a></p>
+                </article>
+            </li>
+            <li class="item-list__item">
+                <article>
+                    <!-- REQUIRED EQUIPMENT IMAGE -->
+                    <figure>
+                        <a href="{{post.url}}">
+                            <img alt="" src="http://placehold.it/500x300/0eafff/ffffff.png">
+                            <img src="{{image.url}}">
+                        </a>
+                    </figure>
+
+                    <header>
+                        <h3><a href="URL!">TC Electronic 2290</a></h3>
+
+                        <time datetime="DATETIME">24th June 2013</time>
+                    </header>
+
+                    <p>In my younger and more vulnerable years my father gave me some advice that I’ve been turning over in my mind ever since. “Whenever you feel like criticizing any one,” he told me, “just remember that all the people in this world haven’t had the advantages that you’ve had.” <a href="{{post.url}}">Read more &raquo;</a></p>
+                </article>
+            </li>
+        </ul>
+
+    </div>
+
+{% endblock %}
+
+
+
+{% block content_side %}
+
+    <div class="side-wrapper side-wrapper--island">
+
+        <ul class="item-list item-list--side">
+            <li class="item-list__item">
+
+                <h3>Equipment categories</h3>
+                <ul class="category-links">
+                    <li class="cur category-links__link"><a href="URL!">Electric guitars</a></li>
+                    <li class="category-links__link"><a href="URL!">Acoustic guitars</a></li>
+                    <li class="category-links__link"><a href="URL!">Synths</a></li>
+                    <li class="category-links__link"><a href="URL!">Drums</a></li>
+                    <li class="category-links__link"><a href="URL!">Keyboards</a></li>
+                </ul>
+            </li>
+            <li>
+                {% include 'components/_side-bar.html' %}
+            </li>
+        </ul>
+    </div>
+
+{% endblock %}

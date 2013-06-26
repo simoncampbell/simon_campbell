@@ -8,3 +8,10 @@
 @function calc-rem($target, $context: $base__font-size) {
      @return ($target / $context) * 1rem;
 }
+
+@mixin vendor($property, $value...){
+    -webkit-#{$property}:$value;
+       -moz-#{$property}:$value;
+        -ms-#{$property}:$value;
+         -o-#{$property}:$value;
+}

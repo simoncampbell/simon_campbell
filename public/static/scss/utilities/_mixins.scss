@@ -1,0 +1,10 @@
+/*------------------------------------*\
+    $MIXINS
+\*------------------------------------*/
+
+/**
+ * Calculate rems. $target = pixel size. $context = base pixel size
+ */
+@function calc-rem($target, $context: $base__font-size) {
+     @return ($target / $context) * 1rem;
+}

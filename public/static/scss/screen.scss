@@ -45,7 +45,10 @@
  *
  *
  * Quarks-----------------------------------------------------------
-
+ *
+ *
+ *
+ *
  */
 
 
@@ -75,3 +78,7 @@
  * Quarks; classless styling of default elements
  */
 @import "quarks/main";
+@import "quarks/headings";
+@import "quarks/paragraphs";
+
+

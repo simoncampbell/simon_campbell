@@ -9,7 +9,7 @@
 
 
 /*------------------------------------*\
-    $BREAKPOINTS
+    $Breakpoints
 \*------------------------------------*/
 /**
  * Standard breakpoint variables for use within breakpoint’s respond-to mixin
@@ -22,25 +22,26 @@
 
 
 /*------------------------------------*\
-    $BASE
+    $Base
 \*------------------------------------*/
 /**
  * Font-sizes (in pixels). Refer to relevant sections for their implementations.
  */
-$h1-size: 35px!default;
-$h2-size: 24px!default;
-$h3-size: 18px!default;
-$h4-size: 14px!default;
+$h1-size: 42px!default;
+$h2-size: 35px!default;
+$h3-size: 24px!default;
+$h4-size: 16px!default;
+$h5-size: 14px!default;
 
 $base-font-size: 17px!default;
 $base-line-height: 25px!default;
 
-$base-font-family: serif!default;
-$base-color: #ccc!default;
+$base-font-family: Georgia, serif!default;
+$base-color:#252525!default;
 
 
 /*------------------------------------*\
-    $QUOTES
+    $Quotes
 \*------------------------------------*/
 /**
  * English quote marks?
@@ -50,7 +51,7 @@ $english-quotes:    true!default;
 
 
 /*------------------------------------*\
-    $ATOMS AND ABSTRACTIONS
+    $Atoms and Abstractions
 \*------------------------------------*/
 /**
  * Which objects and abstractions would you like to use?
@@ -70,7 +71,7 @@ $use-sprite:        true!default;
 
 
 /*------------------------------------*\
-    $FRAMEWORK
+    $Framework
 \*------------------------------------*/
 /**
  * inuit.css will work these next ones out for use within the framework.

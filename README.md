@@ -12,7 +12,7 @@ The redesign of [simoncampbell.com](http://simoncampbell)
 5. Set the permissions of craft/storage/, craft/config/ and craft/app to 777
 6. Point your browser to: website_name/index.php?p=admin
 7. Install Craft
-8. 
+8. Get #crafting
 
 
 ### Compass

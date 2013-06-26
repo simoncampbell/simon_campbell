@@ -39,7 +39,7 @@
 
 
     <div class="side-wrapper side-wrapper--rev">
-        <ul>
+        <ul class="standard-list">
             <li>
                 <!-- INSTRUMENT IMAGE -->
                 {% for image in entry.equipmentImage %}
@@ -92,8 +92,59 @@
 
 {% block content_side %}
     <div class="main-wrapper">
-        {% include 'components/_equipment/_category-list.html'%}
-    </div>
+        <h2 class="meta-info-block"><span class="comment-count">3</span> Comments</h2>
+
+        <ul class="item-list item-list__comments">
+            <li class="item-list__comment-item">
+                <img class="item-list__comment-item__avatar" src="http://placehold.it/50x50/0eafff/ffffff.png">
+                <header>
+                    <h3><a href="URL!">Jack Nicholson</a></h3>
+                    <time datetime="2013-06-24">24th June 2013</time>
+                </header>
+                <p>Brilliant!</p>
+
+                <p>Always my choice as well (apart from the lemon yellow Toyota Hi-Ace (which was (thankfully) stolen from Glastonbury) and a day-glo orange LWB semi hi-top Tranny (which turned out to have false plates on it))&hellip;</p>
+            </li>
+            <li class="item-list__comment-item">
+                <img class="item-list__comment-item__avatar" src="http://placehold.it/50x50/0eafff/ffffff.png">
+                <header>
+                    <h3><a href="URL!">Jack Nicholson</a></h3>
+                    <time datetime="2013-06-24">24th June 2013</time>
+                </header>
+                <p>Brilliant!</p>
+
+                <p>Always my choice as well (apart from the lemon yellow Toyota Hi-Ace (which was (thankfully) stolen from Glastonbury) and a day-glo orange LWB semi hi-top Tranny (which turned out to have false plates on it))&hellip;</p>
+            </li>
+            <li class="item-list__comment-item">
+                <img class="item-list__comment-item__avatar" src="http://placehold.it/50x50/0eafff/ffffff.png">
+                <header>
+                    <h3><a href="URL!">Jack Nicholson</a></h3>
+                    <time datetime="2013-06-24">24th June 2013</time>
+                </header>
+                <p>Brilliant!</p>
+
+                <p>Always my choice as well (apart from the lemon yellow Toyota Hi-Ace (which was (thankfully) stolen from Glastonbury) and a day-glo orange LWB semi hi-top Tranny (which turned out to have false plates on it))&hellip;</p>
+            </li>
+        </ul>
+
+
+        <div class="form-block form-block--comments">
+
+            <label for="comment" class="h3-size">Leave a comment</label>
+            <textarea name="comment" id="comment" cols="100" rows="10" placeholder="What did ya think of the blog post? What are your thoughts?"></textarea>
+
+            <label for="author" class="screen-reader">Name*</label>
+            <input placeholder="Name (required)" required="" type="text" name="author" id="author" value="" class="infoput">
+
+            <label for="email" class="screen-reader">Email</label>
+            <input placeholder="Email (required)" required="" type="email" name="email" id="email" value="" class="infoput">
+
+            <label for="url" class="screen-reader">Website</label>
+            <input placeholder="Website (optional)" type="url" name="url" id="url" value="" class="infoput">
+
+            <input name="submit" id="submit" class="btn btn--submit" value="Post comment">
+        </div>
+    </div><!-- //end.main-wrapper -->
 
     <div class="side-wrapper side-wrapper--island">
         {% include 'components/_side-bar.html' %}

@@ -16,15 +16,15 @@
 
     <div class="main-wrapper main-wrapper--rev" role="main">
 
-        <ul class="item_list">
+        <ul class="item-list">
 
             {% for post in craft.entries.find({section:'Equipment', limit:'10'})  %}
 
-                <li class="item_list__item">
+                <li class="item-list__item">
 
                     <article>
 
-                        <!-- OPTIONAL BLOG POST IMAGE -->
+                        <!-- REQUIRED EQUIPMENT IMAGE -->
                         {% for image in post.equipmentImage %}
                             <figure>
                                 <a href="{{post.url}}">
@@ -41,7 +41,7 @@
                             <p>Posted in <a href="/equipment/{{post.equipmentCategory|lower}}">{{post.equipmentCategory}}</a></p>
                         </header>
 
-                        <p>{{ post.shortExtract }}. <a href="{{post.url}}">Read more &raquo;</a></p>
+                        <p>{{ post.shortExtract }} <a href="{{post.url}}">Read more &raquo;</a></p>
 
                     </article>
                 </li>

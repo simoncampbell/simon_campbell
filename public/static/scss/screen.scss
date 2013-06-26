@@ -1,6 +1,73 @@
-/* Welcome to Compass.
- * In this file you should write your main styles. (or centralize your imports)
- * Import this file using the following HTML or equivalent:
- * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/*------------------------------------*\
+    SIMON CAMPBELL
+\*------------------------------------*/
+/*!*
+ * Author: Erskine Design
+ */
 
-@import "compass/reset";
+/*
+ *
+ * Quarks are classless, styling of default HTML elements.
+ *
+ * Atoms are the objects that we can use as building blocks to create molecules.
+ *
+ * Molecules are combinations of atoms to create more complicated structures.
+ *
+ * Utilities are system wide styles such as normalize and reset, colors, font-stacks etc. that can be used anywhere and at any time.
+ *
+ */
+
+
+
+/*------------------------------------*\
+    $CONTENTS
+\*------------------------------------*/
+/**
+ * CONTENTS............You’re reading it!
+ * IMPORTS.............Begin importing the sections below
+ *
+ *
+ *
+ * NORMALIZE...........normalize.css
+ * MIXINS..............Cool guy mixins
+ * RESET...............Set defaults
+ * CLEARFIX............
+ * FONT-STACK..........Font stack settings
+ * HELPER..............Handy layout classes for classless items
+ * COLORS..............System wide colors
+ *
+ * External compass includes ---------------------------------------
+ * Toolkit.............http://cl.ly/2u3h1u0W0x1D
+ * Breakpoint..........http://cl.ly/1F112q0Q0D28
+ *
+ * Quarks-----------------------------------------------------------
+
+ */
+
+
+
+/*------------------------------------*\
+    $IMPORTS
+\*------------------------------------*/
+/**
+ * Utilities; generic utility styles etc.
+ */
+@import "defaults";
+@import "utilities/normalize";
+@import "utilities/mixins";
+@import "utilities/reset";
+@import "utilities/clearfix";
+@import "utilities/font-stack";
+@import "utilities/helper";
+@import "utilities/colors";
+
+
+
+
+/**
+ * External compass includes
+ */
+@import "toolkit";
+@import "breakpoint";
+
+

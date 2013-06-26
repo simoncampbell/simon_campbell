@@ -1,0 +1,41 @@
+/*------------------------------------*\
+    $HEADINGS
+\*------------------------------------*/
+/**
+ * When we define a heading we also define a corresponding class to go with it.
+ * This allows us to apply, say, `class=h1` to a `h3`; a double-stranded
+ * heading hierarchy.
+ */
+
+
+
+
+h1, .alpha {
+	@extend %font__display--black;
+	font-size: $h1-size;
+	font-size: calc-rem($h1-size);
+	line-height: calc-rem($base-line-height*2);
+    text-rendering: optimizeLegibility;
+}
+
+h2, .beta {
+	@extend %font__display--black;
+	line-height: calc-rem($base-line-height*1.8);
+	line-height: calc-rem(($base-line-height*1.8));
+	font-size: $h2-size;
+	font-size: calc-rem($h2-size);
+}
+
+h3, .gamma {
+	@extend %font__display--black;
+	font-size: $h3-size;
+}
+
+h4, .delta {
+	font-size: $h4-size;
+}
+
+h5, .epsilon {
+	font-size: $h5-size;
+}
+

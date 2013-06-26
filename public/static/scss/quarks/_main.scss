@@ -2,17 +2,13 @@
     $MAIN
 \*------------------------------------*/
 
-html{
-    overflow-y:scroll;
-    min-height:100%;
-    -webkit-font-smoothing: antialiased;
-}
-
-
 body {
-    background-color:
-    font-size:104%;
-    line-height:$base-line-height;
-    color:$base-color;
-    font-family:$base-font-family;
+    @extend %font__text--regular;
+    background-color: $color__background--white;
+    line-height: $base-line-height;
+    line-height: calc-rem($base-line-height);
+    font-size: $base-font-size;
+    font-size: calc-rem($base-font-size);
+    color: $base-color;
+    font-family: $base-font-family;
 }

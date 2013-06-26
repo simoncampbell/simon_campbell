@@ -16,8 +16,9 @@ The redesign of [simoncampbell.com](http://simoncampbell)
 
 
 ### Compass
-If you don’t have compass installed then run the following command: 
-
+If you don’t have compass installed then run the following commands:
+    
+    $gem update --system
     $gem install compass
 
 Then navigate to the top level directory of the project and run:

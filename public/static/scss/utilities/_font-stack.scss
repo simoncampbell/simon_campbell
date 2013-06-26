@@ -1,0 +1,40 @@
+/*------------------------------------*\
+    $FONT-STACK
+\*------------------------------------*/
+
+/**
+ * Default text font-family and font weights
+ */
+%text--regular {
+  font-family: "Poynter Serif RE", Georgia, serif;
+  font-style: normal;
+  font-weight: normal;
+}
+
+%text--italic {
+  font-family: "Poynter Serif RE", Georgia, serif;
+  font-style: italic;
+  font-weight: normal;
+}
+
+%text--bold {
+  font-family: "Poynter Serif RE", Georgia, serif;
+  font-style: normal;
+  font-weight: bold;
+}
+
+
+/**
+ * Display text faces
+ */
+%display--regular {
+  font-family: "Griffith Gothic", Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+}
+
+%display--black {
+  font-family: "Griffith Gothic Black", Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+}

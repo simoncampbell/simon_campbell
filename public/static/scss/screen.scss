@@ -27,6 +27,7 @@
  * IMPORTS.............Begin importing the sections below
  *
  *
+ * Utitlities-------------------------------------------------------
  *
  * NORMALIZE...........normalize.css
  * MIXINS..............Cool guy mixins
@@ -36,9 +37,12 @@
  * HELPER..............Handy layout classes for classless items
  * COLORS..............System wide colors
  *
+ *
  * External compass includes ---------------------------------------
+ *
  * Toolkit.............http://cl.ly/2u3h1u0W0x1D
  * Breakpoint..........http://cl.ly/1F112q0Q0D28
+ *
  *
  * Quarks-----------------------------------------------------------
 
@@ -61,13 +65,13 @@
 @import "utilities/helper";
 @import "utilities/colors";
 
-
-
-
 /**
  * External compass includes
  */
 @import "toolkit";
 @import "breakpoint";
 
-
+/**
+ * Quarks; classless styling of default elements
+ */
+@import "quarks/main";

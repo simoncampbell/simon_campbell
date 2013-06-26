@@ -2,13 +2,8 @@
     $RESET
 \*------------------------------------*/
 /**
- * A more considered reset; more of a restart...
  * As per: csswizardry.com/2011/10/reset-restarted
  */
-
-/**
-* Let’s make the box model all nice, shall we…?
-*/
 *{
     &,
     &:before,

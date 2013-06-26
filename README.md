@@ -1,5 +1,5 @@
 # Simon Campbell
-The redesign of [simoncampbell.com](http://simoncampbell)
+The redesign of [simoncampbell.com](http://simoncampbell).
 
 ## Installation
 

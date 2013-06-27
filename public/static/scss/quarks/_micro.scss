@@ -15,6 +15,7 @@ samp {
 
 strong,
 b {
+	@extend %font__text--bold;
 }
 
 abbr, span {
@@ -28,6 +29,7 @@ mark {
 
 dl {
     dt {
+    	@extend %font__text--bold;
     }
 
     dd {

@@ -7,21 +7,17 @@
  * heading hierarchy.
  */
 
-
-
-
 h1, .alpha {
 	@extend %font__display--black;
 	font-size: $h1-size;
 	font-size: calc-rem($h1-size);
-	line-height: calc-rem($base-line-height*1.8);
+	line-height: ($line-height-ratio - .25);
     text-rendering: optimizeLegibility;
 }
 
 h2, .beta {
 	@extend %font__display--regular;
-	line-height: calc-rem($base-line-height*1.8);
-	line-height: calc-rem(($base-line-height*1.8));
+	line-height: ($line-height-ratio - .2) ;
 	font-size: $h2-size;
 	font-size: calc-rem($h2-size);
 }
@@ -35,9 +31,9 @@ h4, .delta {
 	@extend %font__display--black;
 	text-transform: uppercase;
 	font-size: $h4-size;
+	line-height: $line-height-ratio;
 }
 
 h5, .epsilon {
 	font-size: $h5-size;
 }
-

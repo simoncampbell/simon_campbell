@@ -128,3 +128,9 @@
 @import "atoms/item-list";
 @import "atoms/icon";
 @import "atoms/rules";
+
+/**
+ * Molecules; combinations of atoms
+ */
+@import "molecules/banner-nav";
+@import "molecules/footer";

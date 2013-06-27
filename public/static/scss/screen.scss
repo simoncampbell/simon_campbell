@@ -44,7 +44,7 @@
  * Breakpoint..........http://cl.ly/1F112q0Q0D28
  *
  *
- * Quarks-----------------------------------------------------------
+ * Quarks -----------------------------------------------------------
  * MAIN................Main elements like `html`, `body`, etc.
  * HEADINGS............Double-stranded heading hierarchy
  * PARAGRAPHS..........
@@ -56,6 +56,25 @@
  * IMAGES..............
  * TABLES..............
  * SMALLPRINT..........Smaller text elements like `small`
+ * MICRO...............Micro-typographic elements like 'span', 'kbd', etc.
+ *
+ *
+ * Atoms -----------------------------------------------------------
+ * GRIDS...............
+ * NAV.................Put a list in horizontal nav mode
+ * BEAUTONS............Use the beautons micro library for buttons
+ * MEDIA...............Media object
+ * MARGINALIA..........Simple marginalia content
+ * ISLAND..............Boxed off content
+ * ITEM-LIST...........Item of articles ie. RSS feed style
+ * ICON................Text and icon couplings
+ * RULES...............Horizontal rules
+ *
+ *
+ * Molecules ------------------------------------------------------
+ * BANNER-NAV.........Banner navigation
+ * FOOTER.............
+ *
  */
 
 
@@ -97,4 +116,15 @@
 @import "quarks/smallprint";
 @import "quarks/micro";
 
-
+/**
+ * Atoms; independent objects and abstractions
+ */
+@import "atoms/grids";
+@import "atoms/nav";
+@import "atoms/beautons";
+@import "atoms/media";
+@import "atoms/marginalia";
+@import "atoms/island";
+@import "atoms/item-list";
+@import "atoms/icon";
+@import "atoms/rules";

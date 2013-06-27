@@ -45,10 +45,17 @@
  *
  *
  * Quarks-----------------------------------------------------------
- *
- *
- *
- *
+ * MAIN................Main elements like `html`, `body`, etc.
+ * HEADINGS............Double-stranded heading hierarchy
+ * PARAGRAPHS..........
+ * BLOCKQUOTES.........
+ * FIGURES.............
+ * FORMS...............
+ * LISTS...............
+ * LINKS...............
+ * IMAGES..............
+ * TABLES..............
+ * SMALLPRINT..........Smaller text elements like `small`
  */
 
 
@@ -80,5 +87,14 @@
 @import "quarks/main";
 @import "quarks/headings";
 @import "quarks/paragraphs";
+@import "quarks/blockquotes";
+@import "quarks/figures";
+@import "quarks/forms";
+@import "quarks/lists";
+@import "quarks/links";
+@import "quarks/images";
+@import "quarks/tables";
+@import "quarks/smallprint";
+@import "quarks/micro";
 
 

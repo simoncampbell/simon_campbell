@@ -28,7 +28,7 @@
  */
 $h1-size: 35px!default;
 $h2-size: 28px!default;
-$h3-size: 20px!default;
+$h3-size: 22px!default;
 $h4-size: 15px!default;
 $h5-size: 14px!default;
 
@@ -71,6 +71,7 @@ $use-nav:           true!default;
 $use-rules:         true!default;
 $use-sprite:        true!default;
 $use-icon:          true!default;
+$use-heading-group: true!default;
 
 
 
@@ -82,6 +83,6 @@ $use-icon:          true!default;
  *
  * Assign our `$base-line-height` to a new spacing var for more transparency.
  */
-$base-spacing-unit: $base-line-height!default;
+$base-spacing-unit: ($base-line-height - 5) !default;
 $half-spacing-unit: $base-spacing-unit / 2!default;
 $line-height-ratio: $base-line-height / $base-font-size;

@@ -5,10 +5,6 @@
 body {
     @extend %font__text--regular;
     background-color: $color__background--white;
-    line-height: $base-line-height;
-    line-height: calc-rem($base-line-height);
-    font-size: $base-font-size;
-    font-size: calc-rem($base-font-size);
+    font: percentage($base-font-size / 16px) $base-font-family;
     color: $base-color;
-    font-family: $base-font-family;
 }

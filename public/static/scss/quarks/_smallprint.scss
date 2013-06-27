@@ -6,5 +6,6 @@
  */
 .smallprint,
 .milli{
-    @include font-size($milli-size);
+    font-size:$milli-size;
+    font-size:calc-rem($milli-size);
 }

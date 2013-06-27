@@ -32,6 +32,8 @@ h3, .gamma {
 }
 
 h4, .delta {
+	@extend %font__display--black;
+	text-transform: uppercase;
 	font-size: $h4-size;
 }
 

@@ -3,14 +3,12 @@
 \*------------------------------------*/
 
 a {
-    // color:$primary;
-    // text-decoration:none;
-    // @include transition-property(color);
-    // @include transition-duration(.2s);
+    color:$color__orange--primary;
+    text-decoration:underline;
 
-    // &:hover,
-    // &:focus {
-        // text-decoration:underline;
-        // color:$lightgrey;
-    // }
+    &:hover,
+    &:focus {
+        text-decoration:none;
+        color:$color__orange--active;
+    }
 }

@@ -17,23 +17,25 @@ h1, .alpha {
 
 h2, .beta {
 	@extend %font__display--regular;
-	line-height: ($line-height-ratio - .2) ;
 	font-size: $h2-size;
 	font-size: calc-rem($h2-size);
+	line-height: ($line-height-ratio - .2);
 }
 
 h3, .gamma {
 	@extend %font__display--black;
 	font-size: $h3-size;
+	line-height: ($line-height-ratio - .25);
 }
 
 h4, .delta {
 	@extend %font__display--black;
 	text-transform: uppercase;
 	font-size: $h4-size;
-	line-height: $line-height-ratio;
+	line-height: ($line-height-ratio + .16);
 }
 
 h5, .epsilon {
 	font-size: $h5-size;
+	line-height: $line-height-ratio;
 }

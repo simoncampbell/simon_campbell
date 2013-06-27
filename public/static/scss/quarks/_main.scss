@@ -7,4 +7,18 @@ body {
     background-color: $color__background--white;
     font: percentage($base-font-size / 16px) $base-font-family;
     color: $base-color;
+    line-height:1.55;
+
+    &:after {
+    	content:"";
+    	display:block;
+    	position:absolute;
+    	width:1000px;
+    	height:1000px;
+    	top:0;
+    	left:0;
+	    background-image:url(/static/images/grids/baselines.png);
+	    background-repeat:repeat;
+	    opacity:.4;
+    }
 }

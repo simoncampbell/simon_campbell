@@ -21,7 +21,7 @@ pre,
 %sass-margin-bottom,
 .media,
 .island,
-.islet{
+.islet {
     margin-bottom:$base-spacing-unit;
     margin-bottom:($base-spacing-unit / $base-font-size)*1rem;
 
@@ -35,7 +35,7 @@ pre,
  * `hr` elements only take up a few pixels, so we need to give them special
  * treatment regarding vertical rhythm.
  */
-hr{
+hr {
     margin-bottom:$base-spacing-unit - 2px;
     margin-bottom:(($base-spacing-unit - 2px) / $base-font-size)*1rem;
 }
@@ -44,7 +44,7 @@ hr{
  * Where `margin-left` is concerned we want to try and indent certain elements
  * by a consistent amount. Define that amount once, here.
  */
-ul,ol,dd{
+ul,ol,dd {
     margin-left:2 * $base-spacing-unit;
     margin-left:(2 * $base-spacing-unit / $base-font-size)*1rem;
 }

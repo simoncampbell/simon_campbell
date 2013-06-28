@@ -13,6 +13,12 @@
     padding: calc-rem($half-spacing-unit) 0;
 }
 
+    .meta-info-block--borderless {
+        border:none;
+        margin-top:0;
+        padding:0;
+    }
+
     .meta-info-block__item {
         @extend %font__display--regular;
         margin-bottom:0;
@@ -25,3 +31,4 @@
             color: lighten($color__meta, 15);
         }
     }
+

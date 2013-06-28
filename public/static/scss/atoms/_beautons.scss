@@ -17,45 +17,54 @@
 \*------------------------------------*/
 /**
  * Base button styles.
- *
- * 1. Allow us to better style box model properties.
- * 2. Line different sized buttons up a little nicer.
- * 3. Stop buttons wrapping and looking broken.
- * 4. Make buttons inherit font styles.
- * 5. Force all elements using beautons to appear clickable.
- * 6. Normalise box model styles.
- * 7. If the button’s text is 1em, and the button is (3 * font-size) tall, then
- *    there is 1em of space above and below that text. We therefore apply 1em
- *    of space to the left and right, as padding, to keep consistent spacing.
- * 8. Basic cosmetics for default buttons. Change or override at will.
- * 9. Don’t allow buttons to have underlines; it kinda ruins the illusion.
  */
 .btn{
-    display:inline-block;       /* [1] */
-    vertical-align:middle;      /* [2] */
-    white-space:nowrap;         /* [3] */
-    font-family:inherit;        /* [4] */
-    font-size:100%;             /* [4] */
-    cursor:pointer;             /* [5] */
-    border:none;                /* [6] */
-    margin:0;                   /* [6] */
-    padding-top:   0;           /* [6] */
-    padding-bottom:0;           /* [6] */
-    line-height:3;              /* [7] */
-    padding-right:1em;          /* [7] */
-    padding-left: 1em;          /* [7] */
-}
-
-.btn{
-
-    &,
-    &:hover{
-        text-decoration:none;   /* [9] */
-    }
+    @extend %font__display--regular;
+    @include vendor(border-radius, $brand-round);
+    display:inline-block;
+    vertical-align:top;
+    white-space:nowrap;
+    font-family:inherit;
+    font-size:100%;
+    cursor:pointer;
+    border:none;
+    margin:0;
+    padding-top:0;
+    padding-bottom:0;
+    line-height:2.4;
+    padding-right:1em;
+    padding-left: 1em;
 
     &:active,
-    &:focus{
+    &:focus {
         outline:none;
+    }
+}
+
+.btn--primary {
+    background-color: $color__orange--secondary;
+    border: 1px solid $color__border--orange;
+    color: $color__white;
+
+    &:hover {
+        text-decoration: none;
+        background-color: $color__orange--dark;
+        border: 1px solid darken($color__border--orange, 5);
+    }
+
+    &:active {
+        background-color: darken($color__orange--dark, 5);
+        border: 1px solid darken($color__border--orange, 10);
+    }
+}
+
+
+.btn--secondary {
+    background-color: $color__grey--primary;
+    border: 1px solid darken($color__grey--primary, 10);
+
+    &:hover {
+
     }
 }
 
@@ -164,22 +173,6 @@
     background-color:#b33630;
     color:#fff;
 }
-
-/**
- * Inactive, disabled buttons.
- *
- * 1. Make the button look like normal text when hovered.
- */
-.btn--inactive,
-    .btn--inactive:hover,
-    .btn--inactive:active,
-    .btn--inactive:focus{
-        background-color:#ddd;
-        color:#777;
-        cursor:text;            /* [1] */
-    }
-
-
 
 
 

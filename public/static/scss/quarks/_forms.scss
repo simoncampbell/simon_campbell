@@ -8,8 +8,11 @@ textarea,
 input {
     @extend %font__display--regular;
     @include vendor(border-radius, $brand-round);
+    @include vendor(border-radiusm, calc-rem($brand-round));
     -webkit-appearance:none;
     border: 1px solid $color__border--dark;
+    background-color: $color__background--grey;
+    margin-bottom: $base-spacing-unit;
 
     &::-webkit-input-placeholder,
     &:-moz-placeholder,

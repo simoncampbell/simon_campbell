@@ -33,7 +33,7 @@ $base-line-height: 25px!default;
 $h1-size: 35px!default;
 $h2-size: 28px!default;
 $h3-size: 22px!default;
-$h4-size: 15px!default;
+$h4-size: 18px!default;
 $h5-size: $base-font-size !default;
 
 $base-font-family: "Poynter Serif RE", Georgia, serif!default;
@@ -44,13 +44,22 @@ $base-ui-color: #EEEEEE!default;
 $milli-size: 12px!default;
 
 
+
+/*------------------------------------*\
+    $Brand
+\*------------------------------------*/
+
+$brand-round: 5px!default;
+
+
+
 /*------------------------------------*\
     $Quotes
 \*------------------------------------*/
 /**
  * English quote marks?
  */
-$english-quotes:    true!default;
+$english-quotes: true!default;
 
 
 
@@ -60,18 +69,18 @@ $english-quotes:    true!default;
 /**
  * Which objects and abstractions would you like to use?
  */
-$use-beautons:      true!default;
-$use-block-list:    true!default;
-$use-item-list:     true!default;
-$use-grids:         true!default;
-$use-icon-text:     true!default;
-$use-island:        true!default;
-$use-marginalia:    true!default;
-$use-media:         true!default;
-$use-nav:           true!default;
-$use-rules:         true!default;
-$use-sprite:        true!default;
-$use-icon:          true!default;
+$use-beautons: true!default;
+$use-block-list: true!default;
+$use-item-list: true!default;
+$use-grids: true!default;
+$use-icon-text: true!default;
+$use-island: true!default;
+$use-marginalia: true!default;
+$use-media: true!default;
+$use-nav: true!default;
+$use-rules: true!default;
+$use-sprite: true!default;
+$use-icon: true!default;
 $use-heading-group: true!default;
 
 
@@ -86,4 +95,5 @@ $use-heading-group: true!default;
  */
 $base-spacing-unit: ($base-line-height - 5) !default;
 $half-spacing-unit: $base-spacing-unit / 2!default;
+$quarter-spacing-unit: $base-spacing-unit / 4!default;
 $line-height-ratio: $base-line-height / $base-font-size;

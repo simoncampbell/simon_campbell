@@ -2,3 +2,26 @@
     $META INFO BLOCK
 \*------------------------------------*/
 
+.meta-info-block {
+    @extend .cf;
+    color: $color__meta;
+    border-top: 1px solid $color__border--standard;
+    border-bottom: 1px solid $color__border--standard;
+    margin-bottom: ($base-spacing-unit);
+    margin-bottom: calc-rem($base-spacing-unit);
+    padding: $half-spacing-unit 0;
+    padding: calc-rem($half-spacing-unit) 0;
+}
+
+    .meta-info-block__item {
+        @extend %font__display--regular;
+        margin-bottom:0;
+        display:inline-block;
+
+        &:nth-child(2):before {
+            content:"•";
+            padding: 0 $quarter-spacing-unit;
+            padding: 0 calc-rem($quarter-spacing-unit);
+            color: lighten($color__meta, 15);
+        }
+    }

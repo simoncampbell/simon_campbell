@@ -55,6 +55,13 @@ img{
 }
 
 /**
+ * Remove borders from fieldset
+ */
+fieldset {
+    border:none;
+}
+
+/**
  * Give form elements some cursor interactions...
  */
 label,

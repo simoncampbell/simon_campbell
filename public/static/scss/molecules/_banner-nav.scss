@@ -2,12 +2,20 @@
     $BANNER-NAV
 \*------------------------------------*/
 
+#nav_pri {
+    margin-bottom: $base-spacing-unit * 2;
+    background-color: $color__background--dark;
+
+    .link__mobile--menu {
+
+    }
+}
 
 .banner-nav {
-	background-color:$color__background--dark;
+    @extend .nav--stacked;
+    margin:0;
 
+    >li {
 
-	>li {
-
-	}
+    }
 }

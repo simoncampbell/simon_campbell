@@ -2,20 +2,33 @@
     $COLORS
 \*------------------------------------*/
 
+$color__white: #FFFFFF;
+
 $color__background--dark: #555555;
 $color__background--grey: #FAFAFA;
 $color__background--white: #FDFDFD;
 
 
 $color__orange--primary: #FF8039;
+$color__orange--secondary:#FD6D16;
 $color__orange--active: #F24125;
+$color__orange--dark: #DB6000;
+
+
+$color__grey--primary: #DADADA;
+$color__grey--secondary: #C0C0C0;
 
 
 $color__border--standard: #DDDDDD; //dark grey
 $color__border--dark: #C1C1C1;
+$color__border--orange: #DE5416;
 
 
+$color__meta--dark: #5A5A5A;
 $color__meta: #9F9F9F; //light grey
+
+
+$color__text--reverse: #AAAAAA;
 
 
 /**

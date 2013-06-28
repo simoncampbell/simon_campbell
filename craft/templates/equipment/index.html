@@ -33,12 +33,14 @@
                             </figure>
                         {% endfor %}
 
-                        <header>
+                        <header class="heading-group">
                             <h3><a href="{{post.url}}">{{ post.title }}</a></h3>
 
-                            <time datetime="{{post.postDate|date("Y-m-d")}}">{{post.postDate|date("jS F Y")}}</time>
+                            <div class="meta-info-block meta-info-block--borderless">
+                                <time class="meta-info-block__item" datetime="{{post.postDate|date("Y-m-d")}}">{{post.postDate|date("jS F Y")}}</time>
 
-                            <p>Posted in <a href="/equipment/{{post.equipmentCategory|lower}}">{{post.equipmentCategory}}</a></p>
+                                <p class="meta-info-block__item">Posted in <a href="/equipment/{{post.equipmentCategory|lower}}">{{post.equipmentCategory}}</a></p>
+                            </div>
                         </header>
 
                         <p>{{ post.shortExtract }} <a href="{{post.url}}">Read more &raquo;</a></p>

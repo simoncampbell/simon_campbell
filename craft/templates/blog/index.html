@@ -30,12 +30,15 @@
                             </figure>
                         {% endfor %}
 
-                        <header>
+                        <header class="heading-group">
                             <h3><a href="{{post.url}}">{{ post.title }}</a></h3>
 
-                            <time datetime="{{post.postDate|date("Y-m-d")}}">{{post.postDate|date("jS F Y")}}</time>
+                            <div class="meta-info-block meta-info-block--borderless">
 
-                            <p>Posted in <a href="URL!" class="icon icon--tag">Life</a>, <a href="URL!" class="icon icon--tag">Health</a></p>
+                                <time class="meta-info-block__item" datetime="{{post.postDate|date("Y-m-d")}}">{{post.postDate|date("jS F Y")}}</time>
+
+                                <p class="meta-info-block__item">Posted in <a href="URL!" class="icon icon--tag">Life</a>, <a href="URL!" class="icon icon--tag">Health</a></p>
+                            </div>
                         </header>
 
                         <p>{{ post.shortExtract }}. <a href="{{post.url}}">Read more &raquo;</a></p>
@@ -54,11 +57,11 @@
 
 {% block content_side %}
 
-    <div class="side-wrapper">
+    <div class="island side-wrapper">
 
-        <ul class="item_list item_list--side">
+        <ul class="item-list item-list">
 
-            <li class="item_list__item">
+            <li class="item-list__item">
 
                 <h3>Search the blog</h3>
 
@@ -70,7 +73,7 @@
 
             </li>
 
-            <li class="item_list__item">
+            <li class="item-list__item">
 
                 <h3>Categories</h3>
 
@@ -85,7 +88,7 @@
 
             </li>
 
-            <li class="item_list__item">
+            <li class="item-list__item">
 
                 <h3>Subscribe via RSS</h3>
 

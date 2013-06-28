@@ -3,15 +3,22 @@
 \*------------------------------------*/
 
 #nav_pri {
-    margin-bottom: $base-spacing-unit * 2;
     background-color: $color__background--dark;
 
     .link__mobile--menu {
+
+		.no-js & {
+			display: none;
+		}
 
     }
 }
 
 .banner-nav {
+	.js & {
+		display: none;
+	}
+
     @extend .nav--stacked;
     margin:0;
 

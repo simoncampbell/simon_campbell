@@ -12,12 +12,32 @@ li{
 }
 
 ul {
+    margin-left:0;
+    list-style-position:outside;
+
     >li {
 
     }
 }
 
 ol {
+    margin-left:0;
+    list-style-position:outside;
+
     li {
+        counter-increment: counter;
+
+
+        .generatedcontent & {
+            list-style-type:none;
+
+            &:before {
+                content: counter(counter);
+                color: $color__orange--primary;
+                position:relative;
+                left: - $quarter-spacing-unit;
+                left: - (calc-rem($quarter-spacing-unit));
+            }
+        }
     }
 }

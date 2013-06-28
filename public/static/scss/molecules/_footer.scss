@@ -4,6 +4,28 @@
 \*------------------------------------*/
 
 .footer-main {
+	color: $color__text--reverse;
 	padding: $base-spacing-unit;
 	background-color: $color__background--dark;
 }
+
+
+	.footer-main__item {
+		margin-bottom: $base-spacing-unit * 2;
+		margin-bottom: calc-rem($base-spacing-unit * 2);
+
+		h3 {
+			font-size: $h4-size;
+			font-size: cal-rem($h4-size);
+			color: $color__white;
+			margin-bottom:0;
+		}
+
+		label {
+			@extend .base-text;
+			color: $color__text--reverse;
+			font-weight:normal;
+			text-transform: none;
+			margin-bottom: $base-spacing-unit;
+		}
+	}

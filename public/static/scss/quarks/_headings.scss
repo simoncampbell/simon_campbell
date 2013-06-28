@@ -38,3 +38,10 @@ h5, .epsilon {
 	font-size: $h5-size;
 	line-height: $line-height-ratio;
 }
+
+.base-text {
+	@extend %font__text--regular;
+	font-size: 16px;
+	font-size: calc-rem(16px);
+	color: $base-color;
+}

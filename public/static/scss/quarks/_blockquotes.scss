@@ -3,11 +3,22 @@
 \*------------------------------------*/
 
 blockquote {
+	margin-left: $base-spacing-unit;
+	position:relative;
 
-    p {
-        &:only-child {
-            // padding-bottom:0;
-        }
+    > p {
+    	font-style:italic;
+		color: lighten($base-color, 10);
     }
 
+    &:before {
+    	@extend %font__text--bold;
+    	content: "\201C";
+    	position: absolute;
+    	font-size: 35px;
+    	font-size: calc-rem(35px);
+    	color: $color__orange--primary;
+    	left: - $base-spacing-unit;
+    	top: - $base-spacing-unit;
+    }
 }

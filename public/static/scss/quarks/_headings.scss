@@ -30,9 +30,8 @@ h3, .gamma {
 
 h4, .delta {
 	@extend %font__display--black;
-	text-transform: uppercase;
 	font-size: $h4-size;
-	line-height: ($line-height-ratio + .16);
+	line-height: ($line-height-ratio + .15);
 }
 
 h5, .epsilon {

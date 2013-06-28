@@ -2,9 +2,33 @@
     $FORMS
 \*------------------------------------*/
 
-fieldset{
+
+textarea,
+.text-input,
+input {
+    @extend %font__display--regular;
+    @include vendor(border-radius, $brand-round);
+    -webkit-appearance:none;
+    border: 1px solid $color__border--dark;
+
+    &::-webkit-input-placeholder,
+    &:-moz-placeholder,
+    &::-moz-placeholder {
+        @extend %font__display--regular;
+    }
+
+    &:focus {
+        outline:none;
+        border: 1px solid darken($color__border--dark, 15);
+    }
+}
+
+
+.form-block {
     padding:$base-spacing-unit;
 }
+
+
 
 
 /**
@@ -18,11 +42,11 @@ fieldset{
  *
  */
 .text-input,
-textarea{
-    /**
-     * Style these via your theme stylesheet.
-     */
+input {
+    height: 40px;
+    height: calc-rem(40px);
 }
+
 
 
 /**
@@ -34,6 +58,11 @@ textarea{
  */
 label,
 .label{
+    @extend %font__display--black;
+    @extend .h4;
+    font-size: 15px;
+    font-size: calc-rem(15px);
+    text-transform:uppercase;
     display:block;
 }
     /**

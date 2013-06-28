@@ -13,6 +13,9 @@ input {
     border: 1px solid $color__border--dark;
     background-color: $color__background--grey;
     margin-bottom: $base-spacing-unit;
+    padding: $half-spacing-unit;
+    color: $color__meta--dark;
+    line-height: $base-line-height;
 
     &::-webkit-input-placeholder,
     &:-moz-placeholder,
@@ -24,11 +27,6 @@ input {
         outline:none;
         border: 1px solid darken($color__border--dark, 15);
     }
-}
-
-
-.form-block {
-    padding:$base-spacing-unit;
 }
 
 
@@ -51,6 +49,10 @@ input {
 }
 
 
+textarea {
+  width:100%;
+}
+
 
 /**
  * Labels
@@ -65,8 +67,9 @@ label,
     @extend .h4;
     font-size: 15px;
     font-size: calc-rem(15px);
-    text-transform:uppercase;
-    display:block;
+    text-transform: uppercase;
+    display: block;
+    color: $color__meta--dark;
 }
     /**
      * Extra help text in `label`s, e.g.:

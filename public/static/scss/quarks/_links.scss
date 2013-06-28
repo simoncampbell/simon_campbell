@@ -3,25 +3,26 @@
 \*------------------------------------*/
 
 a {
-	@include transition(all 0.3s ease-in-out);
+	@include transition(all 0.3s ease-in-out, border-color 0.3s ease-in-out);
     color:$color__orange--primary;
-    text-decoration:underline;
+    border-bottom: 1px dotted $color__orange--primary;
     line-height:1;
 
     &:hover,
     &:focus {
         text-decoration:none;
         color:$color__orange--active;
+        border-bottom: 1px solid $color__orange--active;
     }
 }
 
 .link--reverse {
 	color: darken($color__white, 20);
-	text-decoration: none;
 	border-bottom: 1px dotted darken($color__white, 30);
 
-	&:hover {
+	&:hover,
+	&:focus {
 		color: darken($color__white, 35);
-		border-bottom: none;
+		border-bottom: 1px solid darken($color__white, 45);
 	}
 }

@@ -16,7 +16,7 @@ h1, .alpha {
 }
 
 h2, .beta {
-	@extend %font__display--regular;
+    @extend %font__display--normal;
 	font-size: $h2-size;
 	font-size: calc-rem($h2-size);
 	line-height: ($line-height-ratio - .2);
@@ -31,7 +31,7 @@ h3, .gamma {
 h4, .delta {
 	@extend %font__display--black;
 	font-size: $h4-size;
-	line-height: ($line-height-ratio + .15);
+	line-height: ($line-height-ratio - .1);
 }
 
 h5, .epsilon {
@@ -40,7 +40,6 @@ h5, .epsilon {
 }
 
 .base-text {
-	@extend %font__text--regular;
 	font-size: 16px;
 	font-size: calc-rem(16px);
 	color: $base-color;

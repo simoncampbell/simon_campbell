@@ -6,7 +6,7 @@
 textarea,
 .text-input,
 input {
-    @extend %font__display--regular;
+    @extend %font__display--normal;
     @include vendor(border-radius, $brand-round);
     @include vendor(border-radiusm, calc-rem($brand-round));
     -webkit-appearance:none;
@@ -17,19 +17,11 @@ input {
     color: $color__meta--dark;
     line-height: $base-line-height;
 
-    &::-webkit-input-placeholder,
-    &:-moz-placeholder,
-    &::-moz-placeholder {
-        @extend %font__display--regular;
-    }
-
     &:focus {
         outline:none;
         border: 1px solid darken($color__border--dark, 15);
     }
 }
-
-
 
 
 /**

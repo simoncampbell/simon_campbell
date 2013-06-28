@@ -5,8 +5,9 @@
 
 .footer-main {
 	color: $color__text--reverse;
-	padding: $base-spacing-unit;
-	background-color: $color__background--dark;
+	padding: ($base-spacing-unit *2) $base-spacing-unit $base-spacing-unit $base-spacing-unit;;
+	background-color: $color__background--black;
+	border-top: 5px solid lighten($color__background--black, 10);
 }
 
 
@@ -21,11 +22,21 @@
 			margin-bottom:0;
 		}
 
+		input {
+			margin-bottom:0;
+		}
+
+		fieldset {
+			margin-bottom: 0;
+		}
+
 		label {
 			@extend .base-text;
+			@extend %font__text--regular;
 			color: $color__text--reverse;
 			font-weight:normal;
 			text-transform: none;
 			margin-bottom: $base-spacing-unit;
+			margin-bottom: calc-rem($base-spacing-unit);
 		}
 	}

@@ -19,8 +19,8 @@
             position: absolute;
             right: $gutter;
             right: calc-rem($gutter);
-            top: $base-spacing-unit + 4px;
-            top: calc-rem($base-spacing-unit + 4px);
+            top: $half-spacing-unit + 6px;
+            top: calc-rem($half-spacing-unit + 6px);
             font-size: $milli-size;
             font-size: calc-rem($milli-size);
         }
@@ -28,6 +28,8 @@
 }
 
     .shows-list {
+        margin-bottom: 0;
+
         dt {
             font-weight: normal;
             font-size: $milli-size;
@@ -37,6 +39,11 @@
         }
 
         dd {
+            margin-bottom: $half-spacing-unit;
+            margin-bottom: calc-rem($half-spacing-unit);
+            padding-bottom: calc-rem($half-spacing-unit);
+            border-bottom: 1px dotted $color__border--dark;
+
             >h4 {
                 @extend %font__text--regular;
                 margin: 0;
@@ -45,10 +52,12 @@
             p {
                 font-size: $milli-size;
                 font-size: calc-rem($milli-size);
+                margin-bottom:0;
             }
 
             &:last-child {
                 margin-bottom: 0;
+                border-bottom: none;
             }
         }
     }

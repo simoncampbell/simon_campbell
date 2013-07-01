@@ -2,7 +2,6 @@
     $FORMS
 \*------------------------------------*/
 
-
 textarea,
 .text-input,
 input {
@@ -10,7 +9,7 @@ input {
     @include vendor(border-radius, $brand-round);
     @include vendor(border-radiusm, calc-rem($brand-round));
     -webkit-appearance:none;
-    border: 1px solid $color__border--dark;
+    border: 1px solid $color__border--standard;
     background-color: $color__background--grey;
     margin-bottom: $base-spacing-unit;
     padding: $half-spacing-unit;
@@ -21,26 +20,26 @@ input {
         outline:none;
         border: 1px solid darken($color__border--dark, 15);
     }
-
 }
 /**
  * Placeholders
  */
 
     ::-webkit-input-placeholder {
-        color: lighten($color__meta--dark,10);
+      @extend %font__display--normal;
+      color: lighten($color__meta--dark,15);
     }
 
     :-moz-placeholder {
-        color: lighten($color__meta--dark,10);
+        color: lighten($color__meta--dark,15);
     }
 
     ::-moz-placeholder {
-    color: lighten($color__meta--dark,10);
+        color: lighten($color__meta--dark,15);
     }
 
     :-ms-input-placeholder {
-        color: lighten($color__meta--dark,10);
+        color: lighten($color__meta--dark,15);
     }
 
 
@@ -59,7 +58,6 @@ input {
     height: 40px;
     height: calc-rem(40px);
 }
-
 
 textarea {
   width:100%;

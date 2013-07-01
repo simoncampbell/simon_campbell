@@ -10,7 +10,7 @@
 
 {% block content_main %}
 
-    <header>
+    <header class="heading-group">
         <h1>News</h1>
         <h2>This is an alternative headline that is not optional</h2>
     </header>
@@ -29,13 +29,22 @@
                             </figure>
                         {% endfor %}
 
-                        <h3><a href="{{ news.url }}">{{ news.title }}</a></h3>
+                        <div class="heading-group">
 
-                        <time datetime="{{news.postDate|date("Y-m-d")}}">{{news.postDate|date("jS F Y")}}</time>
+                            <h3><a href="{{ news.url }}">{{ news.title }}</a></h3>
 
-                        <p>Posted in <a href="URL!" class="icon icon--tag">Life</a>, <a href="URL!" class="icon icon--tag">Health</a></p>
+                            <div class="meta-info-block meta-info-block--borderless">
+                                <time class="meta-info-block__item" datetime="{{news.postDate|date("Y-m-d")}}">{{news.postDate|date("jS F Y")}}</time>
+
+                                <p class="meta-info-block__item">Posted in <a href="URL!" class="icon icon--tag">Life</a>, <a href="URL!" class="icon icon--tag">Health</a></p>
+                            </div>
+
+                        </div>
+
 
                         {{ news.body }}
+
+
                     </article>
                 </li>
             {% endfor %}

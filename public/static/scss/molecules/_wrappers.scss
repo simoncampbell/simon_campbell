@@ -13,8 +13,18 @@
     margin: 0 auto;
 }
 
+    .main-wrapper--article-meta {
+        border-top: 1px solid $color__border--standard;
+        padding-top: $base-spacing-unit;
+        padding-top: calc-rem($base-spacing-unit);
+        margin-top: $base-spacing-unit *3;
+        margin-top: calc-rem($base-spacing-unit *3);
 
+        > h2 {
+            @extend %font__display--black;
 
-
-
-
+            .comment-count {
+                color: $color__meta;
+            }
+        }
+    }

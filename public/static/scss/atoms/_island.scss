@@ -14,27 +14,27 @@
  * Demo: jsfiddle.net/inuitcss/u8pV3
  *
  */
-.island,
-.islet{
+.island {
     display:block;
     @extend .cf;
-}
-
-.island{
-    padding:$base-spacing-unit;
     background-color:$color__background--grey;
 }
-    .island > :last-child,
-    .islet > :last-child{
-        margin-bottom:0;
+
+    .island__header {
+        padding:$gutter;
+        border: 1px solid $color__border--standard;
+    }
+
+    .island__content {
+        padding:$gutter;
+        border: 1px solid $color__border--standard;
+        border-top: none;
+    }
+
+    .island > :last-child {
+      margin-bottom:0;
     }
 
 
-/**
- * Just like `.island`, only smaller.
- */
-.islet{
-    padding:$half-spacing-unit;
-}
 
 }//endif

@@ -1,0 +1,20 @@
+/*------------------------------------*\
+    $WRAPPERS
+\*------------------------------------*/
+/**
+ * Main wrapper styles that contain the primary content area
+ */
+
+.main-wrapper,
+.side-wrapper {
+    @include max-width(8);
+    padding: 0 $gutter;
+    padding: 0 calc-rem($gutter);
+    margin: 0 auto;
+}
+
+
+
+
+
+

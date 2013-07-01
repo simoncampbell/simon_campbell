@@ -30,7 +30,6 @@
  * Utitlities-------------------------------------------------------
  *
  * NORMALIZE...........normalize.css
- * MIXINS..............Cool guy mixins
  * RESET...............Set defaults
  * CLEARFIX............
  * FONT-STACK..........Font stack settings
@@ -74,6 +73,7 @@
  * Molecules ------------------------------------------------------
  * BANNER-NAV.........Banner navigation
  * FOOTER.............
+ * MIXINS..............Cool guy mixins
  *
  */
 
@@ -137,3 +137,5 @@
 @import "molecules/banner-nav";
 @import "molecules/footer";
 @import "molecules/meta-info-block";
+@import "molecules/wrappers";
+@import "molecules/live-shows-block";

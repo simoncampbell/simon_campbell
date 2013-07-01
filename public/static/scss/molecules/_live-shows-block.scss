@@ -1,0 +1,54 @@
+/*------------------------------------*\
+    $LIVE-SHOWS-BLOCK
+\*------------------------------------*/
+/**
+ * Custom molecule for the live shows container
+ */
+
+.live-shows-block {
+    header {
+        position: relative;
+
+        > h3 {
+            display: inline-block;
+            margin-bottom: 0;
+            line-height: 1;
+        }
+
+        > a {
+            position: absolute;
+            right: $gutter;
+            right: calc-rem($gutter);
+            top: $base-spacing-unit + 4px;
+            top: calc-rem($base-spacing-unit + 4px);
+            font-size: $milli-size;
+            font-size: calc-rem($milli-size);
+        }
+    }
+}
+
+    .shows-list {
+        dt {
+            font-weight: normal;
+            font-size: $milli-size;
+            font-size: calc-rem($milli-size);
+            color: darken($color__meta--on-bg, 10);
+            padding-bottom:0;
+        }
+
+        dd {
+            >h4 {
+                @extend %font__text--regular;
+                margin: 0;
+            }
+
+            p {
+                font-size: $milli-size;
+                font-size: calc-rem($milli-size);
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }

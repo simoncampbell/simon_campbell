@@ -10,7 +10,7 @@
 
 {% block content_main %}
 
-    <header>
+    <header class="heading-group heading-group--main">
         <h1>{{entry.title}}</h1>
 
         {% if entry.heading__sec %}
@@ -23,7 +23,7 @@
         </aside>
     </header>
 
-    <div class="main-wrapper main-wrapper__article">
+    <div class="main-wrapper main-wrapper--article">
 
             {% for image in entry.blog__image %}
                 <figure>

@@ -10,9 +10,30 @@
      @return ($target / $context) * 1rem;
 }
 
+
+/**
+ * Output vendor properties
+ */
+
 @mixin vendor($property, $value...){
     -webkit-#{$property}:$value;
        -moz-#{$property}:$value;
         -ms-#{$property}:$value;
          -o-#{$property}:$value;
+}
+
+
+
+/**
+ * Column widths in a function, in rems
+ */
+
+@mixin max-width ($cols:1) {
+    max-width: ($cols * ($column + $gutter) - $gutter);
+    max-width: ($cols * ($column + $gutter) - $gutter) / $rem;
+}
+
+@mixin width ($cols:1) {
+    width: ($cols * ($column + $gutter) - $gutter);
+    width: ($cols * ($column + $gutter) - $gutter) / $rem;
 }

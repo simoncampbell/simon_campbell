@@ -4,7 +4,8 @@
  #
  #}
 
-<nav role="navigation" id="nav_pri">
+<nav role="navigation" id="nav_pri" class="menu--active">
+    <a class="link__mobile-menu" href="#">Menu</a>
     <ul class="nav banner-nav">
         <li>
             <a href="{{ url('') }}" {% if craft.request.firstSegment == '' %}class="active"{% endif %}>
@@ -42,5 +43,4 @@
             </a>
         </li>
     </ul>
-    <a class="link__mobile-menu" href="#">Menu</a>
 </nav>

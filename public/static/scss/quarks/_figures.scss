@@ -13,3 +13,13 @@ figure {
 
 figcaption {
 }
+
+.featured--post__image {
+    >a {
+        border: none;
+
+        &:hover {
+            border: none;
+        }
+    }
+}

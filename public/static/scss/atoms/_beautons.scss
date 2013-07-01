@@ -47,6 +47,7 @@
     color: $color__white;
 
     &:hover {
+        color: $color__white;
         text-decoration: none;
         background-color: $color__orange--dark;
         border: 1px solid darken($color__border--orange, 5);
@@ -105,21 +106,17 @@
  * remains uniform.
  */
 .btn--small{
-    padding-right:0.5em;
-    padding-left: 0.5em;
-    line-height:2;
+    padding-right: $half-spacing-unit;
+    padding-left: $half-spacing-unit;
+    line-height:1.5;
+    font-size: $milli-size;
+    font-size: calc-rem($milli-size);
 }
 
 .btn--large{
     padding-right:1.5em;
     padding-left: 1.5em;
     line-height:4;
-}
-
-.btn--huge{
-    padding-right:2em;
-    padding-left: 2em;
-    line-height:5;
 }
 
 /**
@@ -138,49 +135,10 @@
 
 
 
-/*------------------------------------*\
-    $FONT-SIZES
-\*------------------------------------*/
-/**
- * Button font-size modifiers.
- */
-.btn--alpha{
-    font-size:3rem;
-}
-
-.btn--beta{
-    font-size:2rem;
-}
-
-.btn--gamma{
-    font-size:1rem;
-}
-
-/**
- * Make the button inherit sizing from its parent.
- */
-.btn--natural{
-    vertical-align:baseline;
-    font-size:inherit;
-    line-height:inherit;
-    padding-right:0.5em;
-    padding-left: 0.5em;
-}
-
-
-
-
 
 /*------------------------------------*\
     $FUNCTIONS
 \*------------------------------------*/
-/**
- * Button function modifiers.
- */
-.btn--primary{}
-.btn--secondary{}
-.btn--tertiary{}
-
 /**
  * Positive actions; e.g. sign in, purchase, submit, etc.
  */
@@ -197,22 +155,5 @@
     color:#fff;
 }
 
-
-
-/*------------------------------------*\
-    $STYLES
-\*------------------------------------*/
-/**
- * Button style modifiers.
- *
- * 1. Use an overly-large number to ensure completely rounded, pill-like ends.
- */
-.btn--soft{
-    border-radius:200px;        /* [1] */
-}
-
-.btn--hard{
-    border-radius:0;
-}
 
 }//endif

@@ -5,16 +5,27 @@
 \*------------------------------------*/
 
 .heading-group {
-	margin-bottom:$base-spacing-unit;
+    margin-bottom:$base-spacing-unit;
 
-	h1, h2, h3, h4, h5, h6 {
-		margin-bottom:0;
-	}
+    h1, h2, h3, h4, h5, h6 {
+        margin-bottom:0;
+    }
 
 
-	h4 {
-		color: lighten($color__meta,15);
-	}
+    h4 {
+        color: lighten($color__meta,15);
+    }
 }
+
+    .heading-group--main {
+        h1,
+        h2,
+        h3 {
+            @include max-width(8);
+            margin: 0 auto;
+            padding: 0 $base-spacing-unit;
+            padding: 0 calc-rem($base-spacing-unit);
+        }
+    }
 
 } //endif

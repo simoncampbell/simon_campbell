@@ -68,6 +68,7 @@
  * ITEM-LIST...........Item of articles ie. RSS feed style
  * ICON................Text and icon couplings
  * RULES...............Horizontal rules
+ * FLAG................The flag object
  *
  *
  * Molecules ------------------------------------------------------
@@ -130,6 +131,7 @@
 @import "atoms/icon";
 @import "atoms/rules";
 @import "atoms/heading-group";
+@import "atoms/flag";
 
 /**
  * Molecules; combinations of atoms

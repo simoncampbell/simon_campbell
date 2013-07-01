@@ -45,12 +45,12 @@
                     margin-bottom: 0;
                     line-height: 1;
                 }
-
-                p {
-                    font-size: $milli-size;
-                    font-size: calc-rem($milli-size);
-                }
             }
+        }
+        p {
+            color: $color__background--dark;
+            font-size: $milli-size;
+            font-size: calc-rem($milli-size);
         }
     }
 } //endif

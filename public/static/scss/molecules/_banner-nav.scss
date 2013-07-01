@@ -4,25 +4,49 @@
 
 #nav_pri {
     background-color: $color__background--dark;
-
-    .link__mobile--menu {
-
-		.no-js & {
-			display: none;
-		}
-
-    }
 }
 
 .banner-nav {
-	.js & {
-		display: none;
-	}
-
     @extend .nav--stacked;
     margin:0;
 
     >li {
+        a {
+            @extend %font__display--normal;
+            color: $color__banner-nav--dark;
+            padding: ($half-spacing-unit*1.5) $base-spacing-unit;
+            border-bottom: 1px solid $color__background--black;
 
+            &:hover,
+            &:focus {
+                background-color:lighten($color__background--black, 20);
+                color: $color__white;
+            }
+        }
+
+        .active {
+            color: $color__white;
+            background-color:lighten($color__background--black, 20);
+
+            &:before {
+                color: $color__white;
+                content: "•";
+                color: white;
+                position: relative;
+                margin-left: -$half-spacing-unit;
+            }
+        }
+    }
+}
+
+.menu--active {
+    .link__mobile-menu {
+        @extend %font__display--normal;
+        background-color:$color__background--black;
+        width: 100%;
+        display: inline-block;
+        color: $color__white;
+        padding: ($half-spacing-unit*1.5) $base-spacing-unit;
+        border-bottom: 1px solid $color__background--black;
     }
 }

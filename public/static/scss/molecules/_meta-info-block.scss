@@ -9,8 +9,8 @@
     border-bottom: 1px solid $color__border--standard;
     margin-bottom: ($base-spacing-unit);
     margin-bottom: calc-rem($base-spacing-unit);
-    padding: $half-spacing-unit 0;
-    padding: calc-rem($half-spacing-unit) 0;
+    padding: $half-spacing-unit $base-spacing-unit;
+    padding: calc-rem($half-spacing-unit) calc-rem($base-spacing-unit);
 }
 
     .meta-info-block--borderless {

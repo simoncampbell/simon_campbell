@@ -3,7 +3,14 @@
 \*------------------------------------*/
 
 figure {
+    a {
+        border:none;
 
+        &:hover,
+        &:focus {
+            border:none;
+        }
+    }
 }
 
 // make sure you give proper recognition to other people’s work!

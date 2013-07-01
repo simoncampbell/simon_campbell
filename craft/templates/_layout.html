@@ -77,7 +77,7 @@
                 <fieldset>
                     <label for="id_newsletter">Sign up for the newsletter below and get the latest updates on tour info, merch sales and album releases.</label>
                     <input type="email" placeholder="Your email">
-                    <button class="btn btn--secondary" type="submit">Subscribe</button>
+                    <button class="btn btn--secondary--on-black-bg" type="submit">Subscribe</button>
                 </fieldset>
             </section>
 
@@ -85,17 +85,24 @@
             <section class="footer-main__item">
                 <h3>Around the web</h3>
                 <nav>
-                    <ul>
-                        <li>
-                            <a class="link--reverse" href="http://twitter.com/SimonCampbell">Twitter</a>
+                    <ul class="icon-list">
+                        <li class="icon-text icon-text--twitter">
+                            <a class="link--reverse" href="http://twitter.com/SimonCampbell">
+                               Twitter
+                            </a>
                         </li>
-                        <li>
-                            <a class="link--reverse" href="http://www.youtube.com/user/simonjcampbell">Youtube</a>
+
+                        <li class="icon-text icon-text--youtube">
+                            <a class="link--reverse" href="http://www.youtube.com/user/simonjcampbell">
+                                Youtube
+                            </a>
                         </li>
-                        <li>
-                            <a class="link--reverse" href="http://viemo.com/simoncampbell">Vimeo</a>
+
+                        <li class="icon-text icon-text--vimeo">
+                            <a class="link--reverse" href="http://vimeo.com/simoncampbell">Vimeo</a>
                         </li>
-                        <li>
+
+                        <li class="icon-text icon-text--facebook">
                             <a class="link--reverse" href="https://www.facebook.com/Simon.Campbell.Musician">Facebook</a>
                         </li>
                     </ul>
@@ -104,7 +111,7 @@
 
 
             <section class="site-info footer-main__item">
-                <ul class="horizontal-list">
+                <ul class="nav">
                     <li><a class="link--reverse" href="/privacy-policy">Privacy policy </a></li>
                     <li>Supertone Records &copy; {{ "now"|date("Y") }}</li>
                 </ul>

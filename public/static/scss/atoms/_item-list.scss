@@ -8,11 +8,49 @@
 **/
 
 .item-list {
-	list-style-type: none;
+    list-style-type: none;
 }
     .item-list__item {
-    	list-style-type:none;
-    	margin-bottom: $base-spacing-unit * 2;
+        list-style-type:none;
+        margin-bottom: $base-spacing-unit * 2;
     }
 
+
+
+/**
+* Comments item list
+**/
+    .item-list--comments {
+        >.flag {
+            margin-bottom: $half-spacing-unit;
+            margin-bottom: calc-rem($half-spacing-unit);
+
+            .flag__body {
+
+                time {
+                    color: $color__meta;
+                    font-size: $milli-size;
+                    font-size: calc-rem($milli-size);
+                }
+
+                a {
+                    border:none;
+                }
+
+                h3 {
+                    @extend %font__text--regular;
+                    font-weight: bold;
+                    font-size: $h5-size;
+                    font-size: calc-rem($h5-size);
+                    margin-bottom: 0;
+                    line-height: 1;
+                }
+
+                p {
+                    font-size: $milli-size;
+                    font-size: calc-rem($milli-size);
+                }
+            }
+        }
+    }
 } //endif

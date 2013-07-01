@@ -1,17 +1,19 @@
-
 /*------------------------------------*\
     $FOOTER
 \*------------------------------------*/
 
 .footer-main {
 	color: $color__text--reverse;
-	padding: ($base-spacing-unit *2) $base-spacing-unit $base-spacing-unit $base-spacing-unit;;
+	padding: ($base-spacing-unit *2) 0 $base-spacing-unit 0;
 	background-color: $color__background--black;
 	border-top: 5px solid lighten($color__background--black, 10);
 }
 
 
 	.footer-main__item {
+		@include max-width(12);
+		padding: 0 $gutter;
+		margin: 0 auto;
 		margin-bottom: $base-spacing-unit * 2;
 		margin-bottom: calc-rem($base-spacing-unit * 2);
 
@@ -39,4 +41,8 @@
 			margin-bottom: $base-spacing-unit;
 			margin-bottom: calc-rem($base-spacing-unit);
 		}
+	}
+
+	.site-info {
+		margin-bottom: 0;
 	}

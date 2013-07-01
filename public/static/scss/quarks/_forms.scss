@@ -5,9 +5,10 @@
 textarea,
 .text-input,
 input {
-    @extend %font__display--normal;
     @include vendor(border-radius, $brand-round);
     @include vendor(border-radiusm, calc-rem($brand-round));
+    font-size: $milli-size;
+    font-size: calc-rem($milli-size);
     -webkit-appearance:none;
     border: 1px solid $color__border--standard;
     background-color: $color__background--grey;
@@ -26,8 +27,9 @@ input {
  */
 
     ::-webkit-input-placeholder {
-      @extend %font__display--normal;
-      color: lighten($color__meta--dark,15);
+        font-size: $milli-size;
+        font-size: calc-rem($milli-size);
+        color: lighten($color__meta--dark,15);
     }
 
     :-moz-placeholder {

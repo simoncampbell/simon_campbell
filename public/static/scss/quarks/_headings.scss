@@ -40,7 +40,7 @@ h5, .epsilon {
 }
 
 .base-text {
-	font-size: 16px;
-	font-size: calc-rem(16px);
+	font-size: $base-font-size;
+	font-size: calc-rem($base-font-size);
 	color: $base-color;
 }

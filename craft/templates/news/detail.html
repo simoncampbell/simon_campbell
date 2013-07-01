@@ -9,10 +9,11 @@
 
 {% block content_main %}
 
-	<header>
+	<header class="heading-group heading-group--main">
 		<h1>News</h1>
 		<h2>This is an alternative headline that is not optional</h2>
 	</header>
+
 
 	<article>
 
@@ -26,11 +27,11 @@
 				{% endfor %}
 			</article>
 
-
 			<h1>{{ entry.title }}</h1>
 			<p>Posted on {{ entry.postDate.format('F d, Y') }}</p>
 			{{ entry.body }}
 		</div><!-- //end.main-wrapper -->
+
 	</article>
 
 {% endblock %}

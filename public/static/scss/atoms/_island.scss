@@ -21,8 +21,12 @@
 }
 
     .island__header {
-        padding:$gutter;
+        padding: $half-spacing-unit $base-spacing-unit;
         border: 1px solid $color__border--standard;
+
+        > h3 {
+            vertical-align: bottom;
+        }
     }
 
     .island__content {

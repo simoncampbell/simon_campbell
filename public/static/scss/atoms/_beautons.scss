@@ -19,12 +19,12 @@
  * Base button styles.
  */
 .btn{
-    @extend %font__display--regular;
+    @extend %font__display--normal;
     @include vendor(border-radius, $brand-round);
+    @include transition(.15s all ease-in-out);
     display:inline-block;
     vertical-align:top;
     white-space:nowrap;
-    font-family:inherit;
     font-size:100%;
     cursor:pointer;
     border:none;
@@ -64,7 +64,30 @@
     border: 1px solid darken($color__grey--primary, 10);
 
     &:hover {
+        background-color: $color__grey--secondary;
+        border: 1px solid darken($color__grey--secondary, 10);
+    }
 
+    &:active {
+        background-color: darken($color__grey--secondary, 5);
+        border: 1px solid darken($color__grey--secondary, 10);
+    }
+}
+
+
+.btn--secondary--on-black-bg {
+    color: darken($color__meta--dark,10);
+    background-color: $color__grey--secondary;
+    border: 1px solid darken($color__grey--secondary, 10);
+
+    &:hover {
+        background-color: darken($color__grey--secondary, 15);
+        border: 1px solid darken($color__grey--secondary, 20);
+    }
+
+    &:active {
+        background-color: darken($color__grey--secondary, 20);
+        border: 1px solid darken($color__grey--secondary, 25);
     }
 }
 

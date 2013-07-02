@@ -9,30 +9,31 @@
 
 {% block content_main %}
 
-	<header class="heading-group heading-group--main">
-		<h1>News</h1>
-		<h2>This is an alternative headline that is not optional</h2>
-	</header>
+    <header class="heading-group heading-group--main">
+        <h1>News</h1>
+        <h2>This is an alternative headline that is not optional</h2>
+    </header>
 
+    <div class="main-wrapper" role="main">
+        <article>
+            {% for image in entry.standardImage %}
+                <figure>
+                    <img src="{{image.url}}"/>
+                    <p>{{news.caption}}</p>
+                </figure>
+            {% endfor %}
 
-	<article>
+            <div class="heading-group heading-group--with-meta">
+                <h3>{{ entry.title }}</h3>
+                <div class="meta-info-block meta-info-block--borderless">
+                    <p class="meta-info-block__item">Posted on {{ entry.postDate.format('F d, Y') }}</p>
+                </div>
+            </div>
 
-		<div class="main-wrapper" role="main">
-			<article>
-				{% for image in entry.standardImage %}
-					<figure>
-						<img src="{{image.url}}"/>
-						<p>{{news.caption}}</p>
-					</figure>
-				{% endfor %}
-			</article>
+            {{ entry.body }}
+        </article>
+    </div><!-- //end.main-wrapper -->
 
-			<h1>{{ entry.title }}</h1>
-			<p>Posted on {{ entry.postDate.format('F d, Y') }}</p>
-			{{ entry.body }}
-		</div><!-- //end.main-wrapper -->
-
-	</article>
 
 {% endblock %}
 
@@ -42,14 +43,14 @@
 
     <div class="side-wrapper side-wrapper--island">
 
-        <ul class="item_list--side">
-            <li class="item_list__item">
+        <ul class="item-list item-list--side">
+            <li class="item-list item-list__item">
 
                 {% include 'components/_news/_news-category' %}
 
             </li>
 
-            <li class="item_list__item">
+            <li class="item-list__item">
                 <h3>Subscribe via RSS</h3>
 
                 <a href="URL!" class="icon-text"><i class="icon-text__icon icon__rss"></i> Get regular updates and news from the label</a>

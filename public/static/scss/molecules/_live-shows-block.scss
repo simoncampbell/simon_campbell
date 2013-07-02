@@ -10,7 +10,7 @@
         position: relative;
         background-color: #E7E6E6;
 
-        > h3 {
+        > h4 {
             display: inline-block;
             margin-bottom: 0;
             line-height: 1;
@@ -45,7 +45,7 @@
             padding-bottom: calc-rem($half-spacing-unit);
             border-bottom: 1px dotted $color__border--dark;
 
-            >h4 {
+            >h5 {
                 @extend %font__text--regular;
                 margin: 0;
             }

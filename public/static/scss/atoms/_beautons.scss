@@ -22,10 +22,11 @@
     @extend %font__display--normal;
     @include vendor(border-radius, $brand-round);
     @include transition(.15s all ease-in-out);
+    font-size: $milli-size;
+    font-size: calc-rem($milli-size);
     display:inline-block;
     vertical-align:top;
     white-space:nowrap;
-    font-size:100%;
     cursor:pointer;
     border:none;
     margin:0;
@@ -42,6 +43,7 @@
 }
 
 .btn--primary {
+    @extend %font__display--black;
     background-color: $color__orange--secondary;
     border: 1px solid $color__border--orange;
     color: $color__white;

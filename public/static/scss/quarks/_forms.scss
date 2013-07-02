@@ -61,6 +61,10 @@ input {
     height: calc-rem(40px);
 }
 
+    .text-input--secondary {
+        @extend %font__display--normal;
+    }
+
 textarea {
   width:100%;
 }

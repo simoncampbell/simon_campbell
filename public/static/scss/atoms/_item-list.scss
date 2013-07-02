@@ -18,6 +18,15 @@
 
 
 /**
+* Item list article
+**/
+    .item-list--article {
+        border-bottom: 1px dotted $color__border--standard;
+    }
+
+
+
+/**
 * Comments item list
 **/
     .item-list--comments {

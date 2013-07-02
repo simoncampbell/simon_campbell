@@ -2,13 +2,31 @@
     $BANNER-LOGO
 \*------------------------------------*/
 
+#header {
+    position: relative;
+    width:100%;
+    margin-bottom: $base-spacing-unit;
+    margin-bottom: calc-rem($base-spacing-unit);
+}
+
+
 .banner-logo {
-	background-color: $color__background--black;
-	border-bottom: 1px solid $color__black;
-	margin:0 auto;
-	text-align:center;
-	width: 100%;
-	color: $color__white;
-	text-transform: uppercase;
-	padding: ($base-spacing-unit * 1.5) 0;
+    display: inline-block;
+    font-size: $h3-size;
+    width: 70%;
+    background-color: $color__background--black;
+    border-right: 1px solid $color__black;
+    border-bottom: 1px solid $color__orange--secondary;
+    text-align: left;
+    color: $color__white;
+    text-transform: uppercase;
+    padding: $half-spacing-unit 0 $half-spacing-unit $base-spacing-unit;
+    padding: calc-rem($half-spacing-unit) 0 calc-rem($half-spacing-unit) calc-rem($base-spacing-unit);
+    margin: 0;
+    line-height: $base-line-height;
+
+    &.menu--active {
+        border-bottom: 1px solid $color__orange--secondary;
+        background-color: darken($color__banner-nav--hover,3);
+    }
 }

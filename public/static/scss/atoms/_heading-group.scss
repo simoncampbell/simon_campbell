@@ -17,6 +17,8 @@
 }
 
     .heading-group--main {
+        border-bottom: 1px solid $color__border--standard;
+
         h1,
         h2,
         h3 {
@@ -33,6 +35,10 @@
         h2 {
             margin-bottom: $half-spacing-unit;
         }
+    }
+
+    .heading-group--with-meta {
+        border-bottom: none;
     }
 
 } //endif

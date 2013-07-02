@@ -1,0 +1,14 @@
+/*------------------------------------*\
+    $BANNER-LOGO
+\*------------------------------------*/
+
+.banner-logo {
+	background-color: $color__background--black;
+	border-bottom: 1px solid $color__black;
+	margin:0 auto;
+	text-align:center;
+	width: 100%;
+	color: $color__white;
+	text-transform: uppercase;
+	padding: ($base-spacing-unit * 1.5) 0;
+}

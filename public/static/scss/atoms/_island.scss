@@ -22,6 +22,7 @@
 
     .island__header {
         padding: $half-spacing-unit $base-spacing-unit;
+        padding: calc-rem($half-spacing-unit) calc-rem($base-spacing-unit);
         border: 1px solid $color__border--standard;
 
         > h3 {
@@ -30,7 +31,8 @@
     }
 
     .island__content {
-        padding:$gutter;
+        padding: $gutter;
+        padding: calc-rem($gutter);
         border: 1px solid $color__border--standard;
         border-top: none;
     }

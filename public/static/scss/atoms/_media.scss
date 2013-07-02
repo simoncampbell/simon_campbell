@@ -18,19 +18,21 @@
  *
  */
 .media{
-    display:block;
+    display: block;
     @extend .cf;
 }
     .media__img{
         float:left;
-        margin-right:$base-spacing-unit;
+        margin-right: $base-spacing-unit;
+        margin-right: calc-rem($base-spacing-unit);
     }
     /**
      * Reversed image location (right instead of left).
      */
     .media__img--rev{
-        float:right;
-        margin-left:$base-spacing-unit;
+        float: right;
+        margin-left: $base-spacing-unit;
+        margin-left: calc-rem($base-spacing-unit);
     }
 
         .media__img img,
@@ -50,10 +52,12 @@
      * `.img`s in `.islet`s need an appropriately sized margin.
      */
     .islet .media__img{
-        margin-right:$half-spacing-unit;
+        margin-right: $half-spacing-unit;
+        margin-right: calc-rem($half-spacing-unit);
     }
     .islet .media__img--rev{
-        margin-left:$half-spacing-unit;
+        margin-left: $half-spacing-unit;
+        margin-left: cacl-rem($half-spacing-unit);
     }
 
 }//endif

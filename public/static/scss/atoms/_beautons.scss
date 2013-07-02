@@ -79,6 +79,7 @@
 
 
 .btn--secondary--on-black-bg {
+    @extend %font__display--black;
     color: darken($color__meta--dark,10);
     background-color: $color__grey--secondary;
     border: 1px solid darken($color__grey--secondary, 10);

@@ -7,10 +7,12 @@
 
 #nav_pri {
     background-color: $color__background--dark;
-    margin-bottom: $base-spacing-unit * 2;
 }
 
 
+/**
+ * The link that opens the menu at mobile sizes
+ */
 .link__mobile-menu {
 
     // hide the mobile menu link when no javascript is detected
@@ -19,29 +21,35 @@
     }
 
     @extend %font__display--normal;
+    position: absolute;
+    top: 0;
+    right: 0;
     background-color:$color__banner-nav--hover;
-    width: 100%;
+    width: 30%;
     display: inline-block;
     color: $color__white;
-    padding: ($half-spacing-unit*1.5) $base-spacing-unit;
-    border-bottom: 1px solid $color__background--black;
+    padding: ($half-spacing-unit*1.45) $base-spacing-unit;
+    padding: calc-rem($half-spacing-unit*1.45) calc-rem($base-spacing-unit);
+    border-bottom: 1px solid $color__orange--secondary;
 
     &:hover,
     &:focus {
         color: $color__white;
-        border-bottom: 1px solid $color__background--black;
-        background-color: darken($color__banner-nav--hover,3);
+        border-bottom: 1px solid darken($color__orange--secondary, 10);
+        background-color: darken($color__banner-nav--hover,5);
     }
 
     .menu--active & {
-        border-bottom: 1px solid $color__orange--secondary;
+        border-bottom: 1px solid $color__banner-nav--dark;
         background-color: darken($color__banner-nav--hover,3);
+        background-color: darken($color__banner-nav--hover,5);
     }
 }
 
 
-
-
+/**
+ * Styles for the menu
+ */
 .banner-nav {
     // hide the navigational if javascript exists
     .js & {
@@ -54,6 +62,7 @@
 
     @extend .nav--stacked;
     margin:0;
+    width:100%;
 
     >li {
         a {

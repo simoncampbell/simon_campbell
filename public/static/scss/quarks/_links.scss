@@ -26,3 +26,8 @@ a {
         border-bottom: 1px solid darken($color__white, 45);
     }
 }
+
+.link--dark {
+    color: $color__background--dark;
+    border-color: $color__background--dark;
+}

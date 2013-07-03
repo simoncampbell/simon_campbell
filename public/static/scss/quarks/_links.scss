@@ -38,3 +38,15 @@ a {
         border-bottom: 1px solid darken($color__background--dark, 35);
     }
 }
+
+.link--icon {
+    color: darken($color__meta,10);
+    border: 1px solid transparent;
+    @extend %font__display--normal;
+
+    &:hover,
+    &:focus {
+        color: $color__orange--secondary;
+        text-decoration: none;
+    }
+}

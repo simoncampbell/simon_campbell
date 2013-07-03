@@ -51,18 +51,23 @@
 }
 
     .nav--category__item {
-        color: $color__background--dark;
-        padding: $half-spacing-unit;
-        padding: calc-rem($half-spacing-unit);
+        @extend %font__display--normal;
+        color: darken($color__meta,10);
+        margin-right: $base-spacing-unit;
+        margin-right: calc-rem($base-spacing-unit);
+        margin-bottom: $half-spacing-unit;
+        margin-bottom: calc-rem($half-spacing-unit);
+        border: 1px solid transparent;
 
         &:hover,
         &:focus {
-            color: $color__background--dark;
+            color: $color__orange--secondary;
+            text-decoration: none;
         }
     }
 
         .nav--category__item--cur {
-            color: $color--white;
+            color: $color__orange--secondary;
         }
 
 /**

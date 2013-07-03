@@ -5,7 +5,9 @@
  #}
 
 <nav role="navigation" id="nav_pri">
-    <a class="link__mobile-menu" href="#">Menu</a>
+    <a class="link__mobile-menu" href="#">
+        <span aria-hidden="true" class="icon icon--menu ss ss-navigatedown">navigatedown</span>Menu
+    </a>
     <ul class="nav banner-nav">
         <li>
             <a href="{{ url('') }}" {% if craft.request.firstSegment == '' %}class="active"{% endif %}>

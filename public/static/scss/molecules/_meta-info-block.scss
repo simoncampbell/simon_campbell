@@ -30,5 +30,20 @@
             padding: 0 calc-rem($quarter-spacing-unit);
             color: lighten($color__meta, 15);
         }
-    }
 
+        a {
+            color: $color__meta;
+            border: none;
+            text-decoration: none;
+        }
+
+        .icon--tag {
+            color: lighten($color__meta, 20);
+
+            &:hover,
+            &:focus {
+                color: $color__meta;
+                border-bottom: 1px solid $color__meta;
+            }
+        }
+    }

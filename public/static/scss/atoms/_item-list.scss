@@ -24,7 +24,24 @@
     .item-list__item--article {
         border-bottom: 1px dotted $color__border--standard;
         margin-bottom: $base-spacing-unit;
+
+        &:last-of-type {
+            border:none;
+        }
     }
+
+
+
+/**
+* Item lists in the side bar
+**/
+.side-wrapper .item-list {
+    h4, .label--headline {
+        margin-bottom: $half-spacing-unit;
+        margin-bottom: calc-rem($half-spacing-unit);
+    }
+}
+
 
 
 

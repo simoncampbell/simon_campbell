@@ -31,19 +31,19 @@
             color: lighten($color__meta, 15);
         }
 
-        a {
+        .category-link {
             color: $color__meta;
             border: none;
             text-decoration: none;
+
+            &:hover,
+            &:focus {
+                color: darken($color__meta, 20);
+                border-bottom: 1px dotted darken($color__meta, 20);
+            }
         }
 
         .icon--tag {
             color: lighten($color__meta, 20);
-
-            &:hover,
-            &:focus {
-                color: $color__meta;
-                border-bottom: 1px solid $color__meta;
-            }
         }
     }

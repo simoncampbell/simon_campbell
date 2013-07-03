@@ -4,7 +4,7 @@
 
 .footer-main {
 	color: $color__text--reverse;
-	padding: ($base-spacing-unit *2) 0 $base-spacing-unit 0;
+	padding: $base-spacing-unit 0;
 	background-color: $color__background--black;
 	border-top: 5px solid lighten($color__background--black, 10);
 }
@@ -47,6 +47,10 @@
 			margin-bottom: $half-spacing-unit;
 			margin-bottom: calc-rem($half-spacing-unit);
 		}
+	}
+
+	.icon-list {
+		@include vendor('column-count', 2)
 	}
 
 	.site-info {

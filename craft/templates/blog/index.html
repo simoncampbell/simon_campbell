@@ -15,7 +15,7 @@
         <h2>This is an alternative headline that is not optional</h2>
     </header>
 
-    <div class="main-wrapper">
+    <div class="main-wrapper main-wrapper--article">
         <ul class="item-list">
 
             {% for post in craft.entries.find({section:'Blog', limit:'10'}) %}
@@ -29,11 +29,11 @@
                                 <time class="meta-info-block__item" datetime="{{post.postDate|date("Y-m-d")}}">{{post.postDate|date("jS F Y")}}</time>
 
                                 <p class="meta-info-block__item">Posted in
-                                    <a href="URL!">
+                                    <a class="category-link" href="URL!">
                                         <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
                                         Life
                                     </a>,
-                                    <a href="URL!">
+                                    <a class="category-link" href="URL!">
                                         <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
                                         Health
                                     </a>
@@ -58,7 +58,12 @@
             {% endfor %}
         </ul>
 
-        <a href="URL!" class="btn btn--primary btn--arrow-left">Older entries</a>
+        <a href="URL!" class="btn btn--icon btn--primary btn--arrow-left">
+            <span class="icon ss-rewind">rewind</span>
+            <div class="icon-text">
+                Older entries
+            </div>
+        </a>
 
     </div><!-- // end.main-wrapper -->
 
@@ -75,7 +80,7 @@
 
                 <form id="search-form" action="/search-results/">
                     <label for="q" id="search-form" class="label--headline">Search the blog</label>
-                    <input aria-labelledby="search-label" id="q" type="search" class="search-form__input text-input--secondary" placeholder="Search terms..." value="">
+                    <input aria-labelledby="search-label" id="q" type="search" class="text-input search-form__input text-input--secondary" placeholder="Music, travel, life etc." value="">
                     <input type="submit" value="Search" class="btn btn--secondary search-form__submit">
                 </form>
 
@@ -83,41 +88,41 @@
 
             <li class="item-list__item">
 
-                <h3>Categories</h3>
+                <h4>Categories</h4>
 
                 <ul class="nav nav--category">
-                    <li class="cur category-links__link">
-                        <a class="nav--category__item nav--category__item--cur btn btn--secondary btn--small" href="URL!">
+                    <li class="cur">
+                        <a class="nav--category__item nav--category__item--cur link--icon" href="URL!">
                             <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
                             All
                         </a>
                     </li>
-                    <li class="category-links__link">
-                        <a class="nav--category__item btn btn--secondary btn--small" href="URL!">
+                    <li>
+                        <a class="nav--category__item link--icon" href="URL!">
                             <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
                             Life
                         </a>
                     </li>
-                    <li class="cur category-links__link">
-                        <a class="nav--category__item btn btn--secondary btn--small" href="URL!">
+                    <li>
+                        <a class="nav--category__item link--icon" href="URL!">
                             <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
                             Fishing
                         </a>
                     </li>
-                    <li class="category-links__link">
-                        <a class="nav--category__item btn btn--secondary btn--small" href="URL!">
+                    <li>
+                        <a class="nav--category__item link--icon" href="URL!">
                             <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
                             Swimming
                         </a>
                     </li>
-                    <li class="cur category-links__link">
-                        <a class="nav--category__item btn btn--secondary btn--small" href="URL!">
+                    <li>
+                        <a class="nav--category__item link--icon" href="URL!">
                             <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
                             Travel
                         </a>
                     </li>
-                    <li class="category-links__link">
-                        <a class="nav--category__item btn btn--secondary btn--small" href="URL!">
+                    <li>
+                        <a class="nav--category__item link--icon" href="URL!">
                             <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
                             Vanning
                         </a>
@@ -129,9 +134,12 @@
 
             <li class="item-list__item">
 
-                <h3>Subscribe via RSS</h3>
+                <h4>Subscribe via RSS</h4>
 
-                <a href="URL!" class="icon-text"><i class="icon-text__icon">RSS</i> Get regular updates from the blog</a>
+                <a href="URL!" class="link--icon">
+                    <span class="icon ss ss-inbox">inbox</span>
+                    Get regular updates from the blog
+                </a>
 
             </li>
 

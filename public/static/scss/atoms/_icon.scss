@@ -28,8 +28,8 @@
     display:inline;
     vertical-align: middle;
     line-height: 0;
-    padding-right: $quarter-spacing-unit / 2;
-    padding-right: calc-rem($quarter-spacing-unit / 2);
+    padding-right: $quarter-spacing-unit - 5px;
+    padding-right: calc-rem($quarter-spacing-unit - 5px);
 }
 
     .icon-text--rev > .icon-text__icon{

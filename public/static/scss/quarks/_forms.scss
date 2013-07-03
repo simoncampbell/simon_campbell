@@ -63,6 +63,10 @@ input {
     height: calc-rem(40px);
 }
 
+    .text-input {
+        width: 230px;
+        width: calc-rem(230px);
+    }
     .text-input--secondary {
         @extend %font__display--normal;
     }
@@ -75,6 +79,9 @@ textarea {
     background-color: $color__white;
 }
 
+.search-form__input {
+    margin-bottom: 0;
+}
 
 /**
  * Labels
@@ -95,7 +102,7 @@ label,
 
     .label--headline {
         font-size: $h3-size;
-        font-size: calc-rem($h3-size);
+        font-size: calc-rem($h4-size);
         text-transform: none;
         color:$base-color;
     }

@@ -19,6 +19,10 @@ figure {
 }
 
 figcaption {
+    font-style: italic;
+    color: $color__meta--dark;
+    padding-top: $half-spacing-unit;
+    padding-top: calc-rem($half-spacing-unit);
 }
 
 .featured--post__image {

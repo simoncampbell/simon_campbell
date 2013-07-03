@@ -19,7 +19,7 @@
  * Base button styles.
  */
 .btn{
-    @extend %font__display--normal;
+    @extend %font__display--black;
     @include vendor(border-radius, $brand-round);
     @include transition(.15s all ease-in-out);
     font-size: $milli-size;
@@ -43,7 +43,6 @@
 }
 
 .btn--primary {
-    @extend %font__display--black;
     background-color: $color__orange--secondary;
     border: 1px solid $color__border--orange;
     color: $color__white;
@@ -79,7 +78,6 @@
 
 
 .btn--secondary--on-black-bg {
-    @extend %font__display--black;
     color: darken($color__meta--dark,10);
     background-color: $color__grey--secondary;
     border: 1px solid darken($color__grey--secondary, 10);

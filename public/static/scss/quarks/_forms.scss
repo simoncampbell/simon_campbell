@@ -13,9 +13,11 @@ input {
     border: 1px solid $color__border--standard;
     background-color: $color__background--grey;
     margin-bottom: $base-spacing-unit;
-    padding: $half-spacing-unit;
+    margin-bottom: calc-rem($base-spacing-unit);
+    padding: 0 $half-spacing-unit;
+    padding: 0 calc-rem($half-spacing-unit);
     color: $color__meta--dark;
-    line-height: $base-line-height;
+    line-height: $line-height-ratio;
 
     &:focus {
         outline:none;
@@ -69,6 +71,10 @@ textarea {
   width:100%;
 }
 
+.text-input--secondary {
+    background-color: $color__white;
+}
+
 
 /**
  * Labels
@@ -86,6 +92,14 @@ label,
     display: block;
     color: $color__meta--dark;
 }
+
+    .label--headline {
+        font-size: $h3-size;
+        font-size: calc-rem($h3-size);
+        text-transform: none;
+        color:$base-color;
+    }
+
     /**
      * Extra help text in `label`s, e.g.:
      *

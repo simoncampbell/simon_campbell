@@ -20,14 +20,8 @@
 
         <ul class="item-list">
             {% for news in craft.entries.find({section:'News',limit:'15' }) %}
-                <li class="item-list__item">
+                <li class="item-list__item item-list__item--article">
                     <article>
-                        {% for image in news.standardImage %}
-                            <figure>
-                                <img src="{{image.url}}"/>
-                                <p>{{news.caption}}</p>
-                            </figure>
-                        {% endfor %}
 
                         <div class="heading-group">
 
@@ -36,10 +30,26 @@
                             <div class="meta-info-block meta-info-block--borderless">
                                 <time class="meta-info-block__item" datetime="{{news.postDate|date("Y-m-d")}}">{{news.postDate|date("jS F Y")}}</time>
 
-                                <p class="meta-info-block__item">Posted in <a href="URL!" class="icon icon--tag">Life</a>, <a href="URL!" class="icon icon--tag">Health</a></p>
+                                <p class="meta-info-block__item">Posted in
+                                    <a class="category-link" href="URL!">
+                                        <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
+                                        Life
+                                    </a>,
+                                    <a class="category-link" href="URL!">
+                                        <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
+                                        Health
+                                    </a>
+                                </p>
                             </div>
 
                         </div>
+
+                        {% for image in news.standardImage %}
+                            <figure>
+                                <img src="{{image.url}}"/>
+                                <figcaption><p>{{news.caption}}</p></figcaption>
+                            </figure>
+                        {% endfor %}
 
 
                         {{ news.body }}

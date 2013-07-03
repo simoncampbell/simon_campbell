@@ -19,8 +19,28 @@
         <ul class="item-list">
 
             {% for post in craft.entries.find({section:'Blog', limit:'10'}) %}
-                <li class="item-list__item">
+                <li class="item-list__item item-list__item--article">
                     <article>
+                        <header class="heading-group">
+                            <h3><a href="{{post.url}}">{{ post.title }}</a></h3>
+
+                            <div class="meta-info-block meta-info-block--borderless">
+
+                                <time class="meta-info-block__item" datetime="{{post.postDate|date("Y-m-d")}}">{{post.postDate|date("jS F Y")}}</time>
+
+                                <p class="meta-info-block__item">Posted in
+                                    <a href="URL!">
+                                        <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
+                                        Life
+                                    </a>,
+                                    <a href="URL!">
+                                        <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
+                                        Health
+                                    </a>
+                                </p>
+                            </div>
+                        </header>
+
                         <!-- OPTIONAL BLOG POST IMAGE -->
                         {% for image in post.blog__image %}
                             <figure>
@@ -30,16 +50,6 @@
                             </figure>
                         {% endfor %}
 
-                        <header class="heading-group">
-                            <h3><a href="{{post.url}}">{{ post.title }}</a></h3>
-
-                            <div class="meta-info-block meta-info-block--borderless">
-
-                                <time class="meta-info-block__item" datetime="{{post.postDate|date("Y-m-d")}}">{{post.postDate|date("jS F Y")}}</time>
-
-                                <p class="meta-info-block__item">Posted in <a href="URL!" class="icon icon--tag">Life</a>, <a href="URL!" class="icon icon--tag">Health</a></p>
-                            </div>
-                        </header>
 
                         <p>{{ post.shortExtract }}. <a href="{{post.url}}">Read more &raquo;</a></p>
 
@@ -63,12 +73,10 @@
 
             <li class="item-list__item">
 
-                <h3>Search the blog</h3>
-
                 <form id="search-form" action="/search-results/">
-                    <label for="q" id="search-label" class="screen-reader">Search</label>
-                    <input aria-labelledby="search-label" id="q" type="search" name="q" class="search-field" placeholder="Search terms..." value="">
-                    <input type="submit" value="Search" class="btn btn--search">
+                    <label for="q" id="search-form" class="label--headline">Search the blog</label>
+                    <input aria-labelledby="search-label" id="q" type="search" class="search-form__input text-input--secondary" placeholder="Search terms..." value="">
+                    <input type="submit" value="Search" class="btn btn--secondary search-form__submit">
                 </form>
 
             </li>
@@ -77,13 +85,44 @@
 
                 <h3>Categories</h3>
 
-                <ul class="category-links">
-                    <li class="cur category-links__link"><a href="URL!">All</a></li>
-                    <li class="category-links__link"><a href="URL!">Life</a></li>
-                    <li class="category-links__link"><a href="URL!">Diving</a></li>
-                    <li class="category-links__link"><a href="URL!">Travel</a></li>
-                    <li class="category-links__link"><a href="URL!">People</a></li>
-                    <li class="category-links__link"><a href="URL!">Music</a></li>
+                <ul class="nav nav--category">
+                    <li class="cur category-links__link">
+                        <a class="nav--category__item nav--category__item--cur btn btn--secondary btn--small" href="URL!">
+                            <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
+                            All
+                        </a>
+                    </li>
+                    <li class="category-links__link">
+                        <a class="nav--category__item btn btn--secondary btn--small" href="URL!">
+                            <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
+                            Life
+                        </a>
+                    </li>
+                    <li class="cur category-links__link">
+                        <a class="nav--category__item btn btn--secondary btn--small" href="URL!">
+                            <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
+                            Fishing
+                        </a>
+                    </li>
+                    <li class="category-links__link">
+                        <a class="nav--category__item btn btn--secondary btn--small" href="URL!">
+                            <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
+                            Swimming
+                        </a>
+                    </li>
+                    <li class="cur category-links__link">
+                        <a class="nav--category__item btn btn--secondary btn--small" href="URL!">
+                            <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
+                            Travel
+                        </a>
+                    </li>
+                    <li class="category-links__link">
+                        <a class="nav--category__item btn btn--secondary btn--small" href="URL!">
+                            <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
+                            Vanning
+                        </a>
+                    </li>
+
                 </ul>
 
             </li>

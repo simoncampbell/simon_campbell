@@ -42,56 +42,94 @@
     }
 }
 
-.btn--primary {
-    background-color: $color__orange--secondary;
-    border: 1px solid $color__border--orange;
-    color: $color__white;
-
-    &:hover {
+    .btn--primary {
+        background-color: $color__orange--secondary;
+        border: 1px solid $color__border--orange;
         color: $color__white;
-        text-decoration: none;
-        background-color: $color__orange--dark;
-        border: 1px solid darken($color__border--orange, 5);
+
+        &:hover {
+            color: $color__white;
+            text-decoration: none;
+            background-color: $color__orange--dark;
+            border: 1px solid darken($color__border--orange, 5);
+        }
+
+        &:active {
+            background-color: darken($color__orange--dark, 5);
+            border: 1px solid darken($color__border--orange, 10);
+        }
+
+        .icon {
+            background-color: $color__orange--dark;
+        }
     }
 
-    &:active {
-        background-color: darken($color__orange--dark, 5);
-        border: 1px solid darken($color__border--orange, 10);
+
+    .btn--secondary {
+        background-color: $color__grey--primary;
+        border: 1px solid darken($color__grey--primary, 10);
+
+        &:hover {
+            background-color: $color__grey--secondary;
+            border: 1px solid darken($color__grey--secondary, 10);
+        }
+
+        &:active {
+            background-color: darken($color__grey--secondary, 5);
+            border: 1px solid darken($color__grey--secondary, 10);
+        }
     }
-}
 
 
-.btn--secondary {
-    background-color: $color__grey--primary;
-    border: 1px solid darken($color__grey--primary, 10);
-
-    &:hover {
+    .btn--secondary--on-black-bg {
+        color: darken($color__meta--dark,10);
         background-color: $color__grey--secondary;
         border: 1px solid darken($color__grey--secondary, 10);
+
+        &:hover {
+            background-color: darken($color__grey--secondary, 15);
+            border: 1px solid darken($color__grey--secondary, 20);
+        }
+
+        &:active {
+            background-color: darken($color__grey--secondary, 20);
+            border: 1px solid darken($color__grey--secondary, 25);
+        }
     }
 
-    &:active {
-        background-color: darken($color__grey--secondary, 5);
-        border: 1px solid darken($color__grey--secondary, 10);
+    .btn--icon {
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        line-height: 0;
+
+        .icon {
+            display: inline-block;
+            line-height: 2.5;
+            height: 37px;
+            height: calc-rem(37px);
+            margin-top: -3px;
+            margin-top: - calc-rem(3px);
+            width: ($base-spacing-unit * 2);
+            width: calc-rem($base-spacing-unit * 2);
+            font-size: $base-font-size;
+            font-size: calc-rem($base-font-size);
+            text-align: center;
+            font-weight: bold;
+            border-right: 1px solid darken($color__border--orange, 2);
+        }
+
+        &:hover .icon {
+            border-right: 1px solid darken($color__border--orange, 5);
+        }
+
+        .icon-text {
+            padding-left: $half-spacing-unit;
+            padding-left: calc-rem($half-spacing-unit);
+            line-height: 2.5;
+            display:inline-block;
+        }
     }
-}
-
-
-.btn--secondary--on-black-bg {
-    color: darken($color__meta--dark,10);
-    background-color: $color__grey--secondary;
-    border: 1px solid darken($color__grey--secondary, 10);
-
-    &:hover {
-        background-color: darken($color__grey--secondary, 15);
-        border: 1px solid darken($color__grey--secondary, 20);
-    }
-
-    &:active {
-        background-color: darken($color__grey--secondary, 20);
-        border: 1px solid darken($color__grey--secondary, 25);
-    }
-}
 
 
 

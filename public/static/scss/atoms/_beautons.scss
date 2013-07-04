@@ -104,6 +104,7 @@
         line-height: 0;
 
         .icon {
+            @include transition(.3s all ease-in-out);
             display: inline-block;
             line-height: 2.5;
             height: 37px;
@@ -121,6 +122,7 @@
 
         &:hover .icon {
             border-right: 1px solid darken($color__border--orange, 5);
+            background-color: darken($color__orange--dark, 5);
         }
 
         .icon-text {

@@ -16,9 +16,7 @@
     {% if craft.request.lastSegment != 'thirty-six' %}
 
         <li class="item-list__item">
-            <header class="meta-info-block">
-                <h3>Thirty Six</h3>
-            </header>
+            <h3>Thirty Six</h3>
 
             <figure>
                 <img src="http://placehold.it/150x150/0eafff/ffffff.png"/>
@@ -26,7 +24,12 @@
 
             <p>Well this is it, Simon’s first solo album in thirty six years of spanking the plank. It’s not blues, it’s not rock, it’s not folk; it is an eclectic mix that will take you on his very personal musical journey.</p>
 
-            <a class="btn btn--music" href="URL!">Listen now</a>
+            <a href="URL!" class="btn btn--icon btn--primary">
+                <span class="icon ss-music">music</span>
+                <div class="icon-text">
+                    Listen now
+                </div>
+            </a>
         </li>
     {% endif %}
 </ul>

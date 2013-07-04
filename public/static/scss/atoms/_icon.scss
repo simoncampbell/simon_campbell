@@ -6,7 +6,7 @@
 /**
  * For text-links etc that have an icon with them:
  *
- * <li><i aria-hidden="true" class="icon--facebook"></i> Facebook</li>
+ * <li><span aria-hidden="true" class="icon--facebook"></span> Facebook</li>
  */
 
 
@@ -40,6 +40,8 @@
 
     .icon--menu {
         color: $color__banner-nav--dark;
+        padding-right: 2px;
+        padding-right: calc-rem(2px);
     }
 
 

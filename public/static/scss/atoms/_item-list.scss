@@ -35,8 +35,9 @@
 /**
 * Item lists in the side bar
 **/
-.side-wrapper .item-list {
-    h4, .label--headline {
+.side-wrapper .item-list__item {
+    >h4,
+    .label--headline {
         margin-bottom: $half-spacing-unit;
         margin-bottom: calc-rem($half-spacing-unit);
     }

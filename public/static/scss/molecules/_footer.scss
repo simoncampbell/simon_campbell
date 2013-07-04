@@ -54,5 +54,15 @@
 	}
 
 	.site-info {
-		margin-bottom: 0;
-	}
+
+                li,
+                a {
+                        margin-bottom: 0;
+                        font-size: $micro-size;
+                }
+
+                .link--reverse {
+                        width: 100%;
+                        text-align: center;
+                }
+        }

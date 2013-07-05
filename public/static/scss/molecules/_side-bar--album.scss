@@ -1,0 +1,43 @@
+
+
+
+.side-bar--album {
+    .media__img {
+        @include transition(all 0.2s ease-in-out);
+        width: $cols2;
+        max-width: $cols2;
+        position: relative;
+
+        &:hover,
+        &:focus {
+            opacity:.7;
+
+            &:before {
+                opacity:1;
+            }
+        }
+
+        &:before {
+            @include transition(all 0.3s ease-in-out);
+            @extend %font__icon--gizmo;
+            position: absolute;
+            left: 39%;
+            top: 38%;
+            content:"play";
+            display: block;
+            font-size: $base-font-size * 2;
+            color: $color__white;
+            opacity: 0;
+        }
+    }
+
+
+
+    p {
+        display: inline;
+    }
+
+    .link--icon {
+        display:inline;
+    }
+}

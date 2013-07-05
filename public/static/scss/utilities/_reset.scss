@@ -33,6 +33,11 @@ abbr[title],dfn[title]{
     cursor:help;
 }
 
+abbr[title] {
+    text-decoration:none;
+    border: none;
+}
+
 /**
  * Remove underlines from potentially troublesome elements.
  */

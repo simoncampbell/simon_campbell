@@ -14,13 +14,13 @@
     </header>
 
 
-    <div class="main-wrapper main-wrapper--rev" role="main">
+    <div class="main-wrapper main-wrapper--article main-wrapper--rev" role="main">
 
         <ul class="item-list">
 
             {% for post in craft.entries.find({section:'Equipment', limit:'10'})  %}
 
-                <li class="item-list__item">
+                <li class="item-list__item item-list__item--article">
 
                     <article>
 
@@ -39,7 +39,13 @@
                             <div class="meta-info-block meta-info-block--borderless">
                                 <time class="meta-info-block__item" datetime="{{post.postDate|date("Y-m-d")}}">{{post.postDate|date("jS F Y")}}</time>
 
-                                <p class="meta-info-block__item">Posted in <a href="/equipment/{{post.equipmentCategory|lower}}">{{post.equipmentCategory}}</a></p>
+                                <p class="meta-info-block__item">Posted in
+
+                                    <a class="category-link" href="/equipment/{{post.equipmentCategory|lower}}">
+                                        <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
+                                        {{post.equipmentCategory}}
+                                    </a>
+                                </p>
                             </div>
                         </header>
 
@@ -52,8 +58,69 @@
         </ul>
     </div>
 
-    <div class="side-wrapper side-wrapper--rev side-wrapper--island">
-        {% include 'components/_side-bar.html' %}
+    <div class="side-wrapper island">
+        <ul class="item-list">
+
+            <li class="item-list__item">
+
+                <div class="live-shows-block">
+                    <header class="island__header">
+                        <h3>Live Shows</h3>
+                        <a class="link--dark" href="URL!">View all shows &raquo;</a>
+                    </header>
+
+                    <dl class="shows-list">
+
+                        <dt class="shows-list">
+                            <time datetime="2013-06-24">24th June 2013</time>
+                        </dt>
+                        <dd>
+                            <h5><a href="URL!">Borderline</a></h5>
+                            <p>The Pavilion, Jumping Juniper, 77 Road Street</p>
+                        </dd>
+
+                        <dt>
+                            <time datetime="2013-06-24">24th June 2013</time>
+                        </dt>
+                        <dd>
+                            <h5><a href="URL!">Borderline</a></h5>
+                            <p>The Pavilion, Jumping Juniper, 77 Road Street</p>
+                        </dd>
+
+                        <dt>
+                            <time datetime="2013-06-24">24th June 2013</time>
+                        </dt>
+                        <dd>
+                            <h5><a href="URL!">Borderline</a></h5>
+                            <p>The Pavilion, Jumping Juniper, 77 Road Street</p>
+                        </dd>
+                    </dl>
+                </div>
+            </li>
+
+            <li class="item-list__item item-list__item--album">
+
+                <h3>Thirty Six</h3>
+
+                <div class="media">
+
+                    <figure class="media__img">
+                        <img src="http://placehold.it/150x150/0eafff/ffffff.png"/>
+                    </figure>
+
+                    <div class="media__body">
+                        <p>Well this is it, Simon’s first solo album in thirty six years of spanking the plank. It’s not blues, it’s not rock, it’s not folk; it is an eclectic mix that will take you on his very personal musical journey.</p>
+
+                        <a href="URL!" class="btn btn--icon btn--primary">
+                            <span class="icon ss-music">music</span>
+                            <div class="icon-text">
+                                Listen now
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </li>
+        </ul>
     </div>
 
 

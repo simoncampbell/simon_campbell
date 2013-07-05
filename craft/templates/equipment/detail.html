@@ -16,7 +16,7 @@
         </figure>
     {% endfor %}
 
-    <header class="heading-group heading-group--main">
+    <header class="heading-group heading-group--main heading-group--with-meta">
         <h1>{{entry.title}}</h1>
 
         {% if entry.heading__sec %}
@@ -24,12 +24,12 @@
         {% endif %}
 
         <aside class="meta-info-block">
-            <time datetime="{{entry.postDate|date("Y-m-d")}}">{{entry.postDate|date("jS F Y")}}</time>
-            <p>Posted in <a href="URL!" class="article-tag">{{entry.equipmentCategory}}</a></p>
+            <time class="meta-info-block__item" datetime="{{entry.postDate|date("Y-m-d")}}">{{entry.postDate|date("jS F Y")}}</time>
+            <p class="meta-info-block__item">Posted in <a href="URL!" class="article-tag">{{entry.equipmentCategory}}</a></p>
         </aside>
     </header>
 
-    <div class="main-wrapper main-wrapper--rev">
+    <div class="main-wrapper main-wrapper--article main-wrapper--rev">
 
         <p class="lede">{{entry.shortExtract}}</p>
 

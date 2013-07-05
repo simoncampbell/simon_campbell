@@ -43,6 +43,7 @@ a {
     color: darken($color__meta,10);
     border: 1px solid transparent;
     @extend %font__display--normal;
+    white-space: nowrap;
 
     &:hover,
     &:focus {

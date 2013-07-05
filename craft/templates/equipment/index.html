@@ -56,9 +56,17 @@
             {% endfor %}
 
         </ul>
-    </div>
 
-    <div class="side-wrapper island">
+        {% include 'components/_equipment/_category-list.html' %}
+
+    </div> <!-- end//.main-wrapper -->
+
+{% endblock %}
+
+
+
+{% block content_side %}
+ <div class="side-wrapper island">
         <ul class="item-list">
 
             <li class="item-list__item">
@@ -99,37 +107,8 @@
             </li>
 
             <li class="item-list__item item-list__item--album">
-
-                <h3>Thirty Six</h3>
-
-                <div class="media">
-
-                    <figure class="media__img">
-                        <img src="http://placehold.it/150x150/0eafff/ffffff.png"/>
-                    </figure>
-
-                    <div class="media__body">
-                        <p>Well this is it, Simon’s first solo album in thirty six years of spanking the plank. It’s not blues, it’s not rock, it’s not folk; it is an eclectic mix that will take you on his very personal musical journey.</p>
-
-                        <a href="URL!" class="btn btn--icon btn--primary">
-                            <span class="icon ss-music">music</span>
-                            <div class="icon-text">
-                                Listen now
-                            </div>
-                        </a>
-                    </div>
-                </div>
+                {% include 'components/_side-bar--album.html' %}
             </li>
         </ul>
     </div>
-
-
 {% endblock %}
-
-
-{% block content_side %}
-    <div class="main-wrapper main-wrapper--full">
-        {% include 'components/_equipment/_category-list.html' %}
-    </div>
-{% endblock %}
-

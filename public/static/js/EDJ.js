@@ -1,7 +1,10 @@
 $(document).ready(function(){
 
 
+
 // Mobile navigation drop down
+// ---------------------------------------------------------------------------------------------------
+
     $('.link__mobile-menu').on('click', function(e){
         var $mobile_link = $('link__mobile-menu'),
             $icon_text = $('.icon--menu');
@@ -27,4 +30,32 @@ $(document).ready(function(){
 
         $mobile_link.find('.ss').text('navigateup');
     });
+
+
+
+
+
+
+
+// Jump To Top - Jump to top for news pagination
+// ---------------------------------------------------------------------------------------------------
+
+// EDJ.jump_to_top = {
+
+//     $jump_to_top: {},
+
+//     run:true,
+
+//     init: function(){
+        $('a.link--jump').on('click', function(event){
+            event.preventDefault();
+            $('html, body').animate({scrollTop:0}, 300);
+        });
+//     }
+// };
+
+
+
+
+
 });

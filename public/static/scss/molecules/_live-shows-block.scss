@@ -10,7 +10,14 @@
         position: relative;
         background-color: #E7E6E6;
 
-        > h4 {
+        .island.side-wrapper & {
+            background-color: transparent;
+            border: none;
+            padding: 0;
+        }
+
+        > h4,
+        >h3 {
             display: inline-block;
             margin-bottom: 0;
         }
@@ -23,6 +30,10 @@
             top: calc-rem($half-spacing-unit + 6px);
             font-size: $milli-size;
             font-size: calc-rem($milli-size);
+
+            .island.side-wrapper & {
+                top: .3rem;
+            }
         }
     }
 }

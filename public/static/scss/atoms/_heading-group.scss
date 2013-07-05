@@ -33,6 +33,12 @@
 
     .heading-group--with-meta {
         border-bottom: none;
+        padding-bottom: 0;
+
+        .meta-info-block {
+            margin-top: $half-spacing-unit;
+            margin-top: calc-rem($half-spacing-unit);
+        }
     }
 
 } //endif

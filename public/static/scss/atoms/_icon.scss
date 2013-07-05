@@ -6,7 +6,10 @@
 /**
  * For text-links etc that have an icon with them:
  *
- * <li><span aria-hidden="true" class="icon--facebook"></span> Facebook</li>
+ *  <a href="URL!" class="link--icon">
+ *      <span class="icon ss ss-inbox">inbox</span>
+ *      Get regular updates from the blog
+ *  </a>
  */
 
 
@@ -49,6 +52,11 @@
         padding-right: 0;
         margin-right: -2px;
         margin-right: calc-rem(-2px);
+    }
+
+    .ss-music {
+        margin-right:-2px;
+        margin-right: - calc-rem(2px);
     }
 
 } //endif

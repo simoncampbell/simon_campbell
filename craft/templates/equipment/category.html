@@ -10,68 +10,73 @@
 
 {% block content_main %}
 
-    <header>
-        <p class="section-title">Equipment and Gear</p>
-        <h1>Guitars</h1>
-    </header>
 
-    <div class="main-wrapper" role="main">
+    <div class="main-wrapper main-wrapper--article" role="main">
+
+        <header class="heading-group">
+            <h5>Equipment and Gear</h5>
+            <h1>Guitars</h1>
+        </header>
+
+        <p class="lede lede--double">Guitars have always been a big part of my life. From the original Stratocaster that I bought for myself when I was just twelve years old to the Yamaha 3710i that I stole from my sister’s boyfriend at 24. Electrics have always held a special place in my heart. Here I’d like to share some of my favourites.</p>
 
          <ul class="item-list">
 
-            <li class="item-list__item">
+            <li class="item-list__item item-list__item--article">
                 <article>
                     <!-- REQUIRED EQUIPMENT IMAGE -->
-                    <figure>
+                    <figure class="item-list__figure">
                         <a href="{{post.url}}">
                             <img alt="" src="http://placehold.it/500x300/0eafff/ffffff.png">
                             <img src="{{image.url}}">
                         </a>
                     </figure>
 
-                    <header>
+                    <header class="heading-group--marginless">
                         <h3><a href="URL!">TC Electronic 2290</a></h3>
-
-                        <time datetime="DATETIME">24th June 2013</time>
                     </header>
 
                     <p>In my younger and more vulnerable years my father gave me some advice that I’ve been turning over in my mind ever since. “Whenever you feel like criticizing any one,” he told me, “just remember that all the people in this world haven’t had the advantages that you’ve had.” <a href="{{post.url}}">Read more &raquo;</a></p>
                 </article>
             </li>
 
-            <li class="item-list__item">
+            <li class="item-list__item item-list__item--article">
                 <article>
                     <!-- REQUIRED EQUIPMENT IMAGE -->
-                    <figure>
+                    <figure class="item-list__figure">
                         <a href="{{post.url}}">
                             <img alt="" src="http://placehold.it/500x300/0eafff/ffffff.png">
                             <img src="{{image.url}}">
                         </a>
                     </figure>
 
-                    <header>
+                    <header class="heading-group--marginless">
                         <h3><a href="URL!">TC Electronic 2290</a></h3>
 
-                        <time datetime="DATETIME">24th June 2013</time>
+                        <div class="meta-info-block meta-info-block--borderless">
+                            <time class="meta-info-block__item" datetime="DATETIME">24th June 2013</time>
+                        </div>
                     </header>
 
                     <p>In my younger and more vulnerable years my father gave me some advice that I’ve been turning over in my mind ever since. “Whenever you feel like criticizing any one,” he told me, “just remember that all the people in this world haven’t had the advantages that you’ve had.” <a href="{{post.url}}">Read more &raquo;</a></p>
                 </article>
             </li>
-            <li class="item-list__item">
+            <li class="item-list__item item-list__item--article">
                 <article>
                     <!-- REQUIRED EQUIPMENT IMAGE -->
-                    <figure>
+                    <figure class="item-list__figure">
                         <a href="{{post.url}}">
                             <img alt="" src="http://placehold.it/500x300/0eafff/ffffff.png">
                             <img src="{{image.url}}">
                         </a>
                     </figure>
 
-                    <header>
+                    <header class="heading-group--marginless">
                         <h3><a href="URL!">TC Electronic 2290</a></h3>
 
-                        <time datetime="DATETIME">24th June 2013</time>
+                         <div class="meta-info-block meta-info-block--borderless">
+                            <time class="meta-info-block__item" datetime="DATETIME">24th June 2013</time>
+                        </div>
                     </header>
 
                     <p>In my younger and more vulnerable years my father gave me some advice that I’ve been turning over in my mind ever since. “Whenever you feel like criticizing any one,” he told me, “just remember that all the people in this world haven’t had the advantages that you’ve had.” <a href="{{post.url}}">Read more &raquo;</a></p>
@@ -87,22 +92,52 @@
 
 {% block content_side %}
 
-    <div class="side-wrapper side-wrapper--island">
+    <div class="island side-wrapper">
 
-        <ul class="item-list item-list--side">
+        <ul class="item-list">
             <li class="item-list__item">
 
-                <h3>Equipment categories</h3>
-                <ul class="category-links">
-                    <li class="cur category-links__link"><a href="URL!">Electric guitars</a></li>
-                    <li class="category-links__link"><a href="URL!">Acoustic guitars</a></li>
-                    <li class="category-links__link"><a href="URL!">Synths</a></li>
-                    <li class="category-links__link"><a href="URL!">Drums</a></li>
-                    <li class="category-links__link"><a href="URL!">Keyboards</a></li>
+                <h4>Equipment categories</h4>
+                <ul class="nav nav--category">
+                    <li>
+                       <a class="nav--category__item nav--category__item--cur link--icon" href="URL!">
+                            <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
+                            Electric guitars
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav--category__item link--icon" href="URL!">
+                            <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
+                            Acoustic guitars
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav--category__item link--icon" href="URL!">
+                            <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
+                            Synthesizers
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav--category__item link--icon" href="URL!">
+                            <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
+                            Drum kits
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav--category__item link--icon" href="URL!">
+                            <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
+                            Amplifiers
+                        </a>
+                    </li>
                 </ul>
             </li>
-            <li>
-                {% include 'components/_side-bar.html' %}
+
+            <li class="item-list__item item-list__item--album">
+                {% include 'components/_side-bar--album.html' %}
+            </li>
+
+            <li class="item-list__item">
+                {% include 'components/_live-shows--alternate.html' %}
             </li>
         </ul>
     </div>

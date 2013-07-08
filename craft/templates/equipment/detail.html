@@ -38,17 +38,17 @@
     </div>
 
 
+
     <div class="side-wrapper side-wrapper--rev">
-        <ul class="standard-list">
-            <li>
-                <!-- INSTRUMENT IMAGE -->
-                {% for image in entry.equipmentImage %}
-                    <figure>
-                        <img src="{{image.url}}">
-                    </figure>
-                {% endfor %}
-            </li>
-            <li>
+            <!-- INSTRUMENT IMAGE -->
+        {% for image in entry.equipmentImage %}
+            <figure>
+                <img src="{{image.url}}">
+            </figure>
+        {% endfor %}
+
+        <ul class="item-list item-list--equipment-meta">
+            <li class="item-list__item">
                 <h4>Manufactured by</h4>
                 {% for make in entry.makerBlock %}
                     <p>
@@ -59,7 +59,7 @@
                 {% endfor %} <!-- //end.makerBlock -->
             </li>
 
-            <li>
+            <li class="item-list__item">
                 <h4>Add this gear to your collection</h4>
 
                 {% for item in entry.sellerBlock %}
@@ -75,9 +75,9 @@
                 {% endfor %}
             </li>
 
-            <li>
+            <li class="item-list__item">
                 <h4>Similar instruments</h4>
-                <ul class="">
+                <ul class="item-list">
                     <li><a href="URL!">Gibson E2234</a></li>
                     <li><a href="URL!">Ibanez S13</a></li>
                     <li><a href="URL!">Yamaha E series</a></li>

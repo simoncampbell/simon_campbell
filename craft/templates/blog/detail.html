@@ -104,11 +104,30 @@
     </div><!-- //end.main-wrapper -->
 
 
-    <div class="side-wrapper side-wrapper--island">
+    <div class="island side-wrapper">
 
-        {% include 'components/_side-bar.html' %}
+        <ul class="item-list">
 
-    </div><!-- //end.side-wrapper -->
+            <li class="item-list__item">
+                <h4>Subscribe via RSS</h4>
+
+                <a href="URL!" class="link--icon">
+                    <span class="icon ss ss-inbox">inbox</span>
+                    Get regular updates from the blog
+                </a>
+            </li>
+
+            <li class="item-list__item item-list__item--album">
+                {% include 'components/_side-bar--album.html' %}
+            </li>
+
+            <li class="item-list__item">
+                {% include 'components/_live-shows--alternate.html' %}
+            </li>
+        </ul>
+    </div><!-- // end.side-wrapper -->
+
+
 
 {% endblock %}
 

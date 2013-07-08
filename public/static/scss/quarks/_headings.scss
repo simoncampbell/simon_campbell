@@ -26,6 +26,11 @@ h3, .gamma {
 	@extend %font__display--black;
 	font-size: $h3-size;
 	line-height: ($line-height-ratio - .25);
+
+	.main-wrapper--article__detail & {
+		margin-top: $base-spacing-unit * 2;
+		margin-top: calc-rem($base-spacing-unit * 2);
+	}
 }
 
 h4, .delta {

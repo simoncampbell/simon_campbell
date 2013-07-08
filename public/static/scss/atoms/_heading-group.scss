@@ -41,4 +41,14 @@
         }
     }
 
+    .heading-group--marginless {
+
+        h4,
+        h3,
+        h2,
+        h1 {
+            margin-bottom: 0;
+        }
+    }
+
 } //endif

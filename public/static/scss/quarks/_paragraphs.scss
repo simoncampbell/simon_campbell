@@ -9,3 +9,9 @@ p {
 .lede {
 
 }
+
+.lede--double {
+    padding-bottom: $base-spacing-unit;
+    padding-bottom: calc-rem($base-spacing-unit);
+    border-bottom: 1px dotted $color__border--standard;
+}

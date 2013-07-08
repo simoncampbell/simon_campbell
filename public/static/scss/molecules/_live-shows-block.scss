@@ -9,17 +9,12 @@
     header {
         position: relative;
         background-color: #E7E6E6;
-
-        .island.side-wrapper & {
-            background-color: transparent;
-            border: none;
-            padding: 0;
-        }
+        border-top: 1px solid $color__border--standard;
 
         > h4,
         >h3 {
             display: inline-block;
-            margin-bottom: 0;
+            margin: 0;
         }
 
         > a {
@@ -31,9 +26,6 @@
             font-size: $milli-size;
             font-size: calc-rem($milli-size);
 
-            .island.side-wrapper & {
-                top: .3rem;
-            }
         }
     }
 }

@@ -93,6 +93,43 @@
     }
 }
 
+.nav--social {
+    li {
+        margin-right: $half-spacing-unit;
+        margin-right: calc-rem($half-spacing-unit);
+        font-size: $milli-size;
+    }
+
+    a {
+        color: darken($color__meta,10);
+        border: none;
+
+        &:hover,
+        &:focus {
+            color: darken($color__meta,20);
+            border: none;
+
+            &:before {
+                @include transition(.25s all ease-in-out);
+                opacity: .9;
+            }
+        }
+    }
+
+    a:before {
+        opacity:.6;
+    }
+
+    .icon--facebook:before {
+        margin-right: 0;
+    }
+
+    .svg .icon--facebook:before {
+        background-size:17px;
+    }
+
+}
+
 
 /**
  * Force a nav to occupy 100% of the available width of its parent. Extends
@@ -116,27 +153,6 @@
 
         > a{
             display:block;
-        }
-    }
-}
-
-
-/**
- * Make a list of keywords. Extends `.nav`, e.g.:
- *
-   `<ul class="nav  nav--keywords>`
- *
- */
-.nav--keywords{
-
-    > li{
-
-        &:after{
-            content:"\002C" "\00A0";
-        }
-
-        &:last-child:after{
-            display:none;
         }
     }
 }

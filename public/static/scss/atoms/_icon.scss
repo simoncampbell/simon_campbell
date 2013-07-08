@@ -52,11 +52,63 @@
         padding-right: 0;
         margin-right: -2px;
         margin-right: calc-rem(-2px);
+        font-size: 14px;
+        font-size: calc-rem(14px);
     }
 
     .ss-music {
         margin-right:-2px;
         margin-right: - calc-rem(2px);
     }
+
+
+    /**
+     * Social icons
+     */
+
+    $social: 'social';
+
+    @include sprite-map-generator($social);
+
+    .social-icon:before {
+        content: "";
+        display: inline-block;
+        height: $half-spacing-unit;
+        height: calc-rem($half-spacing-unit);
+        width: $half-spacing-unit;
+        width: calc-rem($half-spacing-unit);
+        margin-bottom: -4px;
+        margin-bottom: - calc-rem(4px);
+    }
+
+    .icon--facebook:before {
+        @include svg-background($social, 'facebook');
+        background-size:13px;
+        margin-right:5px;
+        margin-right: calc-rem(5px);
+    }
+
+    .icon--twitter:before {
+        @include svg-background($social, 'twitter');
+    }
+
+    .icon--vimeo:before {
+        @include svg-background($social, 'vimeo');
+        margin-right:5px;
+        margin-right: calc-rem(5px);
+    }
+
+    .icon--youtube:before {
+        @include svg-background($social, 'youtube');
+        margin-bottom: -5px;
+        margin-bottom: - calc-rem(5px);
+    }
+
+
+
+
+
+
+
 
 } //endif

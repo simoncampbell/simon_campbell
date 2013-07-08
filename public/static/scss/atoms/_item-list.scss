@@ -21,7 +21,6 @@
     }
 
 
-
 /**
 * Item list article
 **/
@@ -47,13 +46,25 @@
     }
 }
 
+.item-list--equipment {
+    border-top: 1px dotted $color__border--standard;
+    margin-top: $base-spacing-unit;
+    padding-top: $base-spacing-unit;
 
+    figure {
+        margin-bottom: 0;
+    }
+}
 
 
 /**
 * Comments item list
 **/
     .item-list--comments {
+        &:last-child {
+            margin-bottom: $base-spacing-unit * 2;
+        }
+
         >.flag {
             margin-bottom: $half-spacing-unit;
             margin-bottom: calc-rem($half-spacing-unit);

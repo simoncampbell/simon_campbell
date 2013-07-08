@@ -39,14 +39,14 @@
 * Item lists in the side bar
 **/
 .side-wrapper .item-list__item {
-    >h4,
+    h4,
     .label--headline {
         margin-bottom: $half-spacing-unit;
         margin-bottom: calc-rem($half-spacing-unit);
     }
 }
 
-.item-list--equipment {
+.item-list--equipment-meta {
     border-top: 1px dotted $color__border--standard;
     margin-top: $base-spacing-unit;
     padding-top: $base-spacing-unit;
@@ -54,8 +54,13 @@
     figure {
         margin-bottom: 0;
     }
-}
 
+    li.item-list__item {
+        h4 {
+            margin: 0;
+        }
+    }
+}
 
 /**
 * Comments item list
@@ -104,6 +109,26 @@
         font-size:$milli-size;
         font-size: calc-rem($milli-size);
     }
+
+
+
+
+/**
+ * Item list equipment meta info
+ */
+.item-list--equipment-meta {
+    @include vendor(column-count, 2);
+    @include vendor(column-gap, $base-spacing-unit);
+    @include vendor(column-gap, calc-rem($base-spacing-unit));
+
+    li {
+        @include column-break-inside(avoid);
+
+        h4 {
+            margin: 0;
+        }
+    }
+}
 
 
 

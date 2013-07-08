@@ -40,14 +40,22 @@ a {
 }
 
 .link--icon {
-    color: darken($color__meta,10);
-    border: 1px solid transparent;
     @extend %font__display--normal;
+    color: darken($color__meta,10);
+    border-bottom: 1px dotted darken($color__meta,10);;
     white-space: nowrap;
 
     &:hover,
     &:focus {
-        color: $color__orange--secondary;
+        color: darken($color__meta,15);
         text-decoration: none;
+        border-bottom: 1px solid darken($color__meta,20);
+    }
+}
+
+.nav--category {
+    a:hover,
+    a:focus {
+        border-bottom: 1px solid $color__orange--primary;
     }
 }

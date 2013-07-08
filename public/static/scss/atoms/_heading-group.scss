@@ -15,6 +15,10 @@
     h4 {
         color: lighten($color__meta,15);
     }
+
+    h5 {
+        color: $color--meta;
+    }
 }
 
     .heading-group--main {
@@ -23,7 +27,9 @@
 
         h1,
         h2,
-        h3 {
+        h3,
+        h4,
+        h5 {
             @include max-width(8);
             margin: 0 auto;
             padding: 0 $base-spacing-unit;
@@ -50,5 +56,6 @@
             margin-bottom: 0;
         }
     }
+
 
 } //endif

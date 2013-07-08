@@ -4,6 +4,7 @@
 
 figure {
     a {
+        display: block;
         border:none;
 
         &:hover,
@@ -38,4 +39,8 @@ figcaption {
 .figure__hero {
     margin-top: - ($base-spacing-unit * 2);
     margin-top: - calc-rem($base-spacing-unit * 2);
+}
+
+.item-list__figure {
+    margin-bottom: 0;
 }

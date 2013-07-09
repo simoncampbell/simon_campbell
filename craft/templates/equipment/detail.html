@@ -23,10 +23,19 @@
             <h2>{{entry.heading__sec}}</h2>
         {% endif %}
 
-        <aside class="meta-info-block">
+        <div class="meta-info-block">
             <time class="meta-info-block__item" datetime="{{entry.postDate|date("Y-m-d")}}">{{entry.postDate|date("jS F Y")}}</time>
-            <p class="meta-info-block__item">Posted in <a href="URL!" class="article-tag">{{entry.equipmentCategory}}</a></p>
-        </aside>
+
+            <p class="meta-info-block__item">Posted in
+                <a class="category-link" href="URL!">
+                    <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
+                    {{entry.equipmentCategory}}
+                </a>
+            </p>
+        </div>
+
+
+
     </header>
 
     <div class="main-wrapper main-wrapper--article main-wrapper--article__detail main-wrapper--rev">
@@ -37,9 +46,7 @@
 
     </div>
 
-
-
-    <div class="side-wrapper side-wrapper--rev">
+    <div class="side-wrapper side-wrapper--rev side-wrapper--equipment">
             <!-- INSTRUMENT IMAGE -->
         {% for image in entry.equipmentImage %}
             <figure>

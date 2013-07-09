@@ -46,8 +46,7 @@
  */
 .nav--category {
     list-style-type: none;
-    margin-bottom: $base-spacing-unit;
-    margin-bottom: calc-rem($base-spacing-unit);
+    margin-bottom: 0;
 }
 
     .nav--category__item {

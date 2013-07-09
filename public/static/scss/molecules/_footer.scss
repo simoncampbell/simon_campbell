@@ -63,6 +63,11 @@
             &:hover,
             &:focus {
                 border:none;
+
+                &:before {
+                    @include transition(.25s all ease-in-out);
+                    opacity: .5;
+                }
             }
         }
     }
@@ -72,6 +77,8 @@
         border-top: 1px solid darken($color__text--reverse,30);
         padding-top: $base-spacing-unit;
         padding-top: calc-rem($base-spacing-unit);
+        margin-bottom: $half-spacing-unit;
+        margin-bottom: calc-rem($half-spacing-unit);
 
         .nav {
             margin-bottom: 0;
@@ -82,6 +89,14 @@
         .link--jump {
             line-height: 1;
             float: right;
+            color: darken($color__white, 20);
+            border-bottom: 1px dotted darken($color__white, 30);
+
+            &:hover,
+            &:focus {
+                color: darken($color__white, 35);
+                border-bottom: 1px solid darken($color__white, 45);
+            }
         }
 
         li,

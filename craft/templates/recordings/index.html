@@ -8,64 +8,77 @@
 
 {% block content_main %}
 
-    <header class="heading-group heading-group--main">
-        <h1>Recordings</h1>
-        <h2>Albums, merch and other stuff</h2>
-    </header>
+
 
 
     <div class="main-wrapper">
+        <header class="heading-group heading-group--main--alternate">
+            <h1>Recordings</h1>
+        </header>
 
-        <p class="lede">Here are a collection of the tracks I’ve worked on, as well as some related goodies from the store. From good ol’ rock n’ roll to blues and grass, these records take in a broad cross section of genres that brings everything together to make something a little bit fresher.</p>
+        <p class="lede lede--double">Here are a collection of the tracks I’ve worked on, as well as some related goodies from the store. From good ol’ rock n’ roll to blues and grass, these records take in a broad cross section of genres that brings everything together to make something a little bit fresher.</p>
 
-        <section>
-            <h3><abbr title="extended play">EP</abbr>s &amp; <abbr title="long play">LP</abbr>s</h3>
+        <ul class="item-list item-list--album">
 
-            <ul class="item-list">
+            <li class="item-list__item item-list__item--article item-list--album">
+                <div class="flag flag--bottom">
+                    <figure class="flag__image">
+                        <a href="URL!"><img alt="" src="http://placehold.it/100x100/0eafff/ffffff.png"></a>
+                    </figure>
 
-                <li class="item-list__item">
+                    <header class="flag__body">
+                        <h3><a href="URL!">Thirty Six</a></h3>
+                         <time class="meta-info-block__item" datetime="{{entry.postDate|date("Y")}}">{{entry.postDate|date("Y")}}</time>
+                    </header>
+                </div>
 
-                    <a href="URL!"><img alt="" src="http://placehold.it/100x100/0eafff/ffffff.png"></a>
+                <p>In my younger and more vulnerable years my father gave me some advice that I’ve been turning over in my mind ever since. “Whenever you feel like criticizing any one,” he told me, “just remember that all the people in this world haven’t had the advantages that you’ve had."</p>
+            </li>
 
-                    <h3><a href="URL!">Thirty Six</a></h3>
+            <li class="item-list__item item-list__item--article item-list--album">
 
-                    <aside class="meta">
-                        <time datetime="{{entry.postDate|date("Y")}}">{{entry.postDate|date("Y")}}</time>
-                    </aside>
+                <div class="flag flag--bottom">
+                    <figure class="flag__image">
+                        <a href="URL!"><img alt="" src="http://placehold.it/100x100/0eafff/ffffff.png"></a>
+                    </figure>
 
-                    <p>In my younger and more vulnerable years my father gave me some advice that I’ve been turning over in my mind ever since. “Whenever you feel like criticizing any one,” he told me, “just remember that all the people in this world haven’t had the advantages that you’ve had."</p>
+                    <header class="flag__body">
+                        <h3><a href="URL!">Another release</a></h3>
+                         <time class="meta-info-block__item" datetime="{{entry.postDate|date("Y")}}">{{entry.postDate|date("Y")}}</time>
+                    </header>
+                </div>
+
+
+                <p>In my younger and more vulnerable years my father gave me some advice that I’ve been turning over in my mind ever since. “Whenever you feel like criticizing any one,” he told me, “just remember that all the people in this world haven’t had the advantages that you’ve had."</p>
+            </li>
+        </ul>
+
+
+        <ul class="item-list item-list--merch">
+            <h3>Merchandise and Goodies</h3>
+
+
+            <div class="item-list--grid">
+                <li class"item-list__item">
+                    <img alt="" src="http://placehold.it/250x250/0eafff/ffffff.png">
+                    <h5><a href="URL!">Launch poster</a></h5>
                 </li>
 
-                <li class="item-list__item">
-
-                    <a href="URL!"><img alt="" src="http://placehold.it/100x100/0eafff/ffffff.png"></a>
-
-                    <h3><a href="URL!">Another test album</a></h3>
-
-                    <aside class="meta">
-                        <time datetime="{{entry.postDate|date("Y")}}">{{entry.postDate|date("Y")}}</time>
-                    </aside>
-
-                    <p>In my younger and more vulnerable years my father gave me some advice that I’ve been turning over in my mind ever since. “Whenever you feel like criticizing any one,” he told me, “just remember that all the people in this world haven’t had the advantages that you’ve had."</p>
+                <li class"item-list__item">
+                    <img alt="" src="http://placehold.it/250x250/0eafff/ffffff.png">
+                    <h5><a href="URL!">Thirty six t-shirts</a></h5>
                 </li>
-            </ul>
-        </section>
-
-        <section>
-            <h3>Merch</h3>
-
-            <ul class="item_list">
-                <li class"item_list__item">
-                    <img alt="" src="http://placehold.it/100x100/0eafff/ffffff.png">
-                    <h3>Lauch poster</h3>
+                <li class"item-list__item">
+                    <img alt="" src="http://placehold.it/250x250/0eafff/ffffff.png">
+                    <h5><a href="URL!">Launch poster</a></h5>
                 </li>
 
-                <li class"item_list__item">
-                    <img alt="" src="http://placehold.it/100x100/0eafff/ffffff.png">
-                    <h3>Thirty six t-shirts</h3>
+                <li class"item-list__item">
+                    <img alt="" src="http://placehold.it/250x250/0eafff/ffffff.png">
+                    <h5><a href="URL!">Thirty six t-shirts</a></h5>
                 </li>
-            </ul>
-        </section>
+            </div>
+        </ul>
     </div>
 
 {% endblock %}
@@ -73,9 +86,49 @@
 
 
 {% block content_side %}
+<div class="island side-wrapper">
+    <ul class="item-list">
+        <li class="item-list__item">
+            <h4>Equipment</h4>
+            <p class="marginalia">Feel free to take a look at some of the instruments that I used to make these recordings; find prices about the equipment and try to find other similar bits of gear that bit be more to your own tastes.</p>
 
-    <div class="side-wrapper side-wrapper--island">
-        {% include 'components/_side-bar.html' %}
-    </div>
+            <ul class="nav nav--category">
+                <li>
+                   <a class="nav--category__item link--icon" href="URL!">
+                        <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
+                        Electric guitars
+                    </a>
+                </li>
+                <li>
+                    <a class="nav--category__item link--icon" href="URL!">
+                        <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
+                        Acoustic guitars
+                    </a>
+                </li>
+                <li>
+                    <a class="nav--category__item link--icon" href="URL!">
+                        <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
+                        Synthesizers
+                    </a>
+                </li>
+                <li>
+                    <a class="nav--category__item link--icon" href="URL!">
+                        <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
+                        Drum kits
+                    </a>
+                </li>
+                <li>
+                    <a class="nav--category__item link--icon" href="URL!">
+                        <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
+                        Amplifiers
+                    </a>
+                </li>
+            </ul>
+        </li>
 
+        <li class="item-list__item">
+            {% include 'components/_live-shows--alternate.html' %}
+        </li>
+    </ul>
+</div>
 {% endblock %}

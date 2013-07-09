@@ -30,6 +30,19 @@
     }
 }
 
+.live-shows-block--island {
+    .island__header {
+        background-color: darken(#E7E6E6, 5);
+        border: 1px solid $color__island--border;
+    }
+
+    .island__content {
+        background-color: #E7E6E6;
+        border: 1px solid $color__island--border;
+        border-top: none;
+    }
+}
+
     .shows-list {
         margin-bottom: 0;
 

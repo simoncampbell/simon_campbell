@@ -17,10 +17,19 @@
             <h2>{{entry.heading__sec}}</h2>
         {% endif %}
 
-        <aside class="meta-info-block">
+        <div class="meta-info-block">
             <time class="meta-info-block__item" datetime="{{entry.postDate|date("Y-m-d")}}">{{entry.postDate|date("jS F Y")}}</time>
-            <p class="meta-info-block__item">Posted in <a href="URL!" class="article-tag">Life</a>, <a href="URL!" class="article-tags">Health</a></p>
-        </aside>
+            <p class="meta-info-block__item">Posted in
+                <a class="category-link" href="URL!">
+                    <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
+                    Health
+                </a>,
+                <a class="category-link" href="URL!">
+                    <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
+                    Life
+                </a>
+            </p>
+        </div>
     </header>
 
     <div class="main-wrapper main-wrapper--article">
@@ -108,7 +117,7 @@
 
         <ul class="item-list">
 
-            <li class="item-list__item">
+            <li class="item-list__item item-list__item--sidebar">
                 <h4>Subscribe via RSS</h4>
 
                 <a href="URL!" class="link--icon">

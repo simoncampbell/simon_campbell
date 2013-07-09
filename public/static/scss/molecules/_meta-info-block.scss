@@ -4,7 +4,6 @@
 
 .meta-info-block {
     @extend .cf;
-    color: $color__meta;
     border-top: 1px solid $color__border--standard;
     border-bottom: 1px solid $color__border--standard;
     margin-bottom: ($base-spacing-unit);
@@ -23,8 +22,9 @@
         @extend %font__display--normal;
         margin-bottom:0;
         display:inline-block;
+        color: $color__meta;
 
-        &:nth-child(2):before {
+        .meta-info-block &:nth-child(2):before {
             content:"•";
             padding: 0 $quarter-spacing-unit;
             padding: 0 calc-rem($quarter-spacing-unit);

@@ -22,6 +22,29 @@
 
 
 /**
+* Throw a list of items into grid mode
+**/
+
+    .item-list--merch {
+        border-top: 1px dotted $color__border--standard;
+        padding-top: $base-spacing-unit;
+        margin-top: $base-spacing-unit;
+    }
+
+
+    .item-list--grid {
+        @include vendor(column-count, 2);
+        @include vendor(column-gap, $base-spacing-unit);
+        @include vendor(column-gap, calc-rem($base-spacing-unit));
+
+        .item-list__item {
+            @include column-break-inside(avoid);
+        }
+    }
+
+
+
+/**
 * Item list article
 **/
     .item-list__item--article {
@@ -34,19 +57,36 @@
     }
 
 
-
 /**
 * Item lists in the side bar
 **/
-.side-wrapper .item-list__item {
-    h4,
-    .label--headline {
+    .item-list__item {
+        h4,
+        .label--headline {
+            margin-bottom: $half-spacing-unit;
+            margin-bottom: calc-rem($half-spacing-unit);
+        }
+    }
+
+
+/**
+* Equipment categories listing
+**/
+.item-list--equipment {
+    border-top: 1px dotted $color__border--standard;
+    padding-top: $base-spacing-unit;
+    padding-top: calc-rem($base-spacing-unit);
+
+    li figure {
         margin-bottom: $half-spacing-unit;
         margin-bottom: calc-rem($half-spacing-unit);
     }
 }
 
 .item-list--equipment-meta {
+    @include vendor(column-count, 2);
+    @include vendor(column-gap, $base-spacing-unit);
+    @include vendor(column-gap, calc-rem($base-spacing-unit));
     border-top: 1px dotted $color__border--standard;
     margin-top: $base-spacing-unit;
     padding-top: $base-spacing-unit;
@@ -55,12 +95,44 @@
         margin-bottom: 0;
     }
 
-    li.item-list__item {
+    .item-list__item {
+        @include column-break-inside(avoid);
+
         h4 {
             margin: 0;
         }
     }
 }
+
+.item-list__item--sidebar {
+    border-bottom: 1px solid lighten($color__border--standard, 3);
+    padding-bottom: $base-spacing-unit;
+    padding-bottom: calc-rem($base-spacing-unit);
+    margin-bottom: $base-spacing-unit;
+    margin-bottom: calc-rem($base-spacing-unit);
+}
+
+
+/**
+* Album item listing
+**/
+.item-list--album {
+    .flag {
+        margin-bottom: $half-spacing-unit;
+    }
+    .flag__image {
+        @include width(2);
+    }
+
+    .flag__body {
+        h3,
+        h4 {
+            margin: 0;
+        }
+    }
+}
+
+
 
 /**
 * Comments item list
@@ -68,6 +140,7 @@
     .item-list--comments {
         &:last-child {
             margin-bottom: $base-spacing-unit * 2;
+            margin-bottom: calc-rem($base-spacing-unit * 2);
         }
 
         >.flag {
@@ -103,33 +176,9 @@
         }
     }
 
-
-
     .item-list__item--album {
         font-size:$milli-size;
         font-size: calc-rem($milli-size);
     }
-
-
-
-
-/**
- * Item list equipment meta info
- */
-.item-list--equipment-meta {
-    @include vendor(column-count, 2);
-    @include vendor(column-gap, $base-spacing-unit);
-    @include vendor(column-gap, calc-rem($base-spacing-unit));
-
-    li {
-        @include column-break-inside(avoid);
-
-        h4 {
-            margin: 0;
-        }
-    }
-}
-
-
 
 } //endif

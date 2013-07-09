@@ -23,6 +23,12 @@
                 <li class="item-list__item item-list__item--article">
                     <article>
 
+                        {% for image in news.standardImage %}
+                            <figure>
+                                <img src="{{image.url}}"/>
+                            </figure>
+                        {% endfor %}
+
                         <div class="heading-group">
 
                             <h3><a href="{{ news.url }}">{{ news.title }}</a></h3>
@@ -43,14 +49,6 @@
                             </div>
 
                         </div>
-
-                        {% for image in news.standardImage %}
-                            <figure>
-                                <img src="{{image.url}}"/>
-                                <figcaption><p>{{news.caption}}</p></figcaption>
-                            </figure>
-                        {% endfor %}
-
 
                         {{ news.body }}
 
@@ -78,13 +76,13 @@
 
         <ul class="item-list">
 
-            <li class="item-list__item">
+            <li class="item-list__item item-list__item--sidebar">
 
                 {% include 'components/_news/_news-category' %}
 
             </li>
 
-            <li class="item-list__item">
+            <li class="item-list__item item-list__item--sidebar">
                 <h4>Subscribe via RSS</h4>
 
                 <a href="URL!" class="link--icon">

@@ -15,3 +15,7 @@ p {
     padding-bottom: calc-rem($base-spacing-unit);
     border-bottom: 1px dotted $color__border--standard;
 }
+
+.marginalia {
+	font-size:$milli-size;
+}

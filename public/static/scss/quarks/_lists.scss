@@ -15,8 +15,16 @@ ul {
     margin-left:0;
     list-style-position:outside;
 
-    >li {
+    li {
+        list-style-type:none;
 
+        &:before {
+            content:"•";
+            color: $color__orange--primary;
+            position:relative;
+            left: -$quarter-spacing-unit;
+            left: - (calc-rem($quarter-spacing-unit));
+        }
     }
 }
 

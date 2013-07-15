@@ -39,6 +39,15 @@ a {
     }
 }
 
+/**
+ * Links with icon
+ *
+ * <a href="URL!" class="link--icon">
+ *      <span class="icon ss ss-music">music</span>
+ *      Listen now
+ * </a>
+ */
+
 .link--icon {
     @extend %font__display--normal;
     color: darken($color__meta,10);

@@ -8,6 +8,16 @@
  *
  * @csswizardry -- csswizardry.com/beautons
  *
+ *
+ *
+ * <a href="URL!" class="btn btn--icon btn--primary btn--arrow-left">
+ *     <span class="icon ss-rewind">rewind</span>
+ *     <div class="icon-text">
+ *          Older entries
+ *     </div>
+ * </a>
+ *
+ *
  */
 
 
@@ -47,7 +57,8 @@
         border: 1px solid $color__border--orange;
         color: $color__white;
 
-        &:hover {
+        &:hover,
+        &:focus {
             color: $color__white;
             text-decoration: none;
             background-color: $color__orange--dark;
@@ -69,7 +80,8 @@
         background-color: $color__grey--primary;
         border: 1px solid darken($color__grey--primary, 10);
 
-        &:hover {
+        &:hover,
+        &:focus {
             background-color: $color__grey--secondary;
             border: 1px solid darken($color__grey--secondary, 10);
         }
@@ -77,6 +89,62 @@
         &:active {
             background-color: darken($color__grey--secondary, 5);
             border: 1px solid darken($color__grey--secondary, 10);
+        }
+    }
+
+    .btn--purple {
+        background-color: $color__purple;
+        border: 1px solid darken($color__purple,10);
+        color: $color__white;
+
+       &.btn--icon .icon {
+            background-color: darken($color__purple,10);
+            border-right: 1px solid darken($color__purple,10);
+        }
+
+        &:hover,
+        &:focus {
+            background-color: darken($color__purple,10);
+            border: 1px solid darken($color__purple,15);
+            color: $color__white;
+
+            &.btn--icon .icon {
+                background-color:darken($color__purple,18);
+                border-right: 1px solid darken($color__purple,21);
+            }
+        }
+
+        &:active {
+            background-color: darken($color__purple,15);
+            border: 1px solid darken($color__purple,20);
+        }
+    }
+
+    .btn--green {
+        background-color: $color__green;
+        border: 1px solid darken($color__green,10);
+        color: $color__white;
+
+       &.btn--icon .icon {
+            background-color: darken($color__green,10);
+            border-right: 1px solid darken($color__green,10);
+        }
+
+        &:hover,
+        &:focus {
+            background-color: darken($color__green,10);
+            border: 1px solid darken($color__green,15);
+            color: $color__white;
+
+            &.btn--icon .icon {
+                background-color:darken($color__green,18);
+                border-right: 1px solid darken($color__green,21);
+            }
+        }
+
+        &:active {
+            background-color: darken($color__green,15);
+            border: 1px solid darken($color__green,20);
         }
     }
 
@@ -116,7 +184,6 @@
             font-size: $base-font-size;
             font-size: calc-rem($base-font-size);
             text-align: center;
-            font-weight: bold;
             border-right: 1px solid darken($color__border--orange, 2);
         }
 

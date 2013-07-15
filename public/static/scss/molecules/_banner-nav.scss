@@ -51,6 +51,7 @@
  * Styles for the menu
  */
 .banner-nav {
+    @extend .nav--stacked;
     // hide the navigational if javascript exists
     .js & {
         display:none;
@@ -60,8 +61,7 @@
         border-top: 1px solid $color__orange--secondary;
     }
 
-    @extend .nav--stacked;
-    margin:0;
+    transition: none;
     width:100%;
 
     >li {

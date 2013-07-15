@@ -52,6 +52,9 @@ q:before {content: '“'; content: open-quote;}
 q:after {content: '”'; content: close-quote;}
 
 hr {
+    border: none;
+    border-bottom: 1px dotted $color__border--standard;
+    margin-bottom: $base-spacing-unit;
 
 
     &:after {

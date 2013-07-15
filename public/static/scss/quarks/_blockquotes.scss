@@ -12,10 +12,12 @@ blockquote {
         @extend %font__text--bold;
         content: "\201C";
         position: absolute;
-        font-size: 35px;
-        font-size: calc-rem(35px);
+        font-size: 30px;
+        font-size: calc-rem(30px);
         color: $color__orange--primary;
         left: - ($base-spacing-unit);
-        top: - $base-spacing-unit;
+        left: - calc-rem($base-spacing-unit);
+        top: - $half-spacing-unit;
+        top: - calc-rem($half-spacing-unit);
     }
 }

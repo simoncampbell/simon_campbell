@@ -36,6 +36,11 @@ dl {
     	margin-left:0;
     	margin-bottom: $base-spacing-unit;
     }
+
+    dl {
+        padding-left: $base-spacing-unit;
+        padding-left: calc-rem($base-spacing-unit);
+    }
 }
 
 sub {
@@ -63,5 +68,7 @@ hr {
 }
 
 pre {
+    @extend %font__text--regular;
+    font-style:italic;
 
 }

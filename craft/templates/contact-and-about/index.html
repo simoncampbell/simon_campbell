@@ -40,7 +40,7 @@
     <div class="island side-wrapper">
 
         <ul class="item-list">
-            <li class="item-list__item">
+            <li class="item-list__item item-list__item--sidebar">
                 <h3>Bookings</h3>
                 <p>For booking details please contact:
                     {% for person in contactAbout.bookingContactInfo %}
@@ -55,7 +55,14 @@
 
             <li class="item-list__item">
                 <h3>Media downloads</h3>
-                <p></p>
+                <ul>
+                    <li>
+                        <a href="URL!" class="link--icon">
+                            <span class="icon ss ss-pdf">pdf</span>
+                            Download the pdf
+                        </a>
+                    </li>
+                </p>
             </li>
         </ul>
 

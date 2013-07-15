@@ -15,6 +15,10 @@
         overflow: hidden;
         position: relative;
         z-index: 0;
+
+        h4 {
+            margin-bottom: 0;
+        }
     }
 
     .carousel__list {
@@ -35,37 +39,10 @@
                 content:"";
             }
         }
-
         .carousel li a,
         .carousel img {
             display: block;
         }
-
-        .carousel__nav {
-            clear: both;
-            overflow: hidden;
-            border-top: 1px solid #808080;
-
-            a {
-                float: left;
-                width: 50%;
-                padding: 1em;
-                -webkit-transition: opacity 0.5s ease-out;
-                -moz-transition: opacity 0.5s ease-out;
-                -o-transition: opacity 0.5s ease-out;
-                transition: opacity 0.5s ease-out;
-            }
-        }
-
-            .carousel__nav a.next {
-                border-left: 1px solid #808080;
-                text-align: right;
-            }
-
-            .carousel__nav a.inactive {
-                opacity: 0.2;
-            }
-
 
         /* Medium */
         @media screen and (min-width: 35em) {
@@ -113,3 +90,39 @@
                 border: 0;
             }
         }
+
+
+
+/**
+ * Navigation items that controls the animations of the carousel
+ */
+.carousel__nav {
+    clear: both;
+    overflow: hidden;
+    border: 1px solid $color__background--black;
+    background-color: $color__background--dark;
+
+    a {
+        @include transition(opacity 0.5s ease-out);
+        float: left;
+        width: 50%;
+        padding: $half-spacing-unit 1em;
+        border-bottom:none;
+        color: $color__white;
+
+        &.next {
+            border-left: 1px solid $color__background--black;
+            text-align: right;
+        }
+
+        &.inactive {
+            opacity: 0.2;
+        }
+
+        &:hover,
+        &:focus {
+            border-bottom:none;
+        }
+    }
+}
+

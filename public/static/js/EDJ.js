@@ -33,6 +33,30 @@ $(document).ready(function(){
 
 
 
+// Dropdown navigation
+// ---------------------------------------------------------------------------------------------------
+
+    $('.dropdown-nav__header').on('click', function(e){
+        var $dropdownBody = $('.dropdown-nav');
+        var $headers = $('.dropdown-nav__header');
+        var $items = $('.dropdown-nav__item');
+
+
+        //close other open dropdowns
+        $items.slideUp();
+
+        // if not already open
+        if (!$(this).hasClass('dropdown-nav__active')) {
+            // open and remove all active classes
+            $(this).next().slideDown();
+            $headers.removeClass('dropdown-nav__active');
+        }
+
+        // toggle active class
+        $(this).toggleClass('dropdown-nav__active');
+
+    });
+
 
 
 

@@ -11,7 +11,8 @@
  *
  * Atoms are the objects that we can use as building blocks to create molecules.
  *
- * Molecules are combinations of atoms to create more complicated structures.
+ * Molecules are combinations of atoms to create more complicated but entirely
+ * independent structures.
  *
  * Utilities are system wide styles such as normalize and reset, colors, font-stacks etc. that can be used anywhere and at any time.
  *
@@ -134,7 +135,7 @@
 @import "atoms/flag";
 
 /**
- * Molecules; combinations of atoms
+ * Molecules; combinations of atoms and independent modules
  */
 @import "molecules/banner-nav";
 @import "molecules/footer";

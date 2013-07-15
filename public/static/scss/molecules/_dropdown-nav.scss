@@ -1,0 +1,56 @@
+/*------------------------------------*\
+    $DROP-DOWN-NAV
+\*------------------------------------*/
+/**
+ * A Jquery supported navigational list that hides .dropdown-nav__item when
+ * .dropdown-nav__header is clicked.
+ *
+ *
+ */
+
+
+.dropdown-nav {
+}
+
+
+
+    .dropdown-nav__header {
+        cursor: pointer;
+        @extend %font__display--normal;
+        padding: $half-spacing-unit $base-spacing-unit;
+        padding: calc-rem($half-spacing-unit) calc-rem($base-spacing-unit);
+        border-bottom: 1px solid $color__border--standard;
+
+        &:after {
+            @extend %font__icon--gizmo;
+            content:"navigatedown";
+            color: $color__orange--primary;
+            position:absolute;
+            right: $base-spacing-unit;
+            right: calc-rem($base-spacing-unit);
+            padding-top: 4px;
+            padding-top: calc-rem(4px);
+        }
+
+        &.dropdown-nav__active {
+            &:after {
+                content:"navigateup";
+            }
+        }
+    }
+
+    .dropdown-nav__item {
+        font-size: $milli-size;
+        font-size: calc-rem($milli-size);
+        padding: $half-spacing-unit $base-spacing-unit;
+        padding: calc-rem($half-spacing-unit) calc-rem($base-spacing-unit);
+        margin-bottom: 0;
+        border-bottom: 1px solid $color__border--standard;
+
+        // hide the list items if JS is detected
+        .js & {
+            display:none;
+        }
+    }
+
+

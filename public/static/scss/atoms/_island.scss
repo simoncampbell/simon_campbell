@@ -20,6 +20,12 @@
     background-color:$color__background--grey;
     border-top: 1px solid $color__border--standard;
 
+    .main-wrapper--article__detail & {
+        margin-right:- $base-spacing-unit;
+        margin-left:- $base-spacing-unit;
+        margin:0 -calc-rem($base-spacing-unit) 0 -calc-rem($base-spacing-unit);
+    }
+
     &.side-wrapper {
         padding-top: $base-spacing-unit;
         padding-top: calc-rem($base-spacing-unit);
@@ -35,10 +41,12 @@
 
 
     .island__header {
+        background-color: darken($color__background--grey, 5);
         padding: $half-spacing-unit $base-spacing-unit;
         padding: calc-rem($half-spacing-unit) calc-rem($base-spacing-unit);
         border: 1px solid $color__border--standard;
         border-top: none;
+        margin-bottom:0;
 
         h4 {
             vertical-align: bottom;

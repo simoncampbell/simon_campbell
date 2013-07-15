@@ -18,8 +18,20 @@
         &:last-child {
             margin-bottom: 0;
         }
+
+        &:before {
+            content: "";
+        }
+
+        h3 {
+            margin-top: 0;
+        }
     }
 
+    .item-list__item--half {
+        margin-bottom: $half-spacing-unit;
+        margin-bottom: calc-rem($half-spacing-unit);
+    }
 
 /**
 * Throw a list of items into grid mode
@@ -47,6 +59,16 @@
         }
     }
 
+
+.item-list--bordered {
+    .item-list__item {
+        border-top: 1px dotted darken($color__border--standard, 5);
+        padding-top: $base-spacing-unit;
+        padding-top: calc-rem($base-spacing-unit);
+        margin-bottom: $base-spacing-unit;
+        margin-bottom: calc-rem($base-spacing-unit);
+    }
+}
 
 
 /**
@@ -185,9 +207,27 @@
         }
     }
 
+    /**
+     * Album detail item list in /recordings/detail.html
+     */
+    .item-list--lyrics {
+        margin-bottom: 0;
+    }
+
+    /**
+     * Album detail item list in /recordings/detail.html
+     */
+
     .item-list__item--album {
-        font-size:$milli-size;
-        font-size: calc-rem($milli-size);
+        @extend .cf;
+
+        .btn {
+            float:right;
+        }
+
+        p {
+            margin-bottom:0;
+        }
     }
 
 } //endif

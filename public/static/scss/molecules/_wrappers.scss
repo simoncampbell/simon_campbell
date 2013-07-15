@@ -32,6 +32,9 @@
         }
     }
 
+    .side-wrapper--alternate {
+        border-top: none;
+    }
 
     .side-wrapper--island {
         border-top: 1px solid $color__border--standard;

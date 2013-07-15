@@ -12,18 +12,48 @@ figure {
             border:none;
         }
     }
+
+    img {
+        margin: 0 auto;
+    }
+
+    /**
+     * Blockqoutes should always reside within a figure
+     */
+    blockquote {
+        margin-bottom:0;
+    }
+
+    blockquote + figcaption {
+        font-style: normal;
+    }
 }
 
-// make sure you give proper recognition to other people’s work!
-.cite {
-
-}
+    /**
+     * make sure to give proper recognition to other people’s work!
+     */
+    cite,
+    .cite {
+        display: inline-block;
+        font-weight: normal;
+    }
 
 figcaption {
     font-style: italic;
     color: $color__meta--dark;
-    padding-top: $half-spacing-unit;
-    padding-top: calc-rem($half-spacing-unit);
+    display:inline-block;
+
+    img + & {
+        padding-top: $half-spacing-unit;
+        padding-top: calc-rem($half-spacing-unit);
+    }
+
+    p {
+        display: inline-block;
+        margin:0;
+        font-weight: bold;
+        color: $color__background--black;
+    }
 }
 
 .featured--post__image {

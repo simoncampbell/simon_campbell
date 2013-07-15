@@ -1,0 +1,28 @@
+/*------------------------------------*\
+    $MICRO-INFO
+\*------------------------------------*/
+/**
+ * Information that is aside from the rest of the main content
+ */
+
+.micro-info {
+	@extend .cf;
+	border-top: 1px dotted $color__border--standard;
+	padding-top: $half-spacing-unit;
+	padding-top: calc-rem($half-spacing-unit);
+	padding-left:0;
+	margin-bottom: 0;
+	font-size: $micro-size;
+	font-size: calc-rem($micro-size);
+}
+
+	.micro-info dt {
+		float: left;
+		margin-right:5px;
+		margin-right:calc-rem(5px);
+	}
+
+	.micro-info dd {
+		margin-bottom: $half-spacing-unit;
+		margin-bottom: calc-rem($half-spacing-unit);
+	}

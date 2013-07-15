@@ -16,7 +16,9 @@
         color: lighten($color__meta,15);
     }
 
-    h5 {
+    h5,
+    .epsilon {
+        @extend %font__text--bold;
         color: $color--meta;
     }
 }

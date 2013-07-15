@@ -133,6 +133,7 @@
 @import "atoms/rules";
 @import "atoms/heading-group";
 @import "atoms/flag";
+@import "atoms/micro-info";
 
 /**
  * Molecules; combinations of atoms and independent modules
@@ -145,5 +146,7 @@
 @import "molecules/banner-logo";
 @import "molecules/side-bar--album";
 @import "molecules/seller-block";
+@import "molecules/dropdown-nav";
+@import "molecules/carousel";
 
 

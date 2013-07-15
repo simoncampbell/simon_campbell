@@ -34,12 +34,15 @@
 
         <!--  BRANDING -->
         <div id="header" role="banner">
-            {% if url == "" %}
-                <h1 class="banner-logo">Simon Campbell</h1>
-            {% else %}
-                <p><a class="banner-logo" href="/">Simon Campbell</a></p>
-            {% endif %}
-
+            <div class="banner-logo">
+                {% if url == "" %}
+                    <h1>Simon Campbell</h1>
+                {% else %}
+                    <a class="banner-logo" href="/">
+                        <p>Simon Campbell</p>
+                    </a>
+                {% endif %}
+            </div>
             {% include 'components/_navigation/_banner-nav.html' %}
         </div>
 

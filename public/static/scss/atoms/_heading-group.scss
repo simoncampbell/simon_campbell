@@ -39,6 +39,9 @@
         }
     }
 
+    /**
+     * For headers within a wrapper and without a border
+     */
     .heading-group--main--alternate {
         margin-bottom: $half-spacing-unit;
         margin-bottom: calc-rem($half-spacing-unit);

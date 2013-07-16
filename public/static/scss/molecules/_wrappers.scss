@@ -6,7 +6,8 @@
  */
 
 .main-wrapper,
-.side-wrapper {
+.side-wrapper,
+.featured__post-content {
     @extend .cf;
     @include max-width(8);
     padding: 0 $gutter;

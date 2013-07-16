@@ -21,6 +21,11 @@
            *display:inline;
             zoom:1;
         }
+
+        &:before {
+            content:"";
+            display:none;
+        }
     }
 }
 

@@ -2,13 +2,16 @@
     $CAROUSEL
 \*------------------------------------*/
 /**
- * Code is courtesy of Brad Frost’s fluid carousel:
+ * Based on Brad Frost’s fluid carousel:
  * http://codepen.io/bradfrost/full/tdacu
  */
 
 .carousel {
     position: relative;
-    margin: 0 auto;
+    background-color: $color__background--dark;
+    color: darken($color__white,10);
+    margin-bottom: $base-spacing-unit * 2;
+    margin-bottom: calc-rem($base-spacing-unit * 2);
 }
 
     .carousel__list-container {
@@ -31,65 +34,105 @@
         @include transition(left .25s ease-out);
     }
 
-        .carousel li {
-            float: left;
-            position: relative;
+    .carousel li {
+        float: left;
+        position: relative;
 
-            &:before {
-                content:"";
-            }
+        &:before {
+            content:"";
         }
-        .carousel li a,
-        .carousel img {
-            display: block;
-        }
+    }
+    .carousel li a,
+    .carousel img {
+        display: block;
+    }
 
-        /* Medium */
-        @media screen and (min-width: 35em) {
-            body:after { /* Conditional CSS http://adactio.com/journal/5429/ */
-                content: 'medium';
-                display: none;
-            }
-        }
+    .carousel img {
+        margin: 0 auto;
+    }
 
 
-        /* Large */
-        @media screen and (min-width: 56.25em) {
-            body:after { /* Conditional CSS http://adactio.com/journal/5429/ */
-                content: 'large';
-                display: none;
-            }
+    .carousel__summary {
+        @include max-width(8);
+        border-top: 1px solid $color__background--black;
+        padding: $base-spacing-unit;
+        padding: calc-rem($base-spacing-unit);
+
+        h4 {
+            color: $color__white;
         }
 
-        /*Large with room to spare on either side */
-        @media screen and (min-width: 56em) {
-            .carousel__summary {
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                z-index: 2;
-                width: 100%;
-                color: #fff;
-                background: rgba(0,0,0,0.2);
-            }
-
-            .carousel__nav a {
-                position: absolute;
-                top: 40%;
-                left: 1em;
-                width: 4em;
-                height: 2em;
-                padding: 0;
-                margin-top: -1em;
-                color: #fff;
-            }
-
-            .carousel__nav a.next {
-                left: auto;
-                right: 1em;
-                border: 0;
-            }
+        p {
+            padding-bottom: $quarter-spacing-unit;
+            padding-bottom: calc-rem($quarter-spacing-unit);
+            margin-bottom: $quarter-spacing-unit;
+            margin-bottom: calc-rem($quarter-spacing-unit);
+            font-style:italic;
+            border-bottom: 1px dotted darken($color__meta--on-bg, 20);
         }
+
+        .meta-info-block {
+            margin-bottom:0;
+        }
+
+        p,
+        .meta-info-block {
+            font-size: $milli-size;
+            font-size: calc-rem($milli-size);
+        }
+    }
+
+    /**
+     * Media
+     * Conditional CSS: http://adactio.com/journal/5429/
+     */
+
+    /* Medium */
+    @media screen and (min-width: 35em) {
+        body:after {
+            content: 'medium';
+            display: none;
+        }
+    }
+
+
+    /* Large */
+    @media screen and (min-width: 56.25em) {
+        body:after { /* Conditional CSS http://adactio.com/journal/5429/ */
+            content: 'large';
+            display: none;
+        }
+    }
+
+    /*Large with room to spare on either side */
+    @media screen and (min-width: 56em) {
+        .carousel__summary {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: 2;
+            width: 100%;
+            color: #fff;
+            background: rgba(0,0,0,0.2);
+        }
+
+        .carousel__nav a {
+            position: absolute;
+            top: 40%;
+            left: 1em;
+            width: 4em;
+            height: 2em;
+            padding: 0;
+            margin-top: -1em;
+            color: #fff;
+        }
+
+        .carousel__nav a.next {
+            left: auto;
+            right: 1em;
+            border: 0;
+        }
+    }
 
 
 
@@ -97,13 +140,23 @@
  * Navigation items that controls the animations of the carousel
  */
 .carousel__nav {
+    @extend %font__display--normal;
+    font-size: $milli-size;
+    font-size: calc-rem($milli-size);
     clear: both;
     overflow: hidden;
     border: 1px solid $color__background--black;
-    background-color: $color__background--dark;
+    background-color: $color__background--black;
+
+    .icon {
+        @include transition(all .25s ease-in-out);
+        vertical-align: -2px;
+        vertical-align: - calc-rem(2px);
+        color: $color__meta;
+    }
 
     a {
-        @include transition(opacity 0.5s ease-out);
+        @include transition(all .25s ease-out);
         float: left;
         width: 50%;
         padding: $half-spacing-unit 1em;
@@ -111,7 +164,7 @@
         color: $color__white;
 
         &.next {
-            border-left: 1px solid $color__background--black;
+            border-left: 1px solid $color__background--dark;
             text-align: right;
         }
 
@@ -122,6 +175,11 @@
         &:hover,
         &:focus {
             border-bottom:none;
+            background-color: darken($color__background--dark, 20);
+
+            .icon {
+                color: $color__white;
+            }
         }
     }
 }

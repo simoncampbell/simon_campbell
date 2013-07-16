@@ -34,15 +34,34 @@
     }
 
 /**
-* Throw a list of items into grid mode
+* For item lists that follow the main content section.
+* Examples: recordings/
 **/
 
-    .item-list--merch {
+
+    .item-list--sub-content {
         border-top: 1px dotted $color__border--standard;
         padding-top: $base-spacing-unit;
-        margin-top: $base-spacing-unit;
+        padding-top: calc-rem($base-spacing-unit);
+        margin-top: calc-rem($base-spacing-unit);
+
+        >h3 {
+            margin-bottom:0;
+        }
     }
 
+    .item-list--sub-content--borderless {
+        border: none;
+
+        > h3 {
+            margin-bottom: $base-spacing-unit;
+            margin-bottom: calc-rem($base-spacing-unit);
+        }
+    }
+
+/**
+* Throw a list of items into grid mode
+**/
 
     .item-list--grid {
         @include vendor(column-count, 2);
@@ -148,6 +167,7 @@
 * Album item listing
 **/
 .item-list--album {
+
     .flag {
         margin-bottom: $half-spacing-unit;
     }
@@ -219,13 +239,19 @@
      */
 
     .item-list__item--album {
+        margin-bottom: $base-spacing-unit;
+        margin-bottom: calc-rem($base-spacing-unit);
         @extend .cf;
 
         .btn {
             float:right;
+            margin-left: $half-spacing-unit;
+            margin-left: calc-rem($half-spacing-unit);
         }
 
         p {
+            font-size: $milli-size;
+            font-size: calc-rem($milli-size);
             margin-bottom:0;
         }
     }

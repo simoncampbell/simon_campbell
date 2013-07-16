@@ -9,7 +9,6 @@
     header {
         position: relative;
         background-color: #E7E6E6;
-        border-top: 1px solid $color__border--standard;
 
         > h4,
         >h3 {
@@ -18,6 +17,7 @@
         }
 
         > a {
+            @extend %font__display--normal;
             position: absolute;
             right: $gutter;
             right: calc-rem($gutter);
@@ -29,6 +29,12 @@
         }
     }
 }
+
+.live-shows-block--home {
+    margin-bottom: $base-spacing-unit * 2;
+    margin-bottom: calc-rem($base-spacing-unit * 2);
+}
+
 
 .live-shows-block--island {
     .island__header {

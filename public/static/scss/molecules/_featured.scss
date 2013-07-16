@@ -1,0 +1,66 @@
+/*------------------------------------*\
+    $FEATURED
+\*------------------------------------*/
+/**
+* Styles for the featured block on the homepage
+**/
+
+.featured {
+	padding-bottom: $base-spacing-unit;
+	padding-bottom: calc-rem($base-spacing-unit);
+	margin-bottom: $base-spacing-unit;
+	margin-bottom: calc-rem($base-spacing-unit);
+	border-bottom: 1px dotted $color__border--standard;
+
+}
+
+	.featured__post-image {
+
+	}
+
+	.featured__post-content {
+
+		h1 a {
+			border: none;
+		}
+
+		p {
+			margin-bottom: 0;
+		}
+	}
+
+
+
+	.featured__album {
+
+	}
+
+	.featured__album-image {
+
+	}
+
+	.featured__album-content {
+
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

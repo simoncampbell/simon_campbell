@@ -7,6 +7,7 @@
 
 .main-wrapper,
 .side-wrapper {
+    @extend .cf;
     @include max-width(8);
     padding: 0 $gutter;
     padding: 0 calc-rem($gutter);
@@ -29,6 +30,12 @@
             .comment-count {
                 color: $color__meta;
             }
+        }
+    }
+
+    .main-wrapper--gallery {
+        h3 {
+            margin-bottom: 0;
         }
     }
 

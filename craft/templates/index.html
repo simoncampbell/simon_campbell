@@ -12,60 +12,94 @@
 {% block content_main %}
 
     <!-- FEATURED POST -->
-        <section class="featured featured__post">
+        <section class="featured">
             <article>
-                <figure class="featured--post__image figure__hero">
+                <figure class="featured__post-image figure__hero">
                     <a href="URL">
                         <img alt="" src="http://placehold.it/716x416/0eafff/ffffff.png">
                     </a>
                 </figure>
-                <header>
-                    <h2><a href="URL">Feautured album or blog post of some sort</a></h2>
-                    <div class="meta">
-                        <time>27th July 2013</time>
-                        <p>Blog post</p>
-                    </div>
-                </header>
-                <p>In my younger and more vulnerable years my father gave me some advice that I’ve been turning over in my mind ever since. “Whenever you feel like criticizing any one,” he told me, “just remember that all the people in this world haven’t had the advantages that you’ve had.” <a href="URL">Read more &raquo;</a></p>
+                <div class="featured__post-content">
+                    <header class="heading-group">
+                        <h2 class="epsilon">Blog post</h2>
+                        <h1><a href="URL">White Van Man</a></h1>
+                        <div class="meta-info-block meta-info-block--borderless">
+
+                                <time class="meta-info-block__item" datetime="{{post.postDate|date("Y-m-d")}}">{{post.postDate|date("jS F Y")}}</time>
+
+                                <p class="meta-info-block__item">Posted in
+                                    <a class="category-link" href="URL!">
+                                        <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
+                                        Life
+                                    </a>,
+                                    <a class="category-link" href="URL!">
+                                        <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
+                                        Health
+                                    </a>
+                                </p>
+                            </div>
+                    </header>
+                    <p>In my younger and more vulnerable years my father gave me some advice that I’ve been turning over in my mind ever since. “Whenever you feel like criticizing any one,” he told me, “just remember that all the people in this world haven’t had the advantages that you’ve had.” <a href="URL">Read more &raquo;</a></p>
+                </div><!-- //end.featured__post-content -->
             </article>
         </section>
 
         <div class="main-wrapper main-wrapper--full">
 
        <!-- FEATURED ALBUM SECTION THAT REPLACES THE ONE ABOVE -->
-<!--    <section class="featured featured--album">
+<!--    <section class="featured">
             <article>
-                <figure>
+                <figure class="featured__album-image">
                     <a href="URL">
                         <img alt="" src="http://placehold.it/1300x800/0eafff/ffffff.png">
                     </a>
                 </figure>
-                <header>
-                    <h2><a href="URL">Feautured album or blog post of some sort</a></h2>
-                </header>
-                <p>Well this is it, Simon’s first solo album in thirty six years of spanking the plank. It’s not blues, it’s not rock, it’s not folk; it’s certainly an eclectic mix.</p>
-                <a class="btn btn--music" href="URL">Listen now</a>
+                <div class="featured__album-content">
+                    <header>
+                        <h2><a href="URL">Feautured album or blog post of some sort</a></h2>
+                    </header>
+                    <p>Well this is it, Simon’s first solo album in thirty six years of spanking the plank. It’s not blues, it’s not rock, it’s not folk; it’s certainly an eclectic mix.</p>
+                    <a class="btn btn--music" href="URL">Listen now</a>
+                </div>
             </article>
         </section> -->
 
-        <section class="item-list">
-            <article class="item-list__item">
+        <section class="item-list item-list--featured">
+            <article class="item-list__item item-list__item--article">
                 <header class="heading-group">
                     <h3><a href="URL">The TC Analogue 3a</a></h3>
                     <div class="meta-info-block meta-info-block--borderless ">
                         <time class="meta-info-block__item">27th July 2013</time>
-                        <p class="meta-info-block__item">Blog post</p>
+                         <p class="meta-info-block__item">Posted in
+                            <a class="category-link" href="URL!">
+                                <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
+                                Life
+                            </a>,
+                            <a class="category-link" href="URL!">
+                                <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
+                                Health
+                            </a>
+                        </p>
                     </div>
                 </header>
                 <p>In my younger and more vulnerable years my father gave me some advice that I’ve been turning over in my mind ever since. “Whenever you feel like criticizing any one,” he told me, “just remember that all the people in this world haven’t had the advantages that you’ve had.” <a href="URL">Read more &raquo;</a></p>
             </article>
 
-            <article class="item-list__item">
+            <article class="item-list__item item-list__item--article">
                 <header class="heading-group">
                     <h3><a href="URL">The TC Analogue 3a</a></h3>
                     <div class="meta-info-block meta-info-block--borderless ">
                         <time class="meta-info-block__item">27th July 2013</time>
-                        <p class="meta-info-block__item">Blog post</p>
+                        <p class="meta-info-block__item">Posted in
+                            <a class="category-link" href="URL!">
+                                <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
+                                Life
+                            </a>,
+                            <a class="category-link" href="URL!">
+                                <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
+                                Health
+                            </a>
+                        </p>
                     </div>
                 </header>
                 <p>In my younger and more vulnerable years my father gave me some advice that I’ve been turning over in my mind ever since. “Whenever you feel like criticizing any one,” he told me, “just remember that all the people in this world haven’t had the advantages that you’ve had.” <a href="URL">Read more &raquo;</a></p>
@@ -75,7 +109,9 @@
 
 
         <section>
-            {% include 'components/_live-shows.html' %}
+            <div class="live-shows-block--home">
+                {% include 'components/_live-shows.html' %}
+            </div>
         </section>
 
 
@@ -94,15 +130,14 @@
         <ul class="item-list">
             {% for news in craft.entries.find({section:'News', limit:'3'}) %}
                 <li class="item-list__item">
-                    <div class="heading-group meta-info-block meta-info-block--borderless">
+                    <div class="heading-group">
                         <h4><a href="{{news.url}}">{{news.title}}</a></h4>
-                        <time datetime="{{news.postDate|date("Y-m-d")}}">{{news.postDate|date("jS F Y")}}</time>
+                        <time class="meta-info-block__item" datetime="{{news.postDate|date("Y-m-d")}}">{{news.postDate|date("jS F Y")}}</time>
                     </div>
                 </li>
             {% endfor %}
         </ul>
     </div>
-
 
     <div class="main-wrapper main-wrapper--rev">
 
@@ -124,7 +159,7 @@
 
                 </li>
             {% endfor %}
-        </ul>
+        </ul><!-- //end.item-list -->
     </div>
 {% endblock %}
 

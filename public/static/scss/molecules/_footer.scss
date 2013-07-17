@@ -9,8 +9,6 @@
     background-color: $color__background--black;
     border-top: 5px solid lighten($color__background--black, 10);
 }
-
-
     .footer-main__item {
         @include max-width(8);
         padding: 0 $gutter;

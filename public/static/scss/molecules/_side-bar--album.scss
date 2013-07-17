@@ -11,10 +11,14 @@
 
         &:hover,
         &:focus {
-            opacity:.7;
+            a {
+                -webkit-filter: sepia(1);
+                -webkit-filter: brightness(0.6);
+            }
 
             &:before {
                 opacity:1;
+                -webkit-filter: none;
             }
         }
 

@@ -102,6 +102,9 @@
 }
 
 .nav--social {
+    @extend %font__display--normal;
+    margin-bottom: 0;
+
     li {
         margin-right: $half-spacing-unit;
         margin-right: calc-rem($half-spacing-unit);

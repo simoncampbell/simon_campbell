@@ -15,8 +15,8 @@
  *
  */
 .island {
-    display:block;
     @extend .cf;
+    display:block;
     background-color:$color__background--grey;
     border-top: 1px solid $color__border--standard;
 

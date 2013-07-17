@@ -36,6 +36,12 @@
             margin: 0 auto;
             padding: 0 $base-spacing-unit;
             padding: 0 calc-rem($base-spacing-unit);
+
+            @include breakpoint($breakpoint__small){
+                padding: 0 ($gutter *2);
+                padding: 0 calc-rem($gutter *2);
+                @include max-width(7);
+            }
         }
     }
 
@@ -45,6 +51,10 @@
     .heading-group--main--alternate {
         margin-bottom: $half-spacing-unit;
         margin-bottom: calc-rem($half-spacing-unit);
+    }
+
+    .heading-group--marginless {
+        margin:0;
     }
 
     .heading-group--with-meta {
@@ -64,6 +74,33 @@
         h2,
         h1 {
             margin-bottom: 0;
+        }
+    }
+
+    /**
+     * The heading about Simon in the index template
+     */
+    .heading-group--home {
+        text-align: center;
+        padding-bottom: $base-spacing-unit;
+        padding-bottom: calc-rem($base-spacing-unit);
+        position: relative;
+        margin-bottom: $base-spacing-unit + $half-spacing-unit;
+
+
+        &:after {
+            @extend %font__icon--gizmo;
+            content:"music";
+            color: $color__orange--primary;
+            margin: 0 auto;
+            margin-top: $half-spacing-unit;
+            margin-bottom: - (($base-spacing-unit * 2) - 2px);
+            display: block;
+            font-size: 20px;
+            font-size: calc-rem(20px);
+            background-color: $color__white;
+            width: $base-spacing-unit;
+
         }
     }
 

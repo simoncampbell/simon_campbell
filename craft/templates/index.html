@@ -11,85 +11,33 @@
 
 {% block content_main %}
 
-    <!-- FEATURED POST -->
-        <section class="featured">
-            <article>
-                <figure class="featured__post-image figure__hero">
-                    <a href="URL">
-                        <img alt="" src="http://placehold.it/716x416/0eafff/ffffff.png">
-                    </a>
-                </figure>
-                <div class="featured__post-content">
-                    <header class="heading-group">
-                        <h2 class="epsilon">Blog post</h2>
-                        <h1><a href="URL">White Van Man</a></h1>
-                        <div class="meta-info-block meta-info-block--borderless">
+<!-- SIMON DESCRIPTION -->
 
-                                <time class="meta-info-block__item" datetime="{{post.postDate|date("Y-m-d")}}">{{post.postDate|date("jS F Y")}}</time>
+    <figure class="figure__hero">
+        <img src="/assets/images/campbell.jpg" alt="Simon Campbell">
+    </figure>
 
-                                <p class="meta-info-block__item">Posted in
-                                    <a class="category-link" href="URL!">
-                                        <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
-                                        Life
-                                    </a>,
-                                    <a class="category-link" href="URL!">
-                                        <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
-                                        Health
-                                    </a>
-                                </p>
-                            </div>
-                    </header>
-                    <p>In my younger and more vulnerable years my father gave me some advice that I’ve been turning over in my mind ever since. “Whenever you feel like criticizing any one,” he told me, “just remember that all the people in this world haven’t had the advantages that you’ve had.” <a href="URL">Read more &raquo;</a></p>
-                </div><!-- //end.featured__post-content -->
-            </article>
-        </section>
+    <header class="heading-group heading-group--main heading-group--home">
+        <h1>Simon Campbell</h1>
+        <h2>Guitarist, songwriter &amp; music&nbsp;producer</h2>
+    </header>
 
-        <div class="main-wrapper main-wrapper--full">
-
-       <!-- FEATURED ALBUM SECTION THAT REPLACES THE ONE ABOVE -->
-<!--    <section class="featured">
-            <article>
-                <figure class="featured__album-image">
-                    <a href="URL">
-                        <img alt="" src="http://placehold.it/1300x800/0eafff/ffffff.png">
-                    </a>
-                </figure>
-                <div class="featured__album-content">
-                    <header>
-                        <h2><a href="URL">Feautured album or blog post of some sort</a></h2>
-                    </header>
-                    <p>Well this is it, Simon’s first solo album in thirty six years of spanking the plank. It’s not blues, it’s not rock, it’s not folk; it’s certainly an eclectic mix.</p>
-                    <a class="btn btn--music" href="URL">Listen now</a>
-                </div>
-            </article>
-        </section> -->
-
-        <section class="item-list item-list--featured">
-            <article class="item-list__item item-list__item--article">
+    <div class="main-wrapper main-wrapper--full">
+        <!-- FEATURED POST -->
+   <!--  <section class="featured">
+        <article>
+            <figure class="featured__post-image">
+                <a href="URL">
+                    <img alt="" src="http://placehold.it/716x416/0eafff/ffffff.png">
+                </a>
+            </figure>
+            <div class="featured__post-content">
                 <header class="heading-group">
-                    <h3><a href="URL">The TC Analogue 3a</a></h3>
-                    <div class="meta-info-block meta-info-block--borderless ">
-                        <time class="meta-info-block__item">27th July 2013</time>
-                         <p class="meta-info-block__item">Posted in
-                            <a class="category-link" href="URL!">
-                                <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
-                                Life
-                            </a>,
-                            <a class="category-link" href="URL!">
-                                <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
-                                Health
-                            </a>
-                        </p>
-                    </div>
-                </header>
-                <p>In my younger and more vulnerable years my father gave me some advice that I’ve been turning over in my mind ever since. “Whenever you feel like criticizing any one,” he told me, “just remember that all the people in this world haven’t had the advantages that you’ve had.” <a href="URL">Read more &raquo;</a></p>
-            </article>
+                    <h3><a href="URL">White Van Man</a></h3>
+                    <div class="meta-info-block meta-info-block--borderless">
 
-            <article class="item-list__item item-list__item--article">
-                <header class="heading-group">
-                    <h3><a href="URL">The TC Analogue 3a</a></h3>
-                    <div class="meta-info-block meta-info-block--borderless ">
-                        <time class="meta-info-block__item">27th July 2013</time>
+                        <time class="meta-info-block__item" datetime="{{post.postDate|date("Y-m-d")}}">{{post.postDate|date("jS F Y")}}</time>
+
                         <p class="meta-info-block__item">Posted in
                             <a class="category-link" href="URL!">
                                 <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
@@ -103,19 +51,86 @@
                     </div>
                 </header>
                 <p>In my younger and more vulnerable years my father gave me some advice that I’ve been turning over in my mind ever since. “Whenever you feel like criticizing any one,” he told me, “just remember that all the people in this world haven’t had the advantages that you’ve had.” <a href="URL">Read more &raquo;</a></p>
-            </article>
+            </div><!-- //end.featured__post-content -->
+        </article>
+    </section> -->
 
-        </section>
-
-
-        <section>
-            <div class="live-shows-block--home">
-                {% include 'components/_live-shows.html' %}
+   <!-- FEATURED ALBUM SECTION THAT REPLACES THE ONE ABOVE -->
+   <section class="featured">
+        <article>
+            <figure class="featured__album-image">
+                <a href="URL">
+                    <img alt="" src="http://placehold.it/1300x800/0eafff/ffffff.png">
+                </a>
+                <a href="URL!" class="btn btn--icon btn--secondary btn--arrow-left">
+                    <span class="icon ">mediumvolume</span>
+                    <div class="icon-text">
+                        Listen now
+                    </div>
+                </a>
+            </figure>
+            <div class="featured__album-content">
+                <header class="heading-group">
+                    <h4 class="epsilon">Recording</h4>
+                    <h3><a href="URL">Thirty Six</a></h3>
+                </header>
+                <p>Well this is it, Simon’s first solo album in thirty six years of spanking the plank. It’s not blues, it’s not rock, it’s not folk; it’s certainly an eclectic mix. <a href="URL">Read more &raquo;</a></p>
             </div>
-        </section>
+        </article>
+    </section>
+
+    <section class="item-list item-list--featured">
+        <article class="item-list__item item-list__item--article">
+            <header class="heading-group">
+                <h3><a href="URL">The TC Analogue 3a</a></h3>
+                <div class="meta-info-block meta-info-block--borderless ">
+                    <time class="meta-info-block__item">27th July 2013</time>
+                     <p class="meta-info-block__item">Posted in
+                        <a class="category-link" href="URL!">
+                            <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
+                            Life
+                        </a>,
+                        <a class="category-link" href="URL!">
+                            <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
+                            Health
+                        </a>
+                    </p>
+                </div>
+            </header>
+            <p>In my younger and more vulnerable years my father gave me some advice that I’ve been turning over in my mind ever since. “Whenever you feel like criticizing any one,” he told me, “just remember that all the people in this world haven’t had the advantages that you’ve had.” <a href="URL">Read more &raquo;</a></p>
+        </article>
+
+        <article class="item-list__item item-list__item--article">
+            <header class="heading-group">
+                <h3><a href="URL">The TC Analogue 3a</a></h3>
+                <div class="meta-info-block meta-info-block--borderless ">
+                    <time class="meta-info-block__item">27th July 2013</time>
+                    <p class="meta-info-block__item">Posted in
+                        <a class="category-link" href="URL!">
+                            <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
+                            Life
+                        </a>,
+                        <a class="category-link" href="URL!">
+                            <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
+                            Health
+                        </a>
+                    </p>
+                </div>
+            </header>
+            <p>In my younger and more vulnerable years my father gave me some advice that I’ve been turning over in my mind ever since. “Whenever you feel like criticizing any one,” he told me, “just remember that all the people in this world haven’t had the advantages that you’ve had.” <a href="URL">Read more &raquo;</a></p>
+        </article>
+
+    </section>
 
 
-    </div><!-- //end.main-wrapper -->
+    <section>
+        <div class="live-shows-block--home">
+            {% include 'components/_live-shows.html' %}
+        </div>
+    </section>
+
+
+</div><!-- //end.main-wrapper -->
 
 {% endblock %}
 
@@ -123,39 +138,56 @@
 
 {% block content_side %}
 
-    <div class="side-wrapper side-wrapper--rev">
+    <div class="side-wrapper side-wrapper--rev side-wrapper--home">
 
         <h3>Latest news updates</h3>
 
-        <ul class="item-list">
-            {% for news in craft.entries.find({section:'News', limit:'3'}) %}
-                <li class="item-list__item">
-                    <div class="heading-group">
-                        <h4><a href="{{news.url}}">{{news.title}}</a></h4>
+        {% for news in craft.entries.find({section:'News', limit:'3'}) %}
+                <div class="heading-group heading-group--marginless">
+                    <h4><a href="{{news.url}}">{{news.title}}</a></h4>
+
+                    <div class="meta-info-block meta-info-block--borderless">
+
                         <time class="meta-info-block__item" datetime="{{news.postDate|date("Y-m-d")}}">{{news.postDate|date("jS F Y")}}</time>
+
+                        <p class="meta-info-block__item">Posted in
+                            <a class="category-link" href="URL!">
+                                <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
+                                Life
+                            </a>,
+                            <a class="category-link" href="URL!">
+                                <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
+                                Health
+                            </a>
+                        </p>
                     </div>
-                </li>
-            {% endfor %}
-        </ul>
+                </div>
+            </li>
+        {% endfor %}
     </div>
 
     <div class="main-wrapper main-wrapper--rev">
 
-        <h3>Recent blog posts</h3>
+        <h3>Recent equipment &amp; gear entries</h3>
 
         <ul class="item-list">
-            {% for post in craft.entries.find({section:'Blog', limit:'3'}) %}
-                <li class="item-list__item">
+            {% for post in craft.entries.find({section:'Equipment', limit:'3'}) %}
+                <li class="item-list__item item-list__item--article">
 
-                    <div class="heading-group">
+                    <!-- REQUIRED EQUIPMENT IMAGE -->
+                    {% for image in post.equipmentImage %}
+                        <figure class="equipment-image">
+                            <a href="{{post.url}}">
+                                <img src="{{image.url}}">
+                            </a>
+                        </figure>
+                    {% endfor %}
 
+                    <div class="heading-group heading-group--marginless">
                         <h4><a href="{{post.url}}">{{post.title}}</a></h4>
-                        <div class="meta-info-block meta-info-block--borderless">
-                            <time class="meta-info-block__item" datetime="{{post.postDate|date("Y-m-d")}}">{{post.postDate|date("jS F Y")}}</time>
-                        </div>
                     </div>
 
-                    <p>{{post.shortExtract}}</p>
+                    <p>{{post.shortExtract}} <a href="URL">Read more »</a></p>
 
                 </li>
             {% endfor %}

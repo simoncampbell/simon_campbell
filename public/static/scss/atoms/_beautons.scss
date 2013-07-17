@@ -79,11 +79,24 @@
     .btn--secondary {
         background-color: $color__grey--primary;
         border: 1px solid darken($color__grey--primary, 10);
+        color: $color__background--dark;
+
+        &.btn--icon .icon {
+            background-color:darken($color__grey--primary,15);
+            border-right:darken($color__grey--primary,22);
+        }
 
         &:hover,
         &:focus {
-            background-color: $color__grey--secondary;
-            border: 1px solid darken($color__grey--secondary, 10);
+            color: darken($color__background--dark, 10);
+            text-decoration: none;
+            background-color: darken($color__grey--primary, 15);
+            border: 1px solid darken($color__grey--primary, 20);
+
+            &.btn--icon .icon {
+                background-color:darken($color__grey--primary,20);
+                border-right: 1px solid darken($color__grey--primary,27);
+            }
         }
 
         &:active {
@@ -91,6 +104,9 @@
             border: 1px solid darken($color__grey--secondary, 10);
         }
     }
+
+
+
 
     .btn--purple {
         background-color: $color__purple;

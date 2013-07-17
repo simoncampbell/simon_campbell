@@ -14,9 +14,11 @@
  * Standard breakpoint variables for use within breakpoint’s respond-to mixin
  */
 
-// $small:
-// $medium:
-// $large:
+$breakpoint-to-ems:true;
+
+$breakpoint__small: 500px;
+$breakpoint__medium: 750px;
+$breakpoint__large: 1200px;
 
 
 

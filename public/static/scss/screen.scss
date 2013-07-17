@@ -40,8 +40,8 @@
  *
  * External compass includes ---------------------------------------
  *
- * Toolkit.............http://cl.ly/2u3h1u0W0x1D
- * Breakpoint..........http://cl.ly/1F112q0Q0D28
+ * TOOLKIT.............http://cl.ly/2u3h1u0W0x1D
+ * BREAKPOINT..........http://cl.ly/1F112q0Q0D28
  *
  *
  * Quarks -----------------------------------------------------------
@@ -75,7 +75,6 @@
  * Molecules ------------------------------------------------------
  * BANNER-NAV.........Banner navigation
  * FOOTER.............
- * MIXINS..............Cool guy mixins
  *
  */
 
@@ -149,5 +148,6 @@
 @import "molecules/dropdown-nav";
 @import "molecules/carousel";
 @import "molecules/featured";
+@import "molecules/equipment-image";
 
 

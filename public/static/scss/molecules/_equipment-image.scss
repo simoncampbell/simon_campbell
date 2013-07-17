@@ -1,0 +1,20 @@
+/*------------------------------------*\
+    $EQUIPMENT-IMAGE
+\*------------------------------------*/
+/**
+ * Molecule for styling the equipment images
+ **/
+
+
+.equipment-image {
+	@include transition(all .25s ease-in-out);
+	padding:$half-spacing-unit;
+	border: 1px solid lighten($color__meta,20);
+	overflow: hidden;
+	max-height: 12em;
+
+	&:hover,
+	&:focus {
+		border: 1px solid $color__meta;
+	}
+}

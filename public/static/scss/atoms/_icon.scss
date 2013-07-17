@@ -18,6 +18,10 @@
 
     >li {
         margin-bottom: $half-spacing-unit;
+
+        &:before {
+            display:none;
+        }
     }
 
     a {
@@ -39,8 +43,6 @@
         margin-left: calc-rem($half-spacing-unit / 2);
     }
 
-
-
     .icon--menu {
         color: $color__banner-nav--dark;
         padding-right: 2px;
@@ -59,6 +61,16 @@
     .ss-music {
         margin-right:-2px;
         margin-right: - calc-rem(2px);
+    }
+
+    .icon--meta {
+        margin-left: - ($half-spacing-unit + 2px);
+        margin-left: - calc-rem($half-spacing-unit + 2px);
+        margin-right: 3px;
+        margin-right: calc-rem(3px);
+        color: lighten($color__meta, 15);
+        font-size: calc-rem(17px);
+
     }
 
 

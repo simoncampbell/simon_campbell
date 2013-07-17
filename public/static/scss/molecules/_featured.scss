@@ -32,11 +32,20 @@
     }
 
     .featured__album-image {
+        position:relative;
 
+        .btn {
+            position: absolute;
+            top: $half-spacing-unit;
+            right: $half-spacing-unit;
+        }
     }
 
     .featured__album-content {
+        h3 {
 
+            font-size: 30px;
+        }
     }
 
 

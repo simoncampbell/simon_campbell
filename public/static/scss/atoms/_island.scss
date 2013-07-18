@@ -20,17 +20,38 @@
     background-color:$color__background--grey;
     border-top: 1px solid $color__border--standard;
 
+
     .main-wrapper--article__detail & {
         margin-right:- $base-spacing-unit;
         margin-left:- $base-spacing-unit;
         margin:0 -calc-rem($base-spacing-unit) 0 -calc-rem($base-spacing-unit);
+
+        @include breakpoint($breakpoint__small){
+            margin: 0;
+            border-left: 1px solid $color__border--standard;
+            border-right: 1px solid $color__border--standard;
+            border-top: 1px solid $color__border--standard;
+            border-bottom: none;
+
+            .island__header {
+                border: none;
+                border-bottom: 1px solid $color__border--standard;
+            }
+        }
     }
 
     &.side-wrapper {
-        padding-top: $base-spacing-unit;
-        padding-top: calc-rem($base-spacing-unit);
-        padding-bottom: $base-spacing-unit;
-        padding-bottom: calc-rem($base-spacing-unit);
+        padding-top: $base-spacing-unit * 2;
+        padding-top: calc-rem($base-spacing-unit * 2);
+        padding-bottom: $base-spacing-unit * 2;
+        padding-bottom: calc-rem($base-spacing-unit * 2);
+
+        @include breakpoint($breakpoint__small){
+            @include max-width(7);
+            border-top: 1px solid $color__border--standard;
+            padding: ($base-spacing-unit*2) ($gutter *2);
+            padding: calc-rem($base-spacing-unit*2) calc-rem($gutter *2);
+        }
 
         h3 {
             margin-bottom: $half-spacing-unit;

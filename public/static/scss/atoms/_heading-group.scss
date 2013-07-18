@@ -25,7 +25,13 @@
 
     .heading-group--main {
         border-bottom: 1px solid $color__border--standard;
+        padding-bottom: $base-spacing-unit;
         padding-bottom: calc-rem($base-spacing-unit);
+
+        @include breakpoint($breakpoint__small) {
+            margin-bottom: $base-spacing-unit * 2;
+            margin-bottom: calc-rem($base-spacing-unit * 2);
+        }
 
         h1,
         h2,

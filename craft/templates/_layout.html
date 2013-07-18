@@ -64,14 +64,13 @@
         {% endblock %}
 
 
-
         <!--  FOOTER -->
         <footer role="contentinfo" class="footer-main">
-            <section class="footer-main__item footer-main__item--bio">
-                <figure class="footer-main__item--bio__image">
+            <section class="footer-main__item media">
+                <figure class="media__img">
                     <img src="/static/images/branding/simon.jpg" alt="Simon Campbell">
                 </figure>
-                <div class="footer-main__item--bio__content">
+                <div class="media__body">
                     <h3>About</h3>
                     <p>Simon is a musician and producer of Supertone Records. His musical journies over the years have led him to many exciting adventures. <a class="link--reverse read-more" href="/about">Read more &raquo;</a></p>
                 </div>
@@ -117,7 +116,7 @@
             </section>
 
 
-            <section class="site-info footer-main__item">
+            <section class="footer-main__item footer-main__item--site-info">
                 <ul class="nav">
                     <li><a class="link--reverse" href="/privacy-policy">Privacy policy </a></li>
                     <li>Supertone Records &copy; {{ "now"|date("Y") }}</li>

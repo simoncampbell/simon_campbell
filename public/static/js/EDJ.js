@@ -48,7 +48,12 @@ $(document).ready(function(){
         // if not already open
         if (!$(this).hasClass('dropdown-nav__active')) {
             // open and remove all active classes
-            $(this).next().slideDown();
+            $(this).next().slideDown(function() {
+                $('html, body').animate({
+                    scrollTop: $(this).prev().offset().top
+                }, 200);
+            });
+
             $headers.removeClass('dropdown-nav__active');
         }
 

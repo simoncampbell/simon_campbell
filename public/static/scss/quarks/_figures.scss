@@ -69,6 +69,11 @@ figcaption {
 .figure__hero {
     margin-top: - ($base-spacing-unit * 1.35);
     margin-top: - calc-rem($base-spacing-unit * 1.35);
+
+    @include breakpoint($breakpoint__small){
+        margin-top: - ($base-spacing-unit * 2);
+        margin-top: - calc-rem($base-spacing-unit * 2);
+    }
 }
 
 .item-list__figure {

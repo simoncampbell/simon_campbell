@@ -8,13 +8,15 @@
 
 .carousel {
     position: relative;
-    background-color: $color__background--dark;
     color: darken($color__white,10);
-    margin-bottom: $base-spacing-unit * 2;
-    margin-bottom: calc-rem($base-spacing-unit * 2);
+    margin-top: $base-spacing-unit;
+    margin-top: calc-rem($base-spacing-unit);
+    margin-bottom: $half-spacing-unit;
+    margin-bottom: calc-rem($half-spacing-unit);
 }
 
     .carousel__list-container {
+        @extend .cf;
         overflow: hidden;
         position: relative;
         z-index: 0;
@@ -25,9 +27,12 @@
     }
 
     .carousel__list {
+        @extend .cf;
+        margin-bottom: 0;
         width: 99999em;
         position: relative;
         left: 0;
+        background-color: $color__background--dark;
     }
 
     .carousel__list.animating {
@@ -40,6 +45,12 @@
 
         &:before {
             content:"";
+            display: none;
+        }
+
+        > figure {
+            margin: 0;
+            background-color: $color__background--black;
         }
     }
     .carousel li a,
@@ -53,7 +64,7 @@
 
 
     .carousel__summary {
-        @include max-width(8);
+        width: 100%;
         border-top: 1px solid $color__background--black;
         padding: $base-spacing-unit;
         padding: calc-rem($base-spacing-unit);
@@ -141,6 +152,12 @@
  */
 .carousel__nav {
     @extend %font__display--normal;
+    @extend .cf;
+    position: absolute;
+    top: 0;
+    opacity: .7;
+    width: 100%;
+
     font-size: $milli-size;
     font-size: calc-rem($milli-size);
     clear: both;

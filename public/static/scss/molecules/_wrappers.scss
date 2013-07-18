@@ -20,13 +20,13 @@
     }
 }
 
-.main-wrapper--article {
-    margin-bottom: $base-spacing-unit *2;
-    margin-bottom: calc-rem($base-spacing-unit *2);
-}
+    .main-wrapper--article {
+        margin-bottom: $base-spacing-unit *2;
+        margin-bottom: calc-rem($base-spacing-unit *2);
+    }
 
     .main-wrapper--article-meta {
-        border-top: 1px solid $color__border--standard;
+        border-top: 1px dotted $color__border--standard;
         padding-top: $base-spacing-unit;
         padding-top: calc-rem($base-spacing-unit);
 
@@ -45,10 +45,17 @@
         }
     }
 
+    .main-wrapper--article__detail {
+        margin-bottom: $base-spacing-unit * 2;
+        margin-bottom: calc-rem($base-spacing-unit * 2);
+    }
+
+
+
     .side-wrapper--home {
         border-bottom: 1px dotted $color__border--standard;
-        margin-bottom: $base-spacing-unit;
-        margin-bottom: calc-rem($base-spacing-unit);
+        margin-bottom: $base-spacing-unit * 2;
+        margin-bottom: calc-rem($base-spacing-unit * 2);
         padding-bottom: $half-spacing-unit;
         padding-bottom: calc-rem($half-spacing-unit);
     }

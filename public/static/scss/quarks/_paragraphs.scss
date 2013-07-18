@@ -7,7 +7,11 @@ p {
 }
 
 .lede {
-
+	@include breakpoint($breakpoint__small) {
+		font-size: 17px;
+		font-size: calc-rem(17px);
+		line-height: $base-line-height + 2px;
+	}
 }
 
 .lede--double {

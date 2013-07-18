@@ -1,0 +1,37 @@
+{#
+ # Featured article
+ # ---------------
+ # This component displays a featured album on the homepage.
+ #
+ #}
+
+
+
+<article>
+    <figure class="featured__post-image">
+        <a href="URL">
+            <img alt="" src="http://placehold.it/716x416/0eafff/ffffff.png">
+        </a>
+    </figure>
+    <div class="featured__post-content">
+        <header class="heading-group">
+            <h3><a href="URL">White Van Man</a></h3>
+            <div class="meta-info-block meta-info-block--borderless">
+
+                <time class="meta-info-block__item" datetime="{{post.postDate|date("Y-m-d")}}">{{post.postDate|date("jS F Y")}}</time>
+
+                <p class="meta-info-block__item">Posted in
+                    <a class="category-link" href="URL!">
+                        <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
+                        Life
+                    </a>,
+                    <a class="category-link" href="URL!">
+                        <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
+                        Health
+                    </a>
+                </p>
+            </div>
+        </header>
+        <p>In my younger and more vulnerable years my father gave me some advice that I’ve been turning over in my mind ever since. “Whenever you feel like criticizing any one,” he told me, “just remember that all the people in this world haven’t had the advantages that you’ve had.” <a href="URL">Read more &raquo;</a></p>
+    </div><!-- //end.featured__post-content -->
+</article>

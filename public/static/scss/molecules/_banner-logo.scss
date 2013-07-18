@@ -8,6 +8,11 @@
     margin-bottom: $base-spacing-unit;
     margin-bottom: calc-rem($base-spacing-unit);
     background-color: $color__background--black;
+
+    @include breakpoint($breakpoint__small) {
+        margin-bottom: $base-spacing-unit * 2;
+        margin-bottom: calc-rem($base-spacing-unit * 2);
+    }
 }
 
 
@@ -29,10 +34,6 @@
     line-height: $base-line-height;
     background-color: $color__background--black;
 
-
-
-
-
     h1, p {
         background:url("/static/images/branding/simon-campbell__logo.png") no-repeat;
         @include image-2x("/static/images/branding/simon-campbell__logo--large.png", 10em, 25em);
@@ -45,43 +46,8 @@
         line-height:.7;
     }
 
-
     &.menu--active {
         border-bottom: 1px solid $color__orange--secondary;
         background-color: darken($color__banner-nav--hover,3);
     }
 }
-
-
-
-// .banner-logo {
-//     display: inline-block;
-//     font-size: $h3-size;
-//     font-size: calc-rem($h3-size);
-//     width: 250px;
-//     width: calc-rem(250px);
-//     height: 46px;
-//     height: calc-rem(46px);
-
-
-//     text-indent: 100%;
-//     white-space: nowrap;
-//     overflow: hidden;
-//     text-align: left;
-//     color: $color__white;
-//     text-transform: uppercase;
-//     padding: ($half-spacing-unit - 2px) $base-spacing-unit $half-spacing-unit $base-spacing-unit;
-//     padding: calc-rem($half-spacing-unit - 2px) calc-rem($base-spacing-unit) calc-rem($half-spacing-unit) calc-rem($base-spacing-unit);
-//     margin: 0;
-//     line-height: $base-line-height;
-
-//     > img {
-//         height: 100%;
-//         width: auto;
-//     }
-
-//     &.menu--active {
-//         border-bottom: 1px solid $color__orange--secondary;
-//         background-color: darken($color__banner-nav--hover,3);
-//     }
-// }

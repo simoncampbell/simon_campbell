@@ -10,29 +10,39 @@
 
 
 .dropdown-nav {
+    position:relative;
 }
 
-
-
     .dropdown-nav__header {
-        cursor: pointer;
         @extend %font__display--normal;
+        @include transition(all .2s ease-in-out);
+        cursor: pointer;
         padding: $half-spacing-unit $base-spacing-unit;
         padding: calc-rem($half-spacing-unit) calc-rem($base-spacing-unit);
         border-bottom: 1px solid $color__border--standard;
 
+        &:hover {
+            color:$color__orange--primary;
+
+            &:after {
+                color: $color__orange--primary;
+            }
+        }
+
         &:after {
             @extend %font__icon--gizmo;
+            @include transition(all .2s ease-in-out);
             content:"navigatedown";
-            color: $color__orange--primary;
             position:absolute;
             right: $base-spacing-unit;
             right: calc-rem($base-spacing-unit);
             padding-top: 4px;
             padding-top: calc-rem(4px);
+
         }
 
         &.dropdown-nav__active {
+            color: darken($color__orange--primary, 15);
             &:after {
                 content:"navigateup";
             }
@@ -46,6 +56,10 @@
         padding: calc-rem($half-spacing-unit) calc-rem($base-spacing-unit);
         margin-bottom: 0;
         border-bottom: 1px solid $color__border--standard;
+
+        pre {
+            margin-bottom: 0;
+        }
 
         // hide the list items if JS is detected
         .js & {

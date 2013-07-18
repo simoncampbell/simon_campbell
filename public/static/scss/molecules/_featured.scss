@@ -33,18 +33,36 @@
 
     .featured__album-image {
         position:relative;
-
-        .btn {
-            position: absolute;
-            top: $half-spacing-unit;
-            right: $half-spacing-unit;
-        }
     }
 
     .featured__album-content {
-        h3 {
+        @extend .cf;
 
-            font-size: 30px;
+        .heading-group {
+            float: left;
+            width: 100%;
+
+            h3 {
+                font-size: 30px;
+                font-size: calc-rem(30px);
+                clear: left;
+            }
+
+            h3, h4 {
+                float: left;
+                width: 50%;
+            }
+
+            .btn {
+                float: right;
+                margin-left: $half-spacing-unit;
+                margin-left: calc-rem($half-spacing-unit);
+            }
+        }
+
+        p {
+            float: left;
+            width: 100%;
         }
     }
 

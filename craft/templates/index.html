@@ -23,60 +23,10 @@
     </header>
 
     <div class="main-wrapper main-wrapper--full">
-        <!-- FEATURED POST -->
-   <!--  <section class="featured">
-        <article>
-            <figure class="featured__post-image">
-                <a href="URL">
-                    <img alt="" src="http://placehold.it/716x416/0eafff/ffffff.png">
-                </a>
-            </figure>
-            <div class="featured__post-content">
-                <header class="heading-group">
-                    <h3><a href="URL">White Van Man</a></h3>
-                    <div class="meta-info-block meta-info-block--borderless">
 
-                        <time class="meta-info-block__item" datetime="{{post.postDate|date("Y-m-d")}}">{{post.postDate|date("jS F Y")}}</time>
-
-                        <p class="meta-info-block__item">Posted in
-                            <a class="category-link" href="URL!">
-                                <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
-                                Life
-                            </a>,
-                            <a class="category-link" href="URL!">
-                                <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
-                                Health
-                            </a>
-                        </p>
-                    </div>
-                </header>
-                <p>In my younger and more vulnerable years my father gave me some advice that I’ve been turning over in my mind ever since. “Whenever you feel like criticizing any one,” he told me, “just remember that all the people in this world haven’t had the advantages that you’ve had.” <a href="URL">Read more &raquo;</a></p>
-            </div><!-- //end.featured__post-content -->
-        </article>
-    </section> -->
-
-   <!-- FEATURED ALBUM SECTION THAT REPLACES THE ONE ABOVE -->
-   <section class="featured">
-        <article>
-            <figure class="featured__album-image">
-                <a href="URL">
-                    <img alt="" src="http://placehold.it/1300x800/0eafff/ffffff.png">
-                </a>
-                <a href="URL!" class="btn btn--icon btn--secondary btn--arrow-left">
-                    <span class="icon ">mediumvolume</span>
-                    <div class="icon-text">
-                        Listen now
-                    </div>
-                </a>
-            </figure>
-            <div class="featured__album-content">
-                <header class="heading-group">
-                    <h4 class="epsilon">Recording</h4>
-                    <h3><a href="URL">Thirty Six</a></h3>
-                </header>
-                <p>Well this is it, Simon’s first solo album in thirty six years of spanking the plank. It’s not blues, it’s not rock, it’s not folk; it’s certainly an eclectic mix. <a href="URL">Read more &raquo;</a></p>
-            </div>
-        </article>
+   <!-- FEATURED SECTION-->
+    <section class="featured">
+        {% include 'components/_featured/_featured-album' %}
     </section>
 
     <section class="item-list item-list--featured">

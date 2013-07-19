@@ -58,7 +58,8 @@
         border-bottom: 1px solid $color__border--standard;
 
         pre {
-            margin-bottom: 0;
+            margin-bottom:$half-spacing-unit;
+            margin-bottom:calc-rem($half-spacing-unit);
         }
 
         // hide the list items if JS is detected
@@ -67,4 +68,8 @@
         }
     }
 
+
+    .item-list--lyrics {
+
+    }
 

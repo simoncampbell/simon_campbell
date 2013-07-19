@@ -43,6 +43,10 @@
     }
 
     .island__content {
+        padding-top: $base-spacing-unit;
+        padding-top: calc-rem($base-spacing-unit);
+        padding-bottom: $base-spacing-unit;
+        padding-bottom: calc-rem($base-spacing-unit);
         background-color: #E7E6E6;
         border: 1px solid $color__island--border;
         border-top: none;

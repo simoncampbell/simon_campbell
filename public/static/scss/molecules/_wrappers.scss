@@ -46,11 +46,11 @@
     }
 
     .main-wrapper--article__detail {
-        margin-bottom: $base-spacing-unit * 2;
-        margin-bottom: calc-rem($base-spacing-unit * 2);
+        @include breakpoint($breakpoint__small) {
+            margin-bottom: $base-spacing-unit * 2;
+            margin-bottom: calc-rem($base-spacing-unit * 2);
+        }
     }
-
-
 
     .side-wrapper--home {
         border-bottom: 1px dotted $color__border--standard;
@@ -62,10 +62,4 @@
 
     .side-wrapper--alternate {
         border-top: none;
-    }
-
-    .side-wrapper--island {
-        border-top: 1px solid $color__border--standard;
-        padding-top: $base-spacing-unit;
-        padding-top: calc-rem($base-spacing-unit);
     }

@@ -23,6 +23,10 @@ input {
         outline:none;
         border: 1px solid darken($color__border--dark, 15);
     }
+
+    .main-wrapper--article__detail & {
+      background-color:$color__background--grey;
+    }
 }
 /**
  * Placeholders
@@ -67,6 +71,10 @@ input {
 
     &:last-of-type {
         margin-bottom:0;
+    }
+
+    &.btn {
+        width: auto;
     }
 }
 

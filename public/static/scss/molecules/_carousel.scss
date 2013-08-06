@@ -8,11 +8,19 @@
 
 .carousel {
     position: relative;
-    color: darken($color__white,10);
     margin-top: $base-spacing-unit;
     margin-top: calc-rem($base-spacing-unit);
-    margin-bottom: $half-spacing-unit;
-    margin-bottom: calc-rem($half-spacing-unit);
+    list-style: none;
+
+    .js & {
+        color: darken($color__white,10);
+        margin-bottom: $half-spacing-unit;
+        margin-bottom: calc-rem($half-spacing-unit);
+    }
+
+    .no-js & {
+        @extend .main-wrapper;
+    }
 }
 
     .carousel__list-container {
@@ -27,12 +35,15 @@
     }
 
     .carousel__list {
-        @extend .cf;
-        margin-bottom: 0;
-        width: 99999em;
-        position: relative;
-        left: 0;
-        background-color: $color__background--dark;
+
+        .js & {
+            @extend .cf;
+            margin-bottom: 0;
+            width: 99999em;
+            position: relative;
+            left: 0;
+            background-color: $color__background--dark;
+        }
     }
 
     .carousel__list.animating {
@@ -43,14 +54,20 @@
         float: left;
         position: relative;
 
+        .no-js & {
+            margin-bottom: $base-spacing-unit * 2;
+            margin-bottom: calc-rem($base-spacing-unit * 2);
+        }
+
         &:before {
             content:"";
             display: none;
         }
-
-        > figure {
-            margin: 0;
-            background-color: $color__background--black;
+        .js & {
+            > figure {
+                margin: 0;
+                background-color: $color__background--black;
+            }
         }
     }
     .carousel li a,
@@ -65,12 +82,18 @@
 
     .carousel__summary {
         width: 100%;
-        border-top: 1px solid $color__background--black;
-        padding: $base-spacing-unit;
-        padding: calc-rem($base-spacing-unit);
 
-        h4 {
-            color: $color__white;
+        .js & {
+            padding: $base-spacing-unit;
+            padding: calc-rem($base-spacing-unit);
+        }
+
+        .js & {
+            border-top: 1px solid $color__background--black;
+
+            h4 {
+                color: $color__white;
+            }
         }
 
         p {
@@ -151,6 +174,11 @@
  * Navigation items that controls the animations of the carousel
  */
 .carousel__nav {
+
+    .no-js & {
+        display: none;
+    }
+
     @extend %font__display--normal;
     @extend .cf;
     position: absolute;

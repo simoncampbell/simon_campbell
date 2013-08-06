@@ -52,6 +52,9 @@
     &.side-wrapper {
         @include breakpoint($breakpoint__small){
             @include max-width(7);
+            padding-left: 0;
+            padding-right:0;
+
             border-top: 1px solid $color__border--standard;
             max-width: none;
             width: 100%;
@@ -65,9 +68,16 @@
 
     .island--wrapper__content {
         border: none;
-        padding: ($base-spacing-unit*2) 0;
-        padding: calc-rem($base-spacing-unit * 2) 0;
+        padding: 0;
 
+        @include breakpoint($breakpoint__small){
+            @include max-width(7);
+            margin: 0 auto;
+            padding-left: ($gutter *2);
+            padding-left: calc-rem($gutter *2);
+            padding-right: ($gutter *2);
+            padding-right: calc-rem($gutter *2);
+        }
     }
 }
 

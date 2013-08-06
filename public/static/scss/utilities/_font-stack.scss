@@ -34,15 +34,19 @@
 }
 
 %font__display--normal {
-    font-family: "Griffith Gothic", Helvetica, sans-serif;
+    font-family: "Griffith Gothic", Verdana, sans-serif;
     font-style: normal;
     font-weight: normal;
 }
 
 %font__display--black {
-    font-family: "Griffith Gothic Black", Helvetica, sans-serif;
+    font-family: "Griffith Gothic Black", Verdana, sans-serif;
     font-style: normal;
     font-weight: normal;
+
+    .no-fontface & {
+        font-weight: bold;
+    }
 }
 
 

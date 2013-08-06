@@ -1,3 +1,6 @@
+/*------------------------------------*\
+    $SIDE-BAR ALBUM
+\*------------------------------------*/
 
 
 
@@ -5,8 +8,7 @@
     .media__img {
         @include transition(all 0.2s ease-in-out);
         margin-bottom: 0;
-        width: $cols2;
-        max-width: $cols2;
+        width: 25%;
         position: relative;
 
         &:hover,

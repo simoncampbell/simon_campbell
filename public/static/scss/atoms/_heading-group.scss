@@ -83,32 +83,4 @@
         }
     }
 
-    /**
-     * The heading about Simon in the index template
-     */
-    .heading-group--home {
-        text-align: center;
-        padding-bottom: $base-spacing-unit;
-        padding-bottom: calc-rem($base-spacing-unit);
-        position: relative;
-        margin-bottom: $base-spacing-unit + $half-spacing-unit;
-
-
-        &:after {
-            @extend %font__icon--gizmo;
-            content:"music";
-            color: $color__orange--primary;
-            margin: 0 auto;
-            margin-top: $half-spacing-unit;
-            margin-bottom: - (($base-spacing-unit * 2) - 2px);
-            display: block;
-            font-size: 20px;
-            font-size: calc-rem(20px);
-            background-color: $color__white;
-            width: $base-spacing-unit;
-
-        }
-    }
-
-
 } //endif

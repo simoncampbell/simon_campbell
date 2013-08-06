@@ -41,8 +41,9 @@
 
     .item-list--sub-content {
         border-top: 1px dotted $color__border--standard;
-        padding-top: $base-spacing-unit * 2;
-        padding-top: calc-rem($base-spacing-unit * 2);
+        padding-top: $base-spacing-unit;
+        padding-top: (calc-rem($base-spacing-unit));
+        margin-top: $base-spacing-unit;
         margin-top: calc-rem($base-spacing-unit);
 
         >h3 {
@@ -102,6 +103,9 @@
     .item-list__item--article {
         border-bottom: 1px dotted $color__border--standard;
         margin-bottom: $base-spacing-unit;
+        margin-bottom: calc-rem($base-spacing-unit);
+        padding-bottom: $half-spacing-unit;
+        padding-bottom: calc-rem($half-spacing-unit);
 
         &:last-of-type {
             border:none;
@@ -125,8 +129,8 @@
 **/
 .item-list--equipment {
     border-top: 1px dotted $color__border--standard;
-    padding-top: $base-spacing-unit * 2;
-    padding-top: calc-rem($base-spacing-unit * 2);
+    padding-top: $base-spacing-unit;
+    padding-top: calc-rem($base-spacing-unit);
 
     li figure {
         margin-bottom: $half-spacing-unit;
@@ -140,7 +144,9 @@
     @include vendor(column-gap, calc-rem($base-spacing-unit));
     border-top: 1px dotted $color__border--standard;
     margin-top: $base-spacing-unit;
+    margin-top: calc-rem($base-spacing-unit);
     padding-top: $base-spacing-unit;
+    padding-top: calc-rem($base-spacing-unit);
 
     figure {
         margin-bottom: 0;
@@ -172,6 +178,10 @@
 * Album item listing
 **/
 .item-list--album {
+
+    p {
+        margin-bottom: 0;
+    }
 
     .flag {
         margin-bottom: $half-spacing-unit;
@@ -246,6 +256,7 @@
         @extend .cf;
         margin-bottom: $base-spacing-unit;
         margin-bottom: calc-rem($base-spacing-unit);
+        padding-bottom: 0;
 
         h3 {
             margin-bottom: 0;
@@ -262,6 +273,17 @@
             font-size: calc-rem($milli-size);
             margin-bottom:0;
         }
+
+        &:last-of-type {
+            padding-bottom: 0;
+        }
+    }
+
+    .item-list--instruments {
+
+        .item-list__item {
+            margin-bottom: $half-spacing-unit;
+        }
     }
 
     /**
@@ -272,6 +294,4 @@
         margin-bottom: $base-spacing-unit * 2;
         margin-bottom: calc-rem($base-spacing-unit * 2);
     }
-
-
 } //endif

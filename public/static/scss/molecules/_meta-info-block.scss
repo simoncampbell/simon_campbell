@@ -30,7 +30,7 @@
     .meta-info-block__item {
         @extend %font__display--normal;
         margin-bottom:0;
-        display:inline-block;
+        display:inline;
         color: $color__meta;
 
         .meta-info-block &:nth-child(2):before {
@@ -44,6 +44,7 @@
             color: $color__meta;
             border: none;
             text-decoration: none;
+            white-space: nowrap;
 
             &:hover,
             &:focus {

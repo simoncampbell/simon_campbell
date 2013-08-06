@@ -11,12 +11,11 @@ $(document).ready(function(){
 
         e.preventDefault();
         $('#nav_pri').toggleClass('menu--active');
-        $('.banner-nav').slideToggle();
+        $('.banner-nav').slideToggle(200);
         $icon_text.removeClass('navigatedown');
         $icon_text.removeClass('ss-navigatedown');
         $icon_text.toggleClass('navigateup');
         $icon_text.toggleClass('ss-navigateup');
-
 
 
         if ($('#nav_pri').hasClass('menu--active')) {

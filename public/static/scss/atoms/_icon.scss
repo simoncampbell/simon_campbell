@@ -14,6 +14,7 @@
 
 
 .icon-list {
+    @include vendor('column-count', 2);
     list-style-type: none;
 
     >li {
@@ -22,11 +23,24 @@
         &:before {
             display:none;
         }
+
+        a {
+            &:hover,
+            &:focus {
+                border:none;
+
+                &:before {
+                    @include transition(.25s all ease-in-out);
+                    opacity: .5;
+                }
+            }
+        }
     }
 
     a {
         border: none;
     }
+
 }
 
 

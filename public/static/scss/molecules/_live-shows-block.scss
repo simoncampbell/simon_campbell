@@ -23,8 +23,8 @@
             right: calc-rem($gutter);
             top: $half-spacing-unit + 6px;
             top: calc-rem($half-spacing-unit + 6px);
-            font-size: $milli-size;
-            font-size: calc-rem($milli-size);
+            font-size: 13px;
+            font-size: calc-rem(13px);
 
         }
     }

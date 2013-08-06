@@ -9,14 +9,18 @@
 .side-wrapper {
     @extend .cf;
     @include max-width(8);
-    padding: 0 $gutter;
-    padding: 0 calc-rem($gutter);
+    padding-right: $gutter;
+    padding-right: calc-rem($gutter);
+    padding-left: $gutter;
+    padding-left: calc-rem($gutter);
     margin: 0 auto;
 
     @include breakpoint($breakpoint__small){
-        padding: 0 ($gutter *2);
-        padding: 0 calc-rem($gutter *2);
         @include max-width(7);
+        padding-left: ($gutter *2);
+        padding-left: calc-rem($gutter *2);
+        padding-right: ($gutter *2);
+        padding-right: calc-rem($gutter *2);
     }
 }
 

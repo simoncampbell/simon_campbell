@@ -13,8 +13,7 @@
         <h2>This is a secondary headline that is not optional</h2>
     </header>
 
-
-    <div class="main-wrapper main-wrapper--article main-wrapper--rev" role="main">
+    <div class="main-wrapper main-wrapper--rev" role="main">
 
         <ul class="item-list">
 
@@ -57,12 +56,16 @@
 
         </ul>
 
-        {% include 'components/_equipment/_category-list.html' %}
+    </div> <!-- //end.main-wrapper -->
 
-    </div> <!-- end//.main-wrapper -->
+
+    <div class="wrapper">
+        <div class="wide-wrapper">
+            {% include 'components/_equipment/_category-list.html' %}
+        </div> <!-- //end.main-wrapper -->
+    </div> <!-- //end.wrapper -->
 
 {% endblock %}
-
 
 
 {% block content_side %}
@@ -73,7 +76,7 @@
             {% include 'components/_side-bar--album.html' %}
         </li>
 
-        <li class="item-list__item">
+        <li class="item-list__item item-list__item--live-shows">
             {% include 'components/_live-shows--alternate.html' %}
         </li>
     </ul>

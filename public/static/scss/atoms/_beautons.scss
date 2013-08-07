@@ -28,7 +28,7 @@
 /**
  * Base button styles.
  */
-.btn{
+.btn {
     @extend %font__display--black;
     @include vendor(border-radius, $brand-round);
     @include transition(.15s all ease-in-out);
@@ -43,8 +43,10 @@
     padding-top:0;
     padding-bottom:0;
     line-height:2.5;
-    padding-right:1em;
-    padding-left: 1em;
+    padding-right: $half-spacing-unit;
+    padding-right: calc-rem($half-spacing-unit);
+    padding-left: $half-spacing-unit;
+    padding-left: calc-rem($half-spacing-unit);
 
     &:active,
     &:focus {

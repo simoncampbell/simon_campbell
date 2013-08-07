@@ -18,28 +18,29 @@
         {% endif %}
 
         <div class="meta-info-block">
-            <time class="meta-info-block__item" datetime="{{entry.postDate|date("Y-m-d")}}">{{entry.postDate|date("jS F Y")}}</time>
-            <p class="meta-info-block__item">Posted in
-                <a class="category-link" href="URL!">
-                    <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
-                    Health
-                </a>,
-                <a class="category-link" href="URL!">
-                    <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
-                    Life
-                </a>
-            </p>
+            <div class="main-wrapper">
+                <time class="meta-info-block__item" datetime="{{entry.postDate|date("Y-m-d")}}">{{entry.postDate|date("jS F Y")}}</time>
+                <p class="meta-info-block__item">Posted in
+                    <a class="category-link" href="URL!">
+                        <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
+                        Health
+                    </a>,
+                    <a class="category-link" href="URL!">
+                        <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
+                        Life
+                    </a>
+                </p>
+            </div>
         </div>
     </header>
 
+    {% for image in entry.blog__image %}
+        <figure class="figure__hero">
+            <img src="{{image.url}}">
+        </figure>
+    {% endfor %}
+
     <div class="main-wrapper main-wrapper--article">
-
-            {% for image in entry.blog__image %}
-                <figure>
-                    <img src="{{image.url}}">
-                </figure>
-            {% endfor %}
-
 
         <p class="lede">{{entry.shortExtract}}</p>
 
@@ -57,7 +58,7 @@
 {% block content_side %}
 
     <div class="main-wrapper main-wrapper--article-meta">
-        <h2><span class="comment-count">3</span> Comments</h2>
+        <h2 class="main-wrapper--article-meta__header"><span class="comment-count">3</span> Comments</h2>
 
         <ul class="item-list item-list__comments">
             <li class="item-list__item item-list--comments">
@@ -130,7 +131,7 @@
                 {% include 'components/_side-bar--album.html' %}
             </li>
 
-            <li class="item-list__item">
+            <li class="item-list__item item-list__item--live-shows">
                 {% include 'components/_live-shows--alternate.html' %}
             </li>
         </ul>

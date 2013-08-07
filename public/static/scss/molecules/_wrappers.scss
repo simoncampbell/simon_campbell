@@ -5,8 +5,16 @@
  * Main wrapper styles that contain the primary content area
  */
 
+.wrapper {
+    width: 100%;
+    padding-top: $base-spacing-unit;
+    padding-top: calc-rem($base-spacing-unit);
+    border-top: 1px dotted $color__border--standard;
+}
+
 .main-wrapper,
-.side-wrapper {
+.side-wrapper,
+.wide-wrapper {
     @extend .cf;
     @include max-width(8);
     padding-right: $gutter;
@@ -16,11 +24,18 @@
     margin: 0 auto;
 
     @include breakpoint($breakpoint__small){
-        @include max-width(7);
+        @include max-width(8);
         padding-left: ($gutter *2);
         padding-left: calc-rem($gutter *2);
         padding-right: ($gutter *2);
         padding-right: calc-rem($gutter *2);
+    }
+}
+
+
+.wide-wrapper {
+    @include breakpoint(680px){
+        @include max-width(12);
     }
 }
 
@@ -30,11 +45,8 @@
     }
 
     .main-wrapper--article-meta {
-        border-top: 1px dotted $color__border--standard;
-        padding-top: $base-spacing-unit;
-        padding-top: calc-rem($base-spacing-unit);
 
-        > h2 {
+          > h2 {
             @extend %font__display--black;
 
             .comment-count {
@@ -42,6 +54,11 @@
             }
         }
     }
+
+        .main-wrapper--article-meta__header {
+            margin-bottom: $base-spacing-unit;
+            margin-bottom: calc-rem($base-spacing-unit);
+        }
 
     .main-wrapper--gallery {
         h3 {

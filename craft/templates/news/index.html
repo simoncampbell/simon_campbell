@@ -18,7 +18,7 @@
 
     <div class="main-wrapper main-wrapper--article">
 
-        <ul class="item-list">
+        <ul class="item-list item-list--article item-list--news">
             {% for news in craft.entries.find({section:'News',limit:'15' }) %}
                 <li class="item-list__item item-list__item--article">
                     <article>
@@ -95,7 +95,7 @@
                 {% include 'components/_side-bar--album.html' %}
             </li>
 
-            <li class="item-list__item">
+            <li class="item-list__item item-list__item--live-shows">
                 {% include 'components/_live-shows--alternate.html' %}
             </li>
         </ul>

@@ -8,17 +8,8 @@
     border-bottom: 1px solid $color__border--standard;
     margin-bottom: ($base-spacing-unit);
     margin-bottom: calc-rem($base-spacing-unit);
-    padding: $half-spacing-unit $base-spacing-unit;
-    padding: calc-rem($half-spacing-unit) calc-rem($base-spacing-unit);
-
-
-        @include breakpoint($breakpoint__small){
-        padding-left: ($gutter *2);
-        padding-left: 0 calc-rem($gutter *2);
-        padding-left: ($gutter *2);
-        padding-left: 0 calc-rem($gutter *2);
-        @include max-width(7);
-    }
+    padding: $half-spacing-unit 0;
+    padding: calc-rem($half-spacing-unit) 0;
 }
 
     .meta-info-block--borderless {

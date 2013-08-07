@@ -2,24 +2,50 @@
     $PARAGRAPHS
 \*------------------------------------*/
 
-p {
-
-}
 
 .lede {
-	@include breakpoint($breakpoint__small) {
-		font-size: 17px;
-		font-size: calc-rem(17px);
-		line-height: $base-line-height + 2px;
-	}
+    @extend .cf;
+
+    @include breakpoint($breakpoint__small) {
+        font-size: 17px;
+        font-size: calc-rem(17px);
+        line-height: $base-line-height + 2px;
+    }
+
+    &:first-letter {
+        @extend %font__text--bold;
+        font-size: $h1-size * 1.55;
+        font-size: calc-rem($h1-size * 1.55);
+        line-height: .9;
+        color: $color__orange--primary;
+        float: left;
+        padding-right: $half-spacing-unit / 2;
+        padding-right: calc-rem($half-spacing-unit / 2);
+
+        @include breakpoint($breakpoint__small) {
+            line-height: .95;
+            font-size: $h1-size * 1.6;
+            font-size: calc-rem($h1-size * 1.6);
+        }
+    }
 }
 
 .lede--double {
     padding-bottom: $base-spacing-unit;
     padding-bottom: calc-rem($base-spacing-unit);
     border-bottom: 1px dotted $color__border--standard;
+
+    &:first-letter {
+        font-size: $base-font-size;
+        font-size: calc-rem($base-font-size);
+        float: none;
+        color: $base-color;
+        line-height: 1;
+        font-weight: normal;
+        padding: 0;
+    }
 }
 
 .marginalia {
-	font-size:$milli-size;
+    font-size:$milli-size;
 }

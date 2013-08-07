@@ -9,6 +9,10 @@
 
 {% block content_main %}
 
+    <header class="heading-group heading-group--main">
+        <h1>About</h1>
+        <h2>{{contactAbout.heading__sec}}</h2>
+    </header>
 
     <!-- BIG IMAGE -->
     {% for image in contactAbout.largeImage %}
@@ -17,13 +21,8 @@
         </figure>
     {% endfor %}
 
-
     <!-- CONTENT -->
     <div class="main-wrapper main-wrapper--article">
-        <header class="heading-group">
-            <h1>About</h1>
-            <h2>{{contactAbout.heading__sec}}</h2>
-        </header>
 
         <p class="lede">{{contactAbout.shortExtract}}</p>
 
@@ -34,18 +33,24 @@
 {% endblock %}
 
 
-
 {% block content_side %}
 
     <div class="side-wrapper island island--wrapper">
 
         <ul class="item-list island--wrapper__content">
-            <li class="item-list__item item-list__item--sidebar">
-                <h3>Bookings</h3>
-                <p>For booking details please contact:
-                    {% for person in contactAbout.bookingContactInfo %}
-                        <a href="{{person.bookingsURL}}">{{person.bookingsPerson}}</a> at Supertone Records</p>
-                    {% endfor %}
+            <li class="item-list__item">
+                <div class="island island--sidebar">
+                    <div class="island__header">
+                        <h4>Bookings</h4>
+                    </div>
+
+                    <div class="island__content">
+                        <p>For booking details please contact:
+                        {% for person in contactAbout.bookingContactInfo %}
+                            <a href="{{person.bookingsURL}}">{{person.bookingsPerson}}</a> at Supertone Records</p>
+                        {% endfor %}
+                    </div>
+                </div>
             </li>
 
             <li class="item-list__item">

@@ -6,7 +6,7 @@ textarea,
 .text-input,
 input {
     @include vendor(border-radius, $brand-round);
-    @include vendor(border-radiusm, calc-rem($brand-round));
+    @include vendor(border-radius, calc-rem($brand-round));
     font-size: $milli-size;
     font-size: calc-rem($milli-size);
     -webkit-appearance:none;

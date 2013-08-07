@@ -3,23 +3,27 @@
 \*------------------------------------*/
 
 .footer-main {
+    @extend .cf;
     color: $color__text--reverse;
     padding: ($base-spacing-unit*2) 0 0 0;
     padding: calc-rem($base-spacing-unit * 2) 0 0 0;
     background-color: $color__background--black;
     border-top: 5px solid lighten($color__background--black, 10);
+
+    @include breakpoint(680px){
+        float:left;
+        width: 100%;
+    }
 }
     .footer-main__item {
-        @include max-width(8);
-        padding: 0 $gutter;
+        @include max-width(7);
+        padding: 0;
         margin: 0 auto;
         margin-bottom: $base-spacing-unit * 2;
         margin-bottom: calc-rem($base-spacing-unit * 2);
 
         @include breakpoint($breakpoint__small){
-            @include max-width(13);
-            padding: 0 ($gutter *2);
-            padding: 0 calc-rem($gutter *2);
+            @include max-width(7);
         }
 
         h3 {
@@ -54,32 +58,26 @@
         }
     }
 
-
-    h3.social-icons__title {
-        margin-bottom: $half-spacing-unit;
-        margin-bottom: calc-rem($half-spacing-unit);
-    }
-
     /**
-     * ABOUT
-     * The about section is a short text block and image that describes Simon in a little more detail
-     */
+    * ABOUT
+    * The about section is a short text block and image that describes Simon in a little more detail
+    */
     .footer-main__item--about {
         margin-bottom: $base-spacing-unit * 2;
         margin-bottom: calc-rem($base-spacing-unit * 2);
 
         @include breakpoint(680px){
             width: 50%;
-            padding-right: $base-spacing-unit * 2;
-            padding-right: calc-rem($base-spacing-unit * 2);
+            padding-right: $base-spacing-unit;
+            padding-right: calc-rem($base-spacing-unit);
+            float: left;
+            margin-bottom: $half-spacing-unit;
+            margin-bottom: calc-rem($half-spacing-unit);
         }
-
 
         .media {
             @extend .cf;
-            margin-bottom: $base-spacing-unit;
-            margin-bottom: calc-rem($base-spacing-unit);
-
+            margin-bottom: 0;
 
             .media__img {
                 @include width(2);
@@ -107,8 +105,8 @@
     .footer-main__item--newsletter {
         @include breakpoint(680px){
             width:49%;
-            vertical-align: top;
-            padding-left: 0;
+            float: right;
+            padding-right: 0;
         }
     }
 
@@ -118,20 +116,35 @@
      * Links to Facebook, twitter, etc.
      */
     .footer-main__item--social {
-        .icon-list__item {
+        margin-bottom: $half-spacing-unit;
+        margin-bottom: calc-rem($half-spacing-unit);
 
-            @include breakpoint(680px){
-                display: inline;
-                padding-right: $half-spacing-unit;
-                padding-right: calc-rem($half-spacing-unit);
+        @include breakpoint($breakpoint--small){
+            margin-bottom: $base-spacing-unit;
+            margin-bottom: calc-rem($base-spacing-unit);
+        }
+
+        @include breakpoint(680px) {
+            padding: 0;
+            float: left;
+            clear: left;
+            margin-bottom: $base-spacing-unit * 1.5;
+            margin-bottom: calc-rem($base-spacing-unit * 1.5);
+        }
+
+        .icon-list {
+            margin: 0;
+            @include breakpoint(450px){
+                @include vendor(column-count, auto);
             }
         }
-    }
 
-    .footer-main__item--about,
-    .footer-main__item--newsletter {
-        @include breakpoint(680px){
-            display: inline-block;
+            .icon-list__item {
+                @include breakpoint(450px){
+                    display: inline;
+                    margin-right: $half-spacing-unit;
+                    margin-right: calc-rem($half-spacing-unit);
+                }
         }
     }
 
@@ -150,15 +163,34 @@
         margin-bottom:0;
         background-color: darken($color__background--black, 5);
 
-        .nav {
-            margin-bottom: 0;
+        @include breakpoint(680px){
             float: left;
+            width: 100%;
+        }
+
+        .nav {
             line-height:1;
+            margin-bottom: $half-spacing-unit;
+            margin-bottom: calc-rem($half-spacing-unit);
+
+            @include breakpoint($breakpoint__small){
+                float:left;
+                margin: 0;
+            }
+
+            li {
+
+                &:first-of-type::after {
+                    content:"|";
+                    color: darken($color__border--standard, 50);
+                    padding-right: $half-spacing-unit / 2;
+                    padding-left: calc-rem($half-spacing-unit / 2);
+                }
+            }
         }
 
         .link--jump {
             line-height: 1;
-            float: right;
             color: darken($color__white, 20);
             border-bottom: 1px dotted darken($color__white, 30);
             margin-top: 2px;
@@ -168,6 +200,10 @@
             &:focus {
                 color: darken($color__white, 35);
                 border-bottom: 1px solid darken($color__white, 45);
+            }
+
+            @include breakpoint($breakpoint__small){
+                float: right;
             }
         }
 

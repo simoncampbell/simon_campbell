@@ -29,8 +29,8 @@
         padding-bottom: calc-rem($base-spacing-unit);
 
         @include breakpoint($breakpoint__small) {
-            margin-bottom: $base-spacing-unit * 2;
-            margin-bottom: calc-rem($base-spacing-unit * 2);
+            margin-bottom: $base-spacing-unit;
+            margin-bottom: calc-rem($base-spacing-unit);
         }
 
         h1,
@@ -43,10 +43,13 @@
             padding: 0 $base-spacing-unit;
             padding: 0 calc-rem($base-spacing-unit);
 
-            @include breakpoint($breakpoint__small){
+            @include breakpoint($breakpoint__small) {
                 padding: 0 ($gutter *2);
                 padding: 0 calc-rem($gutter *2);
-                @include max-width(7);
+            }
+
+            @include breakpoint(680px){
+                @include max-width(8);
             }
         }
     }
@@ -68,8 +71,8 @@
         padding-bottom: 0;
 
         .meta-info-block {
-            margin-top: $half-spacing-unit;
-            margin-top: calc-rem($half-spacing-unit);
+            margin-top: $half-spacing-unit + 2px;
+            margin-top: calc-rem($half-spacing-unit + 2px);
         }
     }
 

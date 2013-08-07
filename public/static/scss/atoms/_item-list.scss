@@ -21,6 +21,7 @@
 
         &:before {
             content: "";
+            display: none;
         }
 
         h3 {
@@ -28,16 +29,19 @@
         }
     }
 
+    li.item-list__item:before {
+        display: none;
+    }
+
     .item-list__item--half {
         margin-bottom: $half-spacing-unit;
         margin-bottom: calc-rem($half-spacing-unit);
     }
 
-/**
-* For item lists that follow the main content section.
-* Examples: recordings/
-**/
-
+    /**
+    * For item lists that follow the main content section.
+    * Examples: recordings/
+    **/
 
     .item-list--sub-content {
         border-top: 1px dotted $color__border--standard;
@@ -66,10 +70,9 @@
         }
     }
 
-/**
-* Throw a list of items into grid mode
-**/
-
+    /**
+    * Throw a list of items into grid mode
+    **/
     .item-list--grid {
         @include vendor(column-count, 2);
         @include vendor(column-gap, $base-spacing-unit);
@@ -78,6 +81,10 @@
         .item-list__item {
             -webkit-column-break-inside: avoid;
             @include column-break-inside(avoid);
+
+            &:before {
+                display: none;
+            }
         }
 
         figure {
@@ -97,25 +104,35 @@
 }
 
 
-/**
-* Item list article
-**/
+    /**
+    * Item list article
+    **/
+
+    .item-list--article {
+        margin-bottom: 0;
+    }
+
+
     .item-list__item--article {
         border-bottom: 1px dotted $color__border--standard;
         margin-bottom: $base-spacing-unit;
         margin-bottom: calc-rem($base-spacing-unit);
-        padding-bottom: $half-spacing-unit;
-        padding-bottom: calc-rem($half-spacing-unit);
+        padding-bottom: $base-spacing-unit;
+        padding-bottom: calc-rem($base-spacing-unit);
 
         &:last-of-type {
             border:none;
         }
+
+        p {
+            margin-bottom: 0;
+        }
     }
 
 
-/**
-* Item lists in the side bar
-**/
+    /**
+    * Item lists in the side bar
+    **/
     .item-list__item {
         h4,
         .label--headline {
@@ -124,19 +141,52 @@
     }
 
 
+
 /**
 * Equipment categories listing
 **/
 .item-list--equipment {
-    border-top: 1px dotted $color__border--standard;
-    padding-top: $base-spacing-unit;
-    padding-top: calc-rem($base-spacing-unit);
+
+    ul {
+        @include breakpoint($breakpoint--small){
+            @include vendor(column-count,2);
+            @include vendor(column-gap, $half-spacing-unit);
+            @include vendor(column-gap, calc-rem($half-spacing-unit));
+
+            h3 {
+                width: 100%;
+            }
+        }
+
+        @include breakpoint(700px) {
+            @include vendor(column-count,3);
+
+            .item-list__item {
+                @include column-break-inside(avoid);
+            }
+        }
+    }
 
     li figure {
         margin-bottom: $half-spacing-unit;
         margin-bottom: calc-rem($half-spacing-unit);
     }
 }
+
+    .item-list__item--equipment {
+        @include breakpoint(680px){
+            width: 49%;
+            vertical-align: top;
+            float: right;
+        }
+
+        p {
+            margin-bottom: $half-spacing-unit;
+            margin-bottom: calc-rem($half-spacing-unit);
+        }
+
+    }
+
 
 .item-list--equipment-meta {
     @include vendor(column-count, 2);
@@ -174,6 +224,22 @@
 }
 
 
+
+/**
+* Live shows in the sidebar
+**/
+
+.item-list__item--live-shows {
+    @include breakpoint(680px) {
+        width: 50%;
+        float: left;
+        padding-right: $gutter;
+        padding-right: calc-rem($gutter);
+        margin-bottom: 0;
+    }
+}
+
+
 /**
 * Album item listing
 **/
@@ -197,6 +263,63 @@
         }
     }
 }
+
+
+    /**
+     * Album detail item list in /recordings/detail.html
+     */
+    .item-list__item--album {
+        @extend .cf;
+        margin-bottom: $base-spacing-unit;
+        margin-bottom: calc-rem($base-spacing-unit);
+        padding-bottom: $base-spacing-unit;
+        padding-bottom: calc-rem($base-spacing-unit);
+
+        @include breakpoint(680px){
+            float: right;
+            width: 49%;
+            margin-bottom: 0;
+        }
+
+        .media {
+            margin:0;
+
+            // remove the media object from tablet sizes to desktop.
+            @include breakpoint(680px $breakpoint__desktop) {
+                .media__img {
+                    display: block;
+                    width: 100%;
+                    margin-bottom: $base-spacing-unit;
+                }
+
+                .media__body {
+                    width: 100%;
+                    display: block;
+                }
+            }
+        }
+
+        h3 {
+            margin-bottom: 0;
+        }
+
+        .btn {
+            float:right;
+            margin-left: $half-spacing-unit;
+            margin-left: calc-rem($half-spacing-unit);
+        }
+
+        p {
+            font-size: $milli-size;
+            font-size: calc-rem($milli-size);
+            margin-bottom:0;
+        }
+
+        &:last-of-type {
+            padding-bottom: 0;
+        }
+    }
+
 
 
 
@@ -249,35 +372,7 @@
         margin-bottom: 0;
     }
 
-    /**
-     * Album detail item list in /recordings/detail.html
-     */
-    .item-list__item--album {
-        @extend .cf;
-        margin-bottom: $base-spacing-unit;
-        margin-bottom: calc-rem($base-spacing-unit);
-        padding-bottom: 0;
 
-        h3 {
-            margin-bottom: 0;
-        }
-
-        .btn {
-            float:right;
-            margin-left: $half-spacing-unit;
-            margin-left: calc-rem($half-spacing-unit);
-        }
-
-        p {
-            font-size: $milli-size;
-            font-size: calc-rem($milli-size);
-            margin-bottom:0;
-        }
-
-        &:last-of-type {
-            padding-bottom: 0;
-        }
-    }
 
     .item-list--instruments {
 
@@ -295,3 +390,23 @@
         margin-bottom: calc-rem($base-spacing-unit * 2);
     }
 } //endif
+
+
+.item-list--news {
+
+    @include breakpoint(680px) {
+        .heading-group {
+            position: relative;
+
+            &:before {
+                content: "¶";
+                color: #ddd;
+                font-size: 2em;
+                position: absolute;
+                left: -1em;
+                top: 0;
+                line-height: 1;
+            }
+        }
+    }
+}

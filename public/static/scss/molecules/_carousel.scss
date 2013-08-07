@@ -86,14 +86,21 @@
         .js & {
             padding: $base-spacing-unit;
             padding: calc-rem($base-spacing-unit);
-        }
-
-        .js & {
             border-top: 1px solid $color__background--black;
 
             h4 {
                 color: $color__white;
             }
+
+            @include breakpoint($breakpoint__small){
+                @include max-width(12);
+                margin: 0 auto;
+                padding-left: ($gutter *2);
+                padding-left: calc-rem($gutter *2);
+                padding-right: ($gutter *2);
+                padding-right: calc-rem($gutter *2);
+            }
+
         }
 
         p {

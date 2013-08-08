@@ -66,17 +66,35 @@ figcaption {
     }
 }
 
+
 .figure__hero {
     margin-top: - ($base-spacing-unit * 1.2);
     margin-top: - calc-rem($base-spacing-unit * 1.2);
 
     @include breakpoint($breakpoint__small){
-        margin-top: - 21px;
-        margin-top: - calc-rem(21px);
+        margin-top: - 40px;
+        margin-top: - calc-rem(40px);
+    }
+
+    @include breakpoint(560px){
+        max-height: 320px;
+        max-height: calc-rem(320px);
+        overflow: hidden;
     }
 
     >img {
         width: 100%;
+    }
+}
+
+
+.figure__hero--article {
+    max-height: none;
+    overflow: none;
+
+    @include breakpoint($breakpoint__small){
+        margin-top: - ($base-spacing-unit * 1.2);
+        margin-top: - calc-rem($base-spacing-unit * 1.2);
     }
 }
 

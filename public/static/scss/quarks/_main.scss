@@ -22,4 +22,9 @@ body {
 	    opacity:.3;
 	    pointer-events:none;
     }
+
+    @include breakpoint(720px){
+        font: 104% $base-font-family;
+        line-height:$line-height-ratio + .05;
+    }
 }

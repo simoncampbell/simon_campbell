@@ -5,18 +5,19 @@
 
 .lede {
     @extend .cf;
+    font-size: 17px;
+    font-size: calc-rem(17px);
+    color: darken($color__background--black, 10);
 
     @include breakpoint($breakpoint__small) {
-        font-size: 17px;
-        font-size: calc-rem(17px);
         line-height: $base-line-height + 2px;
     }
 
     &:first-letter {
         @extend %font__text--bold;
-        font-size: $h1-size * 1.55;
-        font-size: calc-rem($h1-size * 1.55);
-        line-height: .9;
+        font-size: $h1-size * 1.45;
+        font-size: calc-rem($h1-size * 1.45);
+        line-height: 1;
         color: $color__orange--primary;
         float: left;
         padding-right: $half-spacing-unit / 2;

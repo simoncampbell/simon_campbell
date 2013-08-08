@@ -21,6 +21,8 @@
     }
 
     @extend %font__display--normal;
+    height: 46px;
+    height: calc-rem(46px);
     position: absolute;
     top: 0;
     right: 0;
@@ -31,6 +33,7 @@
     padding: ($half-spacing-unit*1.45) $base-spacing-unit;
     padding: calc-rem($half-spacing-unit*1.45) calc-rem($base-spacing-unit);
     border-bottom: 1px solid $color__orange--secondary;
+    border-left: 1px solid $color__black;
 
     &:hover,
     &:focus {
@@ -44,6 +47,11 @@
         background-color: darken($color__banner-nav--hover,3);
         background-color: darken($color__banner-nav--hover,5);
     }
+
+    @include breakpoint(552px) {
+        width: 250px;
+        width: calc-rem(250px);
+    }
 }
 
 
@@ -55,6 +63,7 @@
     @extend .nav--stacked;
     transition: none;
     width:100%;
+    margin-bottom: 0;
 
 
     // hide the navigational if javascript exists
@@ -90,5 +99,17 @@
                 margin-left: -$half-spacing-unit;
             }
         }
+    }
+
+    @include breakpoint(552px){
+        position: absolute;
+        right: 0;
+        width: 250px;
+        width: calc-rem(250px);
+        opacity: .95;
+        background-color: $color__background--dark;
+        border: 1px solid $color__background--black;
+        border-top: none;
+        border-bottom: none;
     }
 }

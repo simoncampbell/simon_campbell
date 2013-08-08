@@ -28,7 +28,7 @@
 
         h3 {
             font-size: $h4-size;
-            font-size: cal-rem($h4-size);
+            font-size: calc-rem($h4-size);
             color: $color__white;
             margin-bottom:0;
         }
@@ -66,6 +66,7 @@
         margin-bottom: $base-spacing-unit * 2;
         margin-bottom: calc-rem($base-spacing-unit * 2);
 
+
         @include breakpoint(680px){
             width: 50%;
             padding-right: $base-spacing-unit;
@@ -80,7 +81,15 @@
             margin-bottom: 0;
 
             .media__img {
+
+                @include breakpoint(max-width 380px) {
+                    width: 100%;
+                    margin-right: 0;
+                    float: none;
+                }
+
                 @include width(2);
+
 
                 @include breakpoint(680px){
                     width:30%;
@@ -93,6 +102,13 @@
 
             p {
                 margin-bottom: 0;
+            }
+
+            .media__body {
+                @include breakpoint(max-width 380px) {
+                    width: 100%;
+                    overflow: none;
+                }
             }
         }
     }
@@ -140,6 +156,7 @@
         }
 
             .icon-list__item {
+
                 @include breakpoint(450px){
                     display: inline;
                     margin-right: $half-spacing-unit;

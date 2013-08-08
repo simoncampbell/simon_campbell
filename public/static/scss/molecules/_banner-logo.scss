@@ -13,30 +13,38 @@
         margin-bottom: $base-spacing-unit * 2;
         margin-bottom: calc-rem($base-spacing-unit * 2);
     }
+
+    @include breakpoint(552px) {
+        border-bottom: 1px solid $color__orange--secondary;
+        height: 46px;
+        height: calc-rem(46px);
+    }
 }
 
 
 .banner-logo {
-    display: inline-block;
+    @extend .main-wrapper;
     font-size: $h3-size;
     font-size: calc-rem($h3-size);
-    width: 70%;
-    height: 45px;
+    height: 46px;
     height: calc-rem(46px);
-    border-right: 1px solid $color__black;
     border-bottom: 1px solid $color__orange--secondary;
     text-align: left;
     color: $color__white;
     text-transform: uppercase;
-    padding: ($half-spacing-unit + 3px) $base-spacing-unit 0 $base-spacing-unit;
-    padding: calc-rem($half-spacing-unit + 3px) calc-rem($base-spacing-unit) 0 calc-rem($base-spacing-unit);
-    margin: 0;
+    padding-top: ($half-spacing-unit + 4px);
+    padding-top: calc-rem($half-spacing-unit + 4px);
+    margin: 0 auto;
     line-height: $base-line-height;
     background-color: $color__background--black;
 
+
     h1, p {
         background:url("/static/images/branding/simon-campbell__logo.png") no-repeat;
-        @include image-2x("/static/images/branding/simon-campbell__logo--large.png", 10em, 25em);
+
+
+
+        @include image-2x("/static/images/branding/simon-campbell__logo--large.png", 5.3em);
         background-size:200px;
         background-size:calc-rem(200px);
         text-indent: 100%;

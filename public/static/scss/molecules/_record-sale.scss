@@ -1,0 +1,35 @@
+/*------------------------------------*\
+    $RECORD-SALE
+\*------------------------------------*/
+/**
+* Stlyes for the album sale on recordings/detail.html
+**/
+
+
+.record-sale {
+
+    @include breakpoint(680px){
+
+        > figure {
+            float: left;
+            width: 25%;
+            margin-right: $base-spacing-unit;
+            margin-right: calc-rem($base-spacing-unit);
+        }
+
+        >.item-list--bordered {
+            float: right;
+            width: 70%;
+            border: none;
+
+            .item-list__item {
+                width: 100%;
+
+                &:first-child {
+                    border: none;
+                    padding-top: 0;
+                }
+            }
+        }
+    }
+}

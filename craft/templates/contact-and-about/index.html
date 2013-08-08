@@ -16,7 +16,7 @@
 
     <!-- BIG IMAGE -->
     {% for image in contactAbout.largeImage %}
-        <figure class="figure__hero">
+        <figure class="figure__hero figure__hero--article">
             <img src="{{image.url}}">
         </figure>
     {% endfor %}
@@ -38,7 +38,8 @@
     <div class="side-wrapper island island--wrapper">
 
         <ul class="item-list island--wrapper__content">
-            <li class="item-list__item">
+
+            <li class="item-list__item item-list__item--bookings">
                 <div class="island island--sidebar">
                     <div class="island__header">
                         <h4>Bookings</h4>
@@ -53,21 +54,34 @@
                 </div>
             </li>
 
-            <li class="item-list__item">
-                <h3>Get in touch</h3>
-                {% include 'components/_forms/_contact-form.html' %}
+            <li class="item-list__item item-list__item--bookings">
+                <div class="island island--sidebar">
+                    <div class="island__header">
+                        <h4>Media downloads</h4>
+                    </div>
+
+                    <div class="island__content">
+                        <ul>
+                            <li>
+                                <a href="URL!" class="link--icon link--icon--long">
+                                    <span class="icon ss ss-pdf">pdf</span>
+                                    Download the pdf
+                                </a>
+                            </li>
+                            <li>
+                                <a href="URL!" class="link--icon">
+                                    <span class="icon ss ss-pdf">pdf</span>
+                                    Download the pdf
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div><!-- //end.island -->
             </li>
 
-            <li class="item-list__item">
-                <h3>Media downloads</h3>
-                <ul>
-                    <li>
-                        <a href="URL!" class="link--icon">
-                            <span class="icon ss ss-pdf">pdf</span>
-                            Download the pdf
-                        </a>
-                    </li>
-                </p>
+            <li class="item-list__item item-list__item--contact">
+                <h3>Get in touch</h3>
+                {% include 'components/_forms/_contact-form.html' %}
             </li>
         </ul>
 

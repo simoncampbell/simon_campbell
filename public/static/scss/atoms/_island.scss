@@ -88,6 +88,10 @@
         @include breakpoint(680px){
             @include max-width(12);
         }
+
+        ul {
+            margin-bottom: 0;
+        }
     }
 }
 

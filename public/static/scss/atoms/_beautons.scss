@@ -193,16 +193,15 @@
             @include transition(.2s all ease-in-out);
             display: inline-block;
             line-height: 2.5;
-            height: 37px;
-            height: calc-rem(37px);
-            margin-top: -3px;
-            margin-top: - calc-rem(3px);
+            height: 38px;
+            height: calc-rem(38px);
             width: ($base-spacing-unit * 2);
             width: calc-rem($base-spacing-unit * 2);
             font-size: $base-font-size;
             font-size: calc-rem($base-font-size);
             text-align: center;
             border-right: 1px solid darken($color__border--orange, 2);
+            vertical-align: top;
         }
 
         &:hover .icon {

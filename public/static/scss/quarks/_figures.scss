@@ -87,6 +87,11 @@ figcaption {
     }
 }
 
+.figure__hero--full-height {
+    max-height: none;
+    overflow: none;
+}
+
 
 .figure__hero--article {
     max-height: none;
@@ -100,4 +105,23 @@ figcaption {
 
 .item-list__figure {
     margin-bottom: 0;
+}
+
+
+.figure__right {
+    @include breakpoint($breakpoint__medium) {
+        float: right;
+        margin-left: $base-spacing-unit;
+        margin-left: calc-rem($base-spacing-unit);
+        max-width: 50%;
+    }
+}
+
+.figure__left {
+    @include breakpoint($breakpoint__medium) {
+        float: left;
+        margin-right: $base-spacing-unit;
+        margin-right: calc-rem($base-spacing-unit);
+        max-width: 50%;
+    }
 }

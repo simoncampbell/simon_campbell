@@ -84,51 +84,21 @@
 
 {% block content_side %}
 
+    <div class="wrapper">
+        <div class="wide-wrapper">
+            {% include 'components/_equipment/_category-list.html' %}
+        </div> <!-- //end.main-wrapper -->
+    </div> <!-- //end.wrapper -->
+
+
     <div class="side-wrapper island island--wrapper">
 
         <ul class="item-list island--wrapper__content">
-            <li class="item-list__item item-list__item--sidebar">
-
-                <h4>Equipment categories</h4>
-                <ul class="nav nav--category">
-                    <li>
-                       <a class="nav--category__item nav--category__item--cur link--icon" href="URL!">
-                            <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
-                            Electric guitars
-                        </a>
-                    </li>
-                    <li>
-                        <a class="nav--category__item link--icon" href="URL!">
-                            <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
-                            Acoustic guitars
-                        </a>
-                    </li>
-                    <li>
-                        <a class="nav--category__item link--icon" href="URL!">
-                            <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
-                            Synthesizers
-                        </a>
-                    </li>
-                    <li>
-                        <a class="nav--category__item link--icon" href="URL!">
-                            <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
-                            Drum kits
-                        </a>
-                    </li>
-                    <li>
-                        <a class="nav--category__item link--icon" href="URL!">
-                            <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
-                            Amplifiers
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
             <li class="item-list__item item-list__item--album">
                 {% include 'components/_side-bar--album.html' %}
             </li>
 
-            <li class="item-list__item">
+            <li class="item-list__item item-list__item--live-shows">
                 {% include 'components/_live-shows--alternate.html' %}
             </li>
         </ul>

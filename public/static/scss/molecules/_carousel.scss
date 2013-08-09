@@ -244,12 +244,17 @@
             padding-left: 0;
             padding-right: 0;
             display: table;
-            background-color: $color__background--black;
+            background-color: lighten($color__background--black, 10);
             border: 1px solid $color__background--dark;
             opacity: .7;
 
             .carousel__nav__text {
                 display: none;
+            }
+
+            &:hover,
+            &:focus {
+                background-color: $color__background--black;
             }
         }
 

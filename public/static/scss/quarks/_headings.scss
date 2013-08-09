@@ -8,44 +8,72 @@
  */
 
 h1, .alpha {
-	@extend %font__display--black;
-	font-size: $h1-size;
-	font-size: calc-rem($h1-size);
-	line-height: ($line-height-ratio - .25);
+    @extend %font__display--black;
+    font-size: $h1-size;
+    font-size: calc-rem($h1-size);
+    line-height: ($line-height-ratio - .25);
     text-rendering: optimizeLegibility;
+
+    @include breakpoint($breakpoint__medium){
+        font-size: $h1-size + 4px;
+        font-size: calc-rem($h1-size + 4px);
+        line-height: ($line-height-ratio - .35);
+    }
 }
 
 h2, .beta {
     @extend %font__display--normal;
-	font-size: $h2-size;
-	font-size: calc-rem($h2-size);
-	line-height: ($line-height-ratio - .2);
+    font-size: $h2-size;
+    font-size: calc-rem($h2-size);
+    line-height: ($line-height-ratio - .2);
+
+    @include breakpoint($breakpoint__medium){
+        font-size: $h2-size + 4px;
+        font-size: calc-rem($h2-size + 4px);
+        line-height: ($line-height-ratio - .3);
+    }
 }
 
 h3, .gamma {
-	@extend %font__display--black;
-	font-size: $h3-size;
-	line-height: ($line-height-ratio - .25);
+    @extend %font__display--black;
+    font-size: $h3-size;
+    line-height: ($line-height-ratio - .25);
+    margin-bottom: 0;
 
-	.main-wrapper--article__detail & {
-		margin-top: $base-spacing-unit * 2;
-		margin-top: calc-rem($base-spacing-unit * 2);
-	}
+    .main-wrapper--article__detail & {
+        margin-top: $base-spacing-unit * 2;
+        margin-top: calc-rem($base-spacing-unit * 2);
+    }
+
+    @include breakpoint($breakpoint__medium){
+        font-size: $h3-size + 4px;
+        font-size: calc-rem($h3-size + 4px);
+    }
 }
 
 h4, .delta {
-	@extend %font__display--black;
-	font-size: $h4-size;
-	line-height: ($line-height-ratio - .1);
+    @extend %font__display--black;
+    font-size: $h4-size;
+    line-height: ($line-height-ratio - .1);
+
+    @include breakpoint($breakpoint__medium){
+        font-size: $h4-size + 2px;
+        font-size: calc-rem($h4-size + 2px);
+    }
 }
 
 h5, .epsilon {
-	font-size: $h5-size;
-	line-height: $line-height-ratio;
+    font-size: $h5-size;
+    line-height: $line-height-ratio;
+
+    @include breakpoint($breakpoint__medium){
+        font-size: $h5-size + 2px;
+        font-size: calc-rem($h5-size + 2px);
+    }
 }
 
 .base-text {
-	font-size: $base-font-size;
-	font-size: calc-rem($base-font-size);
-	color: $base-color;
+    font-size: $base-font-size;
+    font-size: calc-rem($base-font-size);
+    color: $base-color;
 }

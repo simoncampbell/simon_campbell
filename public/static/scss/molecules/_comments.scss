@@ -1,0 +1,29 @@
+/*------------------------------------*\
+    $COMMENTS
+\*------------------------------------*/
+/**
+ * Comment section on detail pages
+ */
+
+.comments {
+
+    @include breakpoint(680px) {
+        float: left;
+        width: 47%;
+        margin-right: $base-spacing-unit;
+        margin-right: calc-rem($base-spacing-unit);
+    }
+}
+
+.comments__header {
+    @extend %font__display--black;
+}
+
+.comments__count {
+    color: $color__meta;
+}
+
+.comments__form {
+    float: right;
+    width: 49%;
+}

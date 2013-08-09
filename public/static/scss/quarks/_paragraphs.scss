@@ -13,6 +13,11 @@
         line-height: $base-line-height + 2px;
     }
 
+    @include breakpoint(622px) {
+        font-size: 19px;
+        font-size: calc-rem(19px);
+    }
+
     &:first-letter {
         @extend %font__text--bold;
         font-size: $h1-size * 1.45;

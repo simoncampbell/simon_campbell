@@ -87,23 +87,54 @@ input {
     }
 
 textarea {
-  width:100%;
-  padding-top: $half-spacing-unit;
-  padding-top: calc-rem($half-spacing-unit);
+    width:100%;
+    padding-top: $half-spacing-unit;
+    padding-top: calc-rem($half-spacing-unit);
 }
 
 .text-input--secondary {
     background-color: $color__white;
 }
 
-.search-form__input {
-    margin-bottom: 0;
+
+/**
+ * Search form styles
+ */
+
+.search-form {
+    @extend .cf;
 }
+    .search-form__input {
+        margin-bottom: 0;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-right: none;
+        float: left;
+
+        &:focus {
+            border-right: none;
+        }
+    }
+
+    .search-form__submit.btn {
+        @extend %font__icon--gizmo;
+        float: left;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        height: 42px;
+        height: calc-rem(42px);
+        width: 40px;
+    }
+
+
+
+
 
 .form-block--comments {
     margin-bottom: $base-spacing-unit * 2;
     margin-bottom: calc-rem($base-spacing-unit * 2);
 }
+
 
 /**
  * Labels

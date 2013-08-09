@@ -125,3 +125,37 @@ figcaption {
         max-width: 50%;
     }
 }
+
+.figure__homepage-intro {
+
+    @include breakpoint(900px){
+        position: relative;
+    }
+
+    >.heading-group {
+        @include breakpoint(900px){
+            position: absolute;
+            bottom: 200px;
+            bottom: calc-rem(200px);
+            right: 0;
+            color: $color__white;
+
+            h1,
+            h2 {
+                padding-left: 0;
+            }
+        }
+
+        @include breakpoint(900px 1000px){
+            h1 {
+                font-size: $h1-size - 5px;
+                font-size: calc-rem($h1-size - 5px);
+            }
+
+            h2 {
+                font-size: $h2-size - 5px;
+                font-size: calc-rem($h2-size - 5px);
+            }
+        }
+    }
+}

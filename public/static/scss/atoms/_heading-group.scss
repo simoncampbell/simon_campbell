@@ -20,6 +20,7 @@
     .epsilon {
         @extend %font__text--bold;
         color: $color--meta;
+        line-height: 1;
     }
 }
 

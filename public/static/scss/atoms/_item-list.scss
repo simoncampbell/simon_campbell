@@ -146,7 +146,8 @@
 * Equipment categories listing
 **/
 .item-list--equipment,
-.item-list--gallery {
+.item-list--gallery,
+.item-list--merch {
 
     ul {
         @extend .cf;
@@ -254,11 +255,16 @@
 }
 
 
-.item-list--gallery {
+.item-list--gallery,
+.item-list--merch {
+    margin-bottom: $base-spacing-unit * 2;
+    margin-bottom: calc-rem($base-spacing-unit * 2);
+
     h5 {
         margin-bottom: 0;
     }
 }
+
 
 
 
@@ -462,7 +468,7 @@
             }
         }
         p {
-            color: $color__background--dark;
+            color: darken($color__background--dark, 10);
             font-size: $milli-size;
             font-size: calc-rem($milli-size);
         }
@@ -473,6 +479,13 @@
      */
     .item-list--lyrics {
         margin-bottom: 0;
+    }
+
+    .item-list__item--reviews {
+        .item-list__item {
+            margin-bottom: $base-spacing-unit;
+            margin-bottom: calc-rem($base-spacing-unit);
+        }
     }
 
 
@@ -493,32 +506,36 @@
         margin-bottom: $base-spacing-unit * 2;
         margin-bottom: calc-rem($base-spacing-unit * 2);
     }
-} //endif
 
 
-.item-list--news {
 
-    .item-list__item--article {
+    .item-list--news {
 
-        p {
-            margin-bottom: $base-spacing-unit;
-            margin-bottom: calc-rem($base-spacing-unit);
+        .item-list__item--article {
+
+            p {
+                margin-bottom: $base-spacing-unit;
+                margin-bottom: calc-rem($base-spacing-unit);
+            }
         }
-    }
 
-    @include breakpoint(680px) {
-        .heading-group {
-            position: relative;
+        @include breakpoint(680px) {
+            .heading-group {
+                position: relative;
 
-            &:before {
-                content: "¶";
-                color: #ddd;
-                font-size: 2em;
-                position: absolute;
-                left: -1em;
-                top: 0;
-                line-height: 1;
+                &:before {
+                    content: "¶";
+                    color: #ddd;
+                    font-size: 2em;
+                    position: absolute;
+                    left: -1em;
+                    top: 0;
+                    line-height: 1;
+                }
             }
         }
     }
-}
+
+
+
+} //endif

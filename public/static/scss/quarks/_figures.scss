@@ -82,6 +82,13 @@ figcaption {
         overflow: hidden;
     }
 
+    @include breakpoint($breakpoint__large){
+        float: left;
+        width: 100%;
+        margin-top: - ($base-spacing-unit * 3);
+        margin-top: - calc-rem($base-spacing-unit * 3);
+    }
+
     >img {
         width: 100%;
     }
@@ -101,6 +108,29 @@ figcaption {
         margin-top: - ($base-spacing-unit * 1.2);
         margin-top: - calc-rem($base-spacing-unit * 1.2);
     }
+
+    @include breakpoint($breakpoint__large) {
+        padding-right: 90px;
+        padding-right: calc-rem(90px);
+        padding-left: $base-spacing-unit;
+        padding-left: calc-rem($base-spacing-unit);
+        margin-top: 0;
+        float: right;
+        width: 40%;
+    }
+
+    @include breakpoint (700px){
+        max-width: 620px;
+        max-width: calc-rem(620px);
+        margin: 0 auto $base-spacing-unit auto;
+        margin: 0 auto calc-rem($base-spacing-unit) auto;
+        padding: 0 ($base-spacing-unit * 2);
+        padding: 0 calc-rem($base-spacing-unit * 2);
+    }
+
+    @include breakpoint(1266px){
+        width: 50%;
+    }
 }
 
 .item-list__figure {
@@ -113,7 +143,7 @@ figcaption {
         float: right;
         margin-left: $base-spacing-unit;
         margin-left: calc-rem($base-spacing-unit);
-        max-width: 50%;
+        max-width: 49%;
     }
 }
 
@@ -127,6 +157,8 @@ figcaption {
 }
 
 .figure__homepage-intro {
+    float: left;
+    width: 100%;
 
     @include breakpoint(900px){
         position: relative;

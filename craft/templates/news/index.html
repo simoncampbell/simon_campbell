@@ -16,21 +16,13 @@
     </header>
 
 
-    <div class="main-wrapper main-wrapper--article">
+    <div class="main-wrapper main-wrapper--article main-wrapper--listing">
 
         <ul class="item-list item-list--article item-list--news">
             {% for news in craft.entries.find({section:'News',limit:'15' }) %}
                 <li class="item-list__item item-list__item--article">
                     <article>
-
-                        {% for image in news.standardImage %}
-                            <figure>
-                                <img src="{{image.url}}"/>
-                            </figure>
-                        {% endfor %}
-
                         <div class="heading-group">
-
                             <h3><a href="{{ news.url }}">{{ news.title }}</a></h3>
 
                             <div class="meta-info-block meta-info-block--borderless">
@@ -46,17 +38,21 @@
                                         Health
                                     </a>
                                 </p>
-                            </div>
+                            </div><!-- //end.meta-info-block -->
+                        </div><!-- //end.heading-group -->
 
-                        </div>
+                         {% for image in news.standardImage %}
+                            <figure>
+                                <img src="{{image.url}}"/>
+                            </figure>
+                        {% endfor %}
 
                         {{ news.body }}
 
-
                     </article>
-                </li>
+                </li><!-- //end.item-list__item -->
             {% endfor %}
-        </ul>
+        </ul><!-- //end.item-list -->
 
         <a href="http://simoncampbell/index.php?p=news/archive.html" class="btn btn--icon btn--primary btn--arrow-left">
             <span class="icon ss-rewind">rewind</span>
@@ -64,8 +60,7 @@
                 Older entries
             </div>
         </a>
-
-    </div>
+    </div><!-- //end.main-wrapper -->
 
 {% endblock %}
 
@@ -98,7 +93,7 @@
             <li class="item-list__item item-list__item--live-shows">
                 {% include 'components/_live-shows--alternate.html' %}
             </li>
-        </ul>
-    </div><!-- // end.side-wrapper -->
+        </ul><!-- //end.item-list -->
+    </div><!-- //end.side-wrapper -->
 
 {% endblock %}

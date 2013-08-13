@@ -16,12 +16,6 @@
 
     <div class="main-wrapper main-wrapper--article item-list--news" role="main">
         <article>
-            {% for image in entry.standardImage %}
-                <figure>
-                    <img src="{{image.url}}"/>
-                    <p>{{news.caption}}</p>
-                </figure>
-            {% endfor %}
 
             <div class="heading-group heading-group--marginless">
                 <h3>{{ entry.title }}</h3>
@@ -41,6 +35,13 @@
                     </p>
                 </div>
             </div>
+
+            {% for image in entry.standardImage %}
+                <figure>
+                    <img src="{{image.url}}"/>
+                    <p>{{news.caption}}</p>
+                </figure>
+            {% endfor %}
 
             {{ entry.body }}
 

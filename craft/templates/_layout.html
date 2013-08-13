@@ -34,105 +34,99 @@
 
     <body class="{% block body_class %}{% endblock %}">
 
-        <!--  BRANDING -->
-        <div id="header" role="banner">
-            <div class="banner-logo">
-                {% if url == "" %}
-                    <h1>Simon Campbell</h1>
-                {% else %}
-                    <a class="banner-logo" href="/">
-                        <p>Simon Campbell</p>
-                    </a>
-                {% endif %}
+    <div class="desktop-wrapper">
+            <!--  BRANDING -->
+            <div id="header" role="banner">
+                <div class="banner-logo">
+                    {% if url == "" %}
+                        <h1>Simon Campbell</h1>
+                    {% else %}
+                        <a class="banner-logo" href="/">
+                            <p>Simon Campbell</p>
+                        </a>
+                    {% endif %}
+                </div>
+                {% include 'components/_navigation/_banner-nav.html' %}
             </div>
-            {% include 'components/_navigation/_banner-nav.html' %}
-        </div>
 
+            {% block content_main %}
+                <div class="main-wrapper" role="main">
+                </div><!-- // .wrapper__main -->
+            {% endblock %}
 
-        <!--  MAIN CONTENT AREA -->
-        {% block content_main %}
-            <div class="main-wrapper" role="main">
-            </div><!-- // .wrapper__main -->
-        {% endblock %}
+            {% block content_side %}
+                <div class="side-wrapper">
+                </div><!-- // .wrapper__side -->
+            {% endblock %}
 
-
-
-        <!--  SUPPLEMENTARY CONTENT AREA -->
-        {% block content_side %}
-            <div class="side-wrapper">
-            </div><!-- // .wrapper__side -->
-        {% endblock %}
-
-
-        <!--  FOOTER -->
-        <footer role="contentinfo" class="footer-main">
-            <div class="wide-wrapper">
-                <section class="footer-main__item footer-main__item--about">
-                    <div class="media">
-                        <figure class="media__img">
-                            <img src="/static/images/branding/simon.jpg" alt="Simon Campbell">
-                        </figure>
-                        <div class="media__body">
-                            <h3>About</h3>
-                            <p>Simon is a musician and producer of Supertone Records. His musical journies over the years have led him to many exciting adventures. <a class="link--reverse read-more" href="/about">Read more &raquo;</a></p>
+            <footer role="contentinfo" class="footer-main">
+                <div class="wide-wrapper">
+                    <section class="footer-main__item footer-main__item--about">
+                        <div class="media">
+                            <figure class="media__img">
+                                <img src="/static/images/branding/simon.jpg" alt="Simon Campbell">
+                            </figure>
+                            <div class="media__body">
+                                <h3>About</h3>
+                                <p>Simon is a musician and producer of Supertone Records. His musical journies over the years have led him to many exciting adventures. <a class="link--reverse read-more" href="/about">Read more &raquo;</a></p>
+                            </div>
                         </div>
+                    </section>
+
+                    <section class="footer-main__item footer-main__item--newsletter">
+                        <h3>Newsletter</h3>
+
+                        <fieldset>
+                            <label for="id_newsletter">Sign up for the newsletter below and get the latest updates on tour info, merch sales and album releases.</label>
+                            <input class="text-input text-input--secondary" type="email" placeholder="Your email">
+                            <button class="btn btn--secondary--on-black-bg" type="submit">Subscribe</button>
+                        </fieldset>
+                    </section>
+
+                    <section class="footer-main__item footer-main__item--social">
+                        <h3>Find me elsewhere</h3>
+                        <nav>
+                            <ul class="icon-list">
+                                <li class="icon-list__item">
+                                    <a class="link--reverse social-icon icon--twitter" href="http://twitter.com/SimonCampbell">
+                                       Twitter
+                                    </a>
+                                </li>
+
+                                <li class="icon-list__item">
+                                    <a class="link--reverse social-icon icon--youtube" href="http://www.youtube.com/user/simonjcampbell">
+                                        Youtube
+                                    </a>
+                                </li>
+
+                                <li class="icon-list__item">
+                                    <a class="link--reverse social-icon icon--vimeo" href="http://vimeo.com/simoncampbell">Vimeo</a>
+                                </li>
+
+                                <li class="icon-list__item">
+                                    <a class="link--reverse social-icon icon--facebook" href="https://www.facebook.com/Simon.Campbell.Musician">Facebook</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </section>
+                </div><!-- //end.wide-wrapper -->
+
+                <section class="footer-main__item footer-main__item--site-info">
+                    <div class="wide-wrapper">
+                        <ul class="nav">
+                            <li>Supertone Records &copy; {{ "now"|date("Y") }}</li>
+                            <li><a class="link--reverse" href="/privacy-policy">Privacy policy </a></li>
+                        </ul>
+
+                        <a href="#" class="link--reverse link--icon link--jump">
+                            <span class="icon ss ss-up">up</span>
+                            Back to top
+                        </a>
                     </div>
                 </section>
 
-                <section class="footer-main__item footer-main__item--newsletter">
-                    <h3>Newsletter</h3>
-
-                    <fieldset>
-                        <label for="id_newsletter">Sign up for the newsletter below and get the latest updates on tour info, merch sales and album releases.</label>
-                        <input class="text-input text-input--secondary" type="email" placeholder="Your email">
-                        <button class="btn btn--secondary--on-black-bg" type="submit">Subscribe</button>
-                    </fieldset>
-                </section>
-
-                <section class="footer-main__item footer-main__item--social">
-                    <nav>
-                        <ul class="icon-list">
-                            <li class="icon-list__item">
-                                <a class="link--reverse social-icon icon--twitter" href="http://twitter.com/SimonCampbell">
-                                   Twitter
-                                </a>
-                            </li>
-
-                            <li class="icon-list__item">
-                                <a class="link--reverse social-icon icon--youtube" href="http://www.youtube.com/user/simonjcampbell">
-                                    Youtube
-                                </a>
-                            </li>
-
-                            <li class="icon-list__item">
-                                <a class="link--reverse social-icon icon--vimeo" href="http://vimeo.com/simoncampbell">Vimeo</a>
-                            </li>
-
-                            <li class="icon-list__item">
-                                <a class="link--reverse social-icon icon--facebook" href="https://www.facebook.com/Simon.Campbell.Musician">Facebook</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </section>
-            </div><!-- //end.wide-wrapper -->
-
-
-
-            <section class="footer-main__item footer-main__item--site-info">
-                <div class="wide-wrapper">
-                    <ul class="nav">
-                        <li>Supertone Records &copy; {{ "now"|date("Y") }}</li>
-                        <li><a class="link--reverse" href="/privacy-policy">Privacy policy </a></li>
-                    </ul>
-
-                    <a href="#" class="link--reverse link--icon link--jump">
-                        <span class="icon ss ss-up">up</span>
-                        Back to top
-                    </a>
-                </div>
-            </section>
-
-        </footer><!-- //end.footer-main -->
+            </footer><!-- //end.footer-main -->
+        </div><!-- //end.desktrop-wrapper -->
 
         <!-- JAVASCRIPT -->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>

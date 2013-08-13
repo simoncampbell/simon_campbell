@@ -3,6 +3,7 @@
 \*------------------------------------*/
 
 #header {
+    @extend .cf;
     position: relative;
     width:100%;
     margin-bottom: $base-spacing-unit;
@@ -19,8 +20,13 @@
         height: 46px;
         height: calc-rem(46px);
     }
-}
 
+    @include breakpoint($breakpoint__large){
+        border-bottom: none;
+        margin-bottom: $base-spacing-unit * 3;
+        margin-bottom: calc-rem($base-spacing-unit * 3);
+    }
+}
 
 .banner-logo {
     @extend .main-wrapper;
@@ -39,12 +45,28 @@
     background-color: $color__background--black;
 
 
+    @include breakpoint($breakpoint__large){
+        width: 23%;
+        margin-left: 0;
+        padding-right: 0;
+        padding-left: $half-spacing-unit + 5px;
+        padding-left: calc-rem($half-spacing-unit + 5px);
+        float: left;
+        border-bottom: 2px solid $color__orange--secondary;
+        height: 47px;
+        height: calc-rem(47px);
+    }
+
+    @include breakpoint(1260px){
+        width: 21.3%;
+        padding-left: $base-spacing-unit;
+        padding-left: calc-rem($base-spacing-unit);
+    }
+
+
     h1, p {
-        background:url("/static/images/branding/simon-campbell__logo.png") no-repeat;
-
-
-
         @include image-2x("/static/images/branding/simon-campbell__logo--large.png", 5.3em);
+        background:url("/static/images/branding/simon-campbell__logo.png") no-repeat;
         background-size:200px;
         background-size:calc-rem(200px);
         text-indent: 100%;

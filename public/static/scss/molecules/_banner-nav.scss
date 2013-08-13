@@ -7,6 +7,16 @@
 
 #nav_pri {
     background-color: $color__background--dark;
+
+    @include breakpoint($breakpoint__large){
+        float: right;
+        width: 77%;
+        border-bottom: 2px solid $color__meta;
+    }
+
+    @include breakpoint(1260px) {
+        width: 78.7%;
+    }
 }
 
 
@@ -52,6 +62,10 @@
         width: 250px;
         width: calc-rem(250px);
     }
+
+    @include breakpoint($breakpoint__large) {
+        display: none;
+    }
 }
 
 
@@ -77,6 +91,18 @@
     }
 
     >li {
+
+        @include breakpoint($breakpoint__large){
+            display: block;
+            float: left;
+            width: 14.2%;
+            border-right: 1px solid $color__background--black;
+
+            &:last-of-type {
+                border-right: none;
+            }
+        }
+
         a {
             @extend %font__display--normal;
             color: $color__banner-nav--dark;
@@ -88,6 +114,14 @@
                 background-color: $color__banner-nav--hover;
                 color: $color__white;
             }
+
+            // change colors on desktop sizes
+            @include breakpoint($breakpoint__large){
+                border-bottom: none;
+                font-size: 15px;
+                font-size: calc-rem(15px);
+            }
+
         }
         .active {
             color: $color__white;
@@ -112,5 +146,14 @@
         border: 1px solid $color__background--black;
         border-top: none;
         border-bottom: none;
+    }
+
+    @include breakpoint($breakpoint__large){
+        .js & {
+            position: relative;
+            width: 100%;
+            opacity: 1;
+            display: block;
+        }
     }
 }

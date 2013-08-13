@@ -52,6 +52,12 @@
             @include breakpoint(680px){
                 @include max-width(8);
             }
+
+            @include breakpoint($breakpoint__large) {
+                max-width: none;
+                padding: 0 90px;
+                padding: 0 calc-rem(90px);
+            }
         }
     }
 

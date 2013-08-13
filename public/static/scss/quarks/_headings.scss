@@ -19,6 +19,11 @@ h1, .alpha {
         font-size: calc-rem($h1-size + 4px);
         line-height: ($line-height-ratio - .35);
     }
+
+    @include breakpoint($breakpoint__large) {
+        font-size: $h1-size + 13px;
+        font-size: calc-rem($h1-size + 13px);
+    }
 }
 
 h2, .beta {
@@ -31,6 +36,11 @@ h2, .beta {
         font-size: $h2-size + 4px;
         font-size: calc-rem($h2-size + 4px);
         line-height: ($line-height-ratio - .3);
+    }
+
+    @include breakpoint($breakpoint__large){
+        font-size: $h2-size + 10px;
+        font-size: calc-rem($h2-size + 10px);
     }
 }
 

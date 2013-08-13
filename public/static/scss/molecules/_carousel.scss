@@ -1,4 +1,4 @@
-/*------------------------------------*\
+ /*------------------------------------*\
     $CAROUSEL
 \*------------------------------------*/
 /**
@@ -202,13 +202,13 @@
     @extend .cf;
     position: absolute;
     top: 0;
-    opacity: .7;
     width: 100%;
     font-size: $milli-size;
     font-size: calc-rem($milli-size);
     clear: both;
     border: 1px solid $color__background--black;
     background-color: $color__background--black;
+    opacity: .7;
     border-bottom: 1px solid $color__background--dark;
 
 

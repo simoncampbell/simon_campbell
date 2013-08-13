@@ -58,12 +58,29 @@
     &.side-wrapper {
         @include breakpoint($breakpoint__small){
             @include max-width(7);
+            border-top: 1px solid $color__border--standard;
             padding-left: 0;
             padding-right:0;
-
-            border-top: 1px solid $color__border--standard;
             max-width: none;
             width: 100%;
+        }
+
+        @include breakpoint($breakpoint__large){
+            border-top: none;
+            border-left: 1px solid $color__border--standard;
+            float: right;
+            width: 43%;
+            margin-top: - $base-spacing-unit;
+            margin-top: - calc-rem($base-spacing-unit);
+            margin-bottom: -99999px; // 100% height hack
+            padding: 0;
+            padding-right: 90px;
+            padding-right: calc-rem(90px);
+            padding-bottom: 99999px; // 100% height hack
+        }
+
+        @include breakpoint(1260px){
+            width: 36%;
         }
     }
 
@@ -72,9 +89,18 @@
         margin-bottom: calc-rem($half-spacing-unit);
     }
 
+    &.island--wrapper__comments-container {
+        margin-top: 0;
+
+        @include breakpoint($breakpoint__large){
+            border-top: 1px solid $color__border--standard;
+        }
+    }
+
     .island--wrapper__content {
         border: none;
         padding: 0;
+        @extend .cf;
 
         @include breakpoint($breakpoint__small){
             @include max-width(8);
@@ -87,6 +113,13 @@
 
         @include breakpoint(680px){
             @include max-width(12);
+        }
+
+        @include breakpoint($breakpoint__large){
+            padding: $base-spacing-unit;
+            padding: calc-rem($base-spacing-unit);
+            padding-right: 0;
+            padding-top: 0;
         }
 
         ul {

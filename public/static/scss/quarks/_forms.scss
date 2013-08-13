@@ -67,7 +67,7 @@ input {
     height: calc-rem(40px);
     width: 300px;
     width: calc-rem(300px);
-    max-width:60%;
+    max-width:70%;
 
     &:last-of-type {
         margin-bottom:0;
@@ -101,8 +101,11 @@ textarea {
  * Search form styles
  */
 
-.search-form {
+#search-form {
     @extend .cf;
+    margin-bottom: $half-spacing-unit;
+    margin-bottom: calc-rem($half-spacing-unit);
+    display: block;
 }
     .search-form__input {
         margin-bottom: 0;
@@ -124,10 +127,14 @@ textarea {
         height: 42px;
         height: calc-rem(42px);
         width: 40px;
+        font-size: 18px;
+        font-size: calc-rem(18px);
+
+        &:hover,
+        &:focus {
+            color: darken($color__meta--dark, 20);
+        }
     }
-
-
-
 
 
 .form-block--comments {
@@ -154,8 +161,7 @@ label,
 }
 
     .label--headline {
-        font-size: $h3-size;
-        font-size: calc-rem($h4-size);
+        @extend h4;
         text-transform: none;
         color:$base-color;
     }

@@ -282,9 +282,7 @@
         margin-bottom: $base-spacing-unit;
         margin-bottom: calc-rem($base-spacing-unit);
         float: left;
-        width: 48%;
-        min-height: 100px;
-        min-height: calc-rem(100px);
+        width: 47%;
 
         &:nth-child(odd) {
             margin-right: $base-spacing-unit;
@@ -292,9 +290,68 @@
         }
     }
 
+    @include breakpoint($breakpoint__large) {
+        margin-right: 0;
+        margin-bottom: $base-spacing-unit * 2;
+        margin-bottom: calc-rem($base-spacing-unit * 2);
+        padding-right: 0;
+        width: 100%;
+
+        &:nth-child(odd) {
+            margin-right: 0;
+        }
+
+        h4 {
+            border-top: 1px solid $color__border--standard;
+            border-bottom: 1px solid $color__border--standard;
+            margin-left: - $base-spacing-unit;
+            margin-left: - calc-rem($base-spacing-unit);
+            margin-right: - 90px;
+            margin-right: - calc-rem(90px);
+            margin-bottom: $base-spacing-unit;
+            padding-top: $half-spacing-unit;
+            padding-top: calc-rem($half-spacing-unit);
+            padding-left: $base-spacing-unit;
+            padding-left: calc-rem($base-spacing-unit);
+            padding-right: 90px;
+            padding-right: - calc-rem(90px);
+            padding-bottom: $half-spacing-unit - 3px;
+            padding-bottom: calc-rem($half-spacing-unit - 3px);
+            line-height: 1.5;
+        }
+
+        &:first-of-type {
+            h4 {
+                border-top: none;
+            }
+        }
+    }
+
+    &.item-list__item--sidebar--only {
+        width: 100%;
+        border-bottom: 1px dotted $color__border--standard;
+        padding-bottom: $base-spacing-unit;
+        padding-bottom: calc-rem($base-spacing-unit);
+
+        @include breakpoint($breakpoint__medium $breakpoint__large) {
+            padding-bottom: $base-spacing-unit * 1.5;
+            padding-bottom: calc-rem($base-spacing-unit * 1.5);
+            margin-bottom: $base-spacing-unit * 2;
+            margin-bottom: calc-rem($base-spacing-unit * 2);
+        }
+
+        @include breakpoint($breakpoint__large) {
+            border: none;
+            margin-bottom: $base-spacing-unit;
+            margin-bottom: calc-rem($base-spacing-unit);
+        }
+    }
+
     &:only-of-type {
         width: 100%;
     }
+
+
 
     &:last-child {
         border-bottom: none;
@@ -306,18 +363,22 @@
 }
 
 
-
 /**
 * Live shows in the sidebar
 **/
 
 .item-list__item--live-shows {
-    @include breakpoint(680px) {
+    @include breakpoint(680px $breakpoint__large) {
         width: 50%;
         float: left;
         padding-right: $gutter;
         padding-right: calc-rem($gutter);
         margin-bottom: 0;
+    }
+
+    @include breakpoint($breakpoint__large){
+        width: 100%;
+        float: left;
     }
 }
 
@@ -348,7 +409,7 @@
 
 
     /**
-     * Album detail item list in /recordings/detail.html
+     * Album in sidebar
      */
     .item-list__item--album {
         @extend .cf;
@@ -356,17 +417,25 @@
         margin-bottom: calc-rem($base-spacing-unit);
         padding-bottom: 0;
 
-        @include breakpoint(680px){
+        @include breakpoint(680px $breakpoint__large) {
             float: right;
             width: 49%;
             margin-bottom: 0;
+        }
+
+
+        @include breakpoint($breakpoint__large) {
+            float: left;
+            width: 100%;
+            margin-bottom: $base-spacing-unit * 2;
+            margin-bottom: calc-rem($base-spacing-unit * 2);
         }
 
         .media {
             margin:0;
 
             // remove the media object from tablet sizes to desktop.
-            @include breakpoint(680px $breakpoint__desktop) {
+            @include breakpoint(680px $breakpoint__large) {
                 .media__img {
                     display: block;
                     width: 100%;
@@ -376,6 +445,21 @@
                 .media__body {
                     width: 100%;
                     display: block;
+                }
+            }
+
+            @include breakpoint($breakpoint__large) {
+                width: 100%;
+                float: left;
+
+                .media__img {
+                    float: left;
+                    clear: both;
+                }
+
+                .media__body {
+                    float: right;
+                    width: 68%;
                 }
             }
         }
@@ -436,6 +520,12 @@
 * Comments item list
 **/
     .item-list--comments {
+
+        @include breakpoint(1260px){
+            max-width: 539px;
+            max-width: calc-rem(539px);
+        }
+
         &:last-child {
             margin-bottom: $base-spacing-unit * 2;
             margin-bottom: calc-rem($base-spacing-unit * 2);
@@ -471,6 +561,10 @@
             color: darken($color__background--dark, 10);
             font-size: $milli-size;
             font-size: calc-rem($milli-size);
+
+            @include breakpoint($breakpoint__large) {
+                font-size: $base-font-size;
+            }
         }
     }
 

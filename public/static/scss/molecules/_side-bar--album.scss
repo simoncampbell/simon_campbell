@@ -5,6 +5,8 @@
 
 
 .side-bar--album {
+    position: relative;
+
     .media__img {
         @include transition(all 0.2s ease-in-out);
         margin-bottom: 0;
@@ -41,6 +43,40 @@
 
     h4 {
         margin-bottom: 0;
+
+        @include breakpoint(680px $breakpoint__large){
+            position: absolute;
+            top: 0;
+            background-color: $color__background--black;
+            opacity: .6;
+            z-index: 1;
+            width: 100%;
+            padding: $half-spacing-unit;
+            padding: calc-rem($half-spacing-unit);
+            color: $color__white;
+        }
+
+        @include breakpoint($breakpoint__large){
+            float: none;
+            width: auto;
+            border-bottom: 1px solid $color__border--standard;
+            border-top: 1px solid $color__border--standard;
+            margin-left: - $base-spacing-unit;
+            margin-left: - calc-rem($base-spacing-unit);
+            margin-right: - 90px;
+            margin-right: - calc-rem(90px);
+            margin-bottom: $base-spacing-unit / 2;
+            margin-bottom: calc-rem($base-spacing-unit / 2);
+            padding-top: $half-spacing-unit;
+            padding-top: calc-rem($half-spacing-unit);
+            padding-left: $base-spacing-unit;
+            padding-left: calc-rem($base-spacing-unit);
+            padding-right: 90px;
+            padding-right: - calc-rem(90px);
+            padding-bottom: $half-spacing-unit - 3px;
+            padding-bottom: calc-rem($half-spacing-unit - 3px);
+            line-height: 1.5;
+        }
     }
 
     p {

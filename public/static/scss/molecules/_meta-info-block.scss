@@ -10,6 +10,10 @@
     margin-bottom: calc-rem($base-spacing-unit);
     padding: $half-spacing-unit 0;
     padding: calc-rem($half-spacing-unit) 0;
+
+    .main-wrapper {
+        width: 100%;
+    }
 }
 
     .meta-info-block--borderless {

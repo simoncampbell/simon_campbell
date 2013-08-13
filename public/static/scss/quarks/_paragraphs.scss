@@ -14,8 +14,8 @@
     }
 
     @include breakpoint(622px) {
-        font-size: 19px;
-        font-size: calc-rem(19px);
+        font-size: 18px;
+        font-size: calc-rem(18px);
     }
 
     &:first-letter {

@@ -127,9 +127,9 @@
     }
 
     .island--wrapper__content {
+        @extend .cf;
         border: none;
         padding: 0;
-        @extend .cf;
 
         @include breakpoint($breakpoint__small){
             @include max-width(8);
@@ -198,6 +198,7 @@
     }
 
     .island__content {
+        @extend .cf;
         padding: $gutter;
         padding: calc-rem($gutter);
         border: 1px solid $color__border--standard;

@@ -71,13 +71,10 @@
             </header>
             <p>In my younger and more vulnerable years my father gave me some advice that I’ve been turning over in my mind ever since. “Whenever you feel like criticizing any one,” he told me, “just remember that all the people in this world haven’t had the advantages that you’ve had.” <a href="URL">Read more &raquo;</a></p>
         </article>
-
-    </section>
+    </section><!-- //end.item-list -->
 
     <section>
-        <div class="live-shows-block--home">
             {% include 'components/_live-shows.html' %}
-        </div>
     </section>
 
 </div><!-- //end.main-wrapper -->
@@ -88,9 +85,10 @@
 
 {% block content_side %}
 
-    <div class="side-wrapper side-wrapper--rev side-wrapper--home">
-
-        <h3>Latest news updates</h3>
+    <div class="side-wrapper side-wrapper--rev">
+        <div class="heading-group">
+            <h3>Latest news updates</h3>
+        </div>
 
         {% for news in craft.entries.find({section:'News', limit:'3'}) %}
                 <div class="heading-group heading-group--marginless">
@@ -116,31 +114,36 @@
         {% endfor %}
     </div>
 
-    <div class="main-wrapper main-wrapper--rev">
+    <div class="wrapper wrapper--recent-entries">
+        <div class="wide-wrapper wide-wrapper--recent-entries">
 
-        <h3>Recent equipment &amp; gear entries</h3>
+            <h3>Recent equipment &amp; gear entries</h3>
 
-        <ul class="item-list">
-            {% for post in craft.entries.find({section:'Equipment', limit:'3'}) %}
-                <li class="item-list__item item-list__item--article">
+            <ul class="item-list">
+                {% for post in craft.entries.find({section:'Equipment', limit:'3'}) %}
+                    <li class="item-list__item item-list__item--article">
 
-                    <!-- REQUIRED EQUIPMENT IMAGE -->
-                    {% for image in post.equipmentImage %}
-                        <figure class="equipment-image">
-                            <a href="{{post.url}}">
-                                <img src="{{image.url}}">
-                            </a>
-                        </figure>
-                    {% endfor %}
+                        <!-- REQUIRED EQUIPMENT IMAGE -->
+                        {% for image in post.equipmentImage %}
+                            <figure class="equipment-image">
+                                <a href="{{post.url}}">
+                                    <img src="{{image.url}}">
+                                </a>
+                            </figure>
+                        {% endfor %}
 
-                    <div class="heading-group heading-group--marginless">
-                        <h4><a href="{{post.url}}">{{post.title}}</a></h4>
-                    </div>
+                        <div class="heading-group heading-group--marginless">
+                            <h4><a href="{{post.url}}">{{post.title}}</a></h4>
+                        </div>
 
-                    <p>{{post.shortExtract}} <a href="URL">Read more »</a></p>
+                        <p>{{post.shortExtract}} <a href="URL">Read more »</a></p>
 
-                </li>
-            {% endfor %}
-        </ul><!-- //end.item-list -->
-    </div>
+                    </li>
+                {% endfor %}
+            </ul><!-- //end.item-list -->
+
+        </div><!-- //end.wide-wrapper -->
+
+    </div><!-- //end.wrapper -->
+
 {% endblock %}

@@ -16,13 +16,13 @@
 
     <!-- BIG IMAGE -->
     {% for image in contactAbout.largeImage %}
-        <figure class="figure__hero figure__hero--article">
+        <figure class="figure__hero figure__hero--about">
             <img src="{{image.url}}">
         </figure>
     {% endfor %}
 
     <!-- CONTENT -->
-    <div class="main-wrapper main-wrapper--article">
+    <div class="main-wrapper main-wrapper--article main-wrapper--listing">
 
         <p class="lede">{{contactAbout.shortExtract}}</p>
 

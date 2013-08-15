@@ -19,67 +19,6 @@
  */
 
 
-
-/*------------------------------------*\
-    $CONTENTS
-\*------------------------------------*/
-/**
- * CONTENTS............You’re reading it!
- * IMPORTS.............Begin importing the sections below
- *
- *
- * Utitlities-------------------------------------------------------
- *
- * NORMALIZE...........normalize.css
- * RESET...............Set defaults
- * CLEARFIX............
- * FONT-STACK..........Font stack settings
- * HELPER..............Handy layout classes for classless items
- * COLORS..............System wide colors
- *
- *
- * External compass includes ---------------------------------------
- *
- * TOOLKIT.............http://cl.ly/2u3h1u0W0x1D
- * BREAKPOINT..........http://cl.ly/1F112q0Q0D28
- *
- *
- * Quarks -----------------------------------------------------------
- * MAIN................Main elements like `html`, `body`, etc.
- * HEADINGS............Double-stranded heading hierarchy
- * PARAGRAPHS..........
- * BLOCKQUOTES.........
- * FIGURES.............
- * FORMS...............
- * LISTS...............
- * LINKS...............
- * IMAGES..............
- * TABLES..............
- * SMALLPRINT..........Smaller text elements like `small`
- * MICRO...............Micro-typographic elements like 'span', 'kbd', etc.
- *
- *
- * Atoms -----------------------------------------------------------
- * GRIDS...............
- * NAV.................Put a list in horizontal nav mode
- * BEAUTONS............Use the beautons micro library for buttons
- * MEDIA...............Media object
- * MARGINALIA..........Simple marginalia content
- * ISLAND..............Boxed off content
- * ITEM-LIST...........Item of articles ie. RSS feed style
- * ICON................Text and icon couplings
- * RULES...............Horizontal rules
- * FLAG................The flag object
- *
- *
- * Molecules ------------------------------------------------------
- * BANNER-NAV.........Banner navigation
- * FOOTER.............
- *
- */
-
-
-
 /*------------------------------------*\
     $IMPORTS
 \*------------------------------------*/
@@ -133,6 +72,7 @@
 @import "atoms/heading-group";
 @import "atoms/flag";
 @import "atoms/micro-info";
+@import "atoms/carousel";
 
 /**
  * Molecules; combinations of atoms and independent modules
@@ -146,10 +86,10 @@
 @import "molecules/side-bar--album";
 @import "molecules/seller-block";
 @import "molecules/dropdown-nav";
-@import "molecules/carousel";
 @import "molecules/featured";
 @import "molecules/equipment-image";
 @import "molecules/record-sale";
 @import "molecules/comments";
+@import "molecules/carousel--gallery";
 
 

@@ -6,27 +6,67 @@
 **/
 
 .featured {
+    @extend .cf;
     padding-bottom: $base-spacing-unit;
     padding-bottom: calc-rem($base-spacing-unit);
     margin-bottom: $base-spacing-unit;
     margin-bottom: calc-rem($base-spacing-unit);
     border-bottom: 1px dotted $color__border--standard;
 
+    @include breakpoint($breakpoint__large) {
+        border: none;
+    }
 }
+
+    .featured__heading {
+
+        @include breakpoint($breakpoint__large) {
+            float: left;
+            width: 32%;
+
+            >h3 {
+                font-size: 34px;
+                font-size: calc-rem(34px);
+            }
+        }
+
+        @include breakpoint(1260px){
+            width: 32%;
+        }
+    }
+
+    .featured__post-content {
+
+        >p {
+            margin-bottom: 0;
+
+            @include breakpoint($breakpoint__large) {
+                font-size: 15px;
+                font-size: calc-rem(15px);
+                float: left;
+                width: 32%;
+            }
+
+            @include breakpoint(1260px){
+                font-size: 16px;
+                font-size: calc-rem(16px);
+            }
+        }
+    }
 
     .featured__post-image {
         margin-bottom: $half-spacing-unit;
         margin-bottom: calc-rem($half-spacing-unit);
 
-    }
+        @include breakpoint($breakpoint__large) {
+            float: right;
+            width: 65.5%;
+        }
 
-    .featured__post-content {
-
-        p {
-            margin-bottom: 0;
+        @include breakpoint(1260px){
+            width: 66%;
         }
     }
-
 
 
     .featured__album {

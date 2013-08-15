@@ -22,7 +22,7 @@
             {% for news in craft.entries.find({section:'News',limit:'15' }) %}
                 <li class="item-list__item item-list__item--article">
                     <article>
-                        <div class="heading-group">
+                        <div class="heading-group heading-group--marginless">
                             <h3><a href="{{ news.url }}">{{ news.title }}</a></h3>
 
                             <div class="meta-info-block meta-info-block--borderless">

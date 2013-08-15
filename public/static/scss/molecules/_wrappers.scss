@@ -52,7 +52,7 @@
 .desktop-wrapper {
     @extend .cf;
     overflow: hidden;
-    background-image:url(/static/images/grids/grid.png);
+    // background-image:url(/static/images/grids/grid.png);
     background-size: 100%;
     background-color: $color__white;
 
@@ -110,15 +110,33 @@
             }
 
         }
+
+        @include breakpoint(1260px) {
+            width: 59%;
+        }
     }
 
     .wrapper--recent-entries {
         margin-top: $base-spacing-unit;
         margin-top: calc-rem($base-spacing-unit);
+
+        @include breakpoint(720px){
+            margin-top: $base-spacing-unit * 2;
+            margin-top: calc-rem($base-spacing-unit * 2);
+            margin-bottom: $base-spacing-unit * 2;
+            margin-bottom: calc-rem($base-spacing-unit * 2);
+        }
     }
 
     .wide-wrapper--recent-entries {
         @extend .cf;
+
+        @include breakpoint(620px 1260px){
+            p {
+                font-size: 16px;
+                font-size: calc-rem(16px);
+            }
+        }
 
         @include breakpoint(720px){
             .item-list__item {
@@ -127,6 +145,8 @@
                 border-bottom: none;
                 margin-right: $base-spacing-unit;
                 margin-right: calc-rem($base-spacing-unit);
+                margin-bottom: 0;
+                padding-bottom: 0;
 
                 &:nth-child(2n){
                     margin-right: 0;
@@ -155,6 +175,14 @@
     }
 }
 
+    .main-wrapper--full {
+        @include breakpoint($breakpoint__large){
+            width: 100%;
+            max-width: 100%;
+            padding-right: 90px;
+            padding-right: calc-rem(90px);
+        }
+    }
 
 
     /**
@@ -238,6 +266,8 @@
 
     .main-wrapper--album {
         @include breakpoint($breakpoint__large){
+            margin-top: $base-spacing-unit / 2;
+            margin-top: calc-rem($base-spacing-unit / 2);
             width: 100%;
             max-width: 100%;
             padding-right: 90px;
@@ -247,11 +277,7 @@
 
 
 
-
-
 .side-wrapper {}
-
-
     /**
      * Reverse the side wrapper to float right
      */
@@ -280,4 +306,66 @@
 
     .side-wrapper--alternate {
         border-top: none;
+    }
+
+.homepage-wrapper {
+    @extend .cf;
+    margin-bottom: $base-spacing-unit;
+    margin-bottom: calc-rem($base-spacing-unit);
+}
+
+    .homepage-wrapper--news {
+        @include breakpoint(580px 720px){
+            .item-list__item {
+                float: left;
+                width: 45%;
+                margin-right: $base-spacing-unit;
+                margin-right: calc-rem($base-spacing-unit);
+
+                &:nth-child(2n) {
+                    margin-right: 0;
+                }
+            }
+        }
+
+        @include breakpoint(720px){
+            float: right;
+            width: 48.9%;
+        }
+
+        @include breakpoint(1260px){
+            .item-list__item {
+                float: left;
+                width: 45%;
+                margin-right: $base-spacing-unit;
+                margin-right: calc-rem($base-spacing-unit);
+
+                &:nth-child(2n) {
+                    margin-right: 0;
+                }
+            }
+        }
+
+        @include breakpoint(1260px){
+            width: 65.4%;
+        }
+    }
+
+    .homepage-wrapper--live-shows {
+
+        @include breakpoint(720px){
+            margin-top: 5px;
+            margin-top: calc-rem(5px);
+            float: left;
+            width: 48%;
+
+            .live-shows-block header > a {
+                right: $base-spacing-unit;
+                right: calc-rem($base-spacing-unit);
+            }
+        }
+
+        @include breakpoint(1260px){
+            width: 32%;
+        }
     }

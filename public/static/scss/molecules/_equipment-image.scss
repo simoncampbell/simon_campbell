@@ -17,9 +17,10 @@
 	}
 
 	a {
-		padding:$half-spacing-unit;
+		padding: $half-spacing-unit;
+		padding: calc-rem($half-spacing-unit);
 		overflow: hidden;
-		max-height: 12em;
+		max-height: 13em;
 		cursor: pointer;
 	}
 }

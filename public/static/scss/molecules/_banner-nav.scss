@@ -106,7 +106,8 @@
         a {
             @extend %font__display--normal;
             color: $color__banner-nav--dark;
-            padding: ($half-spacing-unit*1.5) $base-spacing-unit;
+            padding: ($half-spacing-unit*1.5) ($base-spacing-unit - 3px);
+            padding: calc-rem($half-spacing-unit*1.5) calc-rem($base-spacing-unit - 3px);
             border-bottom: 1px solid $color__background--black;
 
             &:hover,
@@ -116,11 +117,18 @@
             }
 
             // change colors on desktop sizes
-            @include breakpoint($breakpoint__large){
+            @include breakpoint($breakpoint__large 1260px){
                 border-bottom: none;
                 font-size: 15px;
                 font-size: calc-rem(15px);
             }
+
+            @include breakpoint(1260px){
+                border-bottom: none;
+                padding: ($half-spacing-unit*1.5) ($base-spacing-unit);
+                padding: calc-rem($half-spacing-unit*1.5) calc-rem($base-spacing-unit) calc-rem($half-spacing-unit*1.3) calc-rem($base-spacing-unit);
+            }
+
 
         }
         .active {

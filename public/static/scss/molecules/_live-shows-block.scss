@@ -31,6 +31,13 @@
                 right: 90px;
                 right: calc-rem(90px);
             }
+
+            .side-wrapper--rev & {
+                @include breakpoint ($breakpoint__large) {
+                    right: $gutter;
+                    right: cacl-rem($gutter);
+                }
+            }
         }
     }
 }
@@ -47,7 +54,7 @@
 
         @include breakpoint($breakpoint__large){
             border: none;
-            background-color: transparent;
+            background-color: $color__sidebar--bg;
             float: none;
             width: auto;
             border-bottom: 1px solid $color__border--standard;
@@ -66,6 +73,17 @@
             padding-bottom: $half-spacing-unit - 3px;
             padding-bottom: calc-rem($half-spacing-unit - 3px);
             line-height: 1.5;
+        }
+
+        .side-wrapper--rev & {
+            @include breakpoint ($breakpoint__large) {
+                margin-left: - 110px;
+                margin-left: - calc-rem(110px);
+                margin-right: - $base-spacing-unit;
+                margin-right: - calc-rem($base-spacing-unit);
+                padding-left: 110px;
+                padding-left: calc-rem(110px);
+            }
         }
     }
 
@@ -115,7 +133,7 @@
 
             @include breakpoint($breakpoint__large){
                 float: left;
-                width: 69%;
+                width: 68%;
                 margin-bottom: $base-spacing-unit;
                 margin-bottom: calc-rem($base-spacing-unit);
                 border-bottom: none;

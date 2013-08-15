@@ -14,7 +14,7 @@ figure {
     }
 
     img {
-        margin: 0 auto;
+        // margin: 0 auto;
     }
 
     /**
@@ -82,11 +82,18 @@ figcaption {
         overflow: hidden;
     }
 
+    @include breakpoint(771px){
+        max-height: 420px;
+        max-height: calc-rem(420px);
+    }
+
     @include breakpoint($breakpoint__large){
         float: left;
         width: 100%;
         margin-top: - ($base-spacing-unit * 3);
         margin-top: - calc-rem($base-spacing-unit * 3);
+        max-height: 470px;
+        max-height: calc-rem(470px);
     }
 
     >img {
@@ -128,8 +135,24 @@ figcaption {
         padding: 0 calc-rem($base-spacing-unit * 2);
     }
 
+    @include breakpoint($breakpoint__large) {
+        padding-right: 90px;
+        padding-right: calc-rem(90px);
+        padding-left: 0;
+        width: 37%;
+    }
+
     @include breakpoint(1266px){
-        width: 50%;
+        width: 41.7%;
+    }
+}
+
+.figure__hero--about {
+    max-height: none;
+
+    @include breakpoint($breakpoint__small){
+        margin-top: -21px;
+        margin-top: - calc-rem(21px);
     }
 }
 

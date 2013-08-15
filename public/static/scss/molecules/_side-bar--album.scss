@@ -7,6 +7,10 @@
 .side-bar--album {
     position: relative;
 
+    &:first-of-type h4 {
+        border-top: none;
+    }
+
     .media__img {
         @include transition(all 0.2s ease-in-out);
         margin-bottom: 0;
@@ -76,6 +80,18 @@
             padding-bottom: $half-spacing-unit - 3px;
             padding-bottom: calc-rem($half-spacing-unit - 3px);
             line-height: 1.5;
+            background-color: $color__sidebar--bg;
+        }
+
+        .side-wrapper--rev & {
+            @include breakpoint ($breakpoint__large) {
+                margin-left: - 110px;
+                margin-left: - calc-rem(110px);
+                margin-right: - $base-spacing-unit;
+                margin-right: - calc-rem($base-spacing-unit);
+                padding-left: 110px;
+                padding-left: calc-rem(110px);
+            }
         }
     }
 

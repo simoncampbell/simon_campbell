@@ -7,7 +7,6 @@
 
 
 .record-sale {
-
     @include breakpoint(680px $breakpoint__large){
 
         > figure {
@@ -32,4 +31,21 @@
             }
         }
     }
+
+    @include breakpoint($breakpoint__large){
+        padding-top: $base-spacing-unit;
+        padding-top: calc-rem($base-spacing-unit);
+    }
+
+    figure {
+        img {
+            margin: 0 auto;
+        }
+    }
+
+    h3 {
+        font-size: $h4-size + 2px;
+        font-size: calc-rem($h4-size + 2px);
+    }
+
 }

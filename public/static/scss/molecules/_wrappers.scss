@@ -11,6 +11,11 @@
     padding-top: calc-rem($base-spacing-unit);
     border-top: 1px dotted $color__border--standard;
 
+    &.wrapper--borderless {
+        border: none;
+        padding-top: 0;
+    }
+
     @include breakpoint($breakpoint__large){
         float: left;
         border-top: 1px solid $color__border--standard;
@@ -47,7 +52,7 @@
 .desktop-wrapper {
     @extend .cf;
     overflow: hidden;
-    // background-image:url(/static/images/grids/grid.png);
+    background-image:url(/static/images/grids/grid.png);
     background-size: 100%;
     background-color: $color__white;
 
@@ -61,12 +66,16 @@
 }
 
 .wide-wrapper {
+    clear: both;
+
     @include breakpoint(680px){
         @include max-width(12);
     }
 
     @include breakpoint($breakpoint__large){
         max-width: none;
+        padding-right: 90px;
+        padding-right: calc-rem(90px);
     }
 }
 
@@ -77,8 +86,28 @@
         margin-right: 0;
         margin-right: 0;
         width: 60%;
+        max-width: 704px;
+        max-width: calc-rem(704px);
     }
 }
+
+
+
+    /**
+     * Reverse the main wrapper to float right
+     */
+    .main-wrapper--rev {
+
+        @include breakpoint($breakpoint__large) {
+            float: right;
+            padding-left: 0;
+            padding-right: 90px;
+            padding-right: calc-rem(90px);
+            margin-right: 0;
+            width: 55.8%;
+        }
+    }
+
     .main-wrapper--article {
         margin-bottom: $base-spacing-unit *2;
         margin-bottom: calc-rem($base-spacing-unit *2);
@@ -91,9 +120,9 @@
 
     .main-wrapper--listing {
         @include breakpoint($breakpoint__large){
-            width: 53%;
-            margin-right: $base-spacing-unit * 2;
-            margin-right: calc-rem($base-spacing-unit * 2);
+            width: 55.8%;
+            margin-right: $base-spacing-unit;
+            margin-right: calc-rem($base-spacing-unit);
         }
     }
 
@@ -110,6 +139,12 @@
         }
 
     .main-wrapper--gallery {
+
+        @include breakpoint($breakpoint__large){
+            padding-left: 90px;
+            padding-left: calc-rem(90px);
+        }
+
         h3 {
             margin-bottom: 0;
         }
@@ -125,19 +160,33 @@
 
 .side-wrapper {}
 
-.side-wrapper--home {
-    border-bottom: 1px dotted $color__border--standard;
-    margin-bottom: $base-spacing-unit * 2;
-    margin-bottom: calc-rem($base-spacing-unit * 2);
-    padding-bottom: $half-spacing-unit;
-    padding-bottom: calc-rem($half-spacing-unit);
 
-    h3 {
-        margin-bottom: $base-spacing-unit;
-        margin-bottom: calc-rem($base-spacing-unit);
+    /**
+     * Reverse the side wrapper to float right
+     */
+    .side-wrapper--rev {
+        @include breakpoint($breakpoint__large) {
+            padding-left: 90px;
+            padding-left: calc-rem(90px);
+            padding-right: 0;
+            float: left;
+            width: 37%;
+        }
     }
-}
 
-.side-wrapper--alternate {
-    border-top: none;
-}
+    .side-wrapper--home {
+        border-bottom: 1px dotted $color__border--standard;
+        margin-bottom: $base-spacing-unit * 2;
+        margin-bottom: calc-rem($base-spacing-unit * 2);
+        padding-bottom: $half-spacing-unit;
+        padding-bottom: calc-rem($half-spacing-unit);
+
+        h3 {
+            margin-bottom: $base-spacing-unit;
+            margin-bottom: calc-rem($base-spacing-unit);
+        }
+    }
+
+    .side-wrapper--alternate {
+        border-top: none;
+    }

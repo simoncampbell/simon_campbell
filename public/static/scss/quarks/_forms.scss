@@ -69,10 +69,6 @@ input {
     width: calc-rem(300px);
     max-width:70%;
 
-    &:last-of-type {
-        margin-bottom:0;
-    }
-
     &.btn {
         width: auto;
     }

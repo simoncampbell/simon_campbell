@@ -72,11 +72,9 @@
     .heading-group--marginless {
         margin:0;
 
-        @include breakpoint($breakpoint__large){
-            .meta-info-block {
-                margin-bottom: $half-spacing-unit;
-                margin-bottom: calc-rem($half-spacing-unit);
-            }
+        .meta-info-block {
+            margin-bottom: $half-spacing-unit;
+            margin-bottom: calc-rem($half-spacing-unit);
         }
     }
 

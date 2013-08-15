@@ -11,12 +11,12 @@
 {% block content_main %}
 
 
-    <div class="main-wrapper main-wrapper--article" role="main">
+    <header class="heading-group heading-group--main">
+        <h5>Equipment and Gear</h5>
+        <h1>Guitars</h1>
+    </header>
 
-        <header class="heading-group heading-group--main--alternate">
-            <h5>Equipment and Gear</h5>
-            <h1>Guitars</h1>
-        </header>
+    <div class="main-wrapper main-wrapper--article main-wrapper--listing" role="main">
 
         <p class="lede lede--double">Guitars have always been a big part of my life. From the original Stratocaster that I bought for myself when I was just twelve years old to the Yamaha 3710i that I stole from my sister’s boyfriend at 24. Electrics have always held a special place in my heart. Here I’d like to share some of my favourites.</p>
 
@@ -84,13 +84,6 @@
 
 {% block content_side %}
 
-    <div class="wrapper">
-        <div class="wide-wrapper">
-            {% include 'components/_equipment/_category-list.html' %}
-        </div> <!-- //end.main-wrapper -->
-    </div> <!-- //end.wrapper -->
-
-
     <div class="side-wrapper island island--wrapper">
 
         <ul class="item-list island--wrapper__content">
@@ -101,7 +94,8 @@
             <li class="item-list__item item-list__item--live-shows">
                 {% include 'components/_live-shows--alternate.html' %}
             </li>
-        </ul>
-    </div>
+        </ul><!-- //end.item-list -->
+
+    </div><!-- //end.side-wrapper -->
 
 {% endblock %}

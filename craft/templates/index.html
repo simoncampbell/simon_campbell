@@ -33,49 +33,35 @@
 
     <section class="item-list item-list--featured">
         <article class="item-list__item item-list__item--article">
-            <header class="heading-group">
+            <header class="heading-group heading-group--marginless">
                 <h3><a href="URL">The TC Analogue 3a</a></h3>
                 <div class="meta-info-block meta-info-block--borderless ">
                     <time class="meta-info-block__item">27th July 2013</time>
-                     <p class="meta-info-block__item">Posted in
-                        <a class="category-link" href="URL!">
-                            <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
-                            Life
-                        </a>,
-                        <a class="category-link" href="URL!">
-                            <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
-                            Health
-                        </a>
-                    </p>
                 </div>
             </header>
             <p>In my younger and more vulnerable years my father gave me some advice that I’ve been turning over in my mind ever since. “Whenever you feel like criticizing any one,” he told me, “just remember that all the people in this world haven’t had the advantages that you’ve had.” <a href="URL">Read more &raquo;</a></p>
         </article>
 
         <article class="item-list__item item-list__item--article">
-            <header class="heading-group">
+            <header class="heading-group heading-group--marginless">
                 <h3><a href="URL">The TC Analogue 3a</a></h3>
                 <div class="meta-info-block meta-info-block--borderless ">
                     <time class="meta-info-block__item">27th July 2013</time>
-                    <p class="meta-info-block__item">Posted in
-                        <a class="category-link" href="URL!">
-                            <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
-                            Life
-                        </a>,
-                        <a class="category-link" href="URL!">
-                            <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
-                            Health
-                        </a>
-                    </p>
+                </div>
+            </header>
+            <p>In my younger and more vulnerable years my father gave me some advice that I’ve been turning over in my mind ever since. “Whenever you feel like criticizing any one,” he told me, “just remember that all the people in this world haven’t had the advantages that you’ve had.” <a href="URL">Read more &raquo;</a></p>
+        </article>
+
+        <article class="item-list__item item-list__item--article">
+            <header class="heading-group heading-group--marginless">
+                <h3><a href="URL">The TC Analogue 3a</a></h3>
+                <div class="meta-info-block meta-info-block--borderless ">
+                    <time class="meta-info-block__item">27th July 2013</time>
                 </div>
             </header>
             <p>In my younger and more vulnerable years my father gave me some advice that I’ve been turning over in my mind ever since. “Whenever you feel like criticizing any one,” he told me, “just remember that all the people in this world haven’t had the advantages that you’ve had.” <a href="URL">Read more &raquo;</a></p>
         </article>
     </section><!-- //end.item-list -->
-
-    <section>
-            {% include 'components/_live-shows.html' %}
-    </section>
 
 </div><!-- //end.main-wrapper -->
 
@@ -84,35 +70,6 @@
 
 
 {% block content_side %}
-
-    <div class="side-wrapper side-wrapper--rev">
-        <div class="heading-group">
-            <h3>Latest news updates</h3>
-        </div>
-
-        {% for news in craft.entries.find({section:'News', limit:'3'}) %}
-                <div class="heading-group heading-group--marginless">
-                    <h4><a href="{{news.url}}">{{news.title}}</a></h4>
-
-                    <div class="meta-info-block meta-info-block--borderless">
-
-                        <time class="meta-info-block__item" datetime="{{news.postDate|date("Y-m-d")}}">{{news.postDate|date("jS F Y")}}</time>
-
-                        <p class="meta-info-block__item">Posted in
-                            <a class="category-link" href="URL!">
-                                <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
-                                Life
-                            </a>,
-                            <a class="category-link" href="URL!">
-                                <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
-                                Health
-                            </a>
-                        </p>
-                    </div>
-                </div>
-            </li>
-        {% endfor %}
-    </div>
 
     <div class="wrapper wrapper--recent-entries">
         <div class="wide-wrapper wide-wrapper--recent-entries">
@@ -141,6 +98,38 @@
                     </li>
                 {% endfor %}
             </ul><!-- //end.item-list -->
+
+        </div><!-- //end.wide-wrapper -->
+
+    </div><!-- //end.wrapper -->
+
+    <div class="wrapper">
+        <div class="wide-wrapper">
+            <section class="homepage-wrapper homepage-wrapper--news">
+
+                <div class="heading-group">
+                    <h3>Latest news updates</h3>
+                </div>
+
+                <ul class="item-list item-list--homepage">
+                    {% for news in craft.entries.find({section:'News', limit:'4'}) %}
+                        <li class="item-list__item">
+                            <div class="heading-group heading-group--marginless">
+                                <h4><a href="{{news.url}}">{{news.title}}</a></h4>
+                                <div class="meta-info-block meta-info-block--borderless">
+
+                                    <time class="meta-info-block__item" datetime="{{news.postDate|date("Y-m-d")}}">{{news.postDate|date("jS F Y")}}</time>
+                                </div><!-- //end.meta-info-block -->
+                            </div><!-- //end.heading-group -->
+
+                        </li>
+                    {% endfor %}
+                </ul><!-- .item-list -->
+            </section>
+
+            <section class="homepage-wrapper homepage-wrapper--live-shows">
+                    {% include 'components/_live-shows.html' %}
+            </section>
 
         </div><!-- //end.wide-wrapper -->
 

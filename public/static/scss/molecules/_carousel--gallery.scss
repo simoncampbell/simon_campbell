@@ -6,27 +6,28 @@
  *
  */
 
-
-
-
 .carousel-wrapper {
     border-bottom: 1px solid $color__border--standard;
     margin-bottom: $base-spacing-unit;
     margin-bottom: calc-rem($base-spacing-unit);
-    padding-bottom: $base-spacing-unit * 5;
-    padding-bottom: calc-rem($base-spacing-unit * 5);
+    padding-bottom: $base-spacing-unit * 2;
+    padding-bottom: calc-rem($base-spacing-unit * 2);
 
 
     @include breakpoint($breakpoint__large) {
         float: left;
         width: 100%;
+        padding-bottom: $base-spacing-unit * 4;
+        padding-bottom: calc-rem($base-spacing-unit * 4);
     }
 }
 
 
     .album__info-wrapper {
         @include breakpoint($breakpoint__large) {
-            width: 34.6%;
+            width: 34.3%;
+            padding-left: $base-spacing-unit;
+            padding-left: calc-rem($base-spacing-unit);
 
             h3 {
                 font-size: $h4-size + 3px;
@@ -38,12 +39,13 @@
                 font-size: calc-rem(15px);
             }
         }
+
     }
 
     .side-wrapper--rev.side-wrapper--gallery {
         @include breakpoint($breakpoint__large) {
             max-width: none;
-            width: 63%;
+            width: 65.5%;
             padding-top: 0;
         }
     }
@@ -93,6 +95,11 @@
             }
         }
     }
+
+    @include breakpoint(1260px){
+        width: 58.4%;
+    }
+
 
     .item-list--gallery {
         padding-top: 0;

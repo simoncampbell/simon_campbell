@@ -79,7 +79,71 @@
     }
 }
 
+
+    .wide-wrapper--merch {
+        @include breakpoint($breakpoint__large){
+            float: left;
+            width: 56%;
+            padding-right: 0;
+
+            .item-list--merch {
+                margin-top: 0;
+                padding-top: 0;
+
+                .item-list__item {
+                    width: 47.8%;
+
+                    &:nth-child(2n){
+                        margin-right: 0;
+                    }
+
+
+                    &:nth-child(2n + 1){
+                        margin-right: $base-spacing-unit;
+                        margin-right: calc-rem($base-spacing-unit);
+                    }
+
+                    &:nth-child(3n + 1) {
+                        clear: none;
+                    }
+                }
+            }
+
+        }
+    }
+
+    .wrapper--recent-entries {
+        margin-top: $base-spacing-unit;
+        margin-top: calc-rem($base-spacing-unit);
+    }
+
+    .wide-wrapper--recent-entries {
+        @extend .cf;
+
+        @include breakpoint(720px){
+            .item-list__item {
+                float: left;
+                width: 48.4%;
+                border-bottom: none;
+                margin-right: $base-spacing-unit;
+                margin-right: calc-rem($base-spacing-unit);
+
+                &:nth-child(2n){
+                    margin-right: 0;
+                }
+            }
+        }
+
+        h3 {
+            margin-bottom: $base-spacing-unit;
+            margin-bottom: calc-rem($base-spacing-unit);
+        }
+    }
+
+
 .main-wrapper {
+    @extend .cf;
+
     @include breakpoint($breakpoint__large) {
         float: left;
         padding-right:0;
@@ -121,8 +185,22 @@
     .main-wrapper--listing {
         @include breakpoint($breakpoint__large){
             width: 55.8%;
-            margin-right: $base-spacing-unit;
-            margin-right: calc-rem($base-spacing-unit);
+            padding-right: $base-spacing-unit;
+            padding-right: calc-rem($base-spacing-unit);
+
+            p {
+                font-size: 16px;
+                font-size: calc-rem(16px);
+            }
+        }
+
+        @include breakpoint(1260px){
+            padding-right: 0;
+
+            p {
+                font-size: 17px;
+                font-size: calc-rem(17px);
+            }
         }
     }
 
@@ -156,6 +234,19 @@
             margin-bottom: calc-rem($base-spacing-unit * 2);
         }
     }
+
+
+    .main-wrapper--album {
+        @include breakpoint($breakpoint__large){
+            width: 100%;
+            max-width: 100%;
+            padding-right: 90px;
+            padding-right: calc-rem(90px);
+        }
+    }
+
+
+
 
 
 .side-wrapper {}

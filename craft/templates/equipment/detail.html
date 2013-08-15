@@ -39,57 +39,59 @@
 
     <div class="main-wrapper main-wrapper--article main-wrapper--article__detail main-wrapper--rev">
 
-        <p>{{entry.shortExtract}}</p>
+        <p class="lede">{{entry.shortExtract}}</p>
 
         {{entry.body}}
 
     </div>
 
     <div class="side-wrapper side-wrapper--rev side-wrapper--equipment">
+        <div class="island--wrapper--equipment">
             <!-- INSTRUMENT IMAGE -->
-        {% for image in entry.equipmentImage %}
-            <figure>
-                <img src="{{image.url}}">
-            </figure>
-        {% endfor %}
+            {% for image in entry.equipmentImage %}
+                <figure>
+                    <img src="{{image.url}}">
+                </figure>
+            {% endfor %}
 
-        <ul class="item-list item-list--equipment-meta">
-            <li class="item-list__item">
-                <h4>Manufactured by</h4>
-                {% for make in entry.makerBlock %}
-                    <p>
-                        <a href="{{ make.makerUrl }}">
-                            {{ make.makerTitle }}
-                        </a>
-                    </p>
-                {% endfor %} <!-- //end.makerBlock -->
-            </li>
+            <ul class="item-list item-list--equipment-meta">
+                <li class="item-list__item">
+                    <h4>Manufactured by</h4>
+                    {% for make in entry.makerBlock %}
+                        <p>
+                            <a href="{{ make.makerUrl }}">
+                                {{ make.makerTitle }}
+                            </a>
+                        </p>
+                    {% endfor %} <!-- //end.makerBlock -->
+                </li>
 
-            <li class="item-list__item">
-                <h4>Add this gear to your collection</h4>
+                <li class="item-list__item">
+                    <h4>Add this gear to your collection</h4>
 
-                {% for item in entry.sellerBlock %}
-                    <dl class="seller-block">
-                        <dt>
-                            <a href="{{item.sellerURL}}">{{item.sellerName}}:</a>
-                        </dt>
-                        <dd>
-                            £{{item.sellerPrice}}
-                        </dd>
-                    </dl>
+                    {% for item in entry.sellerBlock %}
+                        <dl class="seller-block">
+                            <dt>
+                                <a href="{{item.sellerURL}}">{{item.sellerName}}:</a>
+                            </dt>
+                            <dd>
+                                £{{item.sellerPrice}}
+                            </dd>
+                        </dl>
 
-                {% endfor %}
-            </li>
+                    {% endfor %}
+                </li>
 
-            <li class="item-list__item">
-                <h4>Similar instruments</h4>
-                <ul class="item-list item-list--instruments">
-                    <li class="item-list__item"><a href="URL!">Gibson E2234</a></li>
-                    <li class="item-list__item"><a href="URL!">Ibanez S13</a></li>
-                    <li class="item-list__item"><a href="URL!">Yamaha E series</a></li>
-                </ul>
-            </li>
-        </ul>
+                <li class="item-list__item">
+                    <h4>Similar instruments</h4>
+                    <ul class="item-list item-list--instruments">
+                        <li class="item-list__item"><a href="URL!">Gibson E2234</a></li>
+                        <li class="item-list__item"><a href="URL!">Ibanez S13</a></li>
+                        <li class="item-list__item"><a href="URL!">Yamaha E series</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
     </div><!-- //end.side-wrapper -->
 
 {% endblock %}
@@ -97,7 +99,7 @@
 
 
 {% block content_side %}
-    <div class="wrapper">
+    <div class="wrapper comments__wrapper comments__wrapper--rev">
         <div class="wide-wrapper">
 
             <h2 class="comments__header">
@@ -164,7 +166,7 @@
     </div><!-- //end.wrapper -->
 
 
-    <div class="side-wrapper island island--wrapper">
+    <div class="side-wrapper side-wrapper--rev island island--wrapper island--wrapper__comments-container">
 
         <ul class="item-list island--wrapper__content">
             <li class="item-list__item item-list__item--album">

@@ -188,7 +188,7 @@ figcaption {
     }
 
     >.heading-group {
-        @include breakpoint(900px){
+        @include breakpoint($breakpoint__large){
             position: absolute;
             bottom: 200px;
             bottom: calc-rem(200px);
@@ -198,18 +198,6 @@ figcaption {
             h1,
             h2 {
                 padding-left: 0;
-            }
-        }
-
-        @include breakpoint(900px 1000px){
-            h1 {
-                font-size: $h1-size - 5px;
-                font-size: calc-rem($h1-size - 5px);
-            }
-
-            h2 {
-                font-size: $h2-size - 5px;
-                font-size: calc-rem($h2-size - 5px);
             }
         }
     }

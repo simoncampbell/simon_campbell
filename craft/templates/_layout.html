@@ -34,7 +34,7 @@
 
     <body class="{% block body_class %}{% endblock %}">
 
-    <div class="desktop-wrapper">
+    <div class="desktop-wrapper {% block wrapper_class %}{% endblock %}">
             <!--  BRANDING -->
             <div id="header" role="banner">
                 <div class="banner-logo">
@@ -50,13 +50,9 @@
             </div>
 
             {% block content_main %}
-                <div class="main-wrapper" role="main">
-                </div><!-- // .wrapper__main -->
             {% endblock %}
 
             {% block content_side %}
-                <div class="side-wrapper">
-                </div><!-- // .wrapper__side -->
             {% endblock %}
 
             <footer role="contentinfo" class="footer-main">

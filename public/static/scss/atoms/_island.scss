@@ -34,7 +34,7 @@
 
             .island__header {
                 border: none;
-                border-bottom: 1px solid $color__border--standard;
+                border-bottom: 1px solid darken($color__border--standard, 10);
             }
         }
     }
@@ -69,7 +69,7 @@
             border-top: none;
             border-left: 1px solid $color__border--standard;
             float: right;
-            width: 43%;
+            width: 41.8%;
             margin-top: - $base-spacing-unit;
             margin-top: - calc-rem($base-spacing-unit);
             margin-bottom: -99999px; // 100% height hack
@@ -80,8 +80,37 @@
         }
 
         @include breakpoint(1260px){
-            width: 36%;
+            width: 35.85%;
         }
+    }
+
+    &.side-wrapper--rev {
+        @include breakpoint($breakpoint__large) {
+            padding-left: 90px;
+            padding-left: calc-rem(90px);
+            padding-right: $base-spacing-unit;
+            padding-right: calc-rem($base-spacing-unit);
+            float: left;
+            border-left: none;
+        }
+
+        @include breakpoint(1100px){
+            width: 36.8%;
+        }
+
+        @include breakpoint(1260px){
+            width:34.5%;
+        }
+
+        .island--wrapper__content {
+            @include breakpoint($breakpoint__large) {
+                padding-left: 0;
+            }
+        }
+    }
+
+    &.island.side-wrapper--rev {
+        border-right: 1px solid $color__border--standard;
     }
 
     h3 {
@@ -128,11 +157,37 @@
     }
 }
 
+    .island--wrapper--equipment {
+
+        @include breakpoint($breakpoint__large) {
+            padding: $base-spacing-unit;
+            padding: calc-rem($base-spacing-unit);
+            padding-right: 0;
+        }
+
+        .side-wrapper--rev & {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+
+        figure {
+
+            @include breakpoint(580px $breakpoint__large){
+                float: left;
+                width: 30%;
+                margin-right: $base-spacing-unit;
+                margin-right: calc-rem($base-spacing-unit);
+            }
+        }
+    }
+
     .island__header {
         background-color: darken($color__background--grey, 5);
         padding: $half-spacing-unit $base-spacing-unit;
         padding: calc-rem($half-spacing-unit) calc-rem($base-spacing-unit);
         border: 1px solid $color__border--standard;
+        border-bottom: 1px solid darken($color__border--standard, 5);
         border-top: none;
         margin-bottom:0;
 

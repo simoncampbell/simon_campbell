@@ -217,8 +217,8 @@
     }
 
     li figure {
-        margin-bottom: $half-spacing-unit;
-        margin-bottom: calc-rem($half-spacing-unit);
+        margin-bottom: $half-spacing-unit / 2;
+        margin-bottom: calc-rem($half-spacing-unit / 2);
     }
 }
 
@@ -417,6 +417,21 @@
 * Album item listing
 **/
 .item-list--album {
+    @extend .cf;
+
+    @include breakpoint($breakpoint__large){
+        .item-list__item--recording {
+            float: left;
+            width: 48.7%;
+            border-bottom: none;
+            margin-right: $base-spacing-unit;
+            margin-right: calc-rem($base-spacing-unit);
+
+            &:nth-child(2n){
+                margin-right: 0;
+            }
+        }
+    }
 
     p {
         margin-bottom: 0;
@@ -555,8 +570,8 @@
     .item-list--comments {
 
         @include breakpoint(1260px){
-            max-width: 650px;
-            max-width: calc-rem(650px);
+            max-width: 614px;
+            max-width: calc-rem(614px);
 
         }
 

@@ -32,6 +32,13 @@
         width: 64.15%;
         clear: left;
     }
+
+    .wide-wrapper {
+        @include breakpoint($breakpoint__large) {
+            padding-right: 24px;
+            padding-right: calc-rem(24px);
+        }
+    }
 }
 
     .comments__wrapper--rev {

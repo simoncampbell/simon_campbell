@@ -103,7 +103,7 @@
                 padding-right: calc-rem($gutter *2);
             }
 
-            @include breakpoint(750px){
+            @include breakpoint($breakpoint__large){
                 @include width(5);
                 position: absolute;
                 bottom: 0;
@@ -175,7 +175,7 @@
     }
 
     /*Large with room to spare on either side */
-    @media screen and (min-width: 56em) {
+    @media screen and (min-width: 69em) {
         .carousel__summary {
             position: absolute;
             bottom: 0;

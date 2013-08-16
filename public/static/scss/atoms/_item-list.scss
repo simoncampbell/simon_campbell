@@ -27,6 +27,23 @@
         h3 {
             margin-top: 0;
         }
+
+        .wide-wrapper--recent-entries & {
+            @include breakpoint(720px){
+                float: left;
+                width: 48.4%;
+                border-bottom: none;
+                margin-right: $base-spacing-unit;
+                margin-right: calc-rem($base-spacing-unit);
+                margin-bottom: 20px;
+                margin-bottom: cacl-rem(20px);
+                padding-bottom: 0;
+
+                &:nth-child(2n){
+                    margin-right: 0;
+                }
+            }
+        }
     }
 
     li.item-list__item:before {
@@ -310,7 +327,7 @@
         margin-bottom: $base-spacing-unit;
         margin-bottom: calc-rem($base-spacing-unit);
         float: left;
-        width: 47%;
+        width: 48%;
 
         &:nth-child(odd) {
             margin-right: $base-spacing-unit;
@@ -464,6 +481,7 @@
 
         @include breakpoint(680px $breakpoint__large) {
             float: right;
+            clear: left;
             width: 49%;
             margin-bottom: 0;
         }

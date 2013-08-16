@@ -473,6 +473,26 @@
             &:nth-child(2n){
                 margin-right: 0;
             }
+
+            p {
+                font-size: 16px;
+                font-size: calc-rem(16px);
+            }
+        }
+    }
+
+    @include breakpoint(1260px) {
+        .item-list__item--recording {
+            width: 31.4%;
+
+            &:nth-child(2n){
+                margin-right: $base-spacing-unit;
+                margin-right: calc-rem($base-spacing-unit);
+            }
+
+            &:nth-child(3n){
+                margin-right: 0;
+            }
         }
     }
 

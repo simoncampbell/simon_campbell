@@ -85,7 +85,7 @@
 
         &.btn--icon .icon {
             background-color:darken($color__grey--primary,15);
-            border-right:darken($color__grey--primary,22);
+            border-right:1px solid darken($color__grey--primary,22);
         }
 
         &:hover,

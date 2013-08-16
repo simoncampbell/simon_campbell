@@ -103,7 +103,7 @@
                 padding-bottom: calc-rem($base-spacing-unit / 2);
             }
 
-            @include breakpoint($breakpoint__large){
+            @include breakpoint(700px){
                 @include width(5);
                 position: absolute;
                 bottom: 0;
@@ -141,6 +141,8 @@
             margin-bottom: $quarter-spacing-unit;
             margin-bottom: calc-rem($quarter-spacing-unit);
             border-bottom: 1px dotted darken($color__meta--on-bg, 20);
+            max-width: 450px;
+            max-width: calc-rem(450px);
         }
 
         .meta-info-block {

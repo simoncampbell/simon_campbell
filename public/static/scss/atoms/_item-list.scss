@@ -260,6 +260,11 @@
                         clear: none;
                     }
                 }
+
+                @include breakpoint($breakpoint__large) {
+                    margin-bottom: $base-spacing-unit;
+                    margin-bottom: calc-rem($base-spacing-unit);
+                }
             }
         }
     }

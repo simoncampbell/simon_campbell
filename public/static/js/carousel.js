@@ -8,6 +8,7 @@
     current = 0,
     breakpointSize = window.getComputedStyle(document.body,':after').getPropertyValue('content'),
         multiplier = 1, /*Determines the number of panels*/
+        count = 1, /* number of slides */
         $carousel = $('.carousel'),
         $cList = $('.carousel__list'),
         $cContainer = $('.carousel__list-container'),
@@ -23,7 +24,6 @@
         buildCarousel();
     });
 
-
     $(window).resize(function(){ //On Window Resize
         sw = document.body.clientWidth;
         $cWidth = $cContainer.width();
@@ -32,17 +32,17 @@
         posCarousel();
     });
 
-    function sizeCarousel() { //Determine the size and number of panels to reveal
+    //Determine the size and number of panels to reveal
+    function sizeCarousel() {
         current = 0;
 
         animLimit = $liLength/multiplier-1;
 
         $li.outerWidth($cWidth/multiplier); //Set panel widths
-
     }
 
-
-    function buildCarousel() { //Build the Carousel
+    //Build the Carousel
+    function buildCarousel() {
         sizeCarousel();
 
         if(Modernizr.touch) {
@@ -50,14 +50,15 @@
         }
     }
 
-    function posCarousel() { //Animate Carousel. CSS transitions used for the actual animation.
+    //Animate Carousel. CSS transitions used for the actual animation.
+    function posCarousel() {
         var pos = -current * $cWidth;
         $cList.addClass('animating').css("left",pos);
 
-    setTimeout(function() {
-      $cList.removeClass('animating');
-      cLeft = $cList.css("left").replace("px","");
-    }, 500);  // will work with every browser
+        setTimeout(function() {
+            $cList.removeClass('animating');
+            cLeft = $cList.css("left").replace("px","");
+        }, 500);  // will work with every browser
     }
 
     $prev.click(function(e){ //Previous Button Click
@@ -68,28 +69,29 @@
     $next.click(function(e){ //Next Button Click
         e.preventDefault();
         moveLeft();
+        count ++;
     });
 
-  function moveRight() {
-    if(current>0) {
+    function moveRight() {
+        if(current>0) {
             current--;
         }
         posCarousel();
-  }
+    }
 
-  function moveLeft() {
-      if(current<animLimit) {
-        current++;
-      }
-      posCarousel();
-  }
+    function moveLeft() {
+        if(current<animLimit) {
+            current++;
+        }
+        posCarousel();
+    }
 
     function buildSwipe() {
         var threshold = 80,
         origX = 0,
-            finalX = 0,
-            changeX = 0,
-            changeY = 0,
+        finalX = 0,
+        changeX = 0,
+        changeY = 0,
         curPos;
 
         //Touch Start
@@ -123,6 +125,19 @@
 
       origX = finalX = diffX = 0;
         });
+
 }
+
+// TODO
+// -----------------------------------------
+// 1. Count the number of slides
+// 2. Find current slide
+// 3. If current slide is first then remove 'Previous' button
+// 4. If current slide is last then remove 'Next' button
+//
+//
+
+
+
 
 })(this);

@@ -7,6 +7,11 @@
  */
 
 .side-wrapper--gallery {
+
+    @include breakpoint(max-width 500px){
+        padding: 0;
+    }
+
     @include breakpoint(max-width $breakpoint__large){
         max-width: 940px;
         max-width: calc-rem(940px);

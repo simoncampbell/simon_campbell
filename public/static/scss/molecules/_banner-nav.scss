@@ -26,8 +26,8 @@
 .link__mobile-menu {
 
     // hide the mobile menu link when no javascript is detected
-    .no-js {
-        display:none;
+    .no-js & {
+
     }
 
     @extend %font__display--normal;
@@ -87,7 +87,7 @@
     }
 
     .no-js & {
-        border-top: 1px solid $color__orange--secondary;
+        width: 100%;
     }
 
     >li {
@@ -163,5 +163,18 @@
             opacity: 1;
             display: block;
         }
+    }
+}
+
+// Fixes for environments without js
+.no-js {
+    #nav_pri {
+        float: left;
+        width: 100%;
+    }
+    .banner-nav {
+        position: static;
+        float: left;
+        width: 100%;
     }
 }

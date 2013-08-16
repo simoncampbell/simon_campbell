@@ -239,7 +239,33 @@
     }
 }
 
+
+
+    .item-list--equipment {
+        >ul {
+            >.item-list__item {
+                @include breakpoint(700px $breakpoint__large){
+                    width: 48%;
+
+                    &:nth-child(odd){
+                        margin-right: $base-spacing-unit;
+                        margin-right: calc-rem($base-spacing-unit);
+                    }
+
+                    &:nth-child(2n){
+                        margin-right: 0;
+                    }
+
+                    &:nth-child(3n + 1){
+                        clear: none;
+                    }
+                }
+            }
+        }
+    }
+
     .item-list__item--equipment {
+
         @include breakpoint(680px){
             width: 49%;
             vertical-align: top;

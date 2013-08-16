@@ -144,6 +144,15 @@
         }
     }
 
+    .wide-wrapper--equipment {
+       @include breakpoint(680px $breakpoint__large) {
+            max-width: 540px;
+            max-width: calc-rem(540px);
+            padding-left: 0;
+            padding-right: 0;
+       }
+    }
+
 
 .main-wrapper {
     @extend .cf;

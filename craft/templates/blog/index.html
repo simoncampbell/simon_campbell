@@ -11,7 +11,7 @@
 
     <header class="heading-group heading-group--main">
         <h1>Blog</h1>
-        <h2>This is an alternative headline that is not optional</h2>
+        <h2>A personal perspective on music and life</h2>
     </header>
 
     <div class="main-wrapper main-wrapper--article main-wrapper--listing">
@@ -56,7 +56,7 @@
             {% endfor %}
         </ul>
 
-        <a href="http://simoncampbell/index.php?p=blog/archive.html" class="btn btn--icon btn--primary btn--arrow-left">
+        <a href="http://simoncampbell/index.php?p=blog/archive.html" class="btn btn--icon btn--secondary btn--arrow-left">
             <span class="icon ss-rewind">rewind</span>
             <div class="icon-text">
                 Older entries
@@ -127,14 +127,20 @@
             </li>
 
             <li class="item-list__item item-list__item--sidebar">
-
                 <h4>Subscribe via RSS</h4>
 
                 <a href="URL!" class="link--icon">
                     <span class="icon ss ss-inbox">inbox</span>
                     Get regular updates from the blog
                 </a>
+            </li>
 
+            <li class="item-list__item item-list__item--album">
+                {% include 'components/_side-bar--album.html' %}
+            </li>
+
+            <li class="item-list__item item-list__item--live-shows">
+                {% include 'components/_live-shows--alternate.html' %}
             </li>
 
         </ul>

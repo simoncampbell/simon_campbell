@@ -6,6 +6,7 @@
 (function(w){
   var sw = document.body.clientWidth,
     current = 0,
+    count = 1, // current slide number
     breakpointSize = window.getComputedStyle(document.body,':after').getPropertyValue('content'),
         multiplier = 1, /*Determines the number of panels*/
         count = 1, /* number of slides */
@@ -61,16 +62,48 @@
         }, 500);  // will work with every browser
     }
 
+// TODO
+// -----------------------------------------
+// 1. Count the number of slides
+// 2. Find current slide
+// 3. If current slide is first then remove 'Previous' button
+// 4. If current slide is last then remove 'Next' button
+//
+
+    $prev.hide(); //hide previous button by default
+
     $prev.click(function(e){ //Previous Button Click
         e.preventDefault();
         moveRight();
+        count --;
+
+        //hide the preview button if there is no previous slide
+        if(count <= 1) {
+            $prev.hide();
+        }
+
+        //show the next button if there are more slides
+        if (count < numPages){
+            $next.show();
+        }
     });
 
     $next.click(function(e){ //Next Button Click
         e.preventDefault();
         moveLeft();
         count ++;
+
+        //hide the next button if no more slides
+        if (count >= numPages){
+             $next.hide();
+        }
+
+        //show previous button if there are more slides
+        if(count > 1) {
+            $prev.show();
+        }
     });
+
 
     function moveRight() {
         if(current>0) {
@@ -112,31 +145,20 @@
 
         //Touch Move
         $cContainer.get(0).addEventListener("touchend", function (event) {
-      var diffX = origX - finalX,
-          diffXAbs = Math.abs(diffX);
+            var diffX = origX - finalX,
+            diffXAbs = Math.abs(diffX);
 
             if (diffX > 0 && diffXAbs > threshold) {
-        moveLeft();
+                moveLeft();
             } else if (diffX < 0 && diffXAbs > threshold) {
                 moveRight();
-      } else {
-        posCarousel();
-      }
+            } else {
+                posCarousel();
+            }
 
-      origX = finalX = diffX = 0;
+            origX = finalX = diffX = 0;
         });
-
-}
-
-// TODO
-// -----------------------------------------
-// 1. Count the number of slides
-// 2. Find current slide
-// 3. If current slide is first then remove 'Previous' button
-// 4. If current slide is last then remove 'Next' button
-//
-//
-
+    }
 
 
 

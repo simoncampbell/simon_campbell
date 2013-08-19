@@ -211,10 +211,6 @@
     font-size: calc-rem($milli-size);
     clear: both;
     border: 1px solid $color__background--black;
-    background-color: $color__background--black;
-    opacity: .7;
-    border-bottom: 1px solid $color__background--dark;
-
 
     @include breakpoint(680px) {
         border: none;
@@ -233,6 +229,9 @@
         border-bottom:none;
         color: $color__white;
         cursor: pointer;
+        background-color: $color__background--black;
+        opacity: .7;
+
 
 
         @include breakpoint(680px){
@@ -265,6 +264,7 @@
         &.next {
             border-left: 1px solid $color__background--dark;
             text-align: right;
+            float: right;
 
             @include breakpoint(680px){
                 left: auto;

@@ -19,23 +19,18 @@
 
         > a {
             @extend %font__display--normal;
+            @include rems(right, $gutter);
+            @include rems(top, $half-spacing-unit + 6);
+            @include rems(font-size, 13);
             position: absolute;
-            right: $gutter;
-            right: calc-rem($gutter);
-            top: $half-spacing-unit + 6px;
-            top: calc-rem($half-spacing-unit + 6px);
-            font-size: 13px;
-            font-size: calc-rem(13px);
 
             @include breakpoint($breakpoint__large){
-                right: 90px;
-                right: calc-rem(90px);
+                @include rems(right, 90);
             }
 
             .side-wrapper--rev & {
                 @include breakpoint ($breakpoint__large) {
-                    right: $gutter;
-                    right: cacl-rem($gutter);
+                    @include rems(right, $gutter);
                 }
             }
         }
@@ -43,8 +38,7 @@
 }
 
 .live-shows-block--home {
-    margin-bottom: $base-spacing-unit * 2;
-    margin-bottom: calc-rem($base-spacing-unit * 2);
+    @include rems(margin-bottom, $base-spacing-unit * 2);
 }
 
 
@@ -53,45 +47,34 @@
         border: 1px solid $color__island--border;
 
         @include breakpoint($breakpoint__large){
+            @include rems(margin-left, - $base-spacing-unit);
+            @include rems(margin-right, - 90);
+            @include rems(margin-bottom, $half-spacing-unit);
+            @include rems(padding-top, $half-spacing-unit);
+            @include rems(padding-left, $base-spacing-unit);
+            @include rems(padding-right, 90);
+            @inlcude rems(padding-bottom, $half-spacing-unit -3);
             border: none;
             background-color: $color__sidebar--bg;
             float: none;
             width: auto;
             border-bottom: 1px solid $color__border--standard;
             border-top: 1px solid $color__border--standard;
-            margin-left: - $base-spacing-unit;
-            margin-left: - calc-rem($base-spacing-unit);
-            margin-right: - 90px;
-            margin-right: - calc-rem(90px);
-            margin-bottom: $base-spacing-unit / 2;
-            margin-bottom: calc-rem($base-spacing-unit / 2);
-            padding-top: $half-spacing-unit;
-            padding-left: $base-spacing-unit;
-            padding-left: calc-rem($base-spacing-unit);
-            padding-right: 90px;
-            padding-right: calc-rem(90px);
-            padding-bottom: $half-spacing-unit - 3px;
-            padding-bottom: calc-rem($half-spacing-unit - 3px);
             line-height: 1.5;
         }
 
         .side-wrapper--rev & {
             @include breakpoint ($breakpoint__large) {
-                margin-left: - 110px;
-                margin-left: - calc-rem(110px);
-                margin-right: - $base-spacing-unit;
-                margin-right: - calc-rem($base-spacing-unit);
-                padding-left: 110px;
-                padding-left: calc-rem(110px);
+                @include rems(margin-left, -110);
+                @include rems(margin-right, - $base-spacing-unit);
+                @include rems(padding-left, 110);
             }
         }
     }
 
     .island__content {
-        padding-top: $base-spacing-unit;
-        padding-top: calc-rem($base-spacing-unit);
-        padding-bottom: $base-spacing-unit;
-        padding-bottom: calc-rem($base-spacing-unit);
+        @include rems(padding-top, $base-spacing-unit);
+        @include rems(padding-bottom, $base-spacing-unit);
         background-color: #E7E6E6;
         border: 1px solid $color__island--border;
         border-top: none;
@@ -108,34 +91,29 @@
         margin-bottom: 0;
 
         dt {
+            @include rems(font-size, $milli-size);
             font-weight: normal;
-            font-size: $milli-size;
-            font-size: calc-rem($milli-size);
             color: darken($color__meta--on-bg, 10);
             padding-bottom:0;
 
             @include breakpoint($breakpoint__large){
+                @include rems(margin-right, $base-spacing-unit);
+                @include rems(margin-bottom, $base-spacing-unit);
                 clear: left;
                 float: left;
                 width: 25%;
-                margin-right: $base-spacing-unit;
-                margin-right: calc-rem($base-spacing-unit);
-                margin-bottom: $base-spacing-unit;
-                margin-bottom: calc-rem($base-spacing-unit);
             }
         }
 
         dd {
-            margin-bottom: $half-spacing-unit;
-            margin-bottom: calc-rem($half-spacing-unit);
-            padding-bottom: calc-rem($half-spacing-unit);
+            @include rems(margin-bottom, $half-spacing-unit);
+            @include rems(padding-bottom, $half-spacing-unit);
             border-bottom: 1px dotted $color__border--dark;
 
             @include breakpoint($breakpoint__large){
+                @include rems(margin-bottom, $base-spacing-unit);
                 float: left;
                 width: 68%;
-                margin-bottom: $base-spacing-unit;
-                margin-bottom: calc-rem($base-spacing-unit);
                 border-bottom: none;
             }
 
@@ -145,8 +123,7 @@
             }
 
             p {
-                font-size: $milli-size;
-                font-size: calc-rem($milli-size);
+                @include rems(font-size, $milli-size);
                 margin-bottom:0;
             }
 

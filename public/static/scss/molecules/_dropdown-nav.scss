@@ -16,9 +16,8 @@
     .dropdown-nav__header {
         @extend %font__display--normal;
         @include transition(all .2s ease-in-out);
+        @include rems(padding, $half-spacing-unit, $base-spacing-unit);
         cursor: pointer;
-        padding: $half-spacing-unit $base-spacing-unit;
-        padding: calc-rem($half-spacing-unit) calc-rem($base-spacing-unit);
         border-bottom: 1px solid $color__border--standard;
 
         &:hover {
@@ -32,13 +31,10 @@
         &:after {
             @extend %font__icon--gizmo;
             @include transition(all .2s ease-in-out);
+            @include rems(right, $base-spacing-unit);
+            @include rems(padding-top, 4);
             content:"navigatedown";
             position:absolute;
-            right: $base-spacing-unit;
-            right: calc-rem($base-spacing-unit);
-            padding-top: 4px;
-            padding-top: calc-rem(4px);
-
         }
 
         &.dropdown-nav__active {
@@ -50,16 +46,13 @@
     }
 
     .dropdown-nav__item {
-        font-size: $milli-size;
-        font-size: calc-rem($milli-size);
-        padding: $half-spacing-unit $base-spacing-unit;
-        padding: calc-rem($half-spacing-unit) calc-rem($base-spacing-unit);
+        @include rems(font-size, $milli-size);
+        @include rems(padding, $half-spacing-unit, $base-spacing-unit);
         margin-bottom: 0;
         border-bottom: 1px solid $color__border--standard;
 
         pre {
-            margin-bottom:$half-spacing-unit;
-            margin-bottom:calc-rem($half-spacing-unit);
+            @include rems(margin-bottom, $half-spacing-unit);
         }
 
         // hide the list items if JS is detected

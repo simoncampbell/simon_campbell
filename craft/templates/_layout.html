@@ -36,8 +36,8 @@
 
         <div class="desktop-wrapper {% block wrapper_class %}{% endblock %}">
             <!--  BRANDING -->
-            <div id="header" role="banner">
-                <div class="banner-logo">
+            <div class="banner" role="banner">
+                <div class="banner__logo">
                     {% if url == "" %}
                         <h1>Simon Campbell</h1>
                     {% else %}
@@ -124,11 +124,13 @@
             </footer><!-- //end.footer-main -->
         </div><!-- //end.desktrop-wrapper -->
 
+        <div class="js-grid grid-toggle__container"></div>
+        <div class="js-baseline grid-toggle__container"></div>
+
         <!-- JAVASCRIPT -->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
         <script src="/static/js/EDJ.js"></script>
         <script src="/static/js/ss-gizmo.js"></script>
-
         <script src="/static/js/jquery.fitvids.js"></script>
         <script>
             $(document).ready(function(){

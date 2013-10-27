@@ -30,10 +30,9 @@
  */
 .btn {
     @extend %font__display--black;
-    @include vendor(border-radius, $brand-round);
+    @include radius($brand-round);
     @include transition(.15s all ease-in-out);
-    font-size: $milli-size;
-    font-size: calc-rem($milli-size);
+    @include rems($milli-size);
     display:inline-block;
     vertical-align:top;
     white-space:nowrap;
@@ -42,11 +41,9 @@
     margin:0;
     padding-top:0;
     padding-bottom:0;
-    line-height:2.5;
-    padding-right: $half-spacing-unit;
-    padding-right: calc-rem($half-spacing-unit);
-    padding-left: $half-spacing-unit;
-    padding-left: calc-rem($half-spacing-unit);
+    line-height:2.3;
+    @include rems(padding-right, $half-spacing-unit);
+    @include rems(padding-left, $half-spacing-unit);
 
     &:active,
     &:focus {
@@ -191,14 +188,11 @@
 
         .icon {
             @include transition(.2s all ease-in-out);
+            @include rems(height, 42);
+            @include rems(width, $base-spacing-unit * 2);
+            @include rems(font-size, $base-font-size);
             display: inline-block;
-            line-height: 2.5;
-            height: 38px;
-            height: calc-rem(38px);
-            width: ($base-spacing-unit * 2);
-            width: calc-rem($base-spacing-unit * 2);
-            font-size: $base-font-size;
-            font-size: calc-rem($base-font-size);
+            line-height: 2.9;
             text-align: center;
             border-right: 1px solid darken($color__border--orange, 2);
             vertical-align: top;
@@ -210,8 +204,7 @@
         }
 
         .icon-text {
-            padding-left: $half-spacing-unit;
-            padding-left: calc-rem($half-spacing-unit);
+            @include rems(padding-left, $half-spacing-unit);
             line-height: 2.5;
             display:inline-block;
         }
@@ -231,13 +224,10 @@
  * remains uniform.
  */
 .btn--small{
-    padding-right: $half-spacing-unit;
-    padding-right: calc-rem($half-spacing-unit);
-    padding-left: $half-spacing-unit;
-    padding-left: calc-rem($half-spacing-unit);
+    @include rems(padding-right, $half-spacing-unit);
+    @include rems(padding-left, $half-spacing-unit);
+    @include rems(font-size, $milli-size);
     line-height:1.8;
-    font-size: $milli-size;
-    font-size: calc-rem($milli-size);
 }
 
 .btn--large{
@@ -259,28 +249,6 @@
 }
 
 
-
-
-
-
-/*------------------------------------*\
-    $FUNCTIONS
-\*------------------------------------*/
-/**
- * Positive actions; e.g. sign in, purchase, submit, etc.
- */
-.btn--positive{
-    background-color:#4A993E;
-    color:#fff;
-}
-
-/**
- * Negative actions; e.g. close account, delete photo, remove friend, etc.
- */
-.btn--negative{
-    background-color:#b33630;
-    color:#fff;
-}
 
 
 }//endif

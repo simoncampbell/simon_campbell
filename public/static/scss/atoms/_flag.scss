@@ -27,8 +27,7 @@
     }
 
     .flag__image {
-        padding-right: $half-spacing-unit;
-        padding-right: calc-rem($half-spacing-unit);
+        @include rems(padding-right, $half-spacing-unit);
 
         img {
             display: block;
@@ -36,9 +35,8 @@
         }
 
         .flag--rev & {
+            @include rems(padding-left, $half-spacing-unit);
             padding-right: 0;
-            padding-left: $half-spacing-unit;
-            padding-left: calc-rem($half-spacing-unit);
         }
     }
 

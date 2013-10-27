@@ -37,7 +37,7 @@
         </div>
     </header>
 
-    <div class="main-wrapper main-wrapper--article main-wrapper--article__detail main-wrapper--rev">
+    <div class="main-wrapper main-wrapper--article">
 
         <p class="lede">{{entry.shortExtract}}</p>
 
@@ -45,7 +45,7 @@
 
     </div>
 
-    <div class="side-wrapper side-wrapper--rev side-wrapper--equipment">
+    <div class="side-wrapper side-wrapper--equipment main-wrapper--secondary">
         <div class="island--wrapper--equipment">
             <!-- INSTRUMENT IMAGE -->
             {% for image in entry.equipmentImage %}
@@ -72,11 +72,8 @@
                     {% for item in entry.sellerBlock %}
                         <dl class="seller-block">
                             <dt>
-                                <a href="{{item.sellerURL}}">{{item.sellerName}}:</a>
+                                <a href="{{item.sellerURL}}">{{item.sellerName}}</a>
                             </dt>
-                            <dd>
-                                £{{item.sellerPrice}}
-                            </dd>
                         </dl>
 
                     {% endfor %}
@@ -99,74 +96,16 @@
 
 
 {% block content_side %}
-    <div class="wrapper comments__wrapper comments__wrapper--rev">
+    <div class="wrapper comments__wrapper">
         <div class="wide-wrapper">
 
-            <h2 class="comments__header">
-                <span class="comments__count">3</span> Comments
-            </h2>
-
-            <div class="comments">
-
-                <ul class="item-list item-list__comments">
-                    <li class="item-list__item item-list--comments">
-                        <div class="flag flag--bottom">
-
-                            <div class="flag__image">
-                                <img src="http://placehold.it/50x50/0eafff/ffffff.png">
-                            </div>
-
-                            <header class="flag__body">
-                                <h3><a href="URL!">Jack Nicholson</a></h3>
-                                <time datetime="2013-06-24">24th June 2013</time>
-                            </header>
-                        </div>
-
-                        <p>Always my choice as well (apart from the lemon yellow Toyota Hi-Ace (which was (thankfully) stolen from Glastonbury) and a day-glo orange LWB semi hi-top Tranny (which turned out to have false plates on it))&hellip;</p>
-                    </li>
-
-                    <li class="item-list__item item-list--comments">
-                        <div class="flag flag--bottom">
-
-                            <div class="flag__image">
-                                <img src="http://placehold.it/50x50/0eafff/ffffff.png">
-                            </div>
-
-                            <header class="flag__body">
-                                <h3><a href="URL!">Jack Nicholson</a></h3>
-                                <time datetime="2013-06-24">24th June 2013</time>
-                            </header>
-                        </div>
-
-                        <p>Always my choice as well (apart from the lemon yellow Toyota Hi-Ace (which was (thankfully) stolen from Glastonbury) and a day-glo orange LWB semi hi-top Tranny (which turned out to have false plates on it))&hellip;</p>
-                    </li>
-                    <li class="item-list__item item-list--comments">
-                        <div class="flag flag--bottom">
-
-                            <div class="flag__image">
-                                <img src="http://placehold.it/50x50/0eafff/ffffff.png">
-                            </div>
-
-                            <header class="flag__body">
-                                <h3><a href="URL!">Jack Nicholson</a></h3>
-                                <time datetime="2013-06-24">24th June 2013</time>
-                            </header>
-                        </div>
-
-                        <p>Always my choice as well (apart from the lemon yellow Toyota Hi-Ace (which was (thankfully) stolen from Glastonbury) and a day-glo orange LWB semi hi-top Tranny (which turned out to have false plates on it))&hellip;</p>
-                    </li>
-                </ul>
-            </div><!-- //end.comments -->
-
-            <div class="comments__form">
-                {% include 'components/_forms/_comment-form.html' %}
-            </div>
+            {% include 'components/global/_comments.html' %}
 
         </div><!-- //end.main-wrapper -->
     </div><!-- //end.wrapper -->
 
 
-    <div class="side-wrapper side-wrapper--rev island island--wrapper island--wrapper__comments-container">
+    <div class="side-wrapper island island--wrapper island--wrapper__comments-container">
 
         <ul class="item-list island--wrapper__content">
             <li class="item-list__item item-list__item--album">

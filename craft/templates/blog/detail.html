@@ -35,7 +35,7 @@
     </header>
 
     {% for image in entry.blog__image %}
-        <figure class="figure__hero figure__hero--article">
+        <figure class="figure__hero main-wrapper--secondary">
             <img src="{{image.url}}">
         </figure>
     {% endfor %}
@@ -60,65 +60,7 @@
     <div class="wrapper comments__wrapper">
         <div class="wide-wrapper">
 
-            <h2 class="comments__header">
-                <span class="comments__count">3</span> Comments
-            </h2>
-
-            <div class="comments">
-
-                <ul class="item-list item-list__comments">
-                    <li class="item-list__item item-list--comments">
-                        <div class="flag flag--bottom">
-
-                            <div class="flag__image">
-                                <img src="http://placehold.it/50x50/0eafff/ffffff.png">
-                            </div>
-
-                            <header class="flag__body">
-                                <h3><a href="URL!">Jack Nicholson</a></h3>
-                                <time datetime="2013-06-24">24th June 2013</time>
-                            </header>
-                        </div>
-
-                        <p>Always my choice as well (apart from the lemon yellow Toyota Hi-Ace (which was (thankfully) stolen from Glastonbury) and a day-glo orange LWB semi hi-top Tranny (which turned out to have false plates on it))&hellip;</p>
-                    </li>
-
-                    <li class="item-list__item item-list--comments">
-                        <div class="flag flag--bottom">
-
-                            <div class="flag__image">
-                                <img src="http://placehold.it/50x50/0eafff/ffffff.png">
-                            </div>
-
-                            <header class="flag__body">
-                                <h3><a href="URL!">Jack Nicholson</a></h3>
-                                <time datetime="2013-06-24">24th June 2013</time>
-                            </header>
-                        </div>
-
-                        <p>Always my choice as well (apart from the lemon yellow Toyota Hi-Ace (which was (thankfully) stolen from Glastonbury) and a day-glo orange LWB semi hi-top Tranny (which turned out to have false plates on it))&hellip;</p>
-                    </li>
-                    <li class="item-list__item item-list--comments">
-                        <div class="flag flag--bottom">
-
-                            <div class="flag__image">
-                                <img src="http://placehold.it/50x50/0eafff/ffffff.png">
-                            </div>
-
-                            <header class="flag__body">
-                                <h3><a href="URL!">Jack Nicholson</a></h3>
-                                <time datetime="2013-06-24">24th June 2013</time>
-                            </header>
-                        </div>
-
-                        <p>Always my choice as well (apart from the lemon yellow Toyota Hi-Ace (which was (thankfully) stolen from Glastonbury) and a day-glo orange LWB semi hi-top Tranny (which turned out to have false plates on it))&hellip;</p>
-                    </li>
-                </ul>
-            </div><!-- //end.comments -->
-
-            <div class="comments__form">
-                {% include 'components/_forms/_comment-form.html' %}
-            </div>
+            {% include 'components/global/_comments.html' %}
 
         </div><!-- //end.main-wrapper -->
     </div><!-- //end.wrapper -->

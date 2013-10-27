@@ -5,8 +5,7 @@
 \*------------------------------------*/
 
 .heading-group {
-    margin-bottom: $base-spacing-unit;
-    margin-bottom: calc-rem($base-spacing-unit);
+    @include rems(margin-bottom, $base-spacing-unit);
 
     h1, h2, h3, h4, h5, h6 {
         margin-bottom:0;
@@ -25,13 +24,11 @@
 }
 
     .heading-group--main {
+        @include rems(padding-bottom, $base-spacing-unit);
         border-bottom: 1px solid $color__border--standard;
-        padding-bottom: $base-spacing-unit;
-        padding-bottom: calc-rem($base-spacing-unit);
 
         @include breakpoint($breakpoint__small) {
-            margin-bottom: $base-spacing-unit;
-            margin-bottom: calc-rem($base-spacing-unit);
+            @include rems(margin-bottom, $base-spacing-unit);
         }
 
         h1,
@@ -40,13 +37,11 @@
         h4,
         h5 {
             @include max-width(8);
+            @include rems(padding, 0, $base-spacing-unit);
             margin: 0 auto;
-            padding: 0 $base-spacing-unit;
-            padding: 0 calc-rem($base-spacing-unit);
 
             @include breakpoint($breakpoint__small) {
-                padding: 0 ($gutter *2);
-                padding: 0 calc-rem($gutter *2);
+                @include rems(padding, 0, $gutter * 2);
             }
 
             @include breakpoint(680px){
@@ -54,9 +49,8 @@
             }
 
             @include breakpoint($breakpoint__large) {
+                @include rems(padding, 0, 90);
                 max-width: none;
-                padding: 0 90px;
-                padding: 0 calc-rem(90px);
             }
         }
     }
@@ -65,16 +59,14 @@
      * For headers within a wrapper and without a border
      */
     .heading-group--main--alternate {
-        margin-bottom: $half-spacing-unit;
-        margin-bottom: calc-rem($half-spacing-unit);
+        @include rems(margin-bottom, $half-spacing-unit);
     }
 
     .heading-group--marginless {
         margin:0;
 
         .meta-info-block {
-            margin-bottom: $half-spacing-unit;
-            margin-bottom: calc-rem($half-spacing-unit);
+            @include rems(margin-bottom, $half-spacing-unit);
         }
     }
 
@@ -83,13 +75,11 @@
         padding-bottom: 0;
 
         .meta-info-block {
-            margin-top: $half-spacing-unit + 2px;
-            margin-top: calc-rem($half-spacing-unit + 2px);
+            @include rems(margin-top, $half-spacing-unit + 2);
         }
     }
 
     .heading-group--marginless {
-
         h4,
         h3,
         h2,

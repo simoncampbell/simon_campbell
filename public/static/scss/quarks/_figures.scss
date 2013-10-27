@@ -44,8 +44,7 @@ figcaption {
     display:inline-block;
 
     img + & {
-        padding-top: $half-spacing-unit;
-        padding-top: calc-rem($half-spacing-unit);
+        @include rems(padding-top, $half-spacing-unit)
     }
 
     p {
@@ -68,32 +67,34 @@ figcaption {
 
 
 .figure__hero {
-    margin-top: - ($base-spacing-unit * 1.2);
-    margin-top: - calc-rem($base-spacing-unit * 1.2);
+    @include rems(margin-top, - $base-spacing-unit * 1.2);
 
     @include breakpoint($breakpoint__small){
-        margin-top: - 40px;
-        margin-top: - calc-rem(40px);
+        @include rems(margin-top, -43);
+    }
+
+    @include breakpoint($breakpoint__medium){
+        @include rems(margin-top, -43);
     }
 
     @include breakpoint(560px){
-        max-height: 320px;
-        max-height: calc-rem(320px);
+        @include rems(max-height, 320);
         overflow: hidden;
     }
 
     @include breakpoint(771px){
-        max-height: 420px;
-        max-height: calc-rem(420px);
+        @include rems(max-height, 420);
     }
 
     @include breakpoint($breakpoint__large){
         float: left;
         width: 100%;
-        margin-top: - ($base-spacing-unit * 3);
-        margin-top: - calc-rem($base-spacing-unit * 3);
-        max-height: 470px;
-        max-height: calc-rem(470px);
+        @include rems(margin-top, - $base-spacing-unit * 3);
+        @include rems(max-height, 470);
+    }
+
+    @include breakpoint(1260px) {
+        @include rems(margin-top, -60);
     }
 
     >img {
@@ -103,56 +104,14 @@ figcaption {
 
 .figure__hero--full-height {
     max-height: none;
-    overflow: none;
-}
-
-
-.figure__hero--article {
-    max-height: none;
-    overflow: none;
-
-    @include breakpoint($breakpoint__small){
-        margin-top: - ($base-spacing-unit * 1.2);
-        margin-top: - calc-rem($base-spacing-unit * 1.2);
-    }
-
-    @include breakpoint($breakpoint__large) {
-        padding-right: 90px;
-        padding-right: calc-rem(90px);
-        padding-left: $base-spacing-unit;
-        padding-left: calc-rem($base-spacing-unit);
-        margin-top: 0;
-        float: right;
-        width: 40%;
-    }
-
-    @include breakpoint (700px){
-        max-width: 620px;
-        max-width: calc-rem(620px);
-        margin: 0 auto $base-spacing-unit auto;
-        margin: 0 auto calc-rem($base-spacing-unit) auto;
-        padding: 0 ($base-spacing-unit * 2);
-        padding: 0 calc-rem($base-spacing-unit * 2);
-    }
-
-    @include breakpoint($breakpoint__large) {
-        padding-right: 90px;
-        padding-right: calc-rem(90px);
-        padding-left: 0;
-        width: 37%;
-    }
-
-    @include breakpoint(1266px){
-        width: 41.7%;
-    }
+    overflow: initial;
 }
 
 .figure__hero--about {
     max-height: none;
 
     @include breakpoint($breakpoint__small){
-        margin-top: -21px;
-        margin-top: - calc-rem(21px);
+        @include rems(margin-top, -21);
     }
 }
 
@@ -161,26 +120,7 @@ figcaption {
 }
 
 
-.figure__right {
-    @include breakpoint($breakpoint__medium) {
-        float: right;
-        margin-left: $base-spacing-unit;
-        margin-left: calc-rem($base-spacing-unit);
-        max-width: 49%;
-    }
-}
-
-.figure__left {
-    @include breakpoint($breakpoint__medium) {
-        float: left;
-        margin-right: $base-spacing-unit;
-        margin-right: calc-rem($base-spacing-unit);
-        max-width: 50%;
-    }
-}
-
 .figure__homepage-intro {
-    float: left;
     width: 100%;
 
     @include breakpoint(900px){
@@ -188,17 +128,14 @@ figcaption {
     }
 
     @include breakpoint($breakpoint__large){
-        margin-bottom: $base-spacing-unit;
-        margin-bottom: calc-rem($base-spacing-unit);
+        @include rems(margin-bottom, $base-spacing-unit);
     }
 
     >.heading-group {
         @include breakpoint($breakpoint__large){
-            width: 420px;
-            width: calc-rem(420px);
+            @include rems(width, 420);
+            @include rems(bottom, 300);
             position: absolute;
-            bottom: 300px;
-            bottom: calc-rem(300px);
             right: 0;
             color: $color__white;
 
@@ -208,39 +145,54 @@ figcaption {
             }
 
             >h1 {
-                font-size: 40px;
-                font-size: calc-rem(40px);
+                @include rems(font-size, 40);
             }
 
             >h2 {
                 color: $color__sidebar--bg;
-                font-size: 30px;
-                font-size: calc-rem(30px);
+                @include rems(font-size, 30);
             }
         }
 
         @include breakpoint(1183px){
-            width: 470px;
-            width: calc-rem(470px);
+            @include rems(width, 470);
 
             > h1 {
-                font-size: 43px;
-                font-size: calc-rem(43px);
+                @include rems(font-size, 43);
             }
         }
 
         @include breakpoint(1260px){
-            width: 516px;
-            width: calc-rem(516px);
+            @include rems(width, 516);
             > h1 {
-                font-size: 50px;
-                font-size: calc-rem(50px);
+                @include rems(font-size, 50);
             }
 
             > h2 {
-                font-size: 36px;
-                font-size: calc-rem(36px);
+                @include rems(font-size, 36);
             }
         }
+    }
+
+    .figure__hero {
+        overflow: hidden;
+        pointer-events: none;
+    }
+}
+
+
+.figure__right {
+    @include breakpoint($breakpoint__medium) {
+        float: right;
+        @include rems(margin-left, $base-spacing-unit);
+        max-width: 49%;
+    }
+}
+
+.figure__left {
+    @include breakpoint($breakpoint__medium) {
+        @include rems(margin-right, $base-spacing-unit);
+        float: left;
+        max-width: 50%;
     }
 }

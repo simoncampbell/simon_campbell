@@ -7,10 +7,8 @@
 
 .featured {
     @extend .cf;
-    padding-bottom: $base-spacing-unit;
-    padding-bottom: calc-rem($base-spacing-unit);
-    margin-bottom: $base-spacing-unit;
-    margin-bottom: calc-rem($base-spacing-unit);
+    @include rems(padding-bottom, $base-spacing-unit);
+    @include rems(margin-bottom, $base-spacing-unit);
     border-bottom: 1px dotted $color__border--standard;
 
     @include breakpoint($breakpoint__large) {
@@ -25,8 +23,7 @@
             width: 32%;
 
             >h3 {
-                font-size: 34px;
-                font-size: calc-rem(34px);
+                @include rems(font-size, 34);
             }
         }
 
@@ -41,22 +38,19 @@
             margin-bottom: 0;
 
             @include breakpoint($breakpoint__large) {
-                font-size: 16px;
-                font-size: calc-rem(16px);
+                @include rems(font-size, 16);
                 float: left;
                 width: 32%;
             }
 
             @include breakpoint(1260px){
-                font-size: 16px;
-                font-size: calc-rem(16px);
+                @include rems(font-size, 16);
             }
         }
     }
 
     .featured__post-image {
-        margin-bottom: $half-spacing-unit;
-        margin-bottom: calc-rem($half-spacing-unit);
+        @include rems(margin-bottom, $half-spacing-unit);
 
         @include breakpoint($breakpoint__large) {
             float: right;
@@ -77,11 +71,9 @@
         position:relative;
 
         >.btn {
+            @include rems(right, $base-spacing-unit);
+            @include rems(bottom, $base-spacing-unit);
             position: absolute;
-            right: $base-spacing-unit;
-            right: calc-rem($base-spacing-unit);
-            bottom: $base-spacing-unit;
-            bottom: calc-rem($base-spacing-unit);
         }
     }
 

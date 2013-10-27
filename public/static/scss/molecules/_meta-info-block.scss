@@ -4,12 +4,10 @@
 
 .meta-info-block {
     @extend .cf;
+    @include rems(margin-bottom, $base-spacing-unit);
+    @include rems(padding, $half-spacing-unit, 0);
     border-top: 1px solid $color__border--standard;
     border-bottom: 1px solid $color__border--standard;
-    margin-bottom: ($base-spacing-unit);
-    margin-bottom: calc-rem($base-spacing-unit);
-    padding: $half-spacing-unit 0;
-    padding: calc-rem($half-spacing-unit) 0;
 
     .main-wrapper {
         width: 100%;
@@ -29,9 +27,8 @@
         color: $color__meta;
 
         .meta-info-block &:nth-child(2):before {
+            @include rems(padding, 0, $quarter-spacing-unit, 0, 0);
             content:"•";
-            padding: 0 $quarter-spacing-unit 0 0;
-            padding: 0 calc-rem($quarter-spacing-unit) 0 0;
             color: lighten($color__meta, 15);
         }
 

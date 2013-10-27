@@ -6,9 +6,8 @@
  */
 
 .wrapper {
+    @include rems(padding-top, $base-spacing-unit);
     width: 100%;
-    padding-top: $base-spacing-unit;
-    padding-top: calc-rem($base-spacing-unit);
     border-top: 1px dotted $color__border--standard;
 
     &.wrapper--borderless {
@@ -27,32 +26,25 @@
 .wide-wrapper {
     @extend .cf;
     @include max-width(8);
-    padding-right: $gutter;
-    padding-right: calc-rem($gutter);
-    padding-left: $gutter;
-    padding-left: calc-rem($gutter);
+    @include rems(padding-right, $gutter);
+    @include rems(padding-left, $gutter);
     margin: 0 auto;
 
     @include breakpoint($breakpoint__small){
         @include max-width(8);
-        padding-left: ($gutter *2);
-        padding-left: calc-rem($gutter *2);
-        padding-right: ($gutter *2);
-        padding-right: calc-rem($gutter *2);
+        @include rems(padding-left, $gutter * 2);
+        @include rems(padding-right, $gutter * 2);
     }
 
     @include breakpoint($breakpoint__large){
-        padding-left: 90px;
-        padding-left: calc-rem(90px);
-        max-width: 628px;
-        max-width: calc-rem(628px);
+        @include rems(padding-left, 90);
+        @include rems(max-width, 628);
     }
 }
 
 .desktop-wrapper {
     @extend .cf;
     overflow: hidden;
-    // background-image:url(/static/images/grids/grid.png);
     background-size: 100%;
     background-color: $color__white;
 
@@ -73,9 +65,8 @@
     }
 
     @include breakpoint($breakpoint__large){
+        @include rems(padding-right, 90);
         max-width: none;
-        padding-right: 90px;
-        padding-right: calc-rem(90px);
     }
 }
 
@@ -99,8 +90,7 @@
 
 
                     &:nth-child(2n + 1){
-                        margin-right: $base-spacing-unit;
-                        margin-right: calc-rem($base-spacing-unit);
+                        @include rems(margin-right, $base-spacing-unit);
                     }
 
                     &:nth-child(3n + 1) {
@@ -117,14 +107,11 @@
     }
 
     .wrapper--recent-entries {
-        margin-top: $base-spacing-unit;
-        margin-top: calc-rem($base-spacing-unit);
+        @include rems(margin-top, $base-spacing-unit);
 
         @include breakpoint(720px){
-            margin-top: $base-spacing-unit * 2;
-            margin-top: calc-rem($base-spacing-unit * 2);
-            margin-bottom: $base-spacing-unit * 2;
-            margin-bottom: calc-rem($base-spacing-unit * 2);
+            @include rems(margin-top, $base-spacing-unit * 2);
+            @include rems(margin-bottom, $base-spacing-unit * 2);
         }
     }
 
@@ -133,21 +120,18 @@
 
         @include breakpoint(620px){
             p {
-                font-size: 16px;
-                font-size: calc-rem(16px);
+                @include rems(font-size, 16);
             }
         }
 
         h3 {
-            margin-bottom: $base-spacing-unit;
-            margin-bottom: calc-rem($base-spacing-unit);
+            @include rems(margin-bottom, $base-spacing-unit);
         }
     }
 
     .wide-wrapper--equipment {
        @include breakpoint(680px $breakpoint__large) {
-            max-width: 540px;
-            max-width: calc-rem(540px);
+            @include rems(max-width, 540);
             padding-left: 0;
             padding-right: 0;
        }
@@ -158,22 +142,20 @@
     @extend .cf;
 
     @include breakpoint($breakpoint__large) {
+        @include rems(max-width, 704);
         float: left;
         padding-right:0;
         margin-right: 0;
         margin-right: 0;
         width: 60%;
-        max-width: 704px;
-        max-width: calc-rem(704px);
     }
 }
 
     .main-wrapper--full {
         @include breakpoint($breakpoint__large){
+            @include rems(padding-right, 90);
             width: 100%;
             max-width: 100%;
-            padding-right: 90px;
-            padding-right: calc-rem(90px);
         }
     }
 
@@ -184,34 +166,29 @@
     .main-wrapper--rev {
 
         @include breakpoint($breakpoint__large) {
+            @include rems(padding-right, 90);
             float: right;
             padding-left: 0;
-            padding-right: 90px;
-            padding-right: calc-rem(90px);
             margin-right: 0;
             width: 55.8%;
         }
     }
 
     .main-wrapper--article {
-        margin-bottom: $base-spacing-unit *2;
-        margin-bottom: calc-rem($base-spacing-unit *2);
+        @include rems(margin-bottom, $base-spacing-unit * 2);
 
         @include breakpoint($breakpoint__large){
-            margin-bottom: $base-spacing-unit * 3;
-            margin-bottom: calc-rem($base-spacing-unit * 3);
+            @include rems(margin-bottom, $base-spacing-unit * 3);
         }
     }
 
     .main-wrapper--listing {
         @include breakpoint($breakpoint__large){
+            @include rems(padding-right, $base-spacing-unit);
             width: 55.8%;
-            padding-right: $base-spacing-unit;
-            padding-right: calc-rem($base-spacing-unit);
 
             p {
-                font-size: 16px;
-                font-size: calc-rem(16px);
+                @include rems(font-size, 16);
             }
         }
 
@@ -219,9 +196,12 @@
             padding-right: 0;
 
             p {
-                font-size: 17px;
-                font-size: calc-rem(17px);
+                @include rems(font-size, 17);
             }
+        }
+
+        .item-list__item--article:last-of-type {
+            border-bottom: 1px dotted $color__border--standard;
         }
     }
 
@@ -233,15 +213,14 @@
     }
 
         .main-wrapper--article-meta__header {
-            margin-bottom: $base-spacing-unit;
-            margin-bottom: calc-rem($base-spacing-unit);
+            margin-top: 0;
+            @include rems(margin-bottom, $base-spacing-unit);
         }
 
     .main-wrapper--gallery {
 
         @include breakpoint($breakpoint__large){
-            padding-left: 90px;
-            padding-left: calc-rem(90px);
+            @include rems(padding-left, 90);
         }
 
         h3 {
@@ -251,20 +230,17 @@
 
     .main-wrapper--article__detail {
         @include breakpoint($breakpoint__small) {
-            margin-bottom: $base-spacing-unit * 2;
-            margin-bottom: calc-rem($base-spacing-unit * 2);
+            @include rems(margin-bottom, $base-spacing-unit * 2);
         }
     }
 
 
     .main-wrapper--album {
         @include breakpoint($breakpoint__large){
-            margin-top: $base-spacing-unit / 2;
-            margin-top: calc-rem($base-spacing-unit / 2);
+            @include rems(margin-top, $base-spacing-unit / 2);
+            @include rems(padding-right, 90);
             width: 100%;
             max-width: 100%;
-            padding-right: 90px;
-            padding-right: calc-rem(90px);
         }
     }
 
@@ -276,8 +252,7 @@
      */
     .side-wrapper--rev {
         @include breakpoint($breakpoint__large) {
-            padding-left: 90px;
-            padding-left: calc-rem(90px);
+            @include rems(padding-left, 90);
             padding-right: 0;
             float: left;
             width: 37%;
@@ -285,15 +260,12 @@
     }
 
     .side-wrapper--home {
+        @include rems(margin-bottom, $base-spacing-unit * 2);
+        @include rems(padding-bottom, $half-spacing-unit);
         border-bottom: 1px dotted $color__border--standard;
-        margin-bottom: $base-spacing-unit * 2;
-        margin-bottom: calc-rem($base-spacing-unit * 2);
-        padding-bottom: $half-spacing-unit;
-        padding-bottom: calc-rem($half-spacing-unit);
 
         h3 {
-            margin-bottom: $base-spacing-unit;
-            margin-bottom: calc-rem($base-spacing-unit);
+            @include rems(margin-bottom, $base-spacing-unit);
         }
     }
 
@@ -303,17 +275,15 @@
 
 .homepage-wrapper {
     @extend .cf;
-    margin-bottom: $base-spacing-unit;
-    margin-bottom: calc-rem($base-spacing-unit);
+    @include rems(margin-bottom, $base-spacing-unit);
 }
 
     .homepage-wrapper--news {
         @include breakpoint(580px 720px){
             .item-list__item {
+                @include rems(margin-bottom, $base-spacing-unit);
                 float: left;
                 width: 45%;
-                margin-right: $base-spacing-unit;
-                margin-right: calc-rem($base-spacing-unit);
 
                 &:nth-child(2n) {
                     margin-right: 0;
@@ -328,10 +298,9 @@
 
         @include breakpoint(1260px){
             .item-list__item {
+                @include rems(margin-right, $base-spacing-unit);
                 float: left;
                 width: 45%;
-                margin-right: $base-spacing-unit;
-                margin-right: calc-rem($base-spacing-unit);
 
                 &:nth-child(2n) {
                     margin-right: 0;
@@ -347,14 +316,12 @@
     .homepage-wrapper--live-shows {
 
         @include breakpoint(720px){
-            margin-top: 5px;
-            margin-top: calc-rem(5px);
+            @include rems(margin-top, 5);
             float: left;
             width: 48%;
 
             .live-shows-block header > a {
-                right: $base-spacing-unit;
-                right: calc-rem($base-spacing-unit);
+                @include rems(right, $base-spacing-unit);
             }
         }
 
@@ -362,3 +329,39 @@
             width: 32%;
         }
     }
+
+    .main-wrapper--secondary {
+        max-height: none;
+        overflow: initial;
+
+        @include breakpoint($breakpoint__small){
+            @include rems(margin-top, - $base-spacing-unit * 1.2)
+        }
+
+        @include breakpoint($breakpoint__large) {
+            @include rems(padding-right, 90);
+            @include rems(padding-left, $base-spacing-unit);
+            margin-top: 0;
+            float: right;
+            width: 40%;
+        }
+
+        @include breakpoint (700px){
+            @include rems(max-width, 620);
+            @include rems(margin, $base-spacing-unit);
+            @include rems(padding, 0, $base-spacing-unit * 2);
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @include breakpoint($breakpoint__large) {
+            @include rems(padding-right, 90);
+            margin-top: 0;
+            padding-left: 0;
+            width: 37%;
+        }
+
+        @include breakpoint(1266px){
+            width: 41.7%;
+        }
+}

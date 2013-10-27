@@ -13,42 +13,34 @@
     }
 
     @include breakpoint(max-width $breakpoint__large){
-        max-width: 940px;
-        max-width: calc-rem(940px);
+        @include rems(max-width, 940);
     }
 }
 
 .carousel-wrapper {
+    @include rems(margin-bottom, $base-spacing-unit);
+    @include rems(padding-bottom, $base-spacing-unit * 2);
     border-bottom: 1px solid $color__border--standard;
-    margin-bottom: $base-spacing-unit;
-    margin-bottom: calc-rem($base-spacing-unit);
-    padding-bottom: $base-spacing-unit * 2;
-    padding-bottom: calc-rem($base-spacing-unit * 2);
-
 
     @include breakpoint($breakpoint__large) {
+        @include rems(padding-bottom, $base-spacing-unit * 4);
         float: left;
         width: 100%;
-        padding-bottom: $base-spacing-unit * 4;
-        padding-bottom: calc-rem($base-spacing-unit * 4);
     }
 }
 
 
     .album__info-wrapper {
         @include breakpoint($breakpoint__large) {
+            @include rems(padding-left, $base-spacing-unit);
             width: 34.3%;
-            padding-left: $base-spacing-unit;
-            padding-left: calc-rem($base-spacing-unit);
 
             h3 {
-                font-size: $h4-size + 3px;
-                font-size: calc-rem($h4-size + 3px);
+                @include rems(font-size, $h4-size + 3);
             }
 
             p {
-                font-size: 15px;
-                font-size: calc-rem(15px);
+                @include rems(font-size, 15);
             }
         }
 
@@ -70,8 +62,7 @@
 
         .carousel__summary {
             p {
-                font-size: 14px;
-                font-size: calc-rem(14px);
+                @include rems(font-size, 14);
             }
         }
     }
@@ -97,8 +88,7 @@
 
 
                 &:nth-child(2n + 1){
-                    margin-right: $base-spacing-unit;
-                    margin-right: calc-rem($base-spacing-unit);
+                    @include rems(margin-right, $base-spacing-unit);
                 }
 
                 &:nth-child(3n + 1) {

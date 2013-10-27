@@ -21,15 +21,12 @@
     border-top: 1px solid $color__border--standard;
 
     .main-wrapper--article__detail & {
-        margin-right:- $base-spacing-unit;
-        margin-left:- $base-spacing-unit;
-        margin:0 -calc-rem($base-spacing-unit) 0 -calc-rem($base-spacing-unit);
+        @include rems(margin-right, - $base-spacing-unit);
+        @include rems(margin-left, - $base-spacing-unit);
 
         @include breakpoint($breakpoint__small){
             margin: 0;
-            border-left: 1px solid $color__border--standard;
-            border-right: 1px solid $color__border--standard;
-            border-top: 1px solid $color__border--standard;
+            border: 1px solid $color__border--standard;
             border-bottom: none;
 
             .island__header {
@@ -50,10 +47,8 @@
 
 
 .island--wrapper {
-    padding-top: $base-spacing-unit * 2;
-    padding-top: calc-rem($base-spacing-unit * 2);
-    padding-bottom: $base-spacing-unit * 2;
-    padding-bottom: calc-rem($base-spacing-unit * 2);
+    @include rems(padding-top, $base-spacing-unit * 2);
+    @include rems(padding-bottom, $base-spacing-unit * 2);
 
     &.side-wrapper {
         @include breakpoint($breakpoint__small){
@@ -66,17 +61,15 @@
         }
 
         @include breakpoint($breakpoint__large){
+            @include rems(margin-top, - $base-spacing-unit);
+            @include rems(padding-right, 90);
+            padding-top: 0;
+            margin-bottom: -99999px; // 100% height hack
+            padding-bottom: 99999px; // 100% height hack
             border-top: none;
             border-left: 1px solid $color__border--standard;
             float: right;
             width: 41.8%;
-            margin-top: - $base-spacing-unit;
-            margin-top: - calc-rem($base-spacing-unit);
-            margin-bottom: -99999px; // 100% height hack
-            padding: 0;
-            padding-right: 90px;
-            padding-right: calc-rem(90px);
-            padding-bottom: 99999px; // 100% height hack
         }
 
         @include breakpoint(1260px){
@@ -86,10 +79,8 @@
 
     &.side-wrapper--rev {
         @include breakpoint($breakpoint__large) {
-            padding-left: 90px;
-            padding-left: calc-rem(90px);
-            padding-right: $base-spacing-unit;
-            padding-right: calc-rem($base-spacing-unit);
+            @include rems(padding-left, 90);
+            @include rems(padding-right, $base-spacing-unit);
             float: left;
             border-left: none;
         }
@@ -114,8 +105,7 @@
     }
 
     h3 {
-        margin-bottom: $half-spacing-unit;
-        margin-bottom: calc-rem($half-spacing-unit);
+        @include rems(margin-bottom, $base-spacing-unit);
     }
 
     &.island--wrapper__comments-container {
@@ -133,11 +123,9 @@
 
         @include breakpoint($breakpoint__small){
             @include max-width(8);
+            @include rems(padding-left, $gutter*2);
+            @include rems(padding-right, $gutter*2);
             margin: 0 auto;
-            padding-left: ($gutter *2);
-            padding-left: calc-rem($gutter *2);
-            padding-right: ($gutter *2);
-            padding-right: calc-rem($gutter *2);
         }
 
         @include breakpoint(680px){
@@ -145,8 +133,7 @@
         }
 
         @include breakpoint($breakpoint__large){
-            padding: $base-spacing-unit;
-            padding: calc-rem($base-spacing-unit);
+            @include rems(padding, $base-spacing-unit);
             padding-right: 0;
             padding-top: 0;
         }
@@ -160,8 +147,7 @@
     .island--wrapper--equipment {
 
         @include breakpoint($breakpoint__large) {
-            padding: $base-spacing-unit;
-            padding: calc-rem($base-spacing-unit);
+            @include rems(padding, $base-spacing-unit);
             padding-right: 0;
         }
 
@@ -174,18 +160,16 @@
         figure {
 
             @include breakpoint(580px $breakpoint__large){
+                @include rems(margin-right, $base-spacing-unit);
                 float: left;
                 width: 30%;
-                margin-right: $base-spacing-unit;
-                margin-right: calc-rem($base-spacing-unit);
             }
         }
     }
 
     .island__header {
+        @include rems(padding, $half-spacing-unit, $base-spacing-unit);
         background-color: darken($color__background--grey, 5);
-        padding: $half-spacing-unit $base-spacing-unit;
-        padding: calc-rem($half-spacing-unit) calc-rem($base-spacing-unit);
         border: 1px solid $color__border--standard;
         border-bottom: 1px solid darken($color__border--standard, 5);
         border-top: none;
@@ -199,8 +183,8 @@
 
     .island__content {
         @extend .cf;
-        padding: $gutter;
-        padding: calc-rem($gutter);
+        @include rems(padding, $gutter);
+        @include rems(padding-top, $gutter/1.5);
         border: 1px solid $color__border--standard;
         border-top: none;
     }
@@ -208,7 +192,4 @@
     .island > :last-child {
       margin-bottom:0;
     }
-
-
-
 }//endif

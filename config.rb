@@ -11,6 +11,7 @@ javascripts_dir = "public/static/js"
 fonts_dir = "public/static/fonts"
 
 output_style = :nested
+encoding = "utf-8"
 environment = :development
 
 # To enable relative paths to assets via compass helper functions. Uncomment:

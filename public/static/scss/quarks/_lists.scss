@@ -19,11 +19,10 @@ ul {
         list-style-type:none;
 
         &:before {
+            @include rems(left, - $quarter-spacing-unit);
             content:"•";
             color: $color__orange--primary;
             position:relative;
-            left: -$quarter-spacing-unit;
-            left: - (calc-rem($quarter-spacing-unit));
         }
     }
 }
@@ -39,11 +38,10 @@ ol {
             list-style-type:none;
 
             &:before {
+                @include rems(left, - $quarter-spacing-unit);
                 content: counter(counter);
                 color: $color__orange--primary;
                 position:relative;
-                left: - $quarter-spacing-unit;
-                left: - (calc-rem($quarter-spacing-unit));
             }
         }
     }

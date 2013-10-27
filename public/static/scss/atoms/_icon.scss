@@ -18,7 +18,7 @@
     list-style-type: none;
 
     >li {
-        margin-bottom: $half-spacing-unit;
+        @include rems(margin-bottom, $half-spacing-unit);
 
         &:before {
             display:none;
@@ -46,44 +46,37 @@
 
 .icon {
     @extend %font__icon--gizmo;
+    @include rems(padding-right, $quarter-spacing-unit - 5);
     display:inline;
     vertical-align: middle;
     line-height: 0;
-    padding-right: $quarter-spacing-unit - 5px;
-    padding-right: calc-rem($quarter-spacing-unit - 5px);
 }
 
     .icon-text--rev > .icon-text__icon{
-        margin-left: calc-rem($half-spacing-unit / 2);
+        @include rems(margin-left, $quarter-spacing-unit);
     }
 
     .icon--menu {
         color: $color__banner-nav--dark;
-        padding-right: 2px;
-        padding-right: calc-rem(2px);
+        @include rems(padding-right, 2);
     }
 
 
     .icon--tag {
+        @include rems(margin-right, -2);
+        @include rems(font-size, 14);
         padding-right: 0;
-        margin-right: -2px;
-        margin-right: calc-rem(-2px);
-        font-size: 14px;
-        font-size: calc-rem(14px);
     }
 
     .ss-music {
-        margin-right:-2px;
-        margin-right: - calc-rem(2px);
+        @include rems(margin-right, - 2);
     }
 
     .icon--meta {
-        margin-left: - ($half-spacing-unit + 2px);
-        margin-left: - calc-rem($half-spacing-unit + 2px);
-        margin-right: 3px;
-        margin-right: calc-rem(3px);
+        @include rems(margin-left, - $half-spacing-unit + 2);
+        @include rems(margin-right, 3);
+        @include rems(font-size, 17);
         color: lighten($color__meta, 15);
-        font-size: calc-rem(17px);
     }
 
 
@@ -96,21 +89,17 @@
     @include sprite-map-generator($social);
 
     .social-icon:before {
+        @include rems(height, $half-spacing-unit);
+        @include rems(width, $half-spacing-unit);
+        @include rems(margin-bottom, - 4);
         content: "";
         display: inline-block;
-        height: $half-spacing-unit;
-        height: calc-rem($half-spacing-unit);
-        width: $half-spacing-unit;
-        width: calc-rem($half-spacing-unit);
-        margin-bottom: -4px;
-        margin-bottom: - calc-rem(4px);
     }
 
     .icon--facebook:before {
         @include svg-background($social, 'facebook');
-        background-size:13px;
-        margin-right:5px;
-        margin-right: calc-rem(5px);
+        @include rems(background-size, 13);
+        @include rems(margin-right, 5);
     }
 
     .icon--twitter:before {
@@ -119,21 +108,11 @@
 
     .icon--vimeo:before {
         @include svg-background($social, 'vimeo');
-        margin-right:5px;
-        margin-right: calc-rem(5px);
+        @include rems(margin-right, 5);
     }
 
     .icon--youtube:before {
         @include svg-background($social, 'youtube');
-        margin-bottom: -5px;
-        margin-bottom: - calc-rem(5px);
+        @include rems(margin-bottom, -5);
     }
-
-
-
-
-
-
-
-
 } //endif

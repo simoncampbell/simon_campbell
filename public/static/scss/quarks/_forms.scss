@@ -7,15 +7,12 @@ textarea,
 input {
     @include vendor(border-radius, $brand-round);
     @include vendor(border-radius, calc-rem($brand-round));
-    font-size: $milli-size;
-    font-size: calc-rem($milli-size);
+    @include rems(font-size, $milli-size);
     -webkit-appearance:none;
     border: 1px solid $color__border--standard;
     background-color: $color__background--grey;
-    margin-bottom: $base-spacing-unit;
-    margin-bottom: calc-rem($base-spacing-unit);
-    padding: 0 $half-spacing-unit;
-    padding: 0 calc-rem($half-spacing-unit);
+    @include rems(margin-bottom, $base-spacing-unit);
+    @include rems(padding, 0, $half-spacing-unit);
     color: $color__meta--dark;
     line-height: $line-height-ratio;
 
@@ -28,13 +25,21 @@ input {
       background-color:$color__background--grey;
     }
 }
+
+.main-wrapper--article__detail  {
+    form {
+        input:only-of-type {
+            margin-bottom: 0;
+        }
+    }
+}
+
 /**
  * Placeholders
  */
 
     ::-webkit-input-placeholder {
-        font-size: $milli-size;
-        font-size: calc-rem($milli-size);
+        @include rems(font-size, $milli-size);
         color: lighten($color__meta--dark,15);
     }
 
@@ -63,10 +68,8 @@ input {
  */
 .text-input,
 input {
-    height: 40px;
-    height: calc-rem(40px);
-    width: 300px;
-    width: calc-rem(300px);
+    @include rems(height, 40);
+    @include rems(width, 300);
     max-width:70%;
 
     &.btn {
@@ -75,8 +78,7 @@ input {
 }
 
     .text-input {
-        width: 230px;
-        width: calc-rem(230px);
+        @include rems(width, 230);
     }
     .text-input--secondary {
         @extend %font__display--normal;
@@ -84,8 +86,7 @@ input {
 
 textarea {
     width:100%;
-    padding-top: $half-spacing-unit;
-    padding-top: calc-rem($half-spacing-unit);
+    @include rems(padding-top, $half-spacing-unit);
 }
 
 .text-input--secondary {
@@ -99,8 +100,7 @@ textarea {
 
 #search-form {
     @extend .cf;
-    margin-bottom: $half-spacing-unit;
-    margin-bottom: calc-rem($half-spacing-unit);
+    @include rems(margin-bottom, $half-spacing-unit);
     display: block;
 }
     .search-form__input {
@@ -117,14 +117,12 @@ textarea {
 
     .search-form__submit.btn {
         @extend %font__icon--gizmo;
+        @include rems(height, 42);
+        @include rems(width, 40);
+        @include rems(font-size, 18);
         float: left;
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
-        height: 42px;
-        height: calc-rem(42px);
-        width: 40px;
-        font-size: 18px;
-        font-size: calc-rem(18px);
 
         &:hover,
         &:focus {
@@ -134,8 +132,7 @@ textarea {
 
 
 .form-block--comments {
-    margin-bottom: $base-spacing-unit * 2;
-    margin-bottom: calc-rem($base-spacing-unit * 2);
+    @include rems(margin-bottom, $base-spacing-unit * 2);
 }
 
 
@@ -149,8 +146,7 @@ textarea {
 label,
 .label{
     @extend %font__display--black;
-    font-size: 14px;
-    font-size: calc-rem(14px);
+    @include rems(font-size, 14);
     text-transform: uppercase;
     display: block;
     color: $color__meta--dark;

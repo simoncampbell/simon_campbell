@@ -15,9 +15,8 @@
  * Demo: jsfiddle.net/inuitcss/AemkH
  *
  */
-	.marginalia{
-		font-size:($milli-size);
-	    font-size:calc-rem($milli-size);
-	}
+    .marginalia{
+        @include rems(font-size, $milli-size);
+    }
 
 }//endif

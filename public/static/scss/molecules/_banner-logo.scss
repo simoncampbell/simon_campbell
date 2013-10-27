@@ -2,78 +2,75 @@
     $BANNER-LOGO
 \*------------------------------------*/
 
-#header {
+/*
+ * Styles for the logo and main banner
+ */
+
+
+.banner {
     @extend .cf;
+    @include rems(margin-bottom, $base-spacing-unit);
     position: relative;
     width:100%;
-    margin-bottom: $base-spacing-unit;
-    margin-bottom: calc-rem($base-spacing-unit);
     background-color: $color__background--black;
 
     @include breakpoint($breakpoint__small) {
-        margin-bottom: $base-spacing-unit * 2;
-        margin-bottom: calc-rem($base-spacing-unit * 2);
+        @include rems(margin-bottom, $base-spacing-unit * 2);
     }
 
     @include breakpoint(552px) {
+        @include rems(height, 46);
         border-bottom: 1px solid $color__orange--secondary;
-        height: 46px;
-        height: calc-rem(46px);
     }
 
     @include breakpoint($breakpoint__large){
+        @include rems(margin-bottom, $base-spacing-unit * 3);
         border-bottom: none;
-        margin-bottom: $base-spacing-unit * 3;
-        margin-bottom: calc-rem($base-spacing-unit * 3);
     }
 }
 
-.banner-logo {
+.banner__logo {
     @extend .main-wrapper;
-    font-size: $h3-size;
-    font-size: calc-rem($h3-size);
-    height: 46px;
-    height: calc-rem(46px);
+    @include rems(height, 46);
+    @include rems(padding-top, $half-spacing-unit + 4);
+    @include rems(font-size, $h3-size);
     border-bottom: 1px solid $color__orange--secondary;
     text-align: left;
     color: $color__white;
     text-transform: uppercase;
-    padding-top: ($half-spacing-unit + 4px);
-    padding-top: calc-rem($half-spacing-unit + 4px);
     margin: 0 auto;
     line-height: $base-line-height;
     background-color: $color__background--black;
 
-
     @include breakpoint($breakpoint__large){
+        @include rems(height, 47);
+        @include rems(padding-left, $half-spacing-unit + 5);
         width: 23%;
         margin-left: 0;
         padding-right: 0;
-        padding-left: $half-spacing-unit + 5px;
-        padding-left: calc-rem($half-spacing-unit + 5px);
         float: left;
         border-bottom: 2px solid $color__orange--secondary;
-        height: 47px;
-        height: calc-rem(47px);
     }
 
     @include breakpoint(1260px){
+        @include rems(padding-left, $base-spacing-unit);
+        @include rems(height, 49);
         width: 21.3%;
-        padding-left: $base-spacing-unit;
-        padding-left: calc-rem($base-spacing-unit);
     }
-
 
     h1, p {
         @include image-2x("/static/images/branding/simon-campbell__logo--large.png", 5.3em);
         background:url("/static/images/branding/simon-campbell__logo.png") no-repeat;
-        background-size:200px;
-        background-size:calc-rem(200px);
+        @include rems(background-size, 200);
         text-indent: 100%;
         white-space: nowrap;
         overflow: hidden;
         margin:0;
         line-height:1;
+
+        @include breakpoint(max-width 380px){
+            background-size: 67%;
+        }
     }
 
     &.menu--active {

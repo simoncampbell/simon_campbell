@@ -8,10 +8,9 @@
 .comments {
 
     @include breakpoint(680px $breakpoint__large) {
+        @include rems(margin-right, $base-spacing-unit);
         float: left;
         width: 47%;
-        margin-right: $base-spacing-unit;
-        margin-right: calc-rem($base-spacing-unit);
     }
 
     @include breakpoint($breakpoint__large){
@@ -22,10 +21,9 @@
 
 .comments__wrapper {
     @include breakpoint($breakpoint__large){
+        @include rems(padding-top, $half-spacing-unit / 2);
         float: left;
         width: 58.2%;
-        padding-top: $half-spacing-unit / 2;
-        padding-top: calc-rem($half-spacing-unit / 2 );
     }
 
     @include breakpoint(1260px) {
@@ -35,38 +33,33 @@
 
     .wide-wrapper {
         @include breakpoint($breakpoint__large) {
-            padding-right: 24px;
-            padding-right: calc-rem(24px);
+            @include rems(padding-right, 24);
         }
     }
 }
 
     .comments__wrapper--rev {
         @include breakpoint($breakpoint__large){
+            @include rems(padding-left, $base-spacing-unit + 5);
             float: right;
             width: 58.2%;
-            padding-left: $base-spacing-unit + 5px;
-            padding-left: calc-rem($base-spacing-unit + 5px);
         }
 
         @include breakpoint(1100px){
+            @include rems(padding-left, 87);
             width: 63.2%;
-            padding-left: 87px;
-            padding-left: calc-rem(87px);
         }
 
         @include breakpoint(1260px){
+            @include rems(padding-left, 120);
             width: 65.5%;
-            padding-left: 120px;
-            padding-left: calc-rem(120px);
 
         }
 
         .wide-wrapper {
             @include breakpoint($breakpoint__large) {
+                @include rems(padding-right, 90);
                 padding-left: 0;
-                padding-right: 90px;
-                padding-right: calc-rem(90px);
             }
         }
     }
@@ -74,34 +67,25 @@
 
 .comments__header {
     @extend %font__display--black;
-    font-size: $h2-size + 4px;
-    font-size: calc-rem($h2-size + 4px);
+    @include rems(font-size, $h2-size + 4);
 
     @include breakpoint($breakpoint__large){
-        margin-left: -90px;
-        margin-left: calc-rem(-90px);
-        margin-right: - 90px;
-        margin-right: calc-rem(-90px);
-        padding-bottom: 2px;
-        padding-bottom: calc-rem(2px);
-        padding-left: 90px;
-        padding-left: calc-rem(90px);
+        @include rems(margin-left, -90);
+        @include rems(margin-right, -90);
+        @include rems(padding-bottom, 2);
+        @include rems(padding-left, 90);
         border-bottom: 1px solid $color__border--standard;
     }
 
     .comments__wrapper--rev  & {
         @include breakpoint($breakpoint__large){
-            margin-right: - $base-spacing-unit * 5;
-            margin-right: - calc-rem($base-spacing-unit * 5);
-            padding-right: $base-spacing-unit * 5;
-            padding-right: calc-rem($base-spacing-unit * 5);
+            @include rems(margin-right, - $base-spacing-unit * 5);
+            @include rems(padding-right, $base-spacing-unit * 5);
         }
 
         @include breakpoint(1260px){
-            margin-left: - $base-spacing-unit * 6;
-            margin-left: - calc-rem($base-spacing-unit * 6);
-            padding-left: $base-spacing-unit * 6;
-            padding-left: calc-rem($base-spacing-unit * 6);
+            @include rems(margin-left, - $base-spacing-unit * 6);
+            @include rems(padding-left, $base-spacing-unit * 6);
         }
     }
 }
@@ -117,8 +101,7 @@
     }
 
     @include breakpoint(1260px){
-        max-width: 539px;
-        max-width: calc-rem(539px);
+        @include rems(max-width, 539);
     }
 }
 

@@ -7,15 +7,13 @@
  */
 
 .carousel {
+    @include rems(margin-top, $base-spacing-unit);
     position: relative;
-    margin-top: $base-spacing-unit;
-    margin-top: calc-rem($base-spacing-unit);
     list-style: none;
 
     .js & {
+        @include rems(margin-bottom, $half-spacing-unit);
         color: darken($color__white,10);
-        margin-bottom: $half-spacing-unit;
-        margin-bottom: calc-rem($half-spacing-unit);
     }
 
     .no-js & {
@@ -55,20 +53,19 @@
         position: relative;
 
         .no-js & {
-            margin-bottom: $base-spacing-unit * 2;
-            margin-bottom: calc-rem($base-spacing-unit * 2);
+            @include rems(margin-bottom, $base-spacing-unit * 2);
         }
 
         &:before {
             content:"";
             display: none;
         }
+
         .js & {
             > figure {
+                @include rems(max-height, 722);
                 margin: 0;
                 background-color: $color__background--black;
-                max-height: 722px;
-                max-height: calc-rem(722px);
 
                 img {
                     width: 100%;
@@ -90,31 +87,22 @@
         width: 100%;
 
         .js & {
-            padding: $base-spacing-unit;
-            padding: calc-rem($base-spacing-unit);
+            @include rems(padding, $base-spacing-unit);
             border-top: 1px solid $color__background--black;
 
             @include breakpoint($breakpoint__small){
                 @include max-width(12);
+                @include rems(padding, $gutter);
+                @include rems(padding-bottom, $half-spacing-unit);
                 margin: 0 auto;
-                padding: $gutter;
-                padding: calc-rem($gutter);
-                padding-bottom: $base-spacing-unit / 2;
-                padding-bottom: calc-rem($base-spacing-unit / 2);
             }
 
             @include breakpoint(700px){
                 @include width(5);
+                @include rems(padding, $half-spacing-unit);
+                @include rems(padding-left, $base-spacing-unit);
                 position: absolute;
                 bottom: 0;
-                padding-top: $half-spacing-unit;
-                padding-top: calc-rem($half-spacing-unit);
-                padding-bottom: $half-spacing-unit;
-                padding-bottom: calc-rem($half-spacing-unit);
-                padding-right: $half-spacing-unit;
-                padding-right: calc-rem($half-spacing-unit);
-                padding-left: $base-spacing-unit;
-                padding-left: calc-rem($base-spacing-unit);
                 background-color: rgba(58,58,58, .7);
                 border: 1px solid $color__background--dark;
                 border-left: none;
@@ -122,27 +110,22 @@
 
             p,
             .meta-info-block {
-                font-size: $milli-size;
-                font-size: calc-rem($milli-size);
+                @include rems(font-size, $milli-size);
             }
 
             h4 {
+                @include rems(font-size, $h5-size);
                 color: $color__white;
-                font-size: $h5-size;
-                font-size: calc-rem($h5-size);
             }
 
         }
 
         p {
             @extend %font__text--italic;
-            padding-bottom: $quarter-spacing-unit;
-            padding-bottom: calc-rem($quarter-spacing-unit);
-            margin-bottom: $quarter-spacing-unit;
-            margin-bottom: calc-rem($quarter-spacing-unit);
+            @include rems(padding-bottom, $quarter-spacing-unit);
+            @include rems(margin-bottom, $quarter-spacing-unit);
+            @include rems(max-width, 450);
             border-bottom: 1px dotted darken($color__meta--on-bg, 20);
-            max-width: 450px;
-            max-width: calc-rem(450px);
         }
 
         .meta-info-block {
@@ -151,8 +134,7 @@
 
         p,
         .meta-info-block {
-            font-size: $milli-size;
-            font-size: calc-rem($milli-size);
+            @include rems(font-size, $milli-size);
         }
     }
 
@@ -204,11 +186,10 @@
 
     @extend %font__display--normal;
     @extend .cf;
+    @include rems(font-size, $milli-size);
     position: absolute;
     top: 0;
     width: 100%;
-    font-size: $milli-size;
-    font-size: calc-rem($milli-size);
     clear: both;
     border: 1px solid $color__background--black;
 
@@ -223,27 +204,22 @@
 
     a {
         @include transition(all .25s ease-out);
+        @include rems(padding, $half-spacing-unit, 16);
         float: left;
         width: 50%;
-        padding: $half-spacing-unit 1em;
         border-bottom:none;
         color: $color__white;
         cursor: pointer;
         background-color: $color__background--black;
         opacity: .7;
 
-
-
         @include breakpoint(680px){
+            @include rems(height, 120);
+            @include rems(font-size, $h1-size);
+            @include rems(padding, $quarter-spacing-unit);
             position: absolute;
             width: auto;
-            height: 120px;
-            height: calc-rem(120px);
             color: #fff;
-            font-size: $h1-size;
-            font-size: calc-rem($h1-size);
-            padding: $half-spacing-unit / 2;
-            padding: calc-rem($half-spacing-unit / 2);
             padding-left: 0;
             padding-right: 0;
             display: table;
@@ -301,8 +277,7 @@
 
     .icon {
         @include transition(all .25s ease-in-out);
-        vertical-align: -2px;
-        vertical-align: - calc-rem(2px);
+        @include rems(vertical-align, - 2);
         color: $color__meta;
 
         @include breakpoint(680px){

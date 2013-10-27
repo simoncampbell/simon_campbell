@@ -7,7 +7,7 @@
  */
 
 
-$column: 60px;  // The column-width of grid in pixels
+$column: 60;  // The column-width of grid in pixels
 $gutter: $base-spacing-unit;  // The gutter-width of grid in pixels
 
 
@@ -30,3 +30,38 @@ $cols13: (13 * ($column + $gutter) - $gutter) / $rem;
 $cols14: (14 * ($column + $gutter) - $gutter) / $rem;
 $cols15: (15 * ($column + $gutter) - $gutter) / $rem;
 $cols16: (16 * ($column + $gutter) - $gutter) / $rem;
+
+
+.grid-toggle__container {
+    pointer-events: none;
+    background-size: 100%;
+    background-repeat: repeat-y;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 9;
+    opacity: .4;
+    background-color:transparent;
+
+    &.js-grid {
+        background-image: url(/static/images/grids/grid-a.png);
+
+        @include breakpoint($breakpoint__small){
+            background-image: url(/static/images/grids/grid-b.png);
+        }
+
+        @include breakpoint($breakpoint__desktop){
+            background-image: url(/static/images/grids/grid-c.png);
+            max-width: 1272px;
+            margin: 0 auto;
+            left: 0;
+            right: 0;
+        }
+    }
+
+    // &.js-baseline {
+    //     background-repeat: repeat-y;
+    //     background-image: url(/static/images/grids/baselines.png);
+    // }
+}

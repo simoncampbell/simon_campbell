@@ -21,8 +21,6 @@ $breakpoint__medium: 690px;
 $breakpoint__desktop: 800px;
 $breakpoint__large: 1000px;
 
-
-
 /*------------------------------------*\
     $Base
 \*------------------------------------*/
@@ -30,17 +28,17 @@ $breakpoint__large: 1000px;
  * Font-sizes (in pixels). Refer to relevant sections for their implementations.
  */
 
-$base-font-size: 16px!default;
-$base-line-height: 25px!default;
+$base-font-size: 16!default;
+$base-line-height: 26!default;
 
-$h1-size: 35px!default;
-$h2-size: 28px!default;
-$h3-size: 22px!default;
-$h4-size: 18px!default;
+$h1-size: 35!default;
+$h2-size: 28!default;
+$h3-size: 22!default;
+$h4-size: 18!default;
 $h5-size: $base-font-size !default;
 
-$milli-size: 15px!default;
-$micro-size: 13px!default;
+$milli-size: 15!default;
+$micro-size: 13!default;
 
 
 $base-font-family: "Poynter Serif RE", Georgia, serif!default;
@@ -54,7 +52,7 @@ $base-ui-color: #EEEEEE!default;
     $Brand
 \*------------------------------------*/
 
-$brand-round: 4px!default;
+$brand-round: 4!default;
 
 
 

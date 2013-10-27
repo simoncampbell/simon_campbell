@@ -10,14 +10,11 @@ blockquote {
 
     &:before {
         @extend %font__text--bold;
+        @include rems(left, - $base-spacing-unit);
+        @include rems(top, - $half-spacing-unit);
+        @include rems(font-size, 30);
         content: "\201C";
         position: absolute;
-        font-size: 30px;
-        font-size: calc-rem(30px);
         color: $color__orange--primary;
-        left: - ($base-spacing-unit);
-        left: - calc-rem($base-spacing-unit);
-        top: - $half-spacing-unit;
-        top: - calc-rem($half-spacing-unit);
     }
 }

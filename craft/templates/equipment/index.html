@@ -13,7 +13,7 @@
 {% block content_main %}
     <header class="heading-group heading-group--main">
         <h1>Equipment &amp; Gear</h1>
-        <h2>Reviews, notes and general thoughts on instruments</h2>
+        <h2>Reviews and notes from on the road and inside the studio</h2>
     </header>
 
 
@@ -23,7 +23,7 @@
 
 
     <div class="wrapper">
-        <div class="main-wrapper main-wrapper--rev" role="main">
+        <div class="main-wrapper main-wrapper--listing" role="main">
 
             <ul class="item-list">
                 {% for post in craft.entries.find({section:'Equipment', limit:'10'})  %}
@@ -69,7 +69,7 @@
         </div> <!-- //end.main-wrapper -->
 
 
-        <div class="side-wrapper side-wrapper--rev island island--wrapper">
+        <div class="side-wrapper island island--wrapper">
             <ul class="item-list island--wrapper__content">
 
                 <li class="item-list__item item-list__item--album side-bar--album--alone">

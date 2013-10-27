@@ -12,8 +12,7 @@
 }
     .item-list__item {
         list-style-type:none;
-        margin-bottom: $base-spacing-unit * 2;
-        margin-bottom: calc-rem($base-spacing-unit * 2);
+        @include rems(margin-bottom, $base-spacing-unit * 2);
 
         &:last-child {
             margin-bottom: 0;
@@ -30,13 +29,11 @@
 
         .wide-wrapper--recent-entries & {
             @include breakpoint(720px){
+                @include rems(margin-right, $base-spacing-unit);
+                @include rems(margin-bottom, 20);
                 float: left;
                 width: 48.4%;
                 border-bottom: none;
-                margin-right: $base-spacing-unit;
-                margin-right: calc-rem($base-spacing-unit);
-                margin-bottom: 20px;
-                margin-bottom: cacl-rem(20px);
                 padding-bottom: 0;
 
                 &:nth-child(2n){
@@ -51,8 +48,7 @@
     }
 
     .item-list__item--half {
-        margin-bottom: $half-spacing-unit;
-        margin-bottom: calc-rem($half-spacing-unit);
+        @include rems(margin-bottom, $half-spacing-unit);
     }
 
     /**
@@ -61,18 +57,16 @@
     **/
 
     .item-list--sub-content {
+        @include rems(padding-top, $base-spacing-unit);
+        @include rems(margin-top, $base-spacing-unit);
         border-top: 1px dotted $color__border--standard;
-        padding-top: $base-spacing-unit;
-        padding-top: (calc-rem($base-spacing-unit));
-        margin-top: $base-spacing-unit;
-        margin-top: calc-rem($base-spacing-unit);
 
         >h3 {
             margin-bottom:0;
         }
 
         &.item-list--sub-content--alternate {
-            margin-bottom: $base-spacing-unit;
+            @include rems(margin-bottom, $base-spacing-unit);
         }
 
         .main-wrapper--archive &:first-of-type {
@@ -83,13 +77,11 @@
     }
 
     .item-list--sub-content--borderless {
+        @include rems(padding-top, $base-spacing-unit);
         border: none;
-        padding-top: $base-spacing-unit;
-        padding-top: calc-rem($base-spacing-unit);
 
         > h3 {
-            margin-bottom: $base-spacing-unit;
-            margin-bottom: calc-rem($base-spacing-unit);
+            @include rems(margin-bottom, $base-spacing-unit);
         }
     }
 
@@ -118,11 +110,9 @@
 
 .item-list--bordered {
     .item-list__item {
+        @include rems(padding-top, $base-spacing-unit);
+        @include rems(margin-bottom, $base-spacing-unit);
         border-top: 1px dotted darken($color__border--standard, 5);
-        padding-top: $base-spacing-unit;
-        padding-top: calc-rem($base-spacing-unit);
-        margin-bottom: $base-spacing-unit;
-        margin-bottom: calc-rem($base-spacing-unit);
     }
 }
 
@@ -132,16 +122,13 @@
     **/
 
     .item-list--article {
-        margin-bottom: 0;
     }
 
 
     .item-list__item--article {
+        @include rems(margin-bottom, $base-spacing-unit);
+        @include rems(padding-bottom, $base-spacing-unit);
         border-bottom: 1px dotted $color__border--standard;
-        margin-bottom: $base-spacing-unit;
-        margin-bottom: calc-rem($base-spacing-unit);
-        padding-bottom: $base-spacing-unit;
-        padding-bottom: calc-rem($base-spacing-unit);
 
         &:last-of-type {
             border:none;
@@ -183,25 +170,29 @@
 
         .item-list__item {
             float: left;
-            width: 46%;
+            width: 100%;
+            @include rems(margin-bottom, $base-spacing-unit);
 
-            //mobile styles for 2c grid
+
+            @include breakpoint(500px){
+                width: 46%;
+
+                //mobile styles for 2c grid
                 &:nth-child(odd){
-                    margin-right: $base-spacing-unit;
-                    margin-right: calc-rem($base-spacing-unit);
+                    @include rems(margin-right, $base-spacing-unit);
                     clear: left;
                 }
+            }
 
-                @include breakpoint(680px){
-                    width: 48%;
-                }
+            @include breakpoint(680px){
+                width: 48%;
+            }
 
             // tablet styles for 3c grid
 
                 @include breakpoint(700px){
+                    @include rems(margin-right, $base-spacing-unit);
                     width:31%;
-                    margin-right: $base-spacing-unit;
-                    margin-right: calc-rem($base-spacing-unit);
 
                     &:nth-child(odd){
                         clear: none;
@@ -229,13 +220,11 @@
     }
 
     p {
-        font-size: $milli-size;
-        font-size: calc-rem($milli-size);
+        @include rems(font-size, $milli-size);
     }
 
     li figure {
-        margin-bottom: $half-spacing-unit / 2;
-        margin-bottom: calc-rem($half-spacing-unit / 2);
+        @include rems(margin-bottom, $half-spacing-unit / 2);
     }
 }
 
@@ -248,8 +237,7 @@
                     width: 48%;
 
                     &:nth-child(odd){
-                        margin-right: $base-spacing-unit;
-                        margin-right: calc-rem($base-spacing-unit);
+                        @include rems(margin-right, $base-spacing-unit);
                     }
 
                     &:nth-child(2n){
@@ -262,8 +250,7 @@
                 }
 
                 @include breakpoint($breakpoint__large) {
-                    margin-bottom: $base-spacing-unit;
-                    margin-bottom: calc-rem($base-spacing-unit);
+                    @include rems(margin-bottom, $base-spacing-unit);
                 }
             }
         }
@@ -278,8 +265,7 @@
         }
 
         p {
-            margin-bottom: $half-spacing-unit;
-            margin-bottom: calc-rem($half-spacing-unit);
+            @include rems(margin-bottom, $half-spacing-unit);
         }
 
     }
@@ -289,13 +275,10 @@
     @include vendor(column-count, 2);
     @include vendor(column-gap, $base-spacing-unit);
     @include vendor(column-gap, calc-rem($base-spacing-unit));
+    @include rems(margin-top, $base-spacing-unit);
+    @include rems(margin-bottom, $base-spacing-unit * 2);
+    @include rems(padding-top, $base-spacing-unit);
     border-top: 1px dotted $color__border--standard;
-    margin-top: $base-spacing-unit;
-    margin-top: calc-rem($base-spacing-unit);
-    margin-bottom: $base-spacing-unit * 2;
-    margin-bottom: calc-rem($base-spacing-unit * 2);
-    padding-top: $base-spacing-unit;
-    padding-top: calc-rem($base-spacing-unit);
 
     @include breakpoint($breakpoint__large){
         @include vendor(column-count, auto);
@@ -309,23 +292,20 @@
 
     .item-list__item {
         @include column-break-inside(avoid);
-        font-size: $milli-size - 1px;
-        font-size: calc-rem($milli-size - 1px);
+        @include rems(font-size, $milli-size - 1);
 
         @include breakpoint($breakpoint__large) {
-            margin-bottom: $base-spacing-unit;
+            @include rems(margin-bottom, $base-spacing-unit);
         }
 
         h4 {
             @extend %font__text--bold;
-            font-size: $milli-size;
-            font-size: calc-rem($milli-size);
+            @include rems(font-size, $milli-size);
             margin: 0;
         }
 
         &:last-child {
-            margin-bottom: $base-spacing-unit;
-            margin-bottom: calc-rem($base-spacing-unit);
+            @include rems(margin-bottom, $base-spacing-unit);
         }
     }
 }
@@ -333,8 +313,7 @@
 
 .item-list--gallery,
 .item-list--merch {
-    margin-bottom: $base-spacing-unit * 2;
-    margin-bottom: calc-rem($base-spacing-unit * 2);
+    @include rems(margin-bottom, $base-spacing-unit * 2);
 
     h5 {
         margin-bottom: 0;
@@ -345,31 +324,25 @@
 
 
 .item-list__item--sidebar {
+    @include rems(padding-bottom, $base-spacing-unit);
+    @include rems(margin-bottom, $base-spacing-unit);
     border-bottom: 1px solid lighten($color__border--standard, 3);
-    padding-bottom: $base-spacing-unit;
-    padding-bottom: calc-rem($base-spacing-unit);
-    margin-bottom: $base-spacing-unit;
-    margin-bottom: calc-rem($base-spacing-unit);
 
     @include breakpoint(650px){
+        @include rems(padding-bottom, $half-spacing-unit);
+        @include rems(margin-bottom, $base-spacing-unit);
         border: none;
-        padding-bottom: $half-spacing-unit;
-        padding-bottom: calc-rem($half-spacing-unit);
-        margin-bottom: $base-spacing-unit;
-        margin-bottom: calc-rem($base-spacing-unit);
         float: left;
         width: 48%;
 
         &:nth-child(odd) {
-            margin-right: $base-spacing-unit;
-            margin-right: calc-rem($base-spacing-unit);
+            @include rems(margin-right, $base-spacing-unit);
         }
     }
 
     @include breakpoint($breakpoint__large) {
+        @include rems(margin-bottom, $base-spacing-unit * 2);
         margin-right: 0;
-        margin-bottom: $base-spacing-unit * 2;
-        margin-bottom: calc-rem($base-spacing-unit * 2);
         padding-right: 0;
         width: 100%;
 
@@ -378,23 +351,16 @@
         }
 
         h4 {
+            @include rems(margin-right, - 90);
+            @include rems(margin-left, - $base-spacing-unit);
+            @include rems(margin-bottom, $base-spacing-unit / 2);
+            @include rems(padding-top, $half-spacing-unit);
+            @include rems(padding-left, $base-spacing-unit);
+            @include rems(padding-right, - 90);
+            @include rems(padding-bottom, $half-spacing-unit - 3);
             background-color: $color__sidebar--bg;
             border-top: 1px solid $color__border--standard;
             border-bottom: 1px solid $color__border--standard;
-            margin-left: - $base-spacing-unit;
-            margin-left: - calc-rem($base-spacing-unit);
-            margin-right: - 90px;
-            margin-right: - calc-rem(90px);
-            margin-bottom: $base-spacing-unit / 2;
-            margin-bottom: calc-rem($base-spacing-unit / 2);
-            padding-top: $half-spacing-unit;
-            padding-top: calc-rem($half-spacing-unit);
-            padding-left: $base-spacing-unit;
-            padding-left: calc-rem($base-spacing-unit);
-            padding-right: 90px;
-            padding-right: - calc-rem(90px);
-            padding-bottom: $half-spacing-unit - 3px;
-            padding-bottom: calc-rem($half-spacing-unit - 3px);
             line-height: 1.5;
         }
 
@@ -406,22 +372,18 @@
     }
 
     &.item-list__item--sidebar--only {
+        @include rems(padding-bottom, $base-spacing-unit);
         width: 100%;
         border-bottom: 1px dotted $color__border--standard;
-        padding-bottom: $base-spacing-unit;
-        padding-bottom: calc-rem($base-spacing-unit);
 
         @include breakpoint($breakpoint__medium $breakpoint__large) {
-            padding-bottom: $base-spacing-unit * 1.5;
-            padding-bottom: calc-rem($base-spacing-unit * 1.5);
-            margin-bottom: $base-spacing-unit * 2;
-            margin-bottom: calc-rem($base-spacing-unit * 2);
+            @include rems(padding-bottom, $base-spacing-unit * 1.5);
+            @include rems(margin-bottom, $base-spacing-unit * 2);
         }
 
         @include breakpoint($breakpoint__large) {
+            @include rems(margin-bottom, $base-spacing-unit);
             border: none;
-            margin-bottom: $base-spacing-unit;
-            margin-bottom: calc-rem($base-spacing-unit);
         }
     }
 
@@ -447,10 +409,9 @@
 
 .item-list__item--live-shows {
     @include breakpoint(680px $breakpoint__large) {
+        @include rems(padding-right, $gutter);
         width: 50%;
         float: left;
-        padding-right: $gutter;
-        padding-right: calc-rem($gutter);
         margin-bottom: 0;
     }
 
@@ -469,19 +430,17 @@
 
     @include breakpoint($breakpoint__large){
         .item-list__item--recording {
+            @include rems(margin-right, $base-spacing-unit);
             float: left;
             width: 48.7%;
             border-bottom: none;
-            margin-right: $base-spacing-unit;
-            margin-right: calc-rem($base-spacing-unit);
 
             &:nth-child(2n){
                 margin-right: 0;
             }
 
             p {
-                font-size: 16px;
-                font-size: calc-rem(16px);
+                @include rems(font-size, 16);
             }
         }
     }
@@ -491,8 +450,7 @@
             width: 31.4%;
 
             &:nth-child(2n){
-                margin-right: $base-spacing-unit;
-                margin-right: calc-rem($base-spacing-unit);
+                @include rems(margin-right, $base-spacing-unit);
             }
 
             &:nth-child(3n){
@@ -506,7 +464,7 @@
     }
 
     .flag {
-        margin-bottom: $half-spacing-unit;
+        @include rems(margin-bottom, $half-spacing-unit);
     }
     .flag__image {
         @include width(2);
@@ -526,8 +484,7 @@
      */
     .item-list__item--album {
         @extend .cf;
-        margin-bottom: $base-spacing-unit * 2;
-        margin-bottom: calc-rem($base-spacing-unit * 2);
+        @include rems(margin-bottom, $base-spacing-unit * 2);
         padding-bottom: 0;
 
         @include breakpoint(680px $breakpoint__large) {
@@ -539,10 +496,9 @@
 
 
         @include breakpoint($breakpoint__large) {
+            @include rems(margin-bottom, $base-spacing-unit * 2);
             float: left;
             width: 100%;
-            margin-bottom: $base-spacing-unit * 2;
-            margin-bottom: calc-rem($base-spacing-unit * 2);
         }
 
         .media {
@@ -551,9 +507,9 @@
             // remove the media object from tablet sizes to desktop.
             @include breakpoint(680px $breakpoint__large) {
                 .media__img {
+                    @include rems(margin-bottom, $base-spacing-unit);
                     display: block;
                     width: 100%;
-                    margin-bottom: $base-spacing-unit;
                 }
 
                 .media__body {
@@ -583,14 +539,12 @@
         }
 
         .btn {
+            @include rems(margin-left, $half-spacing-unit);
             float:right;
-            margin-left: $half-spacing-unit;
-            margin-left: calc-rem($half-spacing-unit);
         }
 
         p {
-            font-size: $milli-size;
-            font-size: calc-rem($milli-size);
+            @include rems(font-size, $milli-size);
             margin-bottom:0;
         }
 
@@ -602,32 +556,28 @@
 
     .item-list__item--bookings {
         @include breakpoint(680px $breakpoint__large) {
+            @include rems(padding-right, $base-spacing-unit);
+            @include rems(margin-bottom, $half-spacing-unit);
             width: 50%;
             float: left;
-            padding-right: $base-spacing-unit;
-            padding-right: calc-rem($base-spacing-unit);
-            margin-bottom: $half-spacing-unit;
-            margin-bottom: calc-rem($half-spacing-unit);
 
             .island__content {
-                font-size: $milli-size;
+                @include rems(font-size, $milli-size);
             }
         }
 
         @include breakpoint($breakpoint__large){
             &:first-of-type {
-                padding-top: $base-spacing-unit;
-                padding-top: calc-rem($base-spacing-unit);
+                @include rems(padding-top, $base-spacing-unit);
             }
         }
     }
 
     .item-list__item--contact {
         @include breakpoint(680px) {
+            @include rems(margin-bottom, $half-spacing-unit);
             width: 100%;
             float: left;
-            margin-bottom: $half-spacing-unit;
-            margin-bottom: calc-rem($half-spacing-unit);
         }
     }
 
@@ -641,26 +591,22 @@
     .item-list--comments {
 
         @include breakpoint(1260px){
-            max-width: 614px;
-            max-width: calc-rem(614px);
+            @include rems(max-width, 614);
 
         }
 
         &:last-child {
-            margin-bottom: $base-spacing-unit * 2;
-            margin-bottom: calc-rem($base-spacing-unit * 2);
+            @include rems(margin-bottom, $base-spacing-unit * 2);
         }
 
         >.flag {
-            margin-bottom: $half-spacing-unit;
-            margin-bottom: calc-rem($half-spacing-unit);
+            @include rems(margin-bottom, $half-spacing-unit);
 
             .flag__body {
 
                 time {
                     color: $color__meta;
-                    font-size: $milli-size;
-                    font-size: calc-rem($milli-size);
+                    @include rems(font-size, $milli-size);
                 }
 
                 a {
@@ -669,9 +615,8 @@
 
                 h3 {
                     @extend %font__text--regular;
+                    @include rems(font-size, $h5-size);
                     font-weight: bold;
-                    font-size: $h5-size;
-                    font-size: calc-rem($h5-size);
                     margin-bottom: 0;
                     line-height: 1;
                 }
@@ -679,18 +624,16 @@
 
             .flag__image {
                 >img {
-                    max-width: 73px;
-                    max-width: calc-rem(73px);
+                    @include rems(max-width, 73);
                 }
             }
         }
         p {
+            @include rems(font-size, $milli-size);
             color: darken($color__background--dark, 10);
-            font-size: $milli-size;
-            font-size: calc-rem($milli-size);
 
             @include breakpoint($breakpoint__large) {
-                font-size: $base-font-size + 1px;
+                @include rems($base-font-size + 1);
             }
         }
     }
@@ -704,8 +647,7 @@
 
     .item-list__item--reviews {
         .item-list__item {
-            margin-bottom: $base-spacing-unit;
-            margin-bottom: calc-rem($base-spacing-unit);
+            @include rems(margin-bottom, $base-spacing-unit);
         }
     }
 
@@ -714,8 +656,7 @@
     .item-list--instruments {
 
         .item-list__item {
-            margin-bottom: $half-spacing-unit / 1.5;
-            margin-bottom: calc-rem($half-spacing-unit / 1.5);
+            @include rems(margin-bottom, $half-spacing-unit / 2);
         }
     }
 
@@ -724,8 +665,7 @@
      */
 
     .item-list--featured {
-        margin-bottom: $base-spacing-unit;
-        margin-bottom: calc-rem($base-spacing-unit);
+        @include rems(margin-bottom, $base-spacing-unit);
 
         >.item-list__item {
             &:last-of-type {
@@ -739,10 +679,9 @@
             width: 100%;
 
             >.item-list__item {
+                @include rems(margin-right, $base-spacing-unit);
                 float: left;
                 width: 31.7%;
-                margin-right: $base-spacing-unit;
-                margin-right: calc-rem($base-spacing-unit);
                 border-bottom: none;
                 padding-bottom: 0;
                 margin-bottom: 0;
@@ -752,13 +691,11 @@
                 }
 
                 >.heading-group h3 {
-                    font-size: 22px;
-                    font-size: calc-rem(22px);
+                    @include rems(font-size, 22);
                 }
 
                 p, .meta-info-block__item {
-                    font-size: $milli-size;
-                    font-size: calc-rem($milli-size);
+                    @include rems(font-size, $milli-size);
                 }
             }
         }
@@ -768,13 +705,11 @@
                 width: 32%;
 
                 >.heading-group h3 {
-                    font-size: 24px;
-                    font-size: calc-rem(24px);
+                    @include rems(font-size, 24);
                 }
 
                 p {
-                    font-size: 16px;
-                    font-size: calc-rem(16px);
+                    @include rems(font-size, 16);
                 }
             }
         }
@@ -789,8 +724,7 @@
         .item-list__item--article {
 
             p {
-                margin-bottom: $base-spacing-unit;
-                margin-bottom: calc-rem($base-spacing-unit);
+                @include rems(margin-bottom, $base-spacing-unit);
             }
         }
 
@@ -819,20 +753,17 @@
     }
 
     .item-list--homepage {
-        margin-bottom: $base-spacing-unit;
-        margin-bottom: calc-rem($base-spacing-unit);
+        @include rems(margin-bottom, $base-spacing-unit);
 
         >.item-list__item {
-            margin-bottom: $base-spacing-unit;
-            margin-bottom: calc-rem($base-spacing-unit);
+            @include rems(margin-bottom, $base-spacing-unit);
         }
 
         @include breakpoint(1260px){
             .item-list__item {
+                @include rems(margin-right, $base-spacing-unit);
                 float: left;
                 width: 30%;
-                margin-right: $base-spacing-unit;
-                margin-right: calc-rem($base-spacing-unit);
 
                 &:last-of-type {
                     margin-right: 0;

@@ -10,10 +10,9 @@
     @include breakpoint(680px $breakpoint__large){
 
         > figure {
+            @include rems(margin-right, $base-spacing-unit);
             float: left;
             width: 25%;
-            margin-right: $base-spacing-unit;
-            margin-right: calc-rem($base-spacing-unit);
         }
 
         >.item-list--bordered {
@@ -33,8 +32,7 @@
     }
 
     @include breakpoint($breakpoint__large){
-        padding-top: $base-spacing-unit;
-        padding-top: calc-rem($base-spacing-unit);
+        @include rems(padding-top, $base-spacing-unit);
     }
 
     figure {
@@ -44,8 +42,7 @@
     }
 
     h3 {
-        font-size: $h4-size + 2px;
-        font-size: calc-rem($h4-size + 2px);
+        @include rems(font-size, $h4-size + 2);
     }
 
 }

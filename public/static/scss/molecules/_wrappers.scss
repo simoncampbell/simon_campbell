@@ -273,6 +273,12 @@
         border-top: none;
     }
 
+    .side-wrapper--gallery {
+        @include breakpoint($breakpoint__desktop){
+            float right;
+        }
+    }
+
 .homepage-wrapper {
     @extend .cf;
     @include rems(margin-bottom, $base-spacing-unit);

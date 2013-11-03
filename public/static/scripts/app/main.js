@@ -6,10 +6,6 @@ define(['domReady',
 
         var App = window.App || {};
 
-        App.init = function(){
-
-        };
-
         domReady(function(){
             App.init();
         });

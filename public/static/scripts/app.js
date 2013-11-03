@@ -1,18 +1,7 @@
 requirejs.config({
-    "baseUrl": "/scripts/libs",
+    "baseUrl": "/static/scripts/libs",
     "paths": {
       "app": "../app"
-    },
-    "shim": {
-        "plugins/jquery.jpanelmenu": {
-            deps: ['jquery']
-        },
-        "plugins/jquery.showpassword": {
-            deps: ['jquery']
-        },
-        "plugins/jquery.validate": {
-            deps: ['jquery']
-        }
     }
 });
 

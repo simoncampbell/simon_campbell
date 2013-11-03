@@ -275,7 +275,7 @@
 
     .side-wrapper--gallery {
         @include breakpoint($breakpoint__desktop){
-            float right;
+            float: right;
         }
     }
 

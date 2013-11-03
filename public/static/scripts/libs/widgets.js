@@ -9,9 +9,7 @@ define(['domReady',
             App = window.App || {};
 
             domReady(function(){
-                if (App.debug) {
                     App.gridToggle = new GridToggle();
-                }
             });
         }
 );

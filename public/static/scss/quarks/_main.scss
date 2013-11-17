@@ -2,6 +2,10 @@
     $MAIN
 \*------------------------------------*/
 
+html {
+    // height: 100%;
+}
+
 body {
     @extend %font__text--regular;
     background-color: $color__main-bg;
@@ -9,6 +13,7 @@ body {
     color: $base-color;
     line-height:$line-height-ratio;
     position: relative;
+    height: 100%;
 
     /**
      * Media

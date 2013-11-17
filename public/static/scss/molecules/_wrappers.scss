@@ -55,6 +55,14 @@
         border-left: 1px solid $color__border--standard;
         border-right: 1px solid $color__border--standard;
     }
+
+    .overlay--active & {
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        position: absolute;
+    }
 }
 
 .wide-wrapper {
@@ -218,9 +226,21 @@
         }
 
     .main-wrapper--gallery {
+        padding-left: 0;
+        padding-right: 0;
+        margin-bottom: 0;
+        max-width: 100%;
+
+        @include breakpoint($breakpoint__medium){
+            @include rems(padding-left, 42);
+            @include rems(padding-right, 42);
+            @include max-width(12);
+        }
 
         @include breakpoint($breakpoint__large){
             @include rems(padding-left, 90);
+            @include max-width(9);
+            padding-right: 0;
             width: 100%;
         }
 

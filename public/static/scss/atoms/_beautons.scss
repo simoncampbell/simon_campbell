@@ -104,9 +104,6 @@
         }
     }
 
-
-
-
     .btn--purple {
         background-color: $color__purple;
         border: 1px solid darken($color__purple,10);
@@ -223,18 +220,23 @@
  * These all follow the same sizing rules as above; text is 1em, space around it
  * remains uniform.
  */
-.btn--small{
-    @include rems(padding-right, $half-spacing-unit);
-    @include rems(padding-left, $half-spacing-unit);
-    @include rems(font-size, $milli-size);
-    line-height:1.8;
+
+.btn--gamma {
+     &.btn--icon {
+        .icon {
+            @include rems(height, 36);
+            @include rems(width, 35);
+            line-height: 2.5;
+        }
+        .icon-text {
+            line-height: 2.4;
+            text-transform: uppercase;
+            @include rems(font-size, 15);
+        }
+    }
 }
 
-.btn--large{
-    padding-right:1.5em;
-    padding-left: 1.5em;
-    line-height:4;
-}
+
 
 /**
  * These buttons will fill the entirety of their container.

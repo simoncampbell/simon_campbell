@@ -107,6 +107,7 @@ define(['domReady', 'jquery'], function(domReady, jQuery) {
             e.preventDefault();
             moveLeft();
             count ++;
+            $prev.css('opacity', '.7');
 
             //hide the next button if no more slides
             if (count >= numPages){

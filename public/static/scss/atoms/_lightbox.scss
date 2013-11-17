@@ -68,11 +68,6 @@
 
 
 @media all and (min-width: 45em) {
-    body:after { /* http://adactio.com/journal/5429/ */
-        content: 'large';
-        display: none;
-    }
-
     .msg {
         display: block;
         position: absolute;

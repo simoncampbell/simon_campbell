@@ -32,10 +32,10 @@
 
     .carousel__info-wrapper {
         @include breakpoint($breakpoint__large) {
-            @include rems(padding-right, 90);
-            width: 40%;
-            padding-left: 0;
-            float: right;
+            @include rems(padding-left, 90);
+            width: 48%;
+            padding-right: 0;
+            float: left;
 
             h3 {
                 @include rems(font-size, $h4-size + 3);

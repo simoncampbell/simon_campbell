@@ -18,11 +18,11 @@ define(['jquery', 'domReady'], function(jQuery, domReady){
     MobileMenu.prototype = {};
 
 
-
     domReady(function(){
-        $('.link__mobile-menu').on('click', function(e){
+
+        $('.link__mobile-menu').on('click', function(e){ //http://adactio.com/journal/5429/
             var $mobile_link = $('link__mobile-menu'),
-            $icon_text = $('.icon--menu');
+                $icon_text = $('.icon--menu');
 
             e.preventDefault();
             $('#nav_pri').toggleClass('menu--active');
@@ -41,6 +41,16 @@ define(['jquery', 'domReady'], function(jQuery, domReady){
 
             $mobile_link.find('.ss').text('navigateup');
         });
+
+
+        $(window).resize(function(){
+            size = window.getComputedStyle(document.body,':after').getPropertyValue('content');
+
+            if(size == 'largest') {
+                $('.banner-nav').css('display', 'block');
+            }
+        });
+
     });
 
     return MobileMenu;

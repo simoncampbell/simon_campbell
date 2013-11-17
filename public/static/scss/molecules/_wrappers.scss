@@ -239,8 +239,8 @@
 
         @include breakpoint($breakpoint__large){
             @include rems(padding-left, 90);
-            @include max-width(9);
-            padding-right: 0;
+            max-width: 100%;
+            @include rems(padding-right, 90);
             width: 100%;
         }
 

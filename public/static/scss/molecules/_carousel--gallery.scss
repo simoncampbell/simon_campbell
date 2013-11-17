@@ -30,10 +30,12 @@
 }
 
 
-    .album__info-wrapper {
+    .carousel__info-wrapper {
         @include breakpoint($breakpoint__large) {
-            @include rems(padding-left, $base-spacing-unit);
-            width: 34.3%;
+            @include rems(padding-right, 90);
+            width: 40%;
+            padding-left: 0;
+            float: right;
 
             h3 {
                 @include rems(font-size, $h4-size + 3);
@@ -43,18 +45,7 @@
                 @include rems(font-size, 15);
             }
         }
-
     }
-
-    .side-wrapper--rev.side-wrapper--gallery {
-        @include breakpoint($breakpoint__large) {
-            max-width: none;
-            width: 65.5%;
-            padding-top: 0;
-        }
-    }
-
-
 
 .carousel--gallery {
     @include breakpoint($breakpoint__large) {

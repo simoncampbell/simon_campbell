@@ -27,23 +27,23 @@
       div.className = 'fit-vids-style';
       div.id = 'fit-vids-style';
       div.style.display = 'none';
-      div.innerHTML = '&shy;<style>         \
-        .fluid-width-video-wrapper {        \
-           width: 100%;                     \
-           position: relative;              \
-           padding: 0;                      \
-        }                                   \
-                                            \
-        .fluid-width-video-wrapper iframe,  \
-        .fluid-width-video-wrapper object,  \
-        .fluid-width-video-wrapper embed {  \
-           position: absolute;              \
-           top: 0;                          \
-           left: 0;                         \
-           width: 100%;                     \
-           height: 100%;                    \
-        }                                   \
-      </style>';
+      // div.innerHTML = '&shy;<style>         \
+      //   .fluid-width-video-wrapper {        \
+      //      width: 100%;                     \
+      //      position: relative;              \
+      //      padding: 0;                      \
+      //   }                                   \
+      //                                       \
+      //   .fluid-width-video-wrapper iframe,  \
+      //   .fluid-width-video-wrapper object,  \
+      //   .fluid-width-video-wrapper embed {  \
+      //      position: absolute;              \
+      //      top: 0;                          \
+      //      left: 0;                         \
+      //      width: 100%;                     \
+      //      height: 100%;                    \
+      //   }                                   \
+      // </style>';
 
       ref.parentNode.insertBefore(div,ref);
 

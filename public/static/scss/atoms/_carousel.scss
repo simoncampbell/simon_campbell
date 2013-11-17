@@ -73,6 +73,14 @@
             }
         }
     }
+
+    .carousel__link {
+        &:hover {
+            cursor: -webkit-zoom-in;
+            cursor: -moz-zoom-in;
+        }
+    }
+
     .carousel li a,
     .carousel img {
         display: block;
@@ -87,7 +95,7 @@
         width: 100%;
 
         .js & {
-            @include rems(padding, $base-spacing-unit);
+            @include rems(padding, $half-spacing-unit, $base-spacing-unit);
             border-top: 1px solid $color__background--black;
 
             @include breakpoint($breakpoint__small){
@@ -135,28 +143,6 @@
         p,
         .meta-info-block {
             @include rems(font-size, $milli-size);
-        }
-    }
-
-    /**
-     * Media
-     * Conditional CSS: http://adactio.com/journal/5429/
-     */
-
-    /* Medium */
-    @media screen and (min-width: 35em) {
-        body:after {
-            content: 'medium';
-            display: none;
-        }
-    }
-
-
-    /* Large */
-    @media screen and (min-width: 56.25em) {
-        body:after { /* Conditional CSS http://adactio.com/journal/5429/ */
-            content: 'large';
-            display: none;
         }
     }
 

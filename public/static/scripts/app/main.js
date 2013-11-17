@@ -4,11 +4,9 @@ define(['domReady',
     function(domReady,
             jQuery) {
 
-        var App = window.App || {};
-
-        domReady(function(){
-            App.init();
-        });
+        var App = window.App || {},
+            runlist,
+            sels;
 
         window.App = App;
 

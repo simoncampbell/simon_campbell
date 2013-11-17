@@ -10,6 +10,28 @@ body {
     line-height:$line-height-ratio;
     position: relative;
 
+    /**
+     * Media
+     * Conditional CSS: http://adactio.com/journal/5429/
+     */
+
+    /* Medium */
+    @media screen and (min-width: 35em) {
+        &:after {
+            content: 'medium';
+            display: none;
+        }
+    }
+
+
+    /* Large */
+    @media screen and (min-width: 56.25em) {
+        &:after {
+            content: 'large';
+            display: none;
+        }
+    }
+
     @include breakpoint(720px){
         font: 104% $base-font-family;
         line-height:$line-height-ratio;

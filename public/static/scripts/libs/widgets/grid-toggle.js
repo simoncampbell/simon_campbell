@@ -7,6 +7,7 @@
 // adds a grid and baseline overlay
 
 define(['jquery'], function(jQuery) {
+
     var GridToggle = function(){
         this.overlays = {
             grid: {

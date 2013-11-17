@@ -221,6 +221,7 @@
 
         @include breakpoint($breakpoint__large){
             @include rems(padding-left, 90);
+            width: 100%;
         }
 
         h3 {

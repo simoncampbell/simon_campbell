@@ -41,15 +41,18 @@
             margin: 0 auto;
 
             @include breakpoint($breakpoint__small) {
-                @include rems(padding, 0, $gutter * 2);
+                padding: 0 11.7%;
+                @include rems(max-width, 647);
             }
 
-            @include breakpoint(680px){
-                @include max-width(8);
+            @include breakpoint($breakpoint__desktop){
+                @include rems(max-width, 709);
+                padding-left: 8%;
+                padding-right: 8%;
             }
 
             @include breakpoint($breakpoint__large) {
-                @include rems(padding, 0, 90);
+                padding: 0 10.2%;
                 max-width: none;
             }
         }

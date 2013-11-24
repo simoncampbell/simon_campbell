@@ -47,7 +47,8 @@ define(['jquery', 'domReady'], function(jQuery, domReady){
             size = window.getComputedStyle(document.body,':after').getPropertyValue('content');
 
             if(size == 'largest') {
-                $('.banner-nav').css('display', 'block');
+                $('#nav_pri').addClass('menu--active');
+                $('.banner-nav').css('display','');
             }
         });
 

@@ -45,6 +45,10 @@
                 @include rems(font-size, 15);
             }
         }
+
+         @include breakpoint($breakpoint__large){
+            padding: 0 10.2%;
+        }
     }
 
 .carousel--gallery {

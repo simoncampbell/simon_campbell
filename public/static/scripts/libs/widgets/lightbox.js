@@ -20,7 +20,7 @@ define(['domReady', 'jquery'], function(domReady, jQuery) {
 
         function lightboxInit() {
             $('.carousel__link').click(function(e){
-                if(size == 'medium') {
+                if(size == 'medium' || size == 'large' || size == 'largest') {
                     e.preventDefault();
                     var $thisHref = $(this).attr('href');
                     var $thisSummary = $(this).parent().parent().children('.carousel__summary').html();

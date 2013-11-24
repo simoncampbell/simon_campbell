@@ -5,10 +5,11 @@
 
 .lede {
     @extend .cf;
-    @include rems(font-size, 17);
+    @include rems(font-size, 16);
     color: darken($color__background--black, 10);
 
     @include breakpoint($breakpoint__small) {
+        @include rems(font-size, 17);
         line-height: $base-line-height + 2px;
     }
 

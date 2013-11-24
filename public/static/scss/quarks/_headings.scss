@@ -69,7 +69,7 @@ h4, .delta {
 
 h5, .epsilon {
     @include rems(font-size, $h5-size);
-    line-height: $line-height-ratio;
+    line-height: 1.4;
 
     @include breakpoint($breakpoint__medium){
         @include rems(font-size, $h5-size + 2);

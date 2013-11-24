@@ -39,7 +39,7 @@
     width: 30%;
     display: inline-block;
     color: $color__white;
-    @include rems(padding, $half-spacing-unit * 1.45, $base-spacing-unit);
+    @include rems(padding, 15, 21, 15, 15);
     border-bottom: 1px solid $color__orange--secondary;
     border-left: 1px solid $color__black;
 

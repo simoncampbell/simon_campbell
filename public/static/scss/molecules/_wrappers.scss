@@ -26,24 +26,23 @@
 .wide-wrapper {
     @extend .cf;
     @include max-width(8);
-    @include rems(padding-right, $gutter);
-    @include rems(padding-left, $gutter);
+    padding-left: 4.7%;
+    padding-right: 4.7%;
     margin: 0 auto;
 
     @include breakpoint($breakpoint__small){
-        @include rems(max-width, 647);
-        padding-left: 11.7%;
-        padding-right: 11.7%;
+        width: 71%;
+        max-width: 100%;
+        padding-left: 0;
+        padding-right: 0;
     }
 
     @include breakpoint($breakpoint__desktop){
-        padding-left: 8%;
-        padding-right: 8%;
-        @include rems(max-width, 709);
+        @include rems(max-width, 578);
     }
 
     @include breakpoint($breakpoint__large){
-        padding-left: 10.2%;
+        padding-left: 9.8%;
         @include rems(max-width, 628);
     }
 }
@@ -78,9 +77,16 @@
         @include max-width(12);
     }
 
+    @include breakpoint($breakpoint__desktop){
+        @include rems(max-width, 724);
+        width: 80.4%;
+    }
+
     @include breakpoint($breakpoint__large){
-        @include rems(padding-right, 90);
+        padding-right: 9.8%;
         max-width: none;
+        width: 100%;
+        max-width: 100%;
     }
 }
 
@@ -88,7 +94,7 @@
 /* On desktop align the wrapper module to the left */
 .wide-wrapper--align-desktop {
     @include breakpoint($breakpoint__large) {
-        padding-left: 16%;
+        padding-left: 14.9%;
         @include rems(padding-right, 24);
     }
 }
@@ -177,55 +183,55 @@
 .main-wrapper {
     @extend .cf;
 
+    @include breakpoint($breakpoint__desktop){
+        @include rems(max-width, 578);
+        width: 64%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
     @include breakpoint($breakpoint__large) {
-        @include rems(max-width, 704);
+        @include rems(max-width, 726);
         float: left;
         padding-right:0;
         margin-right: 0;
         margin-right: 0;
-        width: 60%;
+        width: 57.2%;
     }
 }
 
     .main-wrapper--full {
+        float: none;
+
         @include breakpoint($breakpoint__large){
-            @include rems(padding-right, 90);
+            padding-right: 9.8%;
+            padding-left: 9.8%;
             width: 100%;
             max-width: 100%;
         }
     }
 
 
-    /**
-     * Reverse the main wrapper to float right
-     */
-    .main-wrapper--rev {
-
-        @include breakpoint($breakpoint__large) {
-            @include rems(padding-right, 90);
-            float: right;
-            padding-left: 0;
-            margin-right: 0;
-            width: 55.8%;
-        }
-    }
-
     .main-wrapper--article {
-        @include rems(margin-bottom, $base-spacing-unit * 2);
+        @include rems(margin-bottom, $base-spacing-unit);
+
 
         @include breakpoint($breakpoint__large){
             @include rems(margin-bottom, $base-spacing-unit * 3);
+            padding-left: 9.8%;
         }
     }
 
     .main-wrapper--listing {
-        @include breakpoint($breakpoint__large){
-            @include rems(padding-right, $base-spacing-unit);
-            width: 58%;
+        @include breakpoint($breakpoint__desktop){
 
             p {
                 @include rems(font-size, 16);
             }
+        }
+
+        @include breakpoint($breakpoint__large){
+            padding-left: 9.8%;
         }
 
         @include breakpoint(1260px){
@@ -266,7 +272,7 @@
         }
 
         @include breakpoint($breakpoint__large){
-            padding: 0 10.2%;
+            padding: 0 9.8%;
             max-width: 100%;
             width: 100%;
         }
@@ -281,18 +287,6 @@
             @include rems(margin-bottom, $base-spacing-unit * 2);
         }
     }
-
-
-    .main-wrapper--album {
-        @include breakpoint($breakpoint__large){
-            @include rems(margin-top, $base-spacing-unit / 2);
-            @include rems(padding-right, 90);
-            width: 100%;
-            max-width: 100%;
-        }
-    }
-
-
 
 
 .side-wrapper {}
@@ -389,33 +383,11 @@
         max-height: none;
         overflow: initial;
 
-        @include breakpoint($breakpoint__small){
-            @include rems(margin-top, - $base-spacing-unit * 1.2);
-        }
-
-        @include breakpoint (700px){
-            @include rems(max-width, 647);
-            margin-left: auto;
-            margin-right: auto;
-            padding-left: 0;
-            margin-top: 0;
-        }
-
-        @include breakpoint($breakpoint__desktop){
-            @include rems(max-width, 709);
-            padding-left: 8%;
-            padding-right: 8%;
-        }
-
         @include breakpoint($breakpoint__large) {
             float: right;
-            padding-right: 10.2%;
+            padding-right: 10.1%;
             padding-left: 0;
             margin-top: 0;
-            width: 37%;
+            width: 41.2%;
         }
-
-        @include breakpoint(1266px){
-            width: 41.7%;
-        }
-}
+    }

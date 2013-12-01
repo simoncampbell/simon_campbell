@@ -13,11 +13,11 @@
         margin-bottom: 0;
 
         @include breakpoint($breakpoint__large){
-            @include rems(margin-left, - 14);
+            margin-left: -6.4%;
             @include rems(margin-right, - 140);
             @include rems(margin-bottom, $base-spacing-unit / 2);
             @include rems(padding-top, $half-spacing-unit);
-            @include rems(padding-left, 14);
+            padding-left: 6.4%;
             @include rems(padding-right, 140);
             @include rems(padding-bottom, ($half-spacing-unit - 3));
             float: none;

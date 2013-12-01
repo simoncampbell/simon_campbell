@@ -28,7 +28,7 @@
         }
 
         .wide-wrapper--recent-entries & {
-            @include breakpoint(720px){
+            @include breakpoint($breakpoint__desktop){
                 @include rems(margin-right, $base-spacing-unit);
                 @include rems(margin-bottom, 20);
                 float: left;
@@ -184,7 +184,7 @@
                 }
             }
 
-            @include breakpoint(680px){
+            @include breakpoint($breakpoint__medium){
                 width: 48%;
             }
 
@@ -258,7 +258,7 @@
 
     .item-list__item--equipment {
 
-        @include breakpoint(680px){
+        @include breakpoint($breakpoint__medium){
             width: 49%;
             vertical-align: top;
             float: right;
@@ -272,31 +272,18 @@
 
 
 .item-list--equipment-meta {
-    @include vendor(column-count, 2);
-    @include vendor(column-gap, $base-spacing-unit);
-    @include vendor(column-gap, calc-rem($base-spacing-unit));
-    @include rems(margin-top, $base-spacing-unit);
-    @include rems(margin-bottom, $base-spacing-unit * 2);
-    @include rems(padding-top, $base-spacing-unit);
-    border-top: 1px dotted $color__border--standard;
+    @extend .cf;
 
-    @include breakpoint($breakpoint__large){
-        @include vendor(column-count, auto);
-        border-top: none;
-        padding-top: 0;
-    }
 
-    figure {
+    >.item-list {
         margin-bottom: 0;
     }
 
-    .item-list__item {
-        @include column-break-inside(avoid);
-        @include rems(font-size, $milli-size - 1);
 
-        @include breakpoint($breakpoint__large) {
-            @include rems(margin-bottom, $base-spacing-unit);
-        }
+    .item-list__item {
+        @include rems(font-size, $milli-size - 1);
+        @include rems(margin-bottom, $base-spacing-unit);
+
 
         h4 {
             @extend %font__text--bold;
@@ -305,11 +292,30 @@
         }
 
         &:last-child {
-            @include rems(margin-bottom, $base-spacing-unit);
+            margin-bottom: 0;
         }
     }
 }
 
+
+.equipment__image {
+    @include rems(margin-bottom, $base-spacing-unit);
+
+    &:before {
+        content: "";
+        display: none;
+    }
+
+    @include breakpoint($breakpoint__tiny){
+        float: left;
+        width: 45%;
+    }
+
+    @include breakpoint($breakpoint__large){
+        width: 100%;
+        float: none;
+    }
+}
 
 .item-list--gallery,
 .item-list--merch {
@@ -328,7 +334,7 @@
     @include rems(margin-bottom, $base-spacing-unit);
     border-bottom: 1px solid lighten($color__border--standard, 3);
 
-    @include breakpoint(650px){
+    @include breakpoint($breakpoint__desktop){
         @include rems(padding-bottom, $half-spacing-unit);
         @include rems(margin-bottom, $base-spacing-unit);
         border: none;
@@ -351,12 +357,12 @@
         }
 
         h4 {
-            @include rems(margin-right, - 90);
-            @include rems(margin-left, - 14);
+            margin-right: -50%;
+            margin-left: - 6.4%;
             @include rems(margin-bottom, $base-spacing-unit / 2);
             @include rems(padding-top, $half-spacing-unit);
-            @include rems(padding-left, 14);
-            @include rems(padding-right, - 90);
+            padding-left: 6.4%;
+            padding-right: 50%;
             @include rems(padding-bottom, $half-spacing-unit - 3);
             background-color: $color__sidebar--bg;
             border-top: 1px solid $color__border--standard;
@@ -410,7 +416,7 @@
 **/
 
 .item-list__item--live-shows {
-    @include breakpoint(680px $breakpoint__large) {
+    @include breakpoint($breakpoint__medium $breakpoint__large) {
         @include rems(padding-right, $gutter);
         width: 100%;
         float: left;
@@ -447,29 +453,12 @@
         }
     }
 
-    @include breakpoint(1260px) {
-        .item-list__item--recording {
-            width: 31.4%;
-
-            &:nth-child(2n){
-                @include rems(margin-right, $base-spacing-unit);
-            }
-
-            &:nth-child(3n){
-                margin-right: 0;
-            }
-        }
-    }
-
     p {
         margin-bottom: 0;
     }
 
     .flag {
         @include rems(margin-bottom, $half-spacing-unit);
-    }
-    .flag__image {
-        @include width(2);
     }
 
     .flag__body {
@@ -489,7 +478,7 @@
         @include rems(margin-bottom, $base-spacing-unit * 2);
         padding-bottom: 0;
 
-        @include breakpoint(680px $breakpoint__large) {
+        @include breakpoint($breakpoint__medium $breakpoint__large) {
             float: right;
             clear: left;
             width: 100%;
@@ -506,7 +495,7 @@
             margin:0;
 
             // remove the media object from tablet sizes to desktop.
-            @include breakpoint(680px $breakpoint__large) {
+            @include breakpoint($breakpoint__medium $breakpoint__large) {
                 .media__img {
                     @include rems(margin-bottom, $base-spacing-unit);
                     display: block;
@@ -556,7 +545,7 @@
 
 
     .item-list__item--bookings {
-        @include breakpoint(680px $breakpoint__large) {
+        @include breakpoint($breakpoint__medium $breakpoint__large) {
             @include rems(padding-right, $base-spacing-unit);
             @include rems(margin-bottom, $half-spacing-unit);
             width: 50%;
@@ -575,7 +564,7 @@
     }
 
     .item-list__item--contact {
-        @include breakpoint(680px) {
+        @include breakpoint($breakpoint__medium) {
             @include rems(margin-bottom, $half-spacing-unit);
             width: 100%;
             float: left;
@@ -729,7 +718,7 @@
             }
         }
 
-        @include breakpoint(680px) {
+        @include breakpoint($breakpoint__medium) {
             .heading-group {
                 position: relative;
 

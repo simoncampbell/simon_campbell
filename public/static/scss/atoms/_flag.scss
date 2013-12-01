@@ -8,35 +8,14 @@
  * Horizontally align a
  */
     .flag {
-        display: table;
         width: 100%;
     }
 
-    .flag__image,
-    .flag__body {
-        display: table-cell;
-        vertical-align: middle;
-
-        .flag--top & {
-            vertical-align: top;
-        }
-
-        .flag--bottom & {
-            vertical-align: bottom;
-        }
-    }
-
     .flag__image {
-        @include rems(padding-right, $half-spacing-unit);
+        @include rems(margin-bottom, $half-spacing-unit);
 
         img {
             display: block;
-            max-width: none;
-        }
-
-        .flag--rev & {
-            @include rems(padding-left, $half-spacing-unit);
-            padding-right: 0;
         }
     }
 

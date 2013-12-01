@@ -30,32 +30,6 @@
         @include breakpoint($breakpoint__small) {
             @include rems(margin-bottom, $base-spacing-unit);
         }
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5 {
-            @include max-width(8);
-            @include rems(padding, 0, $base-spacing-unit);
-            margin: 0 auto;
-
-            @include breakpoint($breakpoint__small) {
-                padding: 0 11.7%;
-                @include rems(max-width, 647);
-            }
-
-            @include breakpoint($breakpoint__desktop){
-                @include rems(max-width, 709);
-                padding-left: 8%;
-                padding-right: 8%;
-            }
-
-            @include breakpoint($breakpoint__large) {
-                padding: 0 10.2%;
-                max-width: none;
-            }
-        }
     }
 
     /**

@@ -8,10 +8,6 @@
     @include rems(padding, $half-spacing-unit, 0);
     border-top: 1px solid $color__border--standard;
     border-bottom: 1px solid $color__border--standard;
-
-    .main-wrapper {
-        width: 100%;
-    }
 }
 
     .meta-info-block--borderless {

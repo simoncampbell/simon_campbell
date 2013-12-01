@@ -9,20 +9,28 @@
     background-color: $color__background--black;
     border-top: 5px solid lighten($color__background--black, 10);
 
-    @include breakpoint(680px){
-        float:left;
-        width: 100%;
-    }
-
     @include breakpoint($breakpoint__large){
-        .wide-wrapper {
-            padding:0 10.2%;
-        }
+        float: left;
     }
 
     @include breakpoint(1260px) {
         padding-top: 0;
         padding-bottom: 0;
+    }
+
+    .wide-wrapper {
+        @include breakpoint($breakpoint__medium){
+            width: 96%;
+        }
+
+        @include breakpoint($breakpoint__desktop) {
+            width: 79%;
+        }
+
+        @include breakpoint($breakpoint__large){
+            padding:0 9.8%;
+            width: 100%;
+        }
     }
 }
     .footer-main__item {
@@ -84,7 +92,7 @@
         @include rems(margin-bottom, $base-spacing-unit * 2);
 
 
-        @include breakpoint(680px){
+        @include breakpoint($breakpoint__medium){
             @include rems(padding-right, $base-spacing-unit);
             @include rems(margin-bottom, $half-spacing-unit);
             width: 50%;
@@ -92,8 +100,8 @@
         }
 
         @include breakpoint(1260px){
-            @include rems(margin-right, 28);
-            width: 32.5%;
+            @include rems(margin-right, 20);
+            width: 38.7%;
             margin-bottom: 0;
         }
 
@@ -112,7 +120,7 @@
                     float: none;
                 }
 
-                @include breakpoint(680px){
+                @include breakpoint($breakpoint__medium){
                     width: 30%;
                 }
 
@@ -153,7 +161,7 @@
             width: 60%;
         }
 
-        @include breakpoint(680px){
+        @include breakpoint($breakpoint__medium){
             width:49%;
             float: right;
             padding-right: 0;
@@ -161,12 +169,11 @@
 
         @include breakpoint($breakpoint__large){
             width: 40%;
-            @include rems(padding-right, 15);
         }
 
         @include breakpoint(1260px){
             float: left;
-            width: 32.7%;
+            width: 28.5%;
         }
     }
 
@@ -182,7 +189,7 @@
             @include rems(margin-bottom, $base-spacing-unit);
         }
 
-        @include breakpoint(680px) {
+        @include breakpoint($breakpoint__medium) {
             @include rems(padding-top, $base-spacing-unit);
             @include rems(margin-top, $half-spacing-unit);
             @include rems(margin-bottom, $base-spacing-unit * 1.5);
@@ -196,15 +203,15 @@
 
         @include breakpoint(1260px){
             @include rems(min-height, 220);
-            @include rems(padding-left, 28);
+            @include rems(padding-left, 20);
             border-top: none;
             clear: none;
-            width: 32%;
+            width: 30%;
             margin: 0;
         }
 
         h3 {
-            @include breakpoint(680px 1260px){
+            @include breakpoint($breakpoint__medium 1260px){
                 @include rems(margin-right, $half-spacing-unit);
                 display:inline;
 
@@ -215,7 +222,7 @@
         }
 
         nav {
-            @include breakpoint(680px 1260px) {
+            @include breakpoint($breakpoint__medium 1260px) {
                 display: inline;
             }
         }
@@ -226,7 +233,7 @@
                 @include vendor(column-count, auto);
             }
 
-            @include breakpoint(680px 1260px) {
+            @include breakpoint($breakpoint__medium 1260px) {
                 display: inline;
             }
 
@@ -258,7 +265,7 @@
         background-color: darken($color__background--black, 5);
         min-height: 0;
 
-        @include breakpoint(680px){
+        @include breakpoint($breakpoint__medium){
             float: left;
             width: 100%;
         }

@@ -17,14 +17,16 @@
     {% endfor %}
 
     <header class="heading-group heading-group--main heading-group--with-meta">
-        <h1>{{entry.title}}</h1>
+        <div class="main-wrapper main-wrapper--full">
+            <h1>{{entry.title}}</h1>
 
-        {% if entry.heading__sec %}
-            <h2>{{entry.heading__sec}}</h2>
-        {% endif %}
+            {% if entry.heading__sec %}
+                <h2>{{entry.heading__sec}}</h2>
+            {% endif %}
+        </div>
 
         <div class="meta-info-block">
-            <div class="main-wrapper">
+            <div class="main-wrapper main-wrapper--full">
                 <time class="meta-info-block__item" datetime="{{entry.postDate|date("Y-m-d")}}">{{entry.postDate|date("jS F Y")}}</time>
 
                 <p class="meta-info-block__item">Posted in
@@ -46,50 +48,60 @@
     </div>
 
     <div class="side-wrapper side-wrapper--equipment main-wrapper--secondary">
-        <div class="island--wrapper--equipment">
-            <!-- INSTRUMENT IMAGE -->
+
+        <div class="equipment__image">
             {% for image in entry.equipmentImage %}
                 <figure>
                     <img src="{{image.url}}">
                 </figure>
             {% endfor %}
-
-            <ul class="item-list item-list--equipment-meta">
-                <li class="item-list__item">
-                    <h4>Manufactured by</h4>
-                    {% for make in entry.makerBlock %}
-                        <p>
-                            <a href="{{ make.makerUrl }}">
-                                {{ make.makerTitle }}
-                            </a>
-                        </p>
-                    {% endfor %} <!-- //end.makerBlock -->
-                </li>
-
-                <li class="item-list__item">
-                    <h4>Add this gear to your collection</h4>
-
-                    {% for item in entry.sellerBlock %}
-                        <dl class="seller-block">
-                            <dt>
-                                <a href="{{item.sellerURL}}">{{item.sellerName}}</a>
-                            </dt>
-                        </dl>
-
-                    {% endfor %}
-                </li>
-
-                <li class="item-list__item">
-                    <h4>Similar instruments</h4>
-                    <ul class="item-list item-list--instruments">
-                        <li class="item-list__item"><a href="URL!">Gibson E2234</a></li>
-                        <li class="item-list__item"><a href="URL!">Ibanez S13</a></li>
-                        <li class="item-list__item"><a href="URL!">Yamaha E series</a></li>
-                    </ul>
-                </li>
-            </ul>
         </div>
-    </div><!-- //end.side-wrapper -->
+
+        <div class="island island--light-grey island--wrapper--equipment">
+            <!-- INSTRUMENT IMAGE -->
+
+            <div class="island__content island__content--small">
+                <div class="item-list--equipment-meta">
+
+                    <ul class="item-list">
+
+                        <li class="item-list__item">
+                            <h4>Manufactured by</h4>
+                            {% for make in entry.makerBlock %}
+                                <p>
+                                    <a href="{{ make.makerUrl }}">
+                                        {{ make.makerTitle }}
+                                    </a>
+                                </p>
+                            {% endfor %} <!-- //end.makerBlock -->
+                        </li>
+
+                        <li class="item-list__item">
+                            <h4>Add this gear to your collection</h4>
+
+                            {% for item in entry.sellerBlock %}
+                                <dl class="seller-block">
+                                    <dt>
+                                        <a href="{{item.sellerURL}}">{{item.sellerName}}</a>
+                                    </dt>
+                                </dl>
+
+                            {% endfor %}
+                        </li>
+
+                        <li class="item-list__item">
+                            <h4>Similar instruments</h4>
+                            <ul class="item-list item-list--instruments">
+                                <li class="item-list__item"><a href="URL!">Gibson E2234</a></li>
+                                <li class="item-list__item"><a href="URL!">Ibanez S13</a></li>
+                                <li class="item-list__item"><a href="URL!">Yamaha E series</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div><!-- //.item-list -->
+            </div><!-- //.island__content -->
+        </div><!-- //.island-wrapper -->
+    </div><!-- //.side-wrapper -->
 
 {% endblock %}
 

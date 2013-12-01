@@ -11,14 +11,16 @@
 {% block content_main %}
 
     <header class="heading-group heading-group--main heading-group--with-meta">
-        <h1>{{entry.title}}</h1>
+        <div class="main-wrapper main-wrapper--full">
+            <h1>{{entry.title}}</h1>
 
-        {% if entry.heading__sec %}
-            <h2>{{entry.heading__sec}}</h2>
-        {% endif %}
+            {% if entry.heading__sec %}
+                <h2>{{entry.heading__sec}}</h2>
+            {% endif %}
+        </div>
 
         <div class="meta-info-block">
-            <div class="main-wrapper">
+            <div class="main-wrapper main-wrapper--full">
                 <time class="meta-info-block__item" datetime="{{entry.postDate|date("Y-m-d")}}">{{entry.postDate|date("jS F Y")}}</time>
                 <p class="meta-info-block__item">Posted in
                     <a class="category-link" href="URL!">

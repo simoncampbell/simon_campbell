@@ -37,7 +37,7 @@
     border-bottom: 1px dotted $color__border--standard;
 
     &:first-letter {
-        @include rems(font-size, $base-font-size);
+        @include rems(font-size, 58);
         float: none;
         color: $base-color;
         line-height: 1;

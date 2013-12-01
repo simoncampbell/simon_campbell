@@ -63,30 +63,23 @@ figcaption {
 }
 
 .figure__hero {
-    @include rems(margin-top, - $base-spacing-unit * 1.2);
-
-    @include breakpoint($breakpoint__small){
-        @include rems(margin-top, -43);
-    }
+    @include rems(margin-top, - $base-spacing-unit * 1.1);
 
     @include breakpoint($breakpoint__medium){
-        @include rems(margin-top, -43);
+        width: 71%;
+        margin: 0 auto;
+        @include rems(max-width, 578);
+        @include rems(margin-bottom, $base-spacing-unit);
     }
 
-    @include breakpoint(560px){
-        @include rems(max-height, 320);
-        overflow: hidden;
-    }
-
-    @include breakpoint(771px){
-        @include rems(max-height, 420);
+    @include breakpoint($breakpoint__desktop){
+        width: 64%;
     }
 
     @include breakpoint($breakpoint__large){
         float: left;
         width: 100%;
-        @include rems(margin-top, - $base-spacing-unit * 3);
-        @include rems(max-height, 470);
+        margin-bottom: 0;
     }
 
     @include breakpoint(1260px) {
@@ -128,10 +121,11 @@ figcaption {
     }
 
     >.heading-group {
+        width: 100%;
+
         @include breakpoint($breakpoint__large){
-            @include rems(width, 420);
             @include rems(bottom, 300);
-            position: absolute;
+            position: relative;
             right: 0;
             color: $color__white;
 
@@ -151,7 +145,6 @@ figcaption {
         }
 
         @include breakpoint(1183px){
-            @include rems(width, 470);
 
             > h1 {
                 @include rems(font-size, 43);
@@ -159,7 +152,6 @@ figcaption {
         }
 
         @include breakpoint(1260px){
-            @include rems(width, 516);
             > h1 {
                 @include rems(font-size, 50);
             }

@@ -9,66 +9,62 @@
 {% block content_main %}
 
     <header class="heading-group heading-group--main">
-        <h1>Recordings</h1>
-        <h2>A collection of EPs, LPs and everything in between</h2>
+        <div class="main-wrapper main-wrapper--full">
+            <h1>Recordings</h1>
+            <h2>A collection of EPs, LPs and everything in between</h2>
+        </div>
     </header>
 
 
-    <div class="main-wrapper main-wrapper--album">
+    <div class="main-wrapper main-wrapper--full">
 
         <ul class="item-list item-list--album">
 
             <li class="item-list__item item-list__item--article item-list__item--recording">
-                <div class="flag flag--top">
-                    <figure class="flag__image">
-                        <a href="URL!"><img alt="" src="http://placehold.it/150x150/0eafff/ffffff.png"></a>
-                    </figure>
 
-                    <header class="flag__body">
-                        <h3><a href="URL!">Thirty Six</a></h3>
-                         <time class="meta-info-block__item" datetime="{{entry.postDate|date("Y")}}">{{entry.postDate|date("Y")}}</time>
-                    </header>
-                </div><!-- //end.flag -->
+                <figure class="flag__image">
+                    <a href="URL!"><img alt="" src="http://placehold.it/700x700/0eafff/ffffff.png"></a>
+                </figure>
+
+                <header class="flag__body">
+                    <h3><a href="URL!">Thirty Six</a></h3>
+                     <time class="meta-info-block__item" datetime="{{entry.postDate|date("Y")}}">{{entry.postDate|date("Y")}}</time>
+                </header>
             </li>
 
             <li class="item-list__item item-list__item--article item-list__item--recording">
 
-                <div class="flag flag--top">
-                    <figure class="flag__image">
-                        <a href="URL!"><img alt="" src="http://placehold.it/150x150/0eafff/ffffff.png"></a>
-                    </figure>
+                <figure class="flag__image">
+                    <a href="URL!"><img alt="" src="http://placehold.it/700x700/0eafff/ffffff.png"></a>
+                </figure>
 
-                    <header class="flag__body">
-                        <h3><a href="URL!">Another release</a></h3>
-                         <time class="meta-info-block__item" datetime="{{entry.postDate|date("Y")}}">{{entry.postDate|date("Y")}}</time>
-                    </header>
-                </div>
+                <header class="flag__body">
+                    <h3><a href="URL!">Another release</a></h3>
+                     <time class="meta-info-block__item" datetime="{{entry.postDate|date("Y")}}">{{entry.postDate|date("Y")}}</time>
+                </header>
+
             </li>
             <li class="item-list__item item-list__item--article item-list__item--recording">
-                <div class="flag flag--top">
-                    <figure class="flag__image">
-                        <a href="URL!"><img alt="" src="http://placehold.it/150x150/0eafff/ffffff.png"></a>
-                    </figure>
+                <figure class="flag__image">
+                    <a href="URL!"><img alt="" src="http://placehold.it/700x700/0eafff/ffffff.png"></a>
+                </figure>
 
-                    <header class="flag__body">
-                        <h3><a href="URL!">Thirty Six</a></h3>
-                         <time class="meta-info-block__item" datetime="{{entry.postDate|date("Y")}}">{{entry.postDate|date("Y")}}</time>
-                    </header>
-                </div><!-- //end.flag -->
+                <header class="flag__body">
+                    <h3><a href="URL!">Thirty Six</a></h3>
+                     <time class="meta-info-block__item" datetime="{{entry.postDate|date("Y")}}">{{entry.postDate|date("Y")}}</time>
+                </header>
             </li>
 
             <li class="item-list__item item-list__item--article item-list__item--recording">
 
-                <div class="flag flag--top">
-                    <figure class="flag__image">
-                        <a href="URL!"><img alt="" src="http://placehold.it/150x150/0eafff/ffffff.png"></a>
-                    </figure>
+                <figure class="flag__image">
+                    <a href="URL!"><img alt="" src="http://placehold.it/700x700/0eafff/ffffff.png"></a>
+                </figure>
 
-                    <header class="flag__body">
-                        <h3><a href="URL!">Another release</a></h3>
-                         <time class="meta-info-block__item" datetime="{{entry.postDate|date("Y")}}">{{entry.postDate|date("Y")}}</time>
-                    </header>
-                </div>
+                <header class="flag__body">
+                    <h3><a href="URL!">Another release</a></h3>
+                     <time class="meta-info-block__item" datetime="{{entry.postDate|date("Y")}}">{{entry.postDate|date("Y")}}</time>
+                </header>
             </li>
         </ul>
     </div><!-- main-wrapper -->

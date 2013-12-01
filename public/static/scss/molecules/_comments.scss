@@ -23,11 +23,10 @@
     @include breakpoint($breakpoint__large){
         @include rems(padding-top, $half-spacing-unit / 2);
         float: left;
-        width: 64.2%;
+        width: 65.3%;
     }
 
     @include breakpoint(1260px) {
-        width: 64.15%;
         clear: left;
     }
 }

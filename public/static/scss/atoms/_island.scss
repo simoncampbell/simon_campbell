@@ -45,6 +45,9 @@
         background-color: darken($color__background--grey, 5);
     }
 
+    .island--light-grey {
+        background-color: $color__background--light;
+    }
 
 .island--wrapper {
     @include rems(padding-top, $base-spacing-unit * 2);
@@ -62,19 +65,15 @@
 
         @include breakpoint($breakpoint__large){
             @include rems(margin-top, - $base-spacing-unit);
-            @include rems(padding-right, 90);
+            padding-right: 9.95%;
             padding-top: 0;
             margin-bottom: -99999px; // 100% height hack
             padding-bottom: 99999px; // 100% height hack
             border-top: none;
             border-left: 1px solid $color__border--standard;
             float: right;
-            width: 35.75%;
+            width: 34.7%;
         }
-    }
-
-    &.island.side-wrapper--rev {
-        border-right: 1px solid $color__border--standard;
     }
 
     h3 {
@@ -95,18 +94,19 @@
         padding: 0;
 
         @include breakpoint($breakpoint__small){
-            @include max-width(8);
-            @include rems(padding, 0, 66);
+            width: 71%;
             margin: 0 auto;
         }
 
-        @include breakpoint(680px){
-            @include max-width(12);
+        @include breakpoint($breakpoint__desktop){
+            width: 80.1%;
+            @include rems(max-width, 723);
         }
 
         @include breakpoint($breakpoint__large){
-            @include rems(padding, 14);
+            padding-left: 6%;
             padding-right: 0;
+            width: 100%;
             padding-top: 0;
         }
 
@@ -117,25 +117,16 @@
 }
 
     .island--wrapper--equipment {
+        @extend .cf;
 
-        @include breakpoint($breakpoint__large) {
-            @include rems(padding, $base-spacing-unit);
-            padding-right: 0;
+        @include breakpoint($breakpoint__tiny){
+            float: right;
+            width: 49%;
         }
 
-        .side-wrapper--rev & {
-            padding-left: 0;
-            padding-right: 0;
-        }
-
-
-        figure {
-
-            @include breakpoint(580px $breakpoint__large){
-                @include rems(margin-right, $base-spacing-unit);
-                float: left;
-                width: 30%;
-            }
+        @include breakpoint($breakpoint__large){
+            width: 100%;
+            float: none;
         }
     }
 
@@ -161,7 +152,12 @@
         border-top: none;
     }
 
+    .island__content--small {
+        @include rems(padding, $gutter/2);
+    }
+
     .island > :last-child {
       margin-bottom:0;
     }
+
 }//endif

@@ -9,19 +9,19 @@
 
 {% block content_main %}
 
+ <!-- BIG IMAGE -->
+    {% for image in contactAbout.largeImage %}
+        <figure class="figure--banner figure--banner-about">
+            <img src="{{image.url}}">
+        </figure>
+    {% endfor %}
+
     <header class="heading-group heading-group--main">
         <div class="main-wrapper main-wrapper--full">
             <h1>About</h1>
             <h2>{{contactAbout.heading__sec}}</h2>
         </div>
     </header>
-
-    <!-- BIG IMAGE -->
-    {% for image in contactAbout.largeImage %}
-        <figure class="figure__hero figure__hero--about">
-            <img src="{{image.url}}">
-        </figure>
-    {% endfor %}
 
     <!-- CONTENT -->
     <div class="main-wrapper main-wrapper--article main-wrapper--listing">
@@ -52,12 +52,12 @@ He didn’t say any more, but we’ve always been unusually communicative in a r
 
             <li class="item-list__item item-list__item--bookings">
                 <div class="island island--sidebar">
-                    <div class="island__header">
-                        <h4>Bookings</h4>
+                    <div class="island__header island__header--small">
+                        <h4 class="h--alt">Bookings</h4>
                     </div>
 
-                    <div class="island__content">
-                        <p>For booking details please contact:
+                    <div class="island__content island__content--small">
+                        <p class="text--small">For booking details please contact:
                         {% for person in contactAbout.bookingContactInfo %}
                             <a href="{{person.bookingsURL}}">{{person.bookingsPerson}}</a> at Supertone Records</p>
                         {% endfor %}
@@ -67,12 +67,12 @@ He didn’t say any more, but we’ve always been unusually communicative in a r
 
             <li class="item-list__item item-list__item--bookings">
                 <div class="island island--sidebar">
-                    <div class="island__header">
-                        <h4>Media downloads</h4>
+                    <div class="island__header island__header--small">
+                        <h4 class="h--alt">Media downloads</h4>
                     </div>
 
-                    <div class="island__content">
-                        <ul>
+                    <div class="island__content island__content--small">
+                        <ul class="text--small">
                             <li>
                                 <a href="URL!" class="link--icon link--icon--long">
                                     <span class="icon ss ss-pdf">pdf</span>

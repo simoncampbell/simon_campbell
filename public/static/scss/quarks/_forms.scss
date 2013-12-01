@@ -70,7 +70,7 @@ input {
 input {
     @include rems(height, 40);
     @include rems(width, 300);
-    max-width:70%;
+    max-width:100%;
 
     &.btn {
         width: auto;
@@ -109,6 +109,7 @@ textarea {
         border-bottom-right-radius: 0;
         border-right: none;
         float: left;
+        width: 70%;
 
         &:focus {
             border-right: none;

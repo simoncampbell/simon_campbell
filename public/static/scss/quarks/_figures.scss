@@ -96,14 +96,6 @@ figcaption {
     overflow: initial;
 }
 
-.figure__hero--about {
-    max-height: none;
-
-    @include breakpoint($breakpoint__small){
-        @include rems(margin-top, -21);
-    }
-}
-
 .item-list__figure {
     margin-bottom: 0;
 }
@@ -168,6 +160,31 @@ figcaption {
     }
 }
 
+
+.figure--banner {
+    @include rems(margin-top, - $base-spacing-unit);
+    float: left;
+    width: 100%;
+
+    @include breakpoint($breakpoint__small){
+        @include rems(margin-top, - $base-spacing-unit * 2);
+        @include rems(max-height, 400);
+        overflow: hidden;
+    }
+
+    @include breakpoint($breakpoint__medium){
+        @include rems(margin-top, - $base-spacing-unit * 3);
+    }
+}
+
+
+.figure--banner-about {
+    @include breakpoint($breakpoint__small){
+        @include rems(max-height, 800);
+    }
+}
+
+
 .figure__right {
     @include breakpoint($breakpoint__medium) {
         float: right;
@@ -184,3 +201,4 @@ figcaption {
         max-width: 50%;
     }
 }
+

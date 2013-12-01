@@ -116,35 +116,8 @@
     .wide-wrapper--merch {
         @include breakpoint($breakpoint__large){
             float: left;
-            width: 56%;
-            padding-right: 0;
-
-            .item-list--merch {
-                margin-top: 0;
-                padding-top: 0;
-
-                .item-list__item {
-                    width: 47.8%;
-
-                    &:nth-child(2n){
-                        margin-right: 0;
-                    }
-
-
-                    &:nth-child(2n + 1){
-                        @include rems(margin-right, $base-spacing-unit);
-                    }
-
-                    &:nth-child(3n + 1) {
-                        clear: none;
-                    }
-                }
-            }
-
-        }
-
-        @include breakpoint(1260px) {
             width: 59%;
+            padding-right: 0;
         }
     }
 

@@ -17,6 +17,10 @@
     @include breakpoint(1260px) {
         width: 78.7%;
     }
+
+    .no-js & {
+        @include rems(margin-bottom, $base-spacing-unit);
+    }
 }
 
 
@@ -27,7 +31,7 @@
 
     // hide the mobile menu link when no javascript is detected
     .no-js & {
-
+        display: none;
     }
 
     @extend %font__display--normal;
@@ -99,6 +103,10 @@
             }
         }
 
+        .no-js & {
+            float: left;
+        }
+
         a {
             @extend %font__display--normal;
             @include rems(padding, $half-spacing-unit * 1.5, $base-spacing-unit - 3);
@@ -123,6 +131,9 @@
                 border-bottom: none;
             }
 
+            .no-js & {
+                border: none;
+            }
 
         }
         .active {

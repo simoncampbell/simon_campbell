@@ -162,10 +162,19 @@
     ul {
         @extend .cf;
         @include breakpoint($breakpoint--small){
+            margin-left: -3%;
 
             h3 {
                 width: 100%;
             }
+        }
+
+        @include breakpoint($breakpoint--desktop){
+            margin-left: -2%;
+        }
+
+        @include breakpoint($breakpoint--large){
+            margin-left: -3.4%;
         }
 
         .item-list__item {
@@ -174,48 +183,20 @@
             @include rems(margin-bottom, $base-spacing-unit);
 
 
-            @include breakpoint(500px){
-                width: 46%;
-
-                //mobile styles for 2c grid
-                &:nth-child(odd){
-                    @include rems(margin-right, $base-spacing-unit);
-                    clear: left;
-                }
+            @include breakpoint($breakpoint__small){
+                width: 47%;
+                margin-left: 3%;
             }
 
-            @include breakpoint($breakpoint__medium){
-                width: 48%;
+            @include breakpoint($breakpoint__desktop){
+                width: 47.7%;
+                margin-left: 2%;
             }
 
-            // tablet styles for 3c grid
-
-                @include breakpoint(700px){
-                    @include rems(margin-right, $base-spacing-unit);
-                    width:31%;
-
-                    &:nth-child(odd){
-                        clear: none;
-                    }
-
-                    &:nth-child(3n){
-                        margin-right: 0;
-                    }
-
-                    &:nth-child(3n + 1){
-                        clear: left;
-                    }
-                }
-
-            // desktop styles
-                @include breakpoint(920px){
-                    width: 31.7%;
-                }
-
-                @include breakpoint(1260px){
-                    width: 32%;
-                }
-
+            @include breakpoint($breakpoint__large){
+                width: 45%;
+                margin-left: 3.4%;
+            }
         }
     }
 

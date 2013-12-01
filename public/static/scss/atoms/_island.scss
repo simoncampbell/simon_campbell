@@ -144,6 +144,10 @@
         }
     }
 
+    .island__header--small {
+        @include rems(padding,5, 10);
+    }
+
     .island__content {
         @extend .cf;
         @include rems(padding, $gutter);

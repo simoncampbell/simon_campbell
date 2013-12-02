@@ -7,7 +7,6 @@
  */
 
 .carousel {
-    @include rems(margin-top, $base-spacing-unit);
     position: relative;
     list-style: none;
 

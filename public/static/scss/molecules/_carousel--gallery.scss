@@ -23,7 +23,6 @@
     border-bottom: 1px solid $color__border--standard;
 
     @include breakpoint($breakpoint__large) {
-        @include rems(padding-bottom, $base-spacing-unit * 4);
         float: left;
         width: 100%;
     }
@@ -31,6 +30,12 @@
 
 
     .carousel__info-wrapper {
+        @include rems(max-width, 578);
+
+        @include breakpoint($breakpoint__desktop){
+            width: 64%;
+        }
+
         @include breakpoint($breakpoint__large) {
             @include rems(padding-left, 90);
             width: 48%;

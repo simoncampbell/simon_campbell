@@ -4,7 +4,7 @@
 
 .footer-main {
     @extend .cf;
-    @include rems(padding, $base-spacing-unit * 2, 0,0,0);
+    @include rems(padding, $base-spacing-unit, 0,0,0);
     color: $color__text--reverse;
     background-color: $color__background--black;
     border-top: 5px solid lighten($color__background--black, 10);
@@ -279,15 +279,15 @@
                 margin: 0;
             }
 
-            li {
+            // li {
 
-                &:first-of-type::after {
-                    @include rems(padding-right, $quarter-spacing-unit);
-                    @include rems(padding-left, $quarter-spacing-unit);
-                    content:"|";
-                    color: darken($color__border--standard, 50);
-                }
-            }
+            //     &:first-of-type::after {
+            //         @include rems(padding-right, $quarter-spacing-unit);
+            //         @include rems(padding-left, $quarter-spacing-unit);
+            //         content:"|";
+            //         color: darken($color__border--standard, 50);
+            //     }
+            // }
         }
 
         .link--jump {

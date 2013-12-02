@@ -32,6 +32,10 @@
     }
 }
 
+.lede--marginless {
+    margin-bottom: 0;
+}
+
 .lede--double {
     @include rems(padding-bottom, $base-spacing-unit);
     border-bottom: 1px dotted $color__border--standard;

@@ -13,16 +13,18 @@
 
 <!-- SIMON DESCRIPTION -->
 
-<div class="figure__homepage-intro">
-    <figure class="figure__hero">
-        <img src="/static/images/homepage/setup.jpg" alt="Setting up for a gig">
-    </figure>
+    <div class="banner--landing">
+        <h1 class="banner--landing__title">Simon Campbell</h1>
+        <div class="banner--landing__figure"></div>
 
-    <header class="heading-group heading-group--main">
-        <h1 class="banner-logo--homepage">Simon Campbell</h1>
-        <h2>Guitarist, songwriter &amp; music&nbsp;producer</h2>
-    </header>
-</div><!-- //end.figure_homepage-intro -->
+        <header class="heading-group heading-group--main banner--landing__content">
+            <div class="main-wrapper main-wrapper--full">
+                <p class="lede lede--marginless">
+                    Simon is a guitarist, songwriter and music producer currently putting the finishing touches to <em>Brother</em>, his latest full studio album. This is where he records his thoughts on the technology back stage and his journies from on the road.
+                </p>
+            </div>
+        </header>
+    </div>
 
 
 <div class="main-wrapper main-wrapper--full">
@@ -32,16 +34,6 @@
     </section>
 
     <section class="item-list item-list--featured">
-        <article class="item-list__item item-list__item--article">
-            <header class="heading-group heading-group--marginless">
-                <h3><a href="URL">The TC Analogue 3a</a></h3>
-                <div class="meta-info-block meta-info-block--borderless ">
-                    <time class="meta-info-block__item">27th July 2013</time>
-                </div>
-            </header>
-            <p>In my younger and more vulnerable years my father gave me some advice that I’ve been turning over in my mind ever since. “Whenever you feel like criticizing any one,” he told me, “just remember that all the people in this world haven’t had the advantages that you’ve had.” <a href="URL">Read more &raquo;</a></p>
-        </article>
-
         <article class="item-list__item item-list__item--article">
             <header class="heading-group heading-group--marginless">
                 <h3><a href="URL">The TC Analogue 3a</a></h3>
@@ -78,22 +70,21 @@
 
             <ul class="item-list">
                 {% for post in craft.entries.find({section:'Equipment', limit:'3'}) %}
-                    <li class="item-list__item item-list__item--article">
+                    <li class="item-list__item item-list__item--article item-list__item--side">
 
                         <!-- REQUIRED EQUIPMENT IMAGE -->
                         {% for image in post.equipmentImage %}
-                            <figure class="equipment-image">
+                            <figure class="equipment-image side__image">
                                 <a href="{{post.url}}">
                                     <img src="{{image.url}}">
                                 </a>
                             </figure>
                         {% endfor %}
 
-                        <div class="heading-group heading-group--marginless">
+                        <div class="heading-group heading-group--marginless side__content">
                             <h4><a href="{{post.url}}">{{post.title}}</a></h4>
+                            <p>{{post.shortExtract}} <a href="URL">Read more »</a></p>
                         </div>
-
-                        <p>{{post.shortExtract}} <a href="URL">Read more »</a></p>
 
                     </li>
                 {% endfor %}
@@ -112,10 +103,10 @@
                 </div>
 
                 <ul class="item-list item-list--homepage">
-                    {% for news in craft.entries.find({section:'News', limit:'4'}) %}
+                    {% for news in craft.entries.find({section:'News', limit:'6'}) %}
                         <li class="item-list__item">
                             <div class="heading-group heading-group--marginless">
-                                <h4><a href="{{news.url}}">{{news.title}}</a></h4>
+                                <h5><a href="{{news.url}}">{{news.title}}</a></h5>
                                 <div class="meta-info-block meta-info-block--borderless">
 
                                     <time class="meta-info-block__item" datetime="{{news.postDate|date("Y-m-d")}}">{{news.postDate|date("jS F Y")}}</time>

@@ -13,6 +13,7 @@
     position: relative;
     width:100%;
     background-color: $color__background--black;
+    z-index: 5;
 
     @include breakpoint($breakpoint__small) {
         @include rems(margin-bottom, $base-spacing-unit * 2);
@@ -86,26 +87,5 @@
     &.menu--active {
         border-bottom: 1px solid $color__orange--secondary;
         background-color: darken($color__banner-nav--hover,3);
-    }
-}
-
-.banner-logo--homepage {
-    background-image: url('/static/images/homepage/logo.svg');
-    position: absolute;
-    bottom: 25%;
-    left: 0;
-    right: 0;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    text-indent: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-    @include rems(height, 140);
-    border-top: 10px solid #FF7C45;
-    border-bottom: 10px solid #FF7C45;
-    display: none;
-
-    @include breakpoint("breakpoint__medium"){
-        display: block;
     }
 }

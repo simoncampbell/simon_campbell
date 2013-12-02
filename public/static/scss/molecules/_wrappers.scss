@@ -236,13 +236,7 @@
         padding-left: 0;
         padding-right: 0;
         margin-bottom: 0;
-        max-width: 100%;
-
-        @include breakpoint($breakpoint__medium){
-            @include rems(padding-left, 42);
-            @include rems(padding-right, 42);
-            @include max-width(12);
-        }
+        @include rems(max-width, 578);
 
         @include breakpoint($breakpoint__large){
             padding: 0 9.8%;
@@ -297,23 +291,27 @@
 
 .homepage-wrapper {
     @extend .cf;
-    @include rems(margin-bottom, $base-spacing-unit);
 }
 
     .homepage-wrapper--news {
-        @include breakpoint(580px 720px){
+
+        @include breakpoint(580px ($breakpoint__large - 1px)){
+            margin-left: -3%;
+            width: 103%;
+
+            >.heading-group {
+                margin-left: 3%;
+            }
+
             .item-list__item {
                 @include rems(margin-bottom, $base-spacing-unit);
                 float: left;
-                width: 45%;
-
-                &:nth-child(2n) {
-                    margin-right: 0;
-                }
+                margin-left: 3%;
+                width: 47%;
             }
         }
 
-        @include breakpoint(720px){
+        @include breakpoint($breakpoint__large){
             float: right;
             width: 48.9%;
         }
@@ -329,26 +327,22 @@
                 }
             }
         }
-
-        @include breakpoint(1260px){
-            width: 65.4%;
-        }
     }
 
     .homepage-wrapper--live-shows {
+        margin-bottom: 0;
 
         @include breakpoint(720px){
-            @include rems(margin-top, 5);
             float: left;
-            width: 48%;
+            width: 100%;
 
             .live-shows-block header > a {
                 @include rems(right, $base-spacing-unit);
             }
         }
 
-        @include breakpoint(1260px){
-            width: 32%;
+        @include breakpoint($breakpoint__large){
+            width: 48.4%;
         }
     }
 

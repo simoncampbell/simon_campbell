@@ -26,21 +26,6 @@
         h3 {
             margin-top: 0;
         }
-
-        .wide-wrapper--recent-entries & {
-            @include breakpoint($breakpoint__desktop){
-                @include rems(margin-right, $base-spacing-unit);
-                @include rems(margin-bottom, 20);
-                float: left;
-                width: 48.4%;
-                border-bottom: none;
-                padding-bottom: 0;
-
-                &:nth-child(2n){
-                    margin-right: 0;
-                }
-            }
-        }
     }
 
     li.item-list__item:before {
@@ -647,12 +632,15 @@
 
         @include breakpoint($breakpoint__large){
             float: left;
-            width: 100%;
+            width: 101.7%;
+            margin-left: -2%;
+
 
             >.item-list__item {
-                @include rems(margin-right, $base-spacing-unit);
+                margin-right: 0;
+                margin-left: 2%;
                 float: left;
-                width: 31.7%;
+                width: 48%;
                 border-bottom: none;
                 padding-bottom: 0;
                 margin-bottom: 0;
@@ -667,20 +655,6 @@
 
                 p, .meta-info-block__item {
                     @include rems(font-size, $milli-size);
-                }
-            }
-        }
-
-        @include breakpoint(1260px){
-            >.item-list__item {
-                width: 32%;
-
-                >.heading-group h3 {
-                    @include rems(font-size, 24);
-                }
-
-                p {
-                    @include rems(font-size, 16);
                 }
             }
         }
@@ -724,10 +698,14 @@
     }
 
     .item-list--homepage {
-        @include rems(margin-bottom, $base-spacing-unit);
+        float: left;
+        width: 100%;
+        margin-bottom: 0;
 
         >.item-list__item {
             @include rems(margin-bottom, $base-spacing-unit);
+            float: left;
+            width: 100%;
         }
 
         @include breakpoint(1260px){
@@ -748,4 +726,33 @@
             }
         }
     }
+
+
+    .item-list__item--side {
+        @include rems(margin-bottom, $base-spacing-unit);
+        @extend .cf;
+
+        @include breakpoint($breakpoint__desktop){
+            float: left;
+            width: 100%;
+        }
+
+        .side__image {
+            float: left;
+            width: 100%;
+
+            @include breakpoint($breakpoint__desktop){
+                width: 48.4%;
+                float: left;
+            }
+        }
+
+        .side__content {
+            @include breakpoint($breakpoint__desktop){
+                width: 49%;
+                float: right;
+            }
+        }
+    }
+
 } //endif

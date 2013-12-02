@@ -13,6 +13,7 @@
 
     @include breakpoint($breakpoint__large) {
         border: none;
+        padding-bottom: 0;
     }
 }
 
@@ -20,15 +21,7 @@
 
         @include breakpoint($breakpoint__large) {
             float: left;
-            width: 32%;
-
-            >h3 {
-                @include rems(font-size, 34);
-            }
-        }
-
-        @include breakpoint(1260px){
-            width: 32%;
+            width: 38.6%;
         }
     }
 
@@ -40,7 +33,7 @@
             @include breakpoint($breakpoint__large) {
                 @include rems(font-size, 16);
                 float: left;
-                width: 32%;
+                width: 38.6%;
             }
 
             @include breakpoint(1260px){
@@ -54,11 +47,7 @@
 
         @include breakpoint($breakpoint__large) {
             float: right;
-            width: 65.5%;
-        }
-
-        @include breakpoint(1260px){
-            width: 66%;
+            width: 59.4%;
         }
     }
 

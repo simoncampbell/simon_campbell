@@ -5,6 +5,7 @@ The redesign of [simoncampbell.com](http://simoncampbell).
 
 ### Setting up Craft locally
 
+1. Download [Craft](http://buildwithcraft.com/)
 1. Make a new DB
 2. Rename craft/config/db.sample.php to db.php and edit to local settings
 3. Delete web.config in craft/config/

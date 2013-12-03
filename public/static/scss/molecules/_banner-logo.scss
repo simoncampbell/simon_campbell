@@ -1,0 +1,95 @@
+/*------------------------------------*\
+    $BANNER-LOGO
+\*------------------------------------*/
+
+/*
+ * Styles for the logo and main banner
+ */
+
+
+.banner {
+    @extend .cf;
+    @include rems(margin-bottom, $base-spacing-unit);
+    position: relative;
+    width:100%;
+    background-color: $color__background--black;
+    z-index: 5;
+
+    @include breakpoint($breakpoint__small) {
+        @include rems(margin-bottom, $base-spacing-unit * 2);
+    }
+
+    @include breakpoint(552px) {
+        @include rems(height, 46);
+        border-bottom: 1px solid $color__orange--secondary;
+    }
+
+    @include breakpoint($breakpoint__large){
+        @include rems(margin-bottom, $base-spacing-unit * 3);
+        border-bottom: none;
+    }
+
+    .overlay--active & {
+        z-index: 0;
+    }
+}
+
+.banner__logo {
+    @extend .main-wrapper;
+    @include rems(height, 46);
+    @include rems(padding-top, $half-spacing-unit + 4);
+    @include rems(font-size, $h3-size);
+    border-bottom: 1px solid $color__orange--secondary;
+    text-align: left;
+    color: $color__white;
+    text-transform: uppercase;
+    margin: 0 auto;
+    line-height: $base-line-height;
+    background-color: $color__background--black;
+
+    @include breakpoint($breakpoint__small){
+        width: 100%;
+        padding-left: 14%;
+    }
+
+    @include breakpoint($breakpoint__desktop){
+        width: 64%;
+        padding-left: 0;
+    }
+
+    @include breakpoint($breakpoint__large){
+        @include rems(height, 47);
+        @include rems(padding-left, $half-spacing-unit + 5);
+        width: 23%;
+        margin-left: 0;
+        padding-right: 0;
+        float: left;
+        border-bottom: 2px solid $color__orange--secondary;
+    }
+
+    @include breakpoint(1260px){
+        @include rems(padding-left, $base-spacing-unit);
+        @include rems(height, 49);
+        width: 21.3%;
+    }
+
+    h1, p {
+        @include image-2x("/static/images/branding/simon-campbell__logo--large.png", 5.3em);
+        background:url("/static/images/branding/simon-campbell__logo.png") no-repeat;
+        @include rems(background-size, 200);
+        text-indent: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        margin:0;
+        line-height:1;
+
+        @include breakpoint(max-width 380px){
+            background-size: 59%;
+        }
+    }
+
+    &.menu--active {
+        border-bottom: 1px solid $color__orange--secondary;
+        background-color: darken($color__banner-nav--hover,3);
+    }
+}

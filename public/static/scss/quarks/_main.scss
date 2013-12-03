@@ -1,0 +1,58 @@
+/*------------------------------------*\
+    $MAIN
+\*------------------------------------*/
+
+html {
+    height: 100%;
+    @extend .cf;
+}
+
+body {
+    @extend .cf;
+    @extend %font__text--regular;
+    background-color: $color__main-bg;
+    font: percentage($base-font-size / 16) $base-font-family;
+    color: $base-color;
+    line-height:$line-height-ratio;
+    position: relative;
+    height: 100%;
+
+    &.overlay--active {
+        height: 100%;
+    }
+
+    /**
+     * Media
+     * Conditional CSS: http://adactio.com/journal/5429/
+     */
+
+    /* Medium */
+    @media screen and (min-width: 35em) {
+        &:after {
+            content: 'medium';
+            display: none;
+        }
+    }
+
+
+    /* Large */
+    @media screen and (min-width: 56.25em) {
+        &:after {
+            content: 'large';
+            display: none;
+        }
+    }
+
+    @include breakpoint(720px){
+        font: 104% $base-font-family;
+        line-height:$line-height-ratio;
+    }
+
+    @include breakpoint($breakpoint__large){
+        line-height: 1.6;
+        &:after {
+            content: 'largest';
+            display: none;
+        }
+    }
+}

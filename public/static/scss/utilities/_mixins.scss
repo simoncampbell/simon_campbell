@@ -1,0 +1,114 @@
+/*------------------------------------*\
+    $MIXINS
+\*------------------------------------*/
+
+
+
+// ## Calculates rem size based on required pixel size and context.
+// $target: (required) Required pixel size
+// $context: (optional) Current font size used to calculate em value
+// Returns: Rem value
+@function calc-rem($target, $context: $base-font-size) {
+     @return ($target / $context) * 1rem;
+}
+
+// ## Calculates rem size based on required pixel size and context.
+// $target: (required) Required pixel size
+// $context: (optional) Current font size used to calculate em value
+// Returns: Rem value
+// @function calc-rem($target, $context: $base-font-size) {
+//      @return ($target / $context) * 1rem;
+// }
+
+// ## Strips px suffix from value
+// $num: value to have suffix stripped
+// Returns: Numerical value only
+@function strip-px($num){
+  @return $num / 1px;
+}
+
+
+
+// ## Includes Rem size(s) with pixels fallback (mixin by Karl Merkli)
+// $selector: (required) CSS property
+// $sizes: (required) Required pixel sizes (comma separated if multiple)
+@mixin rems($selector, $sizes...) {
+    $pxValues: '';
+    $remValues: '';
+    $max: length($sizes);
+
+    @for $i from 1 through $max {
+        $pxValues: #{$pxValues + nth($sizes, $i)}px;
+
+        @if $i < $max {
+            $pxValues: #{$pxValues + " "};
+        }
+    }
+
+    @for $i from 1 through $max {
+        $remValues: #{$remValues + calc-rem(nth($sizes, $i))};
+
+        @if $i < $max {
+            $remValues: #{$remValues + " "};
+        }
+    }
+
+    #{$selector}: $pxValues;
+    #{$selector}: $remValues;
+}
+
+/**
+ * Output vendor properties
+ */
+
+@mixin vendor($property, $value...){
+    -webkit-#{$property}:$value;
+       -moz-#{$property}:$value;
+        -ms-#{$property}:$value;
+         -o-#{$property}:$value;
+}
+
+
+@mixin radius($value){
+    -webkit-border-radius:($value * 1px);
+       -moz-border-radius:($value * 1px);
+        -ms-border-radius:($value * 1px);
+         -o-border-radius:($value * 1px);
+    -webkit-border-radius:(calc-rem($value));
+       -moz-border-radius:(calc-rem($value));
+        -ms-border-radius:(calc-rem($value));
+         -o-border-radius:(calc-rem($value));
+}
+
+/**
+ * Column widths in a function, in rems
+ */
+
+@mixin max-width ($cols:1) {
+    max-width: ($cols * ($column + $gutter) - $gutter) * 1px;
+    max-width: ($cols * ($column + $gutter) - $gutter) / $rem;
+}
+
+@mixin width ($cols:1) {
+    width: ($cols * ($column + $gutter) - $gutter) * 1px;
+    width: ($cols * ($column + $gutter) - $gutter) / $rem;
+}
+
+
+
+
+/**
+ * Retina images
+ */
+
+@mixin image-2x($image, $size) {
+  @media (min--moz-device-pixel-ratio: 1.3),
+         (-o-min-device-pixel-ratio: 2.6/2),
+         (-webkit-min-device-pixel-ratio: 1.3),
+         (min-device-pixel-ratio: 1.3),
+         (min-resolution: 1.3dppx) {
+    /* on retina, use image that's scaled by 2 */
+    background-image: url($image);
+    background-size: $size;
+  }
+}

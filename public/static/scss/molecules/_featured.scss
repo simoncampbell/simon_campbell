@@ -1,0 +1,93 @@
+/*------------------------------------*\
+    $FEATURED
+\*------------------------------------*/
+/**
+* Styles for the featured block on the homepage
+**/
+
+.featured {
+    @extend .cf;
+    @include rems(padding-bottom, $base-spacing-unit);
+    @include rems(margin-bottom, $base-spacing-unit);
+    border-bottom: 1px dotted $color__border--standard;
+
+    @include breakpoint($breakpoint__large) {
+        border: none;
+        padding-bottom: 0;
+    }
+}
+
+    .featured__heading {
+
+        @include breakpoint($breakpoint__large) {
+            float: left;
+            width: 38.6%;
+        }
+    }
+
+    .featured__post-content {
+
+        >p {
+            margin-bottom: 0;
+
+            @include breakpoint($breakpoint__large) {
+                @include rems(font-size, 16);
+                float: left;
+                width: 38.6%;
+            }
+
+            @include breakpoint(1260px){
+                @include rems(font-size, 16);
+            }
+        }
+    }
+
+    .featured__post-image {
+        @include rems(margin-bottom, $half-spacing-unit);
+
+        @include breakpoint($breakpoint__large) {
+            float: right;
+            width: 59.4%;
+        }
+    }
+
+
+    .featured__album {
+
+    }
+
+    .featured__album-image {
+        position:relative;
+
+        >.btn {
+            @include rems(right, $base-spacing-unit);
+            @include rems(bottom, $base-spacing-unit);
+            position: absolute;
+        }
+    }
+
+    .featured__album-content {
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

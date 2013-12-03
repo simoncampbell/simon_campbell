@@ -1,0 +1,109 @@
+ /*------------------------------------*\
+    $CAROUSEL--GALLERY
+\*------------------------------------*/
+/**
+ * Modified carousel atom for use in /gallery templates
+ *
+ */
+
+.side-wrapper--gallery {
+
+    @include breakpoint(max-width 500px){
+        padding: 0;
+    }
+
+    @include breakpoint(max-width $breakpoint__large){
+        @include rems(max-width, 940);
+    }
+}
+
+.carousel-wrapper {
+    @include rems(margin-bottom, $base-spacing-unit);
+    @include rems(padding-bottom, $base-spacing-unit * 2);
+    border-bottom: 1px solid $color__border--standard;
+
+    @include breakpoint($breakpoint__large) {
+        float: left;
+        width: 100%;
+    }
+}
+
+
+    .carousel__info-wrapper {
+        @include rems(max-width, 578);
+
+        @include breakpoint($breakpoint__desktop){
+            width: 64%;
+        }
+
+        @include breakpoint($breakpoint__large) {
+            @include rems(padding-left, 90);
+            width: 48%;
+            padding-right: 0;
+            float: left;
+
+            h3 {
+                @include rems(font-size, $h4-size + 3);
+            }
+
+            p {
+                @include rems(font-size, 15);
+            }
+        }
+
+         @include breakpoint($breakpoint__large){
+            padding: 0 9.8%;
+        }
+    }
+
+.carousel--gallery {
+    @include breakpoint($breakpoint__large) {
+        margin-top: 0;
+
+        .carousel__summary {
+            p {
+                @include rems(font-size, 15);
+            }
+        }
+    }
+}
+
+.wide-wrapper--gallery {
+
+    @include breakpoint($breakpoint__large){
+        float: right;
+        padding-left: 0;
+        width: 56%;
+
+        .item-list--gallery {
+            margin-top: 0;
+            padding-top: 0;
+
+            .item-list__item {
+                width: 47.8%;
+
+                &:nth-child(2n){
+                    margin-right: 0;
+                }
+
+
+                &:nth-child(2n + 1){
+                    @include rems(margin-right, $base-spacing-unit);
+                }
+
+                &:nth-child(3n + 1) {
+                    clear: none;
+                }
+            }
+        }
+    }
+
+    @include breakpoint(1260px){
+        width: 58.4%;
+    }
+
+
+    .item-list--gallery {
+        padding-top: 0;
+    }
+}

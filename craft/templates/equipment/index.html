@@ -1,0 +1,88 @@
+{#
+ # EQUIPMENT
+ # Index listing template
+ # -------------------
+ #
+ #}
+
+ {% block wrapper_class %}source-order{% endblock %}
+
+
+{% extends "_layout" %}
+
+{% block content_main %}
+    <header class="heading-group heading-group--main">
+        <div class="main-wrapper main-wrapper--full">
+            <h1>Equipment &amp; Gear</h1>
+            <h2>Reviews and notes from on the road and inside the studio</h2>
+        </div>
+    </header>
+
+
+    <div class="main-wrapper main-wrapper--full">
+        {% include 'components/_equipment/_category-list.html' %}
+    </div> <!-- //end.wide-wrapper -->
+
+
+    <div class="wrapper">
+        <div class="main-wrapper main-wrapper--listing" role="main">
+
+            <ul class="item-list">
+                {% for post in craft.entries.find({section:'Equipment', limit:'10'})  %}
+
+                    <li class="item-list__item item-list__item--article">
+
+                        <article>
+
+                            <!-- REQUIRED EQUIPMENT IMAGE -->
+                            {% for image in post.equipmentImage %}
+                                <figure class="equipment-image">
+                                    <a href="{{post.url}}">
+                                        <img src="{{image.url}}">
+                                    </a>
+                                </figure>
+                            {% endfor %}
+
+
+                            <header class="heading-group heading-group--marginless">
+                                <h3><a href="{{post.url}}">{{ post.title }}</a></h3>
+
+                                <div class="meta-info-block meta-info-block--borderless">
+                                    <time class="meta-info-block__item" datetime="{{post.postDate|date("Y-m-d")}}">{{post.postDate|date("jS F Y")}}</time>
+
+                                    <p class="meta-info-block__item">Posted in
+
+                                        <a class="category-link" href="/equipment/{{post.equipmentCategory|lower}}">
+                                            <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
+                                            {{post.equipmentCategory}}
+                                        </a>
+                                    </p>
+                                </div>
+                            </header>
+
+                            <p>{{ post.shortExtract }} <a href="{{post.url}}">Read more &raquo;</a></p>
+
+                        </article>
+                    </li>
+                {% endfor %}
+
+            </ul>
+
+        </div> <!-- //end.main-wrapper -->
+
+
+        <div class="side-wrapper island island--wrapper">
+            <ul class="item-list island--wrapper__content">
+
+                <li class="item-list__item item-list__item--album side-bar--album--alone">
+                    {% include 'components/_side-bar--album.html' %}
+                </li>
+
+                <li class="item-list__item item-list__item--live-shows">
+                    {% include 'components/_live-shows--alternate.html' %}
+                </li>
+            </ul>
+        </div>
+    </div><!-- //end.wrapper -->
+
+{% endblock %}

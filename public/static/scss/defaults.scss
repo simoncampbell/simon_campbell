@@ -1,0 +1,108 @@
+/*------------------------------------*\
+    $DEFAULTS
+\*------------------------------------*/
+/**
+ * Quickly set your default variables
+ */
+
+
+
+/*------------------------------------*\
+    $Breakpoints
+\*------------------------------------*/
+/**
+ * Standard breakpoint variables for use within breakpoint’s respond-to mixin
+ */
+
+$breakpoint-to-ems:true;
+
+$breakpoint__tiny: 400px;
+$breakpoint__small: 500px;
+$breakpoint__medium: 690px;
+$breakpoint__desktop: 800px;
+$breakpoint__large: 1000px;
+
+/*------------------------------------*\
+    $Base
+\*------------------------------------*/
+/**
+ * Font-sizes (in pixels). Refer to relevant sections for their implementations.
+ */
+
+$base-font-size: 16!default;
+$base-line-height: 26!default;
+
+$h1-size: 35!default;
+$h2-size: 28!default;
+$h3-size: 22!default;
+$h4-size: 18!default;
+$h5-size: $base-font-size !default;
+
+$milli-size: 15!default;
+$micro-size: 13!default;
+
+
+$base-font-family: "Poynter Serif RE", Georgia, serif!default;
+
+$base-color: #252525!default;
+$base-ui-color: #EEEEEE!default;
+
+
+
+/*------------------------------------*\
+    $Brand
+\*------------------------------------*/
+
+$brand-round: 4!default;
+
+
+
+/*------------------------------------*\
+    $Quotes
+\*------------------------------------*/
+/**
+ * English quote marks?
+ */
+$english-quotes: true!default;
+
+
+
+/*------------------------------------*\
+    $Atoms and Abstractions
+\*------------------------------------*/
+/**
+ * Which objects and abstractions would you like to use?
+ */
+$use-beautons: true!default;
+$use-block-list: true!default;
+$use-item-list: true!default;
+$use-grids: true!default;
+$use-icon-text: true!default;
+$use-island: true!default;
+$use-marginalia: true!default;
+$use-media: true!default;
+$use-nav: true!default;
+$use-rules: true!default;
+$use-sprite: true!default;
+$use-icon: true!default;
+$use-heading-group: true!default;
+$use-flag: true!default;
+
+
+
+/*------------------------------------*\
+    $Framework
+\*------------------------------------*/
+/**
+ * inuit.css will work these next ones out for use within the framework.
+ *
+ * Assign our `$base-line-height` to a new spacing var for more transparency.
+ */
+$base-spacing-unit: ($base-line-height - 5) !default;
+$half-spacing-unit: $base-spacing-unit / 2!default;
+$quarter-spacing-unit: $base-spacing-unit / 4!default;
+$line-height-ratio: $base-line-height / $base-font-size;
+
+
+
+

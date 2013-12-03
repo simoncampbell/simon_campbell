@@ -1,0 +1,73 @@
+/*------------------------------------*\
+    $SIDE-BAR ALBUM
+\*------------------------------------*/
+
+
+.side-bar--album {
+    @include rems(max-width, 350);
+    position: relative;
+    float: left;
+    width: 100%;
+
+    h4 {
+        margin-bottom: 0;
+
+        @include breakpoint($breakpoint__large){
+            margin-left: -6.4%;
+            @include rems(margin-right, - 140);
+            @include rems(margin-bottom, $base-spacing-unit / 2);
+            @include rems(padding-top, $half-spacing-unit);
+            padding-left: 6.4%;
+            @include rems(padding-right, 140);
+            @include rems(padding-bottom, ($half-spacing-unit - 3));
+            float: none;
+            width: auto;
+            background-color: $color__sidebar--bg;
+            border-bottom: 1px solid $color__border--standard;
+            border-top: 1px solid $color__border--standard;
+            line-height: 1.5;
+        }
+
+        .side-wrapper--rev & {
+            @include breakpoint ($breakpoint__large) {
+                @include rems(margin-left, -110);
+                @include rems(margin-right, - $base-spacing-unit);
+                @include rems(padding-left, 110);
+                @include rems(padding-right, $base-spacing-unit);
+            }
+        }
+    }
+
+    p {
+        display: inline;
+    }
+}
+
+    .side-bar--album--alone {
+        h4 {
+            border-top: none;
+        }
+    }
+
+
+    .side-bar--album__figure {
+        @include rems(margin-top, $base-spacing-unit / 2);
+        margin-bottom: 0;
+    }
+
+    .side-bar--album__link {
+        @include rems(padding, $half-spacing-unit);
+        @include rems(bottom, 2);
+        position: absolute;
+        width: 100%;
+        background-color: rgba(58,58,58, .7);
+        border-top: 1px solid rgba(58, 58, 58, 0.9);
+
+        >.btn {
+            float: left;
+
+            @include breakpoint($breakpoint__large){
+                float: right;
+            }
+        }
+    }

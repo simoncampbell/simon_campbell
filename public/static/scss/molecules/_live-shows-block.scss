@@ -1,0 +1,144 @@
+/*------------------------------------*\
+    $LIVE-SHOWS-BLOCK
+\*------------------------------------*/
+/**
+ * Custom molecule for the live shows container
+ */
+
+.live-shows-block {
+    header {
+        position: relative;
+        background-color: #E7E6E6;
+
+
+        > h4,
+        >h3 {
+            display: inline-block;
+            margin: 0;
+        }
+
+        > a {
+            @extend %font__display--normal;
+            @include rems(right, $gutter);
+            @include rems(top, 19);
+            @include rems(font-size, 13);
+            position: absolute;
+
+            @include breakpoint($breakpoint__large){
+                right: 32%;
+            }
+
+            .side-wrapper--rev & {
+                @include breakpoint ($breakpoint__large) {
+                    @include rems(right, $gutter);
+                }
+            }
+        }
+    }
+}
+
+.live-shows-block--home {
+    @include rems(margin-bottom, $base-spacing-unit * 2);
+}
+
+
+.live-shows-block--island {
+    @include breakpoint($breakpoint__large){
+        @include rems(padding-bottom, $base-spacing-unit);
+    }
+
+    .island__header {
+        border: 1px solid $color__island--border;
+
+        @include breakpoint($breakpoint__large){
+            margin-left: -6.4%;
+            margin-right: -50%;
+            @include rems(margin-bottom, $half-spacing-unit);
+            @include rems(padding-top, $half-spacing-unit);
+            padding-left: 6.4%;
+            padding-right: 50%;
+            border: none;
+            background-color: $color__sidebar--bg;
+            float: none;
+            width: auto;
+            border-bottom: 1px solid $color__border--standard;
+            border-top: 1px solid $color__border--standard;
+            line-height: 1.5;
+        }
+    }
+
+    .island__content {
+        @include rems(padding-top, $base-spacing-unit);
+        @include rems(padding-bottom, $base-spacing-unit);
+        background-color: #E7E6E6;
+        border: 1px solid $color__island--border;
+        border-top: none;
+
+        @include breakpoint($breakpoint__large){
+            background-color: transparent;
+            border: none;
+            padding: 0;
+        }
+    }
+}
+
+    .shows-list {
+        margin-bottom: 0;
+
+        dt {
+            @include rems(font-size, $milli-size);
+            font-weight: normal;
+            color: darken($color__meta--on-bg, 10);
+            padding-bottom:0;
+
+            @include breakpoint($breakpoint__large){
+                @include rems(margin-right, 12);
+                @include rems(margin-bottom, $base-spacing-unit);
+                clear: left;
+                float: left;
+                width: 25%;
+
+                .side-wrapper & {
+                    width: 100%;
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        dd {
+            @include rems(margin-bottom, $half-spacing-unit);
+            @include rems(padding-bottom, $half-spacing-unit);
+            border-bottom: 1px dotted $color__border--dark;
+
+            @include breakpoint($breakpoint__large){
+                @include rems(margin-bottom, $base-spacing-unit);
+                float: left;
+                width: 68%;
+                border-bottom: none;
+
+                .side-wrapper & {
+                    width: 100%;
+                    padding-bottom: 0;
+                }
+            }
+
+            >h5 {
+                @extend %font__text--regular;
+                margin: 0;
+            }
+
+            p {
+                @include rems(font-size, $milli-size);
+                margin-bottom:0;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+                border-bottom: none;
+
+                @include breakpoint($breakpoint__large){
+                    @include rems(margin-bottom, $half-spacing-unit);
+                }
+            }
+        }
+    }

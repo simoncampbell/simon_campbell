@@ -1,0 +1,47 @@
+/*------------------------------------*\
+    $META INFO BLOCK
+\*------------------------------------*/
+
+.meta-info-block {
+    @extend .cf;
+    @include rems(margin-bottom, $base-spacing-unit);
+    @include rems(padding, $half-spacing-unit, 0);
+    border-top: 1px solid $color__border--standard;
+    border-bottom: 1px solid $color__border--standard;
+}
+
+    .meta-info-block--borderless {
+        border:none;
+        margin-top:0;
+        padding:0;
+    }
+
+    .meta-info-block__item {
+        @extend %font__display--normal;
+        margin-bottom:0;
+        display:inline;
+        color: $color__meta;
+
+        .meta-info-block &:nth-child(2):before {
+            @include rems(padding, 0, $quarter-spacing-unit, 0, 0);
+            content:"•";
+            color: lighten($color__meta, 15);
+        }
+
+        .category-link {
+            color: $color__meta;
+            border: none;
+            text-decoration: none;
+            white-space: nowrap;
+
+            &:hover,
+            &:focus {
+                color: darken($color__meta, 20);
+                border-bottom: 1px dotted darken($color__meta, 20);
+            }
+        }
+
+        .icon--tag {
+            color: lighten($color__meta, 5);
+        }
+    }

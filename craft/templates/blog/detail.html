@@ -1,0 +1,111 @@
+{#
+ # BLOG
+ # Detail Template
+ # -------------------
+ #
+ #}
+
+
+{% extends "_layout" %}
+
+{% block content_main %}
+
+    <header class="heading-group heading-group--main heading-group--with-meta">
+        <div class="main-wrapper main-wrapper--full">
+            <h1>{{entry.title}}</h1>
+
+            {% if entry.heading__sec %}
+                <h2>{{entry.heading__sec}}</h2>
+            {% endif %}
+        </div>
+
+        <div class="meta-info-block">
+            <div class="main-wrapper main-wrapper--full">
+                <time class="meta-info-block__item" datetime="{{entry.postDate|date("Y-m-d")}}">{{entry.postDate|date("jS F Y")}}</time>
+                <p class="meta-info-block__item">Posted in
+                    <a class="category-link" href="URL!">
+                        <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
+                        Health
+                    </a>,
+                    <a class="category-link" href="URL!">
+                        <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
+                        Life
+                    </a>
+                </p>
+            </div>
+        </div>
+    </header>
+
+    {% for image in entry.blog__image %}
+        <figure class="figure__hero main-wrapper--secondary">
+            <img src="{{image.url}}">
+        </figure>
+    {% endfor %}
+
+    <div class="main-wrapper main-wrapper--article">
+
+        <p class="lede">{{entry.shortExtract}}</p>
+
+        {{entry.blog__content}}
+
+
+        {% include '/components/_social-share' %}
+
+
+    </div><!-- //end.main-wrapper -->
+
+{% endblock %}
+
+
+{% block content_side %}
+
+    <div class="wrapper comments__wrapper">
+        <div class="wide-wrapper wide-wrapper--align-desktop">
+
+            {% include 'components/global/_comments.html' %}
+
+        </div><!-- //end.main-wrapper -->
+    </div><!-- //end.wrapper -->
+
+
+    <div class="side-wrapper island island--wrapper island--wrapper__comments-container">
+
+        <ul class="item-list island--wrapper__content">
+            <li class="item-list__item item-list__item--sidebar item-list__item--sidebar--only">
+                <h4>Subscribe via RSS</h4>
+
+                <a href="URL!" class="link--icon">
+                    <span class="icon ss ss-inbox">inbox</span>
+                    Get regular updates from the blog
+                </a>
+            </li>
+
+            <li class="item-list__item item-list__item--album">
+                {% include 'components/_side-bar--album.html' %}
+            </li>
+
+            <li class="item-list__item item-list__item--live-shows">
+                {% include 'components/_live-shows--alternate.html' %}
+            </li>
+        </ul>
+    </div><!-- // end.side-wrapper -->
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

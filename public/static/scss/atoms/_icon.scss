@@ -1,0 +1,118 @@
+@if $use-icon == true{
+
+/*------------------------------------*\
+    $ICON
+\*------------------------------------*/
+/**
+ * For text-links etc that have an icon with them:
+ *
+ *  <a href="URL!" class="link--icon">
+ *      <span class="icon ss ss-inbox">inbox</span>
+ *      Get regular updates from the blog
+ *  </a>
+ */
+
+
+.icon-list {
+    @include vendor('column-count', 2);
+    list-style-type: none;
+
+    >li {
+        @include rems(margin-bottom, $half-spacing-unit);
+
+        &:before {
+            display:none;
+        }
+
+        a {
+            &:hover,
+            &:focus {
+                border:none;
+
+                &:before {
+                    @include transition(.25s all ease-in-out);
+                    opacity: .5;
+                }
+            }
+        }
+    }
+
+    a {
+        border: none;
+    }
+
+}
+
+
+.icon {
+    @extend %font__icon--gizmo;
+    @include rems(padding-right, $quarter-spacing-unit - 5);
+    display:inline;
+    vertical-align: middle;
+    line-height: 0;
+}
+
+    .icon-text--rev > .icon-text__icon{
+        @include rems(margin-left, $quarter-spacing-unit);
+    }
+
+    .icon--menu {
+        color: $color__banner-nav--dark;
+        @include rems(padding-right, 2);
+    }
+
+
+    .icon--tag {
+        @include rems(margin-right, -2);
+        @include rems(font-size, 14);
+        padding-right: 0;
+    }
+
+    .ss-music {
+        @include rems(margin-right, - 2);
+    }
+
+    .icon--meta {
+        @include rems(margin-left, - $half-spacing-unit + 2);
+        @include rems(margin-right, 3);
+        @include rems(font-size, 17);
+        color: lighten($color__meta, 15);
+    }
+
+
+    /**
+     * Social icons
+     */
+
+    $social: 'social';
+
+    @include sprite-map-generator($social);
+
+    .social-icon:before {
+        @include rems(height, $half-spacing-unit);
+        @include rems(width, $half-spacing-unit);
+        @include rems(margin-bottom, - 4);
+        content: "";
+        display: inline-block;
+    }
+
+    .icon--facebook:before {
+        @include svg-background($social, 'facebook');
+        @include rems(background-size, 13);
+        @include rems(margin-right, 5);
+    }
+
+    .icon--twitter:before {
+        @include svg-background($social, 'twitter');
+    }
+
+    .icon--vimeo:before {
+        @include svg-background($social, 'vimeo');
+        @include rems(margin-right, 5);
+    }
+
+    .icon--youtube:before {
+        @include svg-background($social, 'youtube');
+        @include rems(margin-bottom, -5);
+    }
+} //endif

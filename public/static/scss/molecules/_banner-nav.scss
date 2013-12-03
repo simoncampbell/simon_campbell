@@ -1,0 +1,184 @@
+/*------------------------------------*\
+    $BANNER-NAV
+\*------------------------------------*/
+/**
+ * The main navigational element.
+ */
+
+#nav_pri {
+    background-color: $color__background--dark;
+
+    @include breakpoint($breakpoint__large){
+        float: right;
+        width: 77%;
+        border-bottom: 2px solid $color__meta;
+    }
+
+    @include breakpoint(1260px) {
+        width: 78.7%;
+    }
+
+    .no-js & {
+        @include rems(margin-bottom, $base-spacing-unit);
+    }
+}
+
+
+/**
+ * The link that opens the menu at mobile sizes
+ */
+.link__mobile-menu {
+
+    // hide the mobile menu link when no javascript is detected
+    .no-js & {
+        display: none;
+    }
+
+    @extend %font__display--normal;
+    @include rems(height, 46);
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color:$color__banner-nav--hover;
+    width: 30%;
+    display: inline-block;
+    color: $color__white;
+    @include rems(padding, 15, 21, 15, 15);
+    border-bottom: 1px solid $color__orange--secondary;
+    border-left: 1px solid $color__black;
+
+    &:hover,
+    &:focus {
+        color: $color__white;
+        border-bottom: 1px solid darken($color__orange--secondary, 10);
+        background-color: darken($color__banner-nav--hover,5);
+    }
+
+    .menu--active & {
+        border-bottom: 1px solid $color__banner-nav--dark;
+        background-color: darken($color__banner-nav--hover,5);
+    }
+
+    @include breakpoint(552px) {
+        @include rems(width, 250);
+    }
+
+    @include breakpoint($breakpoint__large) {
+        display: none;
+    }
+}
+
+
+/**
+ * Styles for the menu
+ */
+.banner-nav {
+    // throw the nav into stacked mode
+    @extend .nav--stacked;
+    transition: none;
+    width:100%;
+    margin-bottom: 0;
+    z-index: 1;
+
+
+    // hide the navigational if javascript exists
+    .js & {
+        display:none;
+    }
+
+    .no-js & {
+        width: 100%;
+    }
+
+    > li {
+
+        @include breakpoint($breakpoint__large){
+            display: block;
+            float: left;
+            width: 14.2%;
+            border-right: 1px solid $color__background--black;
+
+            &:last-of-type {
+                border-right: none;
+            }
+        }
+
+        .no-js & {
+            float: left;
+        }
+
+        a {
+            @extend %font__display--normal;
+            @include rems(padding, $half-spacing-unit * 1.5, $base-spacing-unit - 3);
+            color: $color__banner-nav--dark;
+            border-bottom: 1px solid $color__background--black;
+
+            &:hover,
+            &:focus {
+                background-color: $color__banner-nav--hover;
+                color: $color__white;
+            }
+
+            // change colors on desktop sizes
+            @include breakpoint($breakpoint__large 1260px){
+                @include rems(font-size, 15);
+                border-bottom: none;
+                @include rems(padding-top, 14);
+            }
+
+            @include breakpoint(1260px){
+                @include rems(padding, $half-spacing-unit * 1.5, $base-spacing-unit, $half-spacing-unit * 1.4, $base-spacing-unit);
+                border-bottom: none;
+            }
+
+            .no-js & {
+                border: none;
+            }
+
+        }
+        .active {
+            color: $color__white;
+
+            &:before {
+                @include rems(margin-left, - $half-spacing-unit);
+                color: $color__white;
+                content: "•";
+                color: white;
+                position: relative;
+            }
+        }
+    }
+
+    @include breakpoint(552px){
+        @include rems(width, 250);
+        position: absolute;
+        right: 0;
+        opacity: .95;
+        background-color: $color__background--dark;
+        border: 1px solid $color__background--black;
+        border-top: none;
+        border-bottom: none;
+    }
+
+    @include breakpoint($breakpoint__large){
+        .js & {
+            position: relative;
+            width: 100%;
+            opacity: 1;
+            display: block;
+        }
+    }
+}
+
+// Fixes for environments without js
+.no-js {
+    #nav_pri {
+        float: left;
+        width: 100%;
+    }
+    .banner-nav {
+        position: static;
+        float: left;
+        width: 100%;
+    }
+}

@@ -1,0 +1,70 @@
+@if use-heading-group {
+
+/*------------------------------------*\
+    $HEADING-GROUP
+\*------------------------------------*/
+
+.heading-group {
+    @include rems(margin-bottom, $base-spacing-unit);
+    width: 100%;
+    float: left;
+
+    h1, h2, h3, h4, h5, h6 {
+        margin-bottom:0;
+    }
+
+    h4 {
+        color: lighten($color__meta,15);
+    }
+
+    h5,
+    .epsilon {
+        @extend %font__text--bold;
+        color: $color--meta;
+        line-height: 1;
+    }
+}
+
+    .heading-group--main {
+        @include rems(padding-bottom, $base-spacing-unit);
+        border-bottom: 1px solid $color__border--standard;
+
+        @include breakpoint($breakpoint__small) {
+            @include rems(margin-bottom, $base-spacing-unit);
+        }
+    }
+
+    /**
+     * For headers within a wrapper and without a border
+     */
+    .heading-group--main--alternate {
+        @include rems(margin-bottom, $half-spacing-unit);
+    }
+
+    .heading-group--marginless {
+        margin:0;
+
+        .meta-info-block {
+            @include rems(margin-bottom, $half-spacing-unit);
+        }
+    }
+
+    .heading-group--with-meta {
+        border-bottom: none;
+        padding-bottom: 0;
+
+        .meta-info-block {
+            @include rems(margin-top, $half-spacing-unit + 2);
+            margin-bottom: 0;
+        }
+    }
+
+    .heading-group--marginless {
+        h4,
+        h3,
+        h2,
+        h1 {
+            margin-bottom: 0;
+        }
+    }
+} //endif

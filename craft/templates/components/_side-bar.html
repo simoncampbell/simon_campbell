@@ -1,0 +1,22 @@
+{#
+ # Side bar - live shows, etc.
+ # ---------------------
+ #
+ #}
+
+<!-- We still need two custom blocks in this sidebar -->
+
+
+<ul class="item-list">
+    <li class="item-list__item">
+        {% include 'components/_live-shows.html' %}
+    </li>
+
+
+    {% if craft.request.lastSegment != 'thirty-six' %}
+
+        <li class="item-list__item">
+            {% include 'components/_side-bar--album.html' %}
+        </li>
+    {% endif %}
+</ul>

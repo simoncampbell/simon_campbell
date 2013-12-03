@@ -1,0 +1,48 @@
+{#
+ # Main navigational block used everywhere
+ # -------------------
+ #
+ #}
+
+<nav role="navigation" id="nav_pri">
+    <a class="link__mobile-menu" href="#">
+        <span aria-hidden="true" class="icon icon--menu ss ss-navigatedown">navigatedown</span>Menu
+    </a>
+    <ul class="nav banner-nav">
+        <li>
+            <a href="{{ url('') }}" {% if craft.request.firstSegment == '' %}class="active"{% endif %}>
+                Home
+            </a>
+        </li>
+        <li>
+            <a href="{{ url('blog') }}" {% if craft.request.firstSegment == 'blog' %}class="active"{% endif %}>
+                Blog
+            </a>
+        </li>
+        <li>
+            <a href="{{ url('recordings') }}" {% if craft.request.firstSegment == 'recordings' %}class="active"{% endif %}>
+                Recordings
+            </a>
+        </li>
+        <li>
+            <a href="{{ url('equipment') }}" {% if craft.request.firstSegment == 'equipment' %}class="active"{% endif %}>
+                Equipment
+            </a>
+        </li>
+        <li>
+            <a href="{{ url('gallery') }}" {% if craft.request.firstSegment == 'gallery' %}class="active"{% endif %}>
+                Gallery
+            </a>
+        </li>
+        <li>
+            <a href="{{ url('news') }}" {% if craft.request.firstSegment == 'news' %}class="active"{% endif %}>
+                News
+            </a>
+        </li>
+        <li>
+            <a href="{{ url('contact-and-about') }}" {% if craft.request.firstSegment == 'contact-and-about' %}class="active"{% endif %}>
+                About
+            </a>
+        </li>
+    </ul>
+</nav>

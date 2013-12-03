@@ -1,0 +1,55 @@
+/*------------------------------------*\
+    $PARAGRAPHS
+\*------------------------------------*/
+
+
+.lede {
+    @extend .cf;
+    @include rems(font-size, 16);
+    color: darken($color__background--black, 10);
+
+    @include breakpoint($breakpoint__small) {
+        @include rems(font-size, 17);
+        line-height: $base-line-height + 2px;
+    }
+
+    @include breakpoint(622px) {
+        @include rems(font-size, 18);
+    }
+
+    &:first-letter {
+        @extend %font__text--bold;
+        @include rems(font-size, $h1-size * 1.45);
+        @include rems(padding-right, $half-spacing-unit / 2);
+        line-height: 1;
+        color: $color__orange--primary;
+        float: left;
+
+        @include breakpoint($breakpoint__small) {
+            @include rems(font-size, $h1-size * 1.6);
+            line-height: .95;
+        }
+    }
+}
+
+.lede--marginless {
+    margin-bottom: 0;
+}
+
+.lede--double {
+    @include rems(padding-bottom, $base-spacing-unit);
+    border-bottom: 1px dotted $color__border--standard;
+
+    &:first-letter {
+        @include rems(font-size, 58);
+        float: none;
+        color: $base-color;
+        line-height: 1;
+        font-weight: normal;
+        padding: 0;
+    }
+}
+
+.marginalia {
+    @include rems(font-size, $milli-size);
+}

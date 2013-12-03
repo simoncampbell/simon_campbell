@@ -1,0 +1,20 @@
+/*------------------------------------*\
+    $BLOCKQUOTES
+\*------------------------------------*/
+
+blockquote {
+    margin-left:0;
+    position:relative;
+    font-style: italic;
+    color: lighten($base-color, 10);
+
+    &:before {
+        @extend %font__text--bold;
+        @include rems(left, - $base-spacing-unit);
+        @include rems(top, - $half-spacing-unit);
+        @include rems(font-size, 30);
+        content: "\201C";
+        position: absolute;
+        color: $color__orange--primary;
+    }
+}

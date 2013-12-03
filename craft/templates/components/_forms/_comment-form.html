@@ -1,0 +1,23 @@
+{#
+ # Comment form
+ # ---------------------
+ #
+ #}
+
+<form class="form-block form-block--comments">
+
+    <label for="comment" class="h3-size">Leave a comment</label>
+    <textarea name="comment" id="comment" cols="100" rows="10" placeholder="What did ya think of the blog post? What are your thoughts?"></textarea>
+
+    <label for="author" class="screen-reader">Name*</label>
+    <input placeholder="Name (required)" required="" type="text" name="author" id="author" value="" class="infoput">
+
+    <label for="email" class="screen-reader">Email</label>
+    <input placeholder="Email (required)" required="" type="email" name="email" id="email" value="" class="infoput">
+
+    <label for="url" class="screen-reader">Website</label>
+    <input placeholder="Website (optional)" type="url" name="url" id="url" value="" class="infoput">
+
+    <input name="submit" type="submit" class="btn btn--primary btn--submit" value="Post comment">
+
+</form>

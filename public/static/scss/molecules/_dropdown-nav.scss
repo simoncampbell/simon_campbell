@@ -1,0 +1,68 @@
+/*------------------------------------*\
+    $DROP-DOWN-NAV
+\*------------------------------------*/
+/**
+ * A Jquery supported navigational list that hides .dropdown-nav__item when
+ * .dropdown-nav__header is clicked.
+ *
+ *
+ */
+
+
+.dropdown-nav {
+    position:relative;
+}
+
+    .dropdown-nav__header {
+        @extend %font__display--normal;
+        @include transition(all .2s ease-in-out);
+        @include rems(padding, $half-spacing-unit, $base-spacing-unit);
+        cursor: pointer;
+        border-bottom: 1px solid $color__border--standard;
+
+        &:hover {
+            color:$color__orange--primary;
+
+            &:after {
+                color: $color__orange--primary;
+            }
+        }
+
+        &:after {
+            @extend %font__icon--gizmo;
+            @include transition(all .2s ease-in-out);
+            @include rems(right, $base-spacing-unit);
+            @include rems(padding-top, 4);
+            content:"navigatedown";
+            position:absolute;
+        }
+
+        &.dropdown-nav__active {
+            color: darken($color__orange--primary, 15);
+            &:after {
+                content:"navigateup";
+            }
+        }
+    }
+
+    .dropdown-nav__item {
+        @include rems(font-size, $milli-size);
+        @include rems(padding, $half-spacing-unit, $base-spacing-unit);
+        margin-bottom: 0;
+        border-bottom: 1px solid $color__border--standard;
+
+        pre {
+            @include rems(margin-bottom, $half-spacing-unit);
+        }
+
+        // hide the list items if JS is detected
+        .js & {
+            display:none;
+        }
+    }
+
+
+    .item-list--lyrics {
+
+    }
+

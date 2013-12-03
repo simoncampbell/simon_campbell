@@ -1,0 +1,84 @@
+/*------------------------------------*\
+    $LIGHTBOX MOLECULE
+\*------------------------------------*/
+/* Requires: lightbox.js */
+
+/*
+ * Light box module from Brad Frosts’ Responsive Pattern Library that’s fired when the user clicks on a carousel image.
+ * http://bradfrost.github.io/this-is-responsive/patterns.html
+ */
+
+
+.lightbox {
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    @include rems(padding, ($base-spacing-unit * 2), $base-spacing-unit);
+    background-color: #181818;
+    background-color: rgba(0,0,0,0.95);
+}
+
+.lightbox__container {
+    @include rems(max-width, 1244);
+    margin: 0 auto;
+    @include rems(padding-top, ($base-spacing-unit * 3));
+    position: relative;
+
+    @include breakpoint($breakpoint__large){
+        @include rems(padding, ($base-spacing-unit*3), 90, $base-spacing-unit, 90);
+    }
+}
+
+    .lightbox__image {
+        display: block;
+        margin: 0 auto;
+        @include rems(margin-bottom, $base-spacing-unit);
+    }
+
+    .lightbox__close {
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        @include breakpoint($breakpoint__large){
+            @include rems(left, 90);
+        }
+    }
+
+    .lightbox__content {
+        color: $color__meta;
+        font-style: italic;
+        border-top: 1px solid darken($color__meta, 40);
+        @include rems(padding-top, $half-spacing-unit);
+
+        > p {
+            margin-bottom: 0;
+            line-height: 1.5;
+            @include rems(max-width, 600);
+        }
+
+        .meta-info-block__item {
+            color: darken($color__meta, 25);
+        }
+    }
+
+
+@media all and (min-width: 45em) {
+    .msg {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 10em;
+        margin-left: -5em;
+        z-index: 1;
+        background: rgba(0,0,0,0.5);
+        color: #fff;
+        border-radius: 2em;
+        padding: 1em;
+    }
+}

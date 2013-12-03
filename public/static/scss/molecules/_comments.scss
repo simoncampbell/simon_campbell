@@ -1,0 +1,43 @@
+/*------------------------------------*\
+    $COMMENTS
+\*------------------------------------*/
+/**
+ * Comment section on detail pages
+ */
+
+.comments {
+
+    @include breakpoint(680px $breakpoint__large) {
+        @include rems(margin-right, $base-spacing-unit);
+        float: left;
+        width: 47%;
+    }
+
+    @include breakpoint($breakpoint__large){
+        clear: both;
+        margin-right: 0;
+    }
+}
+
+.comments__wrapper {
+    @include breakpoint($breakpoint__large){
+        @include rems(padding-top, $half-spacing-unit / 2);
+        float: left;
+        width: 65.3%;
+    }
+
+    @include breakpoint(1260px) {
+        clear: left;
+    }
+}
+
+
+.island--wrapper__comments-container {
+    margin-top: 0;
+
+    @include breakpoint($breakpoint__large){
+        .item-list {
+            padding-top: 0;
+        }
+    }
+}

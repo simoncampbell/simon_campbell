@@ -33,7 +33,6 @@
                     <li class="item-list__item item-list__item--article">
 
                         <article>
-
                             <!-- REQUIRED EQUIPMENT IMAGE -->
                             {% for image in post.equipmentImage %}
                                 <figure class="equipment-image">
@@ -43,7 +42,6 @@
                                 </figure>
                             {% endfor %}
 
-
                             <header class="heading-group heading-group--marginless">
                                 <h3><a href="{{post.url}}">{{ post.title }}</a></h3>
 
@@ -52,9 +50,8 @@
 
                                     <p class="meta-info-block__item">Posted in
 
-                                        <a class="category-link" href="/equipment/{{post.equipmentCategory|lower}}">
+                                        <a class="category-link" href="/equipment/">
                                             <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
-                                            {{post.equipmentCategory}}
                                         </a>
                                     </p>
                                 </div>

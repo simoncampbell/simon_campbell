@@ -39,9 +39,9 @@ class TagsController extends BaseController
 	{
 		craft()->userSession->requireAdmin();
 
-		if (empty($variables['tagSet']))
+		if (!empty($variables['tagSetId']))
 		{
-			if (!empty($variables['tagSetId']))
+			if (empty($variables['tagSet']))
 			{
 				$variables['tagSet'] = craft()->tags->getTagSetById($variables['tagSetId']);
 
@@ -50,18 +50,16 @@ class TagsController extends BaseController
 					throw new HttpException(404);
 				}
 			}
-			else
-			{
-				$variables['tagSet'] = new TagSetModel();
-			}
-		}
 
-		if ($variables['tagSet']->id)
-		{
 			$variables['title'] = $variables['tagSet']->name;
 		}
 		else
 		{
+			if (empty($variables['tagSet']))
+			{
+				$variables['tagSet'] = new TagSetModel();
+			}
+
 			$variables['title'] = Craft::t('Create a new tag set');
 		}
 
@@ -134,15 +132,20 @@ class TagsController extends BaseController
 		$this->requireAjaxRequest();
 
 		$search = craft()->request->getPost('search');
-		$source = craft()->request->getPost('source');
+		$tagSetId = craft()->request->getPost('tagSetId');
 		$excludeIds = craft()->request->getPost('excludeIds', array());
 
-		$criteria = craft()->elements->getCriteria(ElementType::Tag, array(
-			'search' => 'name:'.$search.'*',
-			'source' => $source,
-			'id'     => 'not '.implode(',', $excludeIds)
-		));
+		$notIds = array();
 
+		foreach ($excludeIds as $id)
+		{
+			$notIds[] = 'not '.$id;
+		}
+
+		$criteria = craft()->elements->getCriteria(ElementType::Tag);
+		$criteria->setId  = $tagSetId;
+		$criteria->search = 'name:'.$search.'*';
+		$criteria->id     = implode(', ', $notIds);
 		$tags = $criteria->find();
 
 		$return = array();
@@ -199,11 +202,10 @@ class TagsController extends BaseController
 			throw new Exception(Craft::t('No tag exists with the ID “{id}”.', array('id' => $tagId)));
 		}
 
-		$elementType = craft()->elements->getElementType(ElementType::Tag);
-
 		$html = craft()->templates->render('_includes/edit_element', array(
-			'element' => $tag,
-			'elementType' => new ElementTypeVariable($elementType)
+			'element'     => $tag,
+			'hasTitle'    => false,
+			'fieldLayout' => $tag->getSet()->getFieldLayout()
 		));
 
 		$this->returnJson(array(

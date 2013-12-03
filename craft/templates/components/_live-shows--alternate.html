@@ -3,40 +3,27 @@
  # ---------------
  #
  # This is the live shows component that can be placed anywhere on the site.
- # This alternative version is the one that should be contained within an island
+ # This alternative version is the one that should be contained within an island and sits in the sidebar on desktop
  #}
 
+{% if craft.entries.find({section:'liveShows'})|length > 1 %}
+    <div class="live-shows-block live-shows-block--island">
+        <header class="island__header">
+            <h4>Live Shows</h4>
+        </header>
 
-<div class="live-shows-block live-shows-block--island">
-    <header class="island__header">
-        <h4>Live Shows</h4>
-        <a class="link--dark" href="URL!">View all shows &raquo;</a>
-    </header>
+        <dl class="shows-list island__content">
 
-    <dl class="shows-list island__content">
+           {% for entry in craft.entries.find({section:'liveShows', limit: '4'})|reverse %}
+                <dt class="shows-list">
+                    <time datetime="{{entry.liveShowDate|date("Y-m-d")}}">{{entry.liveShowDate|date("jS F Y")}}</time>
+                </dt>
 
-        <dt class="shows-list">
-            <time datetime="2013-06-24">24th June 2013</time>
-        </dt>
-        <dd>
-            <h5><a href="URL!">Borderline</a></h5>
-            <p>The Pavilion, Jumping Juniper, 77 Road Street</p>
-        </dd>
-
-        <dt>
-            <time datetime="2013-06-24">24th June 2013</time>
-        </dt>
-        <dd>
-            <h5><a href="URL!">Borderline</a></h5>
-            <p>The Pavilion, Jumping Juniper, 77 Road Street</p>
-        </dd>
-
-        <dt>
-            <time datetime="2013-06-24">24th June 2013</time>
-        </dt>
-        <dd>
-            <h5><a href="URL!">Borderline</a></h5>
-            <p>The Pavilion, Jumping Juniper, 77 Road Street</p>
-        </dd>
-    </dl>
-</div>
+                <dd>
+                    <h5><a href="{{entry.liveShowLink}}">{{entry.title}}</a></h5>
+                    <p>{{entry.liveShowLocation}}</p>
+                </dd>
+            {% endfor %}
+        </dl>
+    </div>
+{% endif %}

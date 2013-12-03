@@ -6,34 +6,39 @@
  #}
 
 
+{% for post in craft.entries.find({section:'Blog', limit:'1'}) %}
+    <article>
+        <div class="featured__post-content">
+            <header class="heading-group heading-group--marginless featured__heading">
 
-<article>
-    <div class="featured__post-content">
-        <header class="heading-group heading-group--marginless featured__heading">
-            <h3><a href="URL">White Van Man</a></h3>
-            <div class="meta-info-block meta-info-block--borderless">
+                <h3><a href="{{post.url}}">{{ post.title }}</a></h3>
 
-                <time class="meta-info-block__item" datetime="{{post.postDate|date("Y-m-d")}}">{{post.postDate|date("jS F Y")}}</time>
+                <div class="meta-info-block meta-info-block--borderless">
+                    <time class="meta-info-block__item" datetime="{{post.postDate|date("Y-m-d")}}">{{post.postDate|date("jS F Y")}}</time>
 
-                <p class="meta-info-block__item">Posted in
-                    <a class="category-link" href="URL!">
-                        <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
-                        Life
-                    </a>,
-                    <a class="category-link" href="URL!">
-                        <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
-                        Health
-                    </a>
-                </p>
-            </div>
-        </header>
+                    <p class="meta-info-block__item">Posted in
+                        <a class="category-link" href="URL!">
+                            <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
+                            Life
+                        </a>,
+                        <a class="category-link" href="URL!">
+                            <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
+                            Health
+                        </a>
+                    </p>
+                </div><!-- //.meta-info-block -->
+            </header>
 
-        <figure class="featured__post-image">
-            <a href="URL">
-                <img alt="" src="http://placehold.it/716x416/0eafff/ffffff.png">
-            </a>
-        </figure>
+            {% for image in post.blog__image %}
+                <figure class="featured__post-image">
+                    <img src="{{image.url}}">
+                </figure>
+            {% endfor %}
 
-        <p>In my younger and more vulnerable years my father gave me some advice that I’ve been turning over in my mind ever since. “Whenever you feel like criticizing any one,” he told me, “just remember that all the people in this world haven’t had the advantages that you’ve had.” <a href="URL">Read more &raquo;</a></p>
-    </div><!-- //end.featured__post-content -->
-</article>
+            <p>{{ post.shortExtract[:240]}}&hellip; <a href="{{post.url}}">Read more &raquo;</a></p>
+
+        </div><!-- //end.featured__post-content -->
+    </article>
+{% endfor %}
+
+

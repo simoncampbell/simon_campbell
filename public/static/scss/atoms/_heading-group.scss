@@ -55,6 +55,7 @@
 
         .meta-info-block {
             @include rems(margin-top, $half-spacing-unit + 2);
+            margin-bottom: 0;
         }
     }
 

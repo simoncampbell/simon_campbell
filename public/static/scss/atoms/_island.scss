@@ -99,8 +99,8 @@
         }
 
         @include breakpoint($breakpoint__desktop){
-            width: 80.1%;
-            @include rems(max-width, 723);
+            @include rems(max-width, 578);
+            width: 64%;
         }
 
         @include breakpoint($breakpoint__large){
@@ -112,6 +112,11 @@
 
         ul {
             margin-bottom: 0;
+        }
+
+        .nav--category {
+            list-style-type: none;
+            @include rems(margin-bottom, - $half-spacing-unit);
         }
     }
 }

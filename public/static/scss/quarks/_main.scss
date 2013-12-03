@@ -3,10 +3,12 @@
 \*------------------------------------*/
 
 html {
-    // height: 100%;
+    height: 100%;
+    @extend .cf;
 }
 
 body {
+    @extend .cf;
     @extend %font__text--regular;
     background-color: $color__main-bg;
     font: percentage($base-font-size / 16) $base-font-family;
@@ -14,6 +16,10 @@ body {
     line-height:$line-height-ratio;
     position: relative;
     height: 100%;
+
+    &.overlay--active {
+        height: 100%;
+    }
 
     /**
      * Media

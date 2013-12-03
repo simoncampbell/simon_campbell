@@ -28,6 +28,10 @@
         @include rems(margin-bottom, $base-spacing-unit * 3);
         border-bottom: none;
     }
+
+    .overlay--active & {
+        z-index: 0;
+    }
 }
 
 .banner__logo {

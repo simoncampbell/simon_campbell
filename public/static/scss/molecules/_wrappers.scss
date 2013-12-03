@@ -78,8 +78,8 @@
     }
 
     @include breakpoint($breakpoint__desktop){
-        @include rems(max-width, 724);
-        width: 80.4%;
+        @include rems(max-width, 578);
+        width: 64%;
     }
 
     @include breakpoint($breakpoint__large){
@@ -213,10 +213,6 @@
             p {
                 @include rems(font-size, 17);
             }
-        }
-
-        .item-list__item--article:last-of-type {
-            border-bottom: 1px dotted $color__border--standard;
         }
     }
 

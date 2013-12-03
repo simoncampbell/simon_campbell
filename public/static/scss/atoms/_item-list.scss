@@ -117,6 +117,7 @@
 
         &:last-of-type {
             border:none;
+            padding-bottom: 0;
         }
 
         p {
@@ -300,27 +301,13 @@
     @include rems(margin-bottom, $base-spacing-unit);
     border-bottom: 1px solid lighten($color__border--standard, 3);
 
-    @include breakpoint($breakpoint__desktop){
-        @include rems(padding-bottom, $half-spacing-unit);
-        @include rems(margin-bottom, $base-spacing-unit);
-        border: none;
-        float: left;
-        width: 48%;
-
-        &:nth-child(odd) {
-            @include rems(margin-right, $base-spacing-unit);
-        }
-    }
-
     @include breakpoint($breakpoint__large) {
         @include rems(margin-bottom, $base-spacing-unit * 2);
         margin-right: 0;
+        padding-bottom: 0;
         padding-right: 0;
+        border: none;
         width: 100%;
-
-        &:nth-child(odd) {
-            margin-right: 0;
-        }
 
         h4 {
             margin-right: -50%;
@@ -382,16 +369,10 @@
 **/
 
 .item-list__item--live-shows {
-    @include breakpoint($breakpoint__medium $breakpoint__large) {
-        @include rems(padding-right, $gutter);
+    @include breakpoint($breakpoint__medium) {
         width: 100%;
         float: left;
         margin-bottom: 0;
-    }
-
-    @include breakpoint($breakpoint__large){
-        width: 100%;
-        float: left;
     }
 }
 
@@ -402,16 +383,17 @@
 .item-list--album {
     @extend .cf;
 
+    @include breakpoint($breakpoint__desktop){
+        margin-left: -2%;
+        width: 102%;
+    }
+
     @include breakpoint($breakpoint__large){
         .item-list__item--recording {
-            @include rems(margin-right, $base-spacing-unit);
+            margin-left: 2%;
             float: left;
-            width: 48.7%;
+            width: 47.7%;
             border-bottom: none;
-
-            &:nth-child(2n){
-                margin-right: 0;
-            }
 
             p {
                 @include rems(font-size, 16);

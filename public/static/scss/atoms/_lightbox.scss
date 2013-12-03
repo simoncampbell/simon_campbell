@@ -4,7 +4,7 @@
 /* Requires: lightbox.js */
 
 /*
- * Light box module from Brad Frosts’ Responsive Pattern Library
+ * Light box module from Brad Frosts’ Responsive Pattern Library that’s fired when the user clicks on a carousel image.
  * http://bradfrost.github.io/this-is-responsive/patterns.html
  */
 
@@ -22,7 +22,7 @@
 }
 
 .lightbox__container {
-    @include rems(max-width, 1267);
+    @include rems(max-width, 1244);
     margin: 0 auto;
     @include rems(padding-top, ($base-spacing-unit * 3));
     position: relative;

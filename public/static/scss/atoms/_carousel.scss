@@ -105,11 +105,11 @@
                 margin: 0 auto;
             }
 
-            @include breakpoint(660px){
-                padding-bottom: 0;
+            @include breakpoint(700px){
+                @include rems(padding-bottom, $base-spacing-unit);
             }
 
-            @include breakpoint(700px){
+            @include breakpoint($breakpoint__large){
                 @include width(5);
                 @include rems(padding, $half-spacing-unit);
                 @include rems(padding-left, $base-spacing-unit);
@@ -190,7 +190,7 @@
         bottom: auto;
     }
 
-    @include breakpoint(750px){
+    @include breakpoint($breakpoint__large) {
         top: 35%;
     }
 

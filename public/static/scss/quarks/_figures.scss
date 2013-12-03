@@ -62,11 +62,15 @@ figcaption {
     }
 }
 
+// Images that come after a title (see: blog detail)
 .figure__hero {
     @include rems(margin-top, - $base-spacing-unit * 1.1);
+    float: left;
+    width: 100%;
 
     @include breakpoint($breakpoint__medium){
         width: 71%;
+        float: none;
         margin: 0 auto;
         @include rems(max-width, 578);
         @include rems(margin-bottom, $base-spacing-unit);

@@ -55,7 +55,7 @@
  */
 .nav--category {
     list-style-type: none;
-    margin-bottom: 0;
+    @include rems(margin-bottom, - $half-spacing-unit);
 }
 
     .nav--category__item {

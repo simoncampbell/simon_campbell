@@ -23,12 +23,14 @@
             width: 96%;
         }
 
-        @include breakpoint($breakpoint__desktop) {
-            width: 79%;
+        @include breakpoint($breakpoint__desktop){
+            width: 80.1%;
+            @include rems(max-width, 723);
         }
 
         @include breakpoint($breakpoint__large){
             padding:0 9.8%;
+            max-width: 100%;
             width: 100%;
         }
     }

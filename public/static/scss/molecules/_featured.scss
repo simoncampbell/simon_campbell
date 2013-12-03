@@ -20,8 +20,8 @@
     .featured__heading {
 
         @include breakpoint($breakpoint__large) {
-            float: left;
-            width: 38.6%;
+            float: right;
+            width: 49%;
         }
     }
 
@@ -32,8 +32,8 @@
 
             @include breakpoint($breakpoint__large) {
                 @include rems(font-size, 16);
-                float: left;
-                width: 38.6%;
+                float: right;
+                width: 49%;
             }
 
             @include breakpoint(1260px){
@@ -46,8 +46,8 @@
         @include rems(margin-bottom, $half-spacing-unit);
 
         @include breakpoint($breakpoint__large) {
-            float: right;
-            width: 59.4%;
+            float: left;
+            width: 49%;
         }
     }
 

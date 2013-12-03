@@ -112,3 +112,16 @@
     background-size: $size;
   }
 }
+
+/**
+ * SVG fallbacks using Modernizr
+ * via (http://forrst.com/posts/Sass_Compass_Mixin_for_SVG_Background_Image_Fall-dWn)
+ */
+@mixin no-svg { .no-svg & { @content } }
+
+// mixin that requires filename without path or extension and optional extension override
+@mixin svg-bkgd($set, $filename) {
+    $extension: '.png';
+    background-image: image-url(#{$set}/$filename + '.svg');
+    @include no-svg { background-image: image-url(#{$set}/$filename + $extension); }
+}

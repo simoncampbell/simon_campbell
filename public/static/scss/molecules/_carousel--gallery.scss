@@ -37,9 +37,8 @@
         }
 
         @include breakpoint($breakpoint__large) {
-            @include rems(padding-left, 90);
             width: 48%;
-            padding-right: 0;
+            padding: 0 0 0 9.8%;
             float: left;
 
             h3 {
@@ -49,10 +48,6 @@
             p {
                 @include rems(font-size, 15);
             }
-        }
-
-         @include breakpoint($breakpoint__large){
-            padding: 0 9.8%;
         }
     }
 

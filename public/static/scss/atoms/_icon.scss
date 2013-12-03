@@ -1,3 +1,5 @@
+@import "social/*.png";
+
 @if $use-icon == true{
 
 /*------------------------------------*\
@@ -11,7 +13,6 @@
  *      Get regular updates from the blog
  *  </a>
  */
-
 
 .icon-list {
     @include vendor('column-count', 2);
@@ -86,33 +87,32 @@
 
     $social: 'social';
 
-    @include sprite-map-generator($social);
 
     .social-icon:before {
-        @include rems(height, $half-spacing-unit);
-        @include rems(width, $half-spacing-unit);
-        @include rems(margin-bottom, - 4);
+        @include rems(height, 25);
+        @include rems(width, 18);
+        @include rems(margin-bottom, - 10);
         content: "";
+        background-size: 100%;
+        background-repeat: no-repeat;
         display: inline-block;
     }
 
     .icon--facebook:before {
-        @include svg-background($social, 'facebook');
-        @include rems(background-size, 13);
+        @include svg-bkgd($social, facebook);
         @include rems(margin-right, 5);
     }
 
     .icon--twitter:before {
-        @include svg-background($social, 'twitter');
+        @include svg-bkgd($social, twitter);
     }
 
     .icon--vimeo:before {
-        @include svg-background($social, 'vimeo');
+        @include svg-bkgd($social, vimeo);
         @include rems(margin-right, 5);
     }
 
     .icon--youtube:before {
-        @include svg-background($social, 'youtube');
-        @include rems(margin-bottom, -5);
+        @include svg-bkgd($social, youtube);
     }
 } //endif

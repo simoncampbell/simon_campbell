@@ -31,7 +31,7 @@
 .btn {
     @extend %font__display--black;
     @include radius($brand-round);
-    @include transition(.15s all ease-in-out);
+    @include transition(all .15s ease-in-out);
     @include rems($milli-size);
     display:inline-block;
     vertical-align:top;
@@ -184,7 +184,7 @@
         line-height: 0;
 
         .icon {
-            @include transition(.2s all ease-in-out);
+            @include transition(all .2s ease-in-out);
             @include rems(height, 42);
             @include rems(width, $base-spacing-unit * 2);
             @include rems(font-size, $base-font-size);

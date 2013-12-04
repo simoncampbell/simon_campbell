@@ -10,83 +10,49 @@
 {% block content_main %}
 
     <!-- LARGE ARTISINAL IMAGE -->
+    {% for image in entry.largeImage %}
         <figure class="figure--banner">
-            <img src="http://placehold.it/1400x650/0eafff/ffffff.png"/>
+            <img src="{{image.url}}"/>
         </figure>
+    {% endfor %}
 
 
     <header class="heading-group heading-group--main">
         <div class="main-wrapper main-wrapper--full">
-            <h2 class="epsilon">Album</h2>
-            <h1>Thirty Six</h1>
+            <h2 class="epsilon">{{entry.recordType}}</h2>
+            <h1>{{entry.title}}</h1>
         </div>
     </header>
 
     <div class="main-wrapper main-wrapper--article__detail main-wrapper--listing">
 
-        <!-- STREAM ALBUM / LISTEN TO SINGLE -->
-        <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F84872623"></iframe>
+        <p class="lede">{{entry.shortExtract}}</p>
 
-        <!-- BODY CONTENT -->
-        <h3>About the album</h3>
-        <p>He didn’t say any more, but we’ve always been unusually communicative in a reserved way, and I understood that he meant a great deal more than that. In consequence, I’m inclined to reserve all judgments, a habit that has opened up many curious natures to me and also made me the victim of not a few veteran bores. The abnormal mind is quick to detect and attach itself to this quality when it appears in a normal person, and so it came about that in college I was unjustly accused of being a politician</p>
+        {{entry.body}}
 
-
-        <h3>Get the free download</h3>
-        <p>Add your email address below and we’ll send you a link to download the first song for free.</p>
-        <form class="form-block form-block--message">
-            <input placeholder="Email (required)" required="" type="email" name="email" id="email" value="" class="infoput text-input--secondary">
-
-            <button name="submit" id="submit" class="btn btn--secondary">Get download</button>
-        </form>
-
-        <h3>Credits</h3>
-
-        <ul class="item-list item-list--lyrics">
-
-            <li class="item-list__item">
-                <p>I’d like to thank the following musicians and friends for their expertise as well as for all of the laughs and good times along the way.</p>
-                <ul>
-                    <li>Buster </li>
-                    <li>George Saunders </li>
-                    <li>Michael Bluth</li>
-                    <li>George Saunders</li>
-                    <li>Phil Kneen</li>
-                    <li>Chris Taylor</li>
-                </ul>
-            </li>
-
-            <!-- REVIEWS -->
-            <li class="item-list__item item-list__item--reviews">
-                <h3>Reviews</h3>
-
+        {% if entry.reviews|length > 1 %}
+            <h3>Reviews</h3>
+            <div class="item-list__item item-list__item--reviews">
                 <ul class="item-list">
-                    <li class="item-list__item">
-                        <figure>
-                            <blockquote>Many forms of Government have been tried, and will be tried in this world of sin and woe. No one pretends that democracy.</blockquote>
-                            <figcaption>
-                                <p>Geoffrey Tambor, <cite><a href="URL!">Guitar magazine</a></cite></p>
-                            </figcaption>
-                        </figure>
-                    </li>
-                    <li class="item-list__item">
-                        <figure>
-                            <blockquote>Many forms of Government have been tried, and will be tried in this world of sin and woe. No one pretends that democracy.</blockquote>
-                            <figcaption>
-                                <p>Geoffrey Tambor, <cite><a href="URL!">Guitar magazine</a></cite></p>
-                            </figcaption>
-                        </figure>
-                    </li>
-                    <li class="item-list__item">
-                        <figure>
-                            <blockquote>Many forms of Government have been tried, and will be tried in this world of sin and woe. No one pretends that democracy.</blockquote>
-                            <figcaption>
-                                <p>Geoffrey Tambor, <cite><a href="URL!">Guitar magazine</a></cite></p>
-                            </figcaption>
-                        </figure>
-                    </li>
+
+                    {% for item in entry.reviews %}
+                        <li class="item-list__item">
+                            <figure>
+                                <blockquote>{{item.ReviewQuote}}</blockquote>
+                                <figcaption>
+                                    <p>
+                                        {{item.ReviewWriter}},
+                                        <cite>
+                                            <a href="item.ReviewLink">{{item.ReviewPublication}}</a>
+                                        </cite>
+                                    </p>
+                                </figcaption>
+                            </figure>
+                        </li>
+                    {% endfor %}
                 </ul>
-            </li>
+            </div>
+        {% endif %}
 
             <!-- LYRICS -->
             <!-- Commented out due to time constraints -->
@@ -217,123 +183,6 @@ I know you do, so I know you wont,
 Still got time to be your babe…
                         </pre>
                     </dd>
-<dt class="dropdown-nav__header">Don’t jump</dt>
-            <dd class="dropdown-nav__item">
-                <pre>
-Leave me the water, I’ve had enough wine,
-Babe I’ve been doin’ lots of thinkin’,
-‘Cause I’ve had so much time,
-Perhaps you do, perhaps you don’t,
-But have you still got time to be my babe…
-
-Leave me the water, I’ve had enough wine,
-Babe I’ve been doin’ lots of thinkin’,
-‘Cause I’ve had so much time,
-Perhaps you do, perhaps you don’t,
-But have you still got time to be my babe…
-
-I don’t see enough of you babe,
-But I think about you all the time,
-And honey you know when we’re together,
-Those moments are so damn fine,
-And in my mind and in my heart,
-I’ve still got time to be your babe…
-
-You talk of leaving me, but I know this can’t be true
-Because the only thing that matters babe,
-Is that you love me, and I love you,
-I know you do, so I know you wont,
-Still got time to be your babe…
-                        </pre>
-                    </dd>
-<dt class="dropdown-nav__header">Thoughts on the Sea</dt>
-            <dd class="dropdown-nav__item">
-                <pre>
-Leave me the water, I’ve had enough wine,
-Babe I’ve been doin’ lots of thinkin’,
-‘Cause I’ve had so much time,
-Perhaps you do, perhaps you don’t,
-But have you still got time to be my babe…
-
-Leave me the water, I’ve had enough wine,
-Babe I’ve been doin’ lots of thinkin’,
-‘Cause I’ve had so much time,
-Perhaps you do, perhaps you don’t,
-But have you still got time to be my babe…
-
-I don’t see enough of you babe,
-But I think about you all the time,
-And honey you know when we’re together,
-Those moments are so damn fine,
-And in my mind and in my heart,
-I’ve still got time to be your babe…
-
-You talk of leaving me, but I know this can’t be true
-Because the only thing that matters babe,
-Is that you love me, and I love you,
-I know you do, so I know you wont,
-Still got time to be your babe…
-                        </pre>
-                    </dd>
-<dt class="dropdown-nav__header">No one knows</dt>
-            <dd class="dropdown-nav__item">
-                <pre>
-Leave me the water, I’ve had enough wine,
-Babe I’ve been doin’ lots of thinkin’,
-‘Cause I’ve had so much time,
-Perhaps you do, perhaps you don’t,
-But have you still got time to be my babe…
-
-Leave me the water, I’ve had enough wine,
-Babe I’ve been doin’ lots of thinkin’,
-‘Cause I’ve had so much time,
-Perhaps you do, perhaps you don’t,
-But have you still got time to be my babe…
-
-I don’t see enough of you babe,
-But I think about you all the time,
-And honey you know when we’re together,
-Those moments are so damn fine,
-And in my mind and in my heart,
-I’ve still got time to be your babe…
-
-You talk of leaving me, but I know this can’t be true
-Because the only thing that matters babe,
-Is that you love me, and I love you,
-I know you do, so I know you wont,
-Still got time to be your babe…
-                        </pre>
-                    </dd>
-<dt class="dropdown-nav__header">Jump, boy, jump!</dt>
-            <dd class="dropdown-nav__item">
-                <pre>
-Leave me the water, I’ve had enough wine,
-Babe I’ve been doin’ lots of thinkin’,
-‘Cause I’ve had so much time,
-Perhaps you do, perhaps you don’t,
-But have you still got time to be my babe…
-
-Leave me the water, I’ve had enough wine,
-Babe I’ve been doin’ lots of thinkin’,
-‘Cause I’ve had so much time,
-Perhaps you do, perhaps you don’t,
-But have you still got time to be my babe…
-
-I don’t see enough of you babe,
-But I think about you all the time,
-And honey you know when we’re together,
-Those moments are so damn fine,
-And in my mind and in my heart,
-I’ve still got time to be your babe…
-
-You talk of leaving me, but I know this can’t be true
-Because the only thing that matters babe,
-Is that you love me, and I love you,
-I know you do, so I know you wont,
-Still got time to be your babe…
-                        </pre>
-                    </dd>
-                </dl>
             </li>
         </ul> <!-- //end.item-list -->
    </div>
@@ -349,7 +198,9 @@ Still got time to be your babe…
             <div class="record-sale">
                 <!-- ALBUM ART IMAGE -->
                 <figure>
-                    <img alt="" src="http://placehold.it/400x400/0eafff/ffffff.png">
+                    {% for image in entry.albumArt %}
+                        <img src="{{image.url}}"/>
+                    {% endfor %}
                 </figure>
 
                 <ul class="item-list item-list--bordered">

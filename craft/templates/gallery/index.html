@@ -17,129 +17,131 @@
         </div>
     </header>
 
-    <div class="carousel-wrapper">
-          <div class="side-wrapper carousel__info-wrapper">
-             <h4>Live gigging</h4>
-             <p>This collection of photos details my extensive travels across the world of music and of life on the stage. This was a particularly joyous time because I had my old Saab 2130. Good times.</p>
-        </div><!-- //.side-wrapper -->
+    {% for featured in craft.entries.find({section:'Gallery', limit:'1'}) %}
+        <div class="carousel-wrapper">
+              <div class="side-wrapper carousel__info-wrapper">
+                 <h4>{{featured.title}}</h4>
+                 <p>{{featured.shortExtract}}</p>
+            </div><!-- //.side-wrapper -->
 
-        <div class="main-wrapper main-wrapper--article main-wrapper--gallery">
-            <div class="carousel carousel--gallery">
-                <div class="carousel__list-container">
-                    <ul class="carousel__list">
-                        <li>
-                            <figure>
-                                <a class="carousel__link" href="http://music.simoncampbell.com/uploads/images/resizer_cache/2c19b47faaacd6f8e51ee2aa88aa3577bdae3b69.jpg">
+            <div class="main-wrapper main-wrapper--article main-wrapper--gallery">
+                <div class="carousel carousel--gallery">
+                    <div class="carousel__list-container">
+                        <ul class="carousel__list">
+                            <li>
+                                <figure>
+                                    <a class="carousel__link" href="http://music.simoncampbell.com/uploads/images/resizer_cache/2c19b47faaacd6f8e51ee2aa88aa3577bdae3b69.jpg">
+                                        <img src="http://music.simoncampbell.com/uploads/images/resizer_cache/2c19b47faaacd6f8e51ee2aa88aa3577bdae3b69.jpg" class="carousel__image" />
+                                    </a>
+                                    <div>
+                                    </div>
+                                </figure>
+                                <div class="carousel__summary">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget lacus erat, sit amet tempor nibh. Aliquam erat volutpat. Nulla et.</p>
+                                    <div class="meta-info-block meta-info-block--borderless">
+                                        <div class="meta-info-block__item">
+                                            Photo 1 of 213 • Saturday 14th 2013
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <figure>
+                                    <a class="carousel__link" href="http://music.simoncampbell.com/uploads/images/resizer_cache/12eee51655f90df9bcecf64388ccba06d53d9e88.jpg">
+                                        <img src="http://music.simoncampbell.com/uploads/images/resizer_cache/12eee51655f90df9bcecf64388ccba06d53d9e88.jpg" class="carousel__image"/>
+                                    </a>
+                                </figure>
+                                <div class="carousel__summary">
+                                    <p>In my younger and more vulnerable years my father gave me some advice that I’ve been turning over in my mind ever since. “Whenever you feel like criticizing any one,” he told me</p>
+                                    <div class="meta-info-block meta-info-block--borderless">
+                                        <div class="meta-info-block__item">
+                                            Photo 1 of 213 • Saturday 14th 2013
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <figure>
                                     <img src="http://music.simoncampbell.com/uploads/images/resizer_cache/2c19b47faaacd6f8e51ee2aa88aa3577bdae3b69.jpg" class="carousel__image" />
-                                </a>
-                                <div>
-                                </div>
-                            </figure>
-                            <div class="carousel__summary">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget lacus erat, sit amet tempor nibh. Aliquam erat volutpat. Nulla et.</p>
-                                <div class="meta-info-block meta-info-block--borderless">
-                                    <div class="meta-info-block__item">
-                                        Photo 1 of 213 • Saturday 14th 2013
+                                </figure>
+                                <div class="carousel__summary">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget lacus erat, sit amet tempor nibh. Aliquam erat volutpat. Nulla et. </p>
+                                    <div class="meta-info-block meta-info-block--borderless">
+                                        <div class="meta-info-block__item">
+                                            Photo 1 of 213 • Saturday 14th 2013
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </li>
-                        <li>
-                            <figure>
-                                <a class="carousel__link" href="http://music.simoncampbell.com/uploads/images/resizer_cache/12eee51655f90df9bcecf64388ccba06d53d9e88.jpg">
-                                    <img src="http://music.simoncampbell.com/uploads/images/resizer_cache/12eee51655f90df9bcecf64388ccba06d53d9e88.jpg" class="carousel__image"/>
-                                </a>
-                            </figure>
-                            <div class="carousel__summary">
-                                <p>In my younger and more vulnerable years my father gave me some advice that I’ve been turning over in my mind ever since. “Whenever you feel like criticizing any one,” he told me</p>
-                                <div class="meta-info-block meta-info-block--borderless">
-                                    <div class="meta-info-block__item">
-                                        Photo 1 of 213 • Saturday 14th 2013
+                            </li>
+                            <li>
+                                <figure>
+                                    <img src="http://music.simoncampbell.com/uploads/images/resizer_cache/ca5aeabe3a72e7377ae9a480740078a9c55f6d46.jpg" class="carousel__image" />
+                                </figure>
+                                <div class="carousel__summary">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget lacus erat, sit amet tempor nibh. Aliquam erat volutpat. Nulla et.</p>
+                                    <div class="meta-info-block meta-info-block--borderless">
+                                        <div class="meta-info-block__item">
+                                            Photo 1 of 213 • Saturday 14th 2013
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </li>
-                        <li>
-                            <figure>
-                                <img src="http://music.simoncampbell.com/uploads/images/resizer_cache/2c19b47faaacd6f8e51ee2aa88aa3577bdae3b69.jpg" class="carousel__image" />
-                            </figure>
-                            <div class="carousel__summary">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget lacus erat, sit amet tempor nibh. Aliquam erat volutpat. Nulla et. </p>
-                                <div class="meta-info-block meta-info-block--borderless">
-                                    <div class="meta-info-block__item">
-                                        Photo 1 of 213 • Saturday 14th 2013
+                            </li>
+                            <li>
+                                <figure>
+                                    <img src="http://music.simoncampbell.com/uploads/images/resizer_cache/5ec72fd07097de6e75093e42489ab91dcdbb23d1.jpg" class="carousel__image"  />
+                                </figure>
+                                <div class="carousel__summary">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget lacus erat, sit amet tempor nibh. Aliquam erat volutpat. Nulla et.</p>
+                                    <div class="meta-info-block meta-info-block--borderless">
+                                        <div class="meta-info-block__item">
+                                            Photo 1 of 213 • Saturday 14th 2013
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </li>
-                        <li>
-                            <figure>
-                                <img src="http://music.simoncampbell.com/uploads/images/resizer_cache/ca5aeabe3a72e7377ae9a480740078a9c55f6d46.jpg" class="carousel__image" />
-                            </figure>
-                            <div class="carousel__summary">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget lacus erat, sit amet tempor nibh. Aliquam erat volutpat. Nulla et.</p>
-                                <div class="meta-info-block meta-info-block--borderless">
-                                    <div class="meta-info-block__item">
-                                        Photo 1 of 213 • Saturday 14th 2013
+                            </li>
+                            <li>
+                                <figure>
+                                    <img src="http://music.simoncampbell.com/uploads/images/resizer_cache/2b6e55d5d8b1a3dc980d328e825ba034b1e9499f.jpg" class="carousel__image" />
+                                </figure>
+                                <div class="carousel__summary">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget lacus erat, sit amet tempor nibh. Aliquam erat volutpat. Nulla et.</p>
+                                    <div class="meta-info-block meta-info-block--borderless">
+                                        <div class="meta-info-block__item">
+                                            Photo 1 of 213 • Saturday 14th 2013
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </li>
-                        <li>
-                            <figure>
-                                <img src="http://music.simoncampbell.com/uploads/images/resizer_cache/5ec72fd07097de6e75093e42489ab91dcdbb23d1.jpg" class="carousel__image"  />
-                            </figure>
-                            <div class="carousel__summary">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget lacus erat, sit amet tempor nibh. Aliquam erat volutpat. Nulla et.</p>
-                                <div class="meta-info-block meta-info-block--borderless">
-                                    <div class="meta-info-block__item">
-                                        Photo 1 of 213 • Saturday 14th 2013
+                            </li>
+                            <li>
+                                <figure>
+                                    <img src="http://music.simoncampbell.com/uploads/images/resizer_cache/53b81f72910a991fc811ca6759dbf74eef68b0cb.jpg" class="carousel__image" />
+                                </figure>
+                                <div class="carousel__summary">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget lacus erat, sit amet tempor nibh. Aliquam erat volutpat. Nulla et. </p>
+                                    <div class="meta-info-block meta-info-block--borderless">
+                                        <div class="meta-info-block__item">
+                                            Photo 1 of 213 • Saturday 14th 2013
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </li>
-                        <li>
-                            <figure>
-                                <img src="http://music.simoncampbell.com/uploads/images/resizer_cache/2b6e55d5d8b1a3dc980d328e825ba034b1e9499f.jpg" class="carousel__image" />
-                            </figure>
-                            <div class="carousel__summary">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget lacus erat, sit amet tempor nibh. Aliquam erat volutpat. Nulla et.</p>
-                                <div class="meta-info-block meta-info-block--borderless">
-                                    <div class="meta-info-block__item">
-                                        Photo 1 of 213 • Saturday 14th 2013
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <figure>
-                                <img src="http://music.simoncampbell.com/uploads/images/resizer_cache/53b81f72910a991fc811ca6759dbf74eef68b0cb.jpg" class="carousel__image" />
-                            </figure>
-                            <div class="carousel__summary">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget lacus erat, sit amet tempor nibh. Aliquam erat volutpat. Nulla et. </p>
-                                <div class="meta-info-block meta-info-block--borderless">
-                                    <div class="meta-info-block__item">
-                                        Photo 1 of 213 • Saturday 14th 2013
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div><!-- //end.carousel__list-container -->
-                <nav class="carousel__nav">
-                    <a href="#" class="prev">
-                        <span class="icon ss">navigateleft</span>
-                        <span class="carousel__nav__text">Previous</span>
-                    </a>
-                    <a href="#" class="next">
-                        <span class="carousel__nav__text">Next</span>
-                        <span class="icon ss">navigateright</span>
-                    </a>
-                </nav>
-            </div><!-- //end.gallery -->
-        </div><!-- //.main-wrapper -->
+                            </li>
+                        </ul>
+                    </div><!-- //end.carousel__list-container -->
+                    <nav class="carousel__nav">
+                        <a href="#" class="prev">
+                            <span class="icon ss">navigateleft</span>
+                            <span class="carousel__nav__text">Previous</span>
+                        </a>
+                        <a href="#" class="next">
+                            <span class="carousel__nav__text">Next</span>
+                            <span class="icon ss">navigateright</span>
+                        </a>
+                    </nav>
+                </div><!-- //end.gallery -->
+            </div><!-- //.main-wrapper -->
 
-    </div><!-- //end.carousel -->
+       </div><!-- //end.carousel -->
+    {% endfor %}
 
 {% endblock %}
 
@@ -150,63 +152,17 @@
     <div class="item-list item-list--merch">
 
         <h3>Other photo albums</h3>
-
         <ul>
-            <li class="item-list__item">
-                <figure>
-                    <a href=""><img src="http://placehold.it/400x300/0eafff/ffffff.png"></a>
-                </figure>
-                <h5><a href="URL">Sightings</a></h5>
+            {% for album in craft.entries.find({section:'Gallery'}) %}
+                <li class="item-list__item">
+                    <figure>
+                        {% for image in album.featuredImage %}
+                            <a href="{{album.url}}"><img src="{{image.url}}"></a>
+                        {% endfor %}
+                    </figure>
+                    <h5><a href="{{album.url}}">{{album.title}}</a></h5>
             </li>
-
-            <li class="item-list__item">
-                <figure>
-                    <a href=""><img src="http://placehold.it/400x300/0eafff/ffffff.png"></a>
-                </figure>
-                <h5><a href="URL">Sightings</a></h5>
-            </li>
-
-            <li class="item-list__item">
-                <figure>
-                    <a href=""><img src="http://placehold.it/400x300/0eafff/ffffff.png"></a>
-                </figure>
-                <h5><a href="URL">Sightings</a></h5>
-            </li>
-
-            <li class="item-list__item">
-                <figure>
-                    <a href=""><img src="http://placehold.it/400x300/0eafff/ffffff.png"></a>
-                </figure>
-                <h5><a href="URL">Sightings</a></h5>
-            </li>
-            <li class="item-list__item">
-                <figure>
-                    <a href=""><img src="http://placehold.it/400x300/0eafff/ffffff.png"></a>
-                </figure>
-                <h5><a href="URL">Sightings</a></h5>
-            </li>
-
-            <li class="item-list__item">
-                <figure>
-                    <a href=""><img src="http://placehold.it/400x300/0eafff/ffffff.png"></a>
-                </figure>
-                <h5><a href="URL">Reading Festival</a></h5>
-            </li>
-
-            <li class="item-list__item">
-                <figure>
-                    <a href=""><img src="http://placehold.it/400x300/0eafff/ffffff.png"></a>
-                </figure>
-                <h5><a href="URL">Sightings</a></h5>
-            </li>
-
-            <li class="item-list__item">
-                <figure>
-                    <a href=""><img src="http://placehold.it/400x300/0eafff/ffffff.png"></a>
-                </figure>
-                <h5><a href="URL">Sightings</a></h5>
-            </li>
-
+            {% endfor %}
         </ul>
 
     </div><!-- //end.item-list__sub-content -->

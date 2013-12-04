@@ -21,7 +21,7 @@
     <div class="main-wrapper main-wrapper--article main-wrapper--listing">
 
         <ul class="item-list item-list--article item-list--news">
-            {% for news in craft.entries.find({section:'News',limit:'15' }) %}
+            {% for news in craft.entries.find({section:'News',limit:'5' }) %}
                 <li class="item-list__item item-list__item--article">
                     <article>
                         <div class="heading-group heading-group--marginless">

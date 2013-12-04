@@ -19,8 +19,8 @@
 
     <div class="carousel-wrapper">
           <div class="side-wrapper carousel__info-wrapper">
-             <h4>Live gigging</h4>
-             <p>This collection of photos details my extensive travels across the world of music and of life on the stage. This was a particularly joyous time because I had my old Saab 2130. Good times.</p>
+             <h4>{{entry.title}}</h4>
+             <p>{{entry.shortExtract}}</p>
         </div><!-- //.side-wrapper -->
 
         <div class="main-wrapper main-wrapper--article main-wrapper--gallery">
@@ -149,64 +149,18 @@
 <div class="wide-wrapper wide-wrapper--merch">
     <div class="item-list item-list--merch">
 
-        <h3>Other photo albums</h3>
-
+    <h3>Other photo albums</h3>
         <ul>
-            <li class="item-list__item">
-                <figure>
-                    <a href=""><img src="http://placehold.it/400x300/0eafff/ffffff.png"></a>
-                </figure>
-                <h5><a href="URL">Sightings</a></h5>
+            {% for album in craft.entries.find({section:'Gallery'}) %}
+                <li class="item-list__item">
+                    <figure>
+                        {% for image in album.featuredImage %}
+                            <a href="{{album.url}}"><img src="{{image.url}}"></a>
+                        {% endfor %}
+                    </figure>
+                    <h5><a href="{{album.url}}">{{album.title}}</a></h5>
             </li>
-
-            <li class="item-list__item">
-                <figure>
-                    <a href=""><img src="http://placehold.it/400x300/0eafff/ffffff.png"></a>
-                </figure>
-                <h5><a href="URL">Sightings</a></h5>
-            </li>
-
-            <li class="item-list__item">
-                <figure>
-                    <a href=""><img src="http://placehold.it/400x300/0eafff/ffffff.png"></a>
-                </figure>
-                <h5><a href="URL">Sightings</a></h5>
-            </li>
-
-            <li class="item-list__item">
-                <figure>
-                    <a href=""><img src="http://placehold.it/400x300/0eafff/ffffff.png"></a>
-                </figure>
-                <h5><a href="URL">Sightings</a></h5>
-            </li>
-            <li class="item-list__item">
-                <figure>
-                    <a href=""><img src="http://placehold.it/400x300/0eafff/ffffff.png"></a>
-                </figure>
-                <h5><a href="URL">Sightings</a></h5>
-            </li>
-
-            <li class="item-list__item">
-                <figure>
-                    <a href=""><img src="http://placehold.it/400x300/0eafff/ffffff.png"></a>
-                </figure>
-                <h5><a href="URL">Reading Festival</a></h5>
-            </li>
-
-            <li class="item-list__item">
-                <figure>
-                    <a href=""><img src="http://placehold.it/400x300/0eafff/ffffff.png"></a>
-                </figure>
-                <h5><a href="URL">Sightings</a></h5>
-            </li>
-
-            <li class="item-list__item">
-                <figure>
-                    <a href=""><img src="http://placehold.it/400x300/0eafff/ffffff.png"></a>
-                </figure>
-                <h5><a href="URL">Sightings</a></h5>
-            </li>
-
+            {% endfor %}
         </ul>
 
     </div><!-- //end.item-list__sub-content -->

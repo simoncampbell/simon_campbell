@@ -47,8 +47,13 @@ h3, .gamma {
     .main-wrapper--article__detail p + &,
     .main-wrapper--article__detail ul + &,
     .main-wrapper--article__detail ol + &,
-    .main-wrapper--article__detail figure + & {
+    .main-wrapper--article__detail figure + &,
+    .main-wrapper--article__detail form + & {
         @include rems(margin-top, $base-spacing-unit * 2);
+    }
+
+    .main-wrapper--article__detail iframe + & {
+        @include rems(margin-top, $base-spacing-unit);
     }
 
     @include breakpoint($breakpoint__medium){

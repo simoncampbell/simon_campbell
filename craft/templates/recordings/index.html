@@ -20,65 +20,27 @@
 
         <ul class="item-list item-list--album">
 
-            <li class="item-list__item item-list__item--article item-list__item--recording">
+            {% for album in craft.entries.find({section:'Recordings', limit:'10'}) %}
+                <li class="item-list__item item-list__item--article item-list__item--recording">
 
-                <figure class="flag__image">
-                    <a href="URL!"><img alt="" src="http://placehold.it/700x700/0eafff/ffffff.png"></a>
-                </figure>
+                    <figure class="flag__image">
+                        {% for image in album.albumArt %}
+                            <a href="{{album.url}}"><img src="{{image.url}}"></a>
+                        {% endfor %}
+                    </figure>
 
-                <header class="flag__body">
-                    <h3><a href="URL!">Thirty Six</a></h3>
-                    <div class="meta-info-block__item">
-                        <time datetime="{{entry.postDate|date("Y")}}">{{entry.postDate|date("Y")}}</time>
-                    </div>
-                    <div class="meta-info-block__item">• LP</div>
-                </header>
-            </li>
-
-            <li class="item-list__item item-list__item--article item-list__item--recording">
-
-                <figure class="flag__image">
-                    <a href="URL!"><img alt="" src="http://placehold.it/700x700/0eafff/ffffff.png"></a>
-                </figure>
-
-                <header class="flag__body">
-                    <h3><a href="URL!">Another release</a></h3>
-                    <div class="meta-info-block__item">
-                        <time datetime="{{entry.postDate|date("Y")}}">{{entry.postDate|date("Y")}}</time>
-                    </div>
-                    <div class="meta-info-block__item">• LP</div>
-                </header>
-
-            </li>
-            <li class="item-list__item item-list__item--article item-list__item--recording">
-                <figure class="flag__image">
-                    <a href="URL!"><img alt="" src="http://placehold.it/700x700/0eafff/ffffff.png"></a>
-                </figure>
-
-                <header class="flag__body">
-                    <h3><a href="URL!">Thirty Six</a></h3>
-                    <div class="meta-info-block__item">
-                        <time datetime="{{entry.postDate|date("Y")}}">{{entry.postDate|date("Y")}}</time>
-                    </div>
-                    <div class="meta-info-block__item">• Single</div>
-                </header>
-            </li>
-
-            <li class="item-list__item item-list__item--article item-list__item--recording">
-
-                <figure class="flag__image">
-                    <a href="URL!"><img alt="" src="http://placehold.it/700x700/0eafff/ffffff.png"></a>
-                </figure>
-
-                <header class="flag__body">
-                    <h3><a href="URL!">Another release</a></h3>
-                    <div class="meta-info-block__item">
-                        <time datetime="{{entry.postDate|date("Y")}}">{{entry.postDate|date("Y")}}</time>
-                    </div>
-                    <div class="meta-info-block__item">• EP</div>
-                </header>
-            </li>
+                    <header class="flag__body">
+                        <h3><a href="{{album.url}}">{{album.title}}</a></h3>
+                        <div class="meta-info-block__item">
+                            <time datetime="{{album.postDate|date("Y")}}">{{album.postDate|date("Y")}}</time>
+                        </div>
+                        <div class="meta-info-block__item">• {{album.recordType}}</div>
+                    </header>
+                </li>
+            {% endfor %}
         </ul>
+
+
     </div><!-- main-wrapper -->
 
     <div class="wrapper">

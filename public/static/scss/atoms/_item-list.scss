@@ -51,7 +51,10 @@
         }
 
         &.item-list--sub-content--alternate {
+            border: none;
             @include rems(margin-bottom, $base-spacing-unit);
+            float: left;
+            width: 100%;
         }
 
         .main-wrapper--archive &:first-of-type {
@@ -726,6 +729,7 @@
             @include breakpoint($breakpoint__desktop){
                 width: 48.4%;
                 float: left;
+                margin-bottom: 0;
             }
         }
 

@@ -186,6 +186,7 @@
 
 
     .main-wrapper--article {
+        @extend .cf;
         @include rems(margin-bottom, $base-spacing-unit);
 
 

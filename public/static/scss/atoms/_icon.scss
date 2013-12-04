@@ -74,10 +74,15 @@
     }
 
     .icon--meta {
-        @include rems(margin-left, - $half-spacing-unit + 2);
-        @include rems(margin-right, 3);
-        @include rems(font-size, 17);
-        color: lighten($color__meta, 15);
+        display: none;
+
+        @include breakpoint($breakpoint__desktop){
+            display: inline-block;
+            @include rems(margin-left, - 28);
+            @include rems(margin-right, 3);
+            @include rems(font-size, 17);
+            color: lighten($color__meta, 15);
+        }
     }
 
 

@@ -16,11 +16,15 @@
                 <div class="meta-info-block meta-info-block--borderless">
                     <time class="meta-info-block__item" datetime="{{post.postDate|date("Y-m-d")}}">{{post.postDate|date("jS F Y")}}</time>
 
+
                     <p class="meta-info-block__item">Posted in
+                        {% for blogTags in post %}
                         <a class="category-link" href="URL!">
                             <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
-                            Life
-                        </a>,
+                            {{blogTags}}
+                        </a>
+                        {% endfor %}
+
                         <a class="category-link" href="URL!">
                             <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
                             Health
@@ -35,7 +39,7 @@
                 </figure>
             {% endfor %}
 
-            <p>{{ post.shortExtract[:240]}}&hellip; <a href="{{post.url}}">Read more &raquo;</a></p>
+            <p>{{ post.shortExtract[:340]|trim}}&hellip; <a href="{{post.url}}">Read more &raquo;</a></p>
 
         </div><!-- //end.featured__post-content -->
     </article>

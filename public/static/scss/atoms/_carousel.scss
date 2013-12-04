@@ -51,6 +51,8 @@
     .carousel li {
         float: left;
         position: relative;
+        overflow: hidden;
+        @include rems(max-height, 624);
 
         .no-js & {
             @include rems(margin-bottom, $base-spacing-unit * 2);

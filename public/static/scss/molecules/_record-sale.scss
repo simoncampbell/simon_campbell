@@ -7,7 +7,7 @@
 
 
 .record-sale {
-    @include breakpoint(680px $breakpoint__large){
+    @include breakpoint($breakpoint__desktop){
 
         > figure {
             @include rems(margin-right, $base-spacing-unit);

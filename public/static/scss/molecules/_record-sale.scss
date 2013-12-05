@@ -7,7 +7,7 @@
 
 
 .record-sale {
-    @include breakpoint($breakpoint__desktop){
+    @include breakpoint($breakpoint__desktop) {
 
         > figure {
             @include rems(margin-right, $base-spacing-unit);
@@ -33,6 +33,28 @@
 
     @include breakpoint($breakpoint__large){
         @include rems(padding-top, $base-spacing-unit);
+
+        > figure {
+            margin-right: 0;
+            float: left;
+            width: 100%;
+        }
+
+        >.item-list--bordered {
+            float: left;
+            width: 100%;
+            border: none;
+
+            .item-list__item {
+                width: 100%;
+
+                &:first-child {
+                    border: none;
+                    padding-top: 0;
+                }
+            }
+        }
+
     }
 
     figure {

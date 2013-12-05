@@ -119,6 +119,18 @@
             @include rems(margin-bottom, - $half-spacing-unit);
         }
     }
+
+    .island--wrapper__content--album {
+        @include breakpoint($breakpoint__desktop){
+            width: 80.1%;
+            @include rems(max-width, 723);
+        }
+
+        @include breakpoint($breakpoint__large) {
+            width: 100%;
+            max-width: 100%;
+        }
+    }
 }
 
     .island--wrapper--equipment {

@@ -8,7 +8,7 @@
 <div class="side-bar--album">
 
     {% for album in craft.entries.find({section:'Recordings', limit:'1'}) %}
-        <h4>New album: {{album.title}}</h4>
+        <h4>New {{album.recordType}}: {{album.title}}</h4>
 
         <figure class="side-bar--album__figure">
             {% for image in album.albumArt %}

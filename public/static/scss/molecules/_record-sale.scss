@@ -7,28 +7,32 @@
 
 
 .record-sale {
+
+    iframe {
+        margin-bottom: 0;
+    }
     @include breakpoint($breakpoint__desktop) {
 
-        > figure {
-            @include rems(margin-right, $base-spacing-unit);
-            float: left;
-            width: 25%;
-        }
+        // > figure {
+        //     @include rems(margin-right, $base-spacing-unit);
+        //     float: left;
+        //     width: 25%;
+        // }
 
-        >.item-list--bordered {
-            float: right;
-            width: 70%;
-            border: none;
+        // >.item-list--bordered {
+        //     float: right;
+        //     width: 70%;
+        //     border: none;
 
-            .item-list__item {
-                width: 100%;
+        //     .item-list__item {
+        //         width: 100%;
 
-                &:first-child {
-                    border: none;
-                    padding-top: 0;
-                }
-            }
-        }
+        //         &:first-child {
+        //             border: none;
+        //             padding-top: 0;
+        //         }
+        //     }
+        // }
     }
 
     @include breakpoint($breakpoint__large){

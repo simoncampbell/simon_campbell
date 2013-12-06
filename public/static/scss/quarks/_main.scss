@@ -4,26 +4,11 @@
 
 html {
     height: 100%;
-}
-
-body {
-    @extend .cf;
-    @extend %font__text--regular;
-    background-color: $color__main-bg;
-    font: percentage($base-font-size / 16) $base-font-family;
-    color: $base-color;
-    line-height:$line-height-ratio;
-    position: relative;
-    height: 100%;
-
-    &.overlay--active {
-        height: 100%;
-    }
 
     /**
-     * Media
-     * Conditional CSS: http://adactio.com/journal/5429/
-     */
+    * Media
+    * Conditional CSS: http://adactio.com/journal/5429/
+    */
 
     /* Medium */
     @media screen and (min-width: 35em) {
@@ -32,7 +17,6 @@ body {
             display: none;
         }
     }
-
 
     /* Large */
     @media screen and (min-width: 56.25em) {
@@ -54,4 +38,20 @@ body {
             display: none;
         }
     }
+}
+
+body {
+    @extend .cf;
+    @extend %font__text--regular;
+    background-color: $color__main-bg;
+    font: percentage($base-font-size / 16) $base-font-family;
+    color: $base-color;
+    line-height:$line-height-ratio;
+    position: relative;
+    height: 100%;
+
+    &.overlay--active {
+        height: 100%;
+    }
+
 }

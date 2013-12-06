@@ -9,6 +9,7 @@
 
 .item-list {
     list-style-type: none;
+    @extend .cf;
 }
     .item-list__item {
         list-style-type:none;
@@ -114,6 +115,8 @@
 
 
     .item-list__item--article {
+        float: left;
+        width: 100%;
         @include rems(margin-bottom, $base-spacing-unit);
         @include rems(padding-bottom, $base-spacing-unit);
         border-bottom: 1px dotted $color__border--standard;

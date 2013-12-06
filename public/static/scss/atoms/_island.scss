@@ -64,7 +64,7 @@
         }
 
         @include breakpoint($breakpoint__large){
-            @include rems(margin-top, - $base-spacing-unit);
+            margin-top: -1.32rem;
             padding-right: 9.95%;
             padding-top: 0;
             margin-bottom: -99999px; // 100% height hack

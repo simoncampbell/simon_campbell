@@ -23,7 +23,7 @@ define(['domReady', 'jquery'], function(domReady, jQuery) {
             var sw = document.body.clientWidth,
             current = 0,
             count = 1, // current slide number
-            breakpointSize = window.getComputedStyle(document.body,':after').getPropertyValue('content'),
+            breakpointSize = window.getComputedStyle(document.documentElement,':after').getPropertyValue('content'),
                 multiplier = 1, /*Determines the number of panels*/
                 count = 1, /* number of slides */
                 $carousel = $('.carousel'),
@@ -42,7 +42,7 @@ define(['domReady', 'jquery'], function(domReady, jQuery) {
             $(window).resize(function(){ //On Window Resize
                 sw = document.body.clientWidth;
                 $cWidth = $cContainer.width();
-                breakpointSize = window.getComputedStyle(document.body,':after').getPropertyValue('content');  /* Conditional CSS http://adactio.com/journal/5429/ */
+                breakpointSize = window.getComputedStyle(document.documentElement,':after').getPropertyValue('content');  /* Conditional CSS http://adactio.com/journal/5429/ */
                 sizeCarousel();
                 posCarousel();
             });

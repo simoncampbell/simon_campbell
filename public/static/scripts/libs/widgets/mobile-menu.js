@@ -44,7 +44,7 @@ define(['jquery', 'domReady'], function(jQuery, domReady){
 
 
         $(window).resize(function(){
-            size = window.getComputedStyle(document.body,':after').getPropertyValue('content');
+            size = window.getComputedStyle(document.documentElement,':after').getPropertyValue('content');
 
             if(size == 'largest') {
                 $('#nav_pri').addClass('menu--active');

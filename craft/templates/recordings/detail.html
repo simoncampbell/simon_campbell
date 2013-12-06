@@ -54,62 +54,6 @@
             </div>
         {% endif %}
 
-            <!-- LYRICS -->
-            <!-- Commented out due to time constraints -->
-
-            <!-- <li class="item-list__item island dropdown-nav">
-                <h4 class="island__header">Track info &amp; lyrics</h4>
-                <dl class="lyrics">
-                    <dt class="dropdown-nav__header">I like it like that</dt>
-                    <dd class="dropdown-nav__item">
-                        <pre>
-Five hundred years of war and peace,
-I see it all but have no release,
-Five hundred victims, five hundred screams,
-I hear them nightly in my dreams…</pre>
-
-                <dl class="micro-info">
-                    <dt>Drums</dt>
-                    <dd>Mike Wachowski</dd>
-                    <dt>Guitars</dt>
-                    <dd>Geoffrey Talbor</dd>
-                    <dt>Ukelele</dt>
-                    <dd>Mike Johnson</dd>
-                    <dt>Vocals</dt>
-                    <dd>Samantha Bee</dd>
-                </dl>
-
-
-            </dd>
-            <dt class="dropdown-nav__header">Hot as hell</dt>
-            <dd class="dropdown-nav__item">
-                <pre>
-Well your daddy’s out a boozin
-And your mommas on the game
-Got me layin’ on your pillow
-You don’t even know my name
-Goin’ a hawkin’ and a talkin’
-Ain’t got nothin’ left to sell, oh no
-Goin’ to work your skinny ass off babe</pre>
-            </dd>
-            <dt class="dropdown-nav__header">Still got time to be my babe</dt>
-            <dd class="dropdown-nav__item">
-                <pre>
-You talk of leaving me, but I know this can’t be true
-Because the only thing that matters babe,
-Is that you love me, and I love you,
-I know you do, so I know you wont,
-Still got time to be your babe…
-                        </pre>
-                    </dd>
-<dt class="dropdown-nav__header">Lovin’ Man</dt>
-            <dd class="dropdown-nav__item">
-                <pre>
-You talk of leaving me, but I know this can’t be true
-                        </pre>
-                    </dd>
-            </li>
-        </ul> <!-- //end.item-list -->
    </div>
 
 {% endblock %}
@@ -121,8 +65,10 @@ You talk of leaving me, but I know this can’t be true
         <div class="island--wrapper__content island--wrapper__content--album">
 
             <div class="record-sale">
+
+                {{entry.bandcampAlbum}}
                 <!-- ALBUM ART IMAGE -->
-                <figure>
+                <!-- <figure>
                     {% for image in entry.albumArt %}
                         <img src="{{image.url}}"/>
                     {% endfor %}
@@ -161,7 +107,7 @@ You talk of leaving me, but I know this can’t be true
                         </a>
                         <p>Immediate download of 12-track album in your choice of high-quality MP3, FLAC, or just about any other format you could possibly desire. Delivery is usually 3-5 working days.</p>
                     </li>
-                </ul>
+                </ul> -->
             </div>
         </div>
    </div><!-- //end.island.side-wrapper -->

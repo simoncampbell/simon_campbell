@@ -14,7 +14,9 @@
 define(['domReady', 'jquery'], function(domReady, jQuery) {
 
     domReady(function(){
-        var size = window.getComputedStyle(document.body,':after').getPropertyValue('content'); //http://adactio.com/journal/5429/
+        var size = window.getComputedStyle(document.documentElement,':after').getPropertyValue('content'); //http://adactio.com/journal/5429/
+
+        console.log('size');
 
         lightboxInit();
 
@@ -58,7 +60,7 @@ define(['domReady', 'jquery'], function(domReady, jQuery) {
         }
 
         $(window).resize(function() {
-            size = window.getComputedStyle(document.body,':after').getPropertyValue('content');
+            size = window.getComputedStyle(document.documentElement,':after').getPropertyValue('content');
         });
     });
 });

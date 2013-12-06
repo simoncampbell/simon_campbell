@@ -16,12 +16,12 @@
     </header>
 
 
-    <div class="main-wrapper main-wrapper--full">
+    <div class="main-wrapper main-wrapper--listing">
 
-        <ul class="item-list item-list--album">
+        <ul class="item-list">
 
             {% for album in craft.entries.find({section:'Recordings', limit:'10'}) %}
-                <li class="item-list__item item-list__item--article item-list__item--recording">
+                <li class="item-list__item item-list__item--article">
 
                     <figure class="flag__image">
                         {% for image in album.albumArt %}
@@ -29,66 +29,19 @@
                         {% endfor %}
                     </figure>
 
-                    <header class="flag__body">
+                    <div class="heading-group heading-group--marginless">
                         <h3><a href="{{album.url}}">{{album.title}}</a></h3>
                         <div class="meta-info-block__item">
                             <time datetime="{{album.postDate|date("Y")}}">{{album.postDate|date("Y")}}</time>
                         </div>
                         <div class="meta-info-block__item">• {{album.recordType}}</div>
-                    </header>
-                </li>
+                    </div><!-- //.heading-group -->
+                </li><!-- //.item -->
             {% endfor %}
-        </ul>
-
-
+        </ul><!-- //.item-list -->
     </div><!-- main-wrapper -->
 
-    <div class="wrapper">
-        <div class="wide-wrapper wide-wrapper--merch">
-            <div class="item-list item-list--merch">
-                <h3 class="main-wrapper--article-meta__header">Merchandise and Goodies</h3>
-
-                <ul>
-                    <li class="item-list__item">
-                         <figure>
-                            <a href="URL!">
-                                <img alt="" src="http://placehold.it/400x300/0eafff/ffffff.png">
-                            </a>
-                        </figure>
-                        <h5><a href="URL!">Launch poster</a></h5>
-                    </li>
-
-                    <li class="item-list__item">
-                        <figure>
-                            <a href="URL!">
-                                <img alt="" src="http://placehold.it/400x300/0eafff/ffffff.png">
-                            </a>
-                        </figure>
-                        <h5><a href="URL!">Thirty six t-shirts</a></h5>
-                    </li>
-
-                    <li class="item-list__item">
-                        <figure>
-                            <a href="URL!">
-                                <img alt="" src="http://placehold.it/400x300/0eafff/ffffff.png">
-                            </a>
-                        </figure>
-                        <h5><a href="URL!">Launch poster</a></h5>
-                    </li>
-
-                    <li class="item-list__item">
-                        <figure>
-                            <a href="URL!">
-                               <img alt="" src="http://placehold.it/400x300/0eafff/ffffff.png">
-                            </a>
-                        </figure>
-                        <h5><a href="URL!">Thirty six t-shirts</a></h5>
-                    </li>
-                </ul>
-            </div><!-- //end.item-list merch -->
-        </div><!-- //end.wide-wrapper -->
-
-        <div class="side-wrapper island island--wrapper">
+    <div class="side-wrapper island island--wrapper">
             <ul class="item-list island--wrapper__content">
                 <li class="item-list__item item-list__item--sidebar">
                     <h4>Equipment</h4>
@@ -136,7 +89,6 @@
 
         </div><!-- //end.side-wrapper -->
 
-    </div><!-- //end.wrapper -->
 
 
 {% endblock %}

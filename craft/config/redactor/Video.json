@@ -1,4 +1,0 @@
-{
-    buttons: ['video'],
-    plugins: ['fullscreen']
-}

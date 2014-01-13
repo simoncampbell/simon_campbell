@@ -4,6 +4,8 @@ public/assets
 
 !.gitignore
 !.htaccess
+public/.htaccess
+
 .sass-cache
 
 composer.phar
@@ -13,4 +15,11 @@ public/static/css/
 
 craft/config/db.php
 craft/storage
+
+craft/app
+
+craft/config
+
+web.config
+
 .DS_Store

@@ -78,6 +78,7 @@
         }
 
         label {
+            width: 95%;
             @extend %font__text--regular;
             @include rems(margin-bottom, $half-spacing-unit);
             color: $color__text--reverse;

@@ -31,7 +31,7 @@
         @include rems(height, 200);
         overflow: hidden;
         background-size: 100%;
-        background-image: url('/static/images/homepage/setup.jpg');
+        background-image: url('/static/images/homepage/setup.jpg'); //in order to add filter and blur this needs to be a background image
         background-repeat: no-repeat;
         @include rems(margin-bottom, 20);
 
@@ -41,8 +41,8 @@
 
         @include breakpoint($breakpoint__desktop) {
             @include rems(height, 540);
-            -webkit-filter: blur(3px);
-            filter: blur(3px);
+            -webkit-filter: brightness(30%);
+            filter: brightness(30%);
             -webkit-transform: scale(1.02); // nasty hack to hide the white edges caused by css filters
             margin-bottom: 0;
         }
@@ -71,7 +71,7 @@
             @include rems(max-width, 600);
             left: 0;
             right: 0;
-            @include rems(bottom, 162);
+            @include rems(bottom, 182);
             margin: 0 auto;
         }
 
@@ -89,7 +89,7 @@
             }
 
             @include breakpoint($breakpoint__large){
-                @include rems(font-size, 20);
+                @include rems(font-size, 18);
             }
         }
     }

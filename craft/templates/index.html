@@ -27,32 +27,32 @@
     </div>
 
 
-<div class="main-wrapper main-wrapper--full">
-   <!-- FEATURED SECTION-->
-    <section class="featured">
-        {% include 'components/_featured/_featured-article' %}
-    </section>
+    <div class="main-wrapper main-wrapper--full">
+       <!-- FEATURED SECTION-->
+        <section class="featured">
+            {% include 'components/_featured/_featured-article' %}
+        </section>
 
-    <section class="item-list item-list--featured">
+        <section class="item-list item-list--featured">
 
-        {% set entries = craft.entries.section('Blog').limit(3).find %}
-        {% set firstEntry = entries[0] %}
-        {% set remainingEntries = entries|without(firstEntry) %}
+            {% set entries = craft.entries.section('Blog').limit(3).find %}
+            {% set firstEntry = entries[0] %}
+            {% set remainingEntries = entries|without(firstEntry) %}
 
-        {% for post in remainingEntries %}
-            <article class="item-list__item item-list__item--article">
-                <header class="heading-group heading-group--marginless">
-                    <h3><a href="{{post.url}}">{{ post.title }}</a></h3>
-                    <div class="meta-info-block meta-info-block--borderless ">
-                       <time class="meta-info-block__item" datetime="{{post.postDate|date("Y-m-d")}}">{{post.postDate|date("jS F Y")}}</time>
-                    </div>
-                </header>
-                 <p>{{ post.shortExtract[:340]|trim}}&hellip; <a href="{{post.url}}">Read more &raquo;</a></p>
-            </article>
-        {% endfor %}
-    </section><!-- //end.item-list -->
+            {% for post in remainingEntries %}
+                <article class="item-list__item item-list__item--article">
+                    <header class="heading-group heading-group--marginless">
+                        <h3><a href="{{post.url}}">{{ post.title }}</a></h3>
+                        <div class="meta-info-block meta-info-block--borderless ">
+                           <time class="meta-info-block__item" datetime="{{post.postDate|date("Y-m-d")}}">{{post.postDate|date("jS F Y")}}</time>
+                        </div>
+                    </header>
+                     <p>{{ post.shortExtract[:340]|trim}}&hellip; <a href="{{post.url}}">Read more &raquo;</a></p>
+                </article>
+            {% endfor %}
+        </section><!-- //end.item-list -->
 
-</div><!-- //end.main-wrapper -->
+    </div><!-- //end.main-wrapper -->
 
 {% endblock %}
 

@@ -84,6 +84,7 @@
 
     .shows-list {
         margin-bottom: 0;
+        font-style: italic;
 
         dt {
             @include rems(font-size, $milli-size);

@@ -252,6 +252,11 @@
                 left: 0;
                 line-height: 1;
             }
+
+            span {
+                position: relative;
+                bottom: 0;
+            }
         }
 
         &.inactive {

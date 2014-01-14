@@ -104,6 +104,36 @@
         }
     }
 
+    // Semi-transparent dark button
+    .btn--tertiary {
+        background-color: #444;
+        background-color: rgba(58,58,58, .7);
+        border: 1px solid #555555;
+        color: $color__meta;
+        opacity: .7;
+
+        &.btn--icon .icon {
+            background-color: rgba(0,0,0,.3);
+            border-right: 1px solid lighten($color__black, 20);
+        }
+
+        &:hover,
+        &:focus {
+            color: darken($color__white, 5);
+            text-decoration: none;
+            opacity: .7;
+            background-color: #222222;
+            border: 1px solid #555555;
+
+            &.btn--icon .icon {
+                background-color: rgba(0,0,0,.6);
+                border-right: 1px solid lighten($color__black, 20);
+            }
+        }
+    }
+
+
+
     .btn--purple {
         background-color: $color__purple;
         border: 1px solid darken($color__purple,10);
@@ -231,7 +261,7 @@
 .btn--gamma {
      &.btn--icon {
         .icon {
-            @include rems(height, 36);
+            @include rems(height, 38);
             @include rems(width, 35);
             line-height: 2.5;
         }
@@ -239,6 +269,22 @@
             line-height: 2.4;
             text-transform: uppercase;
             @include rems(font-size, 15);
+        }
+    }
+}
+
+.btn--epsilon {
+    &.btn--icon {
+        .icon {
+            @include rems(height, 28);
+            @include rems(width, 25);
+            line-height: 2;
+        }
+        .icon-text {
+            line-height: 2.2;
+            @include rems(padding-left, 5);
+            text-transform: uppercase;
+            @include rems(font-size, 13);
         }
     }
 }

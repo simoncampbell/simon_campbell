@@ -60,7 +60,7 @@
     }
 
     @include breakpoint(552px) {
-        @include rems(width, 250);
+        @include rems(width, 200);
     }
 
     @include breakpoint($breakpoint__large) {

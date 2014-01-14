@@ -22,6 +22,25 @@ $breakpoint__medium: 690px;
 $breakpoint__desktop: 800px;
 $breakpoint__large: 1000px;
 
+
+
+
+// $breakpoints: 'below small' (max-width $width__small - 1px, $no-queries),
+//               'small and above' ($width__small, $no-queries),
+//               'below medium' (max-width $width__medium - 1px, $no-queries),
+//               'medium and above' ($width__medium, $no-queries),
+//               'between medium and large' ($width__medium $width__large),
+//               'below large' (max-width $width__large - 1px, $no-queries),
+//               'large and above' ($width__large, $no-queries),
+//               'between large and largest' ($width__large $width__largest),
+//               'largest only' ($width__largest, $no-queries),
+//               'high resolution' (min-resolution 1.5dppx, false),
+//               'landscape' (orientation landscape),
+//               'portrait' (orientation portrait);
+
+
+
+
 /*------------------------------------*\
     $Base
 \*------------------------------------*/

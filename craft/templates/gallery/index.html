@@ -31,9 +31,7 @@
                             {% for image in featured.carouselImages %}
                                 <li>
                                     <figure>
-                                        <a class="carousel__link" href="{{image.url}}">
                                             <img src="{{image.url}}" class="carousel__image" />
-                                        </a>
                                     </figure>
                                     <div class="carousel__summary">
                                         {% if image.shortExtract|length > 1 %}
@@ -45,6 +43,12 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <a class="carousel__zoom" href="{{image.url}}">
+                                        <div class="btn btn--icon btn--tertiary btn--arrow-left btn--epsilon">
+                                            <span class="icon ss ss-expand">expand</span>
+                                            <div class="icon-text">Full screen</div>
+                                        </div>
+                                    </a>
                                 </li>
                             {% endfor %}
                         </ul>

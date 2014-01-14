@@ -15,7 +15,7 @@
         padding-top: 0;
     }
 
-    @include breakpoint($breakpoint__large){
+    @include respond-to("largest only"){
         float: left;
         border-top: 1px solid $color__border--standard;
     }
@@ -30,18 +30,18 @@
     padding-right: 4.7%;
     margin: 0 auto;
 
-    @include breakpoint($breakpoint__small){
+    @include respond-to("regular and above"){
         width: 71%;
         max-width: 100%;
         padding-left: 0;
         padding-right: 0;
     }
 
-    @include breakpoint($breakpoint__desktop){
+    @include respond-to("large and above"){
         @include rems(max-width, 578);
     }
 
-    @include breakpoint($breakpoint__large){
+    @include respond-to("largest only"){
         padding-left: 9.8%;
         @include rems(max-width, 628);
     }
@@ -54,7 +54,7 @@
     background-color: $color__white;
 
 
-    @include breakpoint($breakpoint__large){
+    @include respond-to("largest only"){
         @include max-width(16);
         margin: 0 auto;
         border-left: 1px solid $color__border--standard;
@@ -77,12 +77,12 @@
         @include max-width(12);
     }
 
-    @include breakpoint($breakpoint__desktop){
+    @include respond-to("large and above"){
         @include rems(max-width, 578);
         width: 64%;
     }
 
-    @include breakpoint($breakpoint__large){
+    @include respond-to("largest only"){
         padding-right: 9.8%;
         max-width: none;
         width: 100%;
@@ -93,7 +93,7 @@
 
 /* On desktop align the wrapper module to the left */
 .wide-wrapper--align-desktop {
-    @include breakpoint($breakpoint__large) {
+    @include respond-to("largest only") {
         padding-left: 14.9%;
         @include rems(padding-right, 24);
     }
@@ -103,7 +103,7 @@
     @extend %font__display--black;
     @include rems(font-size, $h2-size + 4);
 
-    @include breakpoint($breakpoint__large) {
+    @include respond-to("largest only") {
         border-bottom: 1px solid $color__border--standard;
         @include rems(padding-left, 150);
         @include rems(margin-left, -150);
@@ -114,7 +114,7 @@
 
 
     .wide-wrapper--merch {
-        @include breakpoint($breakpoint__large){
+        @include respond-to("largest only"){
             float: left;
             width: 59%;
             padding-right: 0;
@@ -156,14 +156,14 @@
 .main-wrapper {
     @extend .cf;
 
-    @include breakpoint($breakpoint__desktop){
+    @include respond-to("large and above"){
         @include rems(max-width, 578);
         width: 64%;
         padding-left: 0;
         padding-right: 0;
     }
 
-    @include breakpoint($breakpoint__large) {
+    @include respond-to("largest only") {
         @include rems(max-width, 726);
         float: left;
         padding-right:0;
@@ -176,7 +176,7 @@
     .main-wrapper--full {
         float: none;
 
-        @include breakpoint($breakpoint__large){
+        @include respond-to("largest only"){
             padding-right: 9.8%;
             padding-left: 9.8%;
             width: 100%;
@@ -190,21 +190,21 @@
         @include rems(margin-bottom, $base-spacing-unit);
 
 
-        @include breakpoint($breakpoint__large){
+        @include respond-to("largest only"){
             @include rems(margin-bottom, $base-spacing-unit * 3);
             padding-left: 9.8%;
         }
     }
 
     .main-wrapper--listing {
-        @include breakpoint($breakpoint__desktop){
+        @include respond-to("large and above"){
 
             p {
                 @include rems(font-size, 16);
             }
         }
 
-        @include breakpoint($breakpoint__large){
+        @include respond-to("largest only"){
             padding-left: 9.8%;
         }
 
@@ -235,7 +235,7 @@
         margin-bottom: 0;
         @include rems(max-width, 578);
 
-        @include breakpoint($breakpoint__large){
+        @include respond-to("largest only"){
             padding: 0 9.8%;
             max-width: 100%;
             width: 100%;
@@ -247,7 +247,7 @@
     }
 
     .main-wrapper--article__detail {
-        @include breakpoint($breakpoint__small) {
+        @include respond-to("regular and above") {
             @include rems(margin-bottom, $base-spacing-unit * 2);
         }
     }
@@ -258,7 +258,7 @@
      * Reverse the side wrapper to float right
      */
     .side-wrapper--rev {
-        @include breakpoint($breakpoint__large) {
+        @include respond-to("largest only") {
             @include rems(padding-left, 90);
             padding-right: 0;
             float: left;
@@ -281,7 +281,7 @@
     }
 
     .side-wrapper--gallery {
-        @include breakpoint($breakpoint__desktop){
+        @include respond-to("large and above"){
             float: right;
         }
     }
@@ -308,7 +308,7 @@
             }
         }
 
-        @include breakpoint($breakpoint__large){
+        @include respond-to("largest only"){
             float: right;
             width: 48.9%;
         }
@@ -338,7 +338,7 @@
             }
         }
 
-        @include breakpoint($breakpoint__large){
+        @include respond-to("largest only"){
             width: 48.4%;
         }
     }
@@ -347,7 +347,7 @@
         max-height: none;
         overflow: initial;
 
-        @include breakpoint($breakpoint__large) {
+        @include respond-to("largest only") {
             float: right;
             padding-right: 10.1%;
             padding-left: 0;

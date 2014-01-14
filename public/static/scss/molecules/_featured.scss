@@ -11,7 +11,7 @@
     @include rems(margin-bottom, $base-spacing-unit);
     border-bottom: 1px dotted $color__border--standard;
 
-    @include breakpoint($breakpoint__large) {
+    @include respond-to("largest only") {
         border: none;
         padding-bottom: 0;
     }
@@ -19,7 +19,7 @@
 
     .featured__heading {
 
-        @include breakpoint($breakpoint__large) {
+        @include respond-to("largest only") {
             float: right;
             width: 49%;
         }
@@ -30,7 +30,7 @@
         >p {
             margin-bottom: 0;
 
-            @include breakpoint($breakpoint__large) {
+            @include respond-to("largest only") {
                 @include rems(font-size, 16);
                 float: right;
                 width: 49%;
@@ -45,7 +45,7 @@
     .featured__post-image {
         @include rems(margin-bottom, $half-spacing-unit);
 
-        @include breakpoint($breakpoint__large) {
+        @include respond-to("largest only") {
             float: left;
             width: 49%;
         }

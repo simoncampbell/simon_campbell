@@ -13,12 +13,12 @@ h1, .alpha {
     line-height: ($line-height-ratio - .25);
     text-rendering: optimizeLegibility;
 
-    @include breakpoint($breakpoint__medium){
+    @include respond-to("medium and above"){
         @include rems(font-size, $h1-size + 4);
         line-height: ($line-height-ratio - .35);
     }
 
-    @include breakpoint($breakpoint__large) {
+    @include respond-to("largest only") {
         @include rems(font-size, $h1-size + 15);
     }
 }
@@ -28,12 +28,12 @@ h2, .beta {
     @include rems(font-size, $h2-size);
     line-height: 1.2;
 
-    @include breakpoint($breakpoint__medium){
+    @include respond-to("medium and above"){
         @include rems($h2-size + 4);
         line-height: ($line-height-ratio - .3);
     }
 
-    @include breakpoint($breakpoint__large){
+    @include respond-to("largest only"){
         @include rems(font-size, $h2-size + 10);
     }
 }
@@ -56,7 +56,7 @@ h3, .gamma {
         @include rems(margin-top, $base-spacing-unit);
     }
 
-    @include breakpoint($breakpoint__medium){
+    @include respond-to("medium and above"){
         @include rems(font-size, $h3-size + 4);
     }
 }
@@ -67,7 +67,7 @@ h4, .delta {
     @include rems(font-size, $h4-size);
     line-height: ($line-height-ratio - .1);
 
-    @include breakpoint($breakpoint__medium){
+    @include respond-to("medium and above"){
         @include rems(font-size, $h4-size + 2);
     }
 }
@@ -76,7 +76,7 @@ h5, .epsilon {
     @include rems(font-size, $h5-size);
     line-height: 1.4;
 
-    @include breakpoint($breakpoint__medium){
+    @include respond-to("medium and above"){
         @include rems(font-size, $h5-size + 2);
     }
 }

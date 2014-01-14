@@ -1,23 +1,23 @@
 /*------------------------------------*\
-    SIMON CAMPBELL
+    SCREEN
 \*------------------------------------*/
-/*!*
- * Author: Erskine Design
- */
 
 /*
  *
- * Quarks are classless, styling of default HTML elements.
+ * Utilities are system wide styles such as normalize and reset, colors, font-stacks
+ * etc. that can be used anywhere and at any time.
  *
- * Atoms are the objects that we can use as building blocks to create molecules.
+ * Quarks are classless stylings of default HTML elements.
+ *
+ * Atoms are the objects that we can be used as building blocks to create molecules.
  *
  * Molecules are combinations of atoms to create more complicated but entirely
  * independent structures.
  *
- * Utilities are system wide styles such as normalize and reset, colors, font-stacks etc. that can be used anywhere and at any time.
  *
  */
 
+$legacy-support-for-ie: false; // for some reason this seems to need to be here rather than in _config.scss
 
 /*------------------------------------*\
     $IMPORTS

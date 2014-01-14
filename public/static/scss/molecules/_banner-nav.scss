@@ -8,7 +8,7 @@
 #nav_pri {
     background-color: $color__background--dark;
 
-    @include breakpoint($breakpoint__large){
+    @include respond-to("largest only"){
         float: right;
         width: 77%;
         border-bottom: 2px solid $color__meta;
@@ -63,7 +63,7 @@
         @include rems(width, 200);
     }
 
-    @include breakpoint($breakpoint__large) {
+    @include respond-to("largest only") {
         display: none;
     }
 }
@@ -92,7 +92,7 @@
 
     > li {
 
-        @include breakpoint($breakpoint__large){
+        @include respond-to("largest only"){
             display: block;
             float: left;
             width: 14.2%;
@@ -150,7 +150,7 @@
     }
 
     @include breakpoint(552px){
-        @include rems(width, 250);
+        @include rems(width, 200);
         position: absolute;
         right: 0;
         opacity: .95;
@@ -160,7 +160,7 @@
         border-bottom: none;
     }
 
-    @include breakpoint($breakpoint__large){
+    @include respond-to("largest only"){
         .js & {
             position: relative;
             width: 100%;

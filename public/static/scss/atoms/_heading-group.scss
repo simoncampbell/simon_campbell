@@ -29,7 +29,7 @@
         @include rems(padding-bottom, $base-spacing-unit);
         border-bottom: 1px solid $color__border--standard;
 
-        @include breakpoint($breakpoint__small) {
+        @include respond-to("regular and above") {
             @include rems(margin-bottom, $base-spacing-unit);
         }
     }

@@ -47,14 +47,14 @@ $cols16: (16 * ($column + $gutter) - $gutter) / $rem;
     &.js-grid {
         background-image: url(/static/images/grids/grid-a.png);
 
-        @include breakpoint($breakpoint__small){
+        @include respond-to("regular and above"){
             background-image: url(/static/images/grids/grid-b.png);
             left: 0;
             right: 0;
             margin: 0 auto;
         }
 
-        @include breakpoint($breakpoint__desktop){
+        @include respond-to("large and above"){
             background-image: url(/static/images/grids/grid-c.png);
             margin: 0 auto;
             left: 0;
@@ -62,7 +62,7 @@ $cols16: (16 * ($column + $gutter) - $gutter) / $rem;
             @include rems(max-width, 900);
             background-size: contain;
         }
-        @include breakpoint($breakpoint__large){
+        @include respond-to("largest only"){
             @include rems(max-width, 1273);
         }
     }

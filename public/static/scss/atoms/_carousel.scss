@@ -100,7 +100,7 @@
             @include rems(padding, $half-spacing-unit, $base-spacing-unit, 50, $base-spacing-unit);
             border-top: 1px solid $color__background--black;
 
-            @include breakpoint($breakpoint__small){
+            @include respond-to("regular and above"){
                 @include max-width(12);
                 @include rems(padding, $gutter);
                 @include rems(padding-bottom, 50);
@@ -111,7 +111,7 @@
                 @include rems(padding-bottom, $base-spacing-unit);
             }
 
-            @include breakpoint($breakpoint__large){
+            @include respond-to("largest only"){
                 @include width(5);
                 @include rems(padding, $half-spacing-unit);
                 @include rems(padding-left, $base-spacing-unit);
@@ -192,7 +192,7 @@
         bottom: auto;
     }
 
-    @include breakpoint($breakpoint__large) {
+    @include respond-to("largest only") {
         top: 35%;
     }
 

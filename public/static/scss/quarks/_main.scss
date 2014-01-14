@@ -32,7 +32,7 @@ html {
         line-height:$line-height-ratio;
     }
 
-    @include breakpoint($breakpoint__large){
+    @include respond-to("largest only"){
         line-height: 1.6;
         &:after {
             content: 'largest';

@@ -76,7 +76,7 @@
     .icon--meta {
         display: none;
 
-        @include breakpoint($breakpoint__desktop){
+        @include respond-to("large and above"){
             display: inline-block;
             @include rems(margin-left, - 28);
             @include rems(margin-right, 3);

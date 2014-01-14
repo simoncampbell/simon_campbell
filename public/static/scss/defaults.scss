@@ -14,29 +14,34 @@
  * Standard breakpoint variables for use within breakpoint’s respond-to mixin
  */
 
-$breakpoint-to-ems:true;
 
-$breakpoint__tiny: 400px;
-$breakpoint__small: 500px;
+$breakpoint__small: 400px;  // was tiny, now small
+$breakpoint__regular: 500px; // was small, now regular
 $breakpoint__medium: 690px;
-$breakpoint__desktop: 800px;
-$breakpoint__large: 1000px;
+$breakpoint__large: 800px; // was desktop, now large
+$breakpoint__largest: 1000px; // was large, now largest
+$breakpoint__gigantic: 1260px;
 
 
+$breakpoint-to-ems: true;
+$no-queries: 'no-query' true;
 
+$breakpoints: 'below small' (max-width $breakpoint__small - 1px, $no-queries),
+              'small and above' ($breakpoint__small, $no-queries),
 
-// $breakpoints: 'below small' (max-width $width__small - 1px, $no-queries),
-//               'small and above' ($width__small, $no-queries),
-//               'below medium' (max-width $width__medium - 1px, $no-queries),
-//               'medium and above' ($width__medium, $no-queries),
-//               'between medium and large' ($width__medium $width__large),
-//               'below large' (max-width $width__large - 1px, $no-queries),
-//               'large and above' ($width__large, $no-queries),
-//               'between large and largest' ($width__large $width__largest),
-//               'largest only' ($width__largest, $no-queries),
-//               'high resolution' (min-resolution 1.5dppx, false),
-//               'landscape' (orientation landscape),
-//               'portrait' (orientation portrait);
+              'regular and above' ($breakpoint__regular, $no-queries),
+
+              'below medium' (max-width $breakpoint__medium - 1px, $no-queries),
+              'medium and above' ($breakpoint__medium, $no-queries),
+              'between medium and large' ($breakpoint__medium $breakpoint__large),
+
+              'below large' (max-width $breakpoint__large - 1px, $no-queries),
+              'large only' ($breakpoint__medium $breakpoint__largest, $no-queries),
+              'large and above' ($breakpoint__large, $no-queries),
+
+              'largest only' ($breakpoint__largest, $no-queries),
+
+              'gigantic only' ($breakpoint__gigantic, $no-queries);
 
 
 

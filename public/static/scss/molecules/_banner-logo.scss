@@ -15,7 +15,7 @@
     background-color: $color__background--black;
     z-index: 5;
 
-    @include breakpoint($breakpoint__small) {
+    @include respond-to("regular and above") {
         @include rems(margin-bottom, $base-spacing-unit * 2);
     }
 
@@ -24,7 +24,7 @@
         border-bottom: 1px solid $color__orange--secondary;
     }
 
-    @include breakpoint($breakpoint__large){
+    @include respond-to("largest only"){
         @include rems(margin-bottom, $base-spacing-unit * 3);
         border-bottom: none;
     }
@@ -47,17 +47,17 @@
     line-height: $base-line-height;
     background-color: $color__background--black;
 
-    @include breakpoint($breakpoint__small){
+    @include respond-to("regular and above"){
         width: 100%;
         padding-left: 14%;
     }
 
-    @include breakpoint($breakpoint__desktop){
+    @include respond-to("large and above"){
         width: 64%;
         padding-left: 0;
     }
 
-    @include breakpoint($breakpoint__large){
+    @include respond-to("largest only"){
         @include rems(height, 47);
         @include rems(padding-left, $half-spacing-unit + 5);
         width: 23%;

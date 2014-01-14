@@ -11,7 +11,7 @@
     iframe {
         margin-bottom: 0;
     }
-    @include breakpoint($breakpoint__desktop) {
+    @include respond-to("large and above") {
 
         // > figure {
         //     @include rems(margin-right, $base-spacing-unit);
@@ -35,7 +35,7 @@
         // }
     }
 
-    @include breakpoint($breakpoint__large){
+    @include respond-to("largest only"){
         @include rems(padding-top, $base-spacing-unit);
 
         > figure {

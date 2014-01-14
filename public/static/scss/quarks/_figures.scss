@@ -68,7 +68,7 @@ figcaption {
     float: left;
     width: 100%;
 
-    @include breakpoint($breakpoint__medium){
+    @include respond-to("medium and above"){
         width: 71%;
         float: none;
         margin: 0 auto;
@@ -76,17 +76,17 @@ figcaption {
         @include rems(margin-bottom, $base-spacing-unit);
     }
 
-    @include breakpoint($breakpoint__desktop){
+    @include respond-to("large and above"){
         width: 64%;
     }
 
-    @include breakpoint($breakpoint__large){
+    @include respond-to("largest only"){
         float: left;
         width: 100%;
         margin-bottom: 0;
     }
 
-    @include breakpoint(1260px) {
+    @include respond-to("gigantic only"){
         @include rems(margin-top, -60);
     }
 
@@ -110,13 +110,13 @@ figcaption {
     float: left;
     width: 100%;
 
-    @include breakpoint($breakpoint__small){
+    @include respond-to("regular and above"){
         @include rems(margin-top, - $base-spacing-unit * 2);
         @include rems(max-height, 400);
         overflow: hidden;
     }
 
-    @include breakpoint($breakpoint__medium){
+    @include respond-to("medium and above"){
         @include rems(margin-top, - $base-spacing-unit * 3);
     }
 
@@ -127,14 +127,14 @@ figcaption {
 
 
 .figure--banner-about {
-    @include breakpoint($breakpoint__small){
+    @include respond-to("regular and above"){
         @include rems(max-height, 800);
     }
 }
 
 
 .figure__right {
-    @include breakpoint($breakpoint__medium) {
+    @include respond-to("medium and above"){
         float: right;
         @include rems(margin-top, $half-spacing-unit);
         @include rems(margin-left, $base-spacing-unit);
@@ -143,7 +143,7 @@ figcaption {
 }
 
 .figure__left {
-    @include breakpoint($breakpoint__medium) {
+    @include respond-to("medium and above"){
         @include rems(margin-right, $base-spacing-unit);
         float: left;
         max-width: 50%;
@@ -153,11 +153,11 @@ figcaption {
 .figure--landing {
     position: relative;
 
-     @include breakpoint($breakpoint__medium){
+    @include respond-to("medium and above"){
         @include rems(margin-top, - 42);
     }
 
-    @include breakpoint($breakpoint__large){
+    @include respond-to("largest only"){
         @include rems(margin-top, - $base-spacing-unit * 3);
     }
 }
@@ -165,7 +165,7 @@ figcaption {
     .figure--landing__title {
         display: none;
 
-        @include breakpoint($breakpoint__small) {
+        @include respond-to("regular and above") {
             display: block;
             z-index: 3;
             background-image: url('/static/images/homepage/logo.svg');

@@ -13,14 +13,14 @@
         width: 47%;
     }
 
-    @include breakpoint($breakpoint__large){
+    @include respond-to("largest only"){
         clear: both;
         margin-right: 0;
     }
 }
 
 .comments__wrapper {
-    @include breakpoint($breakpoint__large){
+    @include respond-to("largest only"){
         @include rems(padding-top, $half-spacing-unit / 2);
         float: left;
         width: 65.3%;
@@ -35,7 +35,7 @@
 .island--wrapper__comments-container {
     margin-top: 0;
 
-    @include breakpoint($breakpoint__large){
+    @include respond-to("largest only"){
         .item-list {
             padding-top: 0;
         }

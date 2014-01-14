@@ -9,7 +9,7 @@
     background-color: $color__background--black;
     border-top: 5px solid lighten($color__background--black, 10);
 
-    @include breakpoint($breakpoint__large){
+    @include respond-to("largest only"){
         float: left;
     }
 
@@ -19,16 +19,16 @@
     }
 
     .wide-wrapper {
-        @include breakpoint($breakpoint__medium){
+        @include respond-to("medium and above"){
             width: 96%;
         }
 
-        @include breakpoint($breakpoint__desktop){
+        @include respond-to("large and above"){
             width: 80.1%;
             @include rems(max-width, 723);
         }
 
-        @include breakpoint($breakpoint__large){
+        @include respond-to("largest only"){
             padding:0 9.8%;
             max-width: 100%;
             width: 100%;
@@ -41,7 +41,7 @@
         @include rems(margin-bottom, $base-spacing-unit * 2);
         padding: 0;
 
-        @include breakpoint($breakpoint__small){
+        @include respond-to("regular and above"){
             @include max-width(7);
         }
 
@@ -95,7 +95,7 @@
         @include rems(margin-bottom, $base-spacing-unit * 2);
 
 
-        @include breakpoint($breakpoint__medium){
+        @include respond-to("medium and above"){
             @include rems(padding-right, $base-spacing-unit);
             @include rems(margin-bottom, $half-spacing-unit);
             width: 50%;
@@ -123,7 +123,7 @@
                     float: none;
                 }
 
-                @include breakpoint($breakpoint__medium){
+                @include respond-to("medium and above"){
                     width: 30%;
                 }
 
@@ -139,7 +139,7 @@
             p {
                 margin-bottom: 0;
 
-                @include breakpoint($breakpoint__large) {
+                @include respond-to("largest only") {
                     @include rems(font-size, $milli-size);
                 }
             }
@@ -164,13 +164,13 @@
             width: 60%;
         }
 
-        @include breakpoint($breakpoint__medium){
+        @include respond-to("medium and above"){
             width:49%;
             float: right;
             padding-right: 0;
         }
 
-        @include breakpoint($breakpoint__large){
+        @include respond-to("largest only"){
             width: 40%;
         }
 
@@ -192,7 +192,7 @@
             @include rems(margin-bottom, $base-spacing-unit);
         }
 
-        @include breakpoint($breakpoint__medium) {
+        @include respond-to("medium and above") {
             @include rems(padding-top, $base-spacing-unit);
             @include rems(margin-top, $half-spacing-unit);
             @include rems(margin-bottom, $base-spacing-unit * 1.5);
@@ -240,7 +240,7 @@
                 display: inline;
             }
 
-            @include breakpoint($breakpoint__large){
+            @include respond-to("largest only"){
                 @include rems(margin-top, $half-spacing-unit / 2);
             }
         }
@@ -268,7 +268,7 @@
         background-color: darken($color__background--black, 5);
         min-height: 0;
 
-        @include breakpoint($breakpoint__medium){
+        @include respond-to("medium and above"){
             float: left;
             width: 100%;
         }
@@ -277,7 +277,7 @@
             @include rems(margin-bottom, $half-spacing-unit);
             line-height:1;
 
-            @include breakpoint($breakpoint__small){
+            @include respond-to("regular and above"){
                 float:left;
                 margin: 0;
             }
@@ -305,7 +305,7 @@
                 border-bottom: 1px solid darken($color__white, 45);
             }
 
-            @include breakpoint($breakpoint__small){
+            @include respond-to("regular and above"){
                 float: right;
             }
         }

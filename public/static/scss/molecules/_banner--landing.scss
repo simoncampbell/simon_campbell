@@ -10,17 +10,17 @@
     float: left;
     width: 100%;
 
-    @include breakpoint($breakpoint__small){
+    @include respond-to("regular and above"){
         @include rems(margin-top, - $base-spacing-unit * 2);
     }
 
-    @include breakpoint($breakpoint__desktop){
+    @include respond-to("large and above"){
         position: relative;
         overflow: hidden;
         @include rems(margin-bottom, $base-spacing-unit * 2);
     }
 
-    @include breakpoint($breakpoint__large){
+    @include respond-to("largest only"){
         @include rems(margin-top, - 65);
         border-bottom: 1px solid $color__background--black;
     }
@@ -35,11 +35,11 @@
         background-repeat: no-repeat;
         @include rems(margin-bottom, 20);
 
-        @include breakpoint($breakpoint__small){
+        @include respond-to("regular and above"){
             @include rems(height, 300);
         }
 
-        @include breakpoint($breakpoint__desktop) {
+        @include respond-to("large and above") {
             @include rems(height, 540);
             -webkit-filter: brightness(30%);
             filter: brightness(30%);
@@ -47,14 +47,14 @@
             margin-bottom: 0;
         }
 
-        @include breakpoint($breakpoint__large) {
+        @include respond-to("largest only") {
             @include rems(height, 600);
         }
 
     }
 
     .banner--landing__content {
-        @include breakpoint($breakpoint__desktop){
+        @include respond-to("large and above"){
             position: absolute;
             @include rems(bottom, 0);
             border-top: 1px solid $color__background--black;
@@ -66,7 +66,7 @@
             @include rems(padding-bottom, $half-spacing-unit);
         }
 
-        @include breakpoint($breakpoint__large){
+        @include respond-to("largest only"){
             border: 1px solid $color__background--black;
             @include rems(max-width, 600);
             left: 0;
@@ -76,7 +76,7 @@
         }
 
         .main-wrapper {
-            @include breakpoint($breakpoint__large){
+            @include respond-to("largest only"){
                 padding-left: 2%;
                 padding-right: 2%;
             }
@@ -84,11 +84,11 @@
 
 
         .lede {
-            @include breakpoint($breakpoint__desktop){
+            @include respond-to("large and above"){
                 color: $color__white;
             }
 
-            @include breakpoint($breakpoint__large){
+            @include respond-to("largest only"){
                 @include rems(font-size, 18);
             }
         }
@@ -97,7 +97,7 @@
     .banner--landing__title {
         display: none;
 
-        @include breakpoint($breakpoint__desktop){
+        @include respond-to("large and above"){
             z-index: 3;
             display: block;
             background:url("/static/images/homepage/logo.svg") no-repeat;

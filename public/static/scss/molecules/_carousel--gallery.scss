@@ -22,7 +22,7 @@
     @include rems(padding-bottom, $base-spacing-unit * 2);
     border-bottom: 1px solid $color__border--standard;
 
-    @include breakpoint($breakpoint__large) {
+    @include respond-to("largest only") {
         float: left;
         width: 100%;
     }
@@ -32,11 +32,11 @@
     .carousel__info-wrapper {
         @include rems(max-width, 578);
 
-        @include breakpoint($breakpoint__desktop){
+        @include respond-to("large and above"){
             width: 64%;
         }
 
-        @include breakpoint($breakpoint__large) {
+        @include respond-to("largest only") {
             width: 48%;
             padding: 0 0 0 9.8%;
             float: left;
@@ -52,7 +52,7 @@
     }
 
 .carousel--gallery {
-    @include breakpoint($breakpoint__large) {
+    @include respond-to("largest only") {
         margin-top: 0;
 
         .carousel__summary {
@@ -63,7 +63,7 @@
     }
 }
 
-.carousel__zoom {
+.carousel .carousel__zoom {
     display: none;
     position: absolute;
     right: 0;
@@ -80,7 +80,7 @@
 
     // Only display zoom button when js is present
     .js & {
-        @include respond-to("medium and above"){
+        @include respond-to("largest only"){
             display: block;
         }
     }
@@ -88,7 +88,7 @@
 
 .wide-wrapper--gallery {
 
-    @include breakpoint($breakpoint__large){
+    @include respond-to("largest only"){
         float: right;
         padding-left: 0;
         width: 56%;

@@ -1,0 +1,21 @@
+/*------------------------------------*\
+    SCREEN_IE8
+\*------------------------------------*/
+
+/*
+ * Fallbacks for IE8 are automatically generated from screen.scss
+ *
+ * Since IE8 does not support responsive modules, we use the no query fallback in Breakpoint in order to only serve desktop styles.
+ */
+
+
+$has-svg: false;
+$ie8-support: true;
+$legacy-support-for-ie7: true;
+$legacy-support-for-ie8: true;
+
+$breakpoint-no-queries: true;
+$breakpoint-no-query-fallbacks: true;
+
+@import "screen";
+

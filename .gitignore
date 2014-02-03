@@ -4,7 +4,6 @@ public/assets
 
 !.gitignore
 !.htaccess
-public/.htaccess
 
 .sass-cache
 

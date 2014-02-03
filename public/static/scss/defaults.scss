@@ -39,9 +39,9 @@ $breakpoints: 'below small' (max-width $breakpoint__small - 1px, $no-queries),
               'large only' ($breakpoint__medium $breakpoint__largest, $no-queries),
               'large and above' ($breakpoint__large, $no-queries),
 
-              'largest only' ($breakpoint__largest, $no-queries),
+              'largest only' ($breakpoint__largest),
 
-              'gigantic only' ($breakpoint__gigantic, $no-queries);
+              'gigantic only' ($breakpoint__gigantic);
 
 
 

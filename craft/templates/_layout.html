@@ -1,5 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if IE 9]>         <html class="no-js lte-ie9"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
         <meta charset="utf-8" />
 
@@ -12,7 +16,7 @@
 
         <link rel="home" href="{{ siteUrl }}" />
 
-        <!-- <link rel="author" href="ADD SIMON’S GOOGLE+ STUFF HERE" -->
+
 
         <!-- ICONS -->
         <link rel="apple-touch-icon-precomposed" href="/static/images/branding/apple-touch-icon.png">
@@ -21,8 +25,18 @@
         <!-- RSS -->
 
         <!-- CSS -->
-        <link rel="stylesheet" media="all" type="text/css" href="/static/css/screen.css" />
-        <link rel="stylesheet" media="print" type="text/css" href="/static/css/print.css" />
+
+        <!--[if IE]><![endif]-->
+
+        <!--[if gt IE 8]><!-->
+            <link rel="stylesheet" media="all" type="text/css" href="/static/css/screen.css" />
+        <!--<![endif]-->
+
+        <!--[if lte IE 8]>
+            <link rel="stylesheet" media="all" type="text/css" href="/static/css/screen_ie8.css" />
+        <![endif]-->
+
+
 
         <!-- FONTS -->
         <link href="//cloud.webtype.com/css/209aeb3a-85f7-4c3e-8a8c-827c1c76e327.css" rel="stylesheet" type="text/css" />

@@ -37,15 +37,6 @@ define(['domReady', 'jquery'], function(domReady, jQuery) {
                 $prev = $('.carousel__nav .prev'),
                 $next = $('.carousel__nav .next');
 
-            buildCarousel();
-
-            $(window).resize(function(){ //On Window Resize
-                sw = document.body.clientWidth;
-                $cWidth = $cContainer.width();
-                breakpointSize = window.getComputedStyle(document.documentElement,':after').getPropertyValue('content');  /* Conditional CSS http://adactio.com/journal/5429/ */
-                sizeCarousel();
-                posCarousel();
-            });
 
             //Determine the size and number of panels to reveal
             function sizeCarousel() {
@@ -175,5 +166,15 @@ define(['domReady', 'jquery'], function(domReady, jQuery) {
                 });
             }
         }
+
+        buildCarousel();
+
+        $(window).resize(function(){ //On Window Resize
+            sw = document.body.clientWidth;
+            $cWidth = $cContainer.width();
+            breakpointSize = window.getComputedStyle(document.documentElement,':after').getPropertyValue('content');  /* Conditional CSS http://adactio.com/journal/5429/ */
+            sizeCarousel();
+            posCarousel();
+        });
     }); // domReady
 });

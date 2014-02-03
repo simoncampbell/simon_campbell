@@ -14,7 +14,7 @@
         border-bottom: 2px solid $color__meta;
     }
 
-    @include breakpoint(1260px) {
+    @include respond-to("gigantic only"){
         width: 78.7%;
     }
 
@@ -47,6 +47,7 @@
     border-bottom: 1px solid $color__orange--secondary;
     border-left: 1px solid $color__black;
 
+
     &:hover,
     &:focus {
         color: $color__white;
@@ -59,7 +60,7 @@
         background-color: darken($color__banner-nav--hover,5);
     }
 
-    @include breakpoint(552px) {
+    @include respond-to("regular and above"){
         @include rems(width, 200);
     }
 
@@ -81,7 +82,28 @@
     z-index: 1;
 
 
-    // hide the navigational if javascript exists
+    @include respond-to("regular and above") {
+        @include rems(width, 200);
+        position: absolute;
+        right: 0;
+        opacity: .95;
+        background-color: $color__background--dark;
+        border: 1px solid $color__background--black;
+        border-top: none;
+        border-bottom: none;
+    }
+
+    @include respond-to("largest only"){
+        .js & {
+            position: relative;
+            width: 100%;
+            opacity: 1;
+            display: block;
+        }
+    }
+
+
+    // hide the navigational dropdown if javascript exists
     .js & {
         display:none;
     }
@@ -89,6 +111,8 @@
     .no-js & {
         width: 100%;
     }
+
+
 
     > li {
 
@@ -146,26 +170,6 @@
                 color: white;
                 position: relative;
             }
-        }
-    }
-
-    @include breakpoint(552px){
-        @include rems(width, 200);
-        position: absolute;
-        right: 0;
-        opacity: .95;
-        background-color: $color__background--dark;
-        border: 1px solid $color__background--black;
-        border-top: none;
-        border-bottom: none;
-    }
-
-    @include respond-to("largest only"){
-        .js & {
-            position: relative;
-            width: 100%;
-            opacity: 1;
-            display: block;
         }
     }
 }

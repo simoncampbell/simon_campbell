@@ -17,9 +17,6 @@
 
     @include respond-to("regular and above") {
         @include rems(margin-bottom, $base-spacing-unit * 2);
-    }
-
-    @include breakpoint(552px) {
         @include rems(height, 46);
         border-bottom: 1px solid $color__orange--secondary;
     }
@@ -67,7 +64,7 @@
         border-bottom: 2px solid $color__orange--secondary;
     }
 
-    @include breakpoint(1260px){
+    @include respond-to("largest only"){
         @include rems(padding-left, $base-spacing-unit);
         @include rems(height, 49);
         width: 21.3%;

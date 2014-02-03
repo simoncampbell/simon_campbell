@@ -47,6 +47,13 @@
     }
 }
 
+.main-wrapper,
+.island--wrapper__content {
+    .lt-ie9 & {
+        @include rems(width, 578);
+    }
+}
+
 .desktop-wrapper {
     @extend .cf;
     overflow: hidden;

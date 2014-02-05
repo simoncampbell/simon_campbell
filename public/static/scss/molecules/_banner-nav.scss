@@ -3,6 +3,8 @@
 \*------------------------------------*/
 /**
  * The main navigational element.
+ *
+ * Requires the mobile-menu to work properly.
  */
 
 #nav_pri {
@@ -82,6 +84,15 @@
     z-index: 1;
 
 
+// hide the navigational dropdown if javascript exists
+    .js & {
+        display:none;
+    }
+
+    .no-js & {
+        width: 100%;
+    }
+
     @include respond-to("regular and above") {
         @include rems(width, 200);
         position: absolute;
@@ -102,15 +113,6 @@
         }
     }
 
-
-    // hide the navigational dropdown if javascript exists
-    .js & {
-        display:none;
-    }
-
-    .no-js & {
-        width: 100%;
-    }
 
 
 
@@ -144,7 +146,7 @@
             }
 
             // change colors on desktop sizes
-            @include breakpoint($breakpoint__large 1260px){
+            @include breakpoint($breakpoint__largest 1260px){
                 @include rems(font-size, 15);
                 border-bottom: none;
                 @include rems(padding-top, 14);

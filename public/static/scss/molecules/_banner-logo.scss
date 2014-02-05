@@ -64,7 +64,7 @@
         border-bottom: 2px solid $color__orange--secondary;
     }
 
-    @include respond-to("largest only"){
+    @include respond-to("gigantic only"){
         @include rems(padding-left, $base-spacing-unit);
         @include rems(height, 49);
         width: 21.3%;

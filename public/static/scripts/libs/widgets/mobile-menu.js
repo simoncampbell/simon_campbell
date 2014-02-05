@@ -20,6 +20,7 @@ define(['jquery', 'domReady'], function(jQuery, domReady){
 
     domReady(function(){
 
+
         $('.link__mobile-menu').on('click', function(e){ //http://adactio.com/journal/5429/
             var $mobile_link = $('link__mobile-menu'),
                 $icon_text = $('.icon--menu');
@@ -48,7 +49,11 @@ define(['jquery', 'domReady'], function(jQuery, domReady){
 
             if(size == 'largest') {
                 $('#nav_pri').addClass('menu--active');
-                $('.banner-nav').css('display','');
+                $('.banner-nav').css('display','block');
+            }
+
+            else {
+                $('.banner-nav').css('display','none');   
             }
         });
 

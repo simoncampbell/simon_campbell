@@ -424,7 +424,8 @@ class EntryModel extends BaseElementModel
 	 */
 	public function isPrevSiblingOf(EntryModel $entry)
 	{
-		return ($this->depth == $entry->depth && $this->rgt == $entry->lft - 1);
+		$prevSibling = $entry->getPrevSibling();
+		return ($prevSibling && $this->id == $prevSibling->id);
 	}
 
 	/**
@@ -435,6 +436,7 @@ class EntryModel extends BaseElementModel
 	 */
 	public function isNextSiblingOf(EntryModel $entry)
 	{
-		return ($this->depth == $entry->depth && $this->lft == $entry->rgt + 1);
+		$nextSibling = $entry->getNextSibling();
+		return ($nextSibling && $this->id == $nextSibling->id);
 	}
 }

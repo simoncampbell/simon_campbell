@@ -34,7 +34,7 @@ class EntriesController extends BaseController
 
 			if ($variables['entry']->authorId && $variables['entry']->authorId != $currentUser->id)
 			{
-				$excludeAuthorIds = array($excludeAuthorIds, $variables['entry']->authorId);
+				$excludeAuthorIds = array('and', $excludeAuthorIds, 'not '.$variables['entry']->authorId);
 			}
 
 			$authorOptionCriteria = craft()->elements->getCriteria(ElementType::User);

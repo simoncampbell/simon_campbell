@@ -13,7 +13,6 @@ composer.lock
 public/static/css/
 
 craft/config/db.php
-craft/storage
 
 web.config
 

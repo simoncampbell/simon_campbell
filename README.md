@@ -6,12 +6,11 @@ The redesign of [simoncampbell.com](http://simoncampbell).
 ### Setting up Craft locally
 
 1. Make a new database
-2. Rename craft/config/db.sample.php to db.php and edit to local settings
-3. Delete web.config in craft/config/
+2. Copy craft/config/db.sample.php and rename the new file to db.php 
+3. Update db.php with local settings.
 4. Set the permissions of craft/storage/, craft/config/ and craft/app to 777
 5. Point your browser to: website_name/index.php?p=admin
-6. Install Craft
-7. Get #crafting
+6. Get #crafting.
 
 
 ### Compass

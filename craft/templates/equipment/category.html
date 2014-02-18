@@ -5,103 +5,46 @@
  #
  #}
 
+{% set category = craft.entries.slug(tag).first() %}
 
 {% extends "_layout" %}
 
 {% block content_main %}
 
 
+
     <header class="heading-group heading-group--main">
         <div class="main-wrapper main-wrapper--full">
             <h2 class="epsilon">Equipment and Gear</h2>
-            <h1>Electric Guitars</h1>
+            <h1>{{category.title | capitalize}}</h1>
         </div>
     </header>
 
     <div class="main-wrapper main-wrapper--article main-wrapper--listing" role="main">
 
+
+
          <ul class="item-list">
-            <li class="item-list__item item-list__item--article">
-                <article>
-                    <!-- REQUIRED EQUIPMENT IMAGE -->
-                    <figure>
-                        <a href="{{post.url}}">
-                            <img alt="" src="http://placehold.it/700x350/0eafff/ffffff.png">
-                        </a>
-                    </figure>
+            {% for post in craft.entries.section('Equipment').relatedTo(category)  %}
+                <li class="item-list__item item-list__item--article">
+                    <article>
+                        <!-- REQUIRED EQUIPMENT IMAGE -->
+                        {% for image in post.equipmentImage %}
+                            <figure class="equipment-image">
+                                <a href="{{post.url}}">
+                                    <img src="{{image.url}}">
+                                </a>
+                            </figure>
+                        {% endfor %}
 
-                    <header class="heading-group--marginless">
-                        <h3><a href="URL!">TC Electronic 2290</a></h3>
-                    </header>
+                        <header class="heading-group--marginless">
+                            <h3><a href="{{post.url}}">{{post.title}}</a></h3>
+                        </header>
 
-                    <p>In my younger and more vulnerable years my father gave me some advice that I’ve been turning over in my mind ever since. “Whenever you feel like criticizing any one,” he told me, “just remember that all the people in this world haven’t had the advantages that you’ve had.” <a href="{{post.url}}">Read more &raquo;</a></p>
-                </article>
-            </li>
-
-            <li class="item-list__item item-list__item--article">
-                <article>
-                    <!-- REQUIRED EQUIPMENT IMAGE -->
-                    <figure>
-                        <a href="{{post.url}}">
-                            <img alt="" src="http://placehold.it/700x350/0eafff/ffffff.png">
-                        </a>
-                    </figure>
-
-                    <header class="heading-group--marginless">
-                        <h3><a href="URL!">TC Electronic 2290</a></h3>
-                    </header>
-
-                    <p>In my younger and more vulnerable years my father gave me some advice that I’ve been turning over in my mind ever since. “Whenever you feel like criticizing any one,” he told me, “just remember that all the people in this world haven’t had the advantages that you’ve had.” <a href="{{post.url}}">Read more &raquo;</a></p>
-                </article>
-            </li>
-            <li class="item-list__item item-list__item--article">
-                <article>
-                    <!-- REQUIRED EQUIPMENT IMAGE -->
-                    <figure>
-                        <a href="{{post.url}}">
-                            <img alt="" src="http://placehold.it/700x350/0eafff/ffffff.png">
-                        </a>
-                    </figure>
-
-                    <header class="heading-group--marginless">
-                        <h3><a href="URL!">TC Electronic 2290</a></h3>
-                    </header>
-
-                    <p>In my younger and more vulnerable years my father gave me some advice that I’ve been turning over in my mind ever since. “Whenever you feel like criticizing any one,” he told me, “just remember that all the people in this world haven’t had the advantages that you’ve had.” <a href="{{post.url}}">Read more &raquo;</a></p>
-                </article>
-            </li>
-            <li class="item-list__item item-list__item--article">
-                <article>
-                    <!-- REQUIRED EQUIPMENT IMAGE -->
-                    <figure>
-                        <a href="{{post.url}}">
-                            <img alt="" src="http://placehold.it/700x350/0eafff/ffffff.png">
-                        </a>
-                    </figure>
-
-                    <header class="heading-group--marginless">
-                        <h3><a href="URL!">TC Electronic 2290</a></h3>
-                    </header>
-
-                    <p>In my younger and more vulnerable years my father gave me some advice that I’ve been turning over in my mind ever since. “Whenever you feel like criticizing any one,” he told me, “just remember that all the people in this world haven’t had the advantages that you’ve had.” <a href="{{post.url}}">Read more &raquo;</a></p>
-                </article>
-            </li>
-            <li class="item-list__item item-list__item--article">
-                <article>
-                    <!-- REQUIRED EQUIPMENT IMAGE -->
-                    <figure>
-                        <a href="{{post.url}}">
-                            <img alt="" src="http://placehold.it/700x350/0eafff/ffffff.png">
-                        </a>
-                    </figure>
-
-                    <header class="heading-group--marginless">
-                        <h3><a href="URL!">TC Electronic 2290</a></h3>
-                    </header>
-
-                    <p>In my younger and more vulnerable years my father gave me some advice that I’ve been turning over in my mind ever since. “Whenever you feel like criticizing any one,” he told me, “just remember that all the people in this world haven’t had the advantages that you’ve had.” <a href="{{post.url}}">Read more &raquo;</a></p>
-                </article>
-            </li>
+                        <p>{{ post.shortExtract }} <a href="{{post.url}}">Read more &raquo;</a></p>
+                    </article>
+                </li>
+            {% endfor %}
         </ul>
 
     </div>
@@ -116,42 +59,7 @@
 
         <ul class="item-list island--wrapper__content">
             <li class="item-list__item item-list__item--sidebar">
-                <h4>Equipment</h4>
-                <p class="marginalia">Feel free to take a look at some of the instruments that I used to make these recordings; find prices and related information about my gear.</p>
-
-                <ul class="nav nav--category">
-                    <li>
-                       <a class="nav--category__item link--icon" href="URL!">
-                            <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
-                            Electric guitars
-                        </a>
-                    </li>
-                    <li>
-                        <a class="nav--category__item link--icon" href="URL!">
-                            <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
-                            Acoustic guitars
-                        </a>
-                    </li>
-                    <li>
-                        <a class="nav--category__item link--icon" href="URL!">
-                            <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
-                            Synthesizers
-                        </a>
-                    </li>
-                    <li>
-                        <a class="nav--category__item link--icon" href="URL!">
-                            <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
-                            Drum kits
-                        </a>
-                    </li>
-                    <li>
-                        <a class="nav--category__item link--icon" href="URL!">
-                            <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
-                            Amplifiers
-                        </a>
-                    </li>
-                </ul><!-- //end.nav -->
-
+                {% include 'components/_equipment/_category-list--sidebar.html' %}
             </li><!-- //end.item-list__item -->
 
             <li class="item-list__item item-list__item--album">

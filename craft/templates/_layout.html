@@ -56,7 +56,7 @@
             <!--  BRANDING -->
             <div class="banner" role="banner">
                 <div class="banner__logo">
-                    {% if url == "" %}
+                    {% if craft.request.firstSegment == '' %}
                         <h1>Simon Campbell</h1>
                     {% else %}
                         <a class="banner-logo" href="/">

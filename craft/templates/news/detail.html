@@ -24,17 +24,15 @@
 
                 <div class="meta-info-block meta-info-block--borderless">
                     <time class="meta-info-block__item" datetime="{{news.postDate|date("Y-m-d")}}">{{entry.postDate|date("jS F Y")}}</time>
-
+                    {% if entry.newsTags | length %}  
                     <p class="meta-info-block__item">Posted in
-                        <a class="category-link" href="URL!">
-                            <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
-                            Life
-                        </a>,
-                        <a class="category-link" href="URL!">
-                            <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
-                            Health
-                        </a>
+                        {% for tag in entry.newsTags %}
+                            <a class="category-link" href="/news/category/{{tag.name | lower | replace({' ': '-'}) }}">
+                                <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
+                                {{tag.name | capitalize}}</a>
+                        {% endfor %}
                     </p>
+                    {% endif %}
                 </div>
             </div>
 

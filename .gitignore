@@ -12,9 +12,6 @@ composer.lock
 /vendor
 public/static/css/
 
-craft/config/db.php
-craft/storage
-
 web.config
 
 .DS_Store

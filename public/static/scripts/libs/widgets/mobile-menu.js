@@ -20,7 +20,6 @@ define(['jquery', 'domReady'], function(jQuery, domReady){
 
     domReady(function(){
 
-
         $('.link__mobile-menu').on('click', function(e){ //http://adactio.com/journal/5429/
             var $mobile_link = $('link__mobile-menu'),
                 $icon_text = $('.icon--menu');

@@ -70,7 +70,7 @@
                 <!-- ALBUM ART IMAGE -->
                 <!-- <figure>
                     {% for image in entry.albumArt %}
-                        <img src="{{image.url}}"/>
+                        <img src="{{image.getUrl('albumArtSidebar')}}" width="{{image.getWidth('albumArtSidebar')}}" height="{{image.getHeight('albumArtSidebar')}}" alt="{{album.title}}"/>
                     {% endfor %}
                 </figure>
 

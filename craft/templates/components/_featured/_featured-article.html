@@ -16,20 +16,15 @@
                 <div class="meta-info-block meta-info-block--borderless">
                     <time class="meta-info-block__item" datetime="{{post.postDate|date("Y-m-d")}}">{{post.postDate|date("jS F Y")}}</time>
 
-
+                    {% if post.blogPostTags | length %}
                     <p class="meta-info-block__item">Posted in
-                        {% for blogTags in post %}
-                        <a class="category-link" href="URL!">
-                            <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
-                            {{blogTags}}
-                        </a>
+                        {% for tag in post.blogPostTags %}
+                            <a class="category-link" href="/blog/category/{{tag.name | lower | replace({' ': '-'}) }}">
+                                <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
+                                {{tag.name | capitalize}}</a>
                         {% endfor %}
-
-                        <a class="category-link" href="URL!">
-                            <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
-                            Health
-                        </a>
                     </p>
+                    {% endif %}
                 </div><!-- //.meta-info-block -->
             </header>
 

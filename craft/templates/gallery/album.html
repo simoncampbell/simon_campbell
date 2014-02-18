@@ -78,7 +78,7 @@
 
     <h3>Other photo albums</h3>
         <ul>
-            {% for album in craft.entries.find({section:'Gallery'}) %}
+            {% for album in craft.entries.find({section:'Gallery', id: 'not '~entry.id}) %}
                 <li class="item-list__item">
                     <figure>
                         {% for image in album.featuredImage %}

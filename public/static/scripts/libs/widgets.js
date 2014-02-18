@@ -7,6 +7,7 @@ define(['domReady',
         'widgets/mobile-menu',
         'widgets/carousel',
         'widgets/lightbox',
+        'widgets/fitvids',
         'widgets/popup'],
         function(domReady, jQuery, GridToggle) {
             App = window.App || {};

@@ -136,17 +136,17 @@ define(['domReady', 'jquery'], function(domReady, jQuery) {
                 //Touch Start
                 $cContainer.get(0).addEventListener("touchstart", function (event) {
                      origX = event.targetTouches[0].pageX;
-                curPos = origX;
+                    curPos = origX;
                 });
 
                 //Touch Move
                 $cContainer.get(0).addEventListener("touchmove", function (event) {
                     finalX = event.touches[0].pageX,
-                diffX = origX - finalX,
-                leftPos = cLeft-diffX;
+                    diffX = origX - finalX,
+                    leftPos = cLeft-diffX;
 
-                event.preventDefault();
-                $cList.css("left",leftPos);
+                    event.preventDefault();
+                    $cList.css("left",leftPos);
                 });
 
                 //Touch Move
@@ -175,6 +175,21 @@ define(['domReady', 'jquery'], function(domReady, jQuery) {
             breakpointSize = window.getComputedStyle(document.documentElement,':after').getPropertyValue('content');  /* Conditional CSS http://adactio.com/journal/5429/ */
             sizeCarousel();
             posCarousel();
+
+
+            // reset current and count to 0
+            current = 0;
+            count = 1;
+
+            // hide previous button
+            $prev.hide();
+
+            // show next button if necessary
+            if (count < numPages){
+                $next.show();
+            }
+
+
         });
     }); // domReady
 });

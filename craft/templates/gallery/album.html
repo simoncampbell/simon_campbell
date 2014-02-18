@@ -18,7 +18,7 @@
     </header>
 
     <div class="carousel-wrapper">
-          <div class="side-wrapper carousel__info-wrapper">
+        <div class="side-wrapper carousel__info-wrapper">
              <h4>{{entry.title}}</h4>
              <p>{{entry.shortExtract}}</p>
         </div><!-- //.side-wrapper -->
@@ -31,9 +31,7 @@
                         {% for image in entry.carouselImages %}
                             <li>
                                 <figure>
-                                    <a class="carousel__link" href="{{image.url}}">
-                                        <img src="{{image.url}}" class="carousel__image" />
-                                    </a>
+                                    <img src="{{image.getUrl('gallery')}}" class="carousel__image" />
                                 </figure>
                                 <div class="carousel__summary">
                                     {% if image.shortExtract|length > 1 %}
@@ -41,10 +39,16 @@
                                     {% endif %}
                                     <div class="meta-info-block meta-info-block--borderless">
                                         <div class="meta-info-block__item">
-                                            Photo {{loop.index}} of {{loop|length}} • <time datetime="{{image.date|date("Y-m-d")}}">{{image.date|date("jS F Y")}}</time>
+                                            Photo {{loop.index}} of {{entry.carouselImages | length}} &bull; <time datetime="{{image.date|date("Y-m-d")}}">{{image.date|date("jS F Y")}}</time>
                                         </div>
                                     </div>
                                 </div>
+                                <a class="carousel__zoom" href="{{image.url}}">
+                                    <div class="btn btn--icon btn--tertiary btn--arrow-left btn--epsilon">
+                                        <span class="icon ss ss-expand">expand</span>
+                                        <div class="icon-text">Full screen</div>
+                                    </div>
+                                </a>
                             </li>
                         {% endfor %}
                     </ul>

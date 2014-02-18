@@ -19,9 +19,9 @@
 
     {% for featured in craft.entries.find({section:'Gallery', limit:'1'}) %}
         <div class="carousel-wrapper">
-              <div class="side-wrapper carousel__info-wrapper">
-                 <h4>{{featured.title}}</h4>
-                 <p>{{featured.shortExtract}}</p>
+            <div class="side-wrapper carousel__info-wrapper">
+                <h4>{{featured.title}}</h4>
+                <p>{{featured.shortExtract}}</p>
             </div><!-- //.side-wrapper -->
 
             <div class="main-wrapper main-wrapper--article main-wrapper--gallery">
@@ -31,7 +31,7 @@
                             {% for image in featured.carouselImages %}
                                 <li>
                                     <figure>
-                                            <img src="{{image.url}}" class="carousel__image" />
+                                        <img src="{{image.getUrl('gallery')}}" class="carousel__image" />
                                     </figure>
                                     <div class="carousel__summary">
                                         {% if image.shortExtract|length > 1 %}
@@ -39,7 +39,7 @@
                                         {% endif %}
                                         <div class="meta-info-block meta-info-block--borderless">
                                             <div class="meta-info-block__item">
-                                                Photo {{loop.index}} of {{loop|length}} • <time datetime="{{image.date|date("Y-m-d")}}">{{image.date|date("jS F Y")}}</time>
+                                                Photo {{loop.index}} of {{featured.carouselImages | length}} &bull; <time datetime="{{image.date|date("Y-m-d")}}">{{image.date|date("jS F Y")}}</time>
                                             </div>
                                         </div>
                                     </div>
@@ -66,7 +66,7 @@
                 </div><!-- //end.gallery -->
             </div><!-- //.main-wrapper -->
 
-       </div><!-- //end.carousel -->
+        </div><!-- //end.carousel -->
     {% endfor %}
 
 {% endblock %}

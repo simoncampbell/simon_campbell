@@ -86,7 +86,7 @@ figcaption {
         margin-bottom: 0;
     }
 
-    @include respond-to("gigantic only"){
+    @include respond-to("gigantic"){
         @include rems(margin-top, -60);
     }
 

@@ -64,7 +64,7 @@
         border-bottom: 2px solid $color__orange--secondary;
     }
 
-    @include respond-to("gigantic only"){
+    @include respond-to("gigantic"){
         @include rems(padding-left, $base-spacing-unit);
         @include rems(height, 49);
         width: 21.3%;
@@ -80,7 +80,7 @@
         margin:0;
         line-height:1;
 
-        @include breakpoint(max-width 380px){
+        @include respond-to("below small"){
             background-size: 59%;
         }
     }

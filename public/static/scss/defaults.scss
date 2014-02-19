@@ -30,6 +30,7 @@ $no-queries: 'no-query' true;
 $breakpoints: add-breakpoint('below small', (max-width $width__small - 1px, $no-queries));
 $breakpoints: add-breakpoint('small and above', ($width__small, $no-queries));
 $breakpoints: add-breakpoint('between small and medium', ($width__small $width__medium));
+$breakpoints: add-breakpoint('regular and below', (max-width $width__regular, $no-queries));
 $breakpoints: add-breakpoint('regular and above', ($width__regular, $no-queries));
 $breakpoints: add-breakpoint('below medium', (max-width $width__medium - 1px, $no-queries));
 $breakpoints: add-breakpoint('medium and above', ($width__medium, $no-queries));

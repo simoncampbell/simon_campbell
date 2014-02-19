@@ -16,7 +16,7 @@
         border-bottom: 2px solid $color__meta;
     }
 
-    @include respond-to("gigantic only"){
+    @include respond-to("gigantic"){
         width: 78.7%;
     }
 
@@ -152,7 +152,7 @@
                 @include rems(padding-top, 14);
             }
 
-            @include breakpoint("gigantic"){
+            @include respond-to("gigantic"){
                 @include rems(padding, $half-spacing-unit * 1.5, $base-spacing-unit, $half-spacing-unit * 1.4, $base-spacing-unit);
                 border-bottom: none;
             }

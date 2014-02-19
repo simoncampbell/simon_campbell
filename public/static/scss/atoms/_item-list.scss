@@ -576,7 +576,7 @@
             color: darken($color__background--dark, 10);
 
             @include respond-to("largest only"){
-                @include rems($base-fontsize + 1);
+                @include rems(font-size, $base-fontsize + 1);
             }
         }
     }

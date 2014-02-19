@@ -32,7 +32,7 @@
     @extend %font__display--black;
     @include radius($brand-round);
     @include transition(all .15s ease-in-out);
-    @include rems($milli-size);
+    @include rems(font-size, $milli-size);
     display:inline-block;
     vertical-align:top;
     white-space:nowrap;

@@ -82,7 +82,7 @@ h5, .epsilon {
 }
 
 .base-text {
-    @include rems(font-size, $base-font-size);
+    @include rems(font-size, $base-fontsize);
     color: $base-color;
 }
 

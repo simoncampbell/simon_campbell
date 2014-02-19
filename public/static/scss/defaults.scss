@@ -15,33 +15,31 @@
  */
 
 
-$breakpoint__small: 400px;  // was tiny, now small
-$breakpoint__regular: 500px; // was small, now regular
-$breakpoint__medium: 690px;
-$breakpoint__large: 800px; // was desktop, now large
-$breakpoint__largest: 1000px; // was large, now largest
-$breakpoint__gigantic: 1260px;
+$width__small: 400px;  
+$width__regular: 500px; 
+$width__medium: 690px;
+$width__large: 800px; 
+$width__largest: 1000px; 
+$width__gigantic: 1260px;
 
 
 $breakpoint-to-ems: true;
 $no-queries: 'no-query' true;
 
-$breakpoints: 'below small' (max-width $breakpoint__small - 1px, $no-queries),
-              'small and above' ($breakpoint__small, $no-queries),
 
-              'regular and above' ($breakpoint__regular, $no-queries),
-
-              'below medium' (max-width $breakpoint__medium - 1px, $no-queries),
-              'medium and above' ($breakpoint__medium, $no-queries),
-              'between medium and large' ($breakpoint__medium $breakpoint__large),
-
-              'below large' (max-width $breakpoint__large - 1px, $no-queries),
-              'large only' ($breakpoint__medium $breakpoint__largest, $no-queries),
-              'large and above' ($breakpoint__large, $no-queries),
-
-              'largest only' ($breakpoint__largest),
-
-              'gigantic only' ($breakpoint__gigantic);
+$breakpoints: add-breakpoint('below small', (max-width $width__small - 1px, $no-queries));
+$breakpoints: add-breakpoint('small and above', ($width__small, $no-queries));
+$breakpoints: add-breakpoint('between small and medium', ($width__small $width__medium));
+$breakpoints: add-breakpoint('regular and above', ($width__regular, $no-queries));
+$breakpoints: add-breakpoint('below medium', (max-width $width__medium - 1px, $no-queries));
+$breakpoints: add-breakpoint('medium and above', ($width__medium, $no-queries));
+$breakpoints: add-breakpoint('between medium and large', ($width__medium $width__large));
+$breakpoints: add-breakpoint('below large', (max-width $width__large - 1px, $no-queries));
+$breakpoints: add-breakpoint('large only', ($width__medium $width__largest, $no-queries));
+$breakpoints: add-breakpoint('large and above', ($width__large, $no-queries));
+$breakpoints: add-breakpoint('largest only', ($width__largest));
+$breakpoints: add-breakpoint('between largest and gigantic', ($width__largest $width__gigantic));
+$breakpoints: add-breakpoint('gigantic', ($width__gigantic));
 
 
 
@@ -53,14 +51,14 @@ $breakpoints: 'below small' (max-width $breakpoint__small - 1px, $no-queries),
  * Font-sizes (in pixels). Refer to relevant sections for their implementations.
  */
 
-$base-font-size: 16!default;
+$base-fontsize: 16!default;
 $base-line-height: 26!default;
 
 $h1-size: 35!default;
 $h2-size: 28!default;
 $h3-size: 22!default;
 $h4-size: 18!default;
-$h5-size: $base-font-size !default;
+$h5-size: $base-fontsize !default;
 
 $milli-size: 15!default;
 $micro-size: 13!default;
@@ -125,7 +123,7 @@ $use-flag: true!default;
 $base-spacing-unit: ($base-line-height - 5) !default;
 $half-spacing-unit: $base-spacing-unit / 2!default;
 $quarter-spacing-unit: $base-spacing-unit / 4!default;
-$line-height-ratio: $base-line-height / $base-font-size;
+$line-height-ratio: $base-line-height / $base-fontsize;
 
 
 

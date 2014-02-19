@@ -217,7 +217,7 @@
             @include transition(all .2s ease-in-out);
             @include rems(height, 42);
             @include rems(width, $base-spacing-unit * 2);
-            @include rems(font-size, $base-font-size);
+            @include rems(font-size, $base-fontsize);
             display: inline-block;
             line-height: 2.9;
             text-align: center;

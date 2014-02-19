@@ -33,7 +33,7 @@ html {
         }
     }
 
-    @include breakpoint(720px){
+    @include respond-to("medium and above"){
         font: 104% $base-font-family;
         line-height:$line-height-ratio;
     }
@@ -51,7 +51,7 @@ body {
     @extend .cf;
     @extend %font__text--regular;
     background-color: $color__main-bg;
-    font: percentage($base-font-size / 16) $base-font-family;
+    font: percentage($base-fontsize / 16) $base-font-family;
     color: $base-color;
     line-height:$line-height-ratio;
     position: relative;

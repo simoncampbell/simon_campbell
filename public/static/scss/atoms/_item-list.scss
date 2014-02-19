@@ -341,7 +341,6 @@
         border-bottom: 1px dotted $color__border--standard;
 
 
-        // @include breakpoint($breakpoint__medium $breakpoint__large) {
         @include respond-to("large only"){
             @include rems(padding-bottom, $base-spacing-unit * 1.5);
             @include rems(margin-bottom, $base-spacing-unit);
@@ -577,7 +576,7 @@
             color: darken($color__background--dark, 10);
 
             @include respond-to("largest only"){
-                @include rems($base-font-size + 1);
+                @include rems($base-fontsize + 1);
             }
         }
     }

@@ -11,7 +11,7 @@ $column: 60;  // The column-width of grid in pixels
 $gutter: $base-spacing-unit;  // The gutter-width of grid in pixels
 
 
-$rem: $base-font-size / 1rem;
+$rem: $base-fontsize / 1rem;
 
 
  $cols1: ( 1 * ($column + $gutter) - $gutter) / $rem;

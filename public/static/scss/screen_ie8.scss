@@ -9,13 +9,7 @@
  */
 
 
-$has-svg: false;
-$ie8-support: true;
-$legacy-support-for-ie7: true;
-$legacy-support-for-ie8: true;
-
-$breakpoint-no-queries: true;
-$breakpoint-no-query-fallbacks: true;
+@import "support/ie8";
 
 @import "screen";
 

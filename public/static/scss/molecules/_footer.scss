@@ -59,6 +59,11 @@
             }
         }
 
+
+        .lte-ie10 & { 
+            box-sizing: border-box;
+        }
+
         h3 {
             @include rems(font-size, $h4-size);
             color: $color__white;

@@ -4,6 +4,7 @@
 define(['domReady',
         'jquery',
         'widgets/grid-toggle',
+        'widgets/validate',
         'widgets/mobile-menu',
         'widgets/carousel',
         'widgets/lightbox',
@@ -12,9 +13,6 @@ define(['domReady',
         function(domReady, jQuery, GridToggle) {
             App = window.App || {};
 
-            domReady(function(){
-                App.gridToggle = new GridToggle();
-            });
         }
 );
 

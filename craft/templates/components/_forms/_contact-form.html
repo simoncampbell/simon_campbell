@@ -26,16 +26,14 @@
     {% if message is defined %}{{ errorList(message.getErrors('message')) }}{% endif %}
 
     <label for="author" class="screen-reader">Name</label>
-    <input placeholder="(required)" required type="text" name="fromName" id="fromName" value="{% if message is defined %}{{ message.fromName }}{% endif %}" class="infoput text-input--secondary">
+    <input placeholder="(required)" required type="text" name="fromName" id="fromName" value="{% if message is defined %}{{ message.fromName }}{% endif %}" class="infoput text-input--secondary required">
     {% if message is defined %}{{ errorList(message.getErrors('fromName')) }}{% endif %}
 
     <label for="email" class="screen-reader">Email</label>
-    <input placeholder="(required)" required type="email" name="fromEmail" id="fromEmail" value="{% if message is defined %}{{ message.fromEmail }}{% endif %}" class="infoput text-input--secondary">
+    <input placeholder="(required)" required type="email" name="fromEmail" id="fromEmail" value="{% if message is defined %}{{ message.fromEmail }}{% endif %}" class="infoput text-input--secondary required email">
     {% if message is defined %}{{ errorList(message.getErrors('fromEmail')) }}{% endif %}
  
     <input id="subject" type="hidden" name="subject" value="New message from Simon Campbell website">
-   
-    <input id="middleName" name="middleName" type="text">
 
     <button name="submit" id="submit" class="btn btn--primary">Send message</button>
 </form>

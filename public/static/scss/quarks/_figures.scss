@@ -29,6 +29,10 @@ figure {
     }
 }
 
+.fluid-width-video-wrapper {
+    @include rems(margin-bottom, $base-spacing-unit);
+}
+
     cite,
     .cite {
         display: inline-block;
@@ -61,6 +65,7 @@ figcaption {
         }
     }
 }
+
 
 // Images that come after a title (see: blog detail)
 .figure__hero {
@@ -129,6 +134,13 @@ figcaption {
 .figure--banner-about {
     @include respond-to("regular and above"){
         @include rems(max-height, 800);
+    }
+
+    @include breakpoint(1000px){
+        > img {
+            @include rems(margin-top, -100);
+            @include rems(margin-bottom, -140);
+        }
     }
 }
 

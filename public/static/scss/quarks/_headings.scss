@@ -10,7 +10,7 @@
 h1, .alpha {
     @extend %font__display--black;
     @include rems(font-size, $h1-size);
-    line-height: ($line-height-ratio - .25);
+    line-height: ($line-height-ratio - .5);
     text-rendering: optimizeLegibility;
 
     @include respond-to("medium and above"){

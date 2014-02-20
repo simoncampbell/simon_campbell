@@ -59,6 +59,7 @@
     overflow: hidden;
     background-size: 100%;
     background-color: $color__white;
+    min-height: 100%;
 
 
     @include respond-to("largest only"){

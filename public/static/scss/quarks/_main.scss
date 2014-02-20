@@ -55,6 +55,7 @@ body {
     color: $base-color;
     line-height:$line-height-ratio;
     position: relative;
+    height: 100%;
 
     &.overlay--active {
         height: 100%;

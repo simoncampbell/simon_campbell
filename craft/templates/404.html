@@ -16,8 +16,20 @@
 {% extends "_layout" %}
 {% set title = "404" %}
 
-{% block content %}
-	<h1>Page not found</h1>
+{% block content_main %}
+    <header class="heading-group heading-group--main">
+        <div class="main-wrapper main-wrapper--full">
+            <h1>404 – Page not found</h1>
+            <h2>It looks like that page no longer exists.</h2>
+        </div>
+    </header>
 
-	<p>What’s worse, a hilarious 404 page can’t be found either.</p>
+
+        <div class="main-wrapper main-wrapper--article">
+
+            <p>Perhaps you were looking for a <a href="/blog">blog post</a>, or a specific <a href="/recordings">album</a> or release? Maybe it was a glorious review of some <a href="/equipment">equipment</a> or a photo from the <a href="/gallery">gallery</a>? </p>
+
+        </div><!-- //end.main-wrapper -->
+    </div>
+
 {% endblock %}

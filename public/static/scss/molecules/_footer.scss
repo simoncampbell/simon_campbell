@@ -1,6 +1,7 @@
-/*------------------------------------*\
-    $FOOTER
-\*------------------------------------*/
+// ==========================================================================
+// FOOTER
+// ========================================================================== 
+
 
 .footer-main {
     @extend .cf;
@@ -8,6 +9,7 @@
     color: $color__text--reverse;
     background-color: $color__background--black;
     border-top: 5px solid lighten($color__background--black, 10);
+    width: 100%;
 
     @include respond-to("largest only"){
         float: left;

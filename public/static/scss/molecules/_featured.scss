@@ -39,6 +39,10 @@
             @include respond-to("gigantic"){
                 @include rems(font-size, 16);
             }
+
+            a {
+                white-space: nowrap;
+            }
         }
     }
 

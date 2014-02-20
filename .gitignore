@@ -3,7 +3,6 @@
 public/assets
 
 !.gitignore
-!.htaccess
 
 .sass-cache
 

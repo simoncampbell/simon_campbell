@@ -16,7 +16,7 @@
         border-bottom: 2px solid $color__meta;
     }
 
-    @include respond-to("gigantic only"){
+    @include respond-to("gigantic"){
         width: 78.7%;
     }
 
@@ -146,13 +146,13 @@
             }
 
             // change colors on desktop sizes
-            @include breakpoint($breakpoint__largest 1260px){
+            @include respond-to("between largest and gigantic"){
                 @include rems(font-size, 15);
                 border-bottom: none;
                 @include rems(padding-top, 14);
             }
 
-            @include breakpoint(1260px){
+            @include respond-to("gigantic"){
                 @include rems(padding, $half-spacing-unit * 1.5, $base-spacing-unit, $half-spacing-unit * 1.4, $base-spacing-unit);
                 border-bottom: none;
             }

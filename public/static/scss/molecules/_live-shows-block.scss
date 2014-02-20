@@ -29,7 +29,7 @@
             }
 
             .side-wrapper--rev & {
-                @include breakpoint ($breakpoint__large) {
+                @include respond-to("large and above") {
                     @include rems(right, $gutter);
                 }
             }

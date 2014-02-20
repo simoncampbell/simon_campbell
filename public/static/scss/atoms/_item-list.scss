@@ -84,7 +84,7 @@
 
         .item-list__item {
             -webkit-column-break-inside: avoid;
-            @include column-break-inside(avoid);
+            @include break-inside(avoid);
 
             &:before {
                 display: none;
@@ -341,7 +341,6 @@
         border-bottom: 1px dotted $color__border--standard;
 
 
-        // @include breakpoint($breakpoint__medium $breakpoint__large) {
         @include respond-to("large only"){
             @include rems(padding-bottom, $base-spacing-unit * 1.5);
             @include rems(margin-bottom, $base-spacing-unit);
@@ -577,7 +576,7 @@
             color: darken($color__background--dark, 10);
 
             @include respond-to("largest only"){
-                @include rems($base-font-size + 1);
+                @include rems(font-size, $base-fontsize + 1);
             }
         }
     }
@@ -697,7 +696,7 @@
             width: 100%;
         }
 
-        @include respond-to("gigantic only"){
+        @include respond-to("gigantic"){
             .item-list__item {
                 @include rems(margin-right, $base-spacing-unit);
                 float: left;

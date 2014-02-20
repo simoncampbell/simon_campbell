@@ -80,7 +80,8 @@
 .wide-wrapper {
     clear: both;
 
-    @include breakpoint(680px){
+
+    @include respond-to("medium and above"){
         @include max-width(12);
     }
 
@@ -131,7 +132,7 @@
     .wrapper--recent-entries {
         @include rems(margin-top, $base-spacing-unit);
 
-        @include breakpoint(720px){
+        @include respond-to("medium and above"){
             @include rems(margin-top, $base-spacing-unit * 2);
             @include rems(margin-bottom, $base-spacing-unit * 2);
         }
@@ -140,7 +141,7 @@
     .wide-wrapper--recent-entries {
         @extend .cf;
 
-        @include breakpoint(620px){
+        @include respond-to("regular and above"){
             p {
                 @include rems(font-size, 16);
             }
@@ -152,11 +153,11 @@
     }
 
     .wide-wrapper--equipment {
-       @include breakpoint(680px $breakpoint__large) {
+        @include respond-to("between medium and large"){
             @include rems(max-width, 540);
             padding-left: 0;
             padding-right: 0;
-       }
+        }
     }
 
 
@@ -215,7 +216,7 @@
             padding-left: 9.8%;
         }
 
-        @include breakpoint(1260px){
+        @include respond-to("gigantic"){
             padding-right: 0;
 
             p {
@@ -299,7 +300,7 @@
 
     .homepage-wrapper--news {
 
-        @include breakpoint(580px ($breakpoint__large - 1px)){
+        @include respond-to("between medium and large"){
             margin-left: -3%;
             width: 103%;
 
@@ -320,7 +321,7 @@
             width: 48.9%;
         }
 
-        @include breakpoint(1260px){
+        @include respond-to("gigantic"){
             .item-list__item {
                 @include rems(margin-right, $base-spacing-unit);
                 float: left;
@@ -336,7 +337,7 @@
     .homepage-wrapper--live-shows {
         margin-bottom: 0;
 
-        @include breakpoint(720px){
+        @include respond-to("medium and above"){
             float: left;
             width: 100%;
 

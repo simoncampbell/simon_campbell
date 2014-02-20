@@ -13,7 +13,7 @@
         float: left;
     }
 
-    @include breakpoint(1260px) {
+    @include respond-to("gigantic") {
         padding-top: 0;
         padding-bottom: 0;
     }
@@ -45,7 +45,7 @@
             @include max-width(7);
         }
 
-        @include breakpoint(1260px) {
+        @include respond-to("gigantic") {
             @include rems(padding-top, $base-spacing-unit);
             @include rems(padding-bottom, $base-spacing-unit);
             @include rems(min-height, 220);
@@ -102,7 +102,7 @@
             float: left;
         }
 
-        @include breakpoint(1260px){
+        @include respond-to("gigantic") {
             @include rems(margin-right, 20);
             width: 38.7%;
             margin-bottom: 0;
@@ -116,7 +116,7 @@
                 @include width(2);
                 margin-bottom: 0;
 
-                @include breakpoint(max-width 380px) {
+                @include respond-to("below small"){
                     @include rems(margin-bottom, $base-spacing-unit);
                     margin-right: 0;
                     width: 100%;
@@ -127,7 +127,7 @@
                     width: 30%;
                 }
 
-                @include breakpoint(1260px){
+                @include respond-to("gigantic") {
                     width: 28%;
                 }
 
@@ -145,7 +145,7 @@
             }
 
             .media__body {
-                @include breakpoint(max-width 380px) {
+                @include respond-to("below small"){
                     width: 100%;
                     overflow: none;
                 }
@@ -174,7 +174,7 @@
             width: 40%;
         }
 
-        @include breakpoint(1260px){
+        @include respond-to("gigantic"){
             float: left;
             width: 28.5%;
         }
@@ -188,7 +188,7 @@
     .footer-main__item--social {
         @include rems(margin-bottom, $half-spacing-unit);
 
-        @include breakpoint($breakpoint--small){
+        @include respond-to("small and above"){
             @include rems(margin-bottom, $base-spacing-unit);
         }
 
@@ -204,7 +204,7 @@
             max-width: none;
         }
 
-        @include breakpoint(1260px){
+        @include respond-to("gigantic"){
             @include rems(min-height, 220);
             @include rems(padding-left, 20);
             border-top: none;
@@ -214,7 +214,7 @@
         }
 
         h3 {
-            @include breakpoint($breakpoint__medium 1260px){
+            @include respond-to("between largest and gigantic"){
                 @include rems(margin-right, $half-spacing-unit);
                 display:inline;
 
@@ -225,18 +225,18 @@
         }
 
         nav {
-            @include breakpoint($breakpoint__medium 1260px) {
+            @include respond-to("between largest and gigantic"){
                 display: inline;
             }
         }
 
         .icon-list {
             margin: 0;
-            @include breakpoint(450px 1260px){
+            @include respond-to("between largest and gigantic"){
                 @include vendor(column-count, auto);
             }
 
-            @include breakpoint($breakpoint__medium 1260px) {
+            @include respond-to("between largest and gigantic"){
                 display: inline;
             }
 
@@ -247,7 +247,7 @@
 
             .icon-list__item {
 
-                @include breakpoint(450px 1260px){
+                @include respond-to("between largest and gigantic"){
                     @include rems(margin-right, $half-spacing-unit);
                     display: inline;
                 }
@@ -281,16 +281,6 @@
                 float:left;
                 margin: 0;
             }
-
-            // li {
-
-            //     &:first-of-type::after {
-            //         @include rems(padding-right, $quarter-spacing-unit);
-            //         @include rems(padding-left, $quarter-spacing-unit);
-            //         content:"|";
-            //         color: darken($color__border--standard, 50);
-            //     }
-            // }
         }
 
         .link--jump {

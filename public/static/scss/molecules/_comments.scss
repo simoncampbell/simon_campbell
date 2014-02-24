@@ -7,7 +7,8 @@
 
 .comments {
 
-    @include breakpoint(680px $breakpoint__large) {
+
+    @include respond-to("between medium and large") {
         @include rems(margin-right, $base-spacing-unit);
         float: left;
         width: 47%;
@@ -26,7 +27,7 @@
         width: 65.3%;
     }
 
-    @include breakpoint(1260px) {
+    @include respond-to("gigantic") {
         clear: left;
     }
 }

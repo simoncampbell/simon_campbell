@@ -8,7 +8,7 @@
 // $target: (required) Required pixel size
 // $context: (optional) Current font size used to calculate em value
 // Returns: Rem value
-@function calc-rem($target, $context: $base-font-size) {
+@function calc-rem($target, $context: $base-fontsize) {
      @return ($target / $context) * 1rem;
 }
 
@@ -16,7 +16,7 @@
 // $target: (required) Required pixel size
 // $context: (optional) Current font size used to calculate em value
 // Returns: Rem value
-// @function calc-rem($target, $context: $base-font-size) {
+// @function calc-rem($target, $context: $base-fontsize) {
 //      @return ($target / $context) * 1rem;
 // }
 

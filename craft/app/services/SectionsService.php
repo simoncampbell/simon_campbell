@@ -501,7 +501,7 @@ class SectionsService extends BaseApplicationComponent
 
 							// Remove all of the hierarchical data
 							craft()->db->createCommand()->update('entries', array(
-								'root'  => false,
+								'root'  => null,
 								'lft'   => null,
 								'rgt'   => null,
 								'depth' => null,

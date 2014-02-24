@@ -36,8 +36,12 @@
                 width: 49%;
             }
 
-            @include breakpoint(1260px){
+            @include respond-to("gigantic"){
                 @include rems(font-size, 16);
+            }
+
+            a {
+                white-space: nowrap;
             }
         }
     }
@@ -48,6 +52,10 @@
         @include respond-to("largest only") {
             float: left;
             width: 49%;
+        }
+
+        img {
+            width: 100%;
         }
     }
 

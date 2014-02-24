@@ -3,7 +3,6 @@
 public/assets
 
 !.gitignore
-!.htaccess
 
 .sass-cache
 
@@ -12,8 +11,8 @@ composer.lock
 /vendor
 public/static/css/
 
+craft/storage/
 craft/config/db.php
-craft/storage
 
 web.config
 

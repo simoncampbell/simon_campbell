@@ -30,16 +30,15 @@
                             <div class="meta-info-block meta-info-block--borderless">
                                 <time class="meta-info-block__item" datetime="{{news.postDate|date("Y-m-d")}}">{{news.postDate|date("jS F Y")}}</time>
 
+                                {% if news.newsTags | length %}  
                                 <p class="meta-info-block__item">Posted in
-                                    <a class="category-link" href="URL!">
-                                        <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
-                                        Life
-                                    </a>,
-                                    <a class="category-link" href="URL!">
-                                        <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
-                                        Health
-                                    </a>
+                                    {% for tag in news.newsTags %}
+                                        <a class="category-link" href="/news/category/{{tag.name | lower | replace({' ': '-'}) }}">
+                                            <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
+                                            {{tag.name | capitalize}}</a>
+                                    {% endfor %}
                                 </p>
+                                {% endif %}
                             </div><!-- //end.meta-info-block -->
                         </div><!-- //end.heading-group -->
 
@@ -57,7 +56,7 @@
         </ul><!-- //end.item-list -->
 
         <div class="btn__group btn__group--bordered">
-            <a href="http://simoncampbell/index.php?p=news/archive.html" class="btn btn--icon btn--secondary btn--arrow-left">
+            <a href="/news/archive.html" class="btn btn--icon btn--secondary btn--arrow-left">
                 <span class="icon ss-rewind">rewind</span>
                 <div class="icon-text">
                     Older entries
@@ -83,10 +82,9 @@
 
             <li class="item-list__item item-list__item--sidebar">
                 <h4>Subscribe via RSS</h4>
-
-                <a href="URL!" class="link--icon">
+                <a href="/feeds/news.rss" class="link--icon">
                     <span class="icon ss ss-inbox">inbox</span>
-                    Get updates from the blog
+                    Get regular updates and news posts
                 </a>
             </li>
 

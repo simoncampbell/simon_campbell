@@ -8,3 +8,48 @@ Options +FollowSymLinks
     RewriteCond %{REQUEST_URI} !^/(favicon\.ico|apple-touch-icon.*\.png)$ [NC]
     RewriteRule (.+) index.php?p=$1 [QSA,L]
 </IfModule>
+
+# Redirects
+
+# Blog > Home
+Redirect 301 http://blog.simoncampbell.com/ http://www.simoncampbell.com/blog
+
+# Blog > Feeds
+Redirect 301 http://blog.simoncampbell.com/feeds http://www.simoncampbell.com/feeds/blog.rss
+
+# Blog > Blog
+Redirect 301 http://blog.simoncampbell.com/blog http://www.simoncampbell.com/blog
+RedirectMatch 301 http://blog.simoncampbell.com/blog/perma/(.*) http://www.simoncampbell.com/blog/$1
+RedirectMatch 301 http://blog.simoncampbell.com/blog/category/(.*) http://www.simoncampbell.com/blog/category/$1
+
+# Blog > Writing
+Redirect 301 http://blog.simoncampbell.com/writing http://www.simoncampbell.com/blog
+RedirectMatch 301 http://blog.simoncampbell.com/writing/detail/(.*) http://www.simoncampbell.com/blog/$1
+
+# Blog > About and Contact
+Redirect 301 http://blog.simoncampbell.com/about http://www.simoncampbell.com/contact-and-about
+Redirect 301 http://blog.simoncampbell.com/contact http://www.simoncampbell.com/contact-and-about
+
+# Blog > Misc
+Redirect 301 http://blog.simoncampbell.com/speaking http://www.simoncampbell.com
+Redirect 301 http://blog.simoncampbell.com/expeditions http://www.simoncampbell.com
+Redirect 301 http://blog.simoncampbell.com/resources http://www.simoncampbell.com
+
+
+# Music > Home
+Redirect 301 http://music.simoncampbell.com/ http://www.simoncampbell.com/recordings
+
+# Music > ThirtySix
+Redirect 301 http://music.simoncampbell.com/thirtysix http://www.simoncampbell.com/recordings/thirty-six
+
+# Music > Journal
+Redirect 301 http://music.simoncampbell.com/journal http://www.simoncampbell.com/news
+RedirectMatch 301 http://music.simoncampbell.com/journal/(.*) http://www.simoncampbell.com/news/$1
+
+# Music > About and Contact
+Redirect 301 http://music.simoncampbell.com/biography http://www.simoncampbell.com/contact-and-about
+Redirect 301 http://music.simoncampbell.com/contact http://www.simoncampbell.com/contact-and-about
+
+# Music > Misc
+Redirect 301 http://music.simoncampbell.com/store http://www.simoncampbell.com
+Redirect 301 http://music.simoncampbell.com/account http://www.simoncampbell.com

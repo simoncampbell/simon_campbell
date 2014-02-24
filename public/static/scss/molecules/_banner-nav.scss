@@ -3,6 +3,8 @@
 \*------------------------------------*/
 /**
  * The main navigational element.
+ *
+ * Requires the mobile-menu to work properly.
  */
 
 #nav_pri {
@@ -14,7 +16,7 @@
         border-bottom: 2px solid $color__meta;
     }
 
-    @include breakpoint(1260px) {
+    @include respond-to("gigantic"){
         width: 78.7%;
     }
 
@@ -47,6 +49,7 @@
     border-bottom: 1px solid $color__orange--secondary;
     border-left: 1px solid $color__black;
 
+
     &:hover,
     &:focus {
         color: $color__white;
@@ -59,7 +62,7 @@
         background-color: darken($color__banner-nav--hover,5);
     }
 
-    @include breakpoint(552px) {
+    @include respond-to("regular and above"){
         @include rems(width, 200);
     }
 
@@ -81,7 +84,7 @@
     z-index: 1;
 
 
-    // hide the navigational if javascript exists
+// hide the navigational dropdown if javascript exists
     .js & {
         display:none;
     }
@@ -90,17 +93,42 @@
         width: 100%;
     }
 
+    @include respond-to("regular and above") {
+        @include rems(width, 200);
+        position: absolute;
+        right: 0;
+        opacity: .95;
+        background-color: $color__background--dark;
+        border: 1px solid $color__background--black;
+        border-top: none;
+        border-bottom: none;
+    }
+
+    @include respond-to("largest only"){
+        .js & {
+            position: relative;
+            width: 100%;
+            opacity: 1;
+            display: block;
+        }
+    }
+
+
     > li {
 
         @include respond-to("largest only"){
             display: block;
             float: left;
-            width: 14.2%;
+            width: 14.27%;
             border-right: 1px solid $color__background--black;
 
             &:last-of-type {
                 border-right: none;
             }
+        }
+
+        .lt-ie10 & {
+            box-sizing: border-box;
         }
 
         .no-js & {
@@ -120,13 +148,13 @@
             }
 
             // change colors on desktop sizes
-            @include breakpoint($breakpoint__large 1260px){
+            @include respond-to("between largest and gigantic"){
                 @include rems(font-size, 15);
                 border-bottom: none;
                 @include rems(padding-top, 14);
             }
 
-            @include breakpoint(1260px){
+            @include respond-to("gigantic"){
                 @include rems(padding, $half-spacing-unit * 1.5, $base-spacing-unit, $half-spacing-unit * 1.4, $base-spacing-unit);
                 border-bottom: none;
             }
@@ -146,26 +174,6 @@
                 color: white;
                 position: relative;
             }
-        }
-    }
-
-    @include breakpoint(552px){
-        @include rems(width, 200);
-        position: absolute;
-        right: 0;
-        opacity: .95;
-        background-color: $color__background--dark;
-        border: 1px solid $color__background--black;
-        border-top: none;
-        border-bottom: none;
-    }
-
-    @include respond-to("largest only"){
-        .js & {
-            position: relative;
-            width: 100%;
-            opacity: 1;
-            display: block;
         }
     }
 }

@@ -13,7 +13,7 @@
         <figure class="side-bar--album__figure">
             {% for image in album.albumArt %}
                 <a href="{{album.url}}">
-                    <img src="{{image.url}}" alt="{{album.title}}"/>
+                    <img src="{{image.getUrl('albumArtSidebar')}}" width="{{image.getWidth('albumArtSidebar')}}" height="{{image.getHeight('albumArtSidebar')}}" alt="{{album.title}}"/>
                 </a>
             {% endfor %}
         </figure>

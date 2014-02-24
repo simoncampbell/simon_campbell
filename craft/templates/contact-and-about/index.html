@@ -62,6 +62,31 @@
                 </div>
             </li>
 
+            {% if contactAbout.pressPackage | length %}
+            <li class="item-list__item item-list__item--bookings">
+                <div class="island island--sidebar">
+                    <div class="island__header island__header--small">
+                        <h4 class="h--alt">Press package</h4>
+                    </div>
+
+                    <div class="island__content island__content--small">
+                        <ul class="text--small">
+
+                            {% for download in contactAbout.pressPackage %}
+                            <li>
+                                <a href="{{download.url}}" class="link--icon link--icon--long">
+                                    <span class="icon ss ss-{{download.extension}}">{{download.extension}}</span>
+                                    Download the pdf
+                                </a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div><!-- //end.island -->
+            </li>
+            {% endif %}
+
+            {% if contactAbout.mediaDownloads | length %}
             <li class="item-list__item item-list__item--bookings">
                 <div class="island island--sidebar">
                     <div class="island__header island__header--small">
@@ -70,22 +95,20 @@
 
                     <div class="island__content island__content--small">
                         <ul class="text--small">
+
+                            {% for download in contactAbout.mediaDownloads %}
                             <li>
-                                <a href="URL!" class="link--icon link--icon--long">
-                                    <span class="icon ss ss-pdf">pdf</span>
-                                    Download the pdf
+                                <a href="{{download.url}}" class="link--icon link--icon--long">
+                                    <span class="icon ss ss-{{download.extension}}">{{download.extension}}</span>
+                                    {{download}} - {{download.shortExtract}} - Download the {{download.extension}}
                                 </a>
                             </li>
-                            <li>
-                                <a href="URL!" class="link--icon">
-                                    <span class="icon ss ss-pdf">pdf</span>
-                                    Download the pdf
-                                </a>
-                            </li>
+                            {% endfor %}
                         </ul>
                     </div>
                 </div><!-- //end.island -->
             </li>
+            {% endif %}
 
             <li class="item-list__item item-list__item--contact">
                 <h3>Get in touch</h3>

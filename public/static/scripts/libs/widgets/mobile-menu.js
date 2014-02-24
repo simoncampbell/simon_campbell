@@ -48,7 +48,11 @@ define(['jquery', 'domReady'], function(jQuery, domReady){
 
             if(size == 'largest') {
                 $('#nav_pri').addClass('menu--active');
-                $('.banner-nav').css('display','');
+                $('.banner-nav').css('display','block');
+            }
+
+            else {
+                $('.banner-nav').css('display','none');   
             }
         });
 

@@ -22,16 +22,15 @@
         <div class="meta-info-block">
             <div class="main-wrapper main-wrapper--full">
                 <time class="meta-info-block__item" datetime="{{entry.postDate|date("Y-m-d")}}">{{entry.postDate|date("jS F Y")}}</time>
+                {% if entry.blogPostTags | length %}
                 <p class="meta-info-block__item">Posted in
-                    <a class="category-link" href="URL!">
-                        <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
-                        Health
-                    </a>,
-                    <a class="category-link" href="URL!">
-                        <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
-                        Life
-                    </a>
+                    {% for tag in entry.blogPostTags %}
+                        <a class="category-link" href="/blog/category/{{tag.name | lower | replace({' ': '-'}) }}">
+                            <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
+                            {{tag.name | capitalize}}</a>
+                    {% endfor %}
                 </p>
+                {% endif %}
             </div>
         </div>
     </header>
@@ -74,7 +73,7 @@
             <li class="item-list__item item-list__item--sidebar item-list__item--sidebar--only">
                 <h4>Subscribe via RSS</h4>
 
-                <a href="/feed.rss" class="link--icon">
+                <a href="/feeds/blog.rss" class="link--icon">
                     <span class="icon ss ss-inbox">inbox</span>
                     Get regular updates from the blog
                 </a>

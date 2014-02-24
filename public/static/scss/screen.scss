@@ -17,8 +17,14 @@
  *
  */
 
-$legacy-support-for-ie: false; // for some reason this seems to need to be here rather than in _config.scss
+/**
+ * External compass includes
+ */
+@import "compass/css3";
+@import "compass/utilities";
 
+@import "breakpoint";
+@import "support/modern";
 /*------------------------------------*\
     $IMPORTS
 \*------------------------------------*/
@@ -34,12 +40,6 @@ $legacy-support-for-ie: false; // for some reason this seems to need to be here 
 @import "utilities/helper";
 @import "utilities/colors";
 @import "utilities/base-spacing";
-
-/**
- * External compass includes
- */
-@import "compass";
-@import "breakpoint";
 
 /**
  * Quarks; classless styling of default elements

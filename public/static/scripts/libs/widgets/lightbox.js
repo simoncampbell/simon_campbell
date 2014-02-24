@@ -17,7 +17,7 @@ define(['domReady', 'jquery'], function(domReady, jQuery) {
         var size = window.getComputedStyle(document.documentElement,':after').getPropertyValue('content'); //http://adactio.com/journal/5429/
 
         lightboxInit();
-        preventDefault();
+        // preventDefault();
 
 
         function lightboxInit() {

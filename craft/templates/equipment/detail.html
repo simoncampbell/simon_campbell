@@ -29,11 +29,15 @@
             <div class="main-wrapper main-wrapper--full">
                 <time class="meta-info-block__item" datetime="{{entry.postDate|date("Y-m-d")}}">{{entry.postDate|date("jS F Y")}}</time>
 
-                <p class="meta-info-block__item">Posted in
-                    <a class="category-link" href="URL!">
-                        <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
-                    </a>
-                </p>
+                {% if entry.equipmentType | length %}
+                    <p class="meta-info-block__item">Posted in
+                    {% for entryloop in entry.equipmentType %}
+                        <a class="category-link" href="/equipment/category/{{entryloop.title | lower | url_encode}}">
+                            <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
+                        {{entryloop.title}}</a>
+                    {% endfor %}
+                    </p>
+                {% endif %}
             </div>
         </div>
     </header>
@@ -122,43 +126,8 @@
 
         <ul class="item-list island--wrapper__content">
             <li class="item-list__item item-list__item--sidebar">
-                    <h4>Equipment</h4>
-                    <p class="marginalia">Feel free to take a look at some of the instruments that I used to make these recordings; find prices and related information about my gear.</p>
-
-                    <ul class="nav nav--category">
-                        <li>
-                           <a class="nav--category__item link--icon" href="URL!">
-                                <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
-                                Electric guitars
-                            </a>
-                        </li>
-                        <li>
-                            <a class="nav--category__item link--icon" href="URL!">
-                                <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
-                                Acoustic guitars
-                            </a>
-                        </li>
-                        <li>
-                            <a class="nav--category__item link--icon" href="URL!">
-                                <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
-                                Synthesizers
-                            </a>
-                        </li>
-                        <li>
-                            <a class="nav--category__item link--icon" href="URL!">
-                                <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
-                                Drum kits
-                            </a>
-                        </li>
-                        <li>
-                            <a class="nav--category__item link--icon" href="URL!">
-                                <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
-                                Amplifiers
-                            </a>
-                        </li>
-                    </ul><!-- //end.nav -->
-
-                </li><!-- //end.item-list__item -->
+                {% include 'components/_equipment/_category-list--sidebar.html' %}
+            </li><!-- //end.item-list__item -->
             <li class="item-list__item item-list__item--album">
                 {% include 'components/_side-bar--album.html' %}
             </li>

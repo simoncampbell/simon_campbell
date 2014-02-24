@@ -12,7 +12,7 @@
 
     .js & {
         @include rems(margin-bottom, $half-spacing-unit);
-        display: none;
+        // display: none;
         color: darken($color__white,10);
     }
 
@@ -107,7 +107,7 @@
                 margin: 0 auto;
             }
 
-            @include breakpoint(700px){
+            @include respond-to("medium and above"){
                 @include rems(padding-bottom, $base-spacing-unit);
             }
 
@@ -131,7 +131,6 @@
                 @include rems(font-size, $h5-size);
                 color: $color__white;
             }
-
         }
 
         p {
@@ -185,7 +184,7 @@
     border: 1px solid $color__background--black;
     background-color: #4C4C4C;
 
-    @include breakpoint(680px) {
+    @include respond-to("medium and above") {
         background-color: transparent;
         border: none;
         top: 27%;
@@ -207,7 +206,7 @@
         background-color: $color__background--black;
         opacity: .7;
 
-        @include breakpoint(680px){
+        @include respond-to("medium and above") {
             @include rems(height, 120);
             @include rems(font-size, $h1-size);
             @include rems(padding, $quarter-spacing-unit);
@@ -236,7 +235,7 @@
             text-align: right;
             float: right;
 
-            @include breakpoint(680px){
+            @include respond-to("medium and above") {
                 left: auto;
                 right: 0;
                 border-right: none;
@@ -245,9 +244,8 @@
         }
 
         &.prev {
-            opacity: 0;
 
-            @include breakpoint(680px){
+            @include respond-to("medium and above") {
                 border-left: none;
                 left: 0;
                 line-height: 1;
@@ -265,7 +263,7 @@
 
         &:hover,
         &:focus {
-            @include breakpoint(max-width 680px){
+            @include respond-to("medium and above") {
                 border-bottom:none;
                 background-color: darken($color__background--dark, 20);
             }
@@ -281,7 +279,7 @@
         @include rems(vertical-align, - 2);
         color: $color__meta;
 
-        @include breakpoint(680px){
+        @include respond-to("medium and above") {
             display: table-cell;
             vertical-align: middle;
             text-align: center;

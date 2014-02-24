@@ -28,8 +28,8 @@
         <div class="main-wrapper main-wrapper--listing" role="main">
 
             <ul class="item-list">
-                {% for post in craft.entries.find({section:'Equipment', limit:'10'})  %}
 
+                {% for post in craft.entries.find({section:'Equipment', limit: '10'})  %}
                     <li class="item-list__item item-list__item--article">
 
                         <article>
@@ -47,13 +47,15 @@
 
                                 <div class="meta-info-block meta-info-block--borderless">
                                     <time class="meta-info-block__item" datetime="{{post.postDate|date("Y-m-d")}}">{{post.postDate|date("jS F Y")}}</time>
-
-                                    <p class="meta-info-block__item">Posted in
-
-                                        <a class="category-link" href="/equipment/">
-                                            <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
-                                        </a>
-                                    </p>
+                                    {% if post.equipmentType | length %}
+                                        <p class="meta-info-block__item">Posted in
+                                        {% for entryloop in post.equipmentType %}
+                                            <a class="category-link" href="/equipment/category/{{entryloop.title | lower | replace({' ': '-'})}}">
+                                                <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
+                                            {{entryloop.title}}</a>
+                                        {% endfor %}
+                                        </p>
+                                    {% endif %}
                                 </div>
                             </header>
 
@@ -70,6 +72,9 @@
 
         <div class="side-wrapper island island--wrapper">
             <ul class="item-list island--wrapper__content">
+                <li class="item-list__item item-list__item--sidebar">
+                    {% include 'components/_equipment/_category-list--sidebar.html' %}
+                </li><!-- //end.item-list__item -->
 
                 <li class="item-list__item item-list__item--album side-bar--album--alone">
                     {% include 'components/_side-bar--album.html' %}

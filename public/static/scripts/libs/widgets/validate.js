@@ -2,7 +2,6 @@ define(['domReady', 'jquery', 'plugins/jquery.validate'], function(domReady, jQu
 
 
     domReady(function(){       
-        console.log('stuff');
         $(".form-block--message").validate({
             submitHandler: function(form) {
                 form.submit();

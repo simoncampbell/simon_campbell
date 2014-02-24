@@ -4,7 +4,6 @@ public/assets
 
 !.gitignore
 
-
 .sass-cache
 
 composer.phar

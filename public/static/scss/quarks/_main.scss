@@ -26,10 +26,9 @@ html {
     }
 
     /* Large */
-    @media screen and (min-width: 56.25em) {
+    @include respond-to("large and above"){
         &:after {
             content: 'large';
-            display: none;
         }
     }
 

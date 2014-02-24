@@ -25,11 +25,11 @@
             </div><!-- //.side-wrapper -->
 
             <div class="main-wrapper main-wrapper--article main-wrapper--gallery">
-                <div class="carousel carousel--gallery">
+                <div class="carousel carousel--gallery" data-carousel>
                     <div class="carousel__list-container">
-                        <ul class="carousel__list">
+                        <ul class="carousel__list" data-carousel-items-container>
                             {% for image in featured.carouselImages %}
-                                <li>
+                                <li data-carousel-item>
                                     <figure>
                                         <img src="{{image.getUrl('gallery')}}" class="carousel__image" />
                                     </figure>
@@ -54,11 +54,11 @@
                         </ul>
                     </div><!-- //end.carousel__list-container -->
                     <nav class="carousel__nav">
-                        <a href="#" class="prev">
+                        <a href="#" class="prev" data-carousel-nav="-1">
                             <span class="icon ss">navigateleft</span>
                             <span class="carousel__nav__text">Previous</span>
                         </a>
-                        <a href="#" class="next">
+                        <a href="#" class="next" data-carousel-nav="+1">
                             <span class="carousel__nav__text">Next</span>
                             <span class="icon ss">navigateright</span>
                         </a>

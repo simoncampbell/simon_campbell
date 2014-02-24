@@ -29,17 +29,17 @@ $no-queries: 'no-query' true;
 
 $breakpoints: add-breakpoint('below small', (max-width $width__small - 1px, $no-queries));
 $breakpoints: add-breakpoint('small and above', ($width__small, $no-queries));
-$breakpoints: add-breakpoint('between small and medium', ($width__small $width__medium));
+$breakpoints: add-breakpoint('between small and medium', ($width__small $width__medium, $no-queries));
 $breakpoints: add-breakpoint('regular and below', (max-width $width__regular, $no-queries));
 $breakpoints: add-breakpoint('regular and above', ($width__regular, $no-queries));
 $breakpoints: add-breakpoint('below medium', (max-width $width__medium - 1px, $no-queries));
 $breakpoints: add-breakpoint('medium and above', ($width__medium, $no-queries));
-$breakpoints: add-breakpoint('between medium and large', ($width__medium $width__large));
+$breakpoints: add-breakpoint('between medium and large', ($width__medium $width__large, $no-queries));
 $breakpoints: add-breakpoint('below large', (max-width $width__large - 1px, $no-queries));
 $breakpoints: add-breakpoint('large only', ($width__medium $width__largest, $no-queries));
 $breakpoints: add-breakpoint('large and above', ($width__large, $no-queries));
-$breakpoints: add-breakpoint('largest only', ($width__largest));
-$breakpoints: add-breakpoint('between largest and gigantic', ($width__largest $width__gigantic));
+$breakpoints: add-breakpoint('largest only', ($width__largest, $no-queries));
+$breakpoints: add-breakpoint('between largest and gigantic', ($width__largest $width__gigantic, $no-queries));
 $breakpoints: add-breakpoint('gigantic', ($width__gigantic));
 
 

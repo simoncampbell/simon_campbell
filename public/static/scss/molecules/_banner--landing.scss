@@ -41,8 +41,6 @@
 
         @include respond-to("large and above") {
             @include rems(height, 520);
-            // -webkit-filter: brightness(30%);
-            // filter: brightness(30%);
             -webkit-transform: scale(1.02); // nasty hack to hide the white edges caused by css filters
             margin-bottom: 0;
         }

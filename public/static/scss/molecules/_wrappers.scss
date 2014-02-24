@@ -45,6 +45,11 @@
         padding-left: 9.8%;
         @include rems(max-width, 628);
     }
+
+    // Have to add box-sizing to every one of these elements individually in IE.
+    .lt-ie10 & {
+        box-sizing: border-box;
+    }
 }
 
 .main-wrapper,
@@ -59,6 +64,7 @@
     overflow: hidden;
     background-size: 100%;
     background-color: $color__white;
+    min-height: 100%;
 
 
     @include respond-to("largest only"){

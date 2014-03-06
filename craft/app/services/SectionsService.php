@@ -232,9 +232,13 @@ class SectionsService extends BaseApplicationComponent
 	 */
 	public function getSectionLocales($sectionId, $indexBy = null)
 	{
-		$records = SectionLocaleRecord::model()->findAllByAttributes(array(
-			'sectionId' => $sectionId
-		));
+		$records = craft()->db->createCommand()
+							->select('*')
+							->from('sections_i18n sections_i18n')
+							->join('locales locales', 'locales.locale = sections_i18n.locale')
+							->where('sections_i18n.sectionId = :sectionId', array(':sectionId' => $sectionId))
+							->order('locales.sortOrder')
+							->queryAll();
 
 		return SectionLocaleModel::populateModels($records, $indexBy);
 	}
@@ -452,7 +456,10 @@ class SectionsService extends BaseApplicationComponent
 
 					if ($droppedLocaleIds)
 					{
-						craft()->db->createCommand()->delete('sections_i18n', array('in', 'locale', $droppedLocaleIds));
+						craft()->db->createCommand()->delete('sections_i18n',
+							array('and', 'sectionId = :sectionId', array('in', 'locale', $droppedLocaleIds)),
+							array(':sectionId' => $section->id)
+						);
 					}
 				}
 

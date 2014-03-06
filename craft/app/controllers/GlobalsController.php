@@ -80,6 +80,7 @@ class GlobalsController extends BaseController
 	 * Edits a global set's content.
 	 *
 	 * @param array $variables
+	 * @throws HttpException
 	 */
 	public function actionEditContent(array $variables = array())
 	{

@@ -472,7 +472,7 @@ class AssetsService extends BaseApplicationComponent
 		{
 			$folder = AssetFolderModel::populateModel($row);
 			$this->_foldersById[$folder->id] = $folder;
-			$folders[] = $folder;
+			$folders[$folder->id] = $folder;
 		}
 
 		return $folders;
@@ -762,6 +762,12 @@ class AssetsService extends BaseApplicationComponent
 			if (empty($filename))
 			{
 				$filename = $file->filename;
+			}
+
+			// If the new file does not have an extension, give it the old file extension.
+			if (!IOHelper::getExtension($filename))
+			{
+				$filename .= '.'.$file->getExtension();
 			}
 
 			$filename = IOHelper::cleanFilename($filename);

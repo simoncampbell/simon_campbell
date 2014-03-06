@@ -1327,6 +1327,7 @@ Craft.BaseElementIndex = Garnish.Base.extend({
 		if (!append)
 		{
 			this.$elements.html(response.html);
+			this.$scroller.scrollTop(0);
 
 			if (this.getSelectedSourceState('mode') == 'table')
 			{
@@ -1359,10 +1360,25 @@ Craft.BaseElementIndex = Garnish.Base.extend({
 
 			this.addListener(this.$scroller, 'scroll', function()
 			{
-				if (
-					(this.$scroller[0] == Garnish.$win[0] && ( Garnish.$win.innerHeight() + Garnish.$bod.scrollTop() >= Garnish.$bod.height() )) ||
-					(this.$scroller.prop('scrollHeight') - this.$scroller.scrollTop() == this.$scroller.outerHeight())
-				)
+				if (this.$scroller[0] == Garnish.$win[0])
+				{
+					var winHeight = Garnish.$win.innerHeight(),
+						winScrollTop = Garnish.$win.scrollTop(),
+						bodHeight = Garnish.$bod.height();
+
+					var loadMore = (winHeight + winScrollTop >= bodHeight);
+				}
+				else
+				{
+					var containerScrollHeight = this.$scroller.prop('scrollHeight'),
+						containerScrollTop = this.$scroller.scrollTop(),
+						containerHeight = this.$scroller.outerHeight();
+
+					var loadMore = (containerScrollHeight - containerScrollTop == containerHeight);
+
+				}
+
+				if (loadMore)
 				{
 					this.$loadingMoreSpinner.removeClass('hidden');
 					this.removeListener(this.$scroller, 'scroll');

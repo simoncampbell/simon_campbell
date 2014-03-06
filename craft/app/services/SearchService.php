@@ -198,7 +198,7 @@ class SearchService extends BaseApplicationComponent
 			}
 
 			// Sort found elementIds by score
-			asort($this->_results);
+			arsort($this->_results);
 
 			// Store entry ids in return value
 			$elementIds = array_keys($this->_results);
@@ -253,7 +253,7 @@ class SearchService extends BaseApplicationComponent
 		if ($cleanKeywords !== null && $cleanKeywords !== false && $cleanKeywords !== '')
 		{
 			// Add padding around keywords
-			$cleanKeywords = $this->_addPadding($cleanKeywords);
+			$cleanKeywords = ' '.$cleanKeywords.' ';
 		}
 
 		// Insert/update the row in searchindex
@@ -534,15 +534,14 @@ class SearchService extends BaseApplicationComponent
 					if ($term->exact)
 					{
 						// Create exact clause from term
-						$operator = $term->exclude ? '!=' : '=';
-						$keywords = $this->_addPadding($keywords);
+						$operator = $term->exclude ? 'NOT LIKE' : 'LIKE';
+						$keywords = ($term->subLeft ? '%' : ' ') . $keywords . ($term->subRight ? '%' : ' ');
 					}
 					else
 					{
 						// Create LIKE clause from term
 						$operator = $term->exclude ? 'NOT LIKE' : 'LIKE';
-						$keywords = ($term->subLeft ? '%' : '% ') . $keywords;
-						$keywords .= $term->subRight ? '%' : ' %';
+						$keywords = ($term->subLeft ? '%' : '% ') . $keywords . ($term->subRight ? '%' : ' %');
 					}
 
 					// Generate the SQL
@@ -585,18 +584,6 @@ class SearchService extends BaseApplicationComponent
 		}
 
 		return $terms[$term];
-	}
-
-	/**
-	 * Add padding to keywords for storing in the DB.
-	 *
-	 * @access private
-	 * @param string $keywords
-	 * @return string
-	 */
-	private function _addPadding($keywords)
-	{
-		return " {$keywords} ";
 	}
 
 	/**

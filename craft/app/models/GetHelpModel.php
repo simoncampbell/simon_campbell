@@ -33,8 +33,8 @@ class GetHelpModel extends BaseModel
 	public function rules()
 	{
 		// maxSize is 3MB
-		return array (
+		return array_merge(parent::rules(), array(
 			array('attachment', 'file', 'maxSize' => 3145728, 'allowEmpty' => true),
-		);
+		));
 	}
 }

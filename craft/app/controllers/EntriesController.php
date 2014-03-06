@@ -256,6 +256,9 @@ class EntriesController extends BaseController
 		$this->renderTemplate('entries/_edit', $variables);
 	}
 
+	/**
+	 *
+	 */
 	public function actionSwitchEntryType()
 	{
 		$this->requirePostRequest();
@@ -456,7 +459,7 @@ class EntriesController extends BaseController
 
 		$entryId = $entry->id;
 
-		craft()->elements->deleteElementById($entryId);
+		craft()->entries->deleteEntryById($entryId);
 
 		$this->redirectToPostedUrl();
 	}
@@ -493,7 +496,7 @@ class EntriesController extends BaseController
 			// Figure out which locales the user is allowed to edit in this section
 			$sectionLocaleIds = array_keys($variables['section']->getLocales());
 			$editableLocaleIds = craft()->i18n->getEditableLocaleIds();
-			$editableSectionLocaleIds = array_intersect($sectionLocaleIds, $editableLocaleIds);
+			$editableSectionLocaleIds = array_merge(array_intersect($sectionLocaleIds, $editableLocaleIds));
 
 			if (!$editableSectionLocaleIds)
 			{
@@ -681,7 +684,8 @@ class EntriesController extends BaseController
 
 		$entry->getContent()->title = craft()->request->getPost('title', $entry->title);
 
-		$fields = craft()->request->getPost('fields');
+		$fieldsLocation = craft()->request->getParam('fieldsLocation', 'fields');
+		$fields = craft()->request->getPost($fieldsLocation);
 		$entry->getContent()->setAttributes($fields);
 
 		$entry->parentId = craft()->request->getPost('parentId');

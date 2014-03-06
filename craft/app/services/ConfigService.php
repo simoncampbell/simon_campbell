@@ -331,7 +331,7 @@ class ConfigService extends BaseApplicationComponent
 	 */
 	public function getActivateAccountPath($code, $uid, $full = true)
 	{
-		$url = 'actions/users/validate';
+		$url = $this->get('actionTrigger').'/users/validate';
 
 		if (!$full)
 		{
@@ -350,7 +350,7 @@ class ConfigService extends BaseApplicationComponent
 		));
 
 		// Special case because we don't want the CP trigger showing in the email.
-		return str_replace(craft()->config->get('cpTrigger').'/', '', $url);
+		return str_replace($this->get('cpTrigger').'/', '', $url);
 	}
 
 	/**

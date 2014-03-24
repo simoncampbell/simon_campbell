@@ -56,7 +56,7 @@
                     <div class="island__content island__content--small">
                         <p class="text--small">For booking details please contact:
                         {% for person in contactAbout.bookingContactInfo %}
-                            <a href="{{person.bookingsURL}}">{{person.bookingsPerson}}</a> at Supertone Records</p>
+                            <a href="mailto:{{person.bookingsURL}}">{{person.bookingsPerson}}</a> at Supertone Records</p>
                         {% endfor %}
                     </div>
                 </div>

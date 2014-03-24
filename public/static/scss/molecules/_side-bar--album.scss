@@ -51,7 +51,7 @@
 
 
     .side-bar--album__figure {
-        @include rems(margin-top, $base-spacing-unit / 2);
+        @include rems(margin-top, 35);
         margin-bottom: 0;
     }
 

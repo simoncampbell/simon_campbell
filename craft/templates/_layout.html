@@ -89,12 +89,14 @@
                 <div class="wide-wrapper">
                     <section class="footer-main__item footer-main__item--about">
                         <div class="media">
-                            <figure class="media__img">
-                                <img src="/static/images/branding/simon.jpg" alt="Simon Campbell">
-                            </figure>
+                            {% for image in footer.footerImage %}
+                                <figure class="media__img">
+                                    <img src="{{image.url}}">
+                                </figure>
+                            {% endfor %}
                             <div class="media__body">
                                 <h3>About</h3>
-                                <p>Simon is a musician and producer of Supertone Records. His musical journies over the years have led him to many exciting adventures. <a class="link--reverse read-more" href="/contact-and-about">Read more &raquo;</a></p>
+                                <p>{{footer.footerAboutText}} <a class="link--reverse read-more" href="/contact-and-about">Read more &raquo;</a></p>
                             </div>
                         </div>
                     </section>
@@ -104,7 +106,7 @@
 
                         <form action="http://erskine.createsend.com/t/r/s/bxdii/" method="post">
                             <fieldset>
-                                <label for="id_newsletter">Sign up for the newsletter below and get the latest updates on tour info, merch sales and album releases.</label>
+                                <label for="id_newsletter">{{footer.footerNewsletterText}} </label>
                                 <input type="email" name="cm-bxdii-bxdii" id="bxdii-bxdii" class="text-input text-input--secondary" value="" placeholder="Your email">
                                 <input class="btn btn--secondary--on-black-bg" type="submit" value="Subscribe" class="submit">
                             </fieldset>

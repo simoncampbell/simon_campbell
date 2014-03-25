@@ -30,9 +30,11 @@
                         <ul class="carousel__list" data-carousel-items-container>
                             {% for image in featured.carouselImages %}
                                 <li data-carousel-item>
+
                                     <figure>
                                         <img src="{{image.getUrl('gallery')}}" class="carousel__image" />
                                     </figure>
+
                                     <div class="carousel__summary">
                                         {% if image.shortExtract|length > 1 %}
                                             <p>{{image.shortExtract}}</p>
@@ -88,7 +90,7 @@
                 <li class="item-list__item">
                     <figure>
                         {% for image in album.featuredImage %}
-                            <a href="{{album.url}}"><img src="{{image.url}}"></a>
+                            <a href="{{album.url}}"><img src="{{image.getUrl('galleryListing')}}"></a>
                         {% endfor %}
                     </figure>
                     <h5><a href="{{album.url}}">{{album.title}}</a></h5>

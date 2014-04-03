@@ -21,3 +21,4 @@ craft/config/db.php
 web.config
 
 .DS_Store
+*.pyc

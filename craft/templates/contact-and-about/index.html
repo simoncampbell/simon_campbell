@@ -50,9 +50,9 @@
                     <div class="island__content island__content--small">
                         <p class="text--small">For booking details please contact:
                         {% for person in contactAbout.bookingContactInfo %}
-                            <a href="mailto:{{person.bookingsURL}}">{{person.bookingsPerson}}</a> at Supertone Records</p>
+                            <a href="{{person.bookingsURL}}">{{person.bookingsPerson}}</a><br/>
                         {% endfor %}
-                    </div>
+                        </p>                    </div>
                 </div>
             </li>
 
@@ -70,7 +70,7 @@
                             <li>
                                 <a href="{{download.url}}" class="link--icon link--icon--long">
                                     <span class="icon ss ss-{{download.extension}}">{{download.extension}}</span>
-                                    Download the pdf
+                                    {{download}} - {{download.shortExtract}} - Download the {{download.extension}}
                                 </a>
                             </li>
                             {% endfor %}

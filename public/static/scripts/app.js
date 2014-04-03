@@ -6,6 +6,10 @@ requirejs.config({
         enquire: "libs/enquire",
         plugins: "libs/plugins",
         widgets: "libs/widgets"
+    },
+    shim: {
+        "plugins/jquery.validate": ["jquery"],
+        "plugins/jquery.fitvids": ["jquery"],
     }
 });
 

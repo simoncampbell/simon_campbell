@@ -38,7 +38,18 @@
             <link rel="stylesheet" media="all" type="text/css" href="/static/css/screen_ie8.css" />
         <![endif]-->
 
+        
+        <!-- GOOGLE ANALYTICS -->
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
+          ga('create', 'UA-3386644-7', 'simoncampbell.com');
+          ga('send', 'pageview');
+
+        </script>
 
         <!-- FONTS -->
         <link href="//cloud.webtype.com/css/209aeb3a-85f7-4c3e-8a8c-827c1c76e327.css" rel="stylesheet" type="text/css" />
@@ -78,12 +89,14 @@
                 <div class="wide-wrapper">
                     <section class="footer-main__item footer-main__item--about">
                         <div class="media">
-                            <figure class="media__img">
-                                <img src="/static/images/branding/simon.jpg" alt="Simon Campbell">
-                            </figure>
+                            {% for image in footer.footerImage %}
+                                <figure class="media__img">
+                                    <img src="{{image.url}}">
+                                </figure>
+                            {% endfor %}
                             <div class="media__body">
                                 <h3>About</h3>
-                                <p>Simon is a musician and producer of Supertone Records. His musical journies over the years have led him to many exciting adventures. <a class="link--reverse read-more" href="/contact-and-about">Read more &raquo;</a></p>
+                                <p>{{footer.footerAboutText}} <a class="link--reverse read-more" href="/contact-and-about">Read more &raquo;</a></p>
                             </div>
                         </div>
                     </section>
@@ -93,7 +106,7 @@
 
                         <form action="http://erskine.createsend.com/t/r/s/bxdii/" method="post">
                             <fieldset>
-                                <label for="id_newsletter">Sign up for the newsletter below and get the latest updates on tour info, merch sales and album releases.</label>
+                                <label for="id_newsletter">{{footer.footerNewsletterText}} </label>
                                 <input type="email" name="cm-bxdii-bxdii" id="bxdii-bxdii" class="text-input text-input--secondary" value="" placeholder="Your email">
                                 <input class="btn btn--secondary--on-black-bg" type="submit" value="Subscribe" class="submit">
                             </fieldset>
@@ -101,7 +114,7 @@
                     </section>
 
                     <section class="footer-main__item footer-main__item--social">
-                        <h3>Find me elsewhere</h3>
+                        <h3>Elsewhere</h3>
                         <nav>
                             <ul class="icon-list">
                                 <li class="icon-list__item">
@@ -131,8 +144,8 @@
                 <section class="footer-main__item footer-main__item--site-info">
                     <div class="wide-wrapper">
                         <ul class="nav">
-                            <li>Supertone Records &copy; {{ "now"|date("Y") }}</li>
-                            <!-- <li><a class="link--reverse" href="/privacy-policy">Privacy policy </a></li> -->
+                            <li><a class="link--reverse" href="http://supertonerecords.com/">Supertone Records</a> &copy; {{ "now"|date("Y") }} |</li>
+                            <li>Site by <a class="link--reverse" href="http://erskinedesign.com">Erskine Design</a></li>
                         </ul>
 
                         <a href="#" class="link--reverse link--icon link--jump">

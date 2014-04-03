@@ -24,7 +24,6 @@
     }
 
     img {
-        @include rems(max-height, 162);
         margin: 0 auto;
         display: block;
         float: none;

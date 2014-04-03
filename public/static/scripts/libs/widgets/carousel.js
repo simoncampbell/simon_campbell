@@ -15,7 +15,7 @@ define(['domReady', 'jquery'], function(domReady, jQuery) {
         animateSpeed = 500;
 
     domReady(function(){
-        if($carousel.length) {
+        if($carousel.length == 1) {
 
             // iterate through multiple carousels
             $.each( $carousel, function() {

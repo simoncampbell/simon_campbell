@@ -82,7 +82,7 @@
                 <li class="item-list__item">
                     <figure>
                         {% for image in album.featuredImage %}
-                            <a href="{{album.url}}"><img src="{{image.url}}"></a>
+                            <a href="{{album.url}}"><img src="{{image.getUrl('galleryListing')}}"></a>
                         {% endfor %}
                     </figure>
                     <h5><a href="{{album.url}}">{{album.title}}</a></h5>

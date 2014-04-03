@@ -14,15 +14,16 @@
 define(['domReady', 'jquery'], function(domReady, jQuery) {
 
     domReady(function(){
-        var size = window.getComputedStyle(document.documentElement,':after').getPropertyValue('content'); //http://adactio.com/journal/5429/
 
         lightboxInit();
-        // preventDefault();
+        size = window.getComputedStyle(document.documentElement,':after').getPropertyValue('content'); //http://adactio.com/journal/5429/
 
+        // OKAY. SIZE is not working for some dumb reason. This is why the lightbox isn’t launching. 
 
         function lightboxInit() {
             $('.carousel__zoom').click(function(e) {
-                if(size == 'medium' || size == 'large' || size == 'largest') {
+
+                if(size != 'small') {
                     e.preventDefault();
                     var $thisHref = $(this).attr('href');
                     var $thisSummary = $(this).parent().children('.carousel__summary').html();

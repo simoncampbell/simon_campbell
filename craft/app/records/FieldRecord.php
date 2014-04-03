@@ -25,8 +25,10 @@ class FieldRecord extends BaseRecord
 		'dateUpdated',
 		'enabled',
 		'expiryDate',
+		'firstName',
 		'handle',
 		'id',
+		'lastName',
 		'link',
 		'img',
 		'locale',
@@ -117,6 +119,7 @@ class FieldRecord extends BaseRecord
 	{
 		return array(
 			array('columns' => array('handle', 'context'), 'unique' => true),
+			array('columns' => array('context')),
 		);
 	}
 

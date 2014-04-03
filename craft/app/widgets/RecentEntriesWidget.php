@@ -36,7 +36,7 @@ class RecentEntriesWidget extends BaseWidget
 	 */
 	protected function defineSettings()
 	{
-		if (craft()->hasPackage(CraftPackage::PublishPro))
+		if (craft()->getEdition() >= Craft::Client)
 		{
 			$settings['section'] = array(AttributeType::Mixed, 'default' => '*');
 		}
@@ -65,7 +65,7 @@ class RecentEntriesWidget extends BaseWidget
 	 */
 	public function getTitle()
 	{
-		if (craft()->hasPackage(CraftPackage::PublishPro))
+		if (craft()->getEdition() >= Craft::Client)
 		{
 			$sectionId = $this->getSettings()->section;
 
@@ -92,7 +92,7 @@ class RecentEntriesWidget extends BaseWidget
 	{
 		$params = array();
 
-		if (craft()->hasPackage(CraftPackage::PublishPro))
+		if (craft()->getEdition() >= Craft::Client)
 		{
 			$sectionId = $this->getSettings()->section;
 
@@ -125,7 +125,7 @@ class RecentEntriesWidget extends BaseWidget
 		$somethingToDisplay = false;
 
 		// If they have Publish Pro installed, only display the sections they are allowed to edit.
-		if (craft()->hasPackage(CraftPackage::PublishPro))
+		if (craft()->getEdition() >= Craft::Client)
 		{
 			if ($this->getSettings()->section == '*' || in_array($this->getSettings()->section, $sectionIds))
 			{
@@ -134,7 +134,7 @@ class RecentEntriesWidget extends BaseWidget
 		}
 
 		// If they don't have publish pro, OR they have publish pro and have permission to edit sections in it.
-		if ((!craft()->hasPackage(CraftPackage::PublishPro) || (craft()->hasPackage(CraftPackage::PublishPro) && $somethingToDisplay)) && count($sectionIds) > 0)
+		if ((craft()->getEdition() == Craft::Client || (craft()->getEdition() >= Craft::Client && $somethingToDisplay)) && count($sectionIds) > 0)
 		{
 			$criteria = $this->_getCriteria($sectionIds);
 			$entries = $criteria->find();
@@ -173,11 +173,12 @@ class RecentEntriesWidget extends BaseWidget
 	{
 		$criteria = craft()->elements->getCriteria(ElementType::Entry);
 		$criteria->status = null;
+		$criteria->localeEnabled = null;
 		$criteria->limit = $this->getSettings()->limit;
 		$criteria->order = 'dateCreated DESC';
 
 		// Section is only defined if Publish Pro is installed.
-		if (craft()->hasPackage(CraftPackage::PublishPro))
+		if (craft()->getEdition() >= Craft::Client)
 		{
 			if ($this->getSettings()->section == '*')
 			{

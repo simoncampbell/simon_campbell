@@ -9,7 +9,7 @@ env.project = ''
 def staging():
     env.name = 'staging'
     env.url = 'simoncampbell-craft.erskinestage.com'
-    env.hosts = ['rackdev.erskinedev.com:22',]
+    env.hosts = ['dev.erskinedev.com:22',]
     env.path = join(env.web_root, env.url)
     env.database = None
     env.require_password = True

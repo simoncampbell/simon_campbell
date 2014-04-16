@@ -19,7 +19,7 @@
     <header class="heading-group heading-group--main">
         <div class="main-wrapper main-wrapper--full">
             <h2 class="epsilon">News and updates</h2>
-            <h1>Posts tagged with &lsquo;{{tag.name | capitalize}}&rsquo;</h1>
+            <h1>Posts tagged with &lsquo;{{tag.name}}&rsquo;</h1>
         </div>
     </header>
 
@@ -41,9 +41,9 @@
                         {% if entry.newsTags | length %}
                             <p class="meta-info-block__item">Posted in
                                 {% for tag in entry.newsTags %}
-                                    <a class="category-link" href="/news/category/{{tag.name | lower | replace({' ': '-'}) }}">
+                                    <a class="category-link" href="/news/category/{{tag.name | replace({' ': '-'}) }}">
                                         <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
-                                        {{tag.name | capitalize}}</a>
+                                        {{tag.name}}</a>
                                 {% endfor %}
                             </p>
                             {% endif %}

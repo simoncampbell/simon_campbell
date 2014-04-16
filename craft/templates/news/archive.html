@@ -37,9 +37,9 @@
                             {% if entry.newsTags | length %}                            
                                 <p class="meta-info-block__item">Posted in
                                     {% for tag in entry.newsTags %}
-                                        <a class="category-link" href="/news/category/{{tag.name | lower | replace({' ': '-'}) }}">
+                                        <a class="category-link" href="/news/category/{{tag.name | replace({' ': '-'}) }}">
                                             <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
-                                            {{tag.name | capitalize}}</a>
+                                            {{tag.name}}</a>
                                     {% endfor %}
                                 </p>
                             {% endif %}

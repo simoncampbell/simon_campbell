@@ -19,9 +19,9 @@
                     {% if post.blogPostTags | length %}
                     <p class="meta-info-block__item">Posted in
                         {% for tag in post.blogPostTags %}
-                            <a class="category-link" href="/blog/category/{{tag.name | lower | replace({' ': '-'}) }}">
+                            <a class="category-link" href="/blog/category/{{tag.name | replace({' ': '-'}) }}">
                                 <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
-                                {{tag.name | capitalize}}</a>
+                                {{tag.name}}</a>
                         {% endfor %}
                     </p>
                     {% endif %}

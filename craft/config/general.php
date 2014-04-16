@@ -8,5 +8,23 @@
  */
 
 return array(
-    'omitScriptNameInUrls' => true,
+    // ALL env settings
+    '*' => array(
+        'omitScriptNameInUrls' => true,
+    ),
+
+    // PRODUCTION env settings
+    'simoncampbell.dev' => array (
+
+    ),
+
+    // STAGING env settings
+    'erskinestage.com' => array (
+
+    ),
+
+    // LIVE env settings
+    'simoncampbell.com' => array (
+        
+    ),
 );

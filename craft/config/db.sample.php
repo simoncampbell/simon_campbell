@@ -8,30 +8,32 @@
  */
 
 return array(
+    // ALL env settings
+    '*' => array(
+        'tablePrefix' => 'craft',
+    ),
 
-/**
- * The database server name or IP address. Usually 'localhost' or '127.0.0.1'.
- */
-'server' => '127.0.0.1',
+    // PRODUCTION env settings
+    'simoncampbell.dev' => array (
+        'server' => '127.0.0.1',
+        'user' => 'root',
+        'password' => 'enable',
+        'database' => 'simon_campbell',
+    ),
 
-/**
- * The database username to connect with.
- */
-'user' => 'root',
+    // STAGING env settings
+    'erskinestage.com' => array (
+        'server' => '127.0.0.1',
+        'user' => 'root',
+        'password' => 'enable',
+        'database' => 'simon_campbell',
+    ),
 
-/**
- * The database password to connect with.
- */
-'password' => 'enable',
-
-/**
- * The name of the database to select.
- */
-'database' => 'simon_campbell',
-
-/**
- * The prefix to use when naming tables. This can be no more than 5 characters.
- */
-'tablePrefix' => 'craft',
-
+    // LIVE env settings
+    'simoncampbell.com' => array (
+        'server' => '127.0.0.1',
+        'user' => 'root',
+        'password' => 'enable',
+        'database' => 'simon_campbell',
+    ),
 );

@@ -182,6 +182,10 @@
             @include respond-to("regular and above"){
                 width: 47%;
                 margin-left: 3%;
+
+                &:nth-child(odd) {
+                    clear: left;
+                }
             }
 
             @include respond-to("large and above"){

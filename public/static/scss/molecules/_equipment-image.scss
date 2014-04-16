@@ -18,8 +18,6 @@
 
     a {
         @include rems(padding, $half-spacing-unit);
-        overflow: hidden;
-        max-height: 13em;
         cursor: pointer;
     }
 

@@ -125,6 +125,11 @@
         @include rems(margin-right, 5);
     }
 
+    .icon--pinterest:before {
+        @include svg-bkgd($social, pinterest);
+        @include rems(margin-right, 5);
+    }
+
     .icon--youtube:before {
         @include svg-bkgd($social, youtube);
     }

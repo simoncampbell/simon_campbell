@@ -5,6 +5,7 @@
  #
  #}
 
+{% set tag = tag|replace("-", " ") %}
 {% set tag = craft.tags.name(tag) %}
 
 {% if not tag.first() %}

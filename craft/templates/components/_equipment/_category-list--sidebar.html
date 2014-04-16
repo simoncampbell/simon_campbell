@@ -13,7 +13,7 @@
 <ul class="nav nav--category">
 {% for entry in craft.entries.find({section: 'equipmentTypes'}) %}
     <li{% if (category.title | lower) == (entry.title | lower) %} class="cur"{% endif %}>
-       <a class="nav--category__item {% if (category.title | lower) == (entry.title | lower) %} nav--category__item--cur{% endif %} link--icon" href="/equipment/category/{{entry.title | lower | replace({' ': '-'})}}">
+       <a class="nav--category__item {% if (category.title | lower) == (entry.title | lower) %} nav--category__item--cur{% endif %} link--icon" href="/equipment/category/{{entry.title | lower | replace({' &': ''}) | replace({"'": ''}) | replace({' ': '-'})}}">
             <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
             {{entry.title | capitalize}}
         </a>

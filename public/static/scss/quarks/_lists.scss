@@ -13,16 +13,19 @@ li{
 
 ul {
     margin-left:0;
-    list-style-position:outside;
+    // list-style-position:outside;
 
     li {
         list-style-type:none;
+        position: relative;
+        @include rems(padding-left, 12);
 
         &:before {
-            @include rems(left, - $quarter-spacing-unit);
-            content:"•";
+            content:"\2022";
             color: $color__orange--primary;
-            position:relative;
+            position: absolute;
+            left: 0;
+            top: 0;
         }
     }
 }

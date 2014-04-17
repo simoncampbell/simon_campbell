@@ -53,6 +53,7 @@
         position: relative;
         overflow: hidden;
         @include rems(max-height, 624);
+        padding-left: 0;
 
         .no-js & {
             @include rems(margin-bottom, $base-spacing-unit * 2);

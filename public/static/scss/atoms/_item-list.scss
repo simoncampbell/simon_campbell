@@ -12,6 +12,7 @@
     @extend .cf;
 }
     .item-list__item {
+        padding-left: 0;
         list-style-type:none;
         @include rems(margin-bottom, $base-spacing-unit * 2);
 

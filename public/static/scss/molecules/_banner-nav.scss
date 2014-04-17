@@ -115,6 +115,7 @@
 
 
     > li {
+        padding-left: 0;
 
         @include respond-to("largest only"){
             display: block;

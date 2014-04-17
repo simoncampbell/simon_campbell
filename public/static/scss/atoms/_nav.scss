@@ -13,10 +13,11 @@
     list-style:none;
     margin-left:0;
 
-    > li{
+    > li {
 
         &,
         > a{
+            padding-left: 0;
             display:inline-block;
            *display:inline;
             zoom:1;
@@ -90,7 +91,8 @@
     word-spacing:-0.43em;
     white-space:nowrap;
 
-    > li{
+    > li {
+        padding-left: 0;
         letter-spacing:normal;
         word-spacing:normal;
 
@@ -105,6 +107,7 @@
     margin-bottom: 0;
 
     li {
+        padding-left: 0;
         @include rems(margin-right, $half-spacing-unit);
         @include rems(font-size, $milli-size);
     }
@@ -157,7 +160,8 @@
     display:table;
     width:100%;
 
-    > li{
+    > li {
+        padding-left: 0;
         display:table-cell;
 
         > a{

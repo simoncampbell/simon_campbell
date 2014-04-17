@@ -30,7 +30,7 @@
 
         {{entry.body}}
 
-        {% if entry.reviews|length > 1 %}
+        {% if entry.reviews|length > 0 %}
             <h3>Reviews</h3>
             <div class="item-list__item item-list__item--reviews">
                 <ul class="item-list">
@@ -43,7 +43,7 @@
                                     <p>
                                         {{item.ReviewWriter}},
                                         <cite>
-                                            <a href="item.ReviewLink">{{item.ReviewPublication}}</a>
+                                            <a href="{{item.ReviewLink}}">{{item.ReviewPublication}}</a>
                                         </cite>
                                     </p>
                                 </figcaption>

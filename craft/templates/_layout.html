@@ -91,7 +91,7 @@
                         <div class="media">
                             {% for image in footer.footerImage %}
                                 <figure class="media__img">
-                                    <img src="{{image.url}}">
+                                    <img src="{{image.getUrl('footerAbout')}}">
                                 </figure>
                             {% endfor %}
                             <div class="media__body">

@@ -93,7 +93,7 @@
         <div class="equipment__image">
             {% for image in entry.equipmentImage %}
                 <figure>
-                    <img src="{{image.url}}">
+                    <img src="{{image.getUrl('equipmentTransform')}}">
                 </figure>
             {% endfor %}
         </div>

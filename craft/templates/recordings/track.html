@@ -1,0 +1,73 @@
+{#
+ # RECORDINGS
+ # Detail Template
+ # -------------------
+ #
+ #}
+
+{% extends "_layout" %}
+
+{% block content_main %}
+
+    <header class="heading-group heading-group--main">
+        <div class="main-wrapper main-wrapper--full">
+            <h1>{{entry.title}}</h1>
+        </div>
+    </header>
+
+    <div class="main-wrapper main-wrapper--article__detail main-wrapper--listing">
+        <h3>Lyrics</h3>
+        {{entry.lyrics|markdown}}
+
+        <p>
+        {% if entry.writtenBy %}
+            <strong>Written by</strong> {{entry.writtenBy}}
+        {% endif %}
+        <br />
+        {% if entry.length %}
+            <strong>Track Length</strong> {{entry.length}}
+        {% endif %}
+        </p>
+
+   </div>
+
+{% endblock %}
+
+
+
+{% block content_side %}
+    <div class="side-wrapper island island--wrapper">
+        <ul class="item-list island--wrapper__content">
+            {% if entry.associatedRelease|length > 0 %}
+                {% for item in entry.associatedRelease %}
+                    <li class="item-list__item item-list__item--live-shows">
+                                    
+                        <div class="live-shows-block live-shows-block--island">
+                            <header class="island__header">
+                            <h4>{{item.title}}</h4>
+                            </header>
+
+                            <dl class="shows-list island__content">
+
+                                {% if item.tracks|length > 0 %}
+                                    {% for track in item.tracks %}
+                                    <dd>
+                                        <h5><a href="{{track.url}}">{{track.title}}</a></h5>
+                                        <p>[{{track.length}}]</p>
+                                    </dd>
+                                    {% endfor %}
+                                {% endif %}
+                                <dd><a href="{{item.url}}">&laquo; {{item.title}}</a></dd>
+
+                            </dl>
+                        </div>
+                    </li>
+                {% endfor %}
+            {% endif %}
+        <ul>
+
+   </div><!-- //end.island.side-wrapper -->
+
+
+
+{% endblock %}

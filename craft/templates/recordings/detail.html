@@ -30,6 +30,15 @@
 
         {{entry.body}}
 
+        {% if entry.tracks|length > 0 %}
+            <h3>Tracks</h3>
+                <ol>
+                    {% for item in entry.tracks %}
+                        <li><a href="{{item.url}}">{{item.title}}</a> {% if item.length %}[{{item.length}}]{% endif %}</li>
+                    {% endfor %}
+                </ol>
+        {% endif %}
+
         {% if entry.reviews|length > 0 %}
             <h3>Reviews</h3>
             <div class="item-list__item item-list__item--reviews">

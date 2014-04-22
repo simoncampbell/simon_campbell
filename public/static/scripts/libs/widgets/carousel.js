@@ -24,6 +24,8 @@ define(['domReady', 'jquery'], function(domReady, jQuery) {
                 $carouselItems = $("[data-carousel-item]");
                 carouselLength = $carouselItems.length;
 
+                checkHash();
+                updateURL();
                 setItemWidth();
                 showCarouselNav(carouselPosition);
                 bindCarouselNav();
@@ -59,6 +61,7 @@ define(['domReady', 'jquery'], function(domReady, jQuery) {
         }, speed, function() {
             carouselPosition = newPosition;
             showCarouselNav(newPosition);
+            updateURL();
         });
     }
 
@@ -72,6 +75,18 @@ define(['domReady', 'jquery'], function(domReady, jQuery) {
 
         if (position < $carouselItems.length) {
             $("[data-carousel-nav='+1']").show();
+        }
+    }
+
+    // Updates hash data in URL
+    function updateURL() {
+        location.hash = "item" + carouselPosition;
+    }
+
+    // Checks for hashtag
+    function checkHash() {
+        if (location.hash.indexOf("item")) {
+            changeCarousel(parseInt(location.hash.replace("#item", "")), 0); 
         }
     }
 

@@ -24,8 +24,8 @@ define(['domReady', 'jquery'], function(domReady, jQuery) {
                 $carouselItems = $("[data-carousel-item]");
                 carouselLength = $carouselItems.length;
 
+                updateURL(carouselPosition);
                 checkHash();
-                updateURL();
                 setItemWidth();
                 showCarouselNav(carouselPosition);
                 bindCarouselNav();
@@ -92,10 +92,11 @@ define(['domReady', 'jquery'], function(domReady, jQuery) {
 
 
     $(window).resize(function() {
-        carouselWidth = $carousel.width();
+        if ($carousel) {
+            carouselWidth = $carousel.width();
 
-        setItemWidth();
-        changeCarousel(carouselPosition, 0);
-
+            setItemWidth();
+            changeCarousel(carouselPosition, 0);
+        }
     });
 });

@@ -40,8 +40,6 @@ ol {
         .generatedcontent & {
             list-style-type:none;
             position: relative;
-            @include rems(width, 15);
-            text-align: right;
             @include rems(padding-left, 20);
 
             &:before {
@@ -50,6 +48,8 @@ ol {
                 position: absolute;
                 left: 0;
                 top: 0;
+                @include rems(width, 15);
+                text-align: right;
             }
         }
     }

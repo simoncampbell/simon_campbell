@@ -40,7 +40,9 @@ ol {
         .generatedcontent & {
             list-style-type:none;
             position: relative;
-            @include rems(padding-left, 12);
+            @include rems(width, 15);
+            text-align: right;
+            @include rems(padding-left, 20);
 
             &:before {
                 content: counter(counter);

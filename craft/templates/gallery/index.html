@@ -29,10 +29,8 @@
         <ul>
 
             {% set entries = craft.entries.section('Gallery').find %}
-            {% set firstEntry = entries[0] %}
-            {% set remainingEntries = entries|without(firstEntry) %}
 
-            {% for album in remainingEntries %}
+            {% for album in entries %}
                 <li class="item-list__item">
                     <figure>
                         {% for image in album.featuredImage %}

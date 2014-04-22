@@ -17,60 +17,6 @@
         </div>
     </header>
 
-    {% for featured in craft.entries.find({section:'Gallery', limit:'1'}) %}
-        <div class="carousel-wrapper">
-            <div class="side-wrapper carousel__info-wrapper">
-                <h4>{{featured.title}}</h4>
-                <p>{{featured.shortExtract}}</p>
-            </div><!-- //.side-wrapper -->
-
-            <div class="main-wrapper main-wrapper--article main-wrapper--gallery">
-                <div class="carousel carousel--gallery" data-carousel>
-                    <div class="carousel__list-container">
-                        <ul class="carousel__list" data-carousel-items-container>
-                            {% for image in featured.carouselImages %}
-                                <li data-carousel-item>
-
-                                    <figure>
-                                        <img src="{{image.getUrl('gallery')}}" class="carousel__image" />
-                                    </figure>
-
-                                    <div class="carousel__summary">
-                                        {% if image.shortExtract|length > 1 %}
-                                            <p>{{image.shortExtract}}</p>
-                                        {% endif %}
-                                        <div class="meta-info-block meta-info-block--borderless">
-                                            <div class="meta-info-block__item">
-                                                Photo {{loop.index}} of {{featured.carouselImages | length}} &bull; <time datetime="{{image.date|date("Y-m-d")}}">{{image.date|date("jS F Y")}}</time>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <a class="carousel__zoom" href="{{image.url}}">
-                                        <div class="btn btn--icon btn--tertiary btn--arrow-left btn--epsilon">
-                                            <span class="icon ss ss-expand">expand</span>
-                                            <div class="icon-text">Full screen</div>
-                                        </div>
-                                    </a>
-                                </li>
-                            {% endfor %}
-                        </ul>
-                    </div><!-- //end.carousel__list-container -->
-                    <nav class="carousel__nav">
-                        <a href="#" class="prev" data-carousel-nav="-1">
-                            <span class="icon ss">navigateleft</span>
-                            <span class="carousel__nav__text">Previous</span>
-                        </a>
-                        <a href="#" class="next" data-carousel-nav="+1">
-                            <span class="carousel__nav__text">Next</span>
-                            <span class="icon ss">navigateright</span>
-                        </a>
-                    </nav>
-                </div><!-- //end.gallery -->
-            </div><!-- //.main-wrapper -->
-
-        </div><!-- //end.carousel -->
-    {% endfor %}
-
 {% endblock %}
 
 
@@ -79,7 +25,7 @@
 <div class="wide-wrapper wide-wrapper--merch">
     <div class="item-list item-list--merch">
 
-        <h3>Other photo albums</h3>
+        <h3>Albums</h3>
         <ul>
 
             {% set entries = craft.entries.section('Gallery').find %}

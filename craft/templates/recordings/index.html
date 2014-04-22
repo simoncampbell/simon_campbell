@@ -18,43 +18,40 @@
 
     <div class="main-wrapper main-wrapper--listing">
 
-        <ul class="item-list">
+        <div class="item-list item-list--merch">
+            <ul>
+                {% for album in craft.entries.find({section:'Recordings', limit:'10'}) %}
+                    <li class="item-list__item">
 
-            {% for album in craft.entries.find({section:'Recordings', limit:'10'}) %}
-                <li class="item-list__item item-list__item--article">
+                        <figure>
+                            {% for image in album.albumArt %}
+                                <a href="{{album.url}}">
+                                    <img src="{{image.getUrl('albumArtSidebar')}}" width="{{image.getWidth('albumArtSidebar')}}" height="{{image.getHeight('albumArtSidebar')}}" alt="{{album.title}}"/>
+                                </a>
+                            {% endfor %}
+                        </figure>
 
-                    <figure class="flag__image">
-                        {% for image in album.albumArt %}
-                            <a href="{{album.url}}">
-                                <img src="{{image.getUrl('albumArtSidebar')}}" width="{{image.getWidth('albumArtSidebar')}}" height="{{image.getHeight('albumArtSidebar')}}" alt="{{album.title}}"/>
-                            </a>
-                        {% endfor %}
-                    </figure>
+                        <h5><a href="{{album.url}}">{{album.title}}</a></h5>
+                        <a href="{{album.url}}"><time datetime="{{album.postDate|date("Y")}}">{{album.postDate|date("Y")}}</time> • {{album.recordType}}</a>
 
-                    <div class="heading-group heading-group--marginless">
-                        <h3><a href="{{album.url}}">{{album.title}}</a></h3>
-                        <div class="meta-info-block__item">
-                            <time datetime="{{album.postDate|date("Y")}}">{{album.postDate|date("Y")}}</time>
-                        </div>
-                        <div class="meta-info-block__item">• {{album.recordType}}</div>
-                    </div><!-- //.heading-group -->
-                </li><!-- //.item -->
-            {% endfor %}
-        </ul><!-- //.item-list -->
+                    </li><!-- //.item -->
+                {% endfor %}
+            </ul>
+        </div><!-- //.item-list -->
     </div><!-- main-wrapper -->
 
     <div class="side-wrapper island island--wrapper">
-            <ul class="item-list island--wrapper__content">
-                <li class="item-list__item item-list__item--sidebar">
-                    {% include 'components/_equipment/_category-list--sidebar.html' %}
-                </li><!-- //end.item-list__item -->
+        <ul class="item-list island--wrapper__content">
+            <li class="item-list__item item-list__item--sidebar">
+                {% include 'components/_equipment/_category-list--sidebar.html' %}
+            </li><!-- //end.item-list__item -->
 
-                <li class="item-list__item item-list__item--live-shows">
-                    {% include 'components/_live-shows--alternate.html' %}
-                </li>
-            </ul><!-- //end.item-list -->
+            <li class="item-list__item item-list__item--live-shows">
+                {% include 'components/_live-shows--alternate.html' %}
+            </li>
+        </ul><!-- //end.item-list -->
 
-        </div><!-- //end.side-wrapper -->
+    </div><!-- //end.side-wrapper -->
 
 
 

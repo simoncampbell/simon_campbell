@@ -25,6 +25,9 @@
     </header>
 
     <div class="main-wrapper main-wrapper--article__detail main-wrapper--listing">
+        <div class="meta-info-block meta-info-block--borderless">
+        <p class="meta-info-block__item">Released on <time class="meta-info-block__item" datetime="{{entry.releaseDate|date("Y-m-d")}}">{{entry.releaseDate|date("jS F Y")}}</time> by {{entry.label}}</p>
+        </div>
 
         <p class="lede">{{entry.shortExtract}}</p>
 
@@ -32,11 +35,30 @@
 
         {% if entry.tracks|length > 0 %}
             <h3>Tracks</h3>
-                <ol>
-                    {% for item in entry.tracks %}
-                        <li><a href="{{item.url}}">{{item.title}}</a> {% if item.length %}[{{item.length}}]{% endif %}</li>
-                    {% endfor %}
-                </ol>
+            <ol>
+                {% for item in entry.tracks %}
+                    <li><a href="{{item.url}}">{{item.title}}</a> {% if item.length %}[{{item.length}}]{% endif %}</li>
+                {% endfor %}
+            </ol>
+        {% endif %}
+
+        <h3>Credits</h3>
+        {% if entry.credits|length > 0 %}
+            <ul>
+                {% for item in entry.credits %}
+                    <li>
+                        {{item.creditType}} - {{item.creditName}}
+                        {% if item.creditTracks %} (tracks {{item.creditTracks}}) {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        {% if entry.recordedAt or entry.masteredBy %}
+        <p>
+            {% if entry.recordedAt %}<strong>Recorded at</strong> {{entry.recordedAt}}<br />{% endif %}
+            {% if entry.masteredBy %}<strong>Mastered by</strong> {{entry.masteredBy}}{% endif %}
+        </p>
         {% endif %}
 
         {% if entry.reviews|length > 0 %}

@@ -14,7 +14,7 @@
     <header class="heading-group heading-group--main">
         <div class="main-wrapper main-wrapper--full">
             <h1>Gallery</h1>
-            <h2>Collections of photos from gigs, tours and studio sessions</h2>
+            <h2>A collection of videos and photos from gigs, tours and studio sessions</h2>
         </div>
     </header>
 
@@ -26,7 +26,24 @@
 <div class="wide-wrapper wide-wrapper--merch">
     <div class="item-list item-list--merch">
 
-        <h3>Albums</h3>
+        <h3>Videos</h3>
+
+        <ul>
+            {% set entries = craft.entries.section('Videos').find %}
+
+            {% for video in entries %}
+                <li class="item-list__item">
+                    <figure>
+                        {% for image in video.thumbnailImage %}
+                            <a href="{{video.url}}" class="link--video"><img src="{{image.getUrl('galleryListing')}}" alt="{{video.title}} - a video by Simon Campbell"></a>
+                        {% endfor %}
+                    </figure>
+                    <h5><a href="{{video.url}}">{{video.title}}</a></h5>
+            </li>
+            {% endfor %}
+        </ul>
+
+        <h3>Photo albums</h3>
         <ul>
 
             {% set entries = craft.entries.section('Gallery').find %}

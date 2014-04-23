@@ -13,7 +13,7 @@
 
     <dl class="shows-list island__content">
 
-        {% for entry in craft.entries.find({section:'liveShows', limit: '4', order: 'liveShowDate desc'}) %}
+        {% for entry in craft.entries.find({section:'liveShows', limit: '4', order: 'liveShowDate asc'}) %}
             <dt class="shows-list">
                 <time datetime="{{entry.liveShowDate|date("Y-m-d")}}">{{entry.liveShowDate|date("jS F Y")}}</time>
             </dt>

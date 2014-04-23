@@ -46,6 +46,21 @@
 
             {{ entry.body }}
 
+            {% for audio in entry.audioFile %}
+
+                {% set split = audio.url|split('.') %}
+                {% set ext = split[split|length -1] %}
+
+                {% if (ext == "mp3") %}
+                    {% set ext = "mpeg" %}
+                {% endif %}
+
+                <audio controls>
+                    <source src="{{audio.url}}" type="audio/{{ext}}" />
+                    <p>Your browser does not support this audio format.</p>
+                </audio>
+            {% endfor %}
+
         </article>
     </div><!-- //end.main-wrapper -->
 

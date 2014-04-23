@@ -40,7 +40,7 @@
                 border:none;
 
                 &:before {
-                    @include transition(.25s all ease-in-out);
+                    // @include transition(.25s all ease-in-out); // removed as causing strange bug in Chrome
                     opacity: .5;
                 }
             }

@@ -30,7 +30,7 @@
 
             {% for image in post.blog__image %}
                 <figure class="featured__post-image">
-                    <a href="{{post.url}}"><img src="{{image.getUrl('featuredImage')}}"  alt="{{post.title}}"></a>
+                    <a href="{{post.url}}"><img src="{{image.getUrl('featuredImage')}}"  alt="{{post.title}} - {{entry.heading__sec}} - by Simon Campbell"></a>
                 </figure>
             {% endfor %}
 

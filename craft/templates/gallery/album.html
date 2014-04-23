@@ -31,7 +31,7 @@
                         {% for image in entry.carouselImages %}
                             <li data-carousel-item>
                                 <figure>
-                                    <img src="{{image.getUrl('gallery')}}" class="carousel__image" />
+                                    <img src="{{image.getUrl('gallery')}}" class="carousel__image" {% if image.shortExtract|length > 1 %}alt="{{image.shortExtract}}"{% endif %} />
                                 </figure>
                                 <div class="carousel__summary">
                                     {% if image.shortExtract|length > 1 %}

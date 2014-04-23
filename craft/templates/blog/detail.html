@@ -37,7 +37,7 @@
 
     {% for image in entry.blog__image %}
         <figure class="figure__hero main-wrapper--secondary">
-            <img src="{{image.url}}">
+            <img src="{{image.url}}" alt="{{entry.title}} - {{entry.heading__sec}} - by Simon Campbell">
         </figure>
     {% endfor %}
 

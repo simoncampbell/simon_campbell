@@ -38,7 +38,7 @@
 
             {% for image in entry.standardImage %}
                 <figure>
-                    <img src="{{image.url}}"/>
+                    <img src="{{image.url}}" alt="{{entry.title}} - an update from Simon Campbell" />
                     <p>{{news.caption}}</p>
                 </figure>
             {% endfor %}

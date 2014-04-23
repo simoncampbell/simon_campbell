@@ -16,7 +16,7 @@
                 <figure>
                     <a href="/equipment/category/{{entry.title | lower | replace({' ': '-'})}}">
                     {% for image in entry.equipmentTypeImage %}
-                        <img src="{{image.getUrl('equipmentTypes')}}" width="{{image.getWidth('equipmentTypes')}}" height="{{image.getWidth('equipmentTypes')}}" alt="{{entry.title}}" />
+                        <img src="{{image.getUrl('equipmentTypes')}}" width="{{image.getWidth('equipmentTypes')}}" height="{{image.getWidth('equipmentTypes')}}" alt="{{entry.title}} - used by Simon Campbell" />
                     {% endfor %}
                     </a>
                 </figure>

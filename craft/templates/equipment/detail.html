@@ -12,7 +12,7 @@
     <!-- LARGE ARTISINAL IMAGE -->
     {% for image in entry.largeImage %}
         <figure class="figure--banner">
-            <img src="{{image.url}}">
+            <img src="{{image.url}}" alt="{{entry.title}} - {{entry.heading__sec}}">
         </figure>
     {% endfor %}
 
@@ -93,7 +93,7 @@
         <div class="equipment__image">
             {% for image in entry.equipmentImage %}
                 <figure>
-                    <img src="{{image.getUrl('equipmentTransform')}}">
+                    <img src="{{image.getUrl('equipmentTransform')}}" alt="{{entry.title}} - {{entry.heading__sec}}">
                 </figure>
             {% endfor %}
         </div>

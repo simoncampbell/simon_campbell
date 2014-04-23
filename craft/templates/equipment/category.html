@@ -32,7 +32,7 @@
                         {% for image in post.equipmentImage %}
                             <figure class="equipment-image">
                                 <a href="{{post.url}}">
-                                    <img src="{{image.getUrl('equipmentTransform')}}" alt="{{entry.title}}" />
+                                    <img src="{{image.getUrl('equipmentTransform')}}" alt="{{post.title}} - {{post.heading__sec}}" />
                                 </a>
                             </figure>
                         {% endfor %}

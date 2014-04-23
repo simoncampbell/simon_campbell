@@ -92,7 +92,7 @@ define(['domReady', 'jquery'], function(domReady, jQuery) {
 
 
     $(window).resize(function() {
-        if ($carousel) {
+        if ($carousel.length) {
             carouselWidth = $carousel.width();
 
             setItemWidth();

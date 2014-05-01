@@ -6,7 +6,7 @@
  #}
 
 
-{% set title = entry.title ~ " - Videos - Gallery" %}
+{% set title = "Videos - Gallery" %}
 {% extends "_layout" %}
 
 {% block content_main %}
@@ -18,18 +18,6 @@
         </div>
     </header>
 
-    <div class="carousel-wrapper">
-        <div class="side-wrapper carousel__info-wrapper">
-             <h4>{{entry.title}}</h4>
-             {{entry.shortExtract|markdown}}
-        </div><!-- //.side-wrapper -->
-
-        <div class="main-wrapper main-wrapper--article main-wrapper--gallery">
-            {{entry.embedCode|markdown}}
-        </div><!-- //.main-wrapper -->
-
-    </div><!-- //end.carousel -->
-
 {% endblock %}
 
 
@@ -38,30 +26,19 @@
 <div class="wide-wrapper wide-wrapper--merch">
     <div class="item-list item-list--merch">
 
-    <h3>Albums</h3>
+    <h3>Videos</h3>
     <ul>
-        {% set entries = craft.entries.find({section:'Videos', limit:1}) %}
+        {% set entries = craft.entries.find({section:'Videos'}) %}
 
         {% for video in entries %}
             <li class="item-list__item">
                 <figure>
                     {% for image in video.thumbnailImage %}
-                        <a href="/gallery/videos"><img src="{{image.getUrl('galleryListing')}}" alt="Videos - a gallery by Simon Campbell"></a>
+                        <a href="{{video.url}}"><img src="{{image.getUrl('galleryListing')}}" alt="{{video.title}} - a video by Simon Campbell"></a>
                     {% endfor %}
                 </figure>
-                <h5><a href="/gallery/videos">Videos</a></h5>
+                <h5><a href="{{video.url}}">{{video.title}}</a></h5>
             </li>
-        {% endfor %}
-
-        {% for album in craft.entries.find({section:'Gallery'}) %}
-            <li class="item-list__item">
-                <figure>
-                    {% for image in album.featuredImage %}
-                        <a href="{{album.url}}"><img src="{{image.getUrl('galleryListing')}}"></a>
-                    {% endfor %}
-                </figure>
-                <h5><a href="{{album.url}}">{{album.title}}</a></h5>
-        </li>
         {% endfor %}
     </ul>
 

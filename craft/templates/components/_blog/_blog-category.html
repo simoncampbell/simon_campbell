@@ -19,11 +19,14 @@
 
 
     {% for tagloop in craft.tags({set:"blogTags"}) %}
-        <li{% if (tag.name | lower) == (tagloop.name | lower) %} class="cur"{% endif %}>
-            <a class="nav--category__item {% if (tag.name | lower) == (tagloop.name | lower) %}nav--category__item--cur{% endif %} link--icon" href="/blog/category/{{tagloop.name | replace({' ': '-'})}}">
-                <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
-                {{tagloop.name}}
-            </a>
-        </li>
+        {% set taggedEntries = craft.entries.relatedTo({ targetElement: tagloop }) %}
+        {% if taggedEntries.total() > 0 %}
+            <li{% if (tag.name | lower) == (tagloop.name | lower) %} class="cur"{% endif %}>
+                <a class="nav--category__item {% if (tag.name | lower) == (tagloop.name | lower) %}nav--category__item--cur{% endif %} link--icon" href="/blog/category/{{tagloop.name | replace({' ': '-'})}}">
+                    <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
+                    {{tagloop.name}}
+                </a>
+            </li>
+        {% endif %}
     {% endfor %}
 </ul>

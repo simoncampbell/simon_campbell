@@ -27,7 +27,7 @@
 
     <div class="main-wrapper main-wrapper--article main-wrapper--listing main-wrapper--archive" role="main">
         
-        {% set allEntries = craft.entries.relatedTo(tag) %}
+        {% set allEntries = craft.entries.find({relatedTo: tag, section:"Blog"}) %}
         {% for date, entries in allEntries | group("postDate|date(' Y')") %}
 
             <div class="item-list--sub-content item-list--sub-content--alternate">

@@ -7,6 +7,7 @@
  # folder and it’s called index.html. Simple.
  #}
 
+
 {% extends "_layout" %}
 
 {% block content_main %}
@@ -15,7 +16,9 @@
 
     <div class="banner--landing">
         <h1 class="banner--landing__title">Simon Campbell</h1>
-        <div class="banner--landing__figure"></div>
+        {% for image in homepage.bannerImage %}
+            <div class="banner--landing__figure" style="background-image: url('{{image.getUrl('homepageBanner')}}');"></div>
+        {% endfor %}
 
         <header class="heading-group heading-group--main banner--landing__content">
             <div class="main-wrapper main-wrapper--full">

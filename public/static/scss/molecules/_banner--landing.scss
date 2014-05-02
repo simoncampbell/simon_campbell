@@ -31,7 +31,6 @@
         @include rems(height, 200);
         overflow: hidden;
         background-size: 120%;
-        background-image: url('/static/images/homepage/banner.jpg'); //in order to add filter and blur this needs to be a background image
         background-repeat: no-repeat;
         @include rems(margin-bottom, 20);
         background-position: right center;

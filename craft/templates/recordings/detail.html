@@ -36,7 +36,7 @@
         {{entry.body}}
 
         {% if entry.tracks|length > 0 %}
-            <h3>Tracks</h3>
+            <h3>Lyrics</h3>
             <ol>
                 {% for item in entry.tracks %}
                     <li><a href="{{item.url}}">{{item.title}}</a> {% if item.length %}[{{item.length}}]{% endif %}</li>
@@ -101,7 +101,7 @@
 
                 {{entry.bandcampAlbum|markdown}}
                 <!-- ALBUM ART IMAGE -->
-                <!-- <figure>
+                <figure>
                     {% for image in entry.albumArt %}
                         <img src="{{image.getUrl('albumArtSidebar')}}" width="{{image.getWidth('albumArtSidebar')}}" height="{{image.getHeight('albumArtSidebar')}}" alt="{{album.title}}"/>
                     {% endfor %}
@@ -140,7 +140,7 @@
                         </a>
                         <p>Immediate download of 12-track album in your choice of high-quality MP3, FLAC, or just about any other format you could possibly desire. Delivery is usually 3-5 working days.</p>
                     </li>
-                </ul> -->
+                </ul>
             </div>
         </div>
    </div><!-- //end.island.side-wrapper -->

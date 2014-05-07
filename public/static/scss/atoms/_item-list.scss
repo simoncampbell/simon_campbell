@@ -410,6 +410,10 @@
             width: 47.7%;
             border-bottom: none;
 
+            &:nth-child(odd) {
+                clear: left;
+            }
+
             p {
                 @include rems(font-size, 16);
             }

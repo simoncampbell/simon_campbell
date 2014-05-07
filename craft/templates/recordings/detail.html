@@ -99,48 +99,79 @@
 
             <div class="record-sale">
 
-                {{entry.bandcampAlbum|markdown}}
+                {% if entry.bandcampAlbum %}
+                    {{entry.bandcampAlbum|markdown}}
+                {% else %}
                 <!-- ALBUM ART IMAGE -->
-                <!-- <figure>
                     {% for image in entry.albumArt %}
-                        <img src="{{image.getUrl('albumArtSidebar')}}" width="{{image.getWidth('albumArtSidebar')}}" height="{{image.getHeight('albumArtSidebar')}}" alt="{{album.title}}"/>
+                        <figure>
+                            <img src="{{image.getUrl('albumArtSidebar')}}" width="{{image.getWidth('albumArtSidebar')}}" height="{{image.getHeight('albumArtSidebar')}}" alt="{{album.title}}"/>
+                        </figure>
                     {% endfor %}
-                </figure>
+                {% endif %}
 
+                {% if (entry.digitalDownloadUrl or entry.cdUrl or entry.vinylUrl) %}
+
+                <div class="side-bar--album">
+                    <h4>Purchasing options</h4>
+                </div>
                 <ul class="item-list item-list--bordered">
-                    <li class="item-list__item item-list__item--album">
-                        <h3>Digital download</h3>
+                    {% if entry.digitalDownloadUrl %}
+                        <li class="item-list__item item-list__item--purchase">
+                            <h3>{{entry.digitalDownloadTitle}}
+                            {% if entry.digitalDownloadPrice %}
+                                <span>(&pound;{{entry.digitalDownloadPrice|number_format|trim('.00')}})</span>
+                            {% endif %}
+                            </h3>
 
-                        <a href="URL!" class="btn btn--icon btn--primary btn--arrow-left">
-                            <span class="icon ">download</span>
-                            <div class="icon-text">
-                                Download
-                            </div>
-                        </a>
+                            {{entry.digitalDownloadDescription|markdown}}
 
-                        <p>Immediate download of 12-track album in your choice of high-quality MP3, FLAC, or just about any other format you could possibly desire.</p>
-                    </li>
-                    <li class="item-list__item item-list__item--album">
-                        <h3>Physical disc</h3>
-                        <a href="URL!" class="btn btn--icon btn--purple btn--arrow-left">
-                            <span class="icon ">discdrive</span>
-                            <div class="icon-text">
-                                Order now
-                            </div>
-                        </a>
-                        <p>Immediate download of 12-track album in your choice of high-quality MP3, FLAC, or just about any other format you could possibly desire.</p>
-                    </li>
-                    <li class="item-list__item item-list__item--album">
-                        <h3>Vinyl offer</h3>
-                        <a href="URL!" class="btn btn--icon btn--green btn--arrow-left">
-                            <span class="icon ">music</span>
-                            <div class="icon-text">
-                                Order now
-                            </div>
-                        </a>
-                        <p>Immediate download of 12-track album in your choice of high-quality MP3, FLAC, or just about any other format you could possibly desire. Delivery is usually 3-5 working days.</p>
-                    </li>
-                </ul> -->
+                            <a href="{{entry.digitalDownloadUrl}}" class="btn btn--icon btn--primary btn--arrow-left">
+                                <span class="icon ">download</span>
+                                <div class="icon-text">
+                                    Download
+                                </div>
+                            </a>
+                        </li>
+                    {% endif %}
+                    {% if entry.cdUrl %}
+                        <li class="item-list__item item-list__item--purchase">
+                            <h3>{{entry.cdTitle}}
+                            {% if entry.cdPrice %}
+                                <span>(&pound;{{entry.cdPrice|number_format|trim('.00')}})</span>
+                            {% endif %}
+                            </h3>
+
+                            {{entry.cdDescription|markdown}}
+
+                            <a href="{{entry.cdUrl}}" class="btn btn--icon btn--purple btn--arrow-left">
+                                <span class="icon ">discdrive</span>
+                                <div class="icon-text">
+                                    Order now
+                                </div>
+                            </a>
+                        </li>
+                    {% endif %}
+                    {% if entry.vinylUrl %}
+                        <li class="item-list__item item-list__item--purchase">
+                            <h3>{{entry.vinylTitle}}
+                            {% if entry.vinylPrice %}
+                                <span>(&pound;{{entry.vinylPrice|number_format|trim('.00')}})</span>
+                            {% endif %}
+                            </h3>
+
+                            {{entry.vinylDescription|markdown}}
+
+                            <a href="{{entry.vinylUrl}}" class="btn btn--icon btn--green btn--arrow-left">
+                                <span class="icon ">music</span>
+                                <div class="icon-text">
+                                    Order now
+                                </div>
+                            </a>
+                        </li>
+                    {% endif %}
+                </ul>
+                {% endif %}
             </div>
         </div>
    </div><!-- //end.island.side-wrapper -->

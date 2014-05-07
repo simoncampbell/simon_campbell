@@ -8,15 +8,18 @@
 
 
 <h4>Equipment</h4>
-<p class="marginalia">Feel free to take a look at some of the instruments that I used to make these recordings; find prices and related information about my gear.</p>
+<p class="marginalia">Check out the other equipment categories.</p>
 
 <ul class="nav nav--category">
 {% for entry in craft.entries.find({section: 'equipmentTypes'}) %}
-    <li{% if (category.title | lower) == (entry.title | lower) %} class="cur"{% endif %}>
-       <a class="nav--category__item {% if (category.title | lower) == (entry.title | lower) %} nav--category__item--cur{% endif %} link--icon" href="/equipment/category/{{entry.title | lower | replace({' &': ''}) | replace({"'": ''}) | replace({' ': '-'})}}">
-            <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
-            {{entry.title | capitalize}}
-        </a>
-    </li>
+    {% set taggedEntries = craft.entries.relatedTo({ targetElement: entry }) %}
+    {% if taggedEntries.total() > 0 %}
+        <li{% if (category.title | lower) == (entry.title | lower) %} class="cur"{% endif %}>
+           <a class="nav--category__item {% if (category.title | lower) == (entry.title | lower) %} nav--category__item--cur{% endif %} link--icon" href="/equipment/category/{{entry.title | lower | replace({' &': ''}) | replace({"'": ''}) | replace({' ': '-'})}}">
+                <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
+                {{entry.title | capitalize}}
+            </a>
+        </li>
+    {% endif %}
 {% endfor %}
 </ul><!-- //end.nav -->

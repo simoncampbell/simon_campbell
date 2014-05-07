@@ -732,6 +732,12 @@
         }
     }
 
+    .item-list__item--latest {
+        h5 {
+            font-weight: normal;
+        }
+    }
+
 
     .item-list__item--side {
         @include rems(margin-bottom, $base-spacing-unit);

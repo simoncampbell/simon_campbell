@@ -120,7 +120,7 @@
                         <li class="item-list__item item-list__item--purchase">
                             <h3>{{entry.digitalDownloadTitle}}
                             {% if entry.digitalDownloadPrice %}
-                                <span>(&pound;{{"%.2f"|format(entry.digitalDownloadPrice)|replace({".00": ""})}})</span>
+                                <span>(&pound;{{"%.2f"|format(entry.digitalDownloadPrice)}})</span>
                             {% endif %}
                             </h3>
 
@@ -138,7 +138,7 @@
                         <li class="item-list__item item-list__item--purchase">
                             <h3>{{entry.cdTitle}}
                             {% if entry.cdPrice %}
-                                <span>(&pound;{{"%.2f"|format(entry.cdPrice)|replace({".00": ""})}})</span>
+                                <span>(&pound;{{"%.2f"|format(entry.cdPrice)}})</span>
                             {% endif %}
                             </h3>
 
@@ -156,7 +156,7 @@
                         <li class="item-list__item item-list__item--purchase">
                             <h3>{{entry.vinylTitle}}
                             {% if entry.vinylPrice %}
-                                <span>(&pound;{{"%.2f"|format(entry.vinylPrice)|replace({".00": ""})}})</span>
+                                <span>(&pound;{{"%.2f"|format(entry.vinylPrice)}})</span>
                             {% endif %}
                             </h3>
 

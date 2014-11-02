@@ -25,7 +25,7 @@
         {% endfor %}
 
         {% if craft.entries.find({section:'liveShows'})|length < 1 %}
-            <p>Simon is not currently touring at the moment but he’s tuning his gear ready for the next lineup which is bound to take place soon. Stick around for more info.</p>
+            <p>{{homepage.noGigs}}</p>
         {% endif %}
     </dl>
 </div>

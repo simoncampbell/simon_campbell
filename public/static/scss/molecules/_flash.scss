@@ -1,0 +1,12 @@
+.flash {
+
+	&--success {
+		@include radius($brand-round);
+		background:rgba(green,.8);
+		color:#fff;
+		font-weight:700;
+		font-size:1em;
+		margin-bottom:1em;
+		padding:1em;
+	}
+}

@@ -40,6 +40,7 @@
 @import "utilities/helper";
 @import "utilities/colors";
 @import "utilities/base-spacing";
+@import "utilities/hidden";
 
 /**
  * Quarks; classless styling of default elements
@@ -94,5 +95,6 @@
 @import "molecules/comments";
 @import "molecules/carousel--gallery";
 @import "molecules/banner--landing";
+@import "molecules/flash";
 
 

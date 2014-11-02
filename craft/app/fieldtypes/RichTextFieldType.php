@@ -2,25 +2,30 @@
 namespace Craft;
 
 /**
- * Craft by Pixel & Tonic
+ * Class RichTextFieldType
  *
- * @package   Craft
- * @author    Pixel & Tonic, Inc.
+ * @author    Pixel & Tonic, Inc. <support@pixelandtonic.com>
  * @copyright Copyright (c) 2014, Pixel & Tonic, Inc.
  * @license   http://buildwithcraft.com/license Craft License Agreement
- * @link      http://buildwithcraft.com
- */
-
-/**
- *
+ * @see       http://buildwithcraft.com
+ * @package   craft.app.fieldtypes
+ * @since     1.0
  */
 class RichTextFieldType extends BaseFieldType
 {
-	private static $_includedFieldResources = false;
-	private static $_redactorLang = 'en';
+	// Properties
+	// =========================================================================
 
 	/**
-	 * Returns the type of field this is.
+	 * @var string
+	 */
+	private static $_redactorLang = 'en';
+
+	// Public Methods
+	// =========================================================================
+
+	/**
+	 * @inheritDoc IComponentType::getName()
 	 *
 	 * @return string
 	 */
@@ -30,21 +35,7 @@ class RichTextFieldType extends BaseFieldType
 	}
 
 	/**
-	 * Defines the settings.
-	 *
-	 * @access protected
-	 * @return array
-	 */
-	protected function defineSettings()
-	{
-		return array(
-			'configFile'  => AttributeType::String,
-			'cleanupHtml' => array(AttributeType::Bool, 'default' => true),
-		);
-	}
-
-	/**
-	 * Returns the field's settings HTML.
+	 * @inheritDoc ISavableComponentType::getSettingsHtml()
 	 *
 	 * @return string|null
 	 */
@@ -73,7 +64,7 @@ class RichTextFieldType extends BaseFieldType
 	}
 
 	/**
-	 * Returns the content attribute config.
+	 * @inheritDoc IFieldType::defineContentAttribute()
 	 *
 	 * @return mixed
 	 */
@@ -83,9 +74,10 @@ class RichTextFieldType extends BaseFieldType
 	}
 
 	/**
-	 * Preps the field value for use.
+	 * @inheritDoc IFieldType::prepValue()
 	 *
 	 * @param mixed $value
+	 *
 	 * @return mixed
 	 */
 	public function prepValue($value)
@@ -103,10 +95,11 @@ class RichTextFieldType extends BaseFieldType
 	}
 
 	/**
-	 * Returns the field's input HTML.
+	 * @inheritDoc IFieldType::getInputHtml()
 	 *
 	 * @param string $name
 	 * @param mixed  $value
+	 *
 	 * @return string
 	 */
 	public function getInputHtml($name, $value)
@@ -130,8 +123,7 @@ class RichTextFieldType extends BaseFieldType
 
 		if (strpos($value, '{') !== false)
 		{
-			// Preserve the ref tags with hashes
-			// {type:id:url} => {type:id:url}#type:id
+			// Preserve the ref tags with hashes {type:id:url} => {type:id:url}#type:id
 			$value = preg_replace_callback('/(href=|src=)([\'"])(\{(\w+\:\d+\:'.HandleValidator::$handlePattern.')\})\2/', function($matches)
 			{
 				return $matches[1].$matches[2].$matches[3].'#'.$matches[4].$matches[2];
@@ -148,9 +140,10 @@ class RichTextFieldType extends BaseFieldType
 	}
 
 	/**
-	 * Returns the input value as it should be saved to the database.
+	 * @inheritDoc IFieldType::prepValueFromPost()
 	 *
 	 * @param mixed $value
+	 *
 	 * @return mixed
 	 */
 	public function prepValueFromPost($value)
@@ -158,7 +151,17 @@ class RichTextFieldType extends BaseFieldType
 		if ($value)
 		{
 			// Swap any pagebreak <hr>'s with <!--pagebreak-->'s
-			$value = preg_replace('/<hr class="redactor_pagebreak" style="display:none" unselectable="on" contenteditable="false"\s*(\/)?>/', '<!--pagebreak-->', $value);
+			$value = preg_replace('/<hr class="redactor_pagebreak".*?>/', '<!--pagebreak-->', $value);
+
+			if ($this->getSettings()->purifyHtml)
+			{
+				$purifier = new \CHtmlPurifier();
+				$purifier->setOptions(array(
+					'Attr.AllowedFrameTargets' => array('_blank'),
+				));
+
+				$value = $purifier->purify($value);
+			}
 
 			if ($this->getSettings()->cleanupHtml)
 			{
@@ -170,8 +173,7 @@ class RichTextFieldType extends BaseFieldType
 				$value = preg_replace('/(<(?:h1|h2|h3|h4|h5|h6|p|div|blockquote|pre|strong|em|b|i|u|a)\b[^>]*)\s+style="[^"]*"/', '$1', $value);
 
 				// Remove empty tags
-				// (Leave empty <a> tags though, since they might be defining a standalone #anchor.)
-				$value = preg_replace('/<(h1|h2|h3|h4|h5|h6|p|div|blockquote|pre|strong|em|b|i|u)\s*><\/\1>/', '', $value);
+				$value = preg_replace('/<(h1|h2|h3|h4|h5|h6|p|div|blockquote|pre|strong|em|a|b|i|u)\s*><\/\1>/', '', $value);
 			}
 		}
 
@@ -183,6 +185,38 @@ class RichTextFieldType extends BaseFieldType
 
 		return $value;
 	}
+
+	/**
+	 * @inheritDoc BaseFieldType::getStaticHtml()
+	 *
+	 * @param mixed $value
+	 *
+	 * @return string
+	 */
+	public function getStaticHtml($value)
+	{
+		return '<div class="text">'.($value ? $value : '&nbsp;').'</div>';
+	}
+
+	// Protected Methods
+	// =========================================================================
+
+	/**
+	 * @inheritDoc BaseSavableComponentType::defineSettings()
+	 *
+	 * @return array
+	 */
+	protected function defineSettings()
+	{
+		return array(
+			'configFile'  => AttributeType::String,
+			'cleanupHtml' => array(AttributeType::Bool, 'default' => true),
+			'purifyHtml'  => array(AttributeType::Bool, 'default' => false),
+		);
+	}
+
+	// Private Methods
+	// =========================================================================
 
 	/**
 	 * Get available section sources.
@@ -203,7 +237,7 @@ class RichTextFieldType extends BaseFieldType
 			}
 			else if ($section->hasUrls)
 			{
-				$sources[] = 'section:' . $section->id;
+				$sources[] = 'section:'.$section->id;
 			}
 		}
 
@@ -239,7 +273,7 @@ class RichTextFieldType extends BaseFieldType
 	/**
 	 * Includes the input resources.
 	 *
-	 * @access private
+	 * @return null
 	 */
 	private function _includeFieldResources()
 	{
@@ -273,8 +307,8 @@ class RichTextFieldType extends BaseFieldType
 	/**
 	 * Attempts to include a Redactor language file.
 	 *
-	 * @access private
 	 * @param string $lang
+	 *
 	 * @return bool
 	 */
 	private function _includeRedactorLangFile($lang)

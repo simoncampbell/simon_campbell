@@ -1,11 +1,9 @@
 /**
- * Craft by Pixel & Tonic
- *
- * @package   Craft
- * @author    Pixel & Tonic, Inc.
+ * @author    Pixel & Tonic, Inc. <support@pixelandtonic.com>
  * @copyright Copyright (c) 2014, Pixel & Tonic, Inc.
  * @license   http://buildwithcraft.com/license Craft License Agreement
- * @link      http://buildwithcraft.com
+ * @see       http://buildwithcraft.com
+ * @package   craft.app.resources
  */
 
 (function($) {
@@ -63,7 +61,7 @@ Craft.UpdateInfo = Garnish.Base.extend(
 				}
 				else
 				{
-					$graphic.fadeOut('fast');
+					$graphic.velocity('fadeOut', { duration: 'fast' });
 					$status.fadeOut('fast', $.proxy(function()
 					{
 						$graphic.remove();
@@ -97,7 +95,7 @@ Craft.UpdateInfo = Garnish.Base.extend(
 		{
 			if (this.allowAutoUpdates)
 			{
-				var $btnGroup = $('<div class="btngroup"/>').appendTo($buttonContainer),
+				var $btnGroup = $('<div class="btngroup submit"/>').appendTo($buttonContainer),
 					$updateBtn = $('<div class="btn submit">'+Craft.t('Update')+'</div>').appendTo($btnGroup),
 					$menuBtn = $('<div class="btn submit menubtn"/>').appendTo($btnGroup),
 					$menu = $('<div class="menu" data-align="right"/>').appendTo($btnGroup),
@@ -134,7 +132,7 @@ Craft.UpdateInfo = Garnish.Base.extend(
 		}
 
 		this.showReleases(this.appUpdateInfo.releases, 'Craft');
-		this.$container.fadeIn('fast');
+		this.$container.velocity('fadeIn', { duration: 'fast' });
 	},
 
 	showLicenseForm: function(originalEvent)
@@ -189,7 +187,7 @@ Craft.UpdateInfo = Garnish.Base.extend(
 	{
 		for (var i = 0; i < releases.length; i++)
 		{
-			var $releasePane = $('<div class="pane"/>').appendTo(this.$container),
+			var $releasePane = $('<div class="pane release"/>').appendTo(this.$container),
 				release = releases[i],
 				heading = product+' '+release.version;
 

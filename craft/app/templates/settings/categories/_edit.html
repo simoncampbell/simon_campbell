@@ -9,7 +9,7 @@
 	<div class="input{% if errors %} errors{% endif %}">
 		{{ text({
 			id: name~'-'~locale.id,
-			class: 'code',
+			class: 'code ltr',
 			name: name~'['~locale.id~']',
 			value: (value != '__home__' ? value : null),
 			errors: errors
@@ -23,9 +23,11 @@
 {% from _self import urlFormatText %}
 
 {% set content %}
-	<form method="post" action="" accept-charset="UTF-8" data-saveshortcut="1">
+	<form method="post" accept-charset="UTF-8" data-saveshortcut>
 		<input type="hidden" name="action" value="categories/saveGroup">
 		<input type="hidden" name="redirect" value="settings/categories">
+		{{ getCsrfInput() }}
+
 		{% if categoryGroup.id %}<input type="hidden" name="groupId" value="{{ categoryGroup.id }}">{% endif %}
 
 		<div id="categorygroup-settings">
@@ -104,21 +106,22 @@
 					label: "Category Template"|t,
 					instructions: "The template to use when a category’s URL is requested."|t,
 					id: 'template',
+					class: 'ltr',
 					name: 'template',
 					value: categoryGroup.template,
 					errors: categoryGroup.getErrors('template')
 				}) }}
-
-				{{ forms.textField({
-					label: "Max Levels"|t,
-					instructions: "The maximum number of levels this category group can have. Leave blank if you don’t care."|t,
-					id: 'maxLevels',
-					name: 'maxLevels',
-					value: categoryGroup.maxLevels,
-					size: 5,
-					errors: categoryGroup.getErrors('maxLevels')
-				}) }}
 			</div>
+
+			{{ forms.textField({
+				label: "Max Levels"|t,
+				instructions: "The maximum number of levels this category group can have. Leave blank if you don’t care."|t,
+				id: 'maxLevels',
+				name: 'maxLevels',
+				value: categoryGroup.maxLevels,
+				size: 5,
+				errors: categoryGroup.getErrors('maxLevels')
+			}) }}
 		</div>
 
 		<div id="categorygroup-fieldlayout" class="hidden">

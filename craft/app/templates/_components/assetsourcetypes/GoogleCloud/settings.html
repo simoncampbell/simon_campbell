@@ -54,20 +54,55 @@
     label: "Subfolder"|t,
     instructions: "If you want to use a bucket’s subfolder as a Source, specify the path to use here."|t,
     id: 'subfolder',
+    class: 'ltr',
     name: 'subfolder',
     value: settings.subfolder,
     errors: settings.getErrors('subfolder'),
     required: false,
-    placeholder: 'path/to/subfolder'
+    placeholder: "path/to/subfolder"|t
 }) }}
 
 {{ forms.textField({
     label: "URL Prefix "|t,
     instructions: "If you have set up a CNAME record pointing to this bucket, you can enter it here. Otherwise leave this setting alone."|t,
     id: 'urlPrefix',
+    class: 'ltr',
     name: 'urlPrefix',
     value: settings.urlPrefix,
     errors: settings.getErrors('url_prefix'),
     required: true,
     class: 'google-url-prefix'
 }) }}
+
+{% set cacheInput %}
+	<table class="inputs">
+		<tr>
+			<td>
+				{{ forms.textField({
+				id: 'expiresAmount',
+				value: settings.expires.amount,
+				size: 2,
+				class: 'expires-amount'
+				}) }}
+			</td>
+			<td>
+				{{ forms.select({
+				id: 'expiresPeriod',
+				options: periods,
+				value: settings.expires.period,
+				class: 'expires-period'
+				}) }}
+			</td>
+		</tr>
+	</table>
+	{{ forms.hidden({
+		name: "expires",
+		value: settings.expires.amount ~ settings.expires.period,
+		class: "expires-combined"
+	}) }}
+{% endset %}
+
+{{ forms.field({
+	label: "Cache Duration "|t,
+	id: 'cacheDuration',
+}, cacheInput) }}

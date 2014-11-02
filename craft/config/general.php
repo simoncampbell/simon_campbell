@@ -26,5 +26,6 @@ return array(
     // LIVE env settings
     'simoncampbell.com' => array (
         
+        'maxUploadFileSize' => 50000000,
     ),
 );

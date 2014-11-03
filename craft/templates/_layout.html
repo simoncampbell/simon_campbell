@@ -17,8 +17,6 @@
 
         <link rel="home" href="{{ siteUrl }}" />
 
-
-
         <!-- ICONS -->
         <link rel="apple-touch-icon-precomposed" href="/static/images/branding/apple-touch-icon.png">
         <link rel='shortcut icon' href="/static/images/branding/favicon.ico">
@@ -28,17 +26,16 @@
 
         <!-- CSS -->
 
-        <!--[if IE]><![endif]-->
 
         <!--[if gt IE 8]><!-->
-            <link rel="stylesheet" media="all" type="text/css" href="/static/css/screen.css" />
+            <link rel="stylesheet" media="all" type="text/css" href="{{ craft.bust.er('/static/css/screen.css') }}" />
         <!--<![endif]-->
 
         <!--[if lte IE 8]>
             <link rel="stylesheet" media="all" type="text/css" href="/static/css/screen_ie8.css" />
         <![endif]-->
 
-        
+
         <!-- GOOGLE ANALYTICS -->
         <script>
           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

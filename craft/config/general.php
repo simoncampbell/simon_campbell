@@ -14,8 +14,8 @@ return array(
     ),
 
     // PRODUCTION env settings
-    'simoncampbell.dev' => array (
-
+    'campbell.dev' => array (
+        'siteUrl' => 'http://campbell.dev/',
     ),
 
     // STAGING env settings
@@ -25,7 +25,7 @@ return array(
 
     // LIVE env settings
     'simoncampbell.com' => array (
-        
+
         'maxUploadFileSize' => 50000000,
     ),
 );

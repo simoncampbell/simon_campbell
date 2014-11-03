@@ -26,6 +26,6 @@ return array(
         'server' => 'localhost',
         'user' => 'av01727',
         'password' => '877.e34edTpe',
-        'database' => 'simon_campbell',
+        'database' => 'av01727simoncampbell_prod',
     ),
 );

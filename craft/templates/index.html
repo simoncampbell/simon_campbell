@@ -1,0 +1,129 @@
+{#
+ # Homepage template
+ # ---------------
+ #
+ # This template gets loaded whenever someone access http://example.com
+ # with no URI, because it’s located in the root of your craft/templates/
+ # folder and it’s called index.html. Simple.
+ #}
+
+
+{% extends "_layout" %}
+
+{% block content_main %}
+
+<!-- SIMON DESCRIPTION -->
+
+    <div class="banner--landing">
+        <h1 class="banner--landing__title">Simon Campbell</h1>
+        {% for image in homepage.bannerImage %}
+            <div class="banner--landing__figure" style="background-image: url('{{image.getUrl('homepageBanner')}}');"></div>
+        {% endfor %}
+
+        <header class="heading-group heading-group--main banner--landing__content">
+            <div class="main-wrapper main-wrapper--full">
+                <p class="lede lede--marginless">
+                    {{homepage.shortDescription}}
+                </p>
+            </div>
+        </header>
+    </div>
+
+
+    <div class="main-wrapper main-wrapper--full">
+       <!-- FEATURED SECTION-->
+        <section class="featured">
+            {% include 'components/_featured/_featured-article' %}
+        </section>
+
+        <section class="item-list item-list--featured">
+
+            {% set entries = craft.entries.section('Blog').limit(3).find %}
+            {% set firstEntry = entries[0] %}
+            {% set remainingEntries = entries|without(firstEntry) %}
+
+            {% for post in remainingEntries %}
+                <article class="item-list__item item-list__item--article">
+                    <header class="heading-group heading-group--marginless">
+                        <h3><a href="{{post.url}}">{{ post.title }}</a></h3>
+                        <div class="meta-info-block meta-info-block--borderless ">
+                           <time class="meta-info-block__item" datetime="{{post.postDate|date("Y-m-d")}}">{{post.postDate|date("jS F Y")}}</time>
+                        </div>
+                    </header>
+                     <p>{{ post.shortExtract[:340]|trim}}&hellip; <a href="{{post.url}}">Read more &raquo;</a></p>
+                </article>
+            {% endfor %}
+        </section><!-- //end.item-list -->
+
+    </div><!-- //end.main-wrapper -->
+
+{% endblock %}
+
+
+
+{% block content_side %}
+
+    <div class="wrapper wrapper--recent-entries">
+        <div class="wide-wrapper wide-wrapper--recent-entries">
+
+            <h3>Recent equipment &amp; gear entries</h3>
+
+            <ul class="item-list">
+                {% for post in craft.entries.find({section:'Equipment', limit:'3'}) %}
+                    <li class="item-list__item item-list__item--article item-list__item--side">
+
+                        <!-- REQUIRED EQUIPMENT IMAGE -->
+                        {% for image in post.equipmentImage %}
+                            <figure class="equipment-image side__image">
+                                <a href="{{post.url}}">
+                                    <img src="{{image.getUrl('equipmentTransform')}}" alt="{{post.title}} - {{post.heading__sec}}">
+                                </a>
+                            </figure>
+                        {% endfor %}
+
+                        <div class="heading-group heading-group--marginless side__content">
+                            <h4><a href="{{post.url}}">{{post.title}}</a></h4>
+                            <p>{{post.shortExtract}} <a href="{{post.url}}">Read more »</a></p>
+                        </div>
+
+                    </li>
+                {% endfor %}
+            </ul><!-- //end.item-list -->
+
+        </div><!-- //end.wide-wrapper -->
+
+    </div><!-- //end.wrapper -->
+
+    <div class="wrapper">
+        <div class="wide-wrapper">
+            <section class="homepage-wrapper homepage-wrapper--news">
+
+                <div class="heading-group">
+                    <h3><a href="/news">Latest news updates</a></h3>
+                </div>
+
+                <ul class="item-list item-list--homepage">
+                    {% for news in craft.entries.find({section:'News', limit:'6'}) %}
+                        <li class="item-list__item">
+                            <div class="heading-group heading-group--marginless">
+                                <h5><a href="{{news.url}}">{{news.title}}</a></h5>
+                                <div class="meta-info-block meta-info-block--borderless">
+
+                                    <time class="meta-info-block__item" datetime="{{news.postDate|date("Y-m-d")}}">{{news.postDate|date("jS F Y")}}</time>
+                                </div><!-- //end.meta-info-block -->
+                            </div><!-- //end.heading-group -->
+
+                        </li>
+                    {% endfor %}
+                </ul><!-- .item-list -->
+            </section>
+
+            <section class="homepage-wrapper homepage-wrapper--live-shows">
+                    {% include 'components/_live-shows.html' %}
+            </section>
+
+        </div><!-- //end.wide-wrapper -->
+
+    </div><!-- //end.wrapper -->
+
+{% endblock %}

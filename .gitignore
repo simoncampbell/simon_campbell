@@ -1,0 +1,24 @@
+# Ultimate Package specific
+
+public/assets
+
+!.gitignore
+
+.sass-cache
+
+composer.phar
+composer.lock
+/vendor
+public/static/css/
+
+craft/storage/backups/
+craft/storage/runtime/
+craft/storage/userphotos/
+
+
+craft/config/db.php
+
+web.config
+
+.DS_Store
+*.pyc

@@ -1,0 +1,79 @@
+/*------------------------------------*\
+    $LINKS
+\*------------------------------------*/
+
+a {
+    @include transition(all 0.2s ease-in-out);
+    color:$color__orange--primary;
+    border-bottom: 1px dotted $color__orange--primary;
+    line-height:1;
+
+    &:hover,
+    &:focus {
+        text-decoration:none;
+        color: darken($color__orange--primary, 15);
+        border-bottom: 1px solid $color__orange--active;
+    }
+}
+
+.link--reverse {
+    color: darken($color__white, 20);
+    border-bottom: 1px dotted darken($color__white, 30);
+
+    &:hover,
+    &:focus {
+        color: darken($color__white, 35);
+        border-bottom: 1px solid darken($color__white, 45);
+    }
+}
+
+.link--dark {
+    color: $color__background--dark;
+    border-color: $color__background--dark;
+
+
+    &:hover,
+    &:focus {
+        color: darken($color__background--dark, 35);
+        border-bottom: 1px solid darken($color__background--dark, 35);
+    }
+}
+
+/**
+ * Links with icon
+ *
+ * <a href="URL!" class="link--icon">
+ *      <span class="icon ss ss-music">music</span>
+ *      Listen now
+ * </a>
+ */
+
+.link--icon {
+    @extend %font__display--normal;
+    color: darken($color__meta,10);
+    border-bottom: 1px dotted darken($color__meta,10);;
+    white-space: nowrap;
+}
+
+.link--icon--long {
+    white-space: normal;
+}
+
+.nav--category, .link--icon {
+    a:hover,
+    a:focus {
+        border-bottom: 1px solid $color__orange--primary;
+    }
+}
+
+
+/* Remove underlines on pin it button */
+a[data-pin-log] {
+    &,
+    &:hover,
+    &:focus {
+        text-decoration: none;
+        border-bottom: none;
+        @include transition(all 0s);
+    }
+}

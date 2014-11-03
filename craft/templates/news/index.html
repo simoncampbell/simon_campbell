@@ -1,0 +1,102 @@
+{#
+ # NEWS
+ # Index Template
+ # -------------------
+ #
+ #}
+
+
+{% set title = "News" %}
+{% extends "_layout" %}
+
+{% block content_main %}
+
+    <header class="heading-group heading-group--main">
+        <div class="main-wrapper main-wrapper--full">
+            <h1>{{headings.newsHeading}}</h1>
+            <h2>{{headings.newsSubheading}}</h2>
+        </div>
+    </header>
+
+
+    <div class="main-wrapper main-wrapper--article main-wrapper--listing">
+
+        <ul class="item-list item-list--article item-list--news">
+            {% for news in craft.entries.find({section:'News',limit:'5' }) %}
+                <li class="item-list__item item-list__item--article">
+                    <article>
+                        <div class="heading-group heading-group--marginless">
+                            <h3><a href="{{ news.url }}">{{ news.title }}</a></h3>
+
+                            <div class="meta-info-block meta-info-block--borderless">
+                                <time class="meta-info-block__item" datetime="{{news.postDate|date("Y-m-d")}}">{{news.postDate|date("jS F Y")}}</time>
+
+                                {% if news.newsTags | length %}  
+                                <p class="meta-info-block__item">Posted in
+                                    {% for tag in news.newsTags %}
+                                        <a class="category-link" href="/news/category/{{tag.name | replace({' ': '-'}) }}">
+                                            <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
+                                            {{tag.name}}</a>
+                                    {% endfor %}
+                                </p>
+                                {% endif %}
+                            </div><!-- //end.meta-info-block -->
+                        </div><!-- //end.heading-group -->
+
+                         {% for image in news.standardImage %}
+                            <figure>
+                                <img src="{{image.url}}" alt="{{news.title}} - an update from Simon Campbell" />
+                            </figure>
+                        {% endfor %}
+
+                        {{ news.body }}
+
+                    </article>
+                </li><!-- //end.item-list__item -->
+            {% endfor %}
+        </ul><!-- //end.item-list -->
+
+        <div class="btn__group btn__group--bordered">
+            <a href="/news/archive.html" class="btn btn--icon btn--secondary btn--arrow-left">
+                <span class="icon ss-rewind">rewind</span>
+                <div class="icon-text">
+                    Older entries
+                </div>
+            </a>
+        </div>
+    </div><!-- //end.main-wrapper -->
+
+{% endblock %}
+
+
+{% block content_side %}
+
+    <div class="side-wrapper island island--wrapper">
+
+        <ul class="item-list island--wrapper__content">
+
+            <li class="item-list__item item-list__item--sidebar">
+
+                {% include 'components/_news/_news-category' %}
+
+            </li>
+
+            <li class="item-list__item item-list__item--sidebar">
+                <h4>Subscribe via RSS</h4>
+                <a href="/feeds/news.rss" class="link--icon">
+                    <span class="icon ss ss-inbox">inbox</span>
+                    Get regular updates and news posts
+                </a>
+            </li>
+
+            <li class="item-list__item item-list__item--album">
+                {% include 'components/_side-bar--album.html' %}
+            </li>
+
+            <li class="item-list__item item-list__item--live-shows">
+                {% include 'components/_live-shows--alternate.html' %}
+            </li>
+        </ul><!-- //end.item-list -->
+    </div><!-- //end.side-wrapper -->
+
+{% endblock %}

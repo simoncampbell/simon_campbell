@@ -1,0 +1,28 @@
+@if $use-flag == true{
+
+
+/*------------------------------------*\
+    $FLAG
+\*------------------------------------*/
+/**
+ * Horizontally align a
+ */
+    .flag {
+        width: 100%;
+    }
+
+    .flag__image {
+        @include rems(margin-bottom, $half-spacing-unit);
+
+        img {
+            display: block;
+        }
+    }
+
+    .flag__body {
+        width: 100%;
+    }
+
+
+
+} //endif

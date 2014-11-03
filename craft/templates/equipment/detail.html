@@ -1,0 +1,137 @@
+{#
+ # EQUIPMENT
+ # Detail Template
+ # -------------------
+ #
+ #}
+
+{% set title = entry.title %}
+
+{% extends "_layout" %}
+
+{% block content_main %}
+
+    <!-- LARGE ARTISINAL IMAGE -->
+    {% for image in entry.largeImage %}
+        <figure class="figure--banner">
+            <img src="{{image.url}}" alt="{{entry.title}} - {{entry.heading__sec}}">
+        </figure>
+    {% endfor %}
+
+    <header class="heading-group heading-group--main heading-group--with-meta">
+        <div class="main-wrapper main-wrapper--full">
+            <h1>{{entry.title}}</h1>
+
+            {% if entry.heading__sec %}
+                <h2>{{entry.heading__sec}}</h2>
+            {% endif %}
+        </div>
+
+        <div class="meta-info-block">
+            <div class="main-wrapper main-wrapper--full">
+                <time class="meta-info-block__item" datetime="{{entry.postDate|date("Y-m-d")}}">{{entry.postDate|date("jS F Y")}}</time>
+
+                {% if entry.equipmentType | length %}
+                    <p class="meta-info-block__item">Posted in
+                    {% for entryloop in entry.equipmentType %}
+                        <a class="category-link" href="/equipment/category/{{entryloop.title | lower | url_encode}}">
+                            <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
+                        {{entryloop.title}}</a>
+                    {% endfor %}
+                    </p>
+                {% endif %}
+            </div>
+        </div>
+    </header>
+
+    <div class="main-wrapper main-wrapper--article main-wrapper--article__detail">
+
+        <p class="lede">{{entry.shortExtract}}</p>
+
+        {{entry.body}}
+
+    </div>
+
+    <div class="side-wrapper side-wrapper--equipment main-wrapper--secondary">
+
+        <div class="island island--light-grey island--wrapper--equipment">
+            <!-- INSTRUMENT IMAGE -->
+            <div class="island__content island__content--small">
+
+                <div class="item-list--equipment-meta">
+
+                    <ul class="item-list">
+                        <li class="item-list__item">
+                            <h4>Manufactured by</h4>
+                            {% for make in entry.makerBlock %}
+                                <p>
+                                    <a href="{{ make.makerUrl }}">
+                                        {{ make.makerTitle }}
+                                    </a>
+                                </p>
+                            {% endfor %} <!-- //end.makerBlock -->
+                        </li>
+                        
+                        {% if entry.sellerBlock %}
+                            <li class="item-list__item">
+                                <h4>Add this gear to your collection</h4>
+
+                                {% for item in entry.sellerBlock %}
+                                    <dl class="seller-block">
+                                        <dt>
+                                            <a href="{{item.sellerURL}}">{{item.sellerName}}</a>
+                                        </dt>
+                                    </dl>
+
+                                {% endfor %}
+                            </li>
+                        {% endif %}
+                    </ul>
+                </div><!-- //.item-list -->
+
+            </div><!-- //.island__content -->
+        </div><!-- //.island-wrapper -->
+
+        <div class="equipment__image">
+            {% for image in entry.equipmentImage %}
+                <figure>
+                    <img src="{{image.getUrl('equipmentTransform')}}" alt="{{entry.title}} - {{entry.heading__sec}}">
+                </figure>
+            {% endfor %}
+        </div>
+
+
+    </div><!-- //.side-wrapper -->
+
+{% endblock %}
+
+
+
+{% block content_side %}
+    <div class="wrapper comments__wrapper">
+        <div class="wide-wrapper wide-wrapper--align-desktop">
+
+            {% include 'components/global/_comments.html' %}
+
+        </div><!-- //end.main-wrapper -->
+    </div><!-- //end.wrapper -->
+
+
+    <div class="side-wrapper island island--wrapper island--wrapper__comments-container">
+
+        <ul class="item-list island--wrapper__content">
+            <li class="item-list__item item-list__item--sidebar">
+                {% include 'components/_equipment/_category-list--sidebar.html' %}
+            </li><!-- //end.item-list__item -->
+            <li class="item-list__item item-list__item--album">
+                {% include 'components/_side-bar--album.html' %}
+            </li>
+
+            <li class="item-list__item item-list__item--live-shows">
+                {% include 'components/_live-shows--alternate.html' %}
+            </li>
+        </ul>
+
+    </div><!-- //end.side-wrapper -->
+{% endblock %}
+

@@ -1,0 +1,131 @@
+/*------------------------------------*\
+    $DEFAULTS
+\*------------------------------------*/
+/**
+ * Quickly set your default variables
+ */
+
+
+
+/*------------------------------------*\
+    $Breakpoints
+\*------------------------------------*/
+/**
+ * Standard breakpoint variables for use within breakpoint’s respond-to mixin
+ */
+
+
+$width__small: 400px;  
+$width__regular: 500px; 
+$width__medium: 690px;
+$width__large: 800px; 
+$width__largest: 1000px; 
+$width__gigantic: 1260px;
+
+
+$breakpoint-to-ems: true;
+$no-queries: 'no-query' true;
+
+
+$breakpoints: add-breakpoint('below small', (max-width $width__small - 1px, $no-queries));
+$breakpoints: add-breakpoint('small and above', ($width__small, $no-queries));
+$breakpoints: add-breakpoint('between small and medium', ($width__small $width__medium, $no-queries));
+$breakpoints: add-breakpoint('regular and below', (max-width $width__regular, $no-queries));
+$breakpoints: add-breakpoint('regular and above', ($width__regular, $no-queries));
+$breakpoints: add-breakpoint('below medium', (max-width $width__medium - 1px, $no-queries));
+$breakpoints: add-breakpoint('medium and above', ($width__medium, $no-queries));
+$breakpoints: add-breakpoint('between medium and large', ($width__medium $width__large, $no-queries));
+$breakpoints: add-breakpoint('below large', (max-width $width__large - 1px, $no-queries));
+$breakpoints: add-breakpoint('large only', ($width__medium $width__largest, $no-queries));
+$breakpoints: add-breakpoint('large and above', ($width__large, $no-queries));
+$breakpoints: add-breakpoint('largest only', ($width__largest, $no-queries));
+$breakpoints: add-breakpoint('between largest and gigantic', ($width__largest $width__gigantic, $no-queries));
+$breakpoints: add-breakpoint('gigantic', ($width__gigantic));
+
+
+
+
+/*------------------------------------*\
+    $Base
+\*------------------------------------*/
+/**
+ * Font-sizes (in pixels). Refer to relevant sections for their implementations.
+ */
+
+$base-fontsize: 16!default;
+$base-line-height: 26!default;
+
+$h1-size: 35!default;
+$h2-size: 28!default;
+$h3-size: 22!default;
+$h4-size: 18!default;
+$h5-size: $base-fontsize !default;
+
+$milli-size: 15!default;
+$micro-size: 13!default;
+
+
+$base-font-family: "Poynter Serif RE", Georgia, serif!default;
+
+$base-color: #252525!default;
+$base-ui-color: #EEEEEE!default;
+
+
+
+/*------------------------------------*\
+    $Brand
+\*------------------------------------*/
+
+$brand-round: 4!default;
+
+
+
+/*------------------------------------*\
+    $Quotes
+\*------------------------------------*/
+/**
+ * English quote marks?
+ */
+$english-quotes: true!default;
+
+
+
+/*------------------------------------*\
+    $Atoms and Abstractions
+\*------------------------------------*/
+/**
+ * Which objects and abstractions would you like to use?
+ */
+$use-beautons: true!default;
+$use-block-list: true!default;
+$use-item-list: true!default;
+$use-grids: true!default;
+$use-icon-text: true!default;
+$use-island: true!default;
+$use-marginalia: true!default;
+$use-media: true!default;
+$use-nav: true!default;
+$use-rules: true!default;
+$use-sprite: true!default;
+$use-icon: true!default;
+$use-heading-group: true!default;
+$use-flag: true!default;
+
+
+
+/*------------------------------------*\
+    $Framework
+\*------------------------------------*/
+/**
+ * inuit.css will work these next ones out for use within the framework.
+ *
+ * Assign our `$base-line-height` to a new spacing var for more transparency.
+ */
+$base-spacing-unit: ($base-line-height - 5) !default;
+$half-spacing-unit: $base-spacing-unit / 2!default;
+$quarter-spacing-unit: $base-spacing-unit / 4!default;
+$line-height-ratio: $base-line-height / $base-fontsize;
+
+
+
+

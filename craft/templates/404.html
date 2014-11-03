@@ -1,0 +1,35 @@
+{#
+ # 404 template
+ # ------------
+ #
+ # This template is loaded whenever Craft cannot figure out how to
+ # respond to an incoming request. No setup is involved to get your
+ # 404 page working; you just need to call it 404.html and put it
+ # at the root of your craft/templates/ folder.
+ #
+ # You can also create 400.html, 403.html, 500.html, and 503.html
+ # templates if you’d like. If Craft can’t find an error template
+ # to match the error code, it will just use the one in
+ # craft/app/templates/ instead.
+ #}
+
+{% extends "_layout" %}
+{% set title = "404" %}
+
+{% block content_main %}
+    <header class="heading-group heading-group--main">
+        <div class="main-wrapper main-wrapper--full">
+            <h1>404 – Page not found</h1>
+            <h2>It looks like that page no longer exists.</h2>
+        </div>
+    </header>
+
+
+        <div class="main-wrapper main-wrapper--article">
+
+            <p>Perhaps you were looking for a <a href="/blog">blog post</a>, or a specific <a href="/recordings">album</a> or release? Maybe it was a glorious review of some <a href="/equipment">equipment</a> or a photo from the <a href="/gallery">gallery</a>? </p>
+
+        </div><!-- //end.main-wrapper -->
+    </div>
+
+{% endblock %}

@@ -1,0 +1,101 @@
+/*------------------------------------*\
+    $FEATURED
+\*------------------------------------*/
+/**
+* Styles for the featured block on the homepage
+**/
+
+.featured {
+    @extend .cf;
+    @include rems(padding-bottom, $base-spacing-unit);
+    @include rems(margin-bottom, $base-spacing-unit);
+    border-bottom: 1px dotted $color__border--standard;
+
+    @include respond-to("largest only") {
+        border: none;
+        padding-bottom: 0;
+    }
+}
+
+    .featured__heading {
+
+        @include respond-to("largest only") {
+            float: right;
+            width: 49%;
+        }
+    }
+
+    .featured__post-content {
+
+        >p {
+            margin-bottom: 0;
+
+            @include respond-to("largest only") {
+                @include rems(font-size, 16);
+                float: right;
+                width: 49%;
+            }
+
+            @include respond-to("gigantic"){
+                @include rems(font-size, 16);
+            }
+
+            a {
+                white-space: nowrap;
+            }
+        }
+    }
+
+    .featured__post-image {
+        @include rems(margin-bottom, $half-spacing-unit);
+
+        @include respond-to("largest only") {
+            float: left;
+            width: 49%;
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+
+
+    .featured__album {
+
+    }
+
+    .featured__album-image {
+        position:relative;
+
+        >.btn {
+            @include rems(right, $base-spacing-unit);
+            @include rems(bottom, $base-spacing-unit);
+            position: absolute;
+        }
+    }
+
+    .featured__album-content {
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

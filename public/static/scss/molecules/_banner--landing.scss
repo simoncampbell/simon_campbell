@@ -1,0 +1,116 @@
+/*------------------------------------*\
+    $BANNER--LANDING
+\*------------------------------------*/
+
+// Styles for the figure and description of Simon on the landing page
+
+
+.banner--landing {
+    @include rems(margin-top, - $base-spacing-unit);
+    float: left;
+    width: 100%;
+
+    @include respond-to("regular and above"){
+        @include rems(margin-top, - $base-spacing-unit * 2);
+    }
+
+    @include respond-to("large and above"){
+        position: relative;
+        overflow: hidden;
+        @include rems(margin-bottom, $base-spacing-unit * 2);
+    }
+
+    @include respond-to("largest only"){
+        @include rems(margin-top, - 65);
+        border-bottom: 1px solid $color__background--black;
+    }
+
+}
+
+    .banner--landing__figure {
+        @include rems(height, 200);
+        overflow: hidden;
+        background-size: 120%;
+        background-repeat: no-repeat;
+        @include rems(margin-bottom, 20);
+        background-position: right center;
+
+        @include respond-to("regular and above"){
+            @include rems(height, 300);
+        }
+
+        @include respond-to("large and above") {
+            @include rems(height, 520);
+            -webkit-transform: scale(1.02); // nasty hack to hide the white edges caused by css filters
+            margin-bottom: 0;
+        }
+
+        @include respond-to("largest only") {
+            @include rems(height, 600);
+        }
+
+    }
+
+    .banner--landing__content {
+        @include respond-to("large and above"){
+            position: absolute;
+            @include rems(bottom, 0);
+            border-top: 1px solid $color__background--black;
+            border-bottom: none;
+            margin-bottom: 0;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,.7);
+            @include rems(padding-top, $base-spacing-unit);
+            @include rems(padding-bottom, $base-spacing-unit * 1.3);
+        }
+
+        @include respond-to("largest only"){
+            border: 1px solid $color__background--black;
+            @include rems(max-width, 600);
+            left: 0;
+            right: 0;
+            @include rems(bottom, 182);
+            margin: 0 auto;
+        }
+
+        .main-wrapper {
+            @include respond-to("largest only"){
+                padding-left: 2%;
+                padding-right: 2%;
+            }
+        }
+
+
+        .lede {
+            @include respond-to("large and above"){
+                color: $color__white;
+            }
+
+            @include respond-to("largest only"){
+                @include rems(font-size, 18);
+            }
+        }
+    }
+
+    .banner--landing__title {
+        display: none;
+
+        @include respond-to("large and above"){
+            z-index: 3;
+            display: block;
+            background:url("/static/images/homepage/logo.svg") no-repeat;
+            text-indent: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            background-size: 100%;
+            @include rems(height, 100);
+            width: 64%;
+            @include rems(max-width, 600);
+            position: absolute;
+            bottom: 50%;
+            margin: 0 auto;
+            left: 0;
+            right: 0;
+            margin-bottom: 0;
+        }
+    }

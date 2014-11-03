@@ -1,0 +1,31 @@
+{#
+ # Featured LP info
+ # ---------------------
+ #
+ #}
+
+
+<div class="side-bar--album">
+
+    {% for album in craft.entries.find({section:'Recordings', limit:'1'}) %}
+        <h4>New {{album.recordType}}: {{album.title}}</h4>
+
+        <figure class="side-bar--album__figure">
+            {% for image in album.albumArt %}
+                <a href="{{album.url}}">
+                    <img src="{{image.getUrl('albumArtSidebar')}}" width="{{image.getWidth('albumArtSidebar')}}" height="{{image.getHeight('albumArtSidebar')}}" alt="{{album.title}}"/>
+                </a>
+            {% endfor %}
+        </figure>
+
+
+        <div class="side-bar--album__link">
+            <a href="{{album.url}}" class="btn btn--icon btn--primary btn--arrow-right btn--epsilon">
+                <span class="icon ss-rewind">mediumvolume</span>
+                <div class="icon-text">
+                    Read more
+                </div>
+            </a>
+        </div>
+    {% endfor %}
+</div><!-- //end.side-bar album -->

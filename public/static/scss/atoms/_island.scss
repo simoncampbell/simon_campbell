@@ -1,0 +1,184 @@
+@if $use-island == true{
+
+/*------------------------------------*\
+    $ISLAND
+\*------------------------------------*/
+/**
+ * Simple, boxed off content, as per: csswizardry.com/2011/10/the-island-object
+ * E.g.:
+ *
+   <div class=island>
+       I am boxed off.
+   </div>
+ *
+ * Demo: jsfiddle.net/inuitcss/u8pV3
+ *
+ */
+.island {
+    @extend .cf;
+    display:block;
+    background-color:$color__background--grey;
+    border-top: 1px solid $color__border--standard;
+
+    .main-wrapper--article__detail & {
+        @include rems(margin-right, - $base-spacing-unit);
+        @include rems(margin-left, - $base-spacing-unit);
+
+        @include respond-to("regular and above"){
+            margin: 0;
+            border: 1px solid $color__border--standard;
+            border-bottom: none;
+
+            .island__header {
+                border: none;
+                border-bottom: 1px solid darken($color__border--standard, 10);
+            }
+        }
+    }
+
+    p {
+        margin-bottom: 0;
+    }
+}
+
+    .island--sidebar {
+        background-color: darken($color__background--grey, 5);
+    }
+
+    .island--light-grey {
+        background-color: $color__background--light;
+    }
+
+.island--wrapper {
+    @include rems(padding-top, $base-spacing-unit * 2);
+    @include rems(padding-bottom, $base-spacing-unit * 2);
+
+    &.side-wrapper {
+        @include respond-to("regular and above"){
+            @include max-width(7);
+            border-top: 1px solid $color__border--standard;
+            padding-left: 0;
+            padding-right:0;
+            max-width: none;
+            width: 100%;
+        }
+
+        @include respond-to("largest only"){
+            margin-top: -1.32rem;
+            padding-right: 9.95%;
+            padding-top: 0;
+            margin-bottom: -99999px; // 100% height hack
+            padding-bottom: 99999px; // 100% height hack
+            border-top: none;
+            border-left: 1px solid $color__border--standard;
+            float: right;
+            width: 34.7%;
+        }
+    }
+
+    h3 {
+        @include rems(margin-bottom, $base-spacing-unit);
+    }
+
+    &.island--wrapper__comments-container {
+        margin-top: 0;
+
+        @include respond-to("largest only"){
+            border-top: 1px solid $color__border--standard;
+        }
+    }
+
+    .island--wrapper__content {
+        @extend .cf;
+        border: none;
+        padding: 0;
+
+        @include respond-to("regular and above"){
+            width: 71%;
+            margin: 0 auto;
+        }
+
+        @include respond-to("large and above"){
+            @include rems(max-width, 578);
+            width: 64%;
+        }
+
+        @include respond-to("largest only"){
+            padding-left: 6%;
+            padding-right: 0;
+            width: 100%;
+            padding-top: 0;
+        }
+
+        ul {
+            margin-bottom: 0;
+        }
+
+        .nav--category {
+            list-style-type: none;
+            @include rems(margin-bottom, - $half-spacing-unit);
+        }
+    }
+
+    .island--wrapper__content--album {
+        @include respond-to("large and above"){
+            width: 80.1%;
+            @include rems(max-width, 723);
+        }
+
+        @include respond-to("largest only") {
+            width: 100%;
+            max-width: 100%;
+        }
+    }
+}
+
+    .island--wrapper--equipment {
+        @extend .cf;
+
+        @include respond-to("small and above"){
+            float: right;
+            width: 49%;
+        }
+
+        @include respond-to("largest only"){
+            width: 100%;
+            float: none;
+        }
+    }
+
+    .island__header {
+        @include rems(padding, $half-spacing-unit, $base-spacing-unit);
+        background-color: darken($color__background--grey, 5);
+        border: 1px solid $color__border--standard;
+        border-bottom: 1px solid darken($color__border--standard, 5);
+        border-top: none;
+        margin-bottom:0;
+
+        h4 {
+            vertical-align: bottom;
+            margin: 0;
+        }
+    }
+
+    .island__header--small {
+        @include rems(padding,5, 10);
+    }
+
+    .island__content {
+        @extend .cf;
+        @include rems(padding, $gutter);
+        @include rems(padding-top, $gutter/1.5);
+        border: 1px solid $color__border--standard;
+        border-top: none;
+    }
+
+    .island__content--small {
+        @include rems(padding, $gutter/2);
+    }
+
+    .island > :last-child {
+      margin-bottom:0;
+    }
+
+}//endif

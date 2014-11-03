@@ -1,0 +1,10 @@
+@import './browsers';
+
+$browser-minimum-versions: ("ie": "8", "chrome": "19", "firefox": "19", "ios-safari": "6.1", "safari": "6.1");
+
+$has-svg: false;
+$ie8-support: true;
+$icons__filextn: png;
+
+$breakpoint-no-queries: true;
+$breakpoint-no-query-fallbacks: true;

@@ -1,0 +1,781 @@
+@if $use-item-list == true{
+
+/*------------------------------------*\
+    $ITEM-LIST
+\*------------------------------------*/
+/**
+* Create a list of articles
+**/
+
+.item-list {
+    list-style-type: none;
+    @extend .cf;
+}
+    .item-list__item {
+        padding-left: 0;
+        list-style-type:none;
+        @include rems(margin-bottom, $base-spacing-unit * 2);
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &:before {
+            content: "";
+            display: none;
+        }
+
+        h3 {
+            margin-top: 0;
+        }
+    }
+
+    li.item-list__item:before {
+        display: none;
+    }
+
+    .item-list__item--half {
+        @include rems(margin-bottom, $half-spacing-unit);
+    }
+
+    /**
+    * For item lists that follow the main content section.
+    * Examples: recordings/
+    **/
+
+    .item-list--sub-content {
+        @include rems(padding-top, $base-spacing-unit);
+        @include rems(margin-top, $base-spacing-unit);
+        border-top: 1px dotted $color__border--standard;
+
+        >h3 {
+            margin-bottom:0;
+        }
+
+        &.item-list--sub-content--alternate {
+            border: none;
+            @include rems(margin-bottom, $base-spacing-unit);
+            float: left;
+            width: 100%;
+        }
+
+        .main-wrapper--archive &:first-of-type {
+            border-top: none;
+            padding-top: 0;
+            margin-top: 0;
+        }
+    }
+
+    .item-list--sub-content--borderless {
+        @include rems(padding-top, $base-spacing-unit);
+        border: none;
+
+        > h3 {
+            @include rems(margin-bottom, $base-spacing-unit);
+        }
+    }
+
+    /**
+    * Throw a list of items into grid mode
+    **/
+    .item-list--grid {
+        @include vendor(column-count, 2);
+        @include vendor(column-gap, $base-spacing-unit);
+        @include vendor(column-gap, calc-rem($base-spacing-unit));
+
+        .item-list__item {
+            -webkit-column-break-inside: avoid;
+            @include break-inside(avoid);
+
+            &:before {
+                display: none;
+            }
+        }
+
+        figure {
+            margin-bottom: 0;
+        }
+    }
+
+
+.item-list--bordered {
+    .item-list__item {
+        @include rems(padding-top, $base-spacing-unit);
+        @include rems(margin-bottom, $base-spacing-unit);
+        border-top: 1px dotted darken($color__border--standard, 5);
+    }
+}
+
+
+    /**
+    * Item list article
+    **/
+
+    .item-list--article {
+    }
+
+
+    .item-list__item--article {
+        float: left;
+        width: 100%;
+        @include rems(margin-bottom, $base-spacing-unit);
+        @include rems(padding-bottom, $base-spacing-unit);
+        border-bottom: 1px dotted $color__border--standard;
+
+        &:last-of-type {
+            border:none;
+            padding-bottom: 0;
+        }
+
+        p {
+            margin-bottom: 0;
+
+            >a {
+                white-space: nowrap;
+            }
+        }
+    }
+
+
+    /**
+    * Item lists in the side bar
+    **/
+    .item-list__item {
+        h4,
+        .label--headline {
+            margin-bottom: 0;
+        }
+    }
+
+
+
+/**
+* Equipment categories listing
+**/
+.item-list--equipment,
+.item-list--gallery,
+.item-list--merch {
+
+    ul {
+        @extend .cf;
+        @include respond-to("regular and above") {
+            margin-left: -3%;
+
+            h3 {
+                width: 100%;
+            }
+        }
+
+        @include respond-to("large and above"){
+            margin-left: -2%;
+        }
+
+        @include respond-to("largest only"){
+            margin-left: -3.4%;
+        }
+
+        .item-list__item {
+            float: left;
+            width: 100%;
+            @include rems(margin-bottom, $base-spacing-unit);
+
+
+            @include respond-to("regular and above"){
+                width: 47%;
+                margin-left: 3%;
+
+                &:nth-child(odd) {
+                    clear: left;
+                }
+            }
+
+            @include respond-to("large and above"){
+                width: 47.7%;
+                margin-left: 2%;
+            }
+
+            @include respond-to("largest only"){
+                width: 45%;
+                margin-left: 3.4%;
+            }
+        }
+    }
+
+    p {
+        @include rems(font-size, $milli-size);
+    }
+
+    li figure {
+        @include rems(margin-bottom, $half-spacing-unit / 2);
+    }
+}
+
+
+
+    .item-list--equipment {
+        >ul {
+            >.item-list__item {
+                @include respond-to("between medium and large") {
+                    width: 48%;
+
+                    &:nth-child(odd){
+                        @include rems(margin-right, $base-spacing-unit);
+                    }
+
+                    &:nth-child(2n){
+                        margin-right: 0;
+                    }
+
+                    &:nth-child(3n + 1){
+                        clear: none;
+                    }
+                }
+
+                @include respond-to("largest only"){
+                    @include rems(margin-bottom, $base-spacing-unit);
+                }
+            }
+        }
+    }
+
+    .item-list__item--equipment {
+        @include respond-to("medium and above") {
+            width: 49%;
+            vertical-align: top;
+            float: right;
+        }
+
+        p {
+            @include rems(margin-bottom, $half-spacing-unit);
+        }
+
+    }
+
+
+.item-list--equipment-meta {
+    @extend .cf;
+
+
+    >.item-list {
+        margin-bottom: 0;
+    }
+
+
+    .item-list__item {
+        @include rems(font-size, $milli-size - 1);
+        @include rems(margin-bottom, $base-spacing-unit);
+
+
+        h4 {
+            @extend %font__text--bold;
+            @include rems(font-size, $milli-size);
+            margin: 0;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+
+.equipment__image {
+    @include rems(margin-bottom, $base-spacing-unit);
+
+    &:before {
+        content: "";
+        display: none;
+    }
+
+    @include respond-to("small and above"){
+        float: left;
+        width: 45%;
+    }
+
+    @include respond-to("largest only"){
+        width: 100%;
+        float: none;
+    }
+}
+
+.item-list--gallery,
+.item-list--merch {
+    @include rems(margin-bottom, $base-spacing-unit * 2);
+
+    h5 {
+        margin-bottom: 0;
+    }
+}
+
+
+
+
+.item-list__item--sidebar {
+    @include rems(padding-bottom, $base-spacing-unit);
+    @include rems(margin-bottom, $base-spacing-unit);
+    border-bottom: 1px solid lighten($color__border--standard, 3);
+
+    @include respond-to("largest only"){
+        @include rems(margin-bottom, $base-spacing-unit * 2);
+        margin-right: 0;
+        padding-bottom: 0;
+        padding-right: 0;
+        border: none;
+        width: 100%;
+
+        h4 {
+            margin-right: -50%;
+            margin-left: - 6.4%;
+            @include rems(margin-bottom, $base-spacing-unit / 2);
+            @include rems(padding-top, $half-spacing-unit);
+            padding-left: 6.4%;
+            padding-right: 50%;
+            @include rems(padding-bottom, $half-spacing-unit - 3);
+            background-color: $color__sidebar--bg;
+            border-top: 1px solid $color__border--standard;
+            border-bottom: 1px solid $color__border--standard;
+            line-height: 1.5;
+        }
+
+        &:first-of-type {
+            h4 {
+                border-top: none;
+            }
+        }
+    }
+
+    &.item-list__item--sidebar--only {
+        @include rems(padding-bottom, $base-spacing-unit);
+        width: 100%;
+        border-bottom: 1px dotted $color__border--standard;
+
+
+        @include respond-to("large only"){
+            @include rems(padding-bottom, $base-spacing-unit * 1.5);
+            @include rems(margin-bottom, $base-spacing-unit);
+        }
+
+        @include respond-to("largest only"){
+            @include rems(margin-bottom, $base-spacing-unit);
+            border: none;
+        }
+    }
+
+    &:only-of-type {
+        width: 100%;
+    }
+
+    &:last-child {
+        border-bottom: none;
+    }
+
+    > p {
+        margin-bottom:0;
+    }
+
+    .marginalia {
+        @include rems(margin-bottom, $half-spacing-unit);
+    }
+}
+
+
+/**
+* Live shows in the sidebar
+**/
+
+.item-list__item--live-shows {
+    @include respond-to("medium and above"){
+        width: 100%;
+        float: left;
+        margin-bottom: 0;
+    }
+}
+
+
+/**
+* Album item listing
+**/
+.item-list--album {
+    @extend .cf;
+
+    @include respond-to("large and above"){
+        margin-left: -2%;
+        width: 102%;
+    }
+
+    @include respond-to("largest only"){
+        .item-list__item--recording {
+            margin-left: 2%;
+            float: left;
+            width: 47.7%;
+            border-bottom: none;
+
+            &:nth-child(odd) {
+                clear: left;
+            }
+
+            p {
+                @include rems(font-size, 16);
+            }
+        }
+    }
+
+    p {
+        margin-bottom: 0;
+    }
+
+    .flag {
+        @include rems(margin-bottom, $half-spacing-unit);
+    }
+
+    .flag__body {
+        h3,
+        h4 {
+            margin: 0;
+        }
+    }
+}
+
+
+/**
+ * Purchasing options
+ */
+.item-list__item--purchase {
+
+
+    .btn {
+        @include rems(margin-top, $half-spacing-unit);
+    }
+
+    h3 {
+        @include rems(margin-bottom, 5);
+
+        span {
+            font-size: 70%;
+        }
+    }
+
+    p {
+        @include rems(font-size, $milli-size);
+        margin-bottom:0;
+    }
+}
+
+
+    /**
+     * Album in sidebar
+     */
+    .item-list__item--album {
+        @extend .cf;
+        @include rems(margin-bottom, $base-spacing-unit * 2);
+        padding-bottom: 0;
+
+
+        @include respond-to("large only") {
+            float: right;
+            clear: left;
+            width: 100%;
+        }
+
+        @include respond-to("largest only"){
+            @include rems(margin-bottom, $base-spacing-unit * 2);
+            float: left;
+            width: 100%;
+        }
+
+        .media {
+            margin:0;
+
+            // remove the media object from tablet sizes to desktop.
+            @include respond-to("large only"){
+                .media__img {
+                    @include rems(margin-bottom, $base-spacing-unit);
+                    display: block;
+                    width: 100%;
+                }
+
+                .media__body {
+                    width: 100%;
+                    display: block;
+                }
+            }
+            @include respond-to("largest only"){
+                width: 100%;
+                float: left;
+
+                .media__img {
+                    float: left;
+                    clear: both;
+                }
+
+                .media__body {
+                    float: right;
+                    width: 68%;
+                }
+            }
+        }
+
+        &:last-of-type {
+            padding-bottom: 0;
+        }
+    }
+
+
+    .item-list__item--bookings {
+        @include respond-to("large only"){
+            @include rems(padding-right, $base-spacing-unit);
+            @include rems(margin-bottom, $half-spacing-unit);
+            width: 50%;
+            float: left;
+
+            .island__content {
+                @include rems(font-size, $milli-size);
+            }
+        }
+
+        @include respond-to("largest only"){
+            &:first-of-type {
+                @include rems(padding-top, $base-spacing-unit);
+            }
+        }
+    }
+
+    .item-list__item--contact {
+        @include respond-to("medium and above"){
+            @include rems(margin-bottom, $half-spacing-unit);
+            width: 100%;
+            float: left;
+        }
+    }
+
+
+
+
+
+/**
+* Comments item list
+**/
+    .item-list--comments {
+
+        @include respond-to("largest only"){
+            @include rems(max-width, 614);
+
+        }
+
+        &:last-child {
+            @include rems(margin-bottom, $base-spacing-unit * 2);
+        }
+
+        >.flag {
+            @include rems(margin-bottom, $half-spacing-unit);
+
+            .flag__body {
+
+                time {
+                    color: $color__meta;
+                    @include rems(font-size, $milli-size);
+                }
+
+                a {
+                    border:none;
+                }
+
+                h3 {
+                    @extend %font__text--regular;
+                    @include rems(font-size, $h5-size);
+                    font-weight: bold;
+                    margin-bottom: 0;
+                    line-height: 1;
+                }
+            }
+
+            .flag__image {
+                >img {
+                    @include rems(max-width, 73);
+                }
+            }
+        }
+        p {
+            @include rems(font-size, $milli-size);
+            color: darken($color__background--dark, 10);
+
+            @include respond-to("largest only"){
+                @include rems(font-size, $base-fontsize + 1);
+            }
+        }
+    }
+
+    /**
+     * Album detail item list in /recordings/detail.html
+     */
+    .item-list--lyrics {
+        margin-bottom: 0;
+    }
+
+    .item-list__item--reviews {
+        .item-list__item {
+            @include rems(margin-bottom, $base-spacing-unit);
+        }
+    }
+
+
+
+    .item-list--instruments {
+
+        .item-list__item {
+            @include rems(margin-bottom, $half-spacing-unit / 2);
+        }
+    }
+
+    /**
+     * Featured item list on the index template
+     */
+
+    .item-list--featured {
+        @include rems(margin-bottom, $base-spacing-unit);
+
+        >.item-list__item {
+            &:last-of-type {
+                margin-bottom: 0;
+                padding-bottom: 0;
+            }
+        }
+
+
+        @include respond-to("largest only"){
+            float: left;
+            width: 101.7%;
+            margin-left: -2%;
+
+
+            >.item-list__item {
+                margin-right: 0;
+                margin-left: 2%;
+                float: left;
+                width: 48%;
+                border-bottom: none;
+                padding-bottom: 0;
+                margin-bottom: 0;
+
+                &:last-of-type {
+                    margin-right: 0;
+                }
+
+                >.heading-group h3 {
+                    @include rems(font-size, 22);
+                }
+
+                p, .meta-info-block__item {
+                    @include rems(font-size, $milli-size);
+                }
+            }
+        }
+    }
+
+
+    /**
+     * Item list modifier for the news template
+     */
+    .item-list--news {
+
+        .item-list__item--article {
+
+            p {
+                @include rems(margin-bottom, $base-spacing-unit);
+            }
+        }
+
+        @include respond-to("medium and above"){
+            .heading-group {
+                position: relative;
+
+                &:before {
+                    content: "¶";
+                    color: #ddd;
+                    font-size: 2em;
+                    position: absolute;
+                    left: -1em;
+                    top: 0;
+                    line-height: 1;
+                }
+            }
+        }
+    }
+
+    .item-list--homepage-shows {
+        @include respond-to("largest only"){
+            float: left;
+            width: 40%;
+        }
+    }
+
+    .item-list--homepage {
+        float: left;
+        width: 100%;
+        margin-bottom: 0;
+
+        >.item-list__item {
+            @include rems(margin-bottom, $base-spacing-unit);
+            float: left;
+            width: 100%;
+        }
+
+        @include respond-to("gigantic"){
+            .item-list__item {
+                @include rems(margin-right, $base-spacing-unit);
+                float: left;
+                width: 30%;
+
+                &:last-of-type {
+                    margin-right: 0;
+                }
+            }
+        }
+
+        .item-list__item h5 {
+            font-weight: normal;
+        }
+
+        .heading-group--marginless {
+            .meta-info-block {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .item-list__item--latest {
+        h5 {
+            font-weight: normal;
+        }
+    }
+
+
+    .item-list__item--side {
+        @include rems(margin-bottom, $base-spacing-unit);
+        @extend .cf;
+
+        @include respond-to("large and above"){
+            float: left;
+            width: 100%;
+        }
+
+        .side__image {
+            float: left;
+            width: 100%;
+
+            @include respond-to("large and above"){
+                width: 48.4%;
+                float: left;
+                margin-bottom: 0;
+            }
+        }
+
+        .side__content {
+            @include respond-to("large and above"){
+                width: 49%;
+                float: right;
+            }
+        }
+    }
+
+} //endif

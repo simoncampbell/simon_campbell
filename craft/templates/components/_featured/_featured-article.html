@@ -1,0 +1,43 @@
+{#
+ # Featured article
+ # ---------------
+ # This component displays a featured album on the homepage.
+ #
+ #}
+
+
+{% for post in craft.entries.find({section:'Blog', limit:'1'}) %}
+    <article>
+        <div class="featured__post-content">
+            <header class="heading-group heading-group--marginless featured__heading">
+
+                <h3><a href="{{post.url}}">{{ post.title }}</a></h3>
+
+                <div class="meta-info-block meta-info-block--borderless">
+                    <time class="meta-info-block__item" datetime="{{post.postDate|date("Y-m-d")}}">{{post.postDate|date("jS F Y")}}</time>
+
+                    {% if post.blogPostTags | length %}
+                    <p class="meta-info-block__item">Posted in
+                        {% for tag in post.blogPostTags %}
+                            <a class="category-link" href="/blog/category/{{tag.name | replace({' ': '-'}) }}">
+                                <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
+                                {{tag.name}}</a>
+                        {% endfor %}
+                    </p>
+                    {% endif %}
+                </div><!-- //.meta-info-block -->
+            </header>
+
+            {% for image in post.blog__image %}
+                <figure class="featured__post-image">
+                    <a href="{{post.url}}"><img src="{{image.getUrl('featuredImage')}}"  alt="{{post.title}} - {{entry.heading__sec}} - by Simon Campbell"></a>
+                </figure>
+            {% endfor %}
+
+            <p>{{ post.shortExtract[:340]|trim}}&hellip; <a href="{{post.url}}">Read more &raquo;</a></p>
+
+        </div><!-- //end.featured__post-content -->
+    </article>
+{% endfor %}
+
+

@@ -1,0 +1,127 @@
+ /*------------------------------------*\
+    $CAROUSEL--GALLERY
+\*------------------------------------*/
+/**
+ * Modified carousel atom for use in /gallery templates
+ *
+ */
+
+.side-wrapper--gallery {
+
+    @include respond-to("regular and below"){
+        padding: 0;
+    }
+
+    @include respond-to("below large"){
+        @include rems(max-width, 940);
+    }
+}
+
+.carousel-wrapper {
+    @include rems(margin-bottom, $base-spacing-unit);
+    @include rems(padding-bottom, $base-spacing-unit * 2);
+    border-bottom: 1px solid $color__border--standard;
+
+    @include respond-to("largest only") {
+        float: left;
+        width: 100%;
+    }
+}
+
+
+    .carousel__info-wrapper {
+        @include rems(max-width, 578);
+
+        @include respond-to("large and above"){
+            width: 64%;
+        }
+
+        @include respond-to("largest only") {
+            width: 48%;
+            padding: 0 0 0 9.8%;
+            float: left;
+
+            h3 {
+                @include rems(font-size, $h4-size + 3);
+            }
+
+            p {
+                @include rems(font-size, 15);
+            }
+        }
+    }
+
+.carousel--gallery {
+    @include respond-to("largest only") {
+        margin-top: 0;
+
+        .carousel__summary {
+            p {
+                @include rems(font-size, 15);
+            }
+        }
+    }
+}
+
+.carousel .carousel__zoom {
+    display: none;
+    position: absolute;
+    right: 0;
+    @include rems(top, $half-spacing-unit);
+    @include rems(right, $half-spacing-unit);
+
+    &,
+    &:hover,
+    &:focus {
+        text-decoration: none;
+        border-bottom: none;
+    }
+
+
+    // Only display zoom button when js is present
+    .js & {
+        @include respond-to("largest only"){
+            display: block;
+        }
+    }
+}
+
+.wide-wrapper--gallery {
+
+    @include respond-to("largest only"){
+        float: right;
+        padding-left: 0;
+        width: 56%;
+
+        .item-list--gallery {
+            margin-top: 0;
+            padding-top: 0;
+
+            .item-list__item {
+                width: 47.8%;
+
+                &:nth-child(2n){
+                    margin-right: 0;
+                }
+
+
+                &:nth-child(2n + 1){
+                    @include rems(margin-right, $base-spacing-unit);
+                }
+
+                &:nth-child(3n + 1) {
+                    clear: none;
+                }
+            }
+        }
+    }
+
+    @include respond-to("gigantic"){
+        width: 58.4%;
+    }
+
+
+    .item-list--gallery {
+        padding-top: 0;
+    }
+}

@@ -1,0 +1,74 @@
+/*------------------------------------*\
+    $RECORD-SALE
+\*------------------------------------*/
+/**
+* Stlyes for the album sale on recordings/detail.html
+**/
+
+
+.record-sale {
+
+    iframe {
+        margin-bottom: 0;
+    }
+    @include respond-to("large and above") {
+
+        // > figure {
+        //     @include rems(margin-right, $base-spacing-unit);
+        //     float: left;
+        //     width: 25%;
+        // }
+
+        // >.item-list--bordered {
+        //     float: right;
+        //     width: 70%;
+        //     border: none;
+
+        //     .item-list__item {
+        //         width: 100%;
+
+        //         &:first-child {
+        //             border: none;
+        //             padding-top: 0;
+        //         }
+        //     }
+        // }
+    }
+
+    @include respond-to("largest only"){
+        @include rems(padding-top, $base-spacing-unit);
+
+        > figure {
+            margin-right: 0;
+            float: left;
+            width: 100%;
+        }
+
+        >.item-list--bordered {
+            float: left;
+            width: 100%;
+            border: none;
+
+            .item-list__item {
+                width: 100%;
+
+                &:first-child {
+                    border: none;
+                    padding-top: 0;
+                }
+            }
+        }
+
+    }
+
+    figure {
+        img {
+            margin: 0 auto;
+        }
+    }
+
+    h3 {
+        @include rems(font-size, $h4-size + 2);
+    }
+
+}

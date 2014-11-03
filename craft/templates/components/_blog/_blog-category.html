@@ -1,0 +1,32 @@
+{#
+ # Blog categories listing
+ # -------------------
+ #
+ #}
+
+<h4>Categories</h4>
+
+<ul class="nav nav--category">
+
+
+    <li{% if not tag.name | length %} class="cur"{% endif %}>
+        <a class="nav--category__item {% if not tag.name | length %}nav--category__item--cur{% endif%} link--icon" href="/blog">
+            <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
+            All
+        </a>
+    </li>
+
+
+
+    {% for tagloop in craft.tags({set:"blogTags"}) %}
+        {% set taggedEntries = craft.entries.relatedTo({ targetElement: tagloop }) %}
+        {% if taggedEntries.total() > 0 %}
+            <li{% if (tag.name | lower) == (tagloop.name | lower) %} class="cur"{% endif %}>
+                <a class="nav--category__item {% if (tag.name | lower) == (tagloop.name | lower) %}nav--category__item--cur{% endif %} link--icon" href="/blog/category/{{tagloop.name | replace({' ': '-'})}}">
+                    <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
+                    {{tagloop.name}}
+                </a>
+            </li>
+        {% endif %}
+    {% endfor %}
+</ul>

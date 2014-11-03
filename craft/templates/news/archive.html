@@ -1,0 +1,95 @@
+{#
+ # NEWS
+ # Archive Template
+ # -------------------
+ #
+ #}
+
+{% set title = "News archive" %}
+
+{% extends "_layout" %}
+
+{% block content_main %}
+
+    <header class="heading-group heading-group--main">
+        <div class="main-wrapper main-wrapper--full">
+            <h1>{{headings.newsHeading}}</h1>
+            <h2>{{headings.newsSubheading}}</h2>
+        </div>
+    </header>
+
+    <div class="main-wrapper main-wrapper--article main-wrapper--listing main-wrapper--archive" role="main">
+
+
+        {% set allPosts = craft.entries.section('News').limit(null).find() %}
+        {% for date, entries in allPosts | group("postDate|date(' Y')") %}
+
+            <div class="item-list--sub-content item-list--sub-content--alternate">
+                <h3><span class="icon icon--meta">write</span>{{ date }}</h3>
+            </div><!-- //end.item-list -->
+
+            {% for entry in entries %}
+                <article>
+                    <div class="heading-group heading-group--marginless">
+                        <h4><a href="{{entry.url}}">{{entry.title}}</a></h4>
+
+                        <div class="meta-info-block meta-info-block--borderless">
+                            <time class="meta-info-block__item" datetime="{{entry.postDate|date("Y-m-d")}}">{{entry.postDate|date("jS F")}}</time>
+                            {% if entry.newsTags | length %}                            
+                                <p class="meta-info-block__item">Posted in
+                                    {% for tag in entry.newsTags %}
+                                        <a class="category-link" href="/news/category/{{tag.name | replace({' ': '-'}) }}">
+                                            <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
+                                            {{tag.name}}</a>
+                                    {% endfor %}
+                                </p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </article>
+            {% endfor %}
+
+
+        {% endfor %}
+
+    </div><!-- //end.main-wrapper -->
+
+{% endblock %}
+
+
+
+{% block content_side %}
+
+    <div class="side-wrapper island island--wrapper">
+
+        <ul class="item-list island--wrapper__content">
+
+            <li class="item-list__item item-list__item--sidebar">
+
+                {% include 'components/_news/_news-category' %}
+
+            </li>
+
+            <li class="item-list__item item-list__item--sidebar">
+                <h4>Subscribe via RSS</h4>
+                <a href="/feeds/news.rss" class="link--icon">
+                    <span class="icon ss ss-inbox">inbox</span>
+                    Get regular updates and news posts
+                </a>
+            </li>
+
+            <li class="item-list__item item-list__item--album">
+                {% include 'components/_side-bar--album.html' %}
+            </li>
+
+            <li class="item-list__item item-list__item--live-shows">
+                {% include 'components/_live-shows--alternate.html' %}
+            </li>
+
+        </ul>
+
+
+
+    </div><!-- // end.island side-wrapper -->
+
+{% endblock %}

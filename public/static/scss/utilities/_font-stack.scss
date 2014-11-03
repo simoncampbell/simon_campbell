@@ -1,0 +1,88 @@
+/*------------------------------------*\
+    $FONT-STACK
+\*------------------------------------*/
+
+
+/**
+ * Font weights
+ */
+    $lighter:300;
+    $normal:400;
+    $semibold:600;
+    $bold:700;
+
+
+/**
+ * Default text font-family and font weights
+ */
+%font__text--regular {
+    font-family: "Poynter Serif RE", Georgia, serif;
+    font-style: normal;
+    font-weight: normal;
+}
+
+%font__text--italic {
+    font-family: "Poynter Serif RE", Georgia, serif;
+    font-style: italic;
+    font-weight: normal;
+}
+
+%font__text--bold {
+    font-family: "Poynter Serif RE", Georgia, serif;
+    font-style: normal;
+    font-weight: bold;
+}
+
+%font__display--normal {
+    font-family: "Griffith Gothic", Verdana, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+}
+
+%font__display--black {
+    font-family: "Griffith Gothic Black", Verdana, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+
+    .no-fontface & {
+        font-weight: bold;
+    }
+}
+
+
+/**
+ * Icon fonts
+ */
+
+@font-face {
+    font-family: "SSGizmo";
+    src: url('/static/fonts/ss-gizmo.eot');
+    src: url('/static/fonts/ss-gizmo.eot?#iefix') format('embedded-opentype'),
+       url('/static/fonts/ss-gizmo.woff') format('woff'),
+       url('/static/fonts/ss-gizmo.ttf')  format('truetype'),
+       url('/static/fonts/ss-gizmo.svg#SSGizmo') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+%font__icon--gizmo {
+    font-style:normal;
+    font-family: "SSGizmo";
+    text-rendering: optimizeLegibility;
+    white-space: nowrap;
+    text-decoration: none;
+    -webkit-font-feature-settings: "liga";
+    -moz-font-feature-settings: "liga=1";
+    -moz-font-feature-settings: "liga";
+    -ms-font-feature-settings: "liga" 1;
+    -o-font-feature-settings: "liga";
+    font-feature-settings: "liga";
+    -webkit-font-smoothing: antialiased;
+}
+
+
+
+
+
+

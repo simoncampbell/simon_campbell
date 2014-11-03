@@ -1,0 +1,78 @@
+{#
+ # EQUIPMENT
+ # Category Template e.g. 'Guitars'
+ # -------------------------------
+ #
+ #}
+
+{% set category = craft.entries.slug(tag).first() %}
+
+{% set title = category.title %}
+
+{% extends "_layout" %}
+
+{% block content_main %}
+
+
+
+    <header class="heading-group heading-group--main">
+        <div class="main-wrapper main-wrapper--full">
+            <h2 class="epsilon">{{headings.equipmentHeading}}</h2>
+            <h1>{{category.title | capitalize}}</h1>
+        </div>
+    </header>
+
+    <div class="main-wrapper main-wrapper--article main-wrapper--listing" role="main">
+
+
+
+         <ul class="item-list">
+            {% for post in craft.entries.section('Equipment').relatedTo(category)  %}
+                <li class="item-list__item item-list__item--article">
+                    <article>
+                        <!-- REQUIRED EQUIPMENT IMAGE -->
+                        {% for image in post.equipmentImage %}
+                            <figure class="equipment-image">
+                                <a href="{{post.url}}">
+                                    <img src="{{image.getUrl('equipmentTransform')}}" alt="{{post.title}} - {{post.heading__sec}}" />
+                                </a>
+                            </figure>
+                        {% endfor %}
+
+                        <header class="heading-group--marginless">
+                            <h3><a href="{{post.url}}">{{post.title}}</a></h3>
+                        </header>
+
+                        <p>{{ post.shortExtract }} <a href="{{post.url}}">Read more &raquo;</a></p>
+                    </article>
+                </li>
+            {% endfor %}
+        </ul>
+
+    </div>
+
+{% endblock %}
+
+
+
+{% block content_side %}
+
+    <div class="side-wrapper island island--wrapper">
+
+        <ul class="item-list island--wrapper__content">
+            <li class="item-list__item item-list__item--sidebar">
+                {% include 'components/_equipment/_category-list--sidebar.html' %}
+            </li><!-- //end.item-list__item -->
+
+            <li class="item-list__item item-list__item--album">
+                {% include 'components/_side-bar--album.html' %}
+            </li>
+
+            <li class="item-list__item item-list__item--live-shows">
+                {% include 'components/_live-shows--alternate.html' %}
+            </li>
+        </ul><!-- //end.item-list -->
+
+    </div><!-- //end.side-wrapper -->
+
+{% endblock %}

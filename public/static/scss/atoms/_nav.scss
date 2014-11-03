@@ -1,0 +1,176 @@
+@if $use-nav == true {
+
+/*------------------------------------*\
+    $NAV
+\*------------------------------------*/
+/**
+ * Nav abstraction as per: csswizardry.com/2011/09/the-nav-abstraction
+ * When used on an `ol` or `ul`, this class throws the list into horizontal mode
+ *
+ */
+.nav{
+    @extend .cf;
+    list-style:none;
+    margin-left:0;
+
+    > li {
+
+        &,
+        > a{
+            padding-left: 0;
+            display:inline-block;
+           *display:inline;
+            zoom:1;
+        }
+
+        &:before {
+            content:"";
+            display:none;
+        }
+    }
+}
+
+/**
+ * `.nav--stacked` extends `.nav` and throws the list into vertical mode
+ *
+ */
+.nav--stacked{
+    display:inline-block;
+
+    > li{
+        display:list-item;
+
+        > a{
+            display:block;
+        }
+
+        &:before {
+            content:"";
+        }
+    }
+}
+
+
+
+
+/**
+ * Category links
+ *
+ */
+.nav--category {
+    list-style-type: none;
+    @include rems(margin-bottom, - $half-spacing-unit);
+}
+
+    .nav--category__item {
+        @extend %font__display--normal;
+        @include rems(margin-right, $base-spacing-unit);
+        @include rems(margin-bottom, $half-spacing-unit);
+        color: darken($color__meta,10);
+        border: 1px solid transparent;
+        @include rems(font-size, 16);
+
+        &:hover,
+        &:focus {
+            color: $color__orange--secondary;
+            text-decoration: none;
+        }
+    }
+
+        .nav--category__item--cur {
+            color: $color__orange--secondary;
+        }
+
+/**
+ * Give nav links a big, blocky hit area.
+ *
+ */
+.nav--block{
+    line-height:1;
+    /**
+     * Remove whitespace caused by `inline-block`.
+     */
+    letter-spacing:-0.31em;
+    word-spacing:-0.43em;
+    white-space:nowrap;
+
+    > li {
+        padding-left: 0;
+        letter-spacing:normal;
+        word-spacing:normal;
+
+        > a{
+            padding:$half-spacing-unit;
+        }
+    }
+}
+
+.nav--social {
+    @extend %font__display--normal;
+    margin-bottom: 0;
+
+    li {
+        padding-left: 0;
+        @include rems(margin-right, $half-spacing-unit);
+        @include rems(font-size, $milli-size);
+    }
+
+    a {
+        color: darken($color__meta,10);
+        border: none;
+
+        &:hover,
+        &:focus {
+            color: darken($color__meta,20);
+            border: none;
+
+            &:before {
+                @include transition(.25s all ease-in-out);
+                opacity: .9;
+            }
+        }
+    }
+
+    a:before {
+        opacity:.6;
+    }
+
+    .icon--facebook:before {
+        margin-right: 0;
+    }
+
+    .svg .icon--facebook:before {
+        background-size:17px;
+    }
+
+}
+
+
+/**
+ * Force a nav to occupy 100% of the available width of its parent. Extends
+ * `.nav`, e.g.:
+ *
+   <ul class="nav  nav--fit">
+       <li><a href=#>Home</a></li>
+       <li><a href=#>About</a></li>
+       <li><a href=#>Portfolio</a></li>
+       <li><a href=#>Contact</a></li>
+   </ul>
+ *
+ * Thanks to @pimpl for this idea!
+ */
+.nav--fit{
+    display:table;
+    width:100%;
+
+    > li {
+        padding-left: 0;
+        display:table-cell;
+
+        > a{
+            display:block;
+        }
+    }
+}
+
+}//endif

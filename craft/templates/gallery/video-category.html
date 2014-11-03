@@ -1,0 +1,66 @@
+{#
+ # GALLERY ALBUM
+ # Detail Template
+ # -------------------
+ #
+ #}
+
+
+{% set title = "Videos - Gallery" %}
+{% extends "_layout" %}
+
+{% block content_main %}
+
+    <header class="heading-group heading-group--main">
+        <div class="main-wrapper main-wrapper--full">
+            <h1>{{headings.galleryHeading}}</h1>
+            <h2>{{headings.gallerySubheading}}</h2>
+        </div>
+    </header>
+
+{% endblock %}
+
+
+
+{% block content_side %}
+<div class="wide-wrapper wide-wrapper--merch">
+    <div class="item-list item-list--merch">
+
+    <h3>Videos</h3>
+    <ul>
+        {% set entries = craft.entries.find({section:'Videos'}) %}
+
+        {% for video in entries %}
+            <li class="item-list__item">
+                <figure>
+                    {% for image in video.thumbnailImage %}
+                        <a href="{{video.url}}"><img src="{{image.getUrl('galleryListing')}}" alt="{{video.title}} - a video by Simon Campbell"></a>
+                    {% endfor %}
+                </figure>
+                <h5><a href="{{video.url}}">{{video.title}}</a></h5>
+            </li>
+        {% endfor %}
+    </ul>
+
+    </div><!-- //end.item-list__sub-content -->
+</div><!-- //end.main-wrapper -->
+
+
+<div class="side-wrapper island island--wrapper">
+    <ul class="item-list island--wrapper__content">
+
+        <li class="item-list__item item-list__item--album side-bar--album--alone">
+            {% include 'components/_side-bar--album.html' %}
+        </li>
+
+        <li class="item-list__item item-list__item--live-shows">
+            {% include 'components/_live-shows--alternate.html' %}
+        </li>
+    </ul>
+</div>
+
+{% endblock %}
+
+
+
+

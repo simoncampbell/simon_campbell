@@ -1,0 +1,106 @@
+{#
+ # NEWS
+ # Detail Template
+ # -------------------
+ #
+ #}
+
+{% set title = entry.title ~ " - News" %}
+{% extends "_layout" %}
+
+{% block content_main %}
+
+    <header class="heading-group heading-group--main">
+        <div class="main-wrapper main-wrapper--full">
+            <h1>{{headings.newsHeading}}</h1>
+            <h2>{{headings.newsSubheading}}</h2>
+        </div>
+    </header>
+
+    <div class="main-wrapper main-wrapper--article main-wrapper--listing item-list--news" role="main">
+        <article>
+
+            <div class="heading-group heading-group--marginless">
+                <h3>{{ entry.title }}</h3>
+
+                <div class="meta-info-block meta-info-block--borderless">
+                    <time class="meta-info-block__item" datetime="{{news.postDate|date("Y-m-d")}}">{{entry.postDate|date("jS F Y")}}</time>
+                    {% if entry.newsTags | length %}  
+                    <p class="meta-info-block__item">Posted in
+                        {% for tag in entry.newsTags %}
+                            <a class="category-link" href="/news/category/{{tag.name | replace({' ': '-'}) }}">
+                                <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
+                                {{tag.name}}</a>
+                        {% endfor %}
+                    </p>
+                    {% endif %}
+                </div>
+            </div>
+
+            {% for image in entry.standardImage %}
+                <figure>
+                    <img src="{{image.url}}" alt="{{entry.title}} - an update from Simon Campbell" />
+                    <p>{{news.caption}}</p>
+                </figure>
+            {% endfor %}
+
+            {{ entry.body }}
+
+            {% for audio in entry.audioFile %}
+
+                {% set split = audio.url|split('.') %}
+                {% set ext = split[split|length -1] %}
+
+                {% if (ext == "mp3") %}
+                    {% set ext = "mpeg" %}
+                {% endif %}
+
+                <audio controls>
+                    <source src="{{audio.url}}" type="audio/{{ext}}" />
+                    <p>Your browser does not support this audio format.</p>
+                </audio>
+            {% endfor %}
+
+        </article>
+    </div><!-- //end.main-wrapper -->
+
+
+{% endblock %}
+
+
+
+{% block content_side %}
+
+    <div class="side-wrapper island island--wrapper">
+
+        <ul class="item-list island--wrapper__content">
+
+            <li class="item-list__item item-list__item--sidebar">
+
+                {% include 'components/_news/_news-category' %}
+
+            </li>
+
+            <li class="item-list__item item-list__item--sidebar">
+                <h4>Subscribe via RSS</h4>
+                <a href="/feeds/news.rss" class="link--icon">
+                    <span class="icon ss ss-inbox">inbox</span>
+                    Get regular updates and news posts
+                </a>
+            </li>
+
+            <li class="item-list__item item-list__item--album">
+                {% include 'components/_side-bar--album.html' %}
+            </li>
+
+            <li class="item-list__item item-list__item--live-shows">
+                {% include 'components/_live-shows--alternate.html' %}
+            </li>
+
+        </ul>
+
+
+
+    </div><!-- // end.island side-wrapper -->
+
+{% endblock %}

@@ -1,0 +1,58 @@
+{#
+ # RECORDINGS
+ # Index / listing template
+ # -------------------------
+ #}
+
+{% set title = "Recordings" %}
+
+{% extends "_layout" %}
+
+{% block content_main %}
+
+    <header class="heading-group heading-group--main">
+        <div class="main-wrapper main-wrapper--full">
+            <h1>{{headings.recordingsHeading}}</h1>
+            <h2>{{headings.recordingsSubheading}}</h2>
+        </div>
+    </header>
+
+{% endblock %}
+
+{% block content_side %}
+<div class="wide-wrapper wide-wrapper--merch">
+    <div class="item-list item-list--merch">
+        <ul>
+            {% for album in craft.entries.find({section:'Recordings', limit:'10'}) %}
+                <li class="item-list__item">
+
+                    <figure>
+                        {% for image in album.albumArt %}
+                            <a href="{{album.url}}">
+                                <img src="{{image.getUrl('albumArtSidebar')}}" width="{{image.getWidth('albumArtSidebar')}}" height="{{image.getHeight('albumArtSidebar')}}" alt="{{album.title}} by Simon Campbell"/>
+                            </a>
+                        {% endfor %}
+                    </figure>
+
+                    <h5><a href="{{album.url}}">{{album.title}}</a></h5>
+                    <a href="{{album.url}}"><time datetime="{{album.postDate|date("Y")}}">{{album.postDate|date("Y")}}</time> • {{album.recordType}}</a>
+
+                </li><!-- //.item -->
+            {% endfor %}
+        </ul>
+    </div><!-- //.item-list -->
+</div><!-- wide-wrapper -->
+
+<div class="side-wrapper island island--wrapper">
+    <ul class="item-list island--wrapper__content">
+        <li class="item-list__item item-list__item--sidebar item-list__item--latest">
+            {% include 'components/_side-bar--news.html' %}
+        </li><!-- //end.item-list__item -->
+
+        <li class="item-list__item item-list__item--live-shows">
+            {% include 'components/_live-shows--alternate.html' %}
+        </li>
+    </ul><!-- //end.item-list -->
+
+</div><!-- //end.side-wrapper -->
+{% endblock %}

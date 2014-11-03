@@ -1,0 +1,371 @@
+/*------------------------------------*\
+    $WRAPPERS
+\*------------------------------------*/
+/**
+ * Main wrapper styles that contain the primary content area
+ */
+
+.wrapper {
+    @include rems(padding-top, $base-spacing-unit);
+    width: 100%;
+    border-top: 1px dotted $color__border--standard;
+
+    &.wrapper--borderless {
+        border: none;
+        padding-top: 0;
+    }
+
+    @include respond-to("largest only"){
+        float: left;
+        border-top: 1px solid $color__border--standard;
+    }
+}
+
+.main-wrapper,
+.side-wrapper,
+.wide-wrapper {
+    @extend .cf;
+    @include max-width(8);
+    padding-left: 4.7%;
+    padding-right: 4.7%;
+    margin: 0 auto;
+
+    @include respond-to("regular and above"){
+        width: 71%;
+        max-width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    @include respond-to("large and above"){
+        @include rems(max-width, 578);
+    }
+
+    @include respond-to("largest only"){
+        padding-left: 9.8%;
+        @include rems(max-width, 628);
+    }
+
+    // Have to add box-sizing to every one of these elements individually in IE.
+    .lt-ie10 & {
+        box-sizing: border-box;
+    }
+}
+
+.main-wrapper,
+.island--wrapper__content {
+    .lt-ie9 & {
+        @include rems(width, 578);
+    }
+}
+
+.desktop-wrapper {
+    @extend .cf;
+    overflow: hidden;
+    background-size: 100%;
+    background-color: $color__white;
+    min-height: 100%;
+
+
+    @include respond-to("largest only"){
+        @include max-width(16);
+        margin: 0 auto;
+        border-left: 1px solid $color__border--standard;
+        border-right: 1px solid $color__border--standard;
+    }
+
+    .overlay--active & {
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        position: absolute;
+    }
+}
+
+.wide-wrapper {
+    clear: both;
+
+
+    @include respond-to("medium and above"){
+        @include max-width(12);
+    }
+
+    @include respond-to("large and above"){
+        @include rems(max-width, 578);
+        width: 64%;
+    }
+
+    @include respond-to("largest only"){
+        padding-right: 9.8%;
+        max-width: none;
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+
+/* On desktop align the wrapper module to the left */
+.wide-wrapper--align-desktop {
+    @include respond-to("largest only") {
+        padding-left: 14.9%;
+        @include rems(padding-right, 24);
+    }
+}
+
+.wide-wrapper__title {
+    @extend %font__display--black;
+    @include rems(font-size, $h2-size + 4);
+
+    @include respond-to("largest only") {
+        border-bottom: 1px solid $color__border--standard;
+        @include rems(padding-left, 150);
+        @include rems(margin-left, -150);
+        @include rems(margin-right, -30);
+        @include rems(min-height, 44);
+    }
+}
+
+
+    .wide-wrapper--merch {
+        @include respond-to("largest only"){
+            float: left;
+            width: 59%;
+            padding-right: 0;
+        }
+    }
+
+    .wrapper--recent-entries {
+        @include rems(margin-top, $base-spacing-unit);
+
+        @include respond-to("medium and above"){
+            @include rems(margin-top, $base-spacing-unit * 2);
+            @include rems(margin-bottom, $base-spacing-unit * 2);
+        }
+    }
+
+    .wide-wrapper--recent-entries {
+        @extend .cf;
+
+        @include respond-to("regular and above"){
+            p {
+                @include rems(font-size, 16);
+            }
+        }
+
+        h3 {
+            @include rems(margin-bottom, $base-spacing-unit);
+        }
+    }
+
+    .wide-wrapper--equipment {
+        @include respond-to("between medium and large"){
+            @include rems(max-width, 540);
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+
+
+.main-wrapper {
+    @extend .cf;
+
+    @include respond-to("large and above"){
+        @include rems(max-width, 578);
+        width: 64%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    @include respond-to("largest only") {
+        @include rems(max-width, 726);
+        float: left;
+        padding-right:0;
+        margin-right: 0;
+        margin-right: 0;
+        width: 57.2%;
+    }
+}
+
+    .main-wrapper--full {
+        float: none;
+
+        @include respond-to("largest only"){
+            padding-right: 9.8%;
+            padding-left: 9.8%;
+            width: 100%;
+            max-width: 100%;
+        }
+    }
+
+
+    .main-wrapper--article {
+        @extend .cf;
+        @include rems(margin-bottom, $base-spacing-unit);
+
+
+        @include respond-to("largest only"){
+            @include rems(margin-bottom, $base-spacing-unit * 3);
+            padding-left: 9.8%;
+        }
+    }
+
+    .main-wrapper--listing {
+        @include respond-to("large and above"){
+
+            p {
+                @include rems(font-size, 16);
+            }
+        }
+
+        @include respond-to("largest only"){
+            padding-left: 9.8%;
+        }
+
+        @include respond-to("gigantic"){
+            padding-right: 0;
+
+            p {
+                @include rems(font-size, 17);
+            }
+        }
+    }
+
+    .main-wrapper--article-meta {
+
+        > h2 {
+            @extend %font__display--black;
+        }
+    }
+
+        .main-wrapper--article-meta__header {
+            margin-top: 0;
+            @include rems(margin-bottom, $base-spacing-unit);
+        }
+
+    .main-wrapper--gallery {
+        padding-left: 0;
+        padding-right: 0;
+        margin-bottom: 0;
+        @include rems(max-width, 578);
+
+        @include respond-to("largest only"){
+            padding: 0 9.8%;
+            max-width: 100%;
+            width: 100%;
+        }
+
+        h3 {
+            margin-bottom: 0;
+        }
+    }
+
+    .main-wrapper--article__detail {
+        @include respond-to("regular and above") {
+            @include rems(margin-bottom, $base-spacing-unit * 2);
+        }
+    }
+
+
+.side-wrapper {}
+    /**
+     * Reverse the side wrapper to float right
+     */
+    .side-wrapper--rev {
+        @include respond-to("largest only") {
+            @include rems(padding-left, 90);
+            padding-right: 0;
+            float: left;
+            width: 37%;
+        }
+    }
+
+    .side-wrapper--home {
+        @include rems(margin-bottom, $base-spacing-unit * 2);
+        @include rems(padding-bottom, $half-spacing-unit);
+        border-bottom: 1px dotted $color__border--standard;
+
+        h3 {
+            @include rems(margin-bottom, $base-spacing-unit);
+        }
+    }
+
+    .side-wrapper--alternate {
+        border-top: none;
+    }
+
+    .side-wrapper--gallery {
+        @include respond-to("large and above"){
+            float: right;
+        }
+    }
+
+.homepage-wrapper {
+    @extend .cf;
+}
+
+    .homepage-wrapper--news {
+
+        @include respond-to("between medium and large"){
+            margin-left: -3%;
+            width: 103%;
+
+            >.heading-group {
+                margin-left: 3%;
+            }
+
+            .item-list__item {
+                @include rems(margin-bottom, $base-spacing-unit);
+                float: left;
+                margin-left: 3%;
+                width: 47%;
+            }
+        }
+
+        @include respond-to("largest only"){
+            float: right;
+            width: 48.9%;
+        }
+
+        @include respond-to("gigantic"){
+            .item-list__item {
+                @include rems(margin-right, $base-spacing-unit);
+                float: left;
+                width: 45%;
+
+                &:nth-child(2n) {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+
+    .homepage-wrapper--live-shows {
+        margin-bottom: 0;
+
+        @include respond-to("medium and above"){
+            float: left;
+            width: 100%;
+
+            .live-shows-block header > a {
+                @include rems(right, $base-spacing-unit);
+            }
+        }
+
+        @include respond-to("largest only"){
+            width: 48.4%;
+        }
+    }
+
+    .main-wrapper--secondary {
+        max-height: none;
+        overflow: initial;
+
+        @include respond-to("largest only") {
+            float: right;
+            padding-right: 10.1%;
+            padding-left: 0;
+            margin-top: 0;
+            width: 41.2%;
+        }
+    }

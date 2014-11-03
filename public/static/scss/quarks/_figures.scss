@@ -1,0 +1,192 @@
+/*------------------------------------*\
+    $FIGURES
+\*------------------------------------*/
+
+figure {
+    a {
+        display: block;
+        border:none;
+
+        &:hover,
+        &:focus {
+            border:none;
+        }
+    }
+
+    img {
+        // margin: 0 auto;
+    }
+
+    /**
+     * Blockqoutes should always reside within a figure
+     */
+    blockquote {
+        margin-bottom:0;
+    }
+
+    blockquote + figcaption {
+        font-style: normal;
+    }
+}
+
+.fluid-width-video-wrapper {
+    @include rems(margin-bottom, $base-spacing-unit);
+}
+
+    cite,
+    .cite {
+        display: inline-block;
+        font-weight: normal;
+    }
+
+figcaption {
+    font-style: italic;
+    color: $color__meta--dark;
+    display:inline-block;
+
+    img + & {
+        @include rems(padding-top, $half-spacing-unit)
+    }
+
+    p {
+        display: inline-block;
+        margin:0;
+        font-weight: bold;
+        color: $color__background--black;
+    }
+}
+
+.featured--post__image {
+    >a {
+        border: none;
+
+        &:hover {
+            border: none;
+        }
+    }
+}
+
+
+// Images that come after a title (see: blog detail)
+.figure__hero {
+    @include rems(margin-top, - $base-spacing-unit * 1.1);
+    float: left;
+    width: 100%;
+
+    @include respond-to("medium and above"){
+        width: 71%;
+        float: none;
+        margin: 0 auto;
+        @include rems(max-width, 578);
+        @include rems(margin-bottom, $base-spacing-unit);
+    }
+
+    @include respond-to("large and above"){
+        width: 64%;
+    }
+
+    @include respond-to("largest only"){
+        float: left;
+        width: 100%;
+        margin-bottom: 0;
+    }
+
+    @include respond-to("gigantic"){
+        @include rems(margin-top, -60);
+    }
+
+    >img {
+        width: 100%;
+    }
+}
+
+.figure__hero--full-height {
+    max-height: none;
+    overflow: initial;
+}
+
+.item-list__figure {
+    margin-bottom: 0;
+}
+
+
+.figure--banner {
+    @include rems(margin-top, - $base-spacing-unit);
+    float: left;
+    width: 100%;
+
+    @include respond-to("regular and above"){
+        @include rems(margin-top, - $base-spacing-unit * 2);
+        @include rems(max-height, 400);
+        overflow: hidden;
+    }
+
+    @include respond-to("medium and above"){
+        @include rems(margin-top, - $base-spacing-unit * 3);
+    }
+
+    > img {
+        width: 100%;
+    }
+}
+
+
+.figure--banner-about {
+    @include respond-to("regular and above"){
+        @include rems(max-height, 800);
+    }
+
+    @include breakpoint(1000px){
+        > img {
+            @include rems(margin-top, -100);
+            @include rems(margin-bottom, -140);
+        }
+    }
+}
+
+
+.figure__right {
+    @include respond-to("medium and above"){
+        float: right;
+        @include rems(margin-top, $half-spacing-unit);
+        @include rems(margin-left, $base-spacing-unit);
+        max-width: 49%;
+    }
+}
+
+.figure__left {
+    @include respond-to("medium and above"){
+        @include rems(margin-right, $base-spacing-unit);
+        float: left;
+        max-width: 50%;
+    }
+}
+
+.figure--landing {
+    position: relative;
+
+    @include respond-to("medium and above"){
+        @include rems(margin-top, - 42);
+    }
+
+    @include respond-to("largest only"){
+        @include rems(margin-top, - $base-spacing-unit * 3);
+    }
+}
+
+    .figure--landing__title {
+        display: none;
+
+        @include respond-to("regular and above") {
+            display: block;
+            z-index: 3;
+            background-image: url('/static/images/homepage/logo.svg');
+            position: absolute;
+            bottom: 0;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            text-indent: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+    }

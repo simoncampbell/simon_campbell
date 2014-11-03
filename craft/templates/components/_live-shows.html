@@ -1,0 +1,31 @@
+{#
+ # Live shows
+ # ---------------
+ #
+ # This is the live shows component that can be placed anywhere on the site.
+ #}
+
+
+<div class="live-shows-block island">
+    <header class="island__header">
+        <h4>Live Shows</h4>
+    </header>
+
+    <dl class="shows-list island__content">
+
+        {% for entry in craft.entries.find({section:'liveShows', limit: '4', order: 'liveShowDate asc'}) %}
+            <dt class="shows-list">
+                <time datetime="{{entry.liveShowDate|date("Y-m-d")}}">{{entry.liveShowDate|date("jS F Y")}}</time>
+            </dt>
+
+            <dd>
+                <h5><a href="{{entry.liveShowLink}}">{{entry.title}}</a></h5>
+                <p>{{entry.liveShowLocation}}</p>
+            </dd>
+        {% endfor %}
+
+        {% if craft.entries.find({section:'liveShows'})|length < 1 %}
+            <p>{{homepage.noGigs}}</p>
+        {% endif %}
+    </dl>
+</div>

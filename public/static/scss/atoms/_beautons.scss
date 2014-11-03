@@ -1,0 +1,309 @@
+@if $use-beautons == true{
+
+/*------------------------------------*\
+    $BEAUTONS
+\*------------------------------------*/
+/**
+ * beautons is a beautifully simple button toolkit.
+ *
+ * @csswizardry -- csswizardry.com/beautons
+ *
+ *
+ *
+ * <a href="URL!" class="btn btn--icon btn--primary btn--arrow-left">
+ *     <span class="icon ss-rewind">rewind</span>
+ *     <div class="icon-text">
+ *          Older entries
+ *     </div>
+ * </a>
+ *
+ *
+ */
+
+
+
+/*------------------------------------*\
+    $BASE
+\*------------------------------------*/
+/**
+ * Base button styles.
+ */
+.btn {
+    @extend %font__display--black;
+    @include radius($brand-round);
+    @include transition(all .15s ease-in-out);
+    @include rems(font-size, $milli-size);
+    display:inline-block;
+    vertical-align:top;
+    white-space:nowrap;
+    cursor:pointer;
+    border:none;
+    margin:0;
+    padding-top:0;
+    padding-bottom:0;
+    line-height:2.3;
+    @include rems(padding-right, $half-spacing-unit);
+    @include rems(padding-left, $half-spacing-unit);
+
+    &:active,
+    &:focus {
+        outline:none;
+    }
+}
+
+    .btn--primary {
+        background-color: $color__orange--secondary;
+        border: 1px solid $color__border--orange;
+        color: $color__white;
+
+        &:hover,
+        &:focus {
+            color: $color__white;
+            text-decoration: none;
+            background-color: $color__orange--dark;
+            border: 1px solid darken($color__border--orange, 5);
+        }
+
+        &:active {
+            background-color: darken($color__orange--dark, 5);
+            border: 1px solid darken($color__border--orange, 10);
+        }
+
+        .icon {
+            background-color: $color__orange--dark;
+        }
+    }
+
+
+    .btn--secondary {
+        background-color: $color__grey--primary;
+        border: 1px solid darken($color__grey--primary, 10);
+        color: $color__background--dark;
+
+        &.btn--icon .icon {
+            background-color:darken($color__grey--primary,15);
+            border-right:1px solid darken($color__grey--primary,22);
+        }
+
+        &:hover,
+        &:focus {
+            color: darken($color__background--dark, 10);
+            text-decoration: none;
+            background-color: darken($color__grey--primary, 15);
+            border: 1px solid darken($color__grey--primary, 20);
+
+            &.btn--icon .icon {
+                background-color:darken($color__grey--primary,20);
+                border-right: 1px solid darken($color__grey--primary,27);
+            }
+        }
+
+        &:active {
+            background-color: darken($color__grey--secondary, 5);
+            border: 1px solid darken($color__grey--secondary, 10);
+        }
+    }
+
+    // Semi-transparent dark button
+    .btn--tertiary {
+        background-color: #444;
+        background-color: rgba(58,58,58, .7);
+        border: 1px solid #555555;
+        color: $color__meta;
+        opacity: .7;
+
+        &.btn--icon .icon {
+            background-color: rgba(0,0,0,.3);
+            border-right: 1px solid lighten($color__black, 20);
+        }
+
+        &:hover,
+        &:focus {
+            color: darken($color__white, 5);
+            text-decoration: none;
+            opacity: .7;
+            background-color: #222222;
+            border: 1px solid #555555;
+
+            &.btn--icon .icon {
+                background-color: rgba(0,0,0,.6);
+                border-right: 1px solid lighten($color__black, 20);
+            }
+        }
+    }
+
+
+
+    .btn--purple {
+        background-color: $color__purple;
+        border: 1px solid darken($color__purple,10);
+        color: $color__white;
+
+       &.btn--icon .icon {
+            background-color: darken($color__purple,10);
+            border-right: 1px solid darken($color__purple,10);
+        }
+
+        &:hover,
+        &:focus {
+            background-color: darken($color__purple,10);
+            border: 1px solid darken($color__purple,15);
+            color: $color__white;
+
+            &.btn--icon .icon {
+                background-color:darken($color__purple,18);
+                border-right: 1px solid darken($color__purple,21);
+            }
+        }
+
+        &:active {
+            background-color: darken($color__purple,15);
+            border: 1px solid darken($color__purple,20);
+        }
+    }
+
+    .btn--green {
+        background-color: $color__green;
+        border: 1px solid darken($color__green,10);
+        color: $color__white;
+
+       &.btn--icon .icon {
+            background-color: darken($color__green,10);
+            border-right: 1px solid darken($color__green,10);
+        }
+
+        &:hover,
+        &:focus {
+            background-color: darken($color__green,10);
+            border: 1px solid darken($color__green,15);
+            color: $color__white;
+
+            &.btn--icon .icon {
+                background-color:darken($color__green,18);
+                border-right: 1px solid darken($color__green,21);
+            }
+        }
+
+        &:active {
+            background-color: darken($color__green,15);
+            border: 1px solid darken($color__green,20);
+        }
+    }
+
+
+    .btn--secondary--on-black-bg {
+        color: darken($color__meta--dark,10);
+        background-color: $color__grey--secondary;
+        border: 1px solid darken($color__grey--secondary, 10);
+
+        &:hover {
+            background-color: darken($color__grey--secondary, 15);
+            border: 1px solid darken($color__grey--secondary, 20);
+        }
+
+        &:active {
+            background-color: darken($color__grey--secondary, 20);
+            border: 1px solid darken($color__grey--secondary, 25);
+        }
+    }
+
+    .btn--icon {
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        line-height: 0;
+
+        .icon {
+            @include transition(all .2s ease-in-out);
+            @include rems(height, 42);
+            @include rems(width, $base-spacing-unit * 2);
+            @include rems(font-size, $base-fontsize);
+            display: inline-block;
+            line-height: 2.9;
+            text-align: center;
+            border-right: 1px solid darken($color__border--orange, 2);
+            vertical-align: top;
+        }
+
+        &:hover .icon {
+            border-right: 1px solid darken($color__border--orange, 5);
+            background-color: darken($color__orange--dark, 5);
+        }
+
+        .icon-text {
+            @include rems(padding-left, $half-spacing-unit);
+            line-height: 2.5;
+            display:inline-block;
+        }
+    }
+
+
+    .btn__group--bordered {
+        border-top: 1px dotted $color__border--standard;
+        @include rems(padding-top, $base-spacing-unit);
+        @include rems(margin-bottom, $base-spacing-unit * 2);
+    }
+
+
+
+
+
+/*------------------------------------*\
+    $SIZES
+\*------------------------------------*/
+/**
+ * Button size modifiers.
+ *
+ * These all follow the same sizing rules as above; text is 1em, space around it
+ * remains uniform.
+ */
+
+.btn--gamma {
+     &.btn--icon {
+        .icon {
+            @include rems(height, 38);
+            @include rems(width, 35);
+            line-height: 2.5;
+        }
+        .icon-text {
+            line-height: 2.4;
+            text-transform: uppercase;
+            @include rems(font-size, 15);
+        }
+    }
+}
+
+.btn--epsilon {
+    &.btn--icon {
+        .icon {
+            @include rems(height, 28);
+            @include rems(width, 25);
+            line-height: 2;
+        }
+        .icon-text {
+            line-height: 2.2;
+            @include rems(padding-left, 5);
+            text-transform: uppercase;
+            @include rems(font-size, 13);
+        }
+    }
+}
+
+
+
+/**
+ * These buttons will fill the entirety of their container.
+ *
+ * 1. Remove padding so that widths and paddings don’t conflict.
+ */
+.btn--full{
+    width:100%;
+    padding-right:0;            /* [1] */
+    padding-left: 0;            /* [1] */
+    text-align:center;
+}
+
+
+
+
+}//endif

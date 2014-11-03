@@ -1,0 +1,290 @@
+ /*------------------------------------*\
+    $CAROUSEL
+\*------------------------------------*/
+/**
+ * Based on Brad Frost’s fluid carousel:
+ * http://codepen.io/bradfrost/full/tdacu
+ */
+
+.carousel {
+    position: relative;
+    list-style: none;
+
+    .js & {
+        @include rems(margin-bottom, $half-spacing-unit);
+        // display: none;
+        color: darken($color__white,10);
+    }
+
+    .no-js & {
+        @extend .main-wrapper;
+    }
+}
+
+    .carousel__list-container {
+        @extend .cf;
+        overflow: hidden;
+        position: relative;
+        z-index: 0;
+
+        h4 {
+            margin-bottom: 0;
+        }
+    }
+
+    .carousel__list {
+
+        .js & {
+            @extend .cf;
+            margin-bottom: 0;
+            width: 99999em;
+            position: relative;
+            left: 0;
+            background-color: $color__background--dark;
+        }
+    }
+
+    .carousel__list.animating {
+        @include transition(left .25s ease-out);
+    }
+
+    .carousel li {
+        float: left;
+        position: relative;
+        overflow: hidden;
+        @include rems(max-height, 624);
+        padding-left: 0;
+
+        .no-js & {
+            @include rems(margin-bottom, $base-spacing-unit * 2);
+        }
+
+        &:before {
+            content:"";
+            display: none;
+        }
+
+        .js & {
+            > figure {
+                @include rems(max-height, 722);
+                margin: 0;
+                background-color: $color__background--black;
+
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .carousel__link {
+        &:hover {
+            cursor: -webkit-zoom-in;
+            cursor: -moz-zoom-in;
+        }
+    }
+
+    .carousel li a,
+    .carousel img {
+        display: block;
+    }
+
+    .carousel img {
+        margin: 0 auto;
+    }
+
+
+    .carousel__summary {
+        width: 100%;
+
+        .js & {
+            @include rems(padding, $half-spacing-unit, $base-spacing-unit, 50, $base-spacing-unit);
+            border-top: 1px solid $color__background--black;
+
+            @include respond-to("regular and above"){
+                @include max-width(12);
+                @include rems(padding, $gutter);
+                @include rems(padding-bottom, 50);
+                margin: 0 auto;
+            }
+
+            @include respond-to("medium and above"){
+                @include rems(padding-bottom, $base-spacing-unit);
+            }
+
+            @include respond-to("largest only"){
+                @include width(5);
+                @include rems(padding, $half-spacing-unit);
+                @include rems(padding-left, $base-spacing-unit);
+                position: absolute;
+                bottom: 0;
+                background-color: rgba(58,58,58, .7);
+                border: 1px solid $color__background--dark;
+                border-left: none;
+            }
+
+            p,
+            .meta-info-block {
+                @include rems(font-size, 15);
+            }
+
+            h4 {
+                @include rems(font-size, $h5-size);
+                color: $color__white;
+            }
+        }
+
+        p {
+            @extend %font__text--italic;
+            @include rems(padding-bottom, $quarter-spacing-unit);
+            @include rems(margin-bottom, $quarter-spacing-unit);
+            border-bottom: 1px dotted darken($color__meta--on-bg, 20);
+        }
+
+        .meta-info-block {
+            margin-bottom:0;
+        }
+
+        p,
+        .meta-info-block {
+            @include rems(font-size, $milli-size);
+        }
+    }
+
+    /*Large with room to spare on either side */
+    @media screen and (min-width: 69em) {
+        .carousel__summary {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: 2;
+            width: 100%;
+            color: #fff;
+            background: rgba(0,0,0,0.2);
+        }
+    }
+
+
+
+/**
+ * Navigation items that controls the animations of the carousel
+ */
+.carousel__nav {
+
+    .no-js & {
+        display: none;
+    }
+
+    @extend %font__display--normal;
+    @extend .cf;
+    @include rems(font-size, $milli-size);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    clear: both;
+    border: 1px solid $color__background--black;
+    background-color: #4C4C4C;
+
+    @include respond-to("medium and above") {
+        background-color: transparent;
+        border: none;
+        top: 27%;
+        bottom: auto;
+    }
+
+    @include respond-to("largest only") {
+        top: 35%;
+    }
+
+    a {
+        @include transition(all .25s ease-out);
+        @include rems(padding, $half-spacing-unit, 16);
+        float: left;
+        width: 50%;
+        border-bottom:none;
+        color: $color__white;
+        cursor: pointer;
+        background-color: $color__background--black;
+        opacity: .7;
+
+        @include respond-to("medium and above") {
+            @include rems(height, 120);
+            @include rems(font-size, $h1-size);
+            @include rems(padding, $quarter-spacing-unit);
+            position: absolute;
+            width: auto;
+            color: #fff;
+            padding-left: 0;
+            padding-right: 0;
+            display: table;
+            background-color: lighten($color__background--black, 10);
+            border: 1px solid $color__background--dark;
+            opacity: .7;
+
+            .carousel__nav__text {
+                display: none;
+            }
+
+            &:hover,
+            &:focus {
+                background-color: $color__background--black;
+            }
+        }
+
+        &.next {
+            border-left: 1px solid $color__background--dark;
+            text-align: right;
+            float: right;
+
+            @include respond-to("medium and above") {
+                left: auto;
+                right: 0;
+                border-right: none;
+                line-height: 1;
+            }
+        }
+
+        &.prev {
+
+            @include respond-to("medium and above") {
+                border-left: none;
+                left: 0;
+                line-height: 1;
+            }
+
+            span {
+                position: relative;
+                bottom: 0;
+            }
+        }
+
+        &.inactive {
+            opacity: 0.2;
+        }
+
+        &:hover,
+        &:focus {
+            @include respond-to("medium and above") {
+                border-bottom:none;
+                background-color: darken($color__background--dark, 20);
+            }
+
+            .icon {
+                color: $color__white;
+            }
+        }
+    }
+
+    .icon {
+        @include transition(all .25s ease-in-out);
+        @include rems(vertical-align, - 2);
+        color: $color__meta;
+
+        @include respond-to("medium and above") {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+        }
+    }
+}
+

@@ -1,0 +1,18 @@
+/*------------------------------------*\
+    $BLOCKQUOTES
+\*------------------------------------*/
+
+blockquote {
+    margin-left:0;
+    position:relative;
+    font-style: italic;
+    color: lighten($base-color, 10);
+
+    &:before {
+        content: "\201C";
+    }
+
+    &:after {
+        content: "\201D";
+    }
+}

@@ -1,0 +1,113 @@
+{#
+ # BLOG
+ # Index Listing Template
+ # -------------------
+ #
+ #}
+
+{% set title = "Blog" %}
+
+{% extends "_layout" %}
+
+{% block content_main %}
+
+    <header class="heading-group heading-group--main">
+        <div class="main-wrapper main-wrapper--full">
+            <h1>{{headings.blogHeading}}</h1>
+            <h2>{{headings.blogSubheading}}</h2>
+        </div>
+    </header>
+
+    <div class="main-wrapper main-wrapper--article main-wrapper--listing">
+        <ul class="item-list item-list--article">
+
+            {% for post in craft.entries.find({section:'Blog', limit:'10'}) %}
+                <li class="item-list__item item-list__item--article">
+                    <article>
+                        <header class="heading-group heading-group--marginless">
+                            <h3><a href="{{post.url}}">{{ post.title }}</a></h3>
+
+                            <div class="meta-info-block meta-info-block--borderless">
+
+                                <time class="meta-info-block__item" datetime="{{post.postDate|date("Y-m-d")}}">{{post.postDate|date("jS F Y")}}</time>
+                                {% if post.blogPostTags | length %}
+                                <p class="meta-info-block__item">Posted in
+                                    {% for tag in post.blogPostTags %}
+                                        <a class="category-link" href="/blog/category/{{tag.name | replace({' ': '-'}) }}">
+                                            <span aria-hidden="true" class="icon icon--tag ss ss-tag">tag</span>
+                                            {{tag.name}}</a>
+                                    {% endfor %}
+                                </p>
+                                {% endif %}
+                            </div>
+                        </header>
+
+                        <p>{{ post.shortExtract[:340]|trim }}&hellip; <a href="{{post.url}}">Read more &raquo;</a></p>
+
+                    </article>
+                </li>
+            {% endfor %}
+
+        </ul>
+
+        <div class="btn__group btn__group--bordered">
+            <a href="/blog/archive" class="btn btn--icon btn--secondary btn--arrow-left">
+                <span class="icon ss-rewind">rewind</span>
+                <div class="icon-text">
+                    Older entries
+                </div>
+            </a>
+        </div>
+
+    </div><!-- // end.main-wrapper -->
+
+{% endblock %}
+
+
+{% block content_side %}
+
+    <div class="side-wrapper island island--wrapper">
+
+        <ul class="item-list island--wrapper__content">
+            <li class="item-list__item item-list__item--sidebar">
+
+                {% include 'components/_blog/_blog-category' %}
+
+            </li>
+
+            <li class="item-list__item item-list__item--sidebar">
+                <h4>Subscribe via RSS</h4>
+
+                <a href="/feeds/blog.rss" class="link--icon">
+                    <span class="icon ss ss-inbox">inbox</span>
+                    Get regular updates from the blog
+                </a>
+            </li>
+
+            <li class="item-list__item item-list__item--album">
+                {% include 'components/_side-bar--album.html' %}
+            </li>
+
+            <li class="item-list__item item-list__item--live-shows">
+                {% include 'components/_live-shows--alternate.html' %}
+            </li>
+
+        </ul>
+
+    </div><!-- // end.side-wrapper -->
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

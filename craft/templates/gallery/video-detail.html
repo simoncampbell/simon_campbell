@@ -1,0 +1,89 @@
+{#
+ # GALLERY ALBUM
+ # Detail Template
+ # -------------------
+ #
+ #}
+
+
+{% set title = entry.title ~ " - Videos - Gallery" %}
+{% extends "_layout" %}
+
+{% block content_main %}
+
+    <header class="heading-group heading-group--main">
+        <div class="main-wrapper main-wrapper--full">
+            <h1>{{headings.galleryHeading}}</h1>
+            <h2>{{headings.gallerySubheading}}</h2>
+        </div>
+    </header>
+
+    <div class="carousel-wrapper">
+        <div class="side-wrapper carousel__info-wrapper">
+             <h4>{{entry.title}}</h4>
+             {{entry.shortExtract|markdown}}
+        </div><!-- //.side-wrapper -->
+
+        <div class="main-wrapper main-wrapper--article main-wrapper--gallery">
+            {{entry.embedCode|markdown}}
+        </div><!-- //.main-wrapper -->
+
+    </div><!-- //end.carousel -->
+
+{% endblock %}
+
+
+
+{% block content_side %}
+<div class="wide-wrapper wide-wrapper--merch">
+    <div class="item-list item-list--merch">
+
+    <h3>Albums</h3>
+    <ul>
+        {% set entries = craft.entries.find({section:'Videos', limit:1}) %}
+
+        {% for video in entries %}
+            <li class="item-list__item">
+                <figure>
+                    {% for image in video.thumbnailImage %}
+                        <a href="/gallery/videos"><img src="{{image.getUrl('galleryListing')}}" alt="Videos - a gallery by Simon Campbell"></a>
+                    {% endfor %}
+                </figure>
+                <h5><a href="/gallery/videos">Videos</a></h5>
+            </li>
+        {% endfor %}
+
+        {% for album in craft.entries.find({section:'Gallery'}) %}
+            <li class="item-list__item">
+                <figure>
+                    {% for image in album.featuredImage %}
+                        <a href="{{album.url}}"><img src="{{image.getUrl('galleryListing')}}"></a>
+                    {% endfor %}
+                </figure>
+                <h5><a href="{{album.url}}">{{album.title}}</a></h5>
+        </li>
+        {% endfor %}
+    </ul>
+
+    </div><!-- //end.item-list__sub-content -->
+</div><!-- //end.main-wrapper -->
+
+
+<div class="side-wrapper island island--wrapper">
+    <ul class="item-list island--wrapper__content">
+
+        <li class="item-list__item item-list__item--album side-bar--album--alone">
+            {% include 'components/_side-bar--album.html' %}
+        </li>
+
+        <li class="item-list__item item-list__item--live-shows">
+            {% include 'components/_live-shows--alternate.html' %}
+        </li>
+    </ul>
+</div>
+
+{% endblock %}
+
+
+
+

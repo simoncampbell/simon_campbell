@@ -1,0 +1,117 @@
+{#
+ # Contact & About index template
+ # -------------------
+ #
+ #}
+
+{% set title = "About" %}
+{% extends "_layout" %}
+
+
+{% block content_main %}
+
+ <!-- BIG IMAGE -->
+    {% for image in contactAbout.largeImage %}
+        <figure class="figure--banner figure--banner-about">
+            <img src="{{image.url}}" alt="Simon Campbell - {{contactAbout.heading__sec}}">
+        </figure>
+    {% endfor %}
+
+    <header class="heading-group heading-group--main">
+        <div class="main-wrapper main-wrapper--full">
+            <h1>{{headings.aboutHeading}}</h1>
+            <h2>{{headings.aboutSubheading}}</h2>
+        </div>
+    </header>
+
+    <!-- CONTENT -->
+    <div class="main-wrapper main-wrapper--article">
+
+        <p class="lede">{{contactAbout.shortExtract}}</p>
+
+        {{contactAbout.bio}}
+
+    </div>
+
+{% endblock %}
+
+
+{% block content_side %}
+
+    <div class="side-wrapper island island--wrapper">
+
+        <ul class="item-list island--wrapper__content">
+
+            <li class="item-list__item item-list__item--bookings">
+                <div class="island island--sidebar">
+                    <div class="island__header island__header--small">
+                        <h4 class="h--alt">Bookings</h4>
+                    </div>
+
+                    <div class="island__content island__content--small">
+                        <p class="text--small">For booking details please contact:
+                        {% for person in contactAbout.bookingContactInfo %}
+                            <a href="mailto:{{person.bookingsURL}}">{{person.bookingsPerson}}</a><br/>
+                        {% endfor %}
+                        </p>                    </div>
+                </div>
+            </li>
+
+            {% if contactAbout.pressPackage | length %}
+            <li class="item-list__item item-list__item--bookings">
+                <div class="island island--sidebar">
+                    <div class="island__header island__header--small">
+                        <h4 class="h--alt">Press package</h4>
+                    </div>
+
+                    <div class="island__content island__content--small">
+                        <ul class="text--small">
+
+                            {% for download in contactAbout.pressPackage %}
+                            <li>
+                                <a href="{{download.url}}" class="link--icon link--icon--long">
+                                    <span class="icon ss ss-{{download.extension}}">{{download.extension}}</span>
+                                    {{download}} - {{download.shortExtract}} - Download the {{download.extension}}
+                                </a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div><!-- //end.island -->
+            </li>
+            {% endif %}
+
+            {% if contactAbout.mediaDownloads | length %}
+            <li class="item-list__item item-list__item--bookings">
+                <div class="island island--sidebar">
+                    <div class="island__header island__header--small">
+                        <h4 class="h--alt">Media downloads</h4>
+                    </div>
+
+                    <div class="island__content island__content--small">
+                        <ul class="text--small">
+
+                            {% for download in contactAbout.mediaDownloads %}
+                            <li>
+                                <a href="{{download.url}}" class="link--icon link--icon--long">
+                                    <span class="icon ss ss-{{download.extension}}">{{download.extension}}</span>
+                                    {{download}} - {{download.shortExtract}} - Download the {{download.extension}}
+                                </a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div><!-- //end.island -->
+            </li>
+            {% endif %}
+
+            <li class="item-list__item item-list__item--contact">
+                <h3>Get in touch</h3>
+                {% include 'components/_forms/_contact-form.html' %}
+            </li>
+        </ul>
+
+    </div>
+
+{% endblock %}
+

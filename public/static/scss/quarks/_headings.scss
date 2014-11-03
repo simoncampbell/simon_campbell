@@ -1,0 +1,95 @@
+/*------------------------------------*\
+    $HEADINGS
+\*------------------------------------*/
+/**
+ * When we define a heading we also define a corresponding class to go with it.
+ * This allows us to apply, say, `class=h1` to a `h3`; a double-stranded
+ * heading hierarchy.
+ */
+
+h1, .alpha {
+    @extend %font__display--black;
+    @include rems(font-size, $h1-size);
+    line-height: ($line-height-ratio - .5);
+    text-rendering: optimizeLegibility;
+
+    @include respond-to("medium and above"){
+        @include rems(font-size, $h1-size + 4);
+        line-height: ($line-height-ratio - .35);
+    }
+
+    @include respond-to("largest only") {
+        @include rems(font-size, $h1-size + 15);
+    }
+}
+
+h2, .beta {
+    @extend %font__display--normal;
+    @include rems(font-size, $h2-size);
+    line-height: 1.2;
+
+    @include respond-to("medium and above"){
+        @include rems(font-size, $h2-size + 4);
+        line-height: ($line-height-ratio - .3);
+    }
+
+    @include respond-to("largest only"){
+        @include rems(font-size, $h2-size + 10);
+    }
+}
+
+h3, .gamma {
+    @extend %font__display--black;
+    @include rems(font-size, $h3-size);
+    line-height: ($line-height-ratio - .25);
+    @include rems(margin-bottom, $base-spacing-unit);
+
+    .main-wrapper--article__detail p + &,
+    .main-wrapper--article__detail ul + &,
+    .main-wrapper--article__detail ol + &,
+    .main-wrapper--article__detail figure + &,
+    .main-wrapper--article__detail form + & {
+        @include rems(margin-top, $base-spacing-unit * 2);
+    }
+
+    .main-wrapper--article__detail iframe + & {
+        @include rems(margin-top, $base-spacing-unit);
+    }
+
+    @include respond-to("medium and above"){
+        @include rems(font-size, $h3-size + 4);
+    }
+}
+
+h4, .delta {
+    @extend %font__display--black;
+    margin-bottom: 0;
+    @include rems(font-size, $h4-size);
+    line-height: ($line-height-ratio - .1);
+
+    @include respond-to("medium and above"){
+        @include rems(font-size, $h4-size + 2);
+    }
+}
+
+h5, .epsilon {
+    @include rems(font-size, $h5-size);
+    line-height: 1.4;
+
+    @include respond-to("medium and above"){
+        @include rems(font-size, $h5-size + 2);
+    }
+}
+
+.base-text {
+    @include rems(font-size, $base-fontsize);
+    color: $base-color;
+}
+
+.h--alt {
+    @include rems(font-size, 18);
+}
+
+.text--small {
+    @include rems(font-size, 15);
+}

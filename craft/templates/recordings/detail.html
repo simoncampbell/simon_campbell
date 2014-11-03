@@ -1,0 +1,181 @@
+{#
+ # RECORDINGS
+ # Detail Template
+ # -------------------
+ #
+ #}
+
+{% set title = entry.title %}
+
+{% extends "_layout" %}
+
+{% block content_main %}
+
+    <!-- LARGE ARTISINAL IMAGE -->
+    {% for image in entry.largeImage %}
+        <figure class="figure--banner">
+            <img src="{{image.url}}" alt="{{entry.title}} by Simon Campbell"/>
+        </figure>
+    {% endfor %}
+
+
+    <header class="heading-group heading-group--main">
+        <div class="main-wrapper main-wrapper--full">
+            <h2 class="epsilon">{{entry.recordType}}</h2>
+            <h1>{{entry.title}}</h1>
+        </div>
+    </header>
+
+    <div class="main-wrapper main-wrapper--article__detail main-wrapper--listing">
+        <div class="meta-info-block meta-info-block--borderless">
+        <p class="meta-info-block__item">Released on <time class="meta-info-block__item" datetime="{{entry.releaseDate|date("Y-m-d")}}">{{entry.releaseDate|date("jS F Y")}}</time> by {{entry.label}}</p>
+        </div>
+
+        <p class="lede">{{entry.shortExtract}}</p>
+
+        {{entry.body}}
+
+        {% if entry.tracks|length > 0 %}
+            <h3>Lyrics</h3>
+            <ol>
+                {% for item in entry.tracks %}
+                    <li><a href="{{item.url}}">{{item.title}}</a> {% if item.length %}[{{item.length}}]{% endif %}</li>
+                {% endfor %}
+            </ol>
+        {% endif %}
+
+        <h3>Credits</h3>
+        {% if entry.credits|length > 0 %}
+            <ul>
+                {% for item in entry.credits %}
+                    <li>
+                        {{item.creditType}} - {{item.creditName}}
+                        {% if item.creditTracks %} (tracks {{item.creditTracks}}) {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        {% if entry.recordedAt or entry.masteredBy %}
+        <p>
+            {% if entry.recordedAt %}<strong>Recorded at</strong> {{entry.recordedAt}}<br />{% endif %}
+            {% if entry.masteredBy %}<strong>Mastered by</strong> {{entry.masteredBy}}{% endif %}
+        </p>
+        {% endif %}
+
+        {% if entry.reviews|length > 0 %}
+            <h3>Reviews</h3>
+            <div class="item-list__item item-list__item--reviews">
+                <ul class="item-list">
+
+                    {% for item in entry.reviews %}
+                        <li class="item-list__item">
+                            <figure>
+                                <blockquote>{{item.ReviewQuote}}</blockquote>
+                                <figcaption>
+                                    <p>
+                                        {{item.ReviewWriter}},
+                                        <cite>
+                                            <a href="{{item.ReviewLink}}">{{item.ReviewPublication}}</a>
+                                        </cite>
+                                    </p>
+                                </figcaption>
+                            </figure>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+
+   </div>
+
+{% endblock %}
+
+
+
+{% block content_side %}
+    <div class="side-wrapper island island--wrapper">
+        <div class="island--wrapper__content island--wrapper__content--album">
+
+            <div class="record-sale">
+
+                {% if entry.bandcampAlbum %}
+                    {{entry.bandcampAlbum|markdown}}
+                {% else %}
+                <!-- ALBUM ART IMAGE -->
+                    {% for image in entry.albumArt %}
+                        <figure>
+                            <img src="{{image.getUrl('albumArtSidebar')}}" width="{{image.getWidth('albumArtSidebar')}}" height="{{image.getHeight('albumArtSidebar')}}" alt="{{album.title}}"/>
+                        </figure>
+                    {% endfor %}
+                {% endif %}
+
+                {% if (entry.digitalDownloadUrl or entry.cdUrl or entry.vinylUrl) %}
+
+                <div class="side-bar--album">
+                    <h4>Purchasing options</h4>
+                </div>
+                <ul class="item-list item-list--bordered">
+                    {% if entry.digitalDownloadUrl %}
+                        <li class="item-list__item item-list__item--purchase">
+                            <h3>{{entry.digitalDownloadTitle}}
+                            {% if entry.digitalDownloadPrice %}
+                                <span>(&pound;{{"%.2f"|format(entry.digitalDownloadPrice)}})</span>
+                            {% endif %}
+                            </h3>
+
+                            {{entry.digitalDownloadDescription|markdown}}
+
+                            <a href="{{entry.digitalDownloadUrl}}" class="btn btn--icon btn--primary btn--arrow-left">
+                                <span class="icon ">download</span>
+                                <div class="icon-text">
+                                    Download
+                                </div>
+                            </a>
+                        </li>
+                    {% endif %}
+                    {% if entry.cdUrl %}
+                        <li class="item-list__item item-list__item--purchase">
+                            <h3>{{entry.cdTitle}}
+                            {% if entry.cdPrice %}
+                                <span>(&pound;{{"%.2f"|format(entry.cdPrice)}})</span>
+                            {% endif %}
+                            </h3>
+
+                            {{entry.cdDescription|markdown}}
+
+                            <a href="{{entry.cdUrl}}" class="btn btn--icon btn--purple btn--arrow-left">
+                                <span class="icon ">discdrive</span>
+                                <div class="icon-text">
+                                    Order now
+                                </div>
+                            </a>
+                        </li>
+                    {% endif %}
+                    {% if entry.vinylUrl %}
+                        <li class="item-list__item item-list__item--purchase">
+                            <h3>{{entry.vinylTitle}}
+                            {% if entry.vinylPrice %}
+                                <span>(&pound;{{"%.2f"|format(entry.vinylPrice)}})</span>
+                            {% endif %}
+                            </h3>
+
+                            {{entry.vinylDescription|markdown}}
+
+                            <a href="{{entry.vinylUrl}}" class="btn btn--icon btn--green btn--arrow-left">
+                                <span class="icon ">music</span>
+                                <div class="icon-text">
+                                    Order now
+                                </div>
+                            </a>
+                        </li>
+                    {% endif %}
+                </ul>
+                {% endif %}
+            </div>
+        </div>
+   </div><!-- //end.island.side-wrapper -->
+
+
+
+{% endblock %}

@@ -1,5 +1,4 @@
 <IfModule mod_rewrite.c>
-Options +FollowSymLinks
     RewriteEngine On
 
     # Send would-be 404 requests to Craft

@@ -18,7 +18,7 @@
 
 
 
-    {% for tagloop in craft.tags({set:"newsTags"}) %}
+    {% for tagloop in craft.tags({group:"newsTags"}) %}
         {% set taggedEntries = craft.entries.relatedTo({ targetElement: tagloop }) %}
         {% if taggedEntries.total() > 0 %}
             <li{% if (tag.name | lower) == (tagloop.name | lower) %} class="cur"{% endif %}>

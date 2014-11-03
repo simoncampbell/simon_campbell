@@ -14,26 +14,18 @@ return array(
     ),
 
     // PRODUCTION env settings
-    'simoncampbell.dev' => array (
+    'campbell.dev' => array (
         'server' => '127.0.0.1',
         'user' => 'root',
-        'password' => 'enable',
-        'database' => 'simon_campbell',
-    ),
-
-    // STAGING env settings
-    'erskinestage.com' => array (
-        'server' => '127.0.0.1',
-        'user' => 'root',
-        'password' => 'enable',
-        'database' => 'simon_campbell',
+        'password' => '',
+        'database' => 'campbell',
     ),
 
     // LIVE env settings
     'simoncampbell.com' => array (
-        'server' => '127.0.0.1',
-        'user' => 'root',
-        'password' => 'enable',
+        'server' => 'localhost',
+        'user' => 'av01727',
+        'password' => '877.e34edTpe',
         'database' => 'simon_campbell',
     ),
 );

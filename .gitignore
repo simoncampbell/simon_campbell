@@ -1,24 +1,12 @@
-# Ultimate Package specific
-
-public/assets
-
 !.gitignore
+.DS_Store
 
 .sass-cache
-
-composer.phar
-composer.lock
-/vendor
 public/static/css/
 
 craft/storage/backups/
 craft/storage/runtime/
 craft/storage/userphotos/
-
-
-craft/config/db.php
-
-web.config
-
-.DS_Store
-*.pyc
+composer.phar
+composer.lock
+/vendor

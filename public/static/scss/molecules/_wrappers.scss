@@ -336,6 +336,11 @@
                 &:nth-child(2n) {
                     margin-right: 0;
                 }
+                &:nth-child(2n+1) {
+                    content: "";
+                    display: table;
+                    clear: both;
+                }
             }
         }
     }

@@ -9,3 +9,4 @@ composer.phar
 composer.lock
 /vendor
 public/assets/images
+public/images

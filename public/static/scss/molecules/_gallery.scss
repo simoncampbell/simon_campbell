@@ -1,0 +1,21 @@
+.gallery {
+	list-style:none;
+	padding:0;
+
+	figure {
+		margin-bottom:3px;
+		float:left;
+		padding:2px 5px;
+		width:33%;
+	}
+
+	figcaption {
+		display:none;
+	}
+
+	a {
+		display:block;
+		border:0;
+		text-decoration:none;
+	}
+}

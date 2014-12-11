@@ -35,6 +35,8 @@
             <link rel="stylesheet" media="all" type="text/css" href="/static/css/screen_ie8.css" />
         <![endif]-->
 
+        <!-- OG -->
+        <meta property="og:description" content="{% if ogDesc is defined %}{{ ogDesc }}{% else %}{{ footer.footerAboutText }}{% endif %}"/>
 
         <!-- GOOGLE ANALYTICS -->
         <script>
@@ -59,7 +61,7 @@
         <script data-main='/static/scripts/app' src="/static/scripts/tools/require.min.js"></script>
 
         <!-- PINTEREST -->
-        <script type="text/javascript" async  data-pin-color="white" data-pin-hover="true" src="//assets.pinterest.com/js/pinit.js"></script>
+        <script type="text/javascript" async  data-pin-color="white" data-pin-hover="false" src="//assets.pinterest.com/js/pinit.js"></script>
     </head>
 
 
@@ -162,6 +164,7 @@
         <!-- JAVASCRIPT -->
         <script src="/static/scripts/libs/ss-gizmo.js"></script>
 
+        {% include "components/_photoswipe.html" %}
         {% block scripts %}
         {% endblock %}
 

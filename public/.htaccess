@@ -1,6 +1,11 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
+    # Force www
+	#RewriteCond %{HTTP_HOST} !^www\.(.*)
+	#RewriteRule (.*) http://www.simoncampbell.com/$1 [R=301,L]
+
+
     # Send would-be 404 requests to Craft
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d

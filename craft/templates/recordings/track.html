@@ -20,7 +20,7 @@
 
     <div class="main-wrapper main-wrapper--article__detail main-wrapper--listing">
         <h3>Lyrics</h3>
-        {{entry.lyrics|markdown}}
+        {{entry.lyrics|nl2br}}
 
         <p>
         {% if entry.writtenBy %}
@@ -44,7 +44,7 @@
             {% if entry.associatedRelease|length > 0 %}
                 {% for item in entry.associatedRelease %}
                     <li class="item-list__item item-list__item--live-shows">
-                                    
+
                         <div class="live-shows-block live-shows-block--island">
                             <header class="island__header">
                             <h4>{{item.title}}</h4>

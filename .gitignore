@@ -1,12 +1,11 @@
 !.gitignore
 .DS_Store
-
 .sass-cache
 public/static/css/
-
 craft/storage/backups/
 craft/storage/runtime/
 craft/storage/userphotos/
 composer.phar
 composer.lock
 /vendor
+public/assets/images

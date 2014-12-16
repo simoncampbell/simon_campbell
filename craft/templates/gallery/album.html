@@ -28,12 +28,14 @@
             <div class="gallery js-photoswipe js-masonry" data-pswp-uid="1">
                 {% for image in entry.carouselImages %}
                     <figure class="js-masonry-item" itemscope itemtype="http://schema.org/ImageObject">
-                        <a href="{{image.getUrl}}" itemprop="contentUrl" data-size="{{ image.width ~ 'x' ~ image.height }}">
-                            <img data-pin-no-hover="true" src="{{ image.getUrl }}" itemprop="thumbnail" alt="{{ image.shortExtract }}" />
+                        <a href="{{image.getUrl }}" itemprop="contentUrl" data-size="{{ image.width ~ 'x' ~ image.height }}">
+                            <img data-pin-no-hover="true" src="{{ image.getUrl('galleryListing') }}" itemprop="thumbnail" alt="{{ image.shortExtract }}" />
                         </a>
                         <figcaption itemprop="caption description">
                             {{ image.shortExtract }}<br/>
-                            <small><time datetime="{{image.date|date("Y-m-d")}}">{{image.date|date("jS F Y")}}</time></small>
+                            {% if image.date %}
+                                <small><time datetime="{{image.date|date("Y-m-d")}}">{{image.date|date("jS F Y")}}</time></small>
+                            {% endif %}
                         </figcaption>
                     </figure>
                 {% endfor %}

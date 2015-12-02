@@ -62,7 +62,7 @@
                             </figure>
                         {% endfor %}
 
-                        <p>{{ post.shortExtract[:340]|trim}}&hellip; <a href="{{post.url}}">Read more &raquo;</a></p>
+                        <p>{{ post.shortExtract[:340]|striptags|trim}}&hellip; <a href="{{post.url}}">Read more &raquo;</a></p>
 
                     </div><!-- //end.featured__post-content -->
                 </article>
